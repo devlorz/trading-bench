@@ -78,6 +78,10 @@ _Avoid_: guideline, hint
 Action ที่ Engine ปฏิเสธเพราะขัด Hard Rule หรือ Weekly Plan นับเป็นตัวชี้วัดรอง
 _Avoid_: error, rejection
 
+**Indicator Pack**:
+ชุดค่า indicator ที่ Engine คำนวณจาก candle ด้วยนิยามคงที่และแนบให้โมเดลทุกตัวเหมือนกัน มี version และห้ามเปลี่ยนระหว่าง benchmark
+_Avoid_: TA, signals, features
+
 ### การวัดผล
 
 **Net Return**:
