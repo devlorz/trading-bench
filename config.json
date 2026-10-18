@@ -1,4 +1,5 @@
 {
   "initial_capital": 10000,
-  "taker_fee": 0.00045
+  "taker_fee": 0.00045,
+  "maker_fee": 0.00015
 }

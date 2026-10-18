@@ -3,18 +3,19 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from bench.engine import run_tick
+from bench.engine import ms, run_tick
 from bench.market import recording, replay
 
 FIXTURES = Path(__file__).parent / "fixtures" / "btc"
-CONFIG = {"initial_capital": 10000, "taker_fee": 0.00045}
+CONFIG = {"initial_capital": 10000, "taker_fee": 0.00045, "maker_fee": 0.00015}
 PLAN = {
     "notional": 10000,
-    "watchlist": [{"symbol": "BTC", "bias": "both"}, {"symbol": "DOGE", "bias": "both"}],
+    "watchlist": [{"symbol": "BTC", "bias": "both"}, {"symbol": "DOGE", "bias": "both"}, {"symbol": "ETH", "bias": "both"}],
 }
 T0 = "2026-10-19T01:07:00Z"
 T1 = "2026-10-19T02:07:00Z"
 OPEN_BTC = {"type": "open", "slot": 0, "symbol": "BTC", "side": "long"}
+SHORT_BTC = {**OPEN_BTC, "side": "short"}
 
 
 def scripted(*actions):
@@ -24,16 +25,40 @@ def scripted(*actions):
 HOLD = scripted({"type": "hold"})
 
 
+def bar(coin, at, o, h=None, l=None, i="1m"):
+    h, l = h or o, l or o
+    return {"s": coin, "i": i, "t": ms(at), "o": str(o), "h": str(h), "l": str(l), "c": str(o)}
+
+
+def rate(coin, at, r):
+    return {"coin": coin, "fundingRate": str(r), "premium": "0", "time": ms(at) + 45}  # HL stamps land a few ms past the hour
+
+
+def market(candles=(), funding=()):
+    """Fixture book/meta plus in-memory candleSnapshot and fundingHistory filtered like Hyperliquid."""
+    fixtures = replay(FIXTURES)
+
+    def info(body):
+        if body["type"] == "candleSnapshot":
+            r = body["req"]
+            return [c for c in candles if c["s"] == r["coin"] and c["i"] == r["interval"] and r["startTime"] <= c["t"] <= r["endTime"]]
+        if body["type"] == "fundingHistory":
+            return [f for f in funding if f["coin"] == body["coin"] and body["startTime"] <= f["time"] <= body["endTime"]]
+        return fixtures(body)
+
+    return info
+
+
 class RunTick(unittest.TestCase):
     def setUp(self):
         self.data = Path(tempfile.mkdtemp())
 
-    def tick(self, at, model, market=None, contestant="x"):
+    def tick(self, at, model, source=None, contestant="x"):
         folder = self.data / contestant
         if not folder.exists():
             folder.mkdir()
             (folder / "plan.json").write_text(json.dumps(PLAN))
-        run_tick(contestant, at, market or replay(FIXTURES), model, self.data, CONFIG)
+        run_tick(contestant, at, source or market(), model, self.data, CONFIG)
         return json.loads((folder / "state.json").read_text())
 
     def events(self, contestant="x"):
@@ -67,7 +92,7 @@ class RunTick(unittest.TestCase):
         cases = {
             "layer_occupied": [OPEN_BTC, OPEN_BTC],
             "slot_out_of_range": [{**OPEN_BTC, "slot": 4}],
-            "symbol_not_in_watchlist": [{**OPEN_BTC, "symbol": "ETH"}],
+            "symbol_not_in_watchlist": [{**OPEN_BTC, "symbol": "SOL"}],
             "exceeds_max_leverage": [{**OPEN_BTC, "symbol": "DOGE"}],  # 10,000 / 2,500 = 4x > DOGE 3x
         }
         for rule, actions in cases.items():
@@ -79,22 +104,29 @@ class RunTick(unittest.TestCase):
                 self.assertEqual(violation["action"], actions[-1])
                 self.assertEqual(state["free_equity"], 10000 - 2500 * (len(actions) - 1))
 
-    def test_open_rejected_when_free_equity_below_collateral(self):
-        self.tick(T0, HOLD)
-        # Temporary: writes state directly because no Tick can drain free equity yet.
-        # Move onto the seam (liquidate a Layer) once ticket 03 lands.
-        state_file = self.data / "x" / "state.json"
-        state_file.write_text(json.dumps({**json.loads(state_file.read_text()), "free_equity": 2000}))
+    def test_slot_of_liquidated_layer_reopens_only_once_hostage_refills_free_equity(self):
+        eth = [{"type": "open", "slot": n, "symbol": "ETH", "side": "long"} for n in (1, 2, 3)]
+        self.tick(T0, scripted(OPEN_BTC, *eth))  # all four Layers locked, free equity 0
+        crash = [bar("BTC", "2026-10-19T01:20:00Z", 80000, l=76000)]
 
-        state = self.tick(T1, scripted(OPEN_BTC))
+        state = self.tick(T1, scripted(OPEN_BTC, {"type": "set_tp", "slot": 1, "price": 4100}), market(crash))
 
         self.assertEqual(self.events()[-1]["rule"], "insufficient_free_equity")
-        self.assertEqual(state["free_equity"], 2000)
         self.assertIsNone(state["layers"][0])
+        self.assertEqual(state["free_equity"], 0)
+
+        rally = [bar("ETH", "2026-10-19T02:30:00Z", 4050, h=4100)]
+        state = self.tick("2026-10-19T03:07:00Z", scripted(OPEN_BTC), market(rally))
+
+        self.assertEqual([e["type"] for e in self.events()[-3:]], ["tp", "decision", "fill"])
+        self.assertEqual(state["layers"][0]["symbol"], "BTC")
+        # ETH TP returned 2,495.5 + 99.6 × size − maker fee; 2,500 of it re-funded slot 0, the rest is Hostage left over
+        size = 10000 / 4000.4
+        self.assertAlmostEqual(state["free_equity"], 2495.5 + 99.6 * size - 4100 * size * 0.00015 - 2500, places=6)
 
     def test_unsupported_action_is_a_violation(self):
-        close = {"type": "close", "slot": 0}
-        state = self.tick(T0, scripted(close, OPEN_BTC))
+        limit = {"type": "limit", "slot": 0}
+        state = self.tick(T0, scripted(limit, OPEN_BTC))
         types = [e["type"] for e in self.events()]
         self.assertEqual(types, ["reallocation", "decision", "violation", "fill"])
         self.assertEqual(self.events()[2]["rule"], "unsupported_action")
@@ -113,10 +145,189 @@ class RunTick(unittest.TestCase):
         self.assertEqual(again, first)
         self.assertEqual((self.data / "x" / "events.jsonl").read_text(), log)
 
+    def test_funding_settles_each_full_hour_since_last_tick(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        flat = [bar("BTC", f"2026-10-19T0{h}:00:00Z", 100010) for h in (2, 3, 4)]  # notional stays 10,000
+        rates = [rate("BTC", "2026-10-19T02:00:00Z", 0.0001), rate("BTC", "2026-10-19T03:00:00Z", 0.0002),
+                 rate("BTC", "2026-10-19T04:00:00Z", -0.00005)]
+
+        state = self.tick("2026-10-19T04:07:00Z", HOLD, market(flat, rates))
+
+        funding = [e for e in self.events() if e["type"] == "funding"]
+        self.assertEqual([e["t"] for e in funding], ["2026-10-19T02:00:00Z", "2026-10-19T03:00:00Z", "2026-10-19T04:00:00Z"])
+        self.assertEqual([round(e["amount"], 6) for e in funding], [-1.0, -2.0, 0.5])  # long pays positive rate
+        self.assertAlmostEqual(state["layers"][0]["collateral"], 2495.5 - 1 - 2 + 0.5)
+
+    def test_tp_fills_mid_hour_at_tp_with_maker_fee_and_frees_slot(self):
+        self.tick(T0, scripted(OPEN_BTC, {"type": "set_tp", "slot": 0, "price": 101010}))
+        bars = [bar("BTC", "2026-10-19T01:30:00Z", 100500, h=101000), bar("BTC", "2026-10-19T01:41:00Z", 100900, h=101200)]
+
+        state = self.tick(T1, scripted(OPEN_BTC), market(bars))
+
+        tp = next(e for e in self.events() if e["type"] == "tp")
+        self.assertEqual(tp["t"], "2026-10-19T01:41:00Z")
+        self.assertEqual(tp["price"], 101010)
+        self.assertAlmostEqual(tp["pnl"], 99.990001, places=5)  # 1,000 × 10,000 / 100,010
+        self.assertAlmostEqual(tp["fee"], 1.5149985, places=6)  # 0.015% of 101,010 × size
+        self.assertAlmostEqual(tp["hostage"], 2495.5 + 99.990001 - 1.5149985 - 2500, places=5)
+        self.assertEqual(state["layers"][0]["entry"], 100010.0)  # re-opened in the same Tick
+        self.assertAlmostEqual(state["free_equity"], 7500 + 2495.5 + 99.990001 - 1.5149985 - 2500, places=5)
+
+    def test_layer_liquidated_when_bar_low_breaches_maintenance(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        # maintenance 10,000 / (2 × 40) = 125 → liq px = 100,010 − (2,495.5 − 125) / size ≈ 76,302.6
+        bars = [bar("BTC", "2026-10-19T01:20:00Z", 80000, l=76400), bar("BTC", "2026-10-19T01:21:00Z", 77000, l=76300)]
+
+        state = self.tick(T1, HOLD, market(bars))
+
+        liq = next(e for e in self.events() if e["type"] == "liquidation")
+        self.assertEqual((liq["t"], liq["slot"], liq["price"]), ("2026-10-19T01:21:00Z", 0, 76300))
+        self.assertIsNone(state["layers"][0])
+        self.assertEqual(state["free_equity"], 7500)  # collateral is gone, nothing returned
+
+    def test_accumulated_funding_alone_can_liquidate_a_layer(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        bars = [bar("BTC", "2026-10-19T02:00:00Z", 100010), bar("BTC", "2026-10-19T03:00:00Z", 100010)]
+        # 1,200 per hour: 2,495.5 → 1,295.5 survives, → 95.5 ≤ maintenance 125 does not
+        rates = [rate("BTC", "2026-10-19T02:00:00Z", 0.12), rate("BTC", "2026-10-19T03:00:00Z", 0.12)]
+
+        state = self.tick("2026-10-19T03:07:00Z", HOLD, market(bars, rates))
+
+        settled = self.events()[-4:-1]
+        self.assertEqual([(e["t"], e["type"]) for e in settled], [("2026-10-19T02:00:00Z", "funding"),
+                         ("2026-10-19T03:00:00Z", "funding"), ("2026-10-19T03:00:00Z", "liquidation")])
+        self.assertAlmostEqual(settled[-1]["collateral_lost"], 95.5)
+        self.assertIsNone(state["layers"][0])
+
+    def test_funding_hour_settles_even_when_no_bar_reached_it(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        lagging = [bar("BTC", "2026-10-19T01:30:00Z", 100010)]  # feed stops before 02:00
+
+        state = self.tick(T1, HOLD, market(lagging, [rate("BTC", "2026-10-19T02:00:00Z", 0.0001)]))
+
+        funding = [e for e in self.events() if e["type"] == "funding"]
+        self.assertEqual([(e["t"], round(e["amount"], 6)) for e in funding], [("2026-10-19T02:00:00Z", -1.0)])
+        self.assertAlmostEqual(state["layers"][0]["collateral"], 2495.5 - 1)
+
+    def test_short_receives_positive_funding_and_tp_fills_on_bar_low(self):
+        self.tick(T0, scripted(SHORT_BTC, {"type": "set_tp", "slot": 0, "price": 99000}))
+        bars = [bar("BTC", "2026-10-19T02:00:00Z", 99990, h=100500, l=98900)]  # notional at 99,990 = 10,000
+
+        state = self.tick(T1, HOLD, market(bars, [rate("BTC", "2026-10-19T02:00:00Z", 0.0001)]))
+
+        funding, tp = self.events()[-3:-1]
+        self.assertAlmostEqual(funding["amount"], 1.0)
+        self.assertEqual((tp["type"], tp["price"]), ("tp", 99000))
+        self.assertAlmostEqual(tp["pnl"], 990 * 10000 / 99990)
+        self.assertAlmostEqual(state["free_equity"], 7500 + 2495.5 + 1 + 990 * 10000 / 99990 - 99000 * 10000 / 99990 * 0.00015)
+
+    def test_short_liquidated_on_bar_high(self):
+        self.tick(T0, scripted(SHORT_BTC))
+        # liq px = 99,990 + (2,495.5 − 125) / size ≈ 123,692
+        bars = [bar("BTC", "2026-10-19T01:20:00Z", 120000, h=123600), bar("BTC", "2026-10-19T01:21:00Z", 123000, h=123700)]
+
+        state = self.tick(T1, HOLD, market(bars))
+
+        liq = self.events()[-2]
+        self.assertEqual((liq["type"], liq["t"], liq["price"]), ("liquidation", "2026-10-19T01:21:00Z", 123700))
+        self.assertIsNone(state["layers"][0])
+
+    def test_short_close_buys_back_at_best_ask(self):
+        self.tick(T0, scripted(SHORT_BTC))
+        self.tick(T1, scripted({"type": "close", "slot": 0}))
+        close = self.events()[-1]
+        self.assertEqual(close["price"], 100010.0)
+        self.assertAlmostEqual(close["pnl"], -20 * 10000 / 99990)
+
+    def test_liquidation_beats_tp_in_the_same_bar(self):
+        self.tick(T0, scripted(OPEN_BTC, {"type": "set_tp", "slot": 0, "price": 101010}))
+        bars = [bar("BTC", "2026-10-19T01:30:00Z", 100000, h=101200, l=76000)]
+
+        state = self.tick(T1, HOLD, market(bars))
+
+        self.assertEqual([e["type"] for e in self.events()[-2:]], ["liquidation", "decision"])
+        self.assertEqual(state["free_equity"], 7500)
+
+    def test_close_returns_collateral_plus_pnl_minus_taker_fee(self):
+        self.tick(T0, scripted(OPEN_BTC))
+
+        state = self.tick(T1, scripted({"type": "close", "slot": 0}))
+
+        close = self.events()[-1]
+        self.assertEqual((close["type"], close["t"], close["price"]), ("close", T1, 99990.0))  # long exits at best bid
+        self.assertAlmostEqual(close["pnl"], -1.9998, places=4)  # −20 × 10,000 / 100,010
+        self.assertAlmostEqual(close["fee"], 4.4991001, places=6)
+        self.assertEqual(close["hostage"], 0)
+        self.assertIsNone(state["layers"][0])
+        self.assertAlmostEqual(state["free_equity"], 7500 + 2495.5 - 1.9998 - 4.4991001, places=4)
+
+    def test_set_tp_replaces_and_cancel_tp_removes(self):
+        self.tick(T0, scripted(OPEN_BTC, {"type": "set_tp", "slot": 0, "price": 101010},
+                               {"type": "set_tp", "slot": 0, "price": 102000}))
+        state = self.tick(T1, HOLD, market([bar("BTC", "2026-10-19T01:30:00Z", 101500, h=101500)]))
+        self.assertEqual(state["layers"][0]["tp"], 102000)
+
+        state = self.tick("2026-10-19T03:07:00Z", scripted({"type": "cancel_tp", "slot": 0, "price": 101010}))
+        self.assertIsNone(state["layers"][0]["tp"])
+
+    def test_tp_and_close_violations(self):
+        cases = {
+            "tp_wrong_side": {"type": "set_tp", "slot": 0, "price": 99000},  # below a long's entry
+            "layer_empty": {"type": "close", "slot": 1},
+            "slot_out_of_range": {"type": "cancel_tp", "slot": 7},
+        }
+        for rule, action in cases.items():
+            with self.subTest(rule):
+                state = self.tick(T0, scripted(OPEN_BTC, action), contestant=rule)
+                self.assertEqual(self.events(rule)[-1], {"t": T0, "type": "violation", "rule": rule, "action": action})
+                self.assertIsNone(state["layers"][0]["tp"])
+
+    def test_executor_sees_events_settled_since_last_tick(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        seen = []
+
+        def executor(given):
+            seen.append(given)
+            return {"reasoning": "", "actions": [{"type": "hold"}]}
+
+        self.tick(T1, executor, market([bar("BTC", "2026-10-19T01:20:00Z", 80000, l=76000)]))
+
+        self.assertEqual([e["type"] for e in seen[0]["settled"]], ["liquidation"])
+        self.assertIsNone(seen[0]["state"]["layers"][0])
+
+    def test_gap_beyond_1m_history_settles_on_coarser_bars(self):
+        cases = {  # Hyperliquid serves at most 5,000 bars: 1m covers ~3.5 days, 15m ~52 days
+            "15m": ("2026-10-23T01:07:00Z", "2026-10-21T10:15:00Z"),
+            "1h": ("2026-12-20T01:07:00Z", "2026-11-30T10:00:00Z"),
+        }
+        for interval, (at, crash_at) in cases.items():
+            with self.subTest(interval):
+                self.tick(T0, scripted(OPEN_BTC), contestant=interval)
+                bars = [bar("BTC", "2026-10-20T00:00:00Z", 80000, l=76000),  # 1m bar the Engine must not see
+                        bar("BTC", crash_at, 80000, l=76000, i=interval)]
+
+                self.tick(at, HOLD, market(bars), contestant=interval)
+
+                liq = next(e for e in self.events(interval) if e["type"] == "liquidation")
+                self.assertEqual((liq["t"], liq["resolution"]), (crash_at, interval))
+
+    def test_settles_recorded_live_hyperliquid_data(self):
+        """Guards the in-memory fakes above: real candle/funding shapes and time filters (recorded 2026-10-18)."""
+        live = replay(Path(__file__).parent / "fixtures" / "live_btc")
+        self.tick("2026-10-18T08:07:00Z", scripted(OPEN_BTC), live)
+
+        state = self.tick("2026-10-18T11:07:00Z", HOLD, live)
+
+        funding = [e for e in self.events() if e["type"] == "funding"]
+        self.assertEqual([e["t"] for e in funding], ["2026-10-18T09:00:00Z", "2026-10-18T10:00:00Z", "2026-10-18T11:00:00Z"])
+        self.assertEqual([e["rate"] for e in funding], [8.817e-07, 1.4945e-06, 2.6977e-06])
+        self.assertTrue(all(e["amount"] < 0 and e["resolution"] == "1m" for e in funding))
+        self.assertEqual(state["layers"][0]["symbol"], "BTC")
+
     def test_recorded_market_replays_to_identical_state(self):
         recorded = Path(tempfile.mkdtemp())
-        self.tick(T0, scripted(OPEN_BTC), market=recording(replay(FIXTURES), recorded), contestant="live")
-        self.tick(T0, scripted(OPEN_BTC), market=replay(recorded), contestant="replayed")
+        self.tick(T0, scripted(OPEN_BTC), source=recording(replay(FIXTURES), recorded), contestant="live")
+        self.tick(T0, scripted(OPEN_BTC), source=replay(recorded), contestant="replayed")
 
         for f in ("state.json", "events.jsonl"):
             self.assertEqual((self.data / "replayed" / f).read_bytes(), (self.data / "live" / f).read_bytes())

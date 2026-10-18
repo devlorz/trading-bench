@@ -15,5 +15,6 @@ There is no always-on server: a public GitHub repository runs an hourly workflow
 ## Consequences
 
 - Dashboard and settlement lag reality by up to one hour plus cron delay.
-- A missed Tick is skipped, never replayed for decisions; the next Tick settles the whole gap from 1m candles.
+- A missed Tick is skipped, never replayed for decisions; the next Tick settles the whole gap from 1m candles. Hyperliquid serves only the latest 5,000 bars per interval, so a gap longer than ~3.5 days settles on 15m bars (up to ~52 days) and beyond that on 1h; every settled event records the `resolution` used. A coarse bar straddling the previous Tick counts in full, so it can settle a liquidation or TP from prices before the gap began.
+- A funding hour that no candle reached (feed lag at :07) still settles at the Tick, priced at the last known close, so funding is never dropped.
 - Raw model prompts are too large to commit hourly; they go to workflow artifacts (90-day retention) while responses and market snapshot ids live in the repo.

@@ -6,14 +6,14 @@
 
 **Blocked by:** 01 (รัน Tick เดียวแล้วเปิด Layer ได้)
 
-**Status:** ready-for-agent
+**Status:** in-review
 
-- [ ] Tick ที่ห่างจาก Tick ก่อน 3 ชั่วโมง settle funding 3 ครั้งด้วย rate จริงของแต่ละชั่วโมงจาก funding history
-- [ ] TP fill กลางชั่วโมงบันทึก timestamp ของแท่ง 1m นั้น คิด maker fee 0.015% และ Slot ว่างก่อน Executor ตัดสินใจ
-- [ ] Layer ถูก liquidate เมื่อแท่ง 1m ทำให้ layer equity ≤ maintenance รวมกรณีที่ funding สะสมเป็นตัวดันให้ถึง collateral ที่เหลือ = 0
-- [ ] แท่งเดียวกันเข้าทั้ง TP และ liquidation → liquidation ชนะ
-- [ ] `close` คืน collateral ± PnL − fee เข้า free equity; `set_tp` แทนที่ TP เดิม; `cancel_tp` ลบ; TP ฝั่งผิดของ entry ถูกปฏิเสธ
-- [ ] หลัง liquidate 1 กอง เปิด Slot นั้นใหม่ไม่ได้จน free equity ≥ collateral แล้วเปิดได้
-- [ ] Executor เห็น event ที่ settle ไปตั้งแต่ Tick ก่อนใน input ของ Tick นี้
-- [ ] ช่วงที่หายเกินขีดจำกัด 1m ใช้ 15m/1H และ event บันทึกว่าใช้ความละเอียดใด
-- [ ] test ผ่าน seam เดียวกับ 01 ครอบทุกข้อ ไม่เรียก network
+- [x] Tick ที่ห่างจาก Tick ก่อน 3 ชั่วโมง settle funding 3 ครั้งด้วย rate จริงของแต่ละชั่วโมงจาก funding history
+- [x] TP fill กลางชั่วโมงบันทึก timestamp ของแท่ง 1m นั้น คิด maker fee 0.015% และ Slot ว่างก่อน Executor ตัดสินใจ
+- [x] Layer ถูก liquidate เมื่อแท่ง 1m ทำให้ layer equity ≤ maintenance รวมกรณีที่ funding สะสมเป็นตัวดันให้ถึง collateral ที่เหลือ = 0
+- [x] แท่งเดียวกันเข้าทั้ง TP และ liquidation → liquidation ชนะ
+- [x] `close` คืน collateral ± PnL − fee เข้า free equity; `set_tp` แทนที่ TP เดิม; `cancel_tp` ลบ; TP ฝั่งผิดของ entry ถูกปฏิเสธ
+- [x] หลัง liquidate 1 กอง เปิด Slot นั้นใหม่ไม่ได้จน free equity ≥ collateral แล้วเปิดได้
+- [x] Executor เห็น event ที่ settle ไปตั้งแต่ Tick ก่อนใน input ของ Tick นี้
+- [x] ช่วงที่หายเกินขีดจำกัด 1m ใช้ 15m/1H และ event บันทึกว่าใช้ความละเอียดใด
+- [x] test ผ่าน seam เดียวกับ 01 ครอบทุกข้อ ไม่เรียก network
