@@ -4,10 +4,10 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] อ้างอิงเฉพาะสิ่งที่อยู่ในเอกสาร TSM Principle 4 หรือใน spec ไม่เพิ่มกฎใหม่ (ไม่มี TP บังคับ ไม่มี timeframe ไม่มี daily loss limit)
-- [ ] ระบุชุด Action ทั้ง 5 และเงื่อนไขที่แต่ละอันจะถูกปฏิเสธ ตรงกับ Hard Rule ใน spec ทุกข้อ
-- [ ] อธิบายว่าไม่มี stop order และ Layer ตายเมื่อ collateral หมด พร้อมผลของ funding ต่อ liq price
-- [ ] มีบรรทัด version ที่ด้านบนไฟล์
-- [ ] ผู้ใช้ review แล้วยอมรับว่าตีความเอกสารถูก
+- [x] อ้างอิงเฉพาะสิ่งที่อยู่ในเอกสาร TSM Principle 4 หรือใน spec ไม่เพิ่มกฎใหม่ (ไม่มี TP บังคับ ไม่มี timeframe ไม่มี daily loss limit)
+- [x] ระบุชุด Action ทั้ง 5 และเงื่อนไขที่แต่ละอันจะถูกปฏิเสธ ตรงกับ Hard Rule ใน spec ทุกข้อ
+- [x] อธิบายว่าไม่มี stop order และ Layer ตายเมื่อ collateral หมด พร้อมผลของ funding ต่อ liq price
+- [x] มีบรรทัด version ที่ด้านบนไฟล์
+- [x] ผู้ใช้ review แล้วยอมรับว่าตีความเอกสารถูก
