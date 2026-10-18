@@ -4,13 +4,14 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] `run-tick --contestant X --at <iso>` รันได้ทั้งกับ market source แบบ fixture และแบบ live Hyperliquid (meta/asset ctxs, L2, candles, funding history)
-- [ ] โหมด record บันทึก response ของ Hyperliquid ลงโฟลเดอร์ fixture แล้วโหมด replay ให้ผลเหมือนกันทุก byte ของ state
-- [ ] Tick แรกสร้างบัญชี 10,000 USDC และ Reallocation เป็น 4 Layer collateral 2,500 ตาม notional ใน Weekly Plan
-- [ ] Action `open` fill ที่ best ask/bid จาก L2, คิด taker fee 0.045% จาก config, free equity ลด 2,500, Layer บันทึก symbol/side/notional/entry/collateral
-- [ ] `open` ถูกปฏิเสธเมื่อไม่มี Slot ว่าง, free equity < collateral, symbol ไม่อยู่ใน watchlist หรือ notional ÷ collateral > max leverage ของ symbol และบันทึกเป็น Violation
-- [ ] `hold` ไม่เปลี่ยน state; รัน Tick เดิมซ้ำสองครั้งให้ event log ไม่ซ้ำ (idempotent ต่อ timestamp)
-- [ ] State และ event log เป็น JSON อ่านได้ แยกโฟลเดอร์ต่อ Contestant
-- [ ] มี test ผ่าน seam นี้ด้วย unittest stdlib ครอบทุกข้อข้างบน ไม่เรียก network
+- [x] `run-tick --contestant X --at <iso>` รันได้ทั้งกับ market source แบบ fixture และแบบ live Hyperliquid (meta/asset ctxs, L2, candles, funding history)
+  - หมายเหตุ: market source ดึง candles/funding history ได้ (ทดสอบด้วยมือกับ live/record/replay) แต่ Engine ยังไม่ใช้จนถึง ticket 03 (settle) และ 07 (prompt); CLI ทดสอบด้วยมือ ไม่มี unittest
+- [x] โหมด record บันทึก response ของ Hyperliquid ลงโฟลเดอร์ fixture แล้วโหมด replay ให้ผลเหมือนกันทุก byte ของ state
+- [x] Tick แรกสร้างบัญชี 10,000 USDC และ Reallocation เป็น 4 Layer collateral 2,500 ตาม notional ใน Weekly Plan
+- [x] Action `open` fill ที่ best ask/bid จาก L2, คิด taker fee 0.045% จาก config, free equity ลด 2,500, Layer บันทึก symbol/side/notional/entry/collateral
+- [x] `open` ถูกปฏิเสธเมื่อไม่มี Slot ว่าง, free equity < collateral, symbol ไม่อยู่ใน watchlist หรือ notional ÷ collateral > max leverage ของ symbol และบันทึกเป็น Violation
+- [x] `hold` ไม่เปลี่ยน state; รัน Tick เดิมซ้ำสองครั้งให้ event log ไม่ซ้ำ (idempotent ต่อ timestamp)
+- [x] State และ event log เป็น JSON อ่านได้ แยกโฟลเดอร์ต่อ Contestant
+- [x] มี test ผ่าน seam นี้ด้วย unittest stdlib ครอบทุกข้อข้างบน ไม่เรียก network

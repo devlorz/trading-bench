@@ -96,7 +96,7 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 - มี 4 Layer เสมอ Layer คือบัญชีย่อยที่ถือ collateral คงที่และ position ได้หนึ่งตัว
 - RP = { collateral ต่อ Layer, notional ต่อ position } collateral ถูกกำหนดเป็น equity ÷ 4 ณ Reallocation notional มาจาก Weekly Plan ทั้งสองค่าเท่ากันทุก Layer และคงที่จนกว่าจะ Reallocation ครั้งถัดไป
 - Reallocation เกิดเฉพาะที่ขอบ Week และเฉพาะเมื่อไม่มี Layer ใดถือ position ถ้ามีกองค้าง RP เดิมใช้ต่อทั้งสัปดาห์ และ notional ในแผนใหม่ถูกบันทึกว่า "ไม่ถูกใช้" (ไม่ใช่ Violation) Week แรกทุก Layer ว่างเสมอจึง Reallocation แน่
-- Open Layer ได้เมื่อมี Slot ว่าง และ free equity ≥ collateral Engine ล็อก collateral เต็มจำนวนเข้า Layer ไม่มีกองที่ทุนไม่เต็ม
+- Open Layer ได้เมื่อมี Slot ว่าง และ free equity ≥ collateral Engine ล็อก collateral เต็มจำนวนเข้า Layer ตอนเปิด จากนั้น fee และ funding ของ position หักจาก collateral นั้น
 - Close Layer (โดย Executor, TP หรือ liquidation) ปล่อย collateral ± PnL สุทธิกลับ free equity Slot ว่าง ส่วนที่เกินทุนเดิมใน free equity คือ Hostage ซึ่งใช้เปิด Slot ที่เสียไปใหม่ได้เมื่อสะสมถึง collateral
 - Equity ของ Contestant = free equity + Σ (collateral + unrealized PnL ของทุก Layer ที่เปิด) นี่คือค่าที่ใช้ทั้ง Net Return และ Elimination
 - ห้ามถือ long และ short สินค้าเดียวกันพร้อมกันในบัญชีเดียว (คนละ Layer ก็ไม่ได้) ซ้อนสินค้าเดียวทิศเดียวในหลาย Layer ได้

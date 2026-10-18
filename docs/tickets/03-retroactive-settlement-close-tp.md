@@ -2,6 +2,8 @@
 
 **What to build:** เมื่อ `run-tick` รัน ณ เวลาใด Engine ต้อง settle ทุกอย่างที่เกิดตั้งแต่ Tick ก่อนหน้าโดยไล่แท่ง 1m ตามเวลา: funding ทุกชั่วโมงเต็มหักจาก collateral ของ Layer ที่ถือ, TP fill ด้วย maker fee ที่ราคา TP เมื่อแท่งแตะ, liquidation ทั้งกองเมื่อ layer equity ≤ maintenance (notional ÷ (2 × max leverage)) โดยใช้ high/low ของแท่งเป็น mark ที่เลวร้ายสุด และ liquidation ชนะ TP ในแท่งเดียวกัน ทุก event มี timestamp ของแท่ง จากนั้น Executor สั่ง `close` (market, taker fee), `set_tp`, `cancel_tp` ได้ การปิดกองคืน collateral ± PnL เข้า free equity ส่วนเกินทุนเดิมคือ Hostage และเปิด Slot ที่ถูก liquidate ใหม่ได้เมื่อ free equity ≥ collateral ถ้าช่วงที่หายยาวกว่าที่ 1m ดึงได้ ถอยไป 15m แล้ว 1H และบันทึกความละเอียดที่ใช้
 
+**Note (ผลจาก fee ตอน open หักจาก collateral ของ Layer, ดู spec "โมเดล Layer"):** liquidation threshold ของกองเริ่มจาก collateral หลังหัก fee (เช่น 2,500 − 4.5 = 2,495.5) ไม่ใช่ 2,500; Hostage ตอนปิดกองคือส่วนที่เกิน collateral ใน RP (2,500) ไม่ใช่เกิน 2,495.5
+
 **Blocked by:** 01 (รัน Tick เดียวแล้วเปิด Layer ได้)
 
 **Status:** ready-for-agent
