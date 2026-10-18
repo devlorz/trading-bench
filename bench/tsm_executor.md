@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 # กฎ TSM Principle 4 (Hostage Hunt)
 
@@ -16,6 +16,8 @@ version: 1
 ## 2. ชุด Action และ Hard Rule (Violation)
 
 Action ประมวลผลตามลำดับ รายการที่ผิดกฎถูกปฏิเสธเป็น **Violation** (รายการอื่นทำงานต่อ) และแจ้งรหัสใน **Tick ถัดไป** คำสั่งนอกเหนือจาก 5 Action นี้ (หรือยังไม่เปิดใช้) ถูกปฏิเสธด้วย `unsupported_action`:
+
+- Action ที่ field หายหรือผิดชนิด (เช่น `slot` ไม่ใช่จำนวนเต็ม, `side` ไม่ใช่ `"long"`/`"short"`, `set_tp` ไม่มี `price`) ถูกปฏิเสธด้วย `invalid_action`
 
 - `slot` นอกช่วง `0..3` ถูกปฏิเสธด้วย `slot_out_of_range`
 - **`open(slot, symbol, side)`** (`"long"` | `"short"`, market fill ตาม RP) ถูกปฏิเสธเมื่อ:

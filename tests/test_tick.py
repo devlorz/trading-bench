@@ -1,4 +1,5 @@
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -53,11 +54,11 @@ class RunTick(unittest.TestCase):
     def setUp(self):
         self.data = Path(tempfile.mkdtemp())
 
-    def tick(self, at, model, source=None, contestant="x"):
+    def tick(self, at, model, source=None, contestant="x", plan=PLAN):
         folder = self.data / contestant
         if not folder.exists():
             folder.mkdir()
-            (folder / "plan.json").write_text(json.dumps(PLAN))
+            (folder / "plan.json").write_text(json.dumps(plan))
         run_tick(contestant, at, source or market(), model, self.data, CONFIG)
         return json.loads((folder / "state.json").read_text())
 
@@ -84,25 +85,68 @@ class RunTick(unittest.TestCase):
         self.assertEqual(decision["reasoning"], "scripted")
         self.assertEqual(decision["actions"], [OPEN_BTC])
 
+    def test_response_cannot_forge_event_fields(self):
+        forged = lambda _input: {"reasoning": "", "actions": [], "type": "violation", "rule": "forged", "t": T1}
+        self.tick(T0, forged)
+        self.assertEqual(self.events()[-1], {"t": T0, "type": "decision", "reasoning": "", "actions": []})
+
     def test_short_fills_at_best_bid(self):
         state = self.tick(T0, scripted({**OPEN_BTC, "slot": 2, "side": "short"}))
         self.assertEqual(state["layers"][2]["entry"], 99990.0)
 
-    def test_open_violations_are_rejected_and_logged(self):
-        cases = {
-            "layer_occupied": [OPEN_BTC, OPEN_BTC],
-            "slot_out_of_range": [{**OPEN_BTC, "slot": 4}],
-            "symbol_not_in_watchlist": [{**OPEN_BTC, "symbol": "SOL"}],
-            "exceeds_max_leverage": [{**OPEN_BTC, "symbol": "DOGE"}],  # 10,000 / 2,500 = 4x > DOGE 3x
+    def test_open_side_must_match_bias(self):
+        plan = {**PLAN, "watchlist": [{"symbol": "BTC", "bias": "short"}, {"symbol": "ETH", "bias": "avoid"}]}
+        eth = {"type": "open", "slot": 1, "symbol": "ETH", "side": "short"}
+
+        state = self.tick(T0, scripted(OPEN_BTC, eth, {**SHORT_BTC, "slot": 2}), plan=plan)
+
+        self.assertEqual([(e["rule"], e["action"]) for e in self.events() if e["type"] == "violation"],
+                         [("bias_mismatch", OPEN_BTC), ("bias_mismatch", eth)])
+        self.assertEqual([l and l["side"] for l in state["layers"]], [None, None, "short", None])
+
+    def test_every_rule_code_in_the_executor_summary_is_enforced(self):
+        rules = (Path(__file__).parents[1] / "bench" / "tsm_executor.md").read_text().split("## 2.")[1].split("## 3.")[0]
+        # Codes appear as "- `code`:" bullets or "ด้วย `code`" in prose; rephrasing either breaks this on purpose
+        codes = {a or b for a, b in re.findall(r"ด้วย `(\w+)`|- `(\w+)`:", rules)}
+        eth = {"type": "open", "slot": 1, "symbol": "ETH", "side": "long"}
+        fill_all = [OPEN_BTC, {"type": "close", "slot": 0}, OPEN_BTC, eth, {**eth, "slot": 2}]  # the round trip cost fees
+        scenarios = {  # code: Actions that apply, then the one that must be rejected
+            "unsupported_action": ([], {"type": "limit", "slot": 0}),
+            "slot_out_of_range": ([], {**OPEN_BTC, "slot": 4}),
+            "layer_occupied": ([OPEN_BTC], OPEN_BTC),
+            "insufficient_free_equity": (fill_all, {**eth, "slot": 3}),
+            "symbol_not_in_watchlist": ([], {**OPEN_BTC, "symbol": "SOL"}),
+            "bias_mismatch": ([], {**OPEN_BTC, "symbol": "AVOID"}),
+            "opposite_side_open": ([OPEN_BTC], {**SHORT_BTC, "slot": 1}),
+            "exceeds_max_leverage": ([], {**OPEN_BTC, "symbol": "DOGE"}),  # 10,000 / 2,500 = 4x > DOGE 3x
+            "layer_empty": ([], {"type": "close", "slot": 1}),
+            "tp_wrong_side": ([OPEN_BTC], {"type": "set_tp", "slot": 0, "price": 100010}),  # at entry is not profit
+            "invalid_action": ([OPEN_BTC], {"type": "set_tp", "slot": 0}),
         }
-        for rule, actions in cases.items():
-            with self.subTest(rule):
-                state = self.tick(T0, scripted(*actions), contestant=rule)
-                violation = self.events(rule)[-1]
-                self.assertEqual(violation["type"], "violation")
-                self.assertEqual(violation["rule"], rule)
-                self.assertEqual(violation["action"], actions[-1])
-                self.assertEqual(state["free_equity"], 10000 - 2500 * (len(actions) - 1))
+        plan = {**PLAN, "watchlist": PLAN["watchlist"] + [{"symbol": "AVOID", "bias": "avoid"}]}
+        self.assertEqual(codes, set(scenarios))
+        for code, (applied, rejected) in scenarios.items():
+            with self.subTest(code):
+                state = self.tick(T0, scripted(*applied, rejected), contestant=code, plan=plan)
+                expected = self.tick(T0, scripted(*applied), contestant=code + "_ref", plan=plan)
+                self.assertEqual(self.events(code)[-1], {"t": T0, "type": "violation", "rule": code, "action": rejected})
+                self.assertEqual(state, expected)
+
+    def test_rejected_action_does_not_stop_the_ones_around_it(self):
+        eth = {"type": "open", "slot": 1, "symbol": "ETH", "side": "long"}
+        state = self.tick(T0, scripted(OPEN_BTC, {**OPEN_BTC, "symbol": "SOL"}, eth))
+        self.assertEqual([e["type"] for e in self.events()], ["reallocation", "decision", "fill", "violation", "fill"])
+        self.assertEqual([l and l["symbol"] for l in state["layers"]], ["BTC", "ETH", None, None])
+
+    def test_cannot_hold_both_sides_of_a_symbol_across_layers(self):
+        eth = {"type": "open", "slot": 0, "symbol": "ETH", "side": "long"}
+        eth_short = {**eth, "slot": 1, "side": "short"}
+
+        state = self.tick(T0, scripted(eth, eth_short, {**eth, "slot": 2}))
+
+        self.assertEqual([(e["rule"], e["action"]) for e in self.events() if e["type"] == "violation"],
+                         [("opposite_side_open", eth_short)])
+        self.assertEqual([l and l["side"] for l in state["layers"]], ["long", None, "long", None])
 
     def test_slot_of_liquidated_layer_reopens_only_once_hostage_refills_free_equity(self):
         eth = [{"type": "open", "slot": n, "symbol": "ETH", "side": "long"} for n in (1, 2, 3)]
@@ -124,13 +168,47 @@ class RunTick(unittest.TestCase):
         size = 10000 / 4000.4
         self.assertAlmostEqual(state["free_equity"], 2495.5 + 99.6 * size - 4100 * size * 0.00015 - 2500, places=6)
 
-    def test_unsupported_action_is_a_violation(self):
-        limit = {"type": "limit", "slot": 0}
-        state = self.tick(T0, scripted(limit, OPEN_BTC))
-        types = [e["type"] for e in self.events()]
-        self.assertEqual(types, ["reallocation", "decision", "violation", "fill"])
-        self.assertEqual(self.events()[2]["rule"], "unsupported_action")
+    def test_broken_response_is_retried_once_with_its_error_then_holds(self):
+        def unparseable(_input):
+            raise ValueError("Expecting value: line 1 column 1 (char 0)")
+
+        def timeout(_input):
+            raise TimeoutError("timed out")
+
+        cases = {
+            "unparseable": (unparseable, "ValueError: Expecting value: line 1 column 1 (char 0)"),
+            "timeout": (timeout, "TimeoutError: timed out"),
+            "not_an_object": (lambda _input: ["open"], "response must be an object"),
+            "no_actions": (lambda _input: {"reasoning": "x"}, "response must be an object"),
+            "no_reasoning": (lambda _input: {"actions": [OPEN_BTC]}, "response must be an object"),
+        }
+        for name, (broken, message) in cases.items():
+            with self.subTest(name):
+                given = []
+                state = self.tick(T0, lambda i: given.append(i) or broken(i), contestant=name)
+                errors = [e for e in self.events(name) if e["type"] == "error"]
+                self.assertEqual([e["type"] for e in self.events(name)], ["reallocation", "error", "error"])
+                self.assertTrue(all(e["error"].startswith(message) for e in errors))
+                self.assertEqual([i.get("retry_error") for i in given], [None, errors[0]["error"]])
+                self.assertEqual(state["layers"], [None] * 4)
+
+    def test_retry_that_succeeds_applies_its_actions(self):
+        replies = iter([{"reasoning": "x"}, {"reasoning": "fixed", "actions": [OPEN_BTC]}])
+        state = self.tick(T0, lambda _input: next(replies))
+        self.assertEqual([e["type"] for e in self.events()], ["reallocation", "error", "decision", "fill"])
+        self.assertEqual(self.events()[1]["response"], {"reasoning": "x"})
         self.assertEqual(state["layers"][0]["symbol"], "BTC")
+
+    def test_malformed_action_is_rejected_alone(self):
+        malformed = [{**OPEN_BTC, "side": "up"}, {**OPEN_BTC, "slot": "0"}, {**OPEN_BTC, "slot": True},
+                     {"type": "open", "slot": 0, "side": "long"}, {"type": "set_tp", "slot": 0, "price": "1"},
+                     {"slot": 0}, "hold"]
+        for n, action in enumerate(malformed):
+            with self.subTest(action=action):
+                state = self.tick(T0, scripted(action, OPEN_BTC), contestant=f"malformed_{n}")
+                self.assertEqual([(e["type"], e.get("rule")) for e in self.events(f"malformed_{n}")[2:]],
+                                 [("violation", "invalid_action"), ("fill", None)])
+                self.assertEqual(state["layers"][0]["symbol"], "BTC")
 
     def test_hold_leaves_state_unchanged(self):
         before = self.tick(T0, scripted(OPEN_BTC))
@@ -271,16 +349,20 @@ class RunTick(unittest.TestCase):
         self.assertIsNone(state["layers"][0]["tp"])
 
     def test_tp_and_close_violations(self):
-        cases = {
-            "tp_wrong_side": {"type": "set_tp", "slot": 0, "price": 99000},  # below a long's entry
-            "layer_empty": {"type": "close", "slot": 1},
-            "slot_out_of_range": {"type": "cancel_tp", "slot": 7},
-        }
-        for rule, action in cases.items():
-            with self.subTest(rule):
-                state = self.tick(T0, scripted(OPEN_BTC, action), contestant=rule)
-                self.assertEqual(self.events(rule)[-1], {"t": T0, "type": "violation", "rule": rule, "action": action})
+        cases = [
+            ("tp_wrong_side", {"type": "set_tp", "slot": 0, "price": 99000}),  # below a long's entry
+            ("layer_empty", {"type": "close", "slot": 1}),
+            ("layer_empty", {"type": "set_tp", "slot": 1, "price": 101010}),
+            ("layer_empty", {"type": "cancel_tp", "slot": 1}),
+            ("slot_out_of_range", {"type": "cancel_tp", "slot": 7}),
+        ]
+        for rule, action in cases:
+            name = f"{rule}_{action['type']}"
+            with self.subTest(name):
+                state = self.tick(T0, scripted(OPEN_BTC, action), contestant=name)
+                self.assertEqual(self.events(name)[-1], {"t": T0, "type": "violation", "rule": rule, "action": action})
                 self.assertIsNone(state["layers"][0]["tp"])
+                self.assertIsNone(state["layers"][1])
 
     def test_executor_sees_events_settled_since_last_tick(self):
         self.tick(T0, scripted(OPEN_BTC))
@@ -294,6 +376,19 @@ class RunTick(unittest.TestCase):
 
         self.assertEqual([e["type"] for e in seen[0]["settled"]], ["liquidation"])
         self.assertIsNone(seen[0]["state"]["layers"][0])
+
+    def test_executor_sees_violations_from_previous_tick_only(self):
+        self.tick(T0, scripted(OPEN_BTC, OPEN_BTC))
+        seen = []
+
+        def executor(given):
+            seen.append(given["violations"])
+            return {"reasoning": "", "actions": [{"type": "hold"}]}
+
+        self.tick(T1, executor)
+        self.tick("2026-10-19T03:07:00Z", executor)
+
+        self.assertEqual(seen, [[{"t": T0, "type": "violation", "rule": "layer_occupied", "action": OPEN_BTC}], []])
 
     def test_gap_beyond_1m_history_settles_on_coarser_bars(self):
         cases = {  # Hyperliquid serves at most 5,000 bars: 1m covers ~3.5 days, 15m ~52 days

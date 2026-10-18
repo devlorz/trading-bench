@@ -6,12 +6,12 @@
 
 **Status:** ready-for-agent
 
-- [ ] รายการ Action 3 รายการที่รายการกลางขัดกฎ → รายการ 1 และ 3 apply รายการ 2 เป็น Violation
-- [ ] เปิด ETH short ขณะมี Layer อื่นถือ ETH long → ปฏิเสธด้วยรหัส `opposite_side_open`; เปิด ETH long ซ้ำอีก Layer → ผ่าน
-- [ ] bias short แต่สั่ง long → ปฏิเสธด้วยรหัส `bias_mismatch`; bias both → ผ่านทั้งคู่; bias avoid → ปฏิเสธ (`bias_mismatch`)
-- [ ] รหัส Violation ทุกตัวตรงกับที่ระบุในไฟล์สรุปกฎ TSM สำหรับ Executor (ticket 02) คำต่อคำ
-- [ ] close/set_tp/cancel_tp บน Slot ว่าง → ปฏิเสธ
-- [ ] response ที่ parse ไม่ได้หรือไม่ตรง schema → บันทึก error, ถือ hold, ไม่นับ Violation
-- [ ] Violation ทุกรายการมีชื่อกฎ, Action ต้นฉบับ, timestamp และโผล่ใน input ของ Executor Tick ถัดไป
-- [ ] นับ Violation รวมต่อ Contestant ได้จาก event log
-- [ ] test ผ่าน seam เดียว ครอบทุกกฎ
+- [x] รายการ Action 3 รายการที่รายการกลางขัดกฎ → รายการ 1 และ 3 apply รายการ 2 เป็น Violation
+- [x] เปิด ETH short ขณะมี Layer อื่นถือ ETH long → ปฏิเสธด้วยรหัส `opposite_side_open`; เปิด ETH long ซ้ำอีก Layer → ผ่าน
+- [x] bias short แต่สั่ง long → ปฏิเสธด้วยรหัส `bias_mismatch`; bias both → ผ่านทั้งคู่; bias avoid → ปฏิเสธ (`bias_mismatch`)
+- [x] รหัส Violation ทุกตัวตรงกับที่ระบุในไฟล์สรุปกฎ TSM สำหรับ Executor (ticket 02) คำต่อคำ
+- [x] close/set_tp/cancel_tp บน Slot ว่าง → ปฏิเสธ
+- [x] response ที่ parse ไม่ได้หรือไม่ตรง schema → บันทึก error, ถือ hold, ไม่นับ Violation
+- [x] Violation ทุกรายการมีชื่อกฎ, Action ต้นฉบับ, timestamp และโผล่ใน input ของ Executor Tick ถัดไป
+- [x] นับ Violation รวมต่อ Contestant ได้จาก event log
+- [x] test ผ่าน seam เดียว ครอบทุกกฎ

@@ -7,6 +7,7 @@ HOUR = 3_600_000
 BAR_MS = {"1m": 60_000, "15m": 900_000, "1h": HOUR}
 MAX_BARS = 5000  # Hyperliquid candleSnapshot serves only the most recent 5,000 bars per interval
 SIGN = {"long": 1, "short": -1}
+ACTIONS = ("open", "close", "set_tp", "cancel_tp")  # plus hold, which needs no checks
 
 
 def run_tick(contestant, at, market, model, data_dir, config):
@@ -29,13 +30,20 @@ def run_tick(contestant, at, market, model, data_dir, config):
         events.append({"t": at, "type": "reallocation", "rp": state["rp"]})
 
     max_leverage = {a["name"]: a["maxLeverage"] for a in market({"type": "metaAndAssetCtxs"})[0]["universe"]}
-    settled = settle(state, state["last_tick"], at, market, config, max_leverage) if "last_tick" in state else []
+    settled, violations = [], []
+    if "last_tick" in state:
+        settled = settle(state, state["last_tick"], at, market, config, max_leverage)
+        # ponytail: rescans the whole append-only log each Tick (~2k Ticks over 12 weeks); keep a cursor if it grows
+        with open(folder / "events.jsonl") as log:
+            violations = [e for e in map(json.loads, log) if e["type"] == "violation" and e["t"] == state["last_tick"]]
     events.extend(settled)
-    response = model({"at": at, "plan": plan, "state": state, "settled": settled})
-    events.append({"t": at, "type": "decision", **response})
-    for action in response["actions"]:
-        if action["type"] == "hold":
-            continue
+    request = {"at": at, "plan": plan, "state": state, "settled": settled, "violations": violations}
+    response = ask(model, request, schema_error, 1, at, events)
+    actions = []  # spec: a response still broken after the retry holds the whole Tick and is not a Violation
+    if response is not None:
+        events.append({"t": at, "type": "decision", "reasoning": response["reasoning"], "actions": response["actions"]})
+        actions = response["actions"]
+    for action in actions:
         rule = broken_rule(state, plan, max_leverage, action)
         if rule:
             events.append({"t": at, "type": "violation", "rule": rule, "action": action})
@@ -58,9 +66,43 @@ def run_tick(contestant, at, market, model, data_dir, config):
     return True
 
 
+def ask(model, request, check, retries, at, events):
+    """Call the model, re-asking with the previous error attached; every failed attempt is an error event."""
+    for _ in range(retries + 1):
+        try:
+            response = model(request)
+            error = check(response)
+        except Exception as e:  # any failed model call (network, unparseable reply) counts as a broken response
+            response, error = None, f"{type(e).__name__}: {e}"
+        if not error:
+            return response
+        events.append({"t": at, "type": "error", "error": error, "response": response})
+        request = {**request, "retry_error": error}
+    return None
+
+
+def schema_error(response):
+    """Response shape only; each Action's own shape is a per-item Violation in broken_rule."""
+    if not (isinstance(response, dict) and isinstance(response.get("reasoning"), str)
+            and isinstance(response.get("actions"), list)):
+        return "response must be an object with reasoning (string) and actions (list)"
+    return None
+
+
 def broken_rule(state, plan, max_leverage, action):
-    if action["type"] not in ("open", "close", "set_tp", "cancel_tp"):
+    if not (isinstance(action, dict) and isinstance(action.get("type"), str)):
+        return "invalid_action"
+    if action["type"] == "hold":
+        return None
+    if action["type"] not in ACTIONS:
         return "unsupported_action"
+    # type() rather than isinstance(): JSON true/false would pass as int
+    if type(action.get("slot")) is not int:
+        return "invalid_action"
+    if action["type"] == "open" and not (isinstance(action.get("symbol"), str) and action.get("side") in SIGN):
+        return "invalid_action"
+    if action["type"] == "set_tp" and type(action.get("price")) not in (int, float):
+        return "invalid_action"
     rp, slot = state["rp"], action["slot"]
     if not 0 <= slot < LAYERS:
         return "slot_out_of_range"
@@ -76,8 +118,14 @@ def broken_rule(state, plan, max_leverage, action):
         return "layer_occupied"
     if state["free_equity"] < rp["collateral"]:
         return "insufficient_free_equity"
-    if symbol not in {w["symbol"] for w in plan["watchlist"]}:
+    bias_of = {w["symbol"]: w["bias"] for w in plan["watchlist"]}
+    if symbol not in bias_of:
         return "symbol_not_in_watchlist"
+    if bias_of[symbol] not in ("both", action["side"]):
+        return "bias_mismatch"
+    if any(l and l["symbol"] == symbol and l["side"] != action["side"] for l in state["layers"]):
+        return "opposite_side_open"
+    # ponytail: KeyError if a watchlist symbol is not on Hyperliquid; ticket 05 validates plan symbols exist
     if rp["notional"] / rp["collateral"] > max_leverage[symbol]:
         return "exceeds_max_leverage"
     return None
