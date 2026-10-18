@@ -10,6 +10,7 @@ from bench.market import recording, replay
 FIXTURES = Path(__file__).parent / "fixtures" / "btc"
 CONFIG = {"initial_capital": 10000, "taker_fee": 0.00045, "maker_fee": 0.00015}
 PLAN = {
+    "week": "2026-10-19T00:07:00Z",
     "notional": 10000,
     "watchlist": [{"symbol": "BTC", "bias": "both"}, {"symbol": "DOGE", "bias": "both"}, {"symbol": "ETH", "bias": "both"}],
 }
@@ -59,16 +60,20 @@ class RunTick(unittest.TestCase):
         if not folder.exists():
             folder.mkdir()
             (folder / "plan.json").write_text(json.dumps(plan))
+            # ponytail: Given state written by hand so plans can break rules run_week would reject (DOGE 4x, AVOID).
+            # Tick-level checks like exceeds_max_leverage only fire live if max leverage drops mid-Week
+            rp = {"collateral": 2500, "notional": plan["notional"]}
+            given = {"free_equity": 10000, "rp": rp, "layers": [None] * 4, "settled": at}
+            (folder / "state.json").write_text(json.dumps(given))
         run_tick(contestant, at, source or market(), model, self.data, CONFIG)
         return json.loads((folder / "state.json").read_text())
 
     def events(self, contestant="x"):
         return [json.loads(l) for l in (self.data / contestant / "events.jsonl").read_text().splitlines()]
 
-    def test_first_tick_reallocates_and_opens_btc_long_at_best_ask(self):
+    def test_open_btc_long_fills_at_best_ask_and_locks_collateral(self):
         state = self.tick(T0, scripted(OPEN_BTC))
 
-        self.assertEqual(state["rp"], {"collateral": 2500, "notional": 10000})
         self.assertEqual(state["free_equity"], 7500)
         layer = state["layers"][0]
         self.assertEqual(layer["symbol"], "BTC")
@@ -77,18 +82,18 @@ class RunTick(unittest.TestCase):
         self.assertEqual(layer["entry"], 100010.0)
         self.assertAlmostEqual(layer["collateral"], 2500 - 4.5)  # taker fee 0.045% of 10,000
         self.assertEqual(state["layers"][1:], [None, None, None])
-        self.assertEqual([e["type"] for e in self.events()], ["reallocation", "decision", "fill"])
+        self.assertEqual([e["type"] for e in self.events()], ["decision", "fill"])
 
     def test_executor_response_is_logged(self):
         self.tick(T0, scripted(OPEN_BTC))
-        decision = self.events()[1]
+        decision = self.events()[0]
         self.assertEqual(decision["reasoning"], "scripted")
         self.assertEqual(decision["actions"], [OPEN_BTC])
 
     def test_response_cannot_forge_event_fields(self):
         forged = lambda _input: {"reasoning": "", "actions": [], "type": "violation", "rule": "forged", "t": T1}
         self.tick(T0, forged)
-        self.assertEqual(self.events()[-1], {"t": T0, "type": "decision", "reasoning": "", "actions": []})
+        self.assertEqual(self.events()[-1], {"t": T0, "type": "decision", "plan": PLAN["week"], "reasoning": "", "actions": []})
 
     def test_short_fills_at_best_bid(self):
         state = self.tick(T0, scripted({**OPEN_BTC, "slot": 2, "side": "short"}))
@@ -135,7 +140,7 @@ class RunTick(unittest.TestCase):
     def test_rejected_action_does_not_stop_the_ones_around_it(self):
         eth = {"type": "open", "slot": 1, "symbol": "ETH", "side": "long"}
         state = self.tick(T0, scripted(OPEN_BTC, {**OPEN_BTC, "symbol": "SOL"}, eth))
-        self.assertEqual([e["type"] for e in self.events()], ["reallocation", "decision", "fill", "violation", "fill"])
+        self.assertEqual([e["type"] for e in self.events()], ["decision", "fill", "violation", "fill"])
         self.assertEqual([l and l["symbol"] for l in state["layers"]], ["BTC", "ETH", None, None])
 
     def test_cannot_hold_both_sides_of_a_symbol_across_layers(self):
@@ -187,7 +192,7 @@ class RunTick(unittest.TestCase):
                 given = []
                 state = self.tick(T0, lambda i: given.append(i) or broken(i), contestant=name)
                 errors = [e for e in self.events(name) if e["type"] == "error"]
-                self.assertEqual([e["type"] for e in self.events(name)], ["reallocation", "error", "error"])
+                self.assertEqual([e["type"] for e in self.events(name)], ["error", "error"])
                 self.assertTrue(all(e["error"].startswith(message) for e in errors))
                 self.assertEqual([i.get("retry_error") for i in given], [None, errors[0]["error"]])
                 self.assertEqual(state["layers"], [None] * 4)
@@ -195,8 +200,8 @@ class RunTick(unittest.TestCase):
     def test_retry_that_succeeds_applies_its_actions(self):
         replies = iter([{"reasoning": "x"}, {"reasoning": "fixed", "actions": [OPEN_BTC]}])
         state = self.tick(T0, lambda _input: next(replies))
-        self.assertEqual([e["type"] for e in self.events()], ["reallocation", "error", "decision", "fill"])
-        self.assertEqual(self.events()[1]["response"], {"reasoning": "x"})
+        self.assertEqual([e["type"] for e in self.events()], ["error", "decision", "fill"])
+        self.assertEqual(self.events()[0]["response"], {"reasoning": "x"})
         self.assertEqual(state["layers"][0]["symbol"], "BTC")
 
     def test_malformed_action_is_rejected_alone(self):
@@ -206,15 +211,16 @@ class RunTick(unittest.TestCase):
         for n, action in enumerate(malformed):
             with self.subTest(action=action):
                 state = self.tick(T0, scripted(action, OPEN_BTC), contestant=f"malformed_{n}")
-                self.assertEqual([(e["type"], e.get("rule")) for e in self.events(f"malformed_{n}")[2:]],
+                self.assertEqual([(e["type"], e.get("rule")) for e in self.events(f"malformed_{n}")[1:]],
                                  [("violation", "invalid_action"), ("fill", None)])
                 self.assertEqual(state["layers"][0]["symbol"], "BTC")
 
     def test_hold_leaves_state_unchanged(self):
         before = self.tick(T0, scripted(OPEN_BTC))
         after = self.tick(T1, HOLD)
-        self.assertEqual({**after, "last_tick": None}, {**before, "last_tick": None})
-        self.assertEqual([e["type"] for e in self.events()], ["reallocation", "decision", "fill", "decision"])
+        clock = {"last_tick": None, "settled": None}
+        self.assertEqual({**after, **clock}, {**before, **clock})
+        self.assertEqual([e["type"] for e in self.events()], ["decision", "fill", "decision"])
 
     def test_rerunning_same_tick_is_idempotent(self):
         first = self.tick(T0, scripted(OPEN_BTC))

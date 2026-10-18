@@ -6,10 +6,10 @@
 
 **Status:** ready-for-agent
 
-- [ ] ทุก Layer ว่างที่ขอบ Week → collateral ใหม่ = equity ÷ 4 และ notional จากแผนใหม่ถูกใช้
-- [ ] มี Layer ค้างที่ขอบ Week → RP เดิมใช้ต่อ notional ใหม่ถูกบันทึกว่า "ไม่ถูกใช้" ไม่นับ Violation และ Strategist ได้รับแจ้งล่วงหน้าใน input ว่า Reallocation จะไม่เกิด
-- [ ] แผนที่ notional เกิน leverage ของ symbol ใด → error กลับ Strategist ที่ระบุ symbol และเพดาน → แผนที่แก้ในรอบ 2 ผ่าน
-- [ ] ล้ม 3 ครั้ง → ใช้แผนสัปดาห์ก่อนทั้งฉบับ; Week แรกล้ม 3 ครั้ง → Executor hold ทุก Tick ของสัปดาห์และมี Violation 1 รายการ
-- [ ] Strategist เลือก symbol นอก top 50 ที่มีบน Hyperliquid ได้
-- [ ] แผนทุกสัปดาห์ถูกเก็บถาวรพร้อม rationale และตรวจย้อนได้ว่า Tick ใดใช้แผนใด
-- [ ] test ผ่าน seam เดียว ด้วย Strategist ที่สคริปต์ไว้ ครอบทุกข้อ
+- [x] ทุก Layer ว่างที่ขอบ Week → collateral ใหม่ = equity ÷ 4 และ notional จากแผนใหม่ถูกใช้
+- [x] มี Layer ค้างที่ขอบ Week → RP เดิมใช้ต่อ notional ใหม่ถูกบันทึกว่า "ไม่ถูกใช้" ไม่นับ Violation และ Strategist ได้รับแจ้งล่วงหน้าใน input ว่า Reallocation จะไม่เกิด
+- [x] แผนที่ notional เกิน leverage ของ symbol ใด → error กลับ Strategist ที่ระบุ symbol และเพดาน → แผนที่แก้ในรอบ 2 ผ่าน
+- [x] ล้ม 3 ครั้ง → ใช้แผนสัปดาห์ก่อนทั้งฉบับ; Week แรกล้ม 3 ครั้ง → Executor hold ทุก Tick ของสัปดาห์และมี Violation 1 รายการ
+- [x] Strategist เลือก symbol นอก top 50 ที่มีบน Hyperliquid ได้
+- [x] แผนทุกสัปดาห์ถูกเก็บถาวรพร้อม rationale และตรวจย้อนได้ว่า Tick ใดใช้แผนใด
+- [x] test ผ่าน seam เดียว ด้วย Strategist ที่สคริปต์ไว้ ครอบทุกข้อ
