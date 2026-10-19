@@ -11,7 +11,7 @@ LLMs, especially the small Executor models, are unreliable at arithmetic over do
 
 - Candles (OHLCV), trimmed: Executor 4H × 30, 1H × 24, 15m × 16 per watchlist symbol; Strategist 1D × 30 and raw weekly × 26 per universe symbol. The Engine fetches ~200 bars per timeframe to warm the indicators up and sends only the tail.
 - Indicator Pack on every series except weekly, computed from closed bars only. Series values come as three points (now, 1 bar ago, 5 bars ago): EMA 20, EMA 50, RSI 14 (Wilder; a flat series reads 50), ATR 14 (Wilder, as price and as % of close), MACD 12/26/9 (line, signal, histogram). Swings are single points: the last confirmed fractal swing high and swing low (3 bars each side; price and bars ago) plus one `swing_position` value, above/below/between the two, null while either swing is missing.
-- Per symbol: % change over 24h and 7d (Strategist also 30d); VWAP anchored at 00:00 UTC today for the Executor and at Monday 00:00 UTC for the Strategist, from 15m bars with typical price (H+L+C)/3, with % distance of price from it and the number of bars accumulated.
+- Per symbol: % change over 24h and 7d (Strategist also 30d); VWAP from 15m bars with typical price (H+L+C)/3, with % distance of price from it and the number of bars accumulated: for the Executor anchored at 00:00 UTC today (null with 0 bars right after midnight); for the Strategist the VWAP of the Week that just ended, [previous Monday 00:00, this Monday 00:00), since the weekly run happens minutes after the boundary when the new Week has no closed bar yet.
 - Mark price, current and predicted funding rate, open interest, max leverage (unchanged).
 
 ## What is deliberately withheld
