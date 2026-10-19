@@ -6,11 +6,11 @@
 
 **Status:** ready-for-agent
 
-- [ ] ฟังก์ชัน pack(series) คืน dict ที่มี EMA20, EMA50, RSI14, ATR14 (abs และ pct), MACD (line/signal/hist), swing_high, swing_low แต่ละตัวเป็น 3 จุด (now, -1, -5) และ swing มี price, bars_ago, position (above/below/between)
-- [ ] นิยามมาตรฐาน: EMA seed ด้วย SMA, RSI และ ATR แบบ Wilder, MACD 12/26/9, fractal 3 แท่งซ้าย/ขวา ยืนยันแล้วเท่านั้น
-- [ ] ค่าทุกตัวตรงกับค่าอ้างอิงที่คำนวณครั้งเดียวจาก fixture คงที่ (เช่น ชุด 200 แท่ง BTC ที่บันทึกไว้) ภายใน tolerance 1e-6 สัมพัทธ์
-- [ ] series สั้นกว่าที่ indicator ต้องการ → ค่านั้นเป็น null ไม่ throw
-- [ ] pct_change(series, bars) และ vwap(series_15m, anchor_ms) คืนค่าถูกต้องบน fixture รวมกรณี anchor อยู่กลาง series และกรณีไม่มีแท่งหลัง anchor (คืน null + bars=0)
-- [ ] `INDICATOR_PACK_VERSION` มีค่าและทุกผลลัพธ์แนบ version นี้
-- [ ] market source ดึง candleSnapshot ได้ถึง 200 แท่งต่อ timeframe ต่อ symbol ใน call เดียว และ replay จาก fixture ได้
-- [ ] test ด้วย unittest stdlib ไม่เรียก network เป็น seam ที่สอง (pure math) ตามที่ spec อนุญาต
+- [x] ฟังก์ชัน pack(series) คืน dict ที่มี EMA20, EMA50, RSI14, ATR14 (abs และ pct), MACD (line/signal/hist) แต่ละตัวเป็น 3 จุด (now, -1, -5); swing_high และ swing_low เป็นจุดเดียวต่อฝั่ง (swing ล่าสุดที่ยืนยันแล้ว: price, bars_ago) พร้อม swing_position ค่าเดียว (above/below/between: close ล่าสุดเทียบ swing high และ swing low ล่าสุด) คำนวณจากแท่งที่ปิดแล้วเท่านั้น
+- [x] นิยามมาตรฐาน: EMA seed ด้วย SMA, RSI และ ATR แบบ Wilder, MACD 12/26/9, fractal 3 แท่งซ้าย/ขวา ยืนยันแล้วเท่านั้น
+- [x] ค่าทุกตัวตรงกับค่าอ้างอิงที่คำนวณครั้งเดียวจาก fixture คงที่ (เช่น ชุด 200 แท่ง BTC ที่บันทึกไว้) ภายใน tolerance 1e-6 สัมพัทธ์
+- [x] series สั้นกว่าที่ indicator ต้องการ → ค่านั้นเป็น null ไม่ throw
+- [x] pct_change(series, bars) และ vwap(series_15m, anchor_ms) คืนค่าถูกต้องบน fixture รวมกรณี anchor อยู่กลาง series และกรณีไม่มีแท่งหลัง anchor (คืน null + bars=0)
+- [x] `INDICATOR_PACK_VERSION` มีค่า และ pack() กับ vwap() แนบ version นี้ (pct_change คืนตัวเลขเดี่ยว ส่วน version ระดับ response บันทึกเป็น `indicator_pack_version` ใน ticket 07 ตาม spec)
+- [x] market source ดึง candleSnapshot ได้ถึง 200 แท่งต่อ timeframe ต่อ symbol ใน call เดียว และ replay จาก fixture ได้
+- [x] test ด้วย unittest stdlib ไม่เรียก network เป็น seam ที่สอง (pure math) ตามที่ spec อนุญาต

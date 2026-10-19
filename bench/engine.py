@@ -2,9 +2,11 @@ import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from bench.market import BAR_MS, bars_between
+
 LAYERS = 4
 HOUR = 3_600_000
-BAR_MS = {"1m": 60_000, "15m": 900_000, "1h": HOUR}
+SETTLE_INTERVALS = ("1m", "15m", "1h")  # finest that fits the gap wins
 MAX_BARS = 5000  # Hyperliquid candleSnapshot serves only the most recent 5,000 bars per interval
 SIGN = {"long": 1, "short": -1}
 ACTIONS = ("open", "close", "set_tp", "cancel_tp")  # plus hold, which needs no checks
@@ -391,21 +393,19 @@ def settle(state, since, at, market, config, max_leverage):
     # ponytail: one interval for the whole gap, sized from its length. A coarse bar straddling the last Tick counts
     # in full, so its high/low from before the Layer opened can liquidate or fill TP falsely. Upgrade: settle the
     # last ~3.5 days on 1m and only the older head on 15m/1h, clipping the first coarse bar with 1m.
-    interval = next(i for i, step in BAR_MS.items() if (end - start) / step <= MAX_BARS)
+    interval = next(i for i in SETTLE_INTERVALS if (end - start) / BAR_MS[i] <= MAX_BARS)
     first_bar = start - start % BAR_MS[interval]
     events = []
     for slot, layer in enumerate(state["layers"]):
         if layer is None:
             continue
         coin = layer["symbol"]
-        req = {"coin": coin, "interval": interval, "startTime": first_bar, "endTime": end}
-        candles = [c for c in market({"type": "candleSnapshot", "req": req}) if first_bar <= c["t"] < end]
         rates = market({"type": "fundingHistory", "coin": coin, "startTime": start, "endTime": end})
         hours = sorted((f["time"] // HOUR * HOUR, float(f["fundingRate"])) for f in rates)
         hours = [(h, r) for h, r in hours if start <= h < end]
         sign = SIGN[layer["side"]]
         margin = maintenance(layer, max_leverage)
-        bars = sorted(candles, key=lambda c: c["t"])
+        bars = bars_between(market, coin, interval, first_bar, end)
         last = bars[-1]["c"] if bars else layer["entry"]
         # Flat bar at the Tick: funding hours no bar reached (feed lag) still settle, at the last known price
         bars.append({"t": end, "o": last, "h": last, "l": last})
