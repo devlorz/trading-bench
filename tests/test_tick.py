@@ -4,11 +4,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from bench.engine import ms, run_tick
+from bench.engine import run_tick
 from bench.market import recording, replay
+from tests.helpers import FIXTURES, HOLD, OPEN_BTC, bar, market, rate, scripted, solo
 
-FIXTURES = Path(__file__).parent / "fixtures" / "btc"
-CONFIG = {"initial_capital": 10000, "taker_fee": 0.00045, "maker_fee": 0.00015}
 PLAN = {
     "week": "2026-10-19T00:07:00Z",
     "notional": 10000,
@@ -16,39 +15,7 @@ PLAN = {
 }
 T0 = "2026-10-19T01:07:00Z"
 T1 = "2026-10-19T02:07:00Z"
-OPEN_BTC = {"type": "open", "slot": 0, "symbol": "BTC", "side": "long"}
 SHORT_BTC = {**OPEN_BTC, "side": "short"}
-
-
-def scripted(*actions):
-    return lambda _input: {"reasoning": "scripted", "actions": list(actions)}
-
-
-HOLD = scripted({"type": "hold"})
-
-
-def bar(coin, at, o, h=None, l=None, i="1m"):
-    h, l = h or o, l or o
-    return {"s": coin, "i": i, "t": ms(at), "o": str(o), "h": str(h), "l": str(l), "c": str(o)}
-
-
-def rate(coin, at, r):
-    return {"coin": coin, "fundingRate": str(r), "premium": "0", "time": ms(at) + 45}  # HL stamps land a few ms past the hour
-
-
-def market(candles=(), funding=()):
-    """Fixture book/meta plus in-memory candleSnapshot and fundingHistory filtered like Hyperliquid."""
-    fixtures = replay(FIXTURES)
-
-    def info(body):
-        if body["type"] == "candleSnapshot":
-            r = body["req"]
-            return [c for c in candles if c["s"] == r["coin"] and c["i"] == r["interval"] and r["startTime"] <= c["t"] <= r["endTime"]]
-        if body["type"] == "fundingHistory":
-            return [f for f in funding if f["coin"] == body["coin"] and body["startTime"] <= f["time"] <= body["endTime"]]
-        return fixtures(body)
-
-    return info
 
 
 class RunTick(unittest.TestCase):
@@ -65,7 +32,8 @@ class RunTick(unittest.TestCase):
             rp = {"collateral": 2500, "notional": plan["notional"]}
             given = {"free_equity": 10000, "rp": rp, "layers": [None] * 4, "settled": at}
             (folder / "state.json").write_text(json.dumps(given))
-        run_tick(contestant, at, source or market(), model, self.data, CONFIG)
+        config, client = solo(contestant, model)
+        run_tick(at, source or market(), client, self.data, config)
         return json.loads((folder / "state.json").read_text())
 
     def events(self, contestant="x"):
@@ -415,9 +383,10 @@ class RunTick(unittest.TestCase):
     def test_settles_recorded_live_hyperliquid_data(self):
         """Guards the in-memory fakes above: real candle/funding shapes and time filters (recorded 2026-10-18)."""
         live = replay(Path(__file__).parent / "fixtures" / "live_btc")
-        self.tick("2026-10-18T08:07:00Z", scripted(OPEN_BTC), live)
+        btc_only = {**PLAN, "watchlist": PLAN["watchlist"][:1]}  # only BTC's book was recorded
+        self.tick("2026-10-18T08:07:00Z", scripted(OPEN_BTC), live, plan=btc_only)
 
-        state = self.tick("2026-10-18T11:07:00Z", HOLD, live)
+        state = self.tick("2026-10-18T11:07:00Z", HOLD, live, plan=btc_only)
 
         funding = [e for e in self.events() if e["type"] == "funding"]
         self.assertEqual([e["t"] for e in funding], ["2026-10-18T09:00:00Z", "2026-10-18T10:00:00Z", "2026-10-18T11:00:00Z"])

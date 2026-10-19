@@ -6,10 +6,10 @@
 
 **Status:** ready-for-agent
 
-- [ ] config มีรายการ 6 Contestant ตาม spec (model id ของ Strategist/Executor ต่อคู่) เพิ่ม/ลบคู่ได้โดยไม่แก้โค้ด
-- [ ] market source ล้มระหว่างรอบ → ไม่มี Contestant ใดถูกประมวลผลใน Tick นั้น และบันทึก Tick ว่า "skipped" พร้อมเหตุผล
-- [ ] Contestant ที่ equity < 1,000 หลัง settle → สถานะ eliminated พร้อม Week ที่ตกรอบ; Tick/Week ถัดไปไม่เรียกโมเดลของคู่นั้นและ equity หยุดนิ่ง
-- [ ] ตัวชี้วัดทุกตัวคำนวณจาก event log + equity snapshot ได้ซ้ำแล้วได้ค่าเดิม
-- [ ] ไฟล์ export มี: leaderboard, equity series ต่อคู่, Layer ปัจจุบัน, position ที่ปิดทั้งหมด, Weekly Plan ทั้งหมด, reasoning ต่อ Tick, Violation, สถานะ Tick ล่าสุด (เวลา, สำเร็จ/ข้าม)
-- [ ] `reset` ลบ state ทุกคู่แล้วรันใหม่ได้จาก Week 1
-- [ ] test ผ่าน seam เดียว กับ 2 Contestant จำลอง ครอบ Elimination, skipped Tick และตัวชี้วัด
+- [x] config มีรายการ 6 Contestant ตาม spec (model id ของ Strategist/Executor ต่อคู่) เพิ่ม/ลบคู่ได้โดยไม่แก้โค้ด
+- [x] market source ล้มระหว่างรอบ → ไม่มี Contestant ใดถูกประมวลผลใน Tick นั้น และบันทึก Tick ว่า "skipped" พร้อมเหตุผล
+- [x] Contestant ที่ equity < 1,000 หลัง settle → สถานะ eliminated พร้อม Week ที่ตกรอบ; Tick/Week ถัดไปไม่เรียกโมเดลของคู่นั้นและ equity หยุดนิ่ง
+- [x] ตัวชี้วัดทุกตัวคำนวณจาก event log + equity snapshot ได้ซ้ำแล้วได้ค่าเดิม
+- [x] ไฟล์ export มี: leaderboard, equity series ต่อคู่, Layer ปัจจุบัน, position ที่ปิดทั้งหมด, Weekly Plan ทั้งหมด, reasoning ต่อ Tick, Violation, สถานะ Tick ล่าสุด (เวลา, สำเร็จ/ข้าม)
+- [x] `reset` ลบ state ทุกคู่แล้วรันใหม่ได้จาก Week 1
+- [x] test ผ่าน seam เดียว กับ 2 Contestant จำลอง ครอบ Elimination, skipped Tick และตัวชี้วัด

@@ -1,5 +1,14 @@
 {
   "initial_capital": 10000,
   "taker_fee": 0.00045,
-  "maker_fee": 0.00015
+  "maker_fee": 0.00015,
+  "elimination_equity": 1000,
+  "contestants": [
+    {"name": "anthropic", "strategist": "anthropic/claude-fable-5.1", "executor": "anthropic/claude-haiku-5.5"},
+    {"name": "openai", "strategist": "openai/gpt-6-astra", "executor": "openai/gpt-6-luna"},
+    {"name": "google", "strategist": "google/gemini-4-argon", "executor": "google/gemini-3.8-flash"},
+    {"name": "qwen", "strategist": "qwen/qwen3.8-max-prime", "executor": "qwen/qwen3.8-flash"},
+    {"name": "zai", "strategist": "z-ai/glm-5.3-prime", "executor": "z-ai/glm-5.3-flash"},
+    {"name": "deepseek", "strategist": "deepseek/deepseek-v4-pro-0813", "executor": "deepseek/deepseek-v4.1-flash"}
+  ]
 }

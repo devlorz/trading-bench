@@ -5,7 +5,7 @@ from pathlib import Path
 
 from bench.engine import run_tick, run_week
 from bench.market import replay
-from tests.test_tick import CONFIG, OPEN_BTC, market, scripted
+from tests.helpers import OPEN_BTC, market, scripted, solo
 
 LIVE = replay(Path(__file__).parent / "fixtures" / "live_btc")  # recorded metaAndAssetCtxs: 234 perps, 56 delisted
 
@@ -40,10 +40,12 @@ class RunWeek(unittest.TestCase):
         self.data = Path(tempfile.mkdtemp())
 
     def week(self, at, model, source=None):
-        return run_week("x", at, source or market(), model, self.data, CONFIG)
+        config, client = solo("x", model)
+        return run_week(at, source or market(), client, self.data, config)
 
     def tick(self, at, model, source=None):
-        run_tick("x", at, source or market(), model, self.data, CONFIG)
+        config, client = solo("x", model)
+        run_tick(at, source or market(), client, self.data, config)
         return self.state()
 
     def state(self):
@@ -240,10 +242,10 @@ class RunWeek(unittest.TestCase):
         self.assertEqual(self.plan_in_force()["week"], WEEK1)
         self.assertTrue((self.data / "x" / "plans" / "2026-10-19.json").exists())
 
-    def test_tick_before_any_week_says_to_run_the_week_first(self):
-        (self.data / "x").mkdir()
-        with self.assertRaisesRegex(FileNotFoundError, "run-week"):
-            self.tick(W1, scripted({"type": "hold"}))
+    def test_tick_before_any_week_waits_for_it(self):
+        config, client = solo("x", scripted({"type": "hold"}))
+        self.assertFalse(run_tick(W1, market(), client, self.data, config))
+        self.assertFalse((self.data / "x").exists())
 
 
 if __name__ == "__main__":

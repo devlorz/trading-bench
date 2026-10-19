@@ -14,33 +14,102 @@ MIN_NOTIONAL = 10  # USD, Hyperliquid's minimum order value
 TOP_PERPS = 50  # Strategist universe, by 24h notional volume
 
 
-def run_tick(contestant, at, market, model, data_dir, config):
+class MarketDown(Exception):
+    """Hyperliquid failed during a round: the round is skipped for every Contestant."""
+
+
+def run_tick(at, market, model, data_dir, config):
+    data_dir = Path(data_dir)
+    # a Contestant added to config mid-benchmark starts at the next run-week
+    waiting = [c["name"] for c in config["contestants"] if not (data_dir / c["name"] / "state.json").exists()]
+    return run_round("tick", tick_contestant, at, market, model, data_dir, config, waiting)
+
+
+def run_week(at, market, model, data_dir, config):
+    return run_round("week", week_contestant, at, market, model, Path(data_dir), config, [])
+
+
+def run_round(kind, step, at, market, model, data_dir, config, waiting):
+    """Every Contestant fetches its market data before any model is called, so a Hyperliquid failure skips the round
+    without paying for responses; nothing is written unless the whole round completes.
+
+    step is a generator: it yields True once its market data is in, then yields its writes for save()."""
     at = iso(ms(at))
-    folder = Path(data_dir) / contestant
-    state_file = folder / "state.json"
-    if not state_file.exists():
-        raise FileNotFoundError(f"{state_file} does not exist: run run-week for {contestant} first")
-    state = json.loads(state_file.read_text())
+    market = cached(market)
+    entry = {"t": at, "type": kind, **({"waiting_for_week": waiting} if waiting else {})}
+    steps = [step(c, at, market, model, data_dir, config) for c in config["contestants"] if c["name"] not in waiting]
+    try:
+        ready = [s for s in steps if next(s, False)]  # market phase; False: nothing to run for this Contestant
+        writes = [next(s) for s in ready]  # model phase
+    except MarketDown as e:
+        log_run(data_dir, {**entry, "status": "skipped", "reason": str(e)})
+        return False
+    for w in writes:
+        save(**w)
+    if writes:
+        log_run(data_dir, {**entry, "status": "ok"})
+    return bool(writes)
+
+
+def cached(market):
+    """One answer per request for the whole round, so every Contestant sees the same book."""
+    seen = {}
+
+    def info(body):
+        key = json.dumps(body, sort_keys=True)
+        if key not in seen:
+            try:
+                seen[key] = market(body)
+            # ponytail: any exception reads as Hyperliquid down, so a missing replay fixture or a bug in a market
+            # source also shows as a skipped round; narrow to URLError/timeout/HTTP errors if that hides real bugs
+            except Exception as e:
+                raise MarketDown(f"{type(e).__name__}: {e}") from e
+        return seen[key]
+
+    return info
+
+
+def log_run(data_dir, entry):
+    data_dir.mkdir(parents=True, exist_ok=True)
+    with open(data_dir / "runs.jsonl", "a") as log:
+        log.write(json.dumps(entry, sort_keys=True) + "\n")
+
+
+def tick_contestant(contestant, at, market, model, data_dir, config):
+    folder = data_dir / contestant["name"]
+    state = json.loads((folder / "state.json").read_text())
+    if "eliminated" in state:
+        return  # frozen for good: no settle, no model
     if "last_tick" in state and datetime.fromisoformat(state["last_tick"]) >= datetime.fromisoformat(at):
-        return False  # already ran this Tick
+        return  # already ran this Tick
     plan_file = folder / "plan.json"
     plan = json.loads(plan_file.read_text()) if plan_file.exists() else None
-    events = []
 
-    max_leverage = {a["name"]: a["maxLeverage"] for a in market({"type": "metaAndAssetCtxs"})[0]["universe"]}
+    meta, ctxs = market({"type": "metaAndAssetCtxs"})
+    max_leverage, marks = leverage_and_marks(meta, ctxs)
     settled = settle(state, state["settled"], at, market, config, max_leverage)
-    violations = []
-    if "last_tick" in state:
-        violations = [e for e in read_events(folder) if e["type"] == "violation" and e["t"] == state["last_tick"]]
-    events.extend(settled)
-    request = {"at": at, "plan": plan, "state": state, "settled": settled, "violations": violations}
-    # spec: no passing plan in Week 1 forces hold without asking the Executor
-    response = ask(model, request, schema_error, 1, at, events) if plan else None
-    actions = []  # spec: a response still broken after the retry holds the whole Tick and is not a Violation
-    if response is not None:
-        events.append({"t": at, "type": "decision", "plan": plan["week"],
-                       "reasoning": response["reasoning"], "actions": response["actions"]})
-        actions = response["actions"]
+    events = list(settled)
+    # spec: no passing plan in Week 1 holds without asking the Executor; nor is an eliminated Contestant asked
+    asks = not eliminated(state, marks, at, config, events) and plan is not None
+    if asks:
+        listed = {a["name"] for a in meta["universe"] if not a.get("isDelisted")}
+        symbols = {w["symbol"] for w in plan["watchlist"]} & listed | {l["symbol"] for l in state["layers"] if l}
+        for symbol in sorted(symbols):
+            market({"type": "l2Book", "coin": symbol})  # every fill this Tick can make reads one of these
+    yield True
+
+    actions = []
+    if asks:
+        violations = []
+        if "last_tick" in state:
+            violations = [e for e in read_jsonl(folder / "events.jsonl")
+                          if e["type"] == "violation" and e["t"] == state["last_tick"]]
+        request = {"at": at, "plan": plan, "state": state, "settled": settled, "violations": violations}
+        response = ask(lambda r: model(contestant["executor"], r), request, schema_error, 1, at, events)
+        if response is not None:  # spec: a response still broken after the retry holds the whole Tick, no Violation
+            events.append({"t": at, "type": "decision", "plan": plan["week"],
+                           "reasoning": response["reasoning"], "actions": response["actions"]})
+            actions = response["actions"]
     for action in actions:
         rule = broken_rule(state, plan, max_leverage, action)
         if rule:
@@ -57,35 +126,41 @@ def run_tick(contestant, at, market, model, data_dir, config):
             state["layers"][action["slot"]]["tp"] = None
 
     state["last_tick"] = state["settled"] = at
-    save(folder, state, events)
-    return True
+    yield {"folder": folder, "state": state, "events": events, "files": {},
+           "equity_snapshot": snapshot(state, marks, max_leverage, at)}
 
 
-def run_week(contestant, at, market, model, data_dir, config):
-    at = iso(ms(at))
-    day = datetime.fromisoformat(at).replace(hour=0, minute=0, second=0)
-    week_start = (day - timedelta(days=day.weekday())).strftime("%Y-%m-%dT%H:%M:%SZ")  # Monday 00:00 UTC
-    folder = Path(data_dir) / contestant
-    (folder / "plans").mkdir(parents=True, exist_ok=True)
+def week_contestant(contestant, at, market, model, data_dir, config):
+    week_start = week_of(at)
+    folder = data_dir / contestant["name"]
     state_file = folder / "state.json"
     meta, ctxs = market({"type": "metaAndAssetCtxs"})
+    max_leverage, marks = leverage_and_marks(meta, ctxs)
     settled = []
     if state_file.exists():
         state = json.loads(state_file.read_text())
-        if state["last_week"] >= week_start:
-            return False  # this Week already has its plan
-        settled = settle(state, state["settled"], at, market, config, {a["name"]: a["maxLeverage"] for a in meta["universe"]})
+        if "eliminated" in state or state["last_week"] >= week_start:
+            return  # eliminated, or this Week already has its plan
+        settled = settle(state, state["settled"], at, market, config, max_leverage)
     else:
         state = {"free_equity": config["initial_capital"], "rp": None, "layers": [None] * LAYERS}
     events = list(settled)
+    yield True  # the Strategist needs no market data beyond metaAndAssetCtxs
+
+    if eliminated(state, marks, at, config, events):  # its equity series ends on the score
+        state["settled"] = at
+        yield {"folder": folder, "state": state, "events": events, "files": {},
+               "equity_snapshot": snapshot(state, marks, max_leverage, at)}
+        return
 
     reallocate = all(l is None for l in state["layers"])  # equity is all free equity then
     collateral = state["free_equity"] / LAYERS if reallocate else state["rp"]["collateral"]
     in_force = None if reallocate else state["rp"]["notional"]  # without Reallocation the new notional is not used
     plan_file = folder / "plan.json"
     previous = json.loads(plan_file.read_text()) if plan_file.exists() else None
+    files = {}
     # ponytail: rescans the whole append-only log each Week; keep a cursor if it grows
-    last_week = [e for e in read_events(folder) if e["t"] >= state["last_week"]] if "last_week" in state else []
+    last_week = [e for e in read_jsonl(folder / "events.jsonl") if e["t"] >= state["last_week"]] if "last_week" in state else []
     listed_leverage = {a["name"]: a["maxLeverage"] for a in meta["universe"] if not a.get("isDelisted")}
     perps = [{"symbol": a["name"], "day_volume": float(c["dayNtlVlm"]), "mark": float(c["markPx"]),
               "funding": float(c["funding"]), "open_interest": float(c["openInterest"]), "max_leverage": a["maxLeverage"]}
@@ -102,7 +177,7 @@ def run_week(contestant, at, market, model, data_dir, config):
         "symbols": sorted(listed_leverage),
     }
     check = lambda plan: plan_error(plan, listed_leverage, collateral, in_force)
-    plan = ask(model, request, check, 2, at, events)
+    plan = ask(lambda r: model(contestant["strategist"], r), request, check, 2, at, events)
     if plan is None:  # last week's plan and RP stay in force
         if previous is None:
             events.append({"t": at, "type": "violation", "rule": "no_weekly_plan"})
@@ -116,21 +191,65 @@ def run_week(contestant, at, market, model, data_dir, config):
         if reallocate:
             state["rp"] = {"collateral": collateral, "notional": plan["notional"]}
             events.append({"t": at, "type": "reallocation", "rp": state["rp"]})
-        (folder / "plans" / f"{week_start[:10]}.json").write_text(
-            json.dumps({"plan": plan, "notional_used": reallocate}, indent=2, sort_keys=True))
-        plan_file.write_text(json.dumps({**plan, "notional": state["rp"]["notional"]}, indent=2, sort_keys=True))
+        files[f"plans/{week_start[:10]}.json"] = {"plan": plan, "notional_used": reallocate}
+        files["plan.json"] = {**plan, "notional": state["rp"]["notional"]}
 
     state["last_week"], state["settled"] = week_start, at
-    save(folder, state, events)
+    yield {"folder": folder, "state": state, "events": events, "files": files, "equity_snapshot": None}
+
+
+def week_of(at):
+    day = datetime.fromisoformat(at).replace(hour=0, minute=0, second=0)
+    return (day - timedelta(days=day.weekday())).strftime("%Y-%m-%dT%H:%M:%SZ")  # Monday 00:00 UTC
+
+
+def leverage_and_marks(meta, ctxs):
+    """Max leverage and mark per symbol from one metaAndAssetCtxs response."""
+    return ({a["name"]: a["maxLeverage"] for a in meta["universe"]},
+            {a["name"]: float(c["markPx"]) for a, c in zip(meta["universe"], ctxs)})
+
+
+def maintenance(layer, max_leverage):
+    return layer["notional"] / (2 * max_leverage[layer["symbol"]])  # ADR-0001
+
+
+def equity_at(state, marks):
+    """Free equity plus every open Layer's collateral and unrealized PnL at mark (spec: Net Return and Elimination)."""
+    return state["free_equity"] + sum(l["collateral"] + SIGN[l["side"]] * l["size"] * (marks[l["symbol"]] - l["entry"])
+                                      for l in state["layers"] if l)
+
+
+def snapshot(state, marks, max_leverage, at):
+    """Equity and what the dashboard shows of each open Layer at mark, so the export needs no market data."""
+    def view(l):
+        sign, mark = SIGN[l["side"]], marks[l["symbol"]]
+        return {"symbol": l["symbol"], "side": l["side"], "notional": l["notional"], "entry": l["entry"], "tp": l["tp"],
+                "mark": mark, "unrealized": sign * l["size"] * (mark - l["entry"]),
+                "liq": l["entry"] - sign * (l["collateral"] - maintenance(l, max_leverage)) / l["size"]}
+    return {"t": at, "equity": equity_at(state, marks), "layers": [l and view(l) for l in state["layers"]]}
+
+
+def eliminated(state, marks, at, config, events):
+    """Below the threshold after settle: frozen for good with open Layers untouched; that equity is the score."""
+    equity = equity_at(state, marks)
+    if equity >= config["elimination_equity"]:
+        return False
+    state["eliminated"] = week_of(at)
+    events.append({"t": at, "type": "elimination", "week": state["eliminated"], "equity": equity})
     return True
 
 
-def read_events(folder):
-    with open(folder / "events.jsonl") as log:
-        return [json.loads(line) for line in log]
+def read_jsonl(path):
+    return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
 
-def save(folder, state, events):
+def save(folder, state, events, files, equity_snapshot):
+    (folder / "plans").mkdir(parents=True, exist_ok=True)
+    for name, content in files.items():
+        (folder / name).write_text(json.dumps(content, indent=2, sort_keys=True))
+    if equity_snapshot:
+        with open(folder / "equity.jsonl", "a") as log:
+            log.write(json.dumps(equity_snapshot, sort_keys=True) + "\n")
     (folder / "state.json").write_text(json.dumps(state, indent=2, sort_keys=True))
     with open(folder / "events.jsonl", "a") as log:
         for e in events:
@@ -255,7 +374,7 @@ def open_layer(state, action, market, config, at):
         "tp": None,
     }
     return {"t": at, "type": "fill", "slot": action["slot"], "symbol": action["symbol"],
-            "side": action["side"], "price": entry, "notional": rp["notional"], "fee": fee}
+            "side": action["side"], "price": entry, "notional": rp["notional"], "fee": fee, "collateral": rp["collateral"]}
 
 
 def ms(at):
@@ -285,7 +404,7 @@ def settle(state, since, at, market, config, max_leverage):
         hours = sorted((f["time"] // HOUR * HOUR, float(f["fundingRate"])) for f in rates)
         hours = [(h, r) for h, r in hours if start <= h < end]
         sign = SIGN[layer["side"]]
-        maintenance = layer["notional"] / (2 * max_leverage[coin])  # ADR-0001
+        margin = maintenance(layer, max_leverage)
         bars = sorted(candles, key=lambda c: c["t"])
         last = bars[-1]["c"] if bars else layer["entry"]
         # Flat bar at the Tick: funding hours no bar reached (feed lag) still settle, at the last known price
@@ -297,7 +416,7 @@ def settle(state, since, at, market, config, max_leverage):
                 layer["collateral"] += amount
                 events.append({"t": iso(h), "type": "funding", "slot": slot, "symbol": coin, "rate": r, "amount": amount})
             worst = float(c["l"] if sign > 0 else c["h"])  # bar extreme as worst-case mark (ADR-0001)
-            if layer["collateral"] + sign * layer["size"] * (worst - layer["entry"]) <= maintenance:
+            if layer["collateral"] + sign * layer["size"] * (worst - layer["entry"]) <= margin:
                 state["layers"][slot] = None
                 events.append({"t": iso(c["t"]), "type": "liquidation", "slot": slot, "symbol": coin,
                                "side": layer["side"], "price": worst, "collateral_lost": layer["collateral"]})
