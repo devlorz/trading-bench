@@ -9,6 +9,7 @@
 - [ ] trigger ด้วยมือ (workflow_dispatch) แล้ว Tick รันสำเร็จ commit ไฟล์ state/export กลับ และ dashboard บน Pages อัปเดต
 - [ ] workflow ซ้อนกันไม่ได้ (รอบที่สองรอรอบแรก) และ Tick ที่ดีเลย์ settle ช่วงที่หายถูกต้อง
 - [ ] prompt ดิบปรากฏเป็น artifact ของ run และไม่อยู่ใน commit
+- [ ] TSM เต็มฉบับมาจาก GitHub Secret `TSM_FULL_B64` (gzip -9 แล้ว base64 ไฟล์จริง ~25KB เข้าเพดาน 48KB) workflow ถอดลงไฟล์ชั่วคราวนอก working tree แล้วส่ง path ผ่าน `TSM_FULL_PATH` ให้ Engine; ไฟล์นั้นไม่ถูก commit ไม่ถูกอัปโหลดเป็น artifact และไม่ถูก echo ลง log; README มีคำสั่งสร้าง secret จากไฟล์ใน Obsidian และบอกว่าทำไมไม่อยู่ใน repo
 - [ ] Hyperliquid ล้มใน run → run จบแบบสำเร็จแต่บันทึก Tick ว่า skipped (ไม่ส่ง failure email ถล่ม)
 - [ ] weekly run ล้มกลางคัน → hourly run ถัดไปยังใช้แผนล่าสุดและไม่พัง
 - [ ] README อธิบายรันด้วยมือ, reset, เริ่ม Week 1 และเพิ่ม Contestant ผ่าน config

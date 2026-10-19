@@ -139,7 +139,7 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 - State ทั้งหมดเป็นไฟล์ JSON ใน repo แยกต่อ Contestant: บัญชี/Layer ปัจจุบัน, event log แบบ append-only (fill, funding, liquidation, TP, violation, error), Weekly Plan ทุกสัปดาห์, response ของโมเดลทุกครั้ง, equity snapshot ทุก Tick
 - Prompt ดิบของทุกการเรียกเก็บเป็น workflow artifact (90 วัน) และทุกการเรียกบันทึก snapshot id ของข้อมูลตลาดที่ใช้
 - Dashboard เป็น static site บน GitHub Pages อ่าน JSON จาก repo ตรง ไม่มี backend แสดงหน้าตาม user story 1–11 ข้อมูลที่ dashboard อ่านถูก export เป็นไฟล์สรุปแยกจาก state ภายในเพื่อไม่ผูกหน้าเว็บกับโครงสร้าง Engine
-- Repo เป็น public
+- Repo เป็น public ดังนั้น TSM Principle 4 เต็มฉบับ (เนื้อหาของผู้เขียน TSM ไม่ใช่ของโปรเจกต์) ไม่ถูก commit: รันจริงอ่านจาก GitHub Secret ที่ถอดเป็นไฟล์ชั่วคราว รัน local อ่านจาก path ใน env var ส่วนสรุปย่อสำหรับ Executor ที่เราเขียนเองอยู่ใน repo ได้
 
 ### ตัวชี้วัด
 
