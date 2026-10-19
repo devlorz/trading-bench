@@ -1,10 +1,13 @@
 """Shared test doubles: fixture market, scripted models, one-Contestant config."""
+import os
 from pathlib import Path
 
 from bench.engine import ms
-from bench.market import replay
+from bench.market import BAR_MS, replay
 
 FIXTURES = Path(__file__).parent / "fixtures" / "btc"
+FAKE_TSM = Path(__file__).parent / "fixtures" / "fake_tsm_full.md"
+os.environ["TSM_FULL_PATH"] = str(FAKE_TSM)  # never the real document, even when the shell sets one
 CONFIG = {"initial_capital": 10000, "taker_fee": 0.00045, "maker_fee": 0.00015, "elimination_equity": 1000}
 OPEN_BTC = {"type": "open", "slot": 0, "symbol": "BTC", "side": "long"}
 
@@ -18,16 +21,32 @@ HOLD = scripted({"type": "hold"})
 
 def bar(coin, at, o, h=None, l=None, i="1m"):
     h, l = h or o, l or o
-    return {"s": coin, "i": i, "t": ms(at), "o": str(o), "h": str(h), "l": str(l), "c": str(o)}
+    return {"s": coin, "i": i, "t": ms(at), "T": ms(at) + BAR_MS[i] - 1,
+            "o": str(o), "h": str(h), "l": str(l), "c": str(o), "v": "1"}
 
 
 def rate(coin, at, r):
     return {"coin": coin, "fundingRate": str(r), "premium": "0", "time": ms(at) + 45}  # HL stamps land a few ms past the hour
 
 
+def recorded(folder):
+    """Replay a recorded folder; prompt data it never recorded (candles, funding) reads as empty."""
+    fixtures = replay(folder)
+
+    def info(body):
+        try:
+            return fixtures(body)
+        except FileNotFoundError:
+            if body["type"] in ("candleSnapshot", "fundingHistory", "predictedFundings"):
+                return []
+            raise
+
+    return info
+
+
 def market(candles=(), funding=()):
     """Fixture book/meta plus in-memory candleSnapshot and fundingHistory filtered like Hyperliquid."""
-    fixtures = replay(FIXTURES)
+    fixtures = recorded(FIXTURES)
 
     def info(body):
         if body["type"] == "candleSnapshot":

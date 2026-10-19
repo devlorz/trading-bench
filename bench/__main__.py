@@ -1,9 +1,10 @@
 import argparse
 import json
+import os
 import shutil
 from pathlib import Path
 
-from bench import market
+from bench import market, openrouter
 from bench.engine import run_tick, run_week
 from bench.export import export
 
@@ -15,11 +16,11 @@ for cmd in (tick, week):
     cmd.add_argument("--fixtures", help="replay market from this folder instead of live Hyperliquid")
     cmd.add_argument("--record", help="save live Hyperliquid responses into this folder")
     cmd.add_argument("--config", default="config.json")
+    cmd.add_argument("--response", help="scripted reply JSON for every Contestant instead of OpenRouter")
+    cmd.add_argument("--artifacts", default="artifacts/prompts", help="raw prompts for the workflow artifact, never committed")
 for cmd in (tick, week, reset):
     cmd.add_argument("--data", default="data")
     cmd.add_argument("--out", default="site/data", help="dashboard export folder")
-tick.add_argument("--response", help="scripted Executor response JSON for every Contestant (default: hold)")
-week.add_argument("--response", required=True, help="scripted Strategist Weekly Plan JSON for every Contestant")
 args = parser.parse_args()
 
 if args.command == "reset":
@@ -37,11 +38,15 @@ if args.command == "reset":
 source = market.replay(args.fixtures) if args.fixtures else market.live
 if args.record:
     source = market.recording(source, args.record)
-# ponytail: scripted models only; OpenRouter client lands in ticket 07
-hold = {"reasoning": "", "actions": [{"type": "hold"}]}
-response = json.loads(Path(args.response).read_text()) if args.response else hold
+if args.response:
+    response = json.loads(Path(args.response).read_text())
+    model = lambda _model_id, _request: response
+elif os.environ.get("OPENROUTER_API_KEY"):
+    model = openrouter.client(os.environ["OPENROUTER_API_KEY"], args.artifacts)
+else:
+    raise SystemExit("set OPENROUTER_API_KEY to call the models, or pass --response for a scripted reply")
 config = json.loads(Path(args.config).read_text())
 run = run_tick if args.command == "run-tick" else run_week
-if not run(args.at, source, lambda _model_id, _input: response, args.data, config):
+if not run(args.at, source, model, args.data, config):
     print(f"nothing ran at {args.at}: already ran, eliminated, waiting for its first Week, or skipped (see {args.data}/runs.jsonl)")
 export(args.data, args.out, config)  # also after a skip, so the dashboard shows the skipped Tick

@@ -7,13 +7,13 @@
 **Status:** ready-for-agent
 
 - [ ] รัน `run-tick` จริงกับ Contestant เดียวด้วย OpenRouter key แล้วได้ Action ที่ parse ผ่านและ apply ได้ (ทดสอบด้วยมือหนึ่งครั้งต่อค่ายทั้ง 6 คู่ บันทึกผลใน ticket)
-- [ ] client ล้ม (network, timeout, JSON พัง) → raise ออกมาให้ Engine จัดการ ไม่ retry เอง ไม่กลืน exception
-- [ ] เมื่อ request มี `retry_error` prompt แสดง error นั้นให้โมเดลเห็นก่อนตอบใหม่ (ตรวจด้วย test ว่า prompt ที่ประกอบมีข้อความ error)
-- [ ] prompt ของ Executor สำหรับ watchlist 5 ตัวมีขนาดไม่เกิน ~30k token และไม่มีข้อมูลสินค้านอก watchlist
-- [ ] ทุก response บันทึก `indicator_pack_version` คู่กับ hash ของสรุป TSM
-- [ ] prompt ของ Strategist มี TSM เต็มฉบับ, แผนและทุกไม้สัปดาห์ก่อนพร้อม reasoning, และข้อมูล universe ตาม spec
-- [ ] TSM เต็มฉบับ**ไม่อยู่ใน repo** (เป็นเนื้อหาของผู้อื่น repo เป็น public): Engine อ่านจาก path ใน env var `TSM_FULL_PATH` ถ้าไม่ตั้งหรือไฟล์ไม่มี → run-week ล้มด้วย error ที่บอกชื่อ env var ไม่ใช่ fallback เงียบ; path นั้นและชื่อไฟล์ที่น่าจะใช้อยู่ใน `.gitignore`; ทุก response ของ Strategist บันทึก sha256 ของไฟล์ที่อ่านได้จริง
-- [ ] test ประกอบ prompt ของ Strategist ใช้ไฟล์ TSM ปลอมสั้นๆ ใน fixture ไม่ใช่ไฟล์จริง
-- [ ] ทุก response เก็บถาวรพร้อม model id, snapshot id, hash สรุป TSM, token usage และ latency
-- [ ] prompt ดิบถูกเขียนลงโฟลเดอร์ artifact ที่ไม่ถูก commit
-- [ ] test: model client จำลอง HTTP ล้ม/ตอบพัง ผ่าน seam เดียว ไม่เรียก network
+- [x] client ล้ม (network, timeout, JSON พัง) → raise ออกมาให้ Engine จัดการ ไม่ retry เอง ไม่กลืน exception
+- [x] เมื่อ request มี `retry_error` prompt แสดง error นั้นให้โมเดลเห็นก่อนตอบใหม่ (ตรวจด้วย test ว่า prompt ที่ประกอบมีข้อความ error)
+- [x] prompt ของ Executor สำหรับ watchlist 5 ตัวมีขนาดไม่เกิน ~30k token และไม่มีข้อมูลสินค้านอก watchlist
+- [x] ทุก response บันทึก `indicator_pack_version` คู่กับ hash ของสรุป TSM
+- [x] prompt ของ Strategist มี TSM เต็มฉบับ, แผนและทุกไม้สัปดาห์ก่อนพร้อม reasoning, และข้อมูล universe ตาม spec
+- [x] TSM เต็มฉบับ**ไม่อยู่ใน repo** (เป็นเนื้อหาของผู้อื่น repo เป็น public): Engine อ่านจาก path ใน env var `TSM_FULL_PATH` ถ้าไม่ตั้งหรือไฟล์ไม่มี → run-week ล้มด้วย error ที่บอกชื่อ env var ไม่ใช่ fallback เงียบ; path นั้นและชื่อไฟล์ที่น่าจะใช้อยู่ใน `.gitignore`; ทุก response ของ Strategist บันทึก sha256 ของไฟล์ที่อ่านได้จริง
+- [x] test ประกอบ prompt ของ Strategist ใช้ไฟล์ TSM ปลอมสั้นๆ ใน fixture ไม่ใช่ไฟล์จริง
+- [x] ทุก response เก็บถาวรพร้อม model id, snapshot id, hash สรุป TSM, token usage และ latency
+- [x] prompt ดิบถูกเขียนลงโฟลเดอร์ artifact ที่ไม่ถูก commit
+- [x] test: model client จำลอง HTTP ล้ม/ตอบพัง ผ่าน seam เดียว ไม่เรียก network

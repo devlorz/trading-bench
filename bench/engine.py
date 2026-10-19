@@ -1,8 +1,14 @@
+import hashlib
 import json
+import os
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from bench.market import BAR_MS, bars_between
+from bench.indicators import INDICATOR_PACK_VERSION
+from bench.market import BAR_MS, bars_between, basics, universe_data, watch_data
+
+TSM_SUMMARY = Path(__file__).parent / "tsm_executor.md"
 
 LAYERS = 4
 HOUR = 3_600_000
@@ -14,6 +20,8 @@ BIASES = ("long", "short", "both", "avoid")
 MAX_WATCHLIST = 5
 MIN_NOTIONAL = 10  # USD, Hyperliquid's minimum order value
 TOP_PERPS = 50  # Strategist universe, by 24h notional volume
+TRADE_LOG = ("decision", "fill", "close", "tp", "liquidation", "violation")  # what the Executor sees of its Week
+RECENT_HOLDS = 6  # latest all-hold decisions the Executor sees again
 
 
 class MarketDown(Exception):
@@ -28,21 +36,39 @@ def run_tick(at, market, model, data_dir, config):
 
 
 def run_week(at, market, model, data_dir, config):
-    return run_round("week", week_contestant, at, market, model, Path(data_dir), config, [])
+    tsm = full_tsm()
+    step = lambda *args: week_contestant(*args, tsm)
+    return run_round("week", step, at, market, model, Path(data_dir), config, [])
+
+
+def document(path):
+    """Text and sha256 of a prompt document, hashed from the bytes actually read."""
+    data = Path(path).read_bytes()
+    return data.decode(), hashlib.sha256(data).hexdigest()
+
+
+def full_tsm():
+    """TSM Principle 4 is someone else's document and the repo is public, so it is read from outside the repo."""
+    path = os.environ.get("TSM_FULL_PATH")
+    if not path or not Path(path).is_file():
+        raise RuntimeError(f"set TSM_FULL_PATH to the full TSM Principle 4 file (now {path!r})")
+    return document(path)
 
 
 def run_round(kind, step, at, market, model, data_dir, config, waiting):
     """Every Contestant fetches its market data before any model is called, so a Hyperliquid failure skips the round
     without paying for responses; nothing is written unless the whole round completes.
 
-    step is a generator: it yields True once its market data is in, then yields its writes for save()."""
+    step is a generator: it yields True once its market data is in, is sent the round's market snapshot id,
+    then yields its writes for save()."""
     at = iso(ms(at))
     market = cached(market)
     entry = {"t": at, "type": kind, **({"waiting_for_week": waiting} if waiting else {})}
     steps = [step(c, at, market, model, data_dir, config) for c in config["contestants"] if c["name"] not in waiting]
     try:
         ready = [s for s in steps if next(s, False)]  # market phase; False: nothing to run for this Contestant
-        writes = [next(s) for s in ready]  # model phase
+        snapshot_id = hashlib.sha256(json.dumps(market.seen, sort_keys=True).encode()).hexdigest()
+        writes = [s.send(snapshot_id) for s in ready]  # model phase
     except MarketDown as e:
         log_run(data_dir, {**entry, "status": "skipped", "reason": str(e)})
         return False
@@ -68,13 +94,13 @@ def cached(market):
                 raise MarketDown(f"{type(e).__name__}: {e}") from e
         return seen[key]
 
+    info.seen = seen  # every answer the round used: its hash is the snapshot id recorded with each response
     return info
 
 
 def log_run(data_dir, entry):
     data_dir.mkdir(parents=True, exist_ok=True)
-    with open(data_dir / "runs.jsonl", "a") as log:
-        log.write(json.dumps(entry, sort_keys=True) + "\n")
+    append_jsonl(data_dir / "runs.jsonl", [entry])
 
 
 def tick_contestant(contestant, at, market, model, data_dir, config):
@@ -98,16 +124,26 @@ def tick_contestant(contestant, at, market, model, data_dir, config):
         symbols = {w["symbol"] for w in plan["watchlist"]} & listed | {l["symbol"] for l in state["layers"] if l}
         for symbol in sorted(symbols):
             market({"type": "l2Book", "coin": symbol})  # every fill this Tick can make reads one of these
-    yield True
+        predicted = dict(market({"type": "predictedFundings"}))
+        assets = {a["name"]: (a, c) for a, c in zip(meta["universe"], ctxs)}
+        watched = {w["symbol"] for w in plan["watchlist"]} & listed
+        data = {s: watch_data(market, s, ms(at), *assets[s], dict(predicted.get(s, []))) for s in sorted(watched)}
+    snapshot_id = yield True
 
-    actions = []
+    actions, responses = [], []
     if asks:
-        violations = []
-        if "last_tick" in state:
-            violations = [e for e in read_jsonl(folder / "events.jsonl")
-                          if e["type"] == "violation" and e["t"] == state["last_tick"]]
-        request = {"at": at, "plan": plan, "state": state, "settled": settled, "violations": violations}
-        response = ask(lambda r: model(contestant["executor"], r), request, schema_error, 1, at, events)
+        log = read_jsonl(folder / "events.jsonl")
+        violations = [e for e in log if e["type"] == "violation" and e["t"] == state.get("last_tick")]
+        week = [e for e in log if e["t"] >= plan["week"]]
+        # a Week of hourly holds would crowd out the market data, so only the latest few come back
+        holds = [e for e in week if holds_only(e)][-RECENT_HOLDS:]
+        this_week = [e for e in week if e in holds or e["type"] in TRADE_LOG and not holds_only(e)]
+        account = {**snapshot(state, marks, max_leverage, at), "free_equity": state["free_equity"], "rp": state["rp"]}
+        tsm, tsm_sha = document(TSM_SUMMARY)
+        request = {"role": "executor", "tsm": tsm, "at": at, "plan": plan, "account": account,
+                   "settled": settled, "violations": violations, "this_week": this_week, "market": data}
+        record = {"role": "executor", "model": contestant["executor"], "snapshot": snapshot_id, "tsm_sha256": tsm_sha}
+        response = ask(lambda r: model(contestant["executor"], r), request, schema_error, 1, at, events, record, responses)
         if response is not None:  # spec: a response still broken after the retry holds the whole Tick, no Violation
             events.append({"t": at, "type": "decision", "plan": plan["week"],
                            "reasoning": response["reasoning"], "actions": response["actions"]})
@@ -128,11 +164,11 @@ def tick_contestant(contestant, at, market, model, data_dir, config):
             state["layers"][action["slot"]]["tp"] = None
 
     state["last_tick"] = state["settled"] = at
-    yield {"folder": folder, "state": state, "events": events, "files": {},
+    yield {"folder": folder, "state": state, "events": events, "files": {}, "responses": responses,
            "equity_snapshot": snapshot(state, marks, max_leverage, at)}
 
 
-def week_contestant(contestant, at, market, model, data_dir, config):
+def week_contestant(contestant, at, market, model, data_dir, config, full_tsm_doc):
     week_start = week_of(at)
     folder = data_dir / contestant["name"]
     state_file = folder / "state.json"
@@ -147,7 +183,14 @@ def week_contestant(contestant, at, market, model, data_dir, config):
     else:
         state = {"free_equity": config["initial_capital"], "rp": None, "layers": [None] * LAYERS}
     events = list(settled)
-    yield True  # the Strategist needs no market data beyond metaAndAssetCtxs
+    tsm, tsm_sha = full_tsm_doc
+    listed_leverage = {a["name"]: a["maxLeverage"] for a in meta["universe"] if not a.get("isDelisted")}
+    perps = [{"symbol": a["name"], "day_volume": float(c["dayNtlVlm"]), **basics(a, c)}
+             for a, c in zip(meta["universe"], ctxs) if a["name"] in listed_leverage]
+    anchor = ms(week_start) - BAR_MS["1w"]  # the Week that just ended: this one has no closed bar yet
+    universe = [{**p, **universe_data(market, p["symbol"], ms(at), anchor)}
+                for p in sorted(perps, key=lambda p: -p["day_volume"])[:TOP_PERPS]]
+    snapshot_id = yield True
 
     if eliminated(state, marks, at, config, events):  # its equity series ends on the score
         state["settled"] = at
@@ -162,24 +205,25 @@ def week_contestant(contestant, at, market, model, data_dir, config):
     previous = json.loads(plan_file.read_text()) if plan_file.exists() else None
     files = {}
     # ponytail: rescans the whole append-only log each Week; keep a cursor if it grows
-    last_week = [e for e in read_jsonl(folder / "events.jsonl") if e["t"] >= state["last_week"]] if "last_week" in state else []
-    listed_leverage = {a["name"]: a["maxLeverage"] for a in meta["universe"] if not a.get("isDelisted")}
-    perps = [{"symbol": a["name"], "day_volume": float(c["dayNtlVlm"]), "mark": float(c["markPx"]),
-              "funding": float(c["funding"]), "open_interest": float(c["openInterest"]), "max_leverage": a["maxLeverage"]}
-             for a, c in zip(meta["universe"], ctxs) if a["name"] in listed_leverage]
-    # ponytail: candles, Indicator Pack, %change, VWAP and 7d average funding are added when ticket 07 builds the prompt
+    # spec: trades with the Executor's reasoning; funding already shows in collateral and liq
+    last_week = [e for e in read_jsonl(folder / "events.jsonl") if e["t"] >= state["last_week"]
+                 and e["type"] != "funding" and not holds_only(e)] if "last_week" in state else []
     request = {
+        "role": "strategist",
+        "tsm": tsm,
         "at": at,
         "state": state,
         "reallocation": {"happens": reallocate, "collateral": collateral},
         "settled": settled,
         "previous_plan": previous,
         "last_week": last_week,
-        "universe": sorted(perps, key=lambda p: -p["day_volume"])[:TOP_PERPS],
+        "universe": universe,
         "symbols": sorted(listed_leverage),
     }
     check = lambda plan: plan_error(plan, listed_leverage, collateral, in_force)
-    plan = ask(lambda r: model(contestant["strategist"], r), request, check, 2, at, events)
+    record = {"role": "strategist", "model": contestant["strategist"], "snapshot": snapshot_id, "tsm_sha256": tsm_sha}
+    responses = []
+    plan = ask(lambda r: model(contestant["strategist"], r), request, check, 2, at, events, record, responses)
     if plan is None:  # last week's plan and RP stay in force
         if previous is None:
             events.append({"t": at, "type": "violation", "rule": "no_weekly_plan"})
@@ -197,7 +241,12 @@ def week_contestant(contestant, at, market, model, data_dir, config):
         files["plan.json"] = {**plan, "notional": state["rp"]["notional"]}
 
     state["last_week"], state["settled"] = week_start, at
-    yield {"folder": folder, "state": state, "events": events, "files": files, "equity_snapshot": None}
+    yield {"folder": folder, "state": state, "events": events, "files": files, "responses": responses,
+           "equity_snapshot": None}
+
+
+def holds_only(event):
+    return event["type"] == "decision" and all(isinstance(a, dict) and a.get("type") == "hold" for a in event["actions"])
 
 
 def week_of(at):
@@ -245,27 +294,36 @@ def read_jsonl(path):
     return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
 
-def save(folder, state, events, files, equity_snapshot):
+def append_jsonl(path, rows):
+    with open(path, "a") as log:
+        log.writelines(json.dumps(r, sort_keys=True) + "\n" for r in rows)
+
+
+def save(folder, state, events, files, equity_snapshot, responses=()):
     (folder / "plans").mkdir(parents=True, exist_ok=True)
+    append_jsonl(folder / "responses.jsonl", responses)
     for name, content in files.items():
         (folder / name).write_text(json.dumps(content, indent=2, sort_keys=True))
     if equity_snapshot:
-        with open(folder / "equity.jsonl", "a") as log:
-            log.write(json.dumps(equity_snapshot, sort_keys=True) + "\n")
+        append_jsonl(folder / "equity.jsonl", [equity_snapshot])
     (folder / "state.json").write_text(json.dumps(state, indent=2, sort_keys=True))
-    with open(folder / "events.jsonl", "a") as log:
-        for e in events:
-            log.write(json.dumps(e, sort_keys=True) + "\n")
+    append_jsonl(folder / "events.jsonl", events)
 
 
-def ask(model, request, check, retries, at, events):
-    """Call the model, re-asking with the previous error attached; every failed attempt is an error event."""
+def ask(model, request, check, retries, at, events, record, responses):
+    """Call the model, re-asking with the previous error attached; every failed attempt is an error event.
+    Every attempt is archived in responses as record plus what came back."""
     for _ in range(retries + 1):
+        start, usage = time.monotonic(), None
         try:
             response = model(request)
+            if isinstance(response, dict):
+                usage = response.pop("_usage", None)  # token usage from the client, not part of the reply
             error = check(response)
         except Exception as e:  # any failed model call (network, unparseable reply) counts as a broken response
-            response, error = None, f"{type(e).__name__}: {e}"
+            response, error = getattr(e, "raw", None), f"{type(e).__name__}: {e}"  # raw: a reply that did not parse
+        responses.append({"t": at, **record, "indicator_pack_version": INDICATOR_PACK_VERSION, "usage": usage,
+                          "latency_ms": round((time.monotonic() - start) * 1000), "response": response, "error": error})
         if not error:
             return response
         events.append({"t": at, "type": "error", "error": error, "response": response})

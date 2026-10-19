@@ -1,13 +1,16 @@
+import hashlib
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from bench.engine import run_tick, run_week
-from bench.market import replay
-from tests.helpers import OPEN_BTC, market, scripted, solo
+from bench.engine import ms, run_tick, run_week
+from bench.indicators import INDICATOR_PACK_VERSION
+from tests.helpers import FAKE_TSM, OPEN_BTC, bar, market, rate, recorded, scripted, solo
 
-LIVE = replay(Path(__file__).parent / "fixtures" / "live_btc")  # recorded metaAndAssetCtxs: 234 perps, 56 delisted
+LIVE = recorded(Path(__file__).parent / "fixtures" / "live_btc")  # recorded metaAndAssetCtxs: 234 perps, 56 delisted
 
 W1 = "2026-10-19T00:07:00Z"
 W2 = "2026-10-26T00:07:00Z"
@@ -70,6 +73,26 @@ class RunWeek(unittest.TestCase):
 
         self.assertEqual(state["layers"][0]["notional"], 6000)
         self.assertEqual(state["free_equity"], 7500)
+
+    def test_strategist_reads_the_full_tsm_from_the_path_in_the_env_var(self):
+        seen = []
+        self.week(W1, strategist(PLAN, seen=seen))
+
+        self.assertEqual(seen[0]["role"], "strategist")
+        self.assertEqual(seen[0]["tsm"], FAKE_TSM.read_text())
+        [record] = [json.loads(l) for l in (self.data / "x" / "responses.jsonl").read_text().splitlines()]
+        self.assertEqual((record["role"], record["model"]), ("strategist", "strategist"))
+        self.assertEqual(record["tsm_sha256"], hashlib.sha256(FAKE_TSM.read_bytes()).hexdigest())
+
+    def test_week_fails_naming_the_env_var_when_the_full_tsm_is_missing(self):
+        for path in (None, str(self.data / "nowhere.md")):
+            with self.subTest(path), patch.dict(os.environ):
+                os.environ.pop("TSM_FULL_PATH")
+                if path:
+                    os.environ["TSM_FULL_PATH"] = path
+                with self.assertRaisesRegex(Exception, "TSM_FULL_PATH"):
+                    self.week(W1, strategist(PLAN))
+                self.assertFalse((self.data / "x").exists())
 
     def test_flat_account_at_week_boundary_reallocates_equity_over_four(self):
         self.week(W1, strategist(PLAN))
@@ -180,6 +203,34 @@ class RunWeek(unittest.TestCase):
                                              "reallocated": False, "notional_used": False})
         self.assertEqual((state["free_equity"], state["layers"]), (10000, [None] * 4))
 
+    def test_strategist_sees_candles_packs_and_last_weeks_vwap_and_funding_per_universe_symbol(self):
+        candles = [bar("BTC", "2026-10-11T23:45:00Z", 999, i="15m"),  # before last Monday: outside the VWAP
+                   bar("BTC", "2026-10-12T00:00:00Z", 100, h=103, l=97, i="15m"),  # typical 100
+                   bar("BTC", "2026-10-18T23:45:00Z", 200, i="15m"),
+                   bar("BTC", "2026-10-19T00:00:00Z", 999, i="15m"),  # still forming at W1
+                   *[bar("BTC", f"2026-09-{d:02}T00:00:00Z", 100 + d, i="1d") for d in range(1, 31)],
+                   *[bar("BTC", f"2026-10-{d:02}T00:00:00Z", 130 + d, i="1d") for d in range(1, 19)],
+                   bar("BTC", "2026-10-12T00:00:00Z", 140, i="1w")]
+        funding = [rate("BTC", "2026-10-12T00:00:00Z", 0.0001), rate("BTC", "2026-10-18T23:00:00Z", 0.0003),
+                   rate("BTC", "2026-10-11T23:00:00Z", 0.01),  # before last Monday
+                   rate("BTC", "2026-10-19T00:00:00Z", 0.01)]  # this Week's first hour, like the VWAP's forming bar
+        seen = []
+        self.week(W1, strategist(PLAN, seen=seen), market(candles, funding))
+
+        universe = {u["symbol"]: u for u in seen[0]["universe"]}
+        btc = universe["BTC"]
+        self.assertEqual((btc["vwap_last_week"]["vwap"], btc["vwap_last_week"]["bars"]), (150, 2))
+        self.assertAlmostEqual(btc["funding_last_week"], 0.0002)
+        self.assertEqual(len(btc["candles"]["1d"]["bars"]), 30)
+        self.assertEqual(btc["candles"]["1d"]["bars"][-1][4], 148)  # Oct 18 close, the last closed day
+        self.assertEqual(btc["candles"]["1d"]["pack"]["version"], INDICATOR_PACK_VERSION)
+        self.assertEqual(btc["candles"]["1w"], {"bars": [[ms("2026-10-12T00:00:00Z"), 140, 140, 140, 140, 1]]})
+        self.assertAlmostEqual(btc["change_24h"], (148 / 147 - 1) * 100)
+        self.assertAlmostEqual(btc["change_7d"], (148 / 141 - 1) * 100)
+        self.assertAlmostEqual(btc["change_30d"], (148 / 118 - 1) * 100)
+        for symbol in ("ETH", "DOGE"):  # no candles: the pack is still attached
+            self.assertEqual(universe[symbol]["candles"]["1d"]["pack"]["version"], INDICATOR_PACK_VERSION)
+
     def test_strategist_sees_top_50_by_volume_and_may_pick_any_listed_symbol(self):
         tnsr = {**PLAN["watchlist"][0], "symbol": "TNSR"}  # lowest 24h volume of the listed perps
         matic = {**tnsr, "symbol": "MATIC"}  # delisted
@@ -189,8 +240,9 @@ class RunWeek(unittest.TestCase):
 
         universe = seen[0]["universe"]
         self.assertEqual(len(universe), 50)
-        self.assertEqual(universe[0], {"symbol": "BTC", "day_volume": 1010005391.2605088949, "mark": 81959.0,
-                                       "funding": -0.0000007678, "open_interest": 41576.78028, "max_leverage": 40})
+        self.assertLessEqual({"symbol": "BTC", "day_volume": 1010005391.2605088949, "mark": 81959.0,
+                              "funding": -0.0000007678, "open_interest": 41576.78028, "max_leverage": 40}.items(),
+                             universe[0].items())
         self.assertNotIn("TNSR", [u["symbol"] for u in universe])
         self.assertIn("TNSR", seen[0]["symbols"])
         self.assertNotIn("MATIC", seen[0]["symbols"])
@@ -200,10 +252,14 @@ class RunWeek(unittest.TestCase):
     def test_strategist_sees_last_weeks_plan_trades_and_violations(self):
         self.week(W1, strategist(PLAN))
         self.tick("2026-10-19T01:07:00Z", scripted(OPEN_BTC, OPEN_BTC))
-        self.tick("2026-10-19T02:07:00Z", scripted({"type": "close", "slot": 0}))
+        self.tick("2026-10-19T02:07:00Z", scripted({"type": "close", "slot": 0}),
+                  market(funding=[rate("BTC", "2026-10-19T02:00:00Z", 0.0001)]))
         seen = []
 
         self.week(W2, strategist(PLAN, seen=seen))
+
+        # funding shows in collateral and holds carry no trade: neither comes back (spec: trades and reasoning)
+        self.assertIn("funding", [e["type"] for e in self.events()])
 
         self.assertEqual(seen[0]["previous_plan"], {**PLAN, "week": WEEK1})
         self.assertEqual([e["type"] for e in seen[0]["last_week"]],
@@ -213,7 +269,7 @@ class RunWeek(unittest.TestCase):
         self.tick("2026-10-26T01:07:00Z", scripted({"type": "hold"}))
         self.week("2026-11-02T00:07:00Z", strategist(PLAN, seen=seen))
 
-        self.assertEqual([e["type"] for e in seen[1]["last_week"]], ["plan", "reallocation", "decision"])  # since W2 only
+        self.assertEqual([e["type"] for e in seen[1]["last_week"]], ["plan", "reallocation"])  # since W2 only
 
     def test_every_weeks_plan_is_archived_and_each_decision_names_its_plan(self):
         runs = ((WEEK1, "2026-10-21T09:30:00Z", "2026-10-21T10:07:00Z"),  # Week 1 run by hand on Wednesday

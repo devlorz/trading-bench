@@ -1,12 +1,14 @@
+import hashlib
 import json
 import re
 import tempfile
 import unittest
 from pathlib import Path
 
-from bench.engine import run_tick
-from bench.market import recording, replay
-from tests.helpers import FIXTURES, HOLD, OPEN_BTC, bar, market, rate, scripted, solo
+from bench.engine import iso, ms, run_tick
+from bench.indicators import INDICATOR_PACK_VERSION
+from bench.market import BAR_MS, recording, replay
+from tests.helpers import FIXTURES, HOLD, OPEN_BTC, bar, market, rate, recorded, scripted, solo
 
 PLAN = {
     "week": "2026-10-19T00:07:00Z",
@@ -349,7 +351,80 @@ class RunTick(unittest.TestCase):
         self.tick(T1, executor, market([bar("BTC", "2026-10-19T01:20:00Z", 80000, l=76000)]))
 
         self.assertEqual([e["type"] for e in seen[0]["settled"]], ["liquidation"])
-        self.assertIsNone(seen[0]["state"]["layers"][0])
+        self.assertIsNone(seen[0]["account"]["layers"][0])
+
+    def test_executor_sees_watchlist_market_data_with_an_indicator_pack_per_timeframe(self):
+        seen = []
+        start = ms(T0) - ms(T0) % BAR_MS["4h"] - 40 * BAR_MS["4h"]
+        four_hour = [bar("BTC", iso(start + n * BAR_MS["4h"]), 100000 + n, i="4h") for n in range(41)]  # last is forming
+        self.tick(T0, lambda given: seen.append(given) or HOLD(given), market(four_hour))
+
+        request = seen[0]
+        self.assertEqual(request["role"], "executor")
+        self.assertIn("Hard Rule", request["tsm"])
+        self.assertEqual(sorted(request["market"]), ["BTC", "DOGE", "ETH"])  # nothing outside the watchlist
+        for symbol, data in request["market"].items():
+            self.assertEqual(sorted(data["candles"]), ["15m", "1h", "4h"])
+            for series in data["candles"].values():
+                self.assertEqual(series["pack"]["version"], INDICATOR_PACK_VERSION)
+            self.assertTrue({"mark", "funding", "predicted_funding", "open_interest", "max_leverage",
+                             "change_24h", "change_7d", "vwap_today"} <= set(data))
+        btc = request["market"]["BTC"]["candles"]["4h"]["bars"]
+        self.assertEqual(len(btc), 30)
+        self.assertEqual(btc[-1][0], ms(T0) - ms(T0) % BAR_MS["4h"] - BAR_MS["4h"])  # last closed bar
+
+    def test_executor_sees_its_account_at_mark_and_this_weeks_trades_with_reasoning(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        for h in range(2, 9):  # seven holds
+            self.tick(f"2026-10-19T{h:02}:07:00Z", HOLD)
+        seen = []
+        self.tick("2026-10-19T09:07:00Z", lambda given: seen.append(given) or HOLD(given))
+
+        account = seen[0]["account"]
+        self.assertEqual(account["free_equity"], 7500)
+        layer = account["layers"][0]
+        self.assertEqual((layer["symbol"], layer["entry"], layer["mark"]), ("BTC", 100010.0, 100000.0))
+        self.assertLess(layer["liq"], layer["entry"])
+        self.assertAlmostEqual(account["equity"], 10000 - 4.5 - 10000 / 100010 * 10)
+        # every trade, but only the last six holds: a Week of hourly holds would crowd out the market data
+        recent_holds = [(f"2026-10-19T{h:02}:07:00Z", "decision") for h in range(3, 9)]
+        self.assertEqual([(e["t"], e["type"]) for e in seen[0]["this_week"]], [(T0, "decision"), (T0, "fill"), *recent_holds])
+        self.assertEqual(seen[0]["this_week"][0]["reasoning"], "scripted")
+
+    def test_every_model_call_is_archived_with_what_it_was_given(self):
+        usage = {"prompt_tokens": 900, "completion_tokens": 40, "total_tokens": 940}
+        replies = iter([["broken"], {"reasoning": "ok", "actions": [{"type": "hold"}], "_usage": usage}])
+        self.tick(T0, lambda _input: next(replies))
+
+        broken, good = [json.loads(l) for l in (self.data / "x" / "responses.jsonl").read_text().splitlines()]
+        summary = hashlib.sha256((Path(__file__).parents[1] / "bench" / "tsm_executor.md").read_bytes()).hexdigest()
+        for record in (broken, good):
+            self.assertEqual((record["t"], record["role"], record["model"]), (T0, "executor", "executor"))
+            self.assertEqual(record["tsm_sha256"], summary)
+            self.assertEqual(record["indicator_pack_version"], INDICATOR_PACK_VERSION)
+            self.assertRegex(record["snapshot"], "^[0-9a-f]{64}$")
+            self.assertGreaterEqual(record["latency_ms"], 0)
+        self.assertEqual(broken["snapshot"], good["snapshot"])  # one market snapshot per round
+        self.assertEqual((broken["response"], broken["error"]), (["broken"], "response must be an object with reasoning (string) and actions (list)"))
+        self.assertEqual((good["response"], good["usage"], good["error"]), ({"reasoning": "ok", "actions": [{"type": "hold"}]}, usage, None))
+        self.assertNotIn("_usage", self.events()[-1])
+
+    def test_archive_keeps_the_raw_reply_the_client_could_not_parse(self):
+        def unparseable(_input):
+            e = ValueError("reply is not JSON")
+            e.raw = "Sure! " + "x" * 2000
+            raise e
+        self.tick(T0, unparseable)
+
+        records = [json.loads(l) for l in (self.data / "x" / "responses.jsonl").read_text().splitlines()]
+        self.assertEqual([r["response"] for r in records], ["Sure! " + "x" * 2000] * 2)
+
+    def test_market_snapshot_id_changes_with_the_market_data(self):
+        self.tick(T0, HOLD, contestant="a")
+        self.tick(T0, HOLD, market([bar("BTC", "2026-10-19T00:00:00Z", 1, i="1h")]), contestant="b")
+
+        a, b = ([json.loads(l) for l in (self.data / c / "responses.jsonl").read_text().splitlines()][0]["snapshot"] for c in "ab")
+        self.assertNotEqual(a, b)
 
     def test_executor_sees_violations_from_previous_tick_only(self):
         self.tick(T0, scripted(OPEN_BTC, OPEN_BTC))
@@ -382,7 +457,7 @@ class RunTick(unittest.TestCase):
 
     def test_settles_recorded_live_hyperliquid_data(self):
         """Guards the in-memory fakes above: real candle/funding shapes and time filters (recorded 2026-10-18)."""
-        live = replay(Path(__file__).parent / "fixtures" / "live_btc")
+        live = recorded(Path(__file__).parent / "fixtures" / "live_btc")
         btc_only = {**PLAN, "watchlist": PLAN["watchlist"][:1]}  # only BTC's book was recorded
         self.tick("2026-10-18T08:07:00Z", scripted(OPEN_BTC), live, plan=btc_only)
 
@@ -395,9 +470,9 @@ class RunTick(unittest.TestCase):
         self.assertEqual(state["layers"][0]["symbol"], "BTC")
 
     def test_recorded_market_replays_to_identical_state(self):
-        recorded = Path(tempfile.mkdtemp())
-        self.tick(T0, scripted(OPEN_BTC), source=recording(replay(FIXTURES), recorded), contestant="live")
-        self.tick(T0, scripted(OPEN_BTC), source=replay(recorded), contestant="replayed")
+        folder = Path(tempfile.mkdtemp())
+        self.tick(T0, scripted(OPEN_BTC), source=recording(recorded(FIXTURES), folder), contestant="live")
+        self.tick(T0, scripted(OPEN_BTC), source=replay(folder), contestant="replayed")
 
         for f in ("state.json", "events.jsonl"):
             self.assertEqual((self.data / "replayed" / f).read_bytes(), (self.data / "live" / f).read_bytes())

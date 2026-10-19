@@ -4,3 +4,8 @@ artifacts/
 .DS_Store
 .sample/
 .claude/
+# full TSM Principle 4: not ours to publish, read via TSM_FULL_PATH
+**/tsm_full*
+**/TSM*
+*.tsm.md
+!bench/tsm_executor.md
