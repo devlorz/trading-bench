@@ -110,7 +110,7 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 
 ### Executor
 
-- Input ต่อ Tick: สรุปกฎ TSM แบบย่อ (ไฟล์เดียวใน repo ใช้ร่วมทุก Contestant), Weekly Plan ปัจจุบัน, สถานะบัญชี (equity, free equity, RP, ทุก Layer พร้อม entry/mark/unrealized/liq price/TP), event ที่ settle ไปตั้งแต่ Tick ก่อน, Action ที่ถูกปฏิเสธใน Tick ก่อนพร้อมเหตุผล, log การเทรดและ reasoning ของตัวเองในสัปดาห์นี้, ข้อมูลตลาดต่อ symbol ใน watchlist: candle 4H × 30, 1H × 24, 15m × 16 แต่ละ series มี Indicator Pack กำกับ, %change 24h/7d, daily VWAP (anchor 00:00 UTC), mark, funding rate ปัจจุบันและคาดการณ์, OI, max leverage
+- Input ต่อ Tick: สรุปกฎ TSM แบบย่อ (ไฟล์เดียวใน repo ใช้ร่วมทุก Contestant), Weekly Plan ปัจจุบัน, สถานะบัญชี (equity, free equity, RP, ทุก Layer พร้อม entry/mark/unrealized/liq price/TP), event ที่ settle ไปตั้งแต่ Tick ก่อน, Action ที่ถูกปฏิเสธใน Tick ก่อนพร้อมเหตุผล, ทุกไม้ที่เปิด/ปิดในสัปดาห์นี้พร้อม reasoning ตอนนั้น บวก reasoning ของ Tick ที่ hold ล้วน 6 ครั้งล่าสุด (คุมขนาด prompt ปลายสัปดาห์), ข้อมูลตลาดต่อ symbol ใน watchlist: candle 4H × 30, 1H × 24, 15m × 16 แต่ละ series มี Indicator Pack กำกับ, %change 24h/7d, `vwap_today` (anchor 00:00 UTC), mark, funding rate ปัจจุบันและคาดการณ์, OI, max leverage
 - Output: reasoning เป็นข้อความ + รายการ Action โดย Action มี 5 ชนิด: open (slot, symbol, side), close (slot), set_tp (slot, price), cancel_tp (slot), hold ไม่มี limit entry ไม่มี stop ไม่มี partial ไม่มีระบุขนาด
 - Engine apply Action ตามลำดับที่ส่งมา รายการที่ขัด Hard Rule หรือ Weekly Plan ถูกปฏิเสธเป็นรายรายการ (รายการอื่นยัง apply) และบันทึกเป็น Violation พร้อมกฎที่ขัด
 - Hard Rule ที่ Engine ตรวจ: Slot ว่างและ free equity พอ, symbol อยู่ใน watchlist และทิศตรง bias, ไม่เกิด long+short สินค้าเดียวกัน, notional ÷ collateral ≤ max leverage ของ symbol, TP อยู่ฝั่งกำไรของ entry, slot ที่อ้างมีอยู่จริง
@@ -118,14 +118,14 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 
 ### Indicator Pack (ตาม ADR-0003)
 
-- Engine คำนวณด้วย stdlib จากแท่งที่ดึงมา ~200 แท่งต่อ timeframe แล้วส่งเฉพาะส่วนท้ายของ candle ตามจำนวนข้างต้น pack เหมือนกันทุก Contestant และมี `indicator_pack_version` บันทึกคู่กับทุก response ห้ามเปลี่ยนนิยามหลัง Week 1 เริ่ม
+- Engine คำนวณด้วย stdlib จากแท่งที่ดึงมา ~200 แท่งต่อ timeframe แล้วส่งเฉพาะส่วนท้ายของ candle ตามจำนวนข้างต้น แท่งถูกส่งแบบบีบ: timestamp เริ่มต้นครั้งเดียวต่อ series แล้วตามด้วย `[o, h, l, c, v]` ต่อแท่ง ราคาปัดตาม tick size ของสินค้า volume เป็นจำนวนเต็ม พร้อม `prompt_encoding_version` บันทึกคู่กับทุก response pack เหมือนกันทุก Contestant และมี `indicator_pack_version` บันทึกคู่กับทุก response ห้ามเปลี่ยนนิยามหลัง Week 1 เริ่ม
 - ต่อ series (ทุก timeframe ที่ส่ง ยกเว้น weekly) คำนวณจากแท่งที่ปิดแล้วเท่านั้น ค่าแบบ series ส่ง 3 จุด: ปัจจุบัน, 1 แท่งก่อน, 5 แท่งก่อน: EMA 20, EMA 50 (seed ด้วย SMA); RSI 14 (Wilder; ราคานิ่งตลอด = 50); ATR 14 (Wilder) ทั้งเป็นราคาและ % ของ close; MACD 12/26/9 (line, signal, histogram) ส่วน swing เป็นจุดเดียวต่อฝั่ง: swing high และ swing low ล่าสุดที่ยืนยันแล้วแบบ fractal 3 แท่งซ้าย/ขวา (ราคา, จำนวนแท่งที่ผ่านมา) บวก `swing_position` ค่าเดียว (close ล่าสุดอยู่เหนือ swing high / ใต้ swing low / ระหว่าง และเป็น null เมื่อขาด swing ด้านใดด้านหนึ่ง)
 - ต่อ symbol: %change ของ close เทียบ 24h และ 7d ก่อน (Strategist เพิ่ม 30d); VWAP จากแท่ง 15m ด้วย typical price (H+L+C)/3 × volume พร้อม % ระยะห่างของราคาจาก VWAP และจำนวนแท่งที่สะสมแล้ว โดย Executor ได้ daily VWAP anchor ที่ 00:00 UTC ของวันนั้น (หลังเที่ยงคืนใหม่ๆ เป็น null + 0 แท่ง) ส่วน Strategist ได้ VWAP ของสัปดาห์ที่เพิ่งจบ ช่วง [จันทร์ก่อนหน้า 00:00, จันทร์นี้ 00:00) เพราะ run-week เกิดไม่กี่นาทีหลังขอบ Week ซึ่งสัปดาห์ใหม่ยังไม่มีแท่งปิด
 - ทดสอบเป็น pure function (series → ค่า) ด้วย fixture คงที่เทียบค่าอ้างอิง เป็น seam ที่สองนอกเหนือจาก Tick เฉพาะคณิตล้วน ส่วน Tick seam ตรวจแค่ว่า pack ถูกแนบครบทุก symbol/timeframe
 
 ### Strategist
 
-- Input ต่อ Week: TSM Principle 4 เต็มฉบับ, Weekly Plan สัปดาห์ก่อน, ทุก position ที่เปิด/ปิดในสัปดาห์ก่อนพร้อม reasoning ของ Executor ตอนเปิดและปิด, Violation ของสัปดาห์ก่อน, สถานะบัญชีปัจจุบันและว่าจะเกิด Reallocation หรือไม่ (พร้อม collateral ที่จะได้), universe = top 50 perp ตาม 24h volume พร้อม daily candle × 30 พร้อม Indicator Pack, weekly candle × 26 ดิบ, %change 24h/7d/30d, VWAP ของสัปดาห์ที่เพิ่งจบ, funding เฉลี่ย 7 วัน, OI, max leverage; รายชื่อ symbol ทั้งหมดบน Hyperliquid (ชื่ออย่างเดียว) เพื่อให้เลือกนอก top 50 ได้
+- Input ต่อ Week: TSM Principle 4 เต็มฉบับ, Weekly Plan สัปดาห์ก่อน, ทุก position ที่เปิด/ปิดในสัปดาห์ก่อนพร้อม reasoning ของ Executor ตอนเปิดและปิด (ไม่รวม funding event และ Tick ที่ hold ล้วน), Violation ของสัปดาห์ก่อน, สถานะบัญชีปัจจุบันและว่าจะเกิด Reallocation หรือไม่ (พร้อม collateral ที่จะได้), universe = top 50 perp ตาม 24h volume พร้อม daily candle × 30 พร้อม Indicator Pack, weekly candle × 12 ดิบ, %change 24h/7d/30d, `vwap_last_week` และ `funding_last_week` (เฉลี่ย) ของสัปดาห์ที่เพิ่งจบ ช่วงเดียวกัน [จันทร์ก่อนหน้า 00:00, จันทร์นี้ 00:00), OI, max leverage; รายชื่อ symbol ทั้งหมดบน Hyperliquid (ชื่ออย่างเดียว) เพื่อให้เลือกนอก top 50 ได้
 - Output: Weekly Plan ตามโครงสร้างด้านบน
 
 ### ความล้มเหลว
