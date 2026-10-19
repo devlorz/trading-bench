@@ -49,10 +49,10 @@ def document(path):
 
 def full_tsm():
     """TSM Principle 4 is someone else's document and the repo is public, so it is read from outside the repo."""
-    path = os.environ.get("TSM_FULL_PATH")
-    if not path or not Path(path).is_file():
-        raise RuntimeError(f"set TSM_FULL_PATH to the full TSM Principle 4 file (now {path!r})")
-    return document(path)
+    try:
+        return document(os.environ["TSM_FULL_PATH"])
+    except (KeyError, OSError) as e:  # unset, missing, a folder, unreadable
+        raise RuntimeError(f"set TSM_FULL_PATH to a readable full TSM Principle 4 file ({type(e).__name__}: {e})") from None
 
 
 def run_round(kind, step, at, market, model, data_dir, config, waiting):

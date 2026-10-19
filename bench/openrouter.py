@@ -4,6 +4,8 @@ import json
 import urllib.request
 from pathlib import Path
 
+from bench.engine import MAX_WATCHLIST, MIN_NOTIONAL
+
 URL = "https://openrouter.ai/api/v1/chat/completions"
 TIMEOUT = 300  # seconds; a Strategist reply over ~60k tokens of prompt can take minutes
 
@@ -26,7 +28,12 @@ TASK = {
     "executor": "You are the Executor. Decide this Tick's Actions within the Weekly Plan. Reply with JSON only: "
                 '{"reasoning": string, "actions": [Action]}.',
     "strategist": "You are the Strategist. Write this Week's Weekly Plan. Reply with JSON only: "
-                  '{"notional", "watchlist": [{"symbol", "bias", "entry", "exit"}], "close_all", "hostage_policy", "rationale"}.',
+                  '{"notional", "watchlist": [{"symbol", "bias", "entry", "exit"}], "close_all", "hostage_policy", "rationale"}. '
+                  # the Engine's plan validation, stated up front so a paid retry is not the first the model hears of it
+                  f"The plan is rejected unless: the watchlist has at most {MAX_WATCHLIST} symbols, none repeated, each "
+                  f"one of the data's symbols; notional is at least {MIN_NOTIONAL} USD; and the leverage this Week will "
+                  "trade is at most the max leverage of every watchlist symbol: your notional / reallocation.collateral "
+                  "when reallocation happens, otherwise the RP in state stays and its notional / collateral counts.",
 }
 
 
@@ -69,8 +76,7 @@ def client(api_key, artifacts, post=http_post):
     def model(model_id, request):
         role = request["role"]
         body = {"model": model_id, "messages": prompt(request),
-                "response_format": {"type": "json_schema", "json_schema": {"name": role, "strict": True, "schema": SCHEMA[role]}},
-                "provider": {"require_parameters": True}}  # only route to providers that honour the schema
+                "response_format": {"type": "json_schema", "json_schema": {"name": role, "strict": True, "schema": SCHEMA[role]}}}
         folder = Path(artifacts) / request["at"].replace(":", "-")  # upload-artifact rejects colons
         folder.mkdir(parents=True, exist_ok=True)
         with open(folder / f"{model_id.replace('/', '_')}.jsonl", "a") as log:  # one line per attempt

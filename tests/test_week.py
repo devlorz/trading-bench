@@ -84,8 +84,11 @@ class RunWeek(unittest.TestCase):
         self.assertEqual((record["role"], record["model"]), ("strategist", "strategist"))
         self.assertEqual(record["tsm_sha256"], hashlib.sha256(FAKE_TSM.read_bytes()).hexdigest())
 
-    def test_week_fails_naming_the_env_var_when_the_full_tsm_is_missing(self):
-        for path in (None, str(self.data / "nowhere.md")):
+    def test_week_fails_naming_the_env_var_when_the_full_tsm_cannot_be_read(self):
+        unreadable = self.data / "locked.md"
+        unreadable.write_text("TSM")
+        unreadable.chmod(0)
+        for path in (None, str(self.data / "nowhere.md"), str(unreadable)):
             with self.subTest(path), patch.dict(os.environ):
                 os.environ.pop("TSM_FULL_PATH")
                 if path:

@@ -52,6 +52,7 @@ class Client(unittest.TestCase):
         self.assertEqual(body["response_format"]["json_schema"]["name"], "executor")
         self.assertNotIn("temperature", body)  # each vendor's default
         self.assertNotIn("tools", body)
+        self.assertNotIn("provider", body)  # require_parameters would also demand structured_outputs, which some lack
         [kept] = [p for p in self.artifacts.rglob("*") if p.is_file()]
         self.assertNotIn(":", str(kept.relative_to(self.artifacts)))  # upload-artifact rejects colons
         self.assertEqual(json.loads(kept.read_text().splitlines()[-1])["messages"], body["messages"])
