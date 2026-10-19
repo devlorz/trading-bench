@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from bench.engine import LAYERS, read_jsonl
+from bench.engine import LAYERS, read_jsonl, week_of
 
 
 def export(data_dir, out_dir, config):
@@ -15,11 +15,15 @@ def export(data_dir, out_dir, config):
         if not events:
             continue  # added to config, no Week run yet
         positions = closed_positions(events)
-        who = {**contestant, "eliminated": next((e["week"] for e in events if e["type"] == "elimination"), None)}
+        weeks = [e for e in events if e["type"] == "plan"]
+        who = {**contestant, "started_week": week_of(weeks[0]["t"]),
+               "eliminated": next((e["week"] for e in events if e["type"] == "elimination"), None)}
         rows.append({**who, **metrics(events, snapshots, positions, config["initial_capital"])})
         curves[contestant["name"]] = [[s["t"], s["equity"]] for s in snapshots]
-        plans = [{**a["plan"], "notional_used": a["notional_used"]}
-                 for a in (json.loads(f.read_text()) for f in sorted((folder / "plans").glob("*.json")))]
+        archive = {a["plan"]["week"]: a["plan"] for a in (json.loads(f.read_text()) for f in (folder / "plans").glob("*.json"))}
+        # one entry per Week: the plan in force (none before the first valid plan) and how it came to be
+        plans = [{**archive.get(e["plan"], {}), "week": week_of(e["t"]), "in_force": e["plan"], "fallback": e["fallback"],
+                  "reallocated": e["reallocated"], "notional_used": e["notional_used"]} for e in weeks]
         write(out_dir / f"{contestant['name']}.json", {
             **who,
             "layers": snapshots[-1]["layers"] if snapshots else [None] * LAYERS,
@@ -28,8 +32,8 @@ def export(data_dir, out_dir, config):
             "decisions": [strip(e) for e in events if e["type"] == "decision"],
             "violations": [strip(e) for e in events if e["type"] == "violation"],
         })
-    ticks = [r for r in read_jsonl(data_dir / "runs.jsonl") if r["type"] == "tick"]
-    write(out_dir / "index.json", {"last_tick": ticks[-1] if ticks else None,
+    runs = read_jsonl(data_dir / "runs.jsonl")
+    write(out_dir / "index.json", {"last_run": runs[-1] if runs else None, "initial_capital": config["initial_capital"],
                                    "leaderboard": sorted(rows, key=lambda r: -r["net_return"]), "equity": curves})
 
 

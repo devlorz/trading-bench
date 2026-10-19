@@ -6,9 +6,11 @@
 
 **Status:** ready-for-agent
 
-- [ ] เปิดจากไฟล์ export ตัวอย่างที่ test ของ ticket 06 ผลิต แล้วทุกหน้าตาม spec แสดงครบ
-- [ ] leaderboard เรียงตาม Net Return และแสดง Contestant ที่ eliminated พร้อมสัปดาห์ที่ตกรอบ
-- [ ] equity chart ซ้อน 6 เส้น เลือกซ่อน/แสดงรายคู่ได้
-- [ ] หน้ารายคู่เปิดจาก leaderboard และแสดง 5 ส่วนตาม spec
-- [ ] ใช้งานได้ที่ความกว้าง 375px ไม่มี horizontal scroll
-- [ ] ตรวจด้วยตาจากไฟล์ตัวอย่าง ไม่มี automated test
+- [x] เปิดจากไฟล์ export ตัวอย่างที่ test ของ ticket 06 ผลิต แล้วทุกหน้าตาม spec แสดงครบ
+- [x] leaderboard เรียงตาม Net Return และแสดง Contestant ที่ eliminated พร้อมสัปดาห์ที่ตกรอบ
+- [x] equity chart ซ้อน 6 เส้น เลือกซ่อน/แสดงรายคู่ได้
+- [x] หน้ารายคู่เปิดจาก leaderboard และแสดง 5 ส่วนตาม spec
+- [x] ใช้งานได้ที่ความกว้าง 375px ไม่มี horizontal scroll
+- [x] ตรวจด้วยตาจากไฟล์ตัวอย่าง ไม่มี automated test
+
+หมายเหตุ: ไฟล์ตัวอย่างใช้ `python3 -m tests.sample_site` (ขับ Engine ผ่าน seam เดียวกับ test) แทน export จาก test ของ 06 ซึ่งมีแค่ 2 Contestant ไม่พอเช็คกราฟหลายเส้น TP/liquidation/Elimination ที่ยังถือ Layer, fallback plan, Week 1 ไม่มีแผน, Contestant ที่เข้ากลางทาง และ Tick ที่ถูกข้าม

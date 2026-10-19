@@ -2,3 +2,5 @@ __pycache__/
 .venv/
 artifacts/
 .DS_Store
+.sample/
+.claude/

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading Bench</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fcfcfb; --card: #ffffff; --line: #e4e3df; --ink: #0b0b0b; --ink2: #52514e; --ink3: #7a7974;
+  --bad: #c62f2e; --warn: #9a6400;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #4a3aa7; --s8: #e34948;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1a1a19; --card: #232322; --line: #383835; --ink: #ffffff; --ink2: #c3c2b7; --ink3: #93928a;
+    --bad: #e66767; --warn: #d9a440;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 64rem; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.4rem; margin: 0 0 4px; }
+h2 { font-size: 1.1rem; margin: 32px 0 8px; }
+a { color: inherit; }
+.muted { color: var(--ink2); }
+.small { font-size: .85rem; }
+.num { font-variant-numeric: tabular-nums; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-wrap: anywhere; }
+.row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.row .grow { flex: 1; }
+.big { font-size: 1.25rem; font-weight: 600; }
+dl { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); gap: 8px 16px; margin: 8px 0 0; }
+dt { color: var(--ink2); font-size: .8rem; }
+dd { margin: 0; font-variant-numeric: tabular-nums; }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
+.badge { display: inline-block; font-size: .8rem; font-weight: 600; border: 1px solid currentColor; border-radius: 4px; padding: 0 6px; }
+.bad { color: var(--bad); }
+.warn { color: var(--warn); }
+.chart { position: relative; height: 320px; }
+details > summary { cursor: pointer; padding: 4px 0; }
+pre { white-space: pre-wrap; margin: 4px 0 0; font: inherit; }
+code { font-size: .85rem; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main id="app"><p class="muted">Loading…</p></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// Everything shown comes from site/data/ (bench/export.py). Model text is untrusted: it only ever goes in via textContent.
+const app = document.getElementById("app");
+
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") el.className = v; else if (k === "style") el.style.cssText = v; else el.setAttribute(k, v);
+  }
+  for (const kid of kids.flat(Infinity)) if (kid !== null && kid !== undefined && kid !== false) el.append(kid instanceof Node ? kid : String(kid));
+  return el;
+}
+const fields = pairs => h("dl", {}, pairs.map(([k, v]) => [h("dt", {}, k), h("dd", {}, v ?? "–")]));
+
+const usd = n => n == null ? "–" : n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+const pct = n => n == null ? "–" : (n > 0 ? "+" : "") + (n * 100).toFixed(2) + "%";
+const price = n => n == null ? "–" : n.toLocaleString("en-US", { maximumSignificantDigits: 6 });
+const time = t => t.slice(0, 16).replace("T", " ") + " UTC";
+const week = t => "week of " + t.slice(0, 10);
+const signed = n => (n > 0 ? "+" : "") + usd(n);
+
+// ponytail: colour by name order, so adding a Contestant mid-benchmark can shift later names; export a fixed order if that bites
+let order = {};
+const colour = name => getComputedStyle(document.documentElement).getPropertyValue(`--s${(order[name] ?? 0) % 8 + 1}`).trim();
+let chart;
+
+const load = async name => {
+  const r = await fetch(`data/${name}.json`, { cache: "no-store" });
+  if (!r.ok) throw new Error(`data/${name}.json: ${r.status}`);
+  return r.json();
+};
+
+function eliminatedBadge(row) {
+  return row.eliminated && h("span", { class: "badge bad" }, "✕ Eliminated " + week(row.eliminated));
+}
+
+function joinedBadge(row, index) {
+  const first = index.leaderboard.map(r => r.started_week).sort()[0];
+  return row.started_week > first && h("span", { class: "badge" }, "joined " + week(row.started_week));
+}
+
+function lastRun(run) {
+  if (!run) return h("p", { class: "muted" }, "Nothing has run yet.");
+  const ok = run.status === "ok";
+  return h("p", { class: "small" },
+    run.type === "week" ? "Last Week run " : "Last Tick ", h("strong", {}, time(run.t)), " · ",
+    h("span", { class: ok ? "" : "badge warn" }, ok ? "✓ ran" : "⚠ skipped"),
+    run.reason && h("span", { class: "muted" }, " — " + run.reason),
+    run.waiting_for_week && h("span", { class: "muted" }, " · waiting for their first Week: " + run.waiting_for_week.join(", ")));
+}
+
+function message(text) {
+  app.replaceChildren(h("div", {}, h("p", { class: "small" }, h("a", { href: "#" }, "← Leaderboard")), h("p", { class: "bad" }, text)));
+}
+
+function home(index) {
+  const rows = index.leaderboard;
+  app.replaceChildren(h("div", {},
+    h("h1", {}, "Trading Bench"),
+    h("p", { class: "muted small" }, `Contestants (a Strategist + Executor from the same lab) paper-trading Hyperliquid perps from ${index.initial_capital.toLocaleString("en-US")} USDC each. Ranked by Net Return.`),
+    lastRun(index.last_run),
+    h("h2", {}, "Leaderboard"),
+    rows.length ? rows.map((r, i) => h("div", { class: "card" },
+      h("div", { class: "row" },
+        h("span", { class: "muted num" }, `#${i + 1}`),
+        h("a", { href: "#" + encodeURIComponent(r.name), class: "big grow" }, h("span", { class: "swatch", style: `background:${colour(r.name)}` }), r.name),
+        eliminatedBadge(r), joinedBadge(r, index),
+        h("span", { class: "big num" }, pct(r.net_return))),
+      h("div", { class: "muted small" }, `${r.strategist} → ${r.executor}`),
+      fields([
+        ["Equity", usd(r.equity)], ["Max Drawdown", pct(-r.max_drawdown)], ["Closed positions", r.closed_positions],
+        ["Win rate", r.win_rate == null ? null : pct(r.win_rate).replace("+", "")], ["Avg PnL / position", r.avg_pnl == null ? null : signed(r.avg_pnl)],
+        ["Liquidations", r.liquidations], ["Violations", r.violations], ["Fees", usd(r.fees)], ["Funding (net)", signed(r.funding)],
+        ["Reallocation weeks", r.reallocation_weeks],
+      ])))
+    : h("p", { class: "muted" }, "No Contestant has run its first Week yet."),
+    h("h2", {}, "Equity"),
+    h("p", { class: "muted small" }, "Hourly snapshots incl. unrealized PnL. Tap a name to hide or show it. ✕ marks where an eliminated Contestant stopped."),
+    h("div", { class: "card chart" }, h("canvas", { id: "equity", "aria-label": "Equity of every Contestant over time; the leaderboard above has the same numbers", role: "img" })),
+  ));
+  equityChart(index);
+}
+
+function equityChart(index) {
+  const css = getComputedStyle(document.documentElement);
+  const ink2 = css.getPropertyValue("--ink2").trim(), line = css.getPropertyValue("--line").trim();
+  const out = Object.fromEntries(index.leaderboard.map(r => [r.name, r.eliminated]));
+  const xs = Object.values(index.equity).flat().map(([t]) => Date.parse(t));
+  chart?.destroy();
+  chart = new Chart(document.getElementById("equity"), {
+    type: "line",
+    data: {
+      datasets: Object.entries(index.equity).map(([name, points]) => ({
+        label: name,
+        data: points.map(([t, e]) => ({ x: Date.parse(t), y: e })),
+        borderColor: colour(name), backgroundColor: colour(name), borderWidth: 2, tension: 0,
+        pointRadius: c => out[name] && c.dataIndex === points.length - 1 ? 8 : 0,
+        pointStyle: "crossRot", pointHitRadius: 6,
+      })),
+    },
+    options: {
+      maintainAspectRatio: false, animation: false,
+      interaction: { mode: "nearest", axis: "x", intersect: false },
+      scales: {
+        x: { type: "linear", ...(xs.length && { min: Math.min(...xs), max: Math.max(...xs) }), grid: { display: false }, ticks: { color: ink2, maxTicksLimit: 6, callback: v => new Date(v).toISOString().slice(5, 10) } },
+        y: { grid: { color: line }, ticks: { color: ink2, callback: v => "$" + v.toLocaleString("en-US") } },
+      },
+      plugins: {
+        legend: { position: "top", align: "start", labels: { color: ink2, boxWidth: 10, boxHeight: 10 } },
+        tooltip: { callbacks: { title: items => time(new Date(items[0].parsed.x).toISOString()), label: c => ` ${c.dataset.label}: ${usd(c.parsed.y)}` } },
+      },
+    },
+  });
+}
+
+const describe = a => {
+  if (!a || typeof a !== "object") return JSON.stringify(a);
+  if (a.type === "open") return `open Slot ${a.slot}: ${a.symbol} ${a.side}`;
+  if (a.type === "close" || a.type === "cancel_tp") return `${a.type} Layer ${a.slot}`;
+  if (a.type === "set_tp") return `set TP Layer ${a.slot} @ ${price(a.price)}`;
+  if (a.type === "hold") return "hold";
+  return JSON.stringify(a);
+};
+
+function contestant(p, index) {
+  const row = index.leaderboard.find(r => r.name === p.name) || {};
+  const open = p.layers.filter(Boolean).length;
+  const byWeek = {};
+  for (const d of p.decisions) (byWeek[d.plan ?? "no plan"] ??= []).push(d);
+  const weeks = Object.keys(byWeek).sort().reverse();
+  app.replaceChildren(h("div", {},
+    h("p", { class: "small" }, h("a", { href: "#" }, "← Leaderboard")),
+    h("h1", {}, h("span", { class: "swatch", style: `background:${colour(p.name)}` }), p.name, " ", eliminatedBadge(p), " ", joinedBadge(row, index)),
+    h("p", { class: "muted small" }, `Strategist ${p.strategist} · Executor ${p.executor}`),
+    lastRun(index.last_run),
+    h("div", { class: "card" }, h("div", { class: "row" }, h("span", { class: "grow" }, "Net Return"), h("span", { class: "big num" }, pct(row.net_return))),
+      fields([["Equity", usd(row.equity)], ["Max Drawdown", pct(-row.max_drawdown)], ["Violations", row.violations], ["Liquidations", row.liquidations]])),
+
+    h("h2", {}, `Open Layers (${open}/${p.layers.length})`),
+    p.eliminated && open ? h("p", { class: "small bad" }, `Frozen at Elimination (${week(p.eliminated)}): marks are from the last snapshot and are no longer settled.`) : null,
+    p.layers.map((l, slot) => h("div", { class: "card" },
+      h("div", { class: "row" }, l ? [h("strong", {}, `Layer ${slot}`), h("span", {}, `${l.symbol} ${l.side}`)] : [h("strong", {}, `Slot ${slot}`), h("span", { class: "muted" }, "empty")]),
+      l && fields([["Notional", usd(l.notional)], ["Entry", price(l.entry)], ["Mark", price(l.mark)], ["Unrealized PnL", signed(l.unrealized)],
+        ["Liq. price", price(l.liq)], ["TP", l.tp == null ? "none" : price(l.tp)]]))),
+
+    h("h2", {}, `Closed positions (${p.positions.length})`),
+    p.positions.length ? [...p.positions].reverse().map(x => h("div", { class: "card" },
+      h("div", { class: "row" }, h("strong", { class: "grow" }, `${x.symbol} ${x.side}`),
+        h("span", { class: x.reason === "liquidation" ? "badge bad" : "badge" }, { close: "Executor closed", tp: "TP", liquidation: "Liquidated" }[x.reason]),
+        h("span", { class: "num" }, signed(x.pnl))),
+      fields([["Opened", time(x.opened_at)], ["Closed", time(x.closed_at)], ["Entry", price(x.entry)], ["Exit", price(x.exit)],
+        ["Fees", usd(x.fees)], ["Funding", signed(x.funding)]])))
+    : h("p", { class: "muted" }, "None yet."),
+
+    h("h2", {}, "Weekly Plans"),
+    p.plans.length ? [...p.plans].reverse().map(pl => h("div", { class: "card" },
+      h("div", { class: "row" }, h("strong", { class: "grow" }, week(pl.week)), !pl.fallback && h("span", { class: "num" }, "notional " + usd(pl.notional))),
+      pl.in_force == null ? h("p", { class: "small warn" }, "⚠ No valid Weekly Plan yet, so the Executor is not asked and nothing trades this Week.")
+      : pl.fallback ? h("p", { class: "small warn" }, `⚠ This Week's plan failed validation, so the plan from ${week(pl.in_force)} stays in force.`)
+      : !pl.reallocated && h("p", { class: "small muted" }, "Notional not in use: Layers were still open at the Week boundary, so no Reallocation."),
+      pl.in_force != null && [
+        h("pre", {}, pl.rationale),
+        fields([["Close all", pl.close_all], ["Hostage policy", pl.hostage_policy]]),
+        h("dl", {}, pl.watchlist.map(w => [h("dt", {}, `${w.symbol} · ${w.bias}`), h("dd", { class: "small" }, `entry: ${w.entry}`, h("br"), `exit: ${w.exit}`)]))]))
+    : h("p", { class: "muted" }, "None yet."),
+
+    h("h2", {}, `Executor decisions (${p.decisions.length})`),
+    weeks.length ? weeks.map((w, i) => h("details", i === 0 ? { open: "" } : {},
+      h("summary", {}, `${w === "no plan" ? w : week(w)} · ${byWeek[w].length} Ticks`),
+      [...byWeek[w]].reverse().map(d => h("div", { class: "card" },
+        h("div", { class: "row small" }, h("strong", { class: "grow" }, time(d.t)), h("code", {}, (Array.isArray(d.actions) ? d.actions : [d.actions]).map(describe).join(" · "))),
+        h("pre", { class: "muted" }, d.reasoning)))))
+    : h("p", { class: "muted" }, "None yet."),
+
+    h("h2", {}, `Violations (${p.violations.length})`),
+    p.violations.length ? [...p.violations].reverse().map(v => h("div", { class: "card" },
+      h("div", { class: "row small" }, h("strong", { class: "grow" }, time(v.t)), h("span", { class: "badge warn" }, "⚠ " + v.rule)),
+      v.action && h("code", {}, "rejected: " + describe(v.action))))
+    : h("p", { class: "muted" }, "None."),
+  ));
+  window.scrollTo(0, 0);
+}
+
+async function route() {
+  try {
+    const index = await load("index");
+    order = Object.fromEntries(Object.keys(index.equity).sort().map((n, i) => [n, i]));
+    const name = decodeURIComponent(location.hash.slice(1));
+    if (!name) home(index);
+    else if (index.leaderboard.some(r => r.name === name)) contestant(await load(name), index);
+    else message(`No Contestant called "${name}" on the leaderboard.`);
+  } catch (e) {
+    message("Could not load dashboard data: " + e.message);
+  }
+}
+addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>

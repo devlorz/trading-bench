@@ -11,7 +11,7 @@ from bench.export import export
 from tests.helpers import CONFIG, OPEN_BTC, bar, market, rate
 
 W1, T0, T1, T2 = "2026-10-19T00:07:00Z", "2026-10-19T01:07:00Z", "2026-10-19T02:07:00Z", "2026-10-19T03:07:00Z"
-W2 = "2026-10-26T00:07:00Z"
+W2, W3 = "2026-10-26T00:07:00Z", "2026-11-02T00:07:00Z"
 PLAN = {"notional": 5000, "watchlist": [{"symbol": "BTC", "bias": "both", "entry": "x", "exit": "y"}],
         "close_all": "never", "hostage_policy": "reopen", "rationale": "r"}
 PAIRS = {**CONFIG, "contestants": [{"name": "a", "strategist": "a-big", "executor": "a-small"},
@@ -84,7 +84,7 @@ class RunRound(unittest.TestCase):
         runs = [json.loads(l) for l in (self.data / "runs.jsonl").read_text().splitlines()]
         self.assertEqual(runs, [{"t": W1, "type": "week", "status": "ok"},
                                 {"t": T0, "type": "tick", "status": "skipped", "reason": "TimeoutError: l2Book timed out"}])
-        self.assertEqual(self.export()("index")["last_tick"], runs[-1])
+        self.assertEqual(self.export()("index")["last_run"], runs[-1])
         self.run_both(run_tick, "2026-10-19T02:07:00Z")  # the next Tick runs normally
         self.assertEqual(self.state("b")["layers"][0]["symbol"], "BTC")
 
@@ -144,7 +144,7 @@ class RunRound(unittest.TestCase):
         size = 10000 / 100010  # a's BTC, bought at the ask
         exit_fee = size * 99990 * 0.00045
         a_net = -4.5 - 1.0 + size * (99990 - 100010) - exit_fee  # entry fee, funding, price, exit fee
-        self.assertEqual(index["last_tick"], {"t": T1, "type": "tick", "status": "ok"})
+        self.assertEqual((index["last_run"], index["initial_capital"]), ({"t": T1, "type": "tick", "status": "ok"}, 10000))
         a, b = index["leaderboard"]
         self.assertEqual((a["name"], b["name"]), ("a", "b"))
         expected = {
@@ -190,6 +190,40 @@ class RunRound(unittest.TestCase):
         export(self.data, self.data / "site", joined)
         index = json.loads((self.data / "site" / "index.json").read_text())
         self.assertEqual(sorted(r["name"] for r in index["leaderboard"]), ["a", "b"])
+
+        self.replies["c-big"] = PLAN
+        run_week(W2, market(), client(self.replies, self.calls), self.data, joined)
+        export(self.data, self.data / "site", joined)
+        index = json.loads((self.data / "site" / "index.json").read_text())
+        self.assertEqual({r["name"]: r["started_week"] for r in index["leaderboard"]},
+                         {"a": "2026-10-19T00:00:00Z", "b": "2026-10-19T00:00:00Z", "c": "2026-10-26T00:00:00Z"})
+
+    def test_skipped_week_round_is_the_last_run(self):
+        self.run_both(run_week, W1)
+        self.run_both(run_tick, T0)
+
+        def down(body):
+            raise TimeoutError("metaAndAssetCtxs timed out")
+
+        self.run_both(run_week, W2, down)
+        self.assertEqual(self.export()("index")["last_run"],
+                         {"t": W2, "type": "week", "status": "skipped", "reason": "TimeoutError: metaAndAssetCtxs timed out"})
+
+    def test_weekly_plans_list_every_week_with_the_plan_in_force_or_none(self):
+        broken = {"rationale": "no watchlist"}
+        self.replies["a-big"] = broken
+        self.run_both(run_week, W1)  # no plan yet: the Executor holds all Week
+        self.replies["a-big"] = PLAN
+        self.run_both(run_week, W2)
+        self.replies["a-big"] = broken
+        self.run_both(run_week, W3)  # last week's plan stays in force
+
+        plans = self.export()("a")["plans"]
+        self.assertEqual([(p["week"], p["in_force"], p["fallback"], p["reallocated"], p["notional_used"], p.get("rationale"))
+                          for p in plans],
+                         [("2026-10-19T00:00:00Z", None, True, False, False, None),
+                          ("2026-10-26T00:00:00Z", "2026-10-26T00:00:00Z", False, True, True, "r"),
+                          ("2026-11-02T00:00:00Z", "2026-10-26T00:00:00Z", True, False, True, "r")])
 
     def test_book_of_a_layer_held_from_last_weeks_watchlist_is_fetched_before_any_model(self):
         self.run_both(run_week, W1)
