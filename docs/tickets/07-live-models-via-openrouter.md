@@ -18,5 +18,5 @@
 - [x] prompt ดิบถูกเขียนลงโฟลเดอร์ artifact ที่ไม่ถูก commit
 - [x] test: model client จำลอง HTTP ล้ม/ตอบพัง ผ่าน seam เดียว ไม่เรียก network
 - [ ] (จากผลรันจริง) ไม่ส่ง `provider.require_parameters` คง `response_format: json_schema` ไว้ เพราะ endpoint ของ z-ai/glm-5.3-prime ไม่รองรับ structured_outputs; system prompt ของ Strategist ระบุกติกา validation (watchlist ≤ 5 ไม่ซ้ำ อยู่ใน `symbols`, notional ≥ 10 USD, notional ÷ collateral ≤ max leverage ทุก symbol); `full_tsm()` จับ OSError ทุกชนิดแล้ว raise ข้อความที่บอกชื่อ env var
-- [ ] (ADR-0003 แก้แล้ว) weekly candle 12 แท่ง และ candle ทุก series ส่งแบบบีบ: timestamp เริ่มต้นครั้งเดียว + `[o, h, l, c, v]` ต่อแท่ง ราคาปัดตาม tick size จาก meta volume จำนวนเต็ม; `prompt_encoding_version` บันทึกคู่กับทุก response; test วัดว่า universe 50 symbol มีขนาดไม่เกิน ~120k chars
+- [ ] (ADR-0003 แก้แล้ว) weekly candle 12 แท่ง และ candle ทุก series ส่งแบบบีบ: timestamp เริ่มต้นครั้งเดียว + `[o, h, l, c, v]` ต่อแท่ง ราคาปัดตาม tick size จาก meta volume จำนวนเต็ม; `prompt_encoding_version` บันทึกคู่กับทุก response; float ทุกตัวที่ส่ง (pack, %change, VWAP, funding, volume) ปัด 5 significant figures ตอน encode เท่านั้น; test วัดว่า universe 50 symbol มีขนาดไม่เกิน 130k chars
 - [ ] รัน run-week จริงซ้ำหลังแก้ (data โฟลเดอร์ใหม่) ให้ครบ 6 ค่ายรวม zai แล้วรัน run-tick 1 ครั้งเพื่อพิสูจน์ Executor ทั้ง 6 ตัว บันทึกผลใน ticket
