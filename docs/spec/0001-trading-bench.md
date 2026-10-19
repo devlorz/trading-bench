@@ -119,7 +119,7 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 ### Indicator Pack (ตาม ADR-0003)
 
 - Engine คำนวณด้วย stdlib จากแท่งที่ดึงมา ~200 แท่งต่อ timeframe แล้วส่งเฉพาะส่วนท้ายของ candle ตามจำนวนข้างต้น pack เหมือนกันทุก Contestant และมี `indicator_pack_version` บันทึกคู่กับทุก response ห้ามเปลี่ยนนิยามหลัง Week 1 เริ่ม
-- ต่อ series (ทุก timeframe ที่ส่ง ยกเว้น weekly) แต่ละค่าส่ง 3 จุด: ปัจจุบัน, 1 แท่งก่อน, 5 แท่งก่อน: EMA 20, EMA 50 (seed ด้วย SMA); RSI 14 (Wilder); ATR 14 (Wilder) ทั้งเป็นราคาและ % ของ close; MACD 12/26/9 (line, signal, histogram); swing high และ swing low ล่าสุดที่ยืนยันแล้วแบบ fractal 3 แท่งซ้าย/ขวา (ราคา, จำนวนแท่งที่ผ่านมา, ราคาปัจจุบันอยู่เหนือ/ใต้/ระหว่าง)
+- ต่อ series (ทุก timeframe ที่ส่ง ยกเว้น weekly) คำนวณจากแท่งที่ปิดแล้วเท่านั้น ค่าแบบ series ส่ง 3 จุด: ปัจจุบัน, 1 แท่งก่อน, 5 แท่งก่อน: EMA 20, EMA 50 (seed ด้วย SMA); RSI 14 (Wilder; ราคานิ่งตลอด = 50); ATR 14 (Wilder) ทั้งเป็นราคาและ % ของ close; MACD 12/26/9 (line, signal, histogram) ส่วน swing เป็นจุดเดียวต่อฝั่ง: swing high และ swing low ล่าสุดที่ยืนยันแล้วแบบ fractal 3 แท่งซ้าย/ขวา (ราคา, จำนวนแท่งที่ผ่านมา) บวก `swing_position` ค่าเดียว (close ล่าสุดอยู่เหนือ swing high / ใต้ swing low / ระหว่าง และเป็น null เมื่อขาด swing ด้านใดด้านหนึ่ง)
 - ต่อ symbol: %change ของ close เทียบ 24h และ 7d ก่อน (Strategist เพิ่ม 30d); VWAP แบบ anchored จากแท่ง 15m ด้วย typical price (H+L+C)/3 × volume โดย Executor anchor ที่ 00:00 UTC ของวันนั้น และ Strategist anchor ที่จันทร์ 00:00 UTC พร้อม % ระยะห่างของราคาจาก VWAP และจำนวนแท่งที่สะสมแล้ว
 - ทดสอบเป็น pure function (series → ค่า) ด้วย fixture คงที่เทียบค่าอ้างอิง เป็น seam ที่สองนอกเหนือจาก Tick เฉพาะคณิตล้วน ส่วน Tick seam ตรวจแค่ว่า pack ถูกแนบครบทุก symbol/timeframe
 
