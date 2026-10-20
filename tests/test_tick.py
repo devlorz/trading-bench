@@ -7,7 +7,7 @@ from pathlib import Path
 
 from bench.engine import iso, ms, run_tick
 from bench.indicators import INDICATOR_PACK_VERSION
-from bench.market import BAR_MS, recording, replay
+from bench.market import BAR_MS, PROMPT_ENCODING_VERSION, recording, replay
 from tests.helpers import FIXTURES, HOLD, OPEN_BTC, bar, market, rate, recorded, scripted, solo
 
 PLAN = {
@@ -356,7 +356,8 @@ class RunTick(unittest.TestCase):
     def test_executor_sees_watchlist_market_data_with_an_indicator_pack_per_timeframe(self):
         seen = []
         start = ms(T0) - ms(T0) % BAR_MS["4h"] - 40 * BAR_MS["4h"]
-        four_hour = [bar("BTC", iso(start + n * BAR_MS["4h"]), 100000 + n, i="4h") for n in range(41)]  # last is forming
+        four_hour = [bar("BTC", iso(start + n * BAR_MS["4h"]), 100000 + n, i="4h")
+                     for n in range(41) if n != 35]  # the exchange was down for bar 35; the last bar is forming
         self.tick(T0, lambda given: seen.append(given) or HOLD(given), market(four_hour))
 
         request = seen[0]
@@ -369,9 +370,27 @@ class RunTick(unittest.TestCase):
                 self.assertEqual(series["pack"]["version"], INDICATOR_PACK_VERSION)
             self.assertTrue({"mark", "funding", "predicted_funding", "open_interest", "max_leverage",
                              "change_24h", "change_7d", "vwap_today"} <= set(data))
-        btc = request["market"]["BTC"]["candles"]["4h"]["bars"]
-        self.assertEqual(len(btc), 30)
-        self.assertEqual(btc[-1][0], ms(T0) - ms(T0) % BAR_MS["4h"] - BAR_MS["4h"])  # last closed bar
+        btc = request["market"]["BTC"]["candles"]["4h"]
+        # compact: one start time, then [o, h, l, c, v] per bar, with a gap as null so the times still line up
+        self.assertEqual((btc["start"], btc["interval"]), (start + 10 * BAR_MS["4h"], "4h"))
+        self.assertEqual(len(btc["bars"]), 30)
+        self.assertEqual(btc["bars"][-1], [100039, 100039, 100039, 100039, 1])  # last closed bar
+        self.assertIsNone(btc["bars"][35 - 10])
+
+    def test_prices_sent_are_cut_to_the_assets_tick(self):
+        hour = "2026-10-19T00:00:00Z"  # the last closed 1h bar at T0
+        seen = []
+        self.tick(T0, lambda given: seen.append(given) or HOLD(given),
+                  market([bar("BTC", hour, 100000.6, h=100123.4, l=99999.94, i="1h"),  # szDecimals 5
+                          bar("ETH", hour, 4000.123, h=4012.5, l=3999.99, i="1h"),  # szDecimals 4: 2 decimals at most
+                          bar("DOGE", hour, 0.2, h=0.123456789, l=0.0001234567, i="1h"),  # szDecimals 0
+                          bar("DOGE", "2026-10-19T00:45:00Z", 0.2, h=0.2123, l=0.1987, i="15m")]))
+
+        last = {s: seen[0]["market"][s]["candles"]["1h"]["bars"][-1][:3] for s in ("BTC", "ETH", "DOGE")}
+        self.assertEqual(last, {"BTC": [100001, 100123, 100000],  # whole numbers always; else 5 significant figures
+                                "ETH": [4000.1, 4012.5, 4000],
+                                "DOGE": [0.2, 0.12346, 0.000123]})  # 6 decimals at most
+        self.assertEqual(seen[0]["market"]["DOGE"]["vwap_today"]["vwap"], 0.20367)  # (H+L+C)/3 = 0.2036666…
 
     def test_executor_sees_its_account_at_mark_and_this_weeks_trades_with_reasoning(self):
         self.tick(T0, scripted(OPEN_BTC))
@@ -402,6 +421,7 @@ class RunTick(unittest.TestCase):
             self.assertEqual((record["t"], record["role"], record["model"]), (T0, "executor", "executor"))
             self.assertEqual(record["tsm_sha256"], summary)
             self.assertEqual(record["indicator_pack_version"], INDICATOR_PACK_VERSION)
+            self.assertEqual(record["prompt_encoding_version"], PROMPT_ENCODING_VERSION)
             self.assertRegex(record["snapshot"], "^[0-9a-f]{64}$")
             self.assertGreaterEqual(record["latency_ms"], 0)
         self.assertEqual(broken["snapshot"], good["snapshot"])  # one market snapshot per round

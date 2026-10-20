@@ -4,7 +4,7 @@ import unittest
 from urllib.error import HTTPError
 from pathlib import Path
 
-from bench.engine import run_tick
+from bench.engine import MAX_WATCHLIST, MIN_NOTIONAL, run_tick
 from bench.market import BAR_MS
 from bench.openrouter import URL, client
 from tests.helpers import CONFIG, FIXTURES, market
@@ -63,6 +63,14 @@ class Client(unittest.TestCase):
             self.model(reply(content))("anthropic/x", REQUEST)
         self.assertEqual(raised.exception.raw, content)
 
+    def test_strategist_is_told_the_plan_validation_up_front(self):
+        self.model(reply("{}"))("anthropic/x", {**REQUEST, "role": "strategist"})
+
+        system = self.posted[0]["messages"][0]["content"]
+        for rule in (f"at most {MAX_WATCHLIST} symbols", "none repeated", "symbols", f"at least {MIN_NOTIONAL} USD",
+                     "max leverage"):
+            self.assertIn(rule, system)
+
     def test_retry_shows_the_previous_error_to_the_model(self):
         error = "watchlist has 6 symbols, at most 5"
         self.model(reply("{}"))("anthropic/x", {**REQUEST, "retry_error": error})
@@ -82,7 +90,7 @@ class Client(unittest.TestCase):
 
         def info(body):  # five perps with every bar of ~200 present at realistic precision
             if body["type"] == "metaAndAssetCtxs":
-                return [{"universe": [{"name": c, "maxLeverage": 40} for c in coins]}, [ctx] * 5]
+                return [{"universe": [{"name": c, "maxLeverage": 40, "szDecimals": 5} for c in coins]}, [ctx] * 5]
             if body["type"] == "l2Book":
                 return fixtures({"type": "l2Book", "coin": "BTC"})
             if body["type"] == "candleSnapshot":

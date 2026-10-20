@@ -1,5 +1,6 @@
 import hashlib
 import json
+import math
 import os
 import tempfile
 import unittest
@@ -7,6 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from bench.engine import ms, run_tick, run_week
+from bench.market import BAR_MS, PROMPT_ENCODING_VERSION
 from bench.indicators import INDICATOR_PACK_VERSION
 from tests.helpers import FAKE_TSM, OPEN_BTC, bar, market, rate, recorded, scripted, solo
 
@@ -23,6 +25,7 @@ PLAN = {
     "hostage_policy": "reopen lost Slots first",
     "rationale": "trend week",
 }
+UNIVERSE_MAX_CHARS = 130_000  # ADR-0003 encoding; the live recording of 2026-10-19 measured 126k
 DOGE = {"symbol": "DOGE", "bias": "long", "entry": "x", "exit": "y"}  # max leverage 3x
 
 
@@ -83,18 +86,21 @@ class RunWeek(unittest.TestCase):
         [record] = [json.loads(l) for l in (self.data / "x" / "responses.jsonl").read_text().splitlines()]
         self.assertEqual((record["role"], record["model"]), ("strategist", "strategist"))
         self.assertEqual(record["tsm_sha256"], hashlib.sha256(FAKE_TSM.read_bytes()).hexdigest())
+        self.assertEqual(record["prompt_encoding_version"], PROMPT_ENCODING_VERSION)
 
     def test_week_fails_naming_the_env_var_when_the_full_tsm_cannot_be_read(self):
         unreadable = self.data / "locked.md"
         unreadable.write_text("TSM")
         unreadable.chmod(0)
-        for path in (None, str(self.data / "nowhere.md"), str(unreadable)):
+        for path in (None, "", str(self.data / "nowhere.md"), str(self.data), str(unreadable)):
             with self.subTest(path), patch.dict(os.environ):
                 os.environ.pop("TSM_FULL_PATH")
-                if path:
+                if path is not None:
                     os.environ["TSM_FULL_PATH"] = path
-                with self.assertRaisesRegex(Exception, "TSM_FULL_PATH"):
+                with self.assertRaises(RuntimeError) as raised:
                     self.week(W1, strategist(PLAN))
+                self.assertIn("TSM_FULL_PATH", str(raised.exception))
+                self.assertIn(repr(path), str(raised.exception))  # the path as given, even an empty one
                 self.assertFalse((self.data / "x").exists())
 
     def test_flat_account_at_week_boundary_reallocates_equity_over_four(self):
@@ -225,14 +231,60 @@ class RunWeek(unittest.TestCase):
         self.assertEqual((btc["vwap_last_week"]["vwap"], btc["vwap_last_week"]["bars"]), (150, 2))
         self.assertAlmostEqual(btc["funding_last_week"], 0.0002)
         self.assertEqual(len(btc["candles"]["1d"]["bars"]), 30)
-        self.assertEqual(btc["candles"]["1d"]["bars"][-1][4], 148)  # Oct 18 close, the last closed day
+        self.assertEqual(btc["candles"]["1d"]["bars"][-1][3], 148)  # Oct 18 close, the last closed day
         self.assertEqual(btc["candles"]["1d"]["pack"]["version"], INDICATOR_PACK_VERSION)
-        self.assertEqual(btc["candles"]["1w"], {"bars": [[ms("2026-10-12T00:00:00Z"), 140, 140, 140, 140, 1]]})
-        self.assertAlmostEqual(btc["change_24h"], (148 / 147 - 1) * 100)
-        self.assertAlmostEqual(btc["change_7d"], (148 / 141 - 1) * 100)
-        self.assertAlmostEqual(btc["change_30d"], (148 / 118 - 1) * 100)
+        self.assertEqual(btc["candles"]["1w"], {"start": ms("2026-10-12T00:00:00Z"), "interval": "1w",
+                                                "bars": [[140, 140, 140, 140, 1]]})
+        # every float sent is cut to 5 significant figures, after it is computed at full precision
+        self.assertEqual((btc["change_24h"], btc["change_7d"], btc["change_30d"]), (0.68027, 4.9645, 25.424))
         for symbol in ("ETH", "DOGE"):  # no candles: the pack is still attached
             self.assertEqual(universe[symbol]["candles"]["1d"]["pack"]["version"], INDICATOR_PACK_VERSION)
+
+    def test_universe_candles_are_compact_and_decode_back_to_the_bars_sent(self):
+        meta, ctxs = LIVE({"type": "metaAndAssetCtxs"})
+        decimals = {a["name"]: a["szDecimals"] for a in meta["universe"]}
+        marks = {a["name"]: float(c["markPx"]) for a, c in zip(meta["universe"], ctxs)}
+        coins_a_day = {a["name"]: float(c["dayNtlVlm"]) / float(c["markPx"]) for a, c in zip(meta["universe"], ctxs)}
+
+        def exchange_price(symbol, px):
+            """How Hyperliquid quotes: at most 5 significant figures and 6 - szDecimals decimals; integers always."""
+            places = max(0, min(6 - decimals[symbol], 4 - math.floor(math.log10(px))))
+            return f"{round(px, places):.{places}f}"
+
+        made = {}
+
+        def info(body):  # every symbol gets full history at the exchange's own precision
+            if body["type"] != "candleSnapshot":
+                return LIVE(body)
+            r, step = body["req"], BAR_MS[body["req"]["interval"]]
+            first = r["startTime"] - r["startTime"] % step + (step if r["startTime"] % step else 0)
+            bars = []
+            for t in range(first, r["endTime"] + 1, step):
+                k = t // step
+                o, h, l, c = (marks[r["coin"]] * (1 + 0.03 * math.sin(k + d)) for d in (0, 0.3, 0.6, 0.9))
+                px = [exchange_price(r["coin"], p) for p in (o, max(o, h, l, c), min(o, h, l, c), c)]
+                bars.append({"t": t, "T": t + step - 1, "o": px[0], "h": px[1], "l": px[2], "c": px[3],
+                             # volume in coins, as Hyperliquid reports it: billions for cheap perps
+                             "v": f"{coins_a_day[r['coin']] * step / BAR_MS['1d'] * (0.7 + 0.1 * (k % 7)):.5f}",
+                             "n": 100 + k % 50})
+            made[r["coin"], r["interval"]] = bars
+            return bars
+
+        seen = []
+        self.week(W1, strategist(PLAN, seen=seen), info)
+
+        universe = seen[0]["universe"]
+        self.assertEqual(len(universe), 50)
+        self.assertLessEqual(len(json.dumps(universe, separators=(",", ":"))), UNIVERSE_MAX_CHARS)  # as the prompt sends it
+        for u in universe:
+            for interval, series in u["candles"].items():
+                closed = [b for b in made[u["symbol"], interval] if b["T"] < ms(W1)]
+                sent = closed[-len(series["bars"]):]
+                self.assertEqual(len(series["bars"]), {"1d": 30, "1w": 12}[interval])
+                for i, (bar_, original) in enumerate(zip(series["bars"], sent)):
+                    self.assertEqual(series["start"] + i * BAR_MS[series["interval"]], original["t"])
+                    self.assertEqual(bar_[:4], [float(original[k]) for k in "ohlc"])  # prices are already on tick
+                    self.assertLessEqual(abs(bar_[4] - float(original["v"])), 0.5)
 
     def test_strategist_sees_top_50_by_volume_and_may_pick_any_listed_symbol(self):
         tnsr = {**PLAN["watchlist"][0], "symbol": "TNSR"}  # lowest 24h volume of the listed perps
@@ -243,8 +295,8 @@ class RunWeek(unittest.TestCase):
 
         universe = seen[0]["universe"]
         self.assertEqual(len(universe), 50)
-        self.assertLessEqual({"symbol": "BTC", "day_volume": 1010005391.2605088949, "mark": 81959.0,
-                              "funding": -0.0000007678, "open_interest": 41576.78028, "max_leverage": 40}.items(),
+        self.assertLessEqual({"symbol": "BTC", "day_volume": 1.0100e9, "mark": 81959.0,
+                              "funding": -0.0000007678, "open_interest": 41577.0, "max_leverage": 40}.items(),
                              universe[0].items())
         self.assertNotIn("TNSR", [u["symbol"] for u in universe])
         self.assertIn("TNSR", seen[0]["symbols"])

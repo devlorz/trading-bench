@@ -38,13 +38,16 @@ TASK = {
 
 
 RETRY = "If the data has retry_error, your previous reply was rejected for that reason: fix it and answer again."
+CANDLES = ("Each candle series is {start: open time in ms of its first bar (null when there are no bars), interval, "
+           "bars: [open, high, low, close, volume] per bar, oldest first, null for a bar the exchange never printed}; "
+           "bar i opens at start + i * interval.")
 
 
 def prompt(request):
     """System: the TSM text and the task. User: the request's data as JSON only, so text that came from a model
     (retry_error quotes its reply, the plan its rationale) never sits where instructions go."""
     data = {k: v for k, v in request.items() if k not in ("role", "tsm")}
-    return [{"role": "system", "content": f"{request['tsm']}\n\n{TASK[request['role']]} {RETRY}"},
+    return [{"role": "system", "content": f"{request['tsm']}\n\n{TASK[request['role']]} {CANDLES} {RETRY}"},
             {"role": "user", "content": json.dumps(data, separators=(",", ":"))}]
 
 

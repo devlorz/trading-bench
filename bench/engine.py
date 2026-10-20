@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from bench.indicators import INDICATOR_PACK_VERSION
-from bench.market import BAR_MS, bars_between, basics, universe_data, watch_data
+from bench.market import BAR_MS, PROMPT_ENCODING_VERSION, bars_between, basics, rounded, universe_data, watch_data
 
 TSM_SUMMARY = Path(__file__).parent / "tsm_executor.md"
 
@@ -49,10 +49,13 @@ def document(path):
 
 def full_tsm():
     """TSM Principle 4 is someone else's document and the repo is public, so it is read from outside the repo."""
-    try:
-        return document(os.environ["TSM_FULL_PATH"])
-    except (KeyError, OSError) as e:  # unset, missing, a folder, unreadable
-        raise RuntimeError(f"set TSM_FULL_PATH to a readable full TSM Principle 4 file ({type(e).__name__}: {e})") from None
+    path, problem = os.environ.get("TSM_FULL_PATH"), "not set"
+    if path:
+        try:
+            return document(path)
+        except OSError as e:  # missing, a folder, unreadable
+            problem = f"{type(e).__name__}: {e.strerror}"
+    raise RuntimeError(f"set TSM_FULL_PATH to a readable full TSM Principle 4 file (now {path!r}: {problem})")
 
 
 def run_round(kind, step, at, market, model, data_dir, config, waiting):
@@ -127,7 +130,7 @@ def tick_contestant(contestant, at, market, model, data_dir, config):
         predicted = dict(market({"type": "predictedFundings"}))
         assets = {a["name"]: (a, c) for a, c in zip(meta["universe"], ctxs)}
         watched = {w["symbol"] for w in plan["watchlist"]} & listed
-        data = {s: watch_data(market, s, ms(at), *assets[s], dict(predicted.get(s, []))) for s in sorted(watched)}
+        data = {s: rounded(watch_data(market, s, ms(at), *assets[s], dict(predicted.get(s, [])))) for s in sorted(watched)}
     snapshot_id = yield True
 
     actions, responses = [], []
@@ -185,10 +188,11 @@ def week_contestant(contestant, at, market, model, data_dir, config, full_tsm_do
     events = list(settled)
     tsm, tsm_sha = full_tsm_doc
     listed_leverage = {a["name"]: a["maxLeverage"] for a in meta["universe"] if not a.get("isDelisted")}
+    decimals = {a["name"]: a["szDecimals"] for a in meta["universe"]}
     perps = [{"symbol": a["name"], "day_volume": float(c["dayNtlVlm"]), **basics(a, c)}
              for a, c in zip(meta["universe"], ctxs) if a["name"] in listed_leverage]
     anchor = ms(week_start) - BAR_MS["1w"]  # the Week that just ended: this one has no closed bar yet
-    universe = [{**p, **universe_data(market, p["symbol"], ms(at), anchor)}
+    universe = [rounded({**p, **universe_data(market, p["symbol"], decimals[p["symbol"]], ms(at), anchor)})
                 for p in sorted(perps, key=lambda p: -p["day_volume"])[:TOP_PERPS]]
     snapshot_id = yield True
 
@@ -322,7 +326,8 @@ def ask(model, request, check, retries, at, events, record, responses):
             error = check(response)
         except Exception as e:  # any failed model call (network, unparseable reply) counts as a broken response
             response, error = getattr(e, "raw", None), f"{type(e).__name__}: {e}"  # raw: a reply that did not parse
-        responses.append({"t": at, **record, "indicator_pack_version": INDICATOR_PACK_VERSION, "usage": usage,
+        responses.append({"t": at, **record, "indicator_pack_version": INDICATOR_PACK_VERSION,
+                          "prompt_encoding_version": PROMPT_ENCODING_VERSION, "usage": usage,
                           "latency_ms": round((time.monotonic() - start) * 1000), "response": response, "error": error})
         if not error:
             return response
