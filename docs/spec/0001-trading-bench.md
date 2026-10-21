@@ -104,6 +104,7 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 ### Weekly Plan
 
 - โครงสร้าง: notional ต่อ Layer เป็น USD, watchlist สูงสุด 5 รายการ แต่ละรายการมี symbol, bias (long / short / both / avoid), เงื่อนไข entry เป็นข้อความ, เงื่อนไข exit เป็นข้อความ; เงื่อนไข "ปิดทุกกอง" เป็นข้อความ (เพื่อให้ Reallocation สัปดาห์หน้าเกิด); นโยบายใช้ Hostage เป็นข้อความ; rationale เป็นข้อความยาว
+- watchlist ว่างเป็นแผนที่ถูกกติกา (Strategist เลือก Wait & See ทั้งสัปดาห์) ในกรณีนั้น Engine ยังเรียก Executor ทุก Tick ตราบใดที่มี Layer ค้างจากสัปดาห์ก่อน (เพื่อให้ปิดได้) แต่ถ้าไม่มีทั้ง watchlist และ Layer เปิด Engine บันทึก decision เป็น hold โดยไม่เรียกโมเดล
 - Validation ตอนรับแผน: symbol ทุกตัวมีบน Hyperliquid, watchlist ≤ 5, notional ≥ ขั้นต่ำของ Hyperliquid (10 USD), notional ÷ collateral ที่จะใช้จริง ≤ max leverage ของทุก symbol ใน watchlist (collateral ที่ใช้คือค่าใหม่ถ้าจะ Reallocation ไม่เช่นนั้นค่าเดิม)
 - ไม่ผ่าน → ส่ง error กลับให้ Strategist retry ได้ 2 ครั้ง ยังไม่ผ่าน → ใช้แผนสัปดาห์ก่อนทั้งฉบับ Week แรกถ้าไม่ผ่าน → Contestant นั้นไม่มีแผน Executor ถูกบังคับ hold ทั้งสัปดาห์ และบันทึก Violation หนึ่งรายการ
 - Executor เทรดได้เฉพาะ symbol ใน watchlist ที่ bias ไม่ใช่ avoid และทิศต้องตรง bias (both = ได้ทั้งคู่)

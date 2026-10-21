@@ -1,6 +1,7 @@
 """OpenRouter model client: model(model_id, request) -> parsed JSON reply. It never retries: the Engine does,
 passing the previous failure back as request["retry_error"]."""
 import json
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -18,6 +19,16 @@ class BadReply(ValueError):
         self.raw = raw
 
 
+def http_failure(e):
+    """OpenRouter explains a refusal (credits, key limit, moderation) in a JSON body; keep it, not just the status."""
+    raw = e.read().decode(errors="replace")
+    try:
+        message = json.loads(raw)["error"]["message"]
+    except (ValueError, KeyError, TypeError):
+        message = e.reason
+    return BadReply(f"HTTP {e.code}: {message}", raw)
+
+
 def http_post(url, body, headers):
     req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json", **headers})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
@@ -28,7 +39,10 @@ TASK = {
     "executor": "You are the Executor. Decide this Tick's Actions within the Weekly Plan. Reply with JSON only: "
                 '{"reasoning": string, "actions": [Action]}.',
     "strategist": "You are the Strategist. Write this Week's Weekly Plan. Reply with JSON only: "
-                  '{"notional", "watchlist": [{"symbol", "bias", "entry", "exit"}], "close_all", "hostage_policy", "rationale"}. '
+                  '{"notional", "watchlist": [{"symbol", "bias", "entry", "exit"}], "close_all", "hostage_policy", "rationale"}: '
+                  # some providers do not enforce the json_schema, and their models have sent close_all as a boolean
+                  "notional is a number; close_all, hostage_policy, rationale and each watchlist entry and exit are text "
+                  "(strings). "
                   # the Engine's plan validation, stated up front so a paid retry is not the first the model hears of it
                   f"The plan is rejected unless: the watchlist has at most {MAX_WATCHLIST} symbols, none repeated, each "
                   f"one of the data's symbols; notional is at least {MIN_NOTIONAL} USD; and the leverage this Week will "
@@ -84,7 +98,10 @@ def client(api_key, artifacts, post=http_post):
         folder.mkdir(parents=True, exist_ok=True)
         with open(folder / f"{model_id.replace('/', '_')}.jsonl", "a") as log:  # one line per attempt
             log.write(json.dumps(body) + "\n")
-        reply = post(URL, body, {"Authorization": f"Bearer {api_key}"})
+        try:
+            reply = post(URL, body, {"Authorization": f"Bearer {api_key}"})
+        except urllib.error.HTTPError as e:
+            raise http_failure(e) from None
         if "error" in reply:
             raise RuntimeError(f"OpenRouter error: {reply['error']}")
         content = reply["choices"][0]["message"]["content"]

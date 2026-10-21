@@ -1,3 +1,4 @@
+import io
 import json
 import tempfile
 import unittest
@@ -70,6 +71,30 @@ class Client(unittest.TestCase):
         for rule in (f"at most {MAX_WATCHLIST} symbols", "none repeated", "symbols", f"at least {MIN_NOTIONAL} USD",
                      "max leverage"):
             self.assertIn(rule, system)
+
+    def test_http_error_reaches_the_archive_with_openrouters_own_message(self):
+        body = json.dumps({"error": {"code": 402, "message": "Insufficient credits"}})
+        data = Path(tempfile.mkdtemp())
+        (data / "x").mkdir()
+        (data / "x" / "plan.json").write_text(json.dumps({"week": "2026-10-19T00:00:00Z", "notional": 10000, "watchlist": []}))
+        (data / "x" / "state.json").write_text(json.dumps({"free_equity": 10000, "rp": {"collateral": 2500, "notional": 10000},
+                                                           "layers": [None] * 4, "settled": REQUEST["at"]}))
+        config = {**CONFIG, "contestants": [{"name": "x", "strategist": "s", "executor": "e"}]}
+        def refused(_url, _body, _headers):  # a fresh error per call, as urlopen raises
+            raise HTTPError(URL, 402, "Payment Required", {}, io.BytesIO(body.encode()))
+        run_tick(REQUEST["at"], market(), client("key", self.artifacts, refused), data, config)
+
+        records = [json.loads(l) for l in (data / "x" / "responses.jsonl").read_text().splitlines()]
+        self.assertEqual(len(records), 2)  # the Engine's one retry, each with the reason OpenRouter gave
+        for record in records:
+            self.assertIn("HTTP 402: Insufficient credits", record["error"])
+            self.assertEqual(record["response"], body)
+
+    def test_strategist_is_told_each_plan_fields_type(self):
+        self.model(reply("{}"))("anthropic/x", {**REQUEST, "role": "strategist"})
+
+        self.assertIn("notional is a number; close_all, hostage_policy, rationale and each watchlist entry and exit "
+                      "are text (strings)", self.posted[0]["messages"][0]["content"])
 
     def test_retry_shows_the_previous_error_to_the_model(self):
         error = "watchlist has 6 symbols, at most 5"
