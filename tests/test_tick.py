@@ -392,6 +392,26 @@ class RunTick(unittest.TestCase):
                                 "DOGE": [0.2, 0.12346, 0.000123]})  # 6 decimals at most
         self.assertEqual(seen[0]["market"]["DOGE"]["vwap_today"]["vwap"], 0.20367)  # (H+L+C)/3 = 0.2036666…
 
+    def test_empty_watchlist_and_no_open_layer_holds_without_calling_the_executor(self):
+        def executor(_input):
+            raise AssertionError("Executor must not be called with nothing to trade or manage")
+
+        self.tick(T0, executor, plan={**PLAN, "watchlist": []})
+
+        self.assertEqual(self.events(), [{"t": T0, "type": "decision", "plan": PLAN["week"],
+                                          "reasoning": "no watchlist and no open Layer this Week",
+                                          "actions": [{"type": "hold"}]}])
+        responses = self.data / "x" / "responses.jsonl"
+        self.assertEqual(responses.read_text() if responses.exists() else "", "")  # no call, so nothing archived
+
+    def test_empty_watchlist_with_a_layer_left_open_asks_the_executor_about_that_symbol(self):
+        self.tick(T0, scripted(OPEN_BTC))
+        (self.data / "x" / "plan.json").write_text(json.dumps({**PLAN, "watchlist": []}))  # next Week: Wait & See
+        seen = []
+        self.tick(T1, lambda given: seen.append(given) or HOLD(given))
+
+        self.assertEqual(sorted(seen[0]["market"]), ["BTC"])
+
     def test_executor_sees_its_account_at_mark_and_this_weeks_trades_with_reasoning(self):
         self.tick(T0, scripted(OPEN_BTC))
         for h in range(2, 9):  # seven holds

@@ -122,6 +122,9 @@ def tick_contestant(contestant, at, market, model, data_dir, config):
     events = list(settled)
     # spec: no passing plan in Week 1 holds without asking the Executor; nor is an eliminated Contestant asked
     asks = not eliminated(state, marks, at, config, events) and plan is not None
+    # spec: an empty watchlist is a Wait & See plan; with no Layer left open either there is nothing to decide
+    idle = asks and not plan["watchlist"] and not any(state["layers"])
+    asks = asks and not idle
     if asks:
         listed = {a["name"] for a in meta["universe"] if not a.get("isDelisted")}
         symbols = {w["symbol"] for w in plan["watchlist"]} & listed | {l["symbol"] for l in state["layers"] if l}
@@ -129,11 +132,15 @@ def tick_contestant(contestant, at, market, model, data_dir, config):
             market({"type": "l2Book", "coin": symbol})  # every fill this Tick can make reads one of these
         predicted = dict(market({"type": "predictedFundings"}))
         assets = {a["name"]: (a, c) for a, c in zip(meta["universe"], ctxs)}
-        watched = {w["symbol"] for w in plan["watchlist"]} & listed
+        # an empty watchlist still shows the Layers left open, so the Executor can close them or set a TP
+        watched = {w["symbol"] for w in plan["watchlist"]} & listed or {l["symbol"] for l in state["layers"] if l}
         data = {s: rounded(watch_data(market, s, ms(at), *assets[s], dict(predicted.get(s, [])))) for s in sorted(watched)}
     snapshot_id = yield True
 
     actions, responses = [], []
+    if idle:
+        events.append({"t": at, "type": "decision", "plan": plan["week"],
+                       "reasoning": "no watchlist and no open Layer this Week", "actions": [{"type": "hold"}]})
     if asks:
         log = read_jsonl(folder / "events.jsonl")
         violations = [e for e in log if e["type"] == "violation" and e["t"] == state.get("last_tick")]

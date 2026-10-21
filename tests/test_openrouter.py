@@ -76,7 +76,8 @@ class Client(unittest.TestCase):
         body = json.dumps({"error": {"code": 402, "message": "Insufficient credits"}})
         data = Path(tempfile.mkdtemp())
         (data / "x").mkdir()
-        (data / "x" / "plan.json").write_text(json.dumps({"week": "2026-10-19T00:00:00Z", "notional": 10000, "watchlist": []}))
+        (data / "x" / "plan.json").write_text(json.dumps({"week": "2026-10-19T00:00:00Z", "notional": 10000,
+                                                          "watchlist": [{"symbol": "BTC", "bias": "both"}]}))
         (data / "x" / "state.json").write_text(json.dumps({"free_equity": 10000, "rp": {"collateral": 2500, "notional": 10000},
                                                            "layers": [None] * 4, "settled": REQUEST["at"]}))
         config = {**CONFIG, "contestants": [{"name": "x", "strategist": "s", "executor": "e"}]}

@@ -39,4 +39,4 @@
     | deepseek | Strategist deepseek-v4-pro-0813 | ผ่าน | 80.8k / 0.7k | 11s | notional 2500, watchlist 5 (short ล้วน) |
     | deepseek | Executor deepseek-v4.1-flash | ผ่าน | 13.1k / 1.4k | 7s | hold |
 - [x] (จากรอบสอง) client เก็บ body ของ HTTP error (OpenRouter ส่ง JSON `error.message` เช่น insufficient credits / key limit / moderation) ลง error ใน archive ไม่ใช่แค่ "HTTP Error 403: Forbidden"; และ system prompt ของ Strategist ระบุชนิด field ให้ชัด (close_all, entry, exit เป็นข้อความ) เพื่อค่ายที่ provider ไม่บังคับ json_schema
-- [ ] (จากรอบสาม) watchlist ว่างถูกกติกา (spec แก้แล้ว): เมื่อแผนไม่มี watchlist และไม่มี Layer เปิด Engine บันทึก decision hold โดยไม่เรียก Executor (ประหยัด call ทั้งสัปดาห์); ถ้ามี Layer ค้างยังเรียกตามปกติ test ทั้งสองกรณีผ่าน Tick seam
+- [x] (จากรอบสาม) watchlist ว่างถูกกติกา (spec แก้แล้ว): เมื่อแผนไม่มี watchlist และไม่มี Layer เปิด Engine บันทึก decision hold โดยไม่เรียก Executor (ประหยัด call ทั้งสัปดาห์); ถ้ามี Layer ค้างยังเรียกตามปกติ test ทั้งสองกรณีผ่าน Tick seam
