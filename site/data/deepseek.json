@@ -69,12 +69,42 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity is the full 10,000, so there is no position management, basket offset, or close-all breach to handle. The weekly plan is long-only on BTC (entry 81650-81660) and ETH (entry 2391-2396). Current marks are BTC 81353 and ETH 2381.9, both still below their planned retest/demand entry bands. BTC printed a fresh low at 80911 and is only weakly rebounding (1h RSI ~33, 15m RSI ~45), while ETH made lows at 2359.1 with 1h RSI ~36, so neither has returned to the Action-Based retest entry zones. Entering now would be chasing, violating Wait & See and trade-the-plan-100%. The max-2-layer hostage policy is not in play and there is no NAV(-) to manage. Correct action is to hold and wait for price to trade back into the entry bands.",
       "t": "2026-10-22T20:22:07Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "open"
+        },
+        {
+          "price": 2450,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity is the full 10,000, so there is no close/offset/TP management or close-all breach to handle from existing layers. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark is 81521, still below its entry band (and it printed a fresh low at 80911), so the BTC retest entry condition is not met. ETH mark is 2395, which now sits inside the planned entry zone 2391-2396 after recovering from the 2359 low with 15m RSI ~46-50 turning up from oversold and a bullish MACD histogram, so the planned Action-Based entry condition IS met. Per 'trade the plan 100%' I take the planned ETH long on the first empty slot (slot 0) with the RP notional (100/2500 = 0.04x, well within the 25x max leverage), and immediately place the planned exit limit TP at 2450 (valid profit side for a long: 2450 > entry). No NAV(-) to offset, no hostage to harvest, and the max-2-layer hostage policy is satisfied with a single layer.",
+      "t": "2026-10-22T21:20:20Z"
     }
   ],
   "eliminated": null,
   "executor": "deepseek/deepseek-v4.1-flash",
   "layers": [
-    null,
+    {
+      "entry": 2395.0,
+      "liq": -57431.02225,
+      "mark": 2395.0,
+      "notional": 100,
+      "side": "long",
+      "symbol": "ETH",
+      "tp": 2450,
+      "unrealized": 0.0
+    },
     null,
     null,
     null
