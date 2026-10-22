@@ -1,0 +1,58 @@
+{
+  "decisions": [
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "No positions are open and free_equity equals the full 10,000, so four slots are available. Plan watchlist requires an Action-Based entry retest: BTC long at 81650-81660 and ETH long at 2391-2396. Current marks are BTC 81535 and ETH 2390.2, both still below their entry bands (the BTC demand zone was actually breached on the recent push down to 81325). Entering now would be chasing rather than trading the planned retest, violating the 'trade the plan 100%' and 'Wait & See' soft rules. No layers breaching 50% of RP, no NAV(-) to manage, and no hostage to harvest, so there is nothing to close, offset, or set TP on. Correct action is to hold and wait for price to return into the entry zones.",
+      "t": "2026-10-22T16:26:54Z"
+    }
+  ],
+  "eliminated": null,
+  "executor": "deepseek/deepseek-v4.1-flash",
+  "layers": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "name": "deepseek",
+  "plans": [
+    {
+      "close_all": "Close any layer that breaches 50% of its RP; flatten all if total NAV(-) reaches 35% of notional.",
+      "fallback": false,
+      "hostage_policy": "Run max 2 simultaneous layers. If one is NAV(-), use the second to harvest volatility until the first is released. Do not add to losers.",
+      "in_force": "2026-10-19T00:00:00Z",
+      "notional": 100,
+      "notional_used": true,
+      "rationale": "Week starts with clean state and 2500 collateral. Using tiny size to preserve edge. BTC and ETH are the most liquid. Both currently near weekly VWAP and near recent daily lows, so I want to lean long only if price returns to demand on bulls' defense. Waiting for retest entries avoids chasing after a mildly negative close. LIT is excluded because its funding is very negative and it recently pumped too fast for clean risk.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "81650-81660",
+          "exit": "82750",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "2391-2396",
+          "exit": "2450",
+          "symbol": "ETH"
+        }
+      ],
+      "week": "2026-10-19T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-19T00:00:00Z",
+  "strategist": "deepseek/deepseek-v4-pro-0813",
+  "violations": []
+}

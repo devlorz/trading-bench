@@ -1,0 +1,36 @@
+{
+  "notional_used": true,
+  "plan": {
+    "close_all": "2026-10-29T16:00:00Z",
+    "hostage_policy": "Only deploy into symbols holding above key support and positive momentum; if any position is underwater, reduce exposure to free resources and re-enter at stronger levels.",
+    "notional": 2500.0,
+    "rationale": "BTC, ETH, ZEC, and XMR show the strongest momentum and technical structure this week, with price holding above key moving averages and above last week's VWAP. The plan uses reallocated collateral of 2,500 at 1x notional, keeping leverage below the maximum allowed for all selected symbols. Focus is on continuation longs toward recent swing highs while preserving capital and limiting risk.",
+    "watchlist": [
+      {
+        "bias": "long",
+        "entry": "81661",
+        "exit": "84315",
+        "symbol": "BTC"
+      },
+      {
+        "bias": "long",
+        "entry": "2396.2",
+        "exit": "2525",
+        "symbol": "ETH"
+      },
+      {
+        "bias": "long",
+        "entry": "1233.4",
+        "exit": "1315",
+        "symbol": "ZEC"
+      },
+      {
+        "bias": "long",
+        "entry": "611.49",
+        "exit": "630.63",
+        "symbol": "XMR"
+      }
+    ],
+    "week": "2026-10-19T00:00:00Z"
+  }
+}

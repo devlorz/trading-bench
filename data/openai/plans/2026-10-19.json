@@ -1,0 +1,36 @@
+{
+  "notional_used": true,
+  "plan": {
+    "close_all": "Close all positions and cancel entry orders if total account equity reaches $9,700, including unrealized P&L, fees and funding; stop trading for the week. Otherwise flatten and cancel all orders by 2026-10-25T23:50:00Z. Protective stops remain active throughout; gaps and slippage can exceed planned losses.",
+    "hostage_policy": "At this reallocation, fix each layer's entry notional at $2,500 against $2,500 collateral: 1x leverage. Maintain four slots but activate at most two simultaneously, leaving two in reserve. Maximum one position per symbol and one net short across BTC, ETH and HYPE. Each entry must have estimated loss to its stated stop, including costs, no greater than $100; otherwise skip rather than enlarge risk. Aggregate open stop-risk must remain at or below $200. Never average down, widen stops, increase notional to recover losses, or treat collateral as an acceptable loss budget. A losing position may remain only while its original thesis, stop and time limit remain valid. Realized net profits may offset closing a losing position, but evaluate combined realized and unrealized results: harvesting winners alone does not repair equity. Do not recycle profits into larger positions this week.",
+    "notional": 2500,
+    "rationale": "Capital preservation and selective rotation take precedence over filling all layers. BTC offers conditional two-way opportunities around weekly VWAP; ETH and HYPE show weaker historical trend structure, while XMR shows relative strength but elevated positive funding and extension risk. The chosen 1x leverage is below every watchlist symbol's maximum. Supplied marks, final candle closes and VWAP distance fields are not synchronized or internally consistent; use raw price levels as provisional references, disregard supplied distance percentages, and require refreshed timestamp-aligned prices and completed candles before activating any setup. No qualifying confirmation means no trade.",
+    "watchlist": [
+      {
+        "bias": "both",
+        "entry": "Long only after a fresh 4-hour close above 82,109 followed by a successful retest; enter 82,150\u201382,350. Alternatively, short a failed reclaim of 82,109 after a fresh 4-hour close back below 81,800; enter 81,700\u201381,900. One direction at a time; no market entry solely from this snapshot.",
+        "exit": "Long: stop 79,700; take half at 84,850 and the remainder at 86,600. Short: stop 83,450; take half at 79,750 and the remainder at 78,000. After the first target, move the remaining stop to entry plus estimated costs.",
+        "symbol": "BTC"
+      },
+      {
+        "bias": "short",
+        "entry": "Wait for a rally into 2,430\u20132,450 around the supplied weekly VWAP of 2,437. Require a fresh 4-hour rejection and failed retest before selling within that zone. Do not chase weakness at the current mark.",
+        "exit": "Hard stop 2,515. Take half at 2,315 and the remainder at 2,250. After the first target, protect the remainder at cost-adjusted breakeven.",
+        "symbol": "ETH"
+      },
+      {
+        "bias": "short",
+        "entry": "Sell only a confirmed failed reclaim of 80.842, entering 80.60\u201381.00 after a fresh 4-hour rejection. This is an alternative to ETH, not an additional correlated short.",
+        "exit": "Hard stop 83.50. Take half at 76.10 and the remainder at 72.50. Move the remaining stop to cost-adjusted breakeven after the first target.",
+        "symbol": "HYPE"
+      },
+      {
+        "bias": "long",
+        "entry": "Do not chase 611.49. Wait for a pullback and fresh 4-hour bullish reversal around 582.91; enter only on a subsequent retest within 585\u2013592. Recheck funding and skip if projected holding costs materially erode the trade's expected reward.",
+        "exit": "Hard stop 572. Take half at 630 and the remainder at 650. After the first target, protect the remainder at cost-adjusted breakeven. Exit after 48 hours if price has not advanced at least halfway toward the first target.",
+        "symbol": "XMR"
+      }
+    ],
+    "week": "2026-10-19T00:00:00Z"
+  }
+}

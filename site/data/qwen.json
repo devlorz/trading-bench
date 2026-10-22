@@ -1,0 +1,86 @@
+{
+  "decisions": [
+    {
+      "actions": [
+        {
+          "price": 612.57,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "open"
+        },
+        {
+          "price": 630.63,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "No layers are open and no position is underwater, so there is no basket-offset or forced de-risking requirement. I apply the plan's hostage_policy and TSM Principle 4: enter only at the planned action-based support/entry with constructive momentum. BTC, ETH, and ZEC are below their planned long entries (81535<81661, 2390.2<2396.2, 1231<1233.4) and have weaker short-term momentum/VWAP distance, so I avoid opening them and hold those slots. XMR is the exception: mark 612.57 is above its planned long entry 611.49 and it has positive 24h/7d momentum (24h +2.74%, 7d +12.78%), matching the continuation-long plan. I open one RP-collateral slot0 XMR long at 1x and immediately set the planned TP 630.63. Liquidation distance is large at 1x, and no close/cancel TP is needed.",
+      "t": "2026-10-22T16:26:54Z"
+    }
+  ],
+  "eliminated": null,
+  "executor": "qwen/qwen3.8-flash",
+  "layers": [
+    {
+      "entry": 612.58,
+      "liq": 61.53366100000005,
+      "mark": 612.57,
+      "notional": 2500.0,
+      "side": "long",
+      "symbol": "XMR",
+      "tp": 630.63,
+      "unrealized": -0.040810996114756054
+    },
+    null,
+    null,
+    null
+  ],
+  "name": "qwen",
+  "plans": [
+    {
+      "close_all": "2026-10-29T16:00:00Z",
+      "fallback": false,
+      "hostage_policy": "Only deploy into symbols holding above key support and positive momentum; if any position is underwater, reduce exposure to free resources and re-enter at stronger levels.",
+      "in_force": "2026-10-19T00:00:00Z",
+      "notional": 2500.0,
+      "notional_used": true,
+      "rationale": "BTC, ETH, ZEC, and XMR show the strongest momentum and technical structure this week, with price holding above key moving averages and above last week's VWAP. The plan uses reallocated collateral of 2,500 at 1x notional, keeping leverage below the maximum allowed for all selected symbols. Focus is on continuation longs toward recent swing highs while preserving capital and limiting risk.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "81661",
+          "exit": "84315",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "2396.2",
+          "exit": "2525",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "1233.4",
+          "exit": "1315",
+          "symbol": "ZEC"
+        },
+        {
+          "bias": "long",
+          "entry": "611.49",
+          "exit": "630.63",
+          "symbol": "XMR"
+        }
+      ],
+      "week": "2026-10-19T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-19T00:00:00Z",
+  "strategist": "qwen/qwen3.8-max-prime",
+  "violations": []
+}
