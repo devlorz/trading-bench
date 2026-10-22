@@ -125,6 +125,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Current state: slot0 holds an XMR long at entry 612.58, TP 630.63, mark 610.091, unrealized -10.16. The layer is underwater but liquidation is far away, so TSM Principle 4 says to choose a non-stop recovery solution (hold NAV(-), stop adding, wait for TP/recovery) rather than cutting immediately. Hostage policy also requires reducing deployment exposure: do not open new layers while this position is underwater. The remaining slots do not meet action-based plan entries: BTC 81345 < 81661 with negative momentum and below VWAP; ETH 2381.1 < 2396.2 with negative momentum; ZEC 1212.7 < 1233.4 with negative momentum. Therefore hold slot0, keep its planned TP, and hold empty slots 1-3 without opening.",
       "t": "2026-10-22T19:18:11Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 611.86,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81353.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2381.9,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1214.9,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "The only open layer is slot 0 XMR long at 612.58 with planned TP 630.63. It is slightly underwater (-2.94), but liquidation is far away and the position is still near the planned entry/action level, so under TSM Principle 4 I choose Scenario A: hold NAV(-), stop adding, and wait for recovery/TP instead of cutting immediately. All other slots are empty but none satisfy the weekly plan/action-based continuation longs: BTC 81353 < 81661 with negative 24h momentum and below VWAP; ETH 2381.9 < 2396.2 with negative momentum; ZEC 1214.9 < 1233.4 with weak structure and below VWAP. The hostage policy also tells me not to deploy while a layer is underwater unless a stronger setup exists. Therefore I hold slot 0 and keep its existing TP, and hold slots 1-3 empty with no opens/closes.",
+      "t": "2026-10-22T20:22:07Z"
     }
   ],
   "eliminated": null,
@@ -132,13 +167,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.7136547409001,
-      "mark": 610.091,
+      "liq": 61.77792631364014,
+      "mark": 611.86,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -10.157856932972154
+      "unrealized": -2.9383917202652197
     },
     null,
     null,

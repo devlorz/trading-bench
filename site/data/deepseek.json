@@ -55,6 +55,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both slots are empty and free_equity is full, so there is no position management, offset, or close-all breach to handle. The weekly plan is long-only on BTC at 81650-81660 and ETH at 2391-2396. Current marks are BTC 81345 and ETH 2381.1, both still below their planned retest/demand entry zones, with BTC 1h RSI weak and recent lows at 80911/81015 on 15m. Price has not returned to the Action-Based entry zones, so entering now would be chasing and would violate Wait & See and trade-the-plan discipline. Hold and wait for price to trade back into the entry bands.",
       "t": "2026-10-22T19:18:11Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity is the full 10,000, so there is no position management, basket offset, or close-all breach to handle. The weekly plan is long-only on BTC (entry 81650-81660) and ETH (entry 2391-2396). Current marks are BTC 81353 and ETH 2381.9, both still below their planned retest/demand entry bands. BTC printed a fresh low at 80911 and is only weakly rebounding (1h RSI ~33, 15m RSI ~45), while ETH made lows at 2359.1 with 1h RSI ~36, so neither has returned to the Action-Based retest entry zones. Entering now would be chasing, violating Wait & See and trade-the-plan-100%. The max-2-layer hostage policy is not in play and there is no NAV(-) to manage. Correct action is to hold and wait for price to trade back into the entry bands.",
+      "t": "2026-10-22T20:22:07Z"
     }
   ],
   "eliminated": null,

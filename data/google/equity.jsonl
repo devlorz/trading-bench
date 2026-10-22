@@ -2,3 +2,4 @@
 {"equity": 10000, "layers": [null, null, null, null], "t": "2026-10-22T17:19:47Z"}
 {"equity": 9998.618073254955, "layers": [{"entry": 4.8652, "liq": 0.2454493400000004, "mark": 4.8647, "notional": 2500.0, "side": "long", "symbol": "NEAR", "tp": null, "unrealized": -0.25692674504630997}, null, null, null], "t": "2026-10-22T18:26:10Z"}
 {"equity": 10011.741347349544, "layers": [{"entry": 4.8652, "liq": 0.24551039874999958, "mark": 4.8903, "notional": 2500.0, "side": "long", "symbol": "NEAR", "tp": 5.35, "unrealized": 12.89772260133197}, null, null, null], "t": "2026-10-22T19:18:11Z"}
+{"equity": 10012.172182027462, "layers": [{"entry": 4.8652, "liq": 0.24557196000000037, "mark": 4.8912, "notional": 2500.0, "side": "long", "symbol": "NEAR", "tp": 5.35, "unrealized": 13.360190742415877}, null, null, null], "t": "2026-10-22T20:22:07Z"}

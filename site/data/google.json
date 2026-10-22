@@ -55,6 +55,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 long on NEAR entered at 4.8652 is currently profitable (mark 4.8903, unrealized +$12.90). To automate hostage harvesting in accordance with the weekly plan exit zone (5.35-5.60), we set a limit Take Profit at 5.3500. Meanwhile, all other watchlist candidates remain outside their designated entry zones (BTC at 81,345 vs 80,500-81,200; SOL at 103.37 vs 101.0-103.0; ZEC at 1,212.7 vs 1,150-1,190; WLD at 0.5611 vs 0.495-0.515). In line with TSM Principle 4 (Wait & See, 100% plan adherence), we maintain our remaining three slots free.",
       "t": "2026-10-22T19:18:11Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 NEAR long position (entry 4.8652, mark 4.8912) is progressing positively with limit TP active at 5.35 per the weekly plan. All other watchlist candidates are currently outside their specified entry zones: BTC is trading at 81,353 (outside long zone 80,500-81,200), SOL is at 103.42 (outside long zone 101.0-103.0), ZEC is at 1,214.9 (outside long zone 1,150-1,190), and WLD is at 0.54839 (outside long zone 0.495-0.515). Per TSM Principle 4 Soft Rules 1 & 2 (Wait & See, zero alpha discipline, 100% plan adherence), we maintain our current positions and hold without forcing entries.",
+      "t": "2026-10-22T20:22:07Z"
     }
   ],
   "eliminated": null,
@@ -62,13 +76,13 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24551039874999958,
-      "mark": 4.8903,
+      "liq": 0.24557196000000037,
+      "mark": 4.8912,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": 12.89772260133197
+      "unrealized": 13.360190742415877
     },
     null,
     null,
