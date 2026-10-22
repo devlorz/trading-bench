@@ -27,12 +27,35 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "All watchlist assets remain outside their planned execution zones (BTC at 81,410 vs 80,500-81,200 long entry zone; NEAR at 4.9381 vs 4.75-4.90; SOL at 103.80 vs 101.0-103.0; WLD at 0.52834 vs 0.495-0.515; ZEC at 1,206.3 vs 1,150-1,190). Adhering strictly to TSM Principle 4 Soft Rules 1 & 2 (Wait & See, 100% plan discipline), we preserve all capital and maintain hold until valid entry triggers are reached.",
       "t": "2026-10-22T17:19:47Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "NEAR",
+          "type": "open"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "NEAR has retraced into its designated long entry zone of 4.75-4.90 (current mark 4.8647), validating an Action-Based entry on support per the weekly plan. We deploy Slot 0 for a long position on NEAR at 1x leverage ($2,500 notional / $2,500 collateral) in full compliance with RP and risk rules. BTC (81,224), SOL (103.44), WLD (0.5383), and ZEC (1,206) remain outside their entry triggers, so no other slots are deployed.",
+      "t": "2026-10-22T18:26:10Z"
     }
   ],
   "eliminated": null,
   "executor": "google/gemini-3.8-flash",
   "layers": [
-    null,
+    {
+      "entry": 4.8652,
+      "liq": 0.2454493400000004,
+      "mark": 4.8647,
+      "notional": 2500.0,
+      "side": "long",
+      "symbol": "NEAR",
+      "tp": null,
+      "unrealized": -0.25692674504630997
+    },
     null,
     null,
     null

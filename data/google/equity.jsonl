@@ -1,2 +1,3 @@
 {"equity": 10000, "layers": [null, null, null, null], "t": "2026-10-22T16:26:54Z"}
 {"equity": 10000, "layers": [null, null, null, null], "t": "2026-10-22T17:19:47Z"}
+{"equity": 9998.618073254955, "layers": [{"entry": 4.8652, "liq": 0.2454493400000004, "mark": 4.8647, "notional": 2500.0, "side": "long", "symbol": "NEAR", "tp": null, "unrealized": -0.25692674504630997}, null, null, null], "t": "2026-10-22T18:26:10Z"}

@@ -1,2 +1,3 @@
 {"equity": 9998.875, "layers": [{"entry": 4054.4, "liq": 204.54448000000002, "mark": 4054.4, "notional": 2500, "side": "long", "symbol": "PAXG", "tp": 4155, "unrealized": 0.0}, null, null, null], "t": "2026-10-22T16:26:54Z"}
 {"equity": 9999.234538066163, "layers": [{"entry": 4054.4, "liq": 204.56139554581978, "mark": 4055.0, "notional": 2500, "side": "long", "symbol": "PAXG", "tp": 4155, "unrealized": 0.36996842936063845}, null, null, null], "t": "2026-10-22T17:19:47Z"}
+{"equity": 9995.07724070302, "layers": [{"entry": 4054.4, "liq": 204.60353411746928, "mark": 4048.3, "notional": 2500, "side": "long", "symbol": "PAXG", "tp": 4155, "unrealized": -3.7613456985003384}, null, null, null], "t": "2026-10-22T18:26:10Z"}

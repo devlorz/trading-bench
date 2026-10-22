@@ -27,6 +27,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "No setup meets the plan\u2019s entry confirmation. BTC has not confirmed either specified entry; ETH and HYPE are below their sell zones without the required rejection, and XMR has not pulled back to its long-entry area. All slots are empty, so remain flat.",
       "t": "2026-10-22T17:19:47Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "No entry is validated by a fresh, timestamp-aligned completed 4-hour candle and refreshed price as required by the plan. All slots are empty; remain flat.",
+      "t": "2026-10-22T18:26:10Z"
     }
   ],
   "eliminated": null,
