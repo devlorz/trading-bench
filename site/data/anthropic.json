@@ -75,6 +75,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Account is flat with four free slots and RP collateral 2500 / notional 2500. Current marks: BTC 81,521 sits just above the 80,300-81,500 buy zone top; the last 4h close of 81,511 is not a confirmed 4h close back above the dip low, and the 4h structure is below EMA20/EMA50 with MACD histogram still negative on the 1h, so no buy layer. BTC is not near the 84,300-85,300 sell zone. ETH 2,395 is inside the 2,330-2,400 buy band, but the last 4h bar (open 2398.3, high 2402, low 2359.1, close 2385.9) shows no rejection wick or reclaim and the 1h trend is still making lower lows with RSI near 30, so the trigger is unconfirmed. SOL 103.96 is above its 100.5-103 long zone with no higher 4h low or volume dry-up confirmed. XRP 1.3096 sits between its 1.26-1.30 buy zone and 1.395-1.42 sell zone. HYPE is avoid. No entry condition is met, so hold and open nothing.",
       "t": "2026-10-22T21:20:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Account is flat with four free slots, RP collateral 2500 / notional 2500, and no retry_error. Checking the plan entries against current marks at 2026-10-22T22:19Z. BTC mark 81371 sits inside the 80,300-81,500 buy zone, but the last 4h bar closed at 81511 with no confirmed 4h close back above the dip low; the 4h pack shows EMA20 above EMA50 on the 4h only at a lagging level, MACD histogram turning positive on the 4h but the 1h MACD histogram is still negative and the 1h trend makes lower lows (1h RSI about 26). Not a confirmed reclaim, so no buy layer. BTC is nowhere near the 84,300-85,300 sell zone. ETH 2385.8 is inside the 2,330-2,400 buy band, but the last 4h bar (open 2398.3, high 2402, low 2359.1, close 2385.9) shows no rejection wick or reclaim, and the 1h RSI sits near 26 with lower lows, so the trigger is unconfirmed. SOL 103.56 is above its 100.5-103 long zone with no volume dry-up or higher 4h low confirmed. XRP 1.3078 sits between its 1.26-1.30 buy zone and its 1.395-1.42 sell zone. HYPE is avoid. No entry condition is met, so no layers are opened, no TPs are needed, and nothing is closed. Hold for the tick.",
+      "t": "2026-10-22T22:19:51Z"
     }
   ],
   "eliminated": null,

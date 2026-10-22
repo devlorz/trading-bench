@@ -4,3 +4,4 @@
 {"equity": 10000, "layers": [null, null, null, null], "t": "2026-10-22T19:18:11Z"}
 {"equity": 10000, "layers": [null, null, null, null], "t": "2026-10-22T20:22:07Z"}
 {"equity": 9999.955, "layers": [{"entry": 2395.0, "liq": -57431.02225, "mark": 2395.0, "notional": 100, "side": "long", "symbol": "ETH", "tp": 2450, "unrealized": 0.0}, null, null, null], "t": "2026-10-22T21:20:20Z"}
+{"equity": 9999.56878256785, "layers": [{"entry": 2395.0, "liq": -57430.992342499994, "mark": 2385.78, "notional": 100, "side": "long", "symbol": "ETH", "tp": 2450, "unrealized": -0.38496868475990814}, null, null, null], "t": "2026-10-22T22:19:51Z"}

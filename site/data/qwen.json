@@ -195,6 +195,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 XMR long is underwater with mark 594.09, entry 612.58, unrealized -75.4595, and liquidation price 61.8189; the liquidation distance remains very large, so TSM Principle 4 Scenario A applies: hold NAV(-), keep risk capped by collateral, and avoid immediate stop-style cutting. The position still has the planned TP 630.63 set, so no TP change is needed. Empty slots do not meet action-based continuation-long conditions: BTC 81521 < planned entry 81661, 24h momentum -3.99%, and below today's VWAP; ETH 2395 < planned entry 2396.2, 24h momentum -4.43%, and below VWAP; ZEC 1225.8 < planned entry 1233.4, 24h momentum -10.10%, and below VWAP. The hostage policy is followed by not deploying additional resources into weak setups while the only open layer is underwater. Therefore hold all slots and wait for either XMR recovery/TP or stronger planned entries later.",
       "t": "2026-10-22T21:20:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 593.83,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81371.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2385.8,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1213.6,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds an XMR long entered at 612.58, current mark 593.83, unrealized -76.52, and liquidation 61.83 is extremely far away. There is no close_all trigger or liquidation pressure, and TSM Principle 4 prefers holding NAV(-) under the RP collateral risk cap rather than cutting immediately. The planned TP 630.63 remains above entry and valid, so no TP change is needed. The hostage policy reduces exposure by not deploying further resources while the open layer is underwater. BTC 81371 is below planned long entry 81661, below today's VWAP, and has negative momentum. ETH 2385.8 is below planned entry 2396.2, below VWAP, and negative momentum. ZEC 1213.6 is below planned entry 1233.4, below VWAP, and negative momentum. XMR also trades below its planned entry and recent 1h structure. Therefore I hold slot 0 with its existing TP and hold empty slots 1-3 without opening.",
+      "t": "2026-10-22T22:19:51Z"
     }
   ],
   "eliminated": null,
@@ -202,13 +237,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.81890044854515,
-      "mark": 594.09,
+      "liq": 61.826328573545084,
+      "mark": 593.83,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -75.4595318162526
+      "unrealized": -76.5206177152372
     },
     null,
     null,
