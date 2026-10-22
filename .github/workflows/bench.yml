@@ -1,0 +1,91 @@
+name: bench
+
+on:
+  schedule:
+    - cron: "7 * * * *"  # ADR-0002: minute 7, away from the :00 scheduling pile-up
+  workflow_dispatch:
+
+concurrency:
+  group: bench
+  queue: max  # runs wait their turn, none is cancelled; a late Tick still settles its whole gap
+
+permissions:
+  contents: write  # commit data/ and site/data/ back
+  pages: write
+  id-token: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # Contestants run one after another: measured ~10 min per run-week (zai's Strategist 206 s + 135 s retry) and up
+    # to ~5 min per Tick (deepseek's Executor 161 s); each model call may wait 300 s and be retried
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    defaults:
+      run:
+        shell: bash  # -eo pipefail: a failed base64/gunzip fails its own step
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Time of this run
+        run: |
+          at=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          echo "AT=$at" >> "$GITHUB_ENV"
+          echo "AT_NAME=${at//:/-}" >> "$GITHUB_ENV"  # upload-artifact rejects colons
+
+      - name: Full TSM from the secret, outside the working tree
+        env:
+          TSM_FULL_B64: ${{ secrets.TSM_FULL_B64 }}
+        run: printf '%s' "$TSM_FULL_B64" | base64 -d | gunzip > "$RUNNER_TEMP/tsm_full.md"  # deleted with the runner
+
+      # run-week every hour: a Week that already has its Weekly Plan returns before any Hyperliquid or model call,
+      # so Monday 00:07 makes the plan before that hour's Tick, and a dropped 00:07 run is made up at 01:07
+      - name: run-week
+        env:
+          TSM_FULL_PATH: ${{ runner.temp }}/tsm_full.md  # runner context is not allowed in job-level env
+        run: python3 -m bench run-week --at "$AT" --record "artifacts/market/$AT_NAME-week"
+
+      - name: run-tick  # also after a failed run-week: the Executor keeps the latest Weekly Plan (spec)
+        if: ${{ !cancelled() }}
+        run: python3 -m bench run-tick --at "$AT" --record "artifacts/market/$AT_NAME-tick"
+
+      # always(), not !cancelled(): a job cut off by the timeout during run-tick still commits the Weekly Plans
+      # run-week already paid for
+      - name: Commit state and dashboard data
+        if: ${{ always() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/data
+          git diff --cached --quiet && exit 0
+          git commit -m "data: $AT"
+          git pull --rebase  # a push to main during the run; only this workflow writes data/
+          git push
+
+      - name: Raw prompts and market recordings  # ADR-0002: too large to commit hourly
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: raw-${{ env.AT_NAME }}
+          path: artifacts/
+          retention-days: 90
+          if-no-files-found: ignore
+
+      - name: Dashboard for Pages
+        if: ${{ !cancelled() }}
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - name: Deploy Pages
+        id: pages
+        if: ${{ !cancelled() }}
+        uses: actions/deploy-pages@v5

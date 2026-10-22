@@ -347,6 +347,18 @@ class RunWeek(unittest.TestCase):
 
         self.assertEqual({f: (self.data / "x" / f).read_bytes() for f in files}, files)
 
+    def test_rerun_within_the_week_asks_hyperliquid_nothing_and_logs_nothing(self):
+        # the hourly workflow runs run-week before every Tick, so a Week that has its plan must cost nothing
+        self.week(W1, strategist(PLAN))
+        runs = (self.data / "runs.jsonl").read_bytes()
+
+        def down(_body):
+            raise OSError("Hyperliquid down")
+
+        self.assertFalse(self.week("2026-10-21T12:07:00Z", strategist(), down))
+
+        self.assertEqual((self.data / "runs.jsonl").read_bytes(), runs)
+
     def test_timestamps_with_an_offset_are_stored_as_utc(self):
         self.week("2026-10-19T07:07:00+07:00", strategist(PLAN))
 

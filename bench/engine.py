@@ -182,13 +182,13 @@ def week_contestant(contestant, at, market, model, data_dir, config, full_tsm_do
     week_start = week_of(at)
     folder = data_dir / contestant["name"]
     state_file = folder / "state.json"
+    state = json.loads(state_file.read_text()) if state_file.exists() else None
+    if state and ("eliminated" in state or state["last_week"] >= week_start):
+        return  # eliminated, or this Week already has its plan: no Hyperliquid call, so the hourly rerun is free
     meta, ctxs = market({"type": "metaAndAssetCtxs"})
     max_leverage, marks = leverage_and_marks(meta, ctxs)
     settled = []
-    if state_file.exists():
-        state = json.loads(state_file.read_text())
-        if "eliminated" in state or state["last_week"] >= week_start:
-            return  # eliminated, or this Week already has its plan
+    if state:
         settled = settle(state, state["settled"], at, market, config, max_leverage)
     else:
         state = {"free_equity": config["initial_capital"], "rp": None, "layers": [None] * LAYERS}

@@ -10,7 +10,7 @@
 - [ ] workflow ซ้อนกันไม่ได้ (รอบที่สองรอรอบแรก) และ Tick ที่ดีเลย์ settle ช่วงที่หายถูกต้อง
 - [ ] prompt ดิบปรากฏเป็น artifact ของ run และไม่อยู่ใน commit
 - [ ] TSM เต็มฉบับมาจาก GitHub Secret `TSM_FULL_B64` (gzip -9 แล้ว base64 ไฟล์จริง ~25KB เข้าเพดาน 48KB) workflow ถอดลงไฟล์ชั่วคราวนอก working tree แล้วส่ง path ผ่าน `TSM_FULL_PATH` ให้ Engine; ไฟล์นั้นไม่ถูก commit ไม่ถูกอัปโหลดเป็น artifact และไม่ถูก echo ลง log; README มีคำสั่งสร้าง secret จากไฟล์ใน Obsidian และบอกว่าทำไมไม่อยู่ใน repo
-- [ ] Hyperliquid ล้มใน run → run จบแบบสำเร็จแต่บันทึก Tick ว่า skipped (ไม่ส่ง failure email ถล่ม)
-- [ ] `run-week` ล้มกลางคัน → รอบชั่วโมงถัดไปสร้างแผนของ Week นั้นให้ (idempotent) และ Tick ระหว่างนั้นใช้แผนล่าสุดโดยไม่พัง; รอบที่ `run-week` ถูกข้ามต้องไม่มี commit เพิ่มจากขั้นนั้น
-- [ ] README อธิบายรันด้วยมือ, reset, เริ่ม Week 1 และเพิ่ม Contestant ผ่าน config
+- [x] Hyperliquid ล้มใน run → run จบแบบสำเร็จแต่บันทึก Tick ว่า skipped (ไม่ส่ง failure email ถล่ม)
+- [x] `run-week` ล้มกลางคัน → รอบชั่วโมงถัดไปสร้างแผนของ Week นั้นให้ (idempotent) และ Tick ระหว่างนั้นใช้แผนล่าสุดโดยไม่พัง; รอบที่ `run-week` ถูกข้ามต้องไม่มี commit เพิ่มจากขั้นนั้น
+- [x] README อธิบายรันด้วยมือ, reset, เริ่ม Week 1 และเพิ่ม Contestant ผ่าน config
 - [ ] Week 1 เริ่มจริงและ Tick แรกของทั้ง 6 คู่ปรากฏบน dashboard
