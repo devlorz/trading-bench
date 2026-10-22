@@ -230,6 +230,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds an XMR long entered at 612.58, current mark 593.83, unrealized -76.52, and liquidation 61.83 is extremely far away. There is no close_all trigger or liquidation pressure, and TSM Principle 4 prefers holding NAV(-) under the RP collateral risk cap rather than cutting immediately. The planned TP 630.63 remains above entry and valid, so no TP change is needed. The hostage policy reduces exposure by not deploying further resources while the open layer is underwater. BTC 81371 is below planned long entry 81661, below today's VWAP, and has negative momentum. ETH 2385.8 is below planned entry 2396.2, below VWAP, and negative momentum. ZEC 1213.6 is below planned entry 1233.4, below VWAP, and negative momentum. XMR also trades below its planned entry and recent 1h structure. Therefore I hold slot 0 with its existing TP and hold empty slots 1-3 without opening.",
       "t": "2026-10-22T22:19:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 599.68,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81363.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2384.9,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1213.7,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "\u0e2a\u0e16\u0e32\u0e19\u0e30\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19: slot0 \u0e16\u0e37\u0e2d XMR long \u0e17\u0e35\u0e48 entry 612.58, TP 630.63, mark 599.68, unrealized -52.65 \u0e41\u0e25\u0e30 liquidation price 61.83 \u0e22\u0e31\u0e07\u0e2b\u0e48\u0e32\u0e07\u0e44\u0e01\u0e25\u0e21\u0e32\u0e01 \u0e08\u0e36\u0e07\u0e43\u0e0a\u0e49 TSM Principle 4 Scenario A: \u0e04\u0e07 NAV(-) \u0e44\u0e27\u0e49 \u0e44\u0e21\u0e48\u0e43\u0e0a\u0e49 stop order \u0e44\u0e21\u0e48\u0e23\u0e35\u0e1a\u0e15\u0e31\u0e14\u0e02\u0e32\u0e14\u0e17\u0e38\u0e19 \u0e41\u0e25\u0e30\u0e23\u0e2d\u0e01\u0e32\u0e23\u0e1f\u0e37\u0e49\u0e19/TP \u0e15\u0e32\u0e21\u0e41\u0e1c\u0e19 while risk capped by collateral. Hostage policy \u0e01\u0e33\u0e2b\u0e19\u0e14\u0e43\u0e2b\u0e49\u0e44\u0e21\u0e48\u0e40\u0e1e\u0e34\u0e48\u0e21 exposure \u0e02\u0e13\u0e30\u0e21\u0e35 position underwater \u0e42\u0e14\u0e22 free_equity \u0e22\u0e31\u0e07\u0e27\u0e48\u0e32\u0e07\u0e2d\u0e22\u0e39\u0e48\u0e41\u0e25\u0e30\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e1e\u0e1a setup \u0e17\u0e35\u0e48\u0e40\u0e02\u0e49\u0e32\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02 action-based: BTC mark 81363 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 entry \u0e41\u0e1c\u0e19 81661 \u0e41\u0e25\u0e30 momentum \u0e40\u0e1b\u0e47\u0e19\u0e25\u0e1a/\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 VWAP; ETH mark 2384.9 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 2396.2 \u0e41\u0e25\u0e30 momentum \u0e40\u0e1b\u0e47\u0e19\u0e25\u0e1a/\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 VWAP; ZEC mark 1213.7 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 1233.4 \u0e41\u0e25\u0e30 momentum \u0e40\u0e1b\u0e47\u0e19\u0e25\u0e1a/\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 VWAP; XMR \u0e40\u0e2d\u0e07 mark 599.68 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 planned entry 611.49 \u0e41\u0e25\u0e30 momentum \u0e23\u0e30\u0e22\u0e30\u0e2a\u0e31\u0e49\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e1a \u0e08\u0e36\u0e07\u0e44\u0e21\u0e48\u0e04\u0e27\u0e23\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e2b\u0e23\u0e37\u0e2d\u0e0b\u0e37\u0e49\u0e2d\u0e0b\u0e49\u0e2d\u0e19. TP \u0e40\u0e14\u0e34\u0e21\u0e02\u0e2d\u0e07 XMR \u0e22\u0e31\u0e07\u0e15\u0e23\u0e07\u0e01\u0e31\u0e1a exit \u0e41\u0e1c\u0e19\u0e41\u0e25\u0e30\u0e2d\u0e22\u0e39\u0e48\u0e1d\u0e31\u0e48\u0e07\u0e01\u0e33\u0e44\u0e23\u0e40\u0e2b\u0e19\u0e37\u0e2d entry \u0e08\u0e36\u0e07\u0e44\u0e21\u0e48\u0e08\u0e33\u0e40\u0e1b\u0e47\u0e19 set_tp/cancel_tp/close \u0e43\u0e2b\u0e21\u0e48. \u0e2a\u0e23\u0e38\u0e1b hold \u0e17\u0e31\u0e49\u0e07 4 slots \u0e41\u0e25\u0e30\u0e04\u0e07\u0e41\u0e1c\u0e19\u0e40\u0e14\u0e34\u0e21\u0e23\u0e2d close_all \u0e15\u0e32\u0e21\u0e02\u0e2d\u0e1a week.",
+      "t": "2026-10-22T23:20:39Z"
     }
   ],
   "eliminated": null,
@@ -237,13 +272,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.826328573545084,
-      "mark": 593.83,
+      "liq": 61.833778448545104,
+      "mark": 599.68,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -76.5206177152372
+      "unrealized": -52.64618498808356
     },
     null,
     null,

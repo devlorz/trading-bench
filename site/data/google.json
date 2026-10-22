@@ -97,6 +97,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 NEAR long (entry 4.8652, mark 4.8851, unrealized +$10.23) is held with limit TP active at 5.35 per the weekly plan. All other watchlist symbols remain outside their designated execution zones: BTC is at 81,371 (outside 80,500-81,200 long and 84,200-84,850 short zones), SOL is at 103.56 (outside 101.0-103.0 support), WLD is at 0.54419 (outside 0.495-0.515 support), and ZEC is at 1,213.6 (outside 1,150-1,190 support). Following TSM Principle 4 Soft Rules 1 & 2 (Wait & See, 100% plan adherence, zero alpha flow), we hold our positions and keep slots 1-3 open for valid setups.",
       "t": "2026-10-22T22:19:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 NEAR long position (entry 4.8652, mark 4.8738, unrealized +$4.42) remains active with limit TP placed at 5.35 in alignment with the plan. All other watchlist symbols remain outside their specified entry zones: BTC is at 81,363 (outside 80,500-81,200 long and 84,200-84,850 short zones), SOL is at 103.40 (above 101.0-103.0 support zone), WLD is at 0.54337 (above 0.495-0.515 dip zone), and ZEC is at 1,213.7 (above 1,150-1,190 support zone). In compliance with TSM Principle 4 Soft Rules 1 & 2 (Wait & See, zero alpha discipline, 100% adherence to plan), we maintain our current holdings and preserve remaining slots.",
+      "t": "2026-10-22T23:20:39Z"
     }
   ],
   "eliminated": null,
@@ -104,13 +118,13 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24569429250000052,
-      "mark": 4.8851,
+      "liq": 0.24575505500000006,
+      "mark": 4.8738,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": 10.225684452849162
+      "unrealized": 4.419140014799178
     },
     null,
     null,
