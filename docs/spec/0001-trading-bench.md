@@ -75,10 +75,11 @@ adrs: [0001-layer-liquidation-is-the-stop-loss, 0002-github-actions-with-retroac
 
 ### จังหวะเวลา (ตาม ADR-0002)
 
-- Weekly workflow รันจันทร์ 00:07 UTC: ต่อ Contestant ทำตามลำดับ settle ชั่วโมงที่ค้าง → ประเมิน Reallocation → เรียก Strategist → validate แผน → บันทึก
-- Hourly workflow รันนาทีที่ 7 ของทุกชั่วโมง: ต่อ Contestant ทำตามลำดับ settle ย้อนหลัง → ประกอบ prompt → เรียก Executor → validate และ apply Action → บันทึก → export dashboard data → commit
+- workflow เดียวรันนาทีที่ 7 ของทุกชั่วโมง job เดียวเรียก `run-week` ก่อนแล้ว `run-tick` เสมอ (ADR-0002)
+- `run-week` ทำงานจริงเฉพาะรอบแรกของ Week (idempotent ต่อ Week ปกติคือจันทร์ 00:07 UTC หรือชั่วโมงถัดไปถ้ารอบนั้นถูก GitHub ทิ้ง): ต่อ Contestant ทำตามลำดับ settle ชั่วโมงที่ค้าง → ประเมิน Reallocation → เรียก Strategist → validate แผน → บันทึก รอบอื่นข้ามโดยไม่เรียก Hyperliquid หรือโมเดลและไม่เขียนอะไร
+- `run-tick` ทุกรอบ: ต่อ Contestant ทำตามลำดับ settle ย้อนหลัง → ประกอบ prompt → เรียก Executor → validate และ apply Action → บันทึก → export dashboard data → commit
 - ทั้งสอง workflow ใช้ concurrency group เดียวกัน รันซ้อนไม่ได้ Tick ที่พลาดไม่ถูกย้อนกลับไปตัดสินใจ แต่ Tick ถัดไป settle ช่วงที่หายทั้งหมด
-- Tick แรกของ Week จะเกิดหลัง Weekly Plan ถูกบันทึกแล้วเท่านั้น ถ้า weekly workflow ยังไม่เสร็จหรือล้ม Executor ใช้แผนล่าสุดที่มี
+- Tick แรกของ Week จะเกิดหลัง Weekly Plan ถูกบันทึกแล้วเสมอเพราะอยู่ใน job เดียวกัน ถ้า `run-week` ล้ม Executor ใช้แผนล่าสุดที่มีและรอบถัดไปสร้างแผนให้
 
 ### โมเดลตลาดจำลอง
 
