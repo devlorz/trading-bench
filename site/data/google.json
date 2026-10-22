@@ -41,6 +41,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "NEAR has retraced into its designated long entry zone of 4.75-4.90 (current mark 4.8647), validating an Action-Based entry on support per the weekly plan. We deploy Slot 0 for a long position on NEAR at 1x leverage ($2,500 notional / $2,500 collateral) in full compliance with RP and risk rules. BTC (81,224), SOL (103.44), WLD (0.5383), and ZEC (1,206) remain outside their entry triggers, so no other slots are deployed.",
       "t": "2026-10-22T18:26:10Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 5.35,
+          "side": null,
+          "slot": 0,
+          "symbol": "NEAR",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 long on NEAR entered at 4.8652 is currently profitable (mark 4.8903, unrealized +$12.90). To automate hostage harvesting in accordance with the weekly plan exit zone (5.35-5.60), we set a limit Take Profit at 5.3500. Meanwhile, all other watchlist candidates remain outside their designated entry zones (BTC at 81,345 vs 80,500-81,200; SOL at 103.37 vs 101.0-103.0; ZEC at 1,212.7 vs 1,150-1,190; WLD at 0.5611 vs 0.495-0.515). In line with TSM Principle 4 (Wait & See, 100% plan adherence), we maintain our remaining three slots free.",
+      "t": "2026-10-22T19:18:11Z"
     }
   ],
   "eliminated": null,
@@ -48,13 +62,13 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.2454493400000004,
-      "mark": 4.8647,
+      "liq": 0.24551039874999958,
+      "mark": 4.8903,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
-      "tp": null,
-      "unrealized": -0.25692674504630997
+      "tp": 5.35,
+      "unrealized": 12.89772260133197
     },
     null,
     null,

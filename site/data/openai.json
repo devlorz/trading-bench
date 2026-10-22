@@ -41,6 +41,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "No entry is validated by a fresh, timestamp-aligned completed 4-hour candle and refreshed price as required by the plan. All slots are empty; remain flat.",
       "t": "2026-10-22T18:26:10Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "All slots are empty. The plan requires refreshed, timestamp-aligned prices and a completed 4-hour confirmation; the supplied candle data is stale relative to this tick, so no setup is validated. Remain flat.",
+      "t": "2026-10-22T19:18:11Z"
     }
   ],
   "eliminated": null,
