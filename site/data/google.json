@@ -125,6 +125,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 NEAR long position (entry 4.8652, mark 4.9121, unrealized +$24.13) continues to trend favorably toward the designated exit zone with a limit TP active at 5.35. Across the rest of the watchlist, no valid Action-Based triggers are active: BTC trades at 81,525 (above the 80,500-81,200 long entry zone and below 84,200 short resistance), SOL trades at 103.99 (above the 101.0-103.0 support zone), WLD trades at 0.55043 (well above the 0.495-0.515 dip zone), and ZEC trades at 1,225.9 (above the 1,150-1,190 support zone). In compliance with TSM Principle 4 Soft Rules 1 & 2 (Wait & See, 100% adherence to plan, zero alpha execution), we preserve capital and hold.",
       "t": "2026-10-23T00:54:41Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 NEAR long position (entry 4.8652, mark 4.9224, unrealized +$29.39) remains solidly in profit with its take-profit target active at 5.35 per the weekly plan. Across the rest of the watchlist, no asset has entered its planned Action-Based entry zone: BTC is at 81,387 (outside 80,500-81,200 long support and 84,200-84,850 short resistance), SOL is at 103.85 (above 101.0-103.0 range support), WLD is at 0.55387 (above 0.495-0.515 dip zone), and ZEC is at 1,218.3 (above 1,150-1,190 EMA50 support). Following TSM Principle 4 Soft Rules 1 & 2 (Wait & See, zero alpha discipline, 100% adherence to plan), we maintain our current holdings and hold without forcing premature entries.",
+      "t": "2026-10-23T01:33:13Z"
     }
   ],
   "eliminated": null,
@@ -132,13 +146,13 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24581606375000042,
-      "mark": 4.91215,
+      "liq": 0.24587742625000075,
+      "mark": 4.9224,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": 24.125421359861786
+      "unrealized": 29.39241963331411
     },
     null,
     null,

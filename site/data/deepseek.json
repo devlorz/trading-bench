@@ -132,6 +132,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Layer 0 holds ETH long from 2395 with TP 2450; mark is 2394.9 so unrealized PnL is ~0.00, far from the 50%-of-RP close threshold (~1250) and nowhere near the 35%-of-notional flatten trigger, so no close or basket offset is due. TP at 2450 remains a valid profit-side limit (2450 > 2395), so no set_tp/cancel_tp needed. Weekly plan is long-only with Action-Based retest entries: BTC 81650-81660 (exit 82750) and ETH 2391-2396 (exit 2450). BTC mark is 81525, still below its entry band (recent low 80911, 1h RSI ~31), so the BTC entry condition is not met. The ETH entry zone was already consumed by the open layer and the hostage policy says do not add to losers, so no second ETH layer. Max-2-layer hostage policy is not triggered (no valid second entry, no meaningful NAV(-) to offset). Per Wait & See and trade-the-plan-100%, the correct action is to hold and let the ETH layer work while waiting for price to trade back into the planned entry bands.",
       "t": "2026-10-23T00:54:41Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Layer 0 holds ETH long from 2395 with TP 2450; mark is 2387.2 so unrealized PnL is only -0.33, far from the 50%-of-RP close threshold (~1250) and nowhere near the 35%-of-notional flatten trigger, so no close or basket offset is due. TP at 2450 remains a valid profit-side limit (2450 > 2395), so no set_tp/cancel_tp needed. Weekly plan is long-only with Action-Based retest entries: BTC 81650-81660 (exit 82750) and ETH 2391-2396 (exit 2450). BTC mark is 81387, still below its entry band (recent low 80911, 1h RSI ~34), so the BTC entry condition is not met. The ETH entry zone was already consumed by the open layer, and the hostage policy explicitly says do not add to losers, so no second ETH layer. Max-2-layer hostage policy is not triggered since there is no valid second entry and no offset/profit-harvest candidate. Per Wait & See and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into the planned entry bands.",
+      "t": "2026-10-23T01:33:13Z"
     }
   ],
   "eliminated": null,
@@ -139,13 +153,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57430.950098091635,
-      "mark": 2394.92,
+      "liq": -57430.93539688117,
+      "mark": 2387.2,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": -0.0033402922755710746
+      "unrealized": -0.3256784968684836
     },
     null,
     null,

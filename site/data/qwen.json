@@ -300,6 +300,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 XMR long is underwater (mark 600.48 vs entry 612.58, unrealized -49.38), but liquidation is extremely far away (61.84) and risk is capped at the 2,500 RP collateral under 1x notional. Under TSM Principle 4 Scenario A, hold NAV(-) and wait for recovery/TP rather than cutting. The planned TP 630.63 remains valid and above entry, so no set_tp/cancel_tp is needed. The weekly hostage policy also says to reduce deployment into free resources when any layer is underwater, so no new positions should be opened while XMR is underwater. All empty slots fail action-based plan conditions: BTC 81525 is below planned long entry 81661 and has negative 24h momentum; ETH 2394.9 is below planned entry 2396.2 and negative momentum; ZEC 1225.9 is below planned entry 1233.4 and negative momentum; XMR itself is below planned entry 611.49. close_all is not until 2026-10-29T16:00:00Z. Therefore hold slot 0 and keep slots 1-3 empty.",
       "t": "2026-10-23T00:54:41Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 605.13,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81387.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2387.2,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1218.3,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds XMR long at 612.58 with mark 605.13, unrealized -30.40, and liquidation 61.85 is extremely far away. Under TSM Principle 4 I choose Scenario A: hold NAV(-) with the existing planned TP 630.63 instead of cutting. The weekly hostage policy also says not to deploy further into symbols unless they are holding above key support with positive momentum and stronger action-based entry. BTC 81387.0 is below its planned long entry 81661, ETH 2387.2 is below 2396.2, ZEC 1218.3 is below 1233.4, and XMR itself is below its planned long entry 611.49 with negative 24h momentum. Therefore hold slot 0 and keep empty slots 1-3 without opening.",
+      "t": "2026-10-23T01:33:13Z"
     }
   ],
   "eliminated": null,
@@ -307,13 +342,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.841287073545004,
-      "mark": 600.48,
+      "liq": 61.848796448545045,
+      "mark": 605.13,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -49.381305298899825
+      "unrealized": -30.404192105521098
     },
     null,
     null,
