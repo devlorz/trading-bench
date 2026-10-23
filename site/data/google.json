@@ -391,6 +391,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both active positions\u2014Slot 0 NEAR long (entry: 4.8652, mark: 4.7726, unrealized: -$47.58, TP: 5.35) and Slot 1 WLD long (entry: 0.5142, mark: 0.50015, unrealized: -$68.31, TP: 0.565)\u2014remain in slight Negative NAV (-) drawdown but are structurally fortified under our 1x notional RP (liquidation prices at 0.247 and 0.0259 respectively). Under TSM Principle 4 Scenario A/B and our weekly Hostage Hunt policy, both positions are held with resting TP orders awaiting market recovery and hostage harvesting. Meanwhile, none of the remaining watchlist candidates currently fulfill Action-Based entry criteria: BTC trades at 81,341 (above 80,500-81,200 long support), SOL trades at 103.67 (above 101.0-103.0 long support), and ZEC trades at 1,224.0 (above 1,150-1,190 long support). We exercise 'Wait & See' discipline and hold current positioning, preserving capital across Slots 2 and 3.",
       "t": "2026-10-23T22:20:23Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 2,
+          "symbol": "BTC",
+          "type": "open"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Current market conditions show a rapid flush across crypto assets, bringing BTC directly into its weekly Action-Based long support zone of 80,500-81,200 (current mark: 80,883). Our existing positions in Slot 0 (NEAR long) and Slot 1 (WLD long) are experiencing negative NAV drawdowns (-$112.33 and -$172.89 respectively), but both remain structurally sound with massive liquidation buffers (0.2469 on NEAR and 0.0259 on WLD) under our 1x notional risk profile. In accordance with TSM Principle 4 Scenario B and our weekly Hostage Hunt policy, we hold both negative NAV positions while deploying a subsequent layer on BTC support to harvest hostages. We execute open long on BTC in Slot 2 ($2,500 notional / $2,500 collateral), while prudently reserving Slot 3 to maintain resource discipline under Soft Rule 1 (Wait & See, Limit Resources).",
+      "t": "2026-10-23T23:19:18Z"
     }
   ],
   "eliminated": null,
@@ -398,25 +412,34 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24703565891006019,
-      "mark": 4.7726,
+      "liq": 0.24693559936525933,
+      "mark": 4.6466,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -47.58283318260299
+      "unrealized": -112.3283729343087
     },
     {
       "entry": 0.5142,
-      "liq": 0.025932895518134935,
-      "mark": 0.50015,
+      "liq": 0.025917494978234923,
+      "mark": 0.47864,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": -68.30999611046289
+      "unrealized": -172.88992609879415
     },
-    null,
+    {
+      "entry": 80871.0,
+      "liq": 1047.2794500000018,
+      "mark": 80883.0,
+      "notional": 2500.0,
+      "side": "long",
+      "symbol": "BTC",
+      "tp": null,
+      "unrealized": 0.3709611603665096
+    },
     null
   ],
   "name": "google",
