@@ -376,6 +376,34 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Account is flat with four free slots, free_equity 10000, RP collateral 2500 / notional 2500, no violations, week plan active. BTC mark 81296 is inside the 80,300-81,500 buy zone. The last completed 4h bar dipped to 81106 (inside the zone) and closed back at 81698, which satisfies the 4h close-back-above-dip-low condition, so one BTC buy layer is opened in slot 1. ETH mark 2393.5 is inside the 2,330-2,400 buy band, and the last 4h bar printed a rejection wick to 2377.2 and closed at 2406.8, with a matching 1h wick, so one ETH buy layer is opened in slot 0. Both are single RP-sized layers at 1x, under max leverage, with no opposite-side positions. SOL (103.64, above its 100.5-103 zone with no pullback) and XRP (1.3022, just above its 1.26-1.30 zone) have no entry. HYPE is avoid. No TPs are set yet; exits are the planned range targets (ETH 2470-2520, BTC 83,500-84,300) and will be placed on later ticks. Surrender levels: ETH 7% adverse or 1d close below 2300; BTC 6% adverse or 1d close below 79,000.",
       "t": "2026-10-23T19:19:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2470.0,
+          "side": "long",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "set_tp"
+        },
+        {
+          "price": 83500.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "set_tp"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Two layers are already open under the plan: ETH long in slot 0 (entry 2393.1) and BTC long in slot 1 (entry 81291). Both are near entry with small unrealized PnL and well away from liquidation (ETH liq about 49, BTC liq about 1054), so no surrender or basket action is needed. No new entry condition is met: BTC is at 81,333, inside the buy zone, but a second BTC layer would stack on the same side without a fresh dip reclaim, and the 4h EMA20 remains below EMA50 with negative MACD histogram. ETH is already at one layer on the long side, with no new rejection wick. SOL and XRP show no confirmed entry, and HYPE is avoid. Per the plan, both open longs get limit take-profits at their planned range targets: ETH at 2470 (about +3.2%, inside the 2470-2520 exit band) and BTC at 83500 (about +2.7%, the low end of the 83,500-84,300 exit band). Both prices are above entry, so they pass the tp_wrong_side check. Slots 2 and 3 remain free.",
+      "t": "2026-10-23T20:22:29Z"
     }
   ],
   "eliminated": null,
@@ -383,23 +411,23 @@
   "layers": [
     {
       "entry": 2393.1,
-      "liq": 48.938894999999775,
-      "mark": 2393.5,
+      "liq": 48.963937951149546,
+      "mark": 2394.2,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
-      "tp": null,
-      "unrealized": 0.4178680372739239
+      "tp": 2470.0,
+      "unrealized": 1.1491371025029344
     },
     {
       "entry": 81291.0,
-      "liq": 1052.7184500000003,
-      "mark": 81296.1,
+      "liq": 1053.7344374999957,
+      "mark": 81333.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
-      "tp": null,
-      "unrealized": 0.15684393106265826
+      "tp": 83500.0,
+      "unrealized": 1.2916559028674761
     },
     null,
     null

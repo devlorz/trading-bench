@@ -811,6 +811,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both open layers (XMR slot0 and ZEC slot1) are NAV(-), but their liquidation prices are extremely far below current marks at 1x leverage, and risk is capped by RP collateral, so under TSM Principle 4 Scenario A there is no need to cut or reduce forced exposure. Existing TPs match the weekly plan and remain on the correct profit side, so no set_tp or cancel_tp is required. New deployment is not justified: BTC 81296 is below its planned long entry 81661 and below today's VWAP; ETH 2393.5 is below its planned long entry 2396.2 and below VWAP; ZEC is occupied and already below its planned entry; XMR is occupied. The hostage policy only permits new entries into stronger, positive-momentum setups above key support, and none are currently valid. Close_all is not due. Therefore hold all current slots.",
       "t": "2026-10-23T19:19:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 595.47,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1221.6,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        },
+        {
+          "price": 81333.0,
+          "side": "long",
+          "slot": 2,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2394.2,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Two active layers are NAV(-), but both are opened at 1x and their liquidation prices are far from current marks, with losses capped by RP collateral. Under TSM Principle 4 Scenario A/B and the no-stop-order rule, there is no basis to cut these underwater layers, especially since no positive layer exists for basket offset and close_all is not due. Existing TPs match the weekly plan and remain on the profit side of entries, so no set_tp or cancel_tp is needed. New deployment is not justified: BTC is below its planned long entry and below today's VWAP with negative 24h/7d momentum; ETH is below its planned long entry and below VWAP with negative 7d momentum; XMR and ZEC are already occupied and currently below their planned entries. The hostage policy requires above-support, positive-momentum setups and reduced new exposure while positions are underwater, so the correct action is to hold all slots and keep slot2/slot3 free until a stronger action-based entry appears.",
+      "t": "2026-10-23T20:22:29Z"
     }
   ],
   "eliminated": null,
@@ -818,23 +853,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.13333935019682,
-      "mark": 595.89,
+      "liq": 62.140815100196846,
+      "mark": 595.47,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -68.11355251559003
+      "unrealized": -69.82761435241117
     },
     {
       "entry": 1257.5,
-      "liq": 63.47196000000008,
-      "mark": 1224.8,
+      "liq": 63.48728250000022,
+      "mark": 1221.6,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -65.00994035785297
+      "unrealized": -71.371769383698
     },
     null,
     null

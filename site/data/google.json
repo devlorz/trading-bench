@@ -349,6 +349,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 NEAR long position (entry: 4.8652, mark: 4.758, unrealized PnL: -$55.09) is in a slight negative NAV drawdown but remains structurally safe (liquidation price: 0.247) within our 1x risk parameters. In accordance with TSM Principle 4 Scenario A/B and our weekly hostage policy, we hold the position with resting TP at 5.35. Across the remainder of the watchlist, no asset has touched its designated Action-Based entry zone yet: BTC trades at 81,296 (just above the 80,500-81,200 long support zone), SOL trades at 103.64 (above 101.0-103.0 support), WLD trades at 0.52035 (above 0.495-0.515 dip support), and ZEC trades at 1,224.8 (above 1,150-1,190 support). In strict compliance with Soft Rules 1 & 2 (Wait & See, 100% plan adherence, zero alpha), we hold our position and preserve free equity across Slots 1-3.",
       "t": "2026-10-23T19:19:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 1,
+          "symbol": "WLD",
+          "type": "open"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 NEAR long position (entry: 4.8652, mark: 4.7395, unrealized PnL: -$64.59) is in Negative NAV (-) drawdown but remains structurally secure (liquidation: 0.247) within our wide 1x leverage risk envelope. Per TSM Principle 4 Scenario B and the weekly Hostage Hunt policy, we hold Slot 0 while deploying subsequent layers on uncorrelated watchlist setups. WLD has pulled back directly into its designated Action-Based long entry zone of 0.495-0.515 (current mark: 0.5142), presenting an active entry trigger. We deploy Slot 1 to open a long position on WLD at 1x notional ($2,500 notional / $2,500 collateral). Other watchlist candidates (BTC at 81,333 vs 80,500-81,200; SOL at 103.46 vs 101.0-103.0; ZEC at 1,221.6 vs 1,150-1,190) remain outside their entry triggers, keeping Slots 2 and 3 in reserve.",
+      "t": "2026-10-23T20:22:29Z"
     }
   ],
   "eliminated": null,
@@ -356,15 +370,24 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24697061474275994,
-      "mark": 4.758,
+      "liq": 0.24696407681835897,
+      "mark": 4.7395,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -55.08509413795925
+      "unrealized": -64.5913837046782
     },
-    null,
+    {
+      "entry": 0.5142,
+      "liq": 0.02594139000000001,
+      "mark": 0.5142,
+      "notional": 2500.0,
+      "side": "long",
+      "symbol": "WLD",
+      "tp": null,
+      "unrealized": 0.0
+    },
     null,
     null
   ],

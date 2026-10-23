@@ -398,6 +398,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Layer 0 holds an ETH long from entry 2395 with TP 2450; mark is now 2393.5 giving unrealized PnL of about -0.06, which is far from the close_all breach trigger (50% of RP collateral = 0.5 * 2500 = 1250 loss) and nowhere near the 35%-of-notional (0.35 * 100 = 35) total NAV(-) flatten trigger, so no close or basket offset is due. TP 2450 is still on the valid profit side for a long (2450 > 2395), so no set_tp or cancel_tp is required. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark is 81296, BELOW the bottom of its 81650-81660 demand band, and the 15m/1h series are still drifting down (15m RSI ~49, last 15m low 81289), so the planned retest into the BTC zone is not available at market and buying here would be chasing a falling price: the BTC Action-Based entry condition is NOT met. ETH mark 2393.5 is technically inside its 2391-2396 zone, but that same zone is already occupied by Layer 0, so a second ETH long would be stacking the same symbol/direction at effectively the same entry price, i.e. adding to the currently slightly NAV(-) position, which the hostage policy explicitly forbids ('do not add to losers'). The max-2-layer hostage policy is satisfied with one layer and is not triggered for volatility harvesting because there is no valid second entry on a fresh watchlist setup at a planned price and no meaningful NAV(-) to offset yet. Per Wait & See, Zero Alpha (trade the actual printed price and flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade into a planned entry band.",
       "t": "2026-10-23T19:19:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Layer 0 holds an ETH long from entry 2395 with TP 2450; mark is 2394.2 giving unrealized PnL of about -0.03, which is far from the close_all breach trigger (50% of RP collateral = 0.5 * 2500 = 1250 loss) and nowhere near the 35%-of-notional (0.35 * 100 = 35) total NAV(-) flatten trigger, so no close or basket offset is due. TP 2450 remains a valid profit-side limit for a long (2450 > 2395), so no set_tp or cancel_tp is required. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark is 81333, BELOW the bottom of its 81650-81660 demand band (the 15m/1h series are still drifting sideways-to-down, last 15m bars 81278-81368 with 15m RSI ~43, no confirmed bull defense at the band), so the planned BTC retest is not available at market and buying here would be chasing a falling price: the BTC Action-Based entry condition is NOT met. ETH mark 2394.2 is inside its 2391-2396 zone, but that same zone is already occupied by Layer 0, so a second ETH long would stack the same symbol/direction at effectively the same entry price, i.e. adding to the currently slightly NAV(-) position, which the hostage policy explicitly forbids ('do not add to losers'). The max-2-layer hostage policy is satisfied with one layer and is not triggered for volatility harvesting because there is no valid second entry on a fresh watchlist setup at a planned price and no meaningful NAV(-) to offset yet. Per Wait & See, Zero Alpha (trade the actual printed price and flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade into a planned entry band.",
+      "t": "2026-10-23T20:22:29Z"
     }
   ],
   "eliminated": null,
@@ -405,13 +419,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57430.515169932696,
-      "mark": 2393.5,
+      "liq": -57430.490126981545,
+      "mark": 2394.2,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": -0.06263048016701461
+      "unrealized": -0.03340292275574872
     },
     null,
     null,
