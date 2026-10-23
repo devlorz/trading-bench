@@ -790,6 +790,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both active layers (XMR slot0 and ZEC slot1) are NAV(-), but their liquidation prices are extremely far away at 1x leverage and the planned TPs remain valid, so under TSM Principle 4 Scenario A/B I hold rather than cut. The hostage policy restricts adding exposure unless a clearly stronger positive-momentum setup exists. BTC is below its planned long entry, below today's VWAP, and below short-term 1h EMAs, so it is weak. ETH is above its entry and VWAP, but its 7d momentum is negative and it remains below higher-timeframe 4h EMAs, not a clear stronger setup. ZEC and XMR are already occupied. Therefore I hold the active layers and keep the remaining watchlist slots empty.",
       "t": "2026-10-23T18:27:03Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 595.89,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1224.8,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both open layers (XMR slot0 and ZEC slot1) are NAV(-), but their liquidation prices are extremely far below current marks at 1x leverage, and risk is capped by RP collateral, so under TSM Principle 4 Scenario A there is no need to cut or reduce forced exposure. Existing TPs match the weekly plan and remain on the correct profit side, so no set_tp or cancel_tp is required. New deployment is not justified: BTC 81296 is below its planned long entry 81661 and below today's VWAP; ETH 2393.5 is below its planned long entry 2396.2 and below VWAP; ZEC is occupied and already below its planned entry; XMR is occupied. The hostage policy only permits new entries into stronger, positive-momentum setups above key support, and none are currently valid. Close_all is not due. Therefore hold all current slots.",
+      "t": "2026-10-23T19:19:40Z"
     }
   ],
   "eliminated": null,
@@ -797,23 +818,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.12587635019679,
-      "mark": 595.46,
+      "liq": 62.13333935019682,
+      "mark": 595.89,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -69.86842534852593
+      "unrealized": -68.11355251559003
     },
     {
       "entry": 1257.5,
-      "liq": 63.45646875000011,
-      "mark": 1251.2,
+      "liq": 63.47196000000008,
+      "mark": 1224.8,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -12.524850894632117
+      "unrealized": -65.00994035785297
     },
     null,
     null
