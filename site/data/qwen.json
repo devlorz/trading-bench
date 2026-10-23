@@ -370,6 +370,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 still holds the XMR long at entry 612.58, mark 609.528, unrealized -12.4555, and liquidation 61.8564 is extremely far away, so risk remains capped by RP collateral under TSM Principle 4 Scenario A: hold NAV(-) and wait for recovery/TP rather than cutting immediately. The planned TP 630.63 is still above entry and valid, so no set_tp or cancel_tp is needed. The weekly hostage policy restricts new deployment while a position is underwater; although BTC/ETH/ZEC are near or above their planned trigger levels, the current condition says to reduce exposure to free resources and only re-enter at stronger levels. close_all is not yet due, so I hold all slots.",
       "t": "2026-10-23T02:32:11Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 611.59,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81730.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2407.1,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1217.8,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 still holds the XMR long at entry 612.58 with mark 611.59, unrealized -4.04, and liquidation price 61.86 extremely far away. The 03:00 funding payment only reduced collateral slightly and did not materially move liquidation. Under TSM Principle 4 Scenario A, I keep NAV(-) with the planned TP 630.63 instead of stopping out, because risk is capped by the 2,500 RP collateral and close_all is not due until 2026-10-29T16:00:00Z. The weekly hostage policy also says to reduce deployment into free resources while any position is underwater and only re-enter stronger symbols holding above key support with positive momentum. BTC 81,730 is above its planned entry 81,661 but has negative 24h momentum, flat 7d, and is still below higher-timeframe EMA structure. ETH 2,407.1 is above its planned entry 2,396.2 but has negative momentum and is not clearly above key moving averages. ZEC 1,217.8 remains below its planned entry 1,233.4 with negative momentum. Therefore no new opens, no close, no TP change; hold slot 0 and keep slots 1-3 empty.",
+      "t": "2026-10-23T03:26:32Z"
     }
   ],
   "eliminated": null,
@@ -377,13 +412,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.856408073545026,
-      "mark": 609.528,
+      "liq": 61.864085698544955,
+      "mark": 611.59,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -12.455516014234961
+      "unrealized": -4.0402886153645605
     },
     null,
     null,
