@@ -727,6 +727,34 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds an XMR long with mark 606.1 below entry 612.58, so NAV(-), but liquidation at 61.96 is extremely far and the planned TP 630.63 remains valid. Under TSM Scenario A and the hostage policy, I do not cut a far-from-liq underwater layer. New deployment is not justified while XMR is underwater and no stronger setup exists: BTC 81609 is below its planned entry 81661 with negative 24h/7d momentum; ZEC 1231 is below entry 1233.4 with negative 24h momentum; ETH 2404.6 is only marginally above its planned entry but has negative 24h/7d momentum and is not clearly holding above key higher-timeframe moving averages. Therefore hold slot 0 and leave empty slots unchanged.",
       "t": "2026-10-23T15:23:05Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 605.02,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1257.8,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "open"
+        },
+        {
+          "price": 1315.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 still holds the planned XMR long at 612.58 with mark 605.02, so the layer is NAV(-). Liquidation 62.05 is extremely far at 1x, risk is capped by the RP collateral, and close_all is not due, so under TSM Principle 4 Scenario A/B I do not cut the underwater layer. The existing TP 630.63 remains valid. The weekly plan and hostage policy allow deployment only into symbols holding above key support with positive momentum. BTC and ETH are above their planned entries but lack constructive higher-timeframe momentum (negative/weak MACD and price around or below short-term EMAs); BTC 24h/7d momentum is weak and ETH has negative 7d momentum. ZEC is the clear action-based stronger setup: mark 1257.8 is above planned long entry 1233.4, above today's VWAP by +1.97%, above key 4h/1h/15m EMA support, and shows +3.19% 24h and +8.25% 7d momentum. Free equity 7500 is sufficient for another RP layer, so I keep XMR and open slot 1 ZEC long at 1x, immediately setting the planned TP 1315.",
+      "t": "2026-10-23T17:20:07Z"
     }
   ],
   "eliminated": null,
@@ -734,15 +762,24 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.96319607354485,
-      "mark": 605.214,
+      "liq": 62.04772496212183,
+      "mark": 605.02,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -30.06137973815659
+      "unrealized": -30.853113062783876
     },
-    null,
+    {
+      "entry": 1257.5,
+      "liq": 63.440875000000005,
+      "mark": 1257.8,
+      "notional": 2500.0,
+      "side": "long",
+      "symbol": "ZEC",
+      "tp": 1315.0,
+      "unrealized": 0.5964214711728718
+    },
     null,
     null
   ],
