@@ -629,6 +629,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds XMR long at 612.58 with mark 606.794, unrealized -23.61, so the layer is NAV(-). Liquidation 61.925 is extremely far at 1x, and risk is capped by the 2,500 RP collateral, so under TSM Principle 4 Scenario A I hold and wait instead of cutting. The existing TP 630.63 is above entry and still matches the plan, so no set_tp or cancel_tp is needed. The hostage policy restricts deployment into free resources while any position is underwater and only allows new entries at stronger levels with positive momentum. BTC, ETH, and ZEC are not clearly strong re-entry setups at current price, and XMR is already occupied, so no opens are justified. Close_all is not due. Hold all slots.",
       "t": "2026-10-23T11:21:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 611.58,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned XMR long with mark 611.58 vs entry 612.58, a small NAV(-). Liquidation at 61.93 is far at 1x and loss is capped by the RP collateral, so under TSM Principle 4 Scenario A I hold rather than cut. The existing TP 630.63 matches the plan and remains above entry, so no set_tp/cancel_tp is needed. The hostage policy prevents adding exposure while any position is underwater unless a stronger positive-momentum setup is available. BTC is above its planned entry but below short-term EMAs and has negative 7-day momentum; ETH is only marginally above VWAP/entry and has negative 7-day momentum; ZEC is above its entry/VWAP but has negative 24h/7d momentum and fading short-term momentum; XMR is already occupied and not stronger. Close_all is not due. Therefore hold the active XMR layer and open nothing.",
+      "t": "2026-10-23T12:30:52Z"
     }
   ],
   "eliminated": null,
@@ -636,13 +650,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.925182323544846,
-      "mark": 606.794,
+      "liq": 61.93281969854479,
+      "mark": 611.58,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -23.613242352019565
+      "unrealized": -4.081099611479317
     },
     null,
     null,
