@@ -657,6 +657,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds the planned XMR long at 612.58 with mark 611.22, a very small NAV(-). Liquidation is extremely far at 1x and risk is capped by RP collateral, so under TSM Principle 4 Scenario A I hold rather than cut. The existing TP 630.63 is still above entry and matches the plan, so no set_tp/cancel_tp is needed. The hostage policy restricts new deployment while any position is underwater and only allows entries into symbols above key support with positive momentum. BTC and ETH are not clearly strong (negative/weak higher-timeframe momentum and EMA conditions), ZEC is below its planned long entry, and XMR is already occupied, so opening additional layers is not justified. Close_all is not due. Therefore hold the active XMR layer and keep empty slots empty.",
       "t": "2026-10-23T13:22:57Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 606.57,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81420.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2391.3,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1229.7,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds an XMR long with a small NAV(-), but liquidation is far away and close_all is not due. Under TSM Principle 4 Scenario A, I hold the underwater layer rather than cut it. The existing TP of 630.63 is valid, above entry, and matches the weekly plan, so no TP change is needed. New entries are not appropriate: BTC, ETH, and ZEC are below their planned long entries and lack a clear stronger positive-momentum setup, while XMR is already occupied. Therefore I keep all slots unchanged and perform a hold.",
+      "t": "2026-10-23T14:26:18Z"
     }
   ],
   "eliminated": null,
@@ -664,13 +699,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.94040932354471,
-      "mark": 611.22,
+      "liq": 61.94800157354473,
+      "mark": 606.566,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -5.550295471611927
+      "unrealized": -24.543733063436655
     },
     null,
     null,
