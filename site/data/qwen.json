@@ -440,6 +440,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds an XMR long entered at 612.58, current mark 608.33, unrealized -17.34, with liquidation 61.87 far away and risk capped by the 2,500 RP collateral. Under TSM Principle 4 Scenario A, hold NAV(-) rather than cut, and keep the valid planned TP 630.63. The hostage policy says not to deploy new exposure while any position is underwater, and only re-enter stronger symbols holding above key support with positive momentum. BTC 81778 is above its planned entry 81661 but has negative 24h momentum and weak technical momentum; ETH 2404.9 is above its planned entry 2396.2 but has negative momentum; ZEC 1221.1 is below its planned entry 1233.4 and has negative momentum; XMR itself is below planned entry 611.49 and underwater. Close_all is not due until 2026-10-29. Therefore no open/close/set_tp/cancel_tp is needed; hold all slots.",
       "t": "2026-10-23T04:25:43Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 610.01,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81840.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2404.5,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1227.8,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds XMR long entered at 612.58; current mark 610.01 gives a small NAV(-) of -10.49, while liquidation at 61.89 is extremely far away and risk is capped by RP collateral at 1x notional. Under TSM Principle 4 Scenario A, hold the underwater layer and wait for recovery or TP rather than cutting; the existing TP 630.63 remains above entry and consistent with the plan, so no set_tp/cancel_tp is needed. The weekly hostage policy says to reduce deployment into free resources while any position is underwater and only enter symbols holding above key support with positive momentum. BTC 81840.0 and ETH 2404.5 are above their planned long entries but still have negative 24h momentum, ZEC 1227.8 remains below its planned entry 1233.4, and XMR itself is underwater and below planned entry. Close_all is not due. Therefore hold all slots and make no open, close, or TP changes.",
+      "t": "2026-10-23T06:36:33Z"
     }
   ],
   "eliminated": null,
@@ -447,13 +482,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.87941119854486,
-      "mark": 614.95,
+      "liq": 61.887076073544904,
+      "mark": 610.01,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": 9.672206079206
+      "unrealized": -10.488426001502049
     },
     null,
     null,
