@@ -342,6 +342,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Layer 0 holds ETH long from 2395 with TP 2450; mark 2404.6 gives unrealized +0.40, far from the close_all threshold (50% of RP collateral ~1250 loss) and nowhere near the 35%-of-notional total NAV(-) flatten trigger (35), so no close or basket offset is due. The layer is NAV(+) (small profit), not a NAV(-) needing Scenario A\u2013E handling, and TP 2450 remains a valid profit-side limit (2450 > 2395), so no set_tp/cancel_tp is needed. The weekly plan is long-only with Action-Based retest entries: BTC 81650-81660 (exit 82750) and ETH 2391-2396 (exit 2450). BTC mark is 81609, BELOW the bottom of its 81650-81660 demand band (the 15m series spiked to 82088 then sold off to 81106 and is only now drifting back up to ~81609 with 15m RSI ~44 and no confirmed bull defense at the band), so the exact planned retest entry into the zone is not available at market and a fill here would be chasing rather than taking the planned retest \u2014 the BTC Action-Based entry condition is not met. ETH price 2404.6 is above its 2391-2396 zone, and that zone was already consumed by layer 0; the hostage policy says max 2 layers and do not add to losers, so no second ETH layer. The max-2-layer hostage policy is satisfied (only one layer) and not triggered for harvesting (no meaningful NAV(-) to offset, no valid second entry on a watchlist symbol at a planned price). Per Wait & See, Zero Alpha (trade actual price/flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into a planned entry band.",
       "t": "2026-10-23T15:23:05Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Layer 0 holds ETH long from 2395 with TP 2450; mark 2397.86 gives unrealized +0.12, far from the close_all threshold (50% of RP collateral ~1250 loss) and nowhere near the 35%-of-notional (~35) total NAV(-) flatten trigger, so no close or basket offset is due. The layer is NAV(+) (small profit), not a NAV(-) needing Scenario A\u2013E handling, and TP 2450 remains a valid profit-side limit (2450 > 2395), so no set_tp/cancel_tp is needed. The weekly plan is long-only with Action-Based retest entries: BTC 81650-81660 (exit 82750) and ETH 2391-2396 (exit 2450). BTC mark is 81500, BELOW the bottom of its 81650-81660 demand band (the 15m/1h series have been chopping 81100-82088 and the last 15m bars sit at 81473-81785 with 15m RSI ~47-51, no confirmed bull defense at the band), so the exact planned retest entry into the zone is not available at market and a fill here would be chasing rather than taking the planned entry \u2014 the BTC Action-Based entry condition is not met. ETH mark 2397.9 is above its 2391-2396 zone, and that zone was already consumed by layer 0; the hostage policy says max 2 layers and do not add to losers, so no second ETH layer. The max-2-layer hostage policy is satisfied (only one layer) and not triggered for harvesting (no meaningful NAV(-) to offset, no valid second entry on a watchlist symbol at a planned price). Per Wait & See, Zero Alpha (trade actual price/flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into a planned entry band.",
+      "t": "2026-10-23T16:26:14Z"
     }
   ],
   "eliminated": null,
@@ -349,13 +363,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57430.6354624327,
-      "mark": 2404.62,
+      "liq": -57430.605377432694,
+      "mark": 2397.86,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": 0.4016701461377825
+      "unrealized": 0.11941544885177985
     },
     null,
     null,

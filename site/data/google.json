@@ -314,13 +314,13 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24674218875000076,
-      "mark": 4.8795,
+      "liq": 0.24678924474275998,
+      "mark": 4.8101,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": 7.3481049083287555
+      "unrealized": -28.313327304118786
     },
     null,
     null,
