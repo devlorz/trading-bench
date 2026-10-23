@@ -447,13 +447,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.87172657354495,
-      "mark": 608.33,
+      "liq": 61.87941119854486,
+      "mark": 614.95,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -17.344673348787097
+      "unrealized": 9.672206079206
     },
     null,
     null,
