@@ -237,6 +237,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 NEAR long position (entry 4.8652, mark 4.9517, unrealized +$44.45) continues to progress toward the weekly target exit zone (5.35-5.60) with limit Take Profit active at 5.35. Across the remainder of the watchlist, no asset currently trades within designated Action-Based entry zones: BTC is at 81,810 (outside 80,500-81,200 long and 84,200-84,850 short zones), SOL is at 104.68 (outside 101.0-103.0 support and 108.5-110.5 resistance), WLD is at 0.54791 (above 0.495-0.515 dip zone), and ZEC trades at 1,232.5 (above 1,150-1,190 support). In strict adherence to TSM Principle 4 Soft Rules 1 & 2 (Wait & See, 100% plan adherence, zero alpha flow), we hold existing positioning and preserve free capital across Slots 1-3.",
       "t": "2026-10-23T08:30:04Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 NEAR long position (entry: 4.8652, mark: 4.9255, unrealized PnL: +$30.99) remains sound with its limit Take Profit active at 5.35 in alignment with the weekly harvest objective (5.35-5.60). Across the remainder of the watchlist, no candidate currently meets designated Action-Based entry criteria: BTC trades at 81,675 (outside 80,500-81,200 long and 84,200-84,850 short zones), SOL trades at 104.32 (outside 101.0-103.0 support and 108.5-110.5 resistance), WLD trades at 0.5432 (above 0.495-0.515 support), and ZEC trades at 1,222.2 (above 1,150-1,190 support). In strict adherence to TSM Principle 4 Soft Rules 1 & 2 (Wait & See, zero alpha discipline, 100% adherence to plan), we maintain our active layer and preserve free equity across Slots 1-3.",
+      "t": "2026-10-23T09:25:39Z"
     }
   ],
   "eliminated": null,
@@ -244,13 +258,13 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.2463110575000007,
-      "mark": 4.9517,
+      "liq": 0.24637308125000068,
+      "mark": 4.9255,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": 44.448326893036274
+      "unrealized": 30.985365452602508
     },
     null,
     null,
