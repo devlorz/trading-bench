@@ -643,6 +643,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds the planned XMR long with mark 611.58 vs entry 612.58, a small NAV(-). Liquidation at 61.93 is far at 1x and loss is capped by the RP collateral, so under TSM Principle 4 Scenario A I hold rather than cut. The existing TP 630.63 matches the plan and remains above entry, so no set_tp/cancel_tp is needed. The hostage policy prevents adding exposure while any position is underwater unless a stronger positive-momentum setup is available. BTC is above its planned entry but below short-term EMAs and has negative 7-day momentum; ETH is only marginally above VWAP/entry and has negative 7-day momentum; ZEC is above its entry/VWAP but has negative 24h/7d momentum and fading short-term momentum; XMR is already occupied and not stronger. Close_all is not due. Therefore hold the active XMR layer and open nothing.",
       "t": "2026-10-23T12:30:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 611.22,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned XMR long at 612.58 with mark 611.22, a very small NAV(-). Liquidation is extremely far at 1x and risk is capped by RP collateral, so under TSM Principle 4 Scenario A I hold rather than cut. The existing TP 630.63 is still above entry and matches the plan, so no set_tp/cancel_tp is needed. The hostage policy restricts new deployment while any position is underwater and only allows entries into symbols above key support with positive momentum. BTC and ETH are not clearly strong (negative/weak higher-timeframe momentum and EMA conditions), ZEC is below its planned long entry, and XMR is already occupied, so opening additional layers is not justified. Close_all is not due. Therefore hold the active XMR layer and keep empty slots empty.",
+      "t": "2026-10-23T13:22:57Z"
     }
   ],
   "eliminated": null,
@@ -650,13 +664,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.93281969854479,
-      "mark": 611.58,
+      "liq": 61.94040932354471,
+      "mark": 611.22,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -4.081099611479317
+      "unrealized": -5.550295471611927
     },
     null,
     null,
