@@ -692,6 +692,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds an XMR long with a small NAV(-), but liquidation is far away and close_all is not due. Under TSM Principle 4 Scenario A, I hold the underwater layer rather than cut it. The existing TP of 630.63 is valid, above entry, and matches the weekly plan, so no TP change is needed. New entries are not appropriate: BTC, ETH, and ZEC are below their planned long entries and lack a clear stronger positive-momentum setup, while XMR is already occupied. Therefore I keep all slots unchanged and perform a hold.",
       "t": "2026-10-23T14:26:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 606.1,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81609.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2404.6,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1231.0,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 holds an XMR long with mark 606.1 below entry 612.58, so NAV(-), but liquidation at 61.96 is extremely far and the planned TP 630.63 remains valid. Under TSM Scenario A and the hostage policy, I do not cut a far-from-liq underwater layer. New deployment is not justified while XMR is underwater and no stronger setup exists: BTC 81609 is below its planned entry 81661 with negative 24h/7d momentum; ZEC 1231 is below entry 1233.4 with negative 24h momentum; ETH 2404.6 is only marginally above its planned entry but has negative 24h/7d momentum and is not clearly holding above key higher-timeframe moving averages. Therefore hold slot 0 and leave empty slots unchanged.",
+      "t": "2026-10-23T15:23:05Z"
     }
   ],
   "eliminated": null,
@@ -699,13 +734,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.94800157354473,
-      "mark": 606.566,
+      "liq": 61.95561032354476,
+      "mark": 606.1,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -24.543733063436655
+      "unrealized": -26.44552548238605
     },
     null,
     null,
