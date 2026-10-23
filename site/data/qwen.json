@@ -846,6 +846,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Two active layers are NAV(-), but both are opened at 1x and their liquidation prices are far from current marks, with losses capped by RP collateral. Under TSM Principle 4 Scenario A/B and the no-stop-order rule, there is no basis to cut these underwater layers, especially since no positive layer exists for basket offset and close_all is not due. Existing TPs match the weekly plan and remain on the profit side of entries, so no set_tp or cancel_tp is needed. New deployment is not justified: BTC is below its planned long entry and below today's VWAP with negative 24h/7d momentum; ETH is below its planned long entry and below VWAP with negative 7d momentum; XMR and ZEC are already occupied and currently below their planned entries. The hostage policy requires above-support, positive-momentum setups and reduced new exposure while positions are underwater, so the correct action is to hold all slots and keep slot2/slot3 free until a stronger action-based entry appears.",
       "t": "2026-10-23T20:22:29Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 590.52,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1234.1,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both active layers are NAV(-), but their liquidation prices are extremely far from current marks at 1x and risk is capped by RP collateral, so under TSM Principle 4 Scenario A there is no forced-cut requirement. There is no positive layer to use for Basket Offset or Hostage harvesting. New deployment is not justified by the weekly plan/hostage policy: BTC is below its planned long entry and today's VWAP with weak/negative higher-timeframe momentum; ETH is marginally above its entry but still below key 4h EMAs and lacks clear positive momentum. XMR and ZEC are already occupied. Existing TPs match the plan and remain valid. Therefore hold all current positions and preserve free equity until stronger action-based setups or close_all.",
+      "t": "2026-10-23T21:20:29Z"
     }
   ],
   "eliminated": null,
@@ -853,23 +874,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.140815100196846,
-      "mark": 595.47,
+      "liq": 62.148228850196915,
+      "mark": 590.52,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -69.82761435241117
+      "unrealized": -90.02905742923397
     },
     {
       "entry": 1257.5,
-      "liq": 63.48728250000022,
-      "mark": 1221.6,
+      "liq": 63.50267625000015,
+      "mark": 1234.1,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -71.371769383698
+      "unrealized": -46.520874751491235
     },
     null,
     null
