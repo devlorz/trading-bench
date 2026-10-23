@@ -335,6 +335,41 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 holds XMR long at 612.58 with mark 605.13, unrealized -30.40, and liquidation 61.85 is extremely far away. Under TSM Principle 4 I choose Scenario A: hold NAV(-) with the existing planned TP 630.63 instead of cutting. The weekly hostage policy also says not to deploy further into symbols unless they are holding above key support with positive momentum and stronger action-based entry. BTC 81387.0 is below its planned long entry 81661, ETH 2387.2 is below 2396.2, ZEC 1218.3 is below 1233.4, and XMR itself is below its planned long entry 611.49 with negative 24h momentum. Therefore hold slot 0 and keep empty slots 1-3 without opening.",
       "t": "2026-10-23T01:33:13Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 609.528,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 81877.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2412.8,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ETH",
+          "type": "hold"
+        },
+        {
+          "price": 1234.8,
+          "side": "long",
+          "slot": 3,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 0 still holds the XMR long at entry 612.58, mark 609.528, unrealized -12.4555, and liquidation 61.8564 is extremely far away, so risk remains capped by RP collateral under TSM Principle 4 Scenario A: hold NAV(-) and wait for recovery/TP rather than cutting immediately. The planned TP 630.63 is still above entry and valid, so no set_tp or cancel_tp is needed. The weekly hostage policy restricts new deployment while a position is underwater; although BTC/ETH/ZEC are near or above their planned trigger levels, the current condition says to reduce exposure to free resources and only re-enter at stronger levels. close_all is not yet due, so I hold all slots.",
+      "t": "2026-10-23T02:32:11Z"
     }
   ],
   "eliminated": null,
@@ -342,13 +377,13 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 61.848796448545045,
-      "mark": 605.13,
+      "liq": 61.856408073545026,
+      "mark": 609.528,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -30.404192105521098
+      "unrealized": -12.455516014234961
     },
     null,
     null,
