@@ -867,6 +867,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both active layers are NAV(-), but their liquidation prices are extremely far from current marks at 1x and risk is capped by RP collateral, so under TSM Principle 4 Scenario A there is no forced-cut requirement. There is no positive layer to use for Basket Offset or Hostage harvesting. New deployment is not justified by the weekly plan/hostage policy: BTC is below its planned long entry and today's VWAP with weak/negative higher-timeframe momentum; ETH is marginally above its entry but still below key 4h EMAs and lacks clear positive momentum. XMR and ZEC are already occupied. Existing TPs match the plan and remain valid. Therefore hold all current positions and preserve free equity until stronger action-based setups or close_all.",
       "t": "2026-10-23T21:20:29Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 591.91,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1224.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both open layers are NAV(-): XMR at mark 591.91 vs entry 612.58, and ZEC at mark 1224.0 vs entry 1257.5. Their liquidation prices are extremely far from current marks at 1x RP sizing, so risk is already capped by collateral and there is no forced reason to cut. There are no profitable layers to use for basket offset or hostage harvesting. Close_all is not due. Existing TPs match the weekly plan and remain valid on the profit side, so no set_tp/cancel_tp is needed. New deployment is rejected: BTC 81341 is below its planned long entry 81661 and below today's VWAP with negative 24h/7d momentum; ETH 2395.3 is just below its planned long entry 2396.2 and below VWAP, while 7d momentum is negative and it is not holding above key short-term EMAs. ZEC and XMR are already occupied. Under TSM Principle 4 Scenario A and the hostage policy to reduce exposure while positions are underwater and re-enter only stronger setups, hold the current layers and leave free slots unused.",
+      "t": "2026-10-23T22:20:23Z"
     }
   ],
   "eliminated": null,
@@ -874,23 +895,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.148228850196915,
-      "mark": 590.52,
+      "liq": 62.15560835019687,
+      "mark": 591.91,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -90.02905742923397
+      "unrealized": -84.35632896927778
     },
     {
       "entry": 1257.5,
-      "liq": 63.50267625000015,
-      "mark": 1234.1,
+      "liq": 63.51798500000018,
+      "mark": 1224.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -46.520874751491235
+      "unrealized": -66.60039761431412
     },
     null,
     null

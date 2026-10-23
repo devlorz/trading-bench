@@ -377,6 +377,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 1 WLD long position (entry: 0.5142, mark: 0.51521, unrealized PnL: +$4.91) is active and profitable following the recent fill. Per the weekly plan exit guidelines ('Harvest hostages into 0.565-0.595 swing high resistance'), we place a limit Take Profit order at 0.5650 to automate hostage collection. Slot 0 NEAR long (entry: 4.8652, mark: 4.8196, unrealized: -$23.43) remains safely held within our wide 1x leverage structural buffer with its TP resting at 5.35 per Scenario A/B. The remaining watchlist candidates remain outside their Action-Based entry zones (BTC at 81,444 vs 80,500-81,200 long; SOL at 103.98 vs 101.0-103.0 long; ZEC at 1,234.1 vs 1,150-1,190 long), so Slots 2 and 3 remain in reserve.",
       "t": "2026-10-23T21:20:29Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both active positions\u2014Slot 0 NEAR long (entry: 4.8652, mark: 4.7726, unrealized: -$47.58, TP: 5.35) and Slot 1 WLD long (entry: 0.5142, mark: 0.50015, unrealized: -$68.31, TP: 0.565)\u2014remain in slight Negative NAV (-) drawdown but are structurally fortified under our 1x notional RP (liquidation prices at 0.247 and 0.0259 respectively). Under TSM Principle 4 Scenario A/B and our weekly Hostage Hunt policy, both positions are held with resting TP orders awaiting market recovery and hostage harvesting. Meanwhile, none of the remaining watchlist candidates currently fulfill Action-Based entry criteria: BTC trades at 81,341 (above 80,500-81,200 long support), SOL trades at 103.67 (above 101.0-103.0 long support), and ZEC trades at 1,224.0 (above 1,150-1,190 long support). We exercise 'Wait & See' discipline and hold current positioning, preserving capital across Slots 2 and 3.",
+      "t": "2026-10-23T22:20:23Z"
     }
   ],
   "eliminated": null,
@@ -384,23 +398,23 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.247013009836059,
-      "mark": 4.8196,
+      "liq": 0.24703565891006019,
+      "mark": 4.7726,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -23.43171914823616
+      "unrealized": -47.58283318260299
     },
     {
       "entry": 0.5142,
-      "liq": 0.025941592014089965,
-      "mark": 0.51521,
+      "liq": 0.025932895518134935,
+      "mark": 0.50015,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": 4.910540645662949
+      "unrealized": -68.30999611046289
     },
     null,
     null
