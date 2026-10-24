@@ -965,6 +965,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Slot 0 XMR long and slot 1 ZEC long are both NAV(-). Their liquidation prices are extremely far below current marks at 1x RP sizing, so downside is capped by the existing collateral; under TSM Principle 4 Scenario A/B this is a hold-and-wait situation rather than a forced cut. There is no profitable layer available for Basket Offset or Hostage harvesting, and close_all is not due. Existing TP orders remain valid on the profit side of entry, so no set_tp or cancel_tp is needed. New deployment is not justified under the weekly plan and hostage policy: BTC mark 80945 is below its planned long entry 81661 and has weak/negative 24h and 7d momentum; ETH mark 2382.8 is below its planned long entry 2396.2 and has negative 24h/7d momentum. XMR and ZEC are already occupied and are currently below their planned stronger action-based long entries. Therefore, hold all slots and preserve free equity until stronger setups or close_all.",
       "t": "2026-10-24T02:29:34Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 579.61,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1167.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both active layers are NAV(-): XMR long at mark 579.61 vs entry 612.58, and ZEC long at mark 1167.0 vs entry 1257.5. Their liquidation prices are extremely far from current marks under 1x RP sizing, so downside is capped by collateral and there is no forced-cut condition. There are no profitable layers available for Basket Offset or Hostage harvesting, and close_all is not due. Existing TPs match the weekly plan and remain valid. New deployment is rejected by the plan and hostage policy: BTC mark 80974 is below its planned long entry 81661 and has negative 24h/7d momentum; ETH mark 2384.9 is below its planned long entry 2396.2 and has negative 24h/7d momentum. Therefore hold the current underwater layers and keep empty slots unused.",
+      "t": "2026-10-24T03:24:32Z"
     }
   ],
   "eliminated": null,
@@ -972,23 +993,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.18458872519693,
-      "mark": 577.93,
+      "liq": 62.18462403733099,
+      "mark": 579.61,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -141.4101015377587
+      "unrealized": -134.5538541904732
     },
     {
       "entry": 1257.5,
-      "liq": 63.48673543328027,
-      "mark": 1176.7,
+      "liq": 63.5013654332804,
+      "mark": 1167.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -160.6361829025844
+      "unrealized": -179.92047713717693
     },
     null,
     null
