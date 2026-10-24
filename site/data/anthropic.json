@@ -698,6 +698,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Tick 2026-10-24T17:17Z. Three layers are open: ETH long slot 0 (entry 2393.1, TP 2470, mark 2320.5, unrealized about -75.8 USD, liq about 49), BTC long slot 1 (entry 81291, TP 83500, mark 80197, unrealized about -33.6 USD, liq about 1074), and SOL long slot 2 (entry 102.14, TP 107, mark 100.46, unrealized about -41.1 USD, liq about 2.6). Total NAV(-) is about -150.6 USD, below the 250 USD close_all threshold. No 1d close is in the data to confirm the BTC 79,000 or 87,500 range break. The latest BTC 4h low of 79184 is above 79,000, and BTC is not at its 6% surrender (about 76,400). ETH is not at its 7% surrender (about 2,225) and has not closed below 2,300 on a 1d basis. SOL is not at its 8% surrender (about 94.0). All three TPs sit on the profit side of entry and liquidation levels are far from mark, so no set_tp, cancel_tp, or close is needed. Slot 3 is free and free_equity covers one layer, but no entry condition is met. BTC at 80197 is below its 80,300-81,500 buy zone with no 4h reclaim. ETH at 2320 is below its 2,330-2,400 band and broke down through 2,300 on heavy volume with no rejection wick. SOL is at 100.46, just below its 100.5-103 zone, and a second layer needs the first to be at least +2% in profit, which it is not. XRP (about 1.2748) sits in its 1.26-1.30 zone, but the 4h and 1h trend is down, the 1h swing low of 1.2726 was lost, and the bounce has not closed back above the dip on the 4h. Opening a fourth layer into this falling market would stack risk and push NAV(-) toward the 250 USD trigger. Hold.",
       "t": "2026-10-24T17:17:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Tick 2026-10-24T18:23Z. Three layers are open: ETH long slot 0 (entry 2393.1, mark 2323.5, unrealized about -72.7), BTC long slot 1 (entry 81291, mark 80248, unrealized about -32.1), and SOL long slot 2 (entry 102.14, mark 100.65, unrealized about -36.5). Total NAV(-) is about -141 USD, below the 250 USD close_all trigger. No 1d close in the data confirms a BTC break of 79,000 or 87,500. The 4h ATR14% is about 0.95%, far below the 4% event trigger. No layer has reached its fixed adverse-move surrender: ETH 7% is about 2225, BTC 6% is about 76400, SOL 8% is about 94.0. Liquidation levels are far from mark. All three TPs (ETH 2470, BTC 83500, SOL 107) remain on the profit side of entry, so no set_tp, cancel_tp, or close is needed. Slot 3 is free and free_equity covers one 2500 layer, but no fresh entry is confirmed. BTC at 80248 is just below its 80,300-81,500 buy zone, and the last 4h bar closed at 79789 with no reclaim. ETH at 2323.5 is below its 2,330-2,400 band, and the last 4h bar closed at 2305.6 after breaking 2,300 on heavy volume with no rejection wick. SOL at 100.65 sits inside its 100.5-103 zone, but a second SOL layer requires the first to be at least +2% in profit, which it is not, and the plan allows one SOL layer. XRP at 1.2796 is inside its 1.26-1.30 zone, but the 4h bar closed at 1.2678 on heavy volume and no 4h reclaim is confirmed, so a fourth layer there would be catching a falling market. HYPE is avoid. Opening into this downtrend would stack risk and push NAV(-) toward the 250 USD trigger. No 5th layer is allowed. Hold.",
+      "t": "2026-10-24T18:23:51Z"
     }
   ],
   "eliminated": null,
@@ -705,33 +719,33 @@
   "layers": [
     {
       "entry": 2393.1,
-      "liq": 49.14282137429018,
-      "mark": 2320.5,
+      "liq": 49.171848874289935,
+      "mark": 2323.5,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2470.0,
-      "unrealized": -75.84304876519985
+      "unrealized": -72.70903848564613
     },
     {
       "entry": 81291.0,
-      "liq": 1074.4410545919964,
-      "mark": 80197.0,
+      "liq": 1075.318931252492,
+      "mark": 80248.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -33.64456089850045
+      "unrealized": -32.076121587875654
     },
     {
       "entry": 102.14,
-      "liq": 2.6032646309637926,
-      "mark": 100.4611,
+      "liq": 2.604520505963805,
+      "mark": 100.65,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 107.0,
-      "unrealized": -41.093107499510445
+      "unrealized": -36.469551595848706
     },
     null
   ],

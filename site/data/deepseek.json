@@ -706,6 +706,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Layer 0 holds the planned ETH long (entry 2395, TP 2450). Mark 2320.5 gives unrealized PnL of only about -3.11 (size = 100/2395 \u2248 0.0417 ETH), far from the close_all breach trigger (50% of RP collateral = 1250 loss) and far from the 35%-of-notional (35) total NAV(-) flatten trigger, so no close or basket offset is due. TP 2450 remains a valid profit-side limit for a long (2450 > 2395) and has not been touched (mark 2320.5 is far below it), so no set_tp/cancel_tp is required. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark 80197 is far BELOW the bottom of its 81650-81660 demand band (4h/1h/15m selling off; 4h swing_position below, 15m last bars 79333->80175 with high volume 3387, 1h RSI ~35, 4h/1h MACD hist negative), so the planned BTC retest is not available at market and buying here would be chasing a falling price: the BTC Action-Based entry condition is NOT met. ETH mark 2320.5 is also well BELOW its 2391-2396 entry zone (the 15m printed a high-volume break to 2281.5 with volume 59687 and is only basing 2287-2318, 15m RSI ~38, 1h RSI ~37, 4h/1h MACD hist still negative), so a fresh ETH retest entry is likewise unavailable, and stacking a second ETH long in the same symbol/direction would violate the hostage policy's 'do not add to losers'. The max-2-layer hostage policy is satisfied with one layer and is not triggered for volatility harvesting because there is no valid fresh watchlist setup at a planned price and the NAV(-) is trivial (~3.11, far from the 35 flatten trigger). Liquidation price (~-57430) is nowhere near. Per Scenario A (hold NAV(-) waiting for recovery while far from liq price), Wait & See, Zero Alpha (trade the actual printed price/flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into a planned entry band.",
       "t": "2026-10-24T17:17:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Layer 0 holds the planned ETH long (entry 2395, TP 2450, mark 2323.5, size \u2248 0.0417 ETH). Unrealized PnL is only about -2.99, far from the close_all breach trigger (50% of RP collateral = 1250 loss) and far from the 35%-of-notional (35) total NAV(-) flatten trigger, so no close or basket offset is due. TP 2450 remains a valid profit-side limit for a long (2450 > 2395) and has not been touched, so no set_tp/cancel_tp is required. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark 80248 is BELOW the bottom of its 81650-81660 demand band (4h last bars 80577->79789 with high volume 12847, 4h RSI ~29, 1h RSI ~38-41, 4h/1h MACD hist negative, swing_position below), so the planned BTC retest is not available at market and buying here would be chasing a falling price: the BTC Action-Based entry condition is NOT met. ETH mark 2323.5 is also well BELOW its 2391-2396 entry zone (the 4h printed a high-volume break to 2281.5 with volume 210164, 15m RSI ~38-44, 1h RSI ~28-40, 4h/1h MACD hist still negative), so a fresh ETH retest entry is likewise unavailable, and stacking a second ETH long in the same symbol/direction would violate the hostage policy's 'do not add to losers'. The max-2-layer hostage policy is satisfied with one layer and is not triggered for volatility harvesting because there is no valid fresh watchlist setup at a planned price and the NAV(-) is trivial (~2.99, far from the 35 flatten trigger). Liquidation price (~-57430) is nowhere near. Per Scenario A (hold NAV(-) waiting for recovery while far from liq price), Wait & See, Zero Alpha (trade the actual printed price/flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into a planned entry band.",
+      "t": "2026-10-24T18:23:51Z"
     }
   ],
   "eliminated": null,
@@ -713,13 +727,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57430.311243558426,
-      "mark": 2320.5,
+      "liq": -57430.28221605843,
+      "mark": 2323.5,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": -3.1106471816283925
+      "unrealized": -2.9853862212943634
     },
     null,
     null,
