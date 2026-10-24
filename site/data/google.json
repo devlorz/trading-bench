@@ -461,6 +461,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Portfolio equity remains resilient at $9,748.83, comfortably above the $9,000 emergency close threshold, while all three active layers maintain massive liquidation buffers under our 1x notional RP. Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0) is stable and slightly positive (+$3.18), while Slot 0 (NEAR long, entry: 4.8652, TP: 5.35) and Slot 1 (WLD long, entry: 0.5142, TP: 0.565) continue to navigate their respective Negative NAV (-) consolidation bands under Scenario A/B. In accordance with TSM Principle 4 Soft Rule 1 ('Wait & See and Know When to Pause') and our weekly Limit Resources policy, we deliberately keep Slot 3 in reserve as defensive dry powder rather than allocating 100% of our layers into broader market drawdown. All active Take Profit orders remain resting to harvest hostages upon rebound.",
       "t": "2026-10-24T03:24:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Portfolio equity remains well-defended at $9,711.08, safely above our $9,000 emergency threshold. All active layers\u2014Slot 0 (NEAR long, entry: 4.8652, TP: 5.35), Slot 1 (WLD long, entry: 0.5142, TP: 0.565), and Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0)\u2014are securely buffered with remote liquidation prices under our 1x notional RP. While SOL (102.57) and ZEC (1,172.2) remain within their nominal support zones, we strictly adhere to TSM Principle 4 Soft Rule 1 ('Wait & See and Know When to Pause') and our Limit Resources mandate by preserving Slot 3 as defensive dry powder rather than allocating 100% of portfolio layers during market consolidation. We hold our current positioning and await hostage harvest executions on market rebound.",
+      "t": "2026-10-24T04:23:43Z"
     }
   ],
   "eliminated": null,
@@ -468,33 +482,33 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24654381436366002,
-      "mark": 4.6685,
+      "liq": 0.24654244418848048,
+      "mark": 4.6343,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -101.0749815012743
+      "unrealized": -118.64877086245176
     },
     {
       "entry": 0.5142,
-      "liq": 0.02587223064807187,
-      "mark": 0.48344,
+      "liq": 0.025878067291742912,
+      "mark": 0.48011,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": -149.5527032283159
+      "unrealized": -165.74290159471028
     },
     {
       "entry": 80871.0,
-      "liq": 1051.3255875000032,
-      "mark": 80974.0,
+      "liq": 1052.3375875000056,
+      "mark": 80847.1,
       "notional": 2500.0,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": 3.1840832931458745
+      "unrealized": -0.7388309777297851
     },
     null
   ],

@@ -986,6 +986,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both active layers are NAV(-): XMR long at mark 579.61 vs entry 612.58, and ZEC long at mark 1167.0 vs entry 1257.5. Their liquidation prices are extremely far from current marks under 1x RP sizing, so downside is capped by collateral and there is no forced-cut condition. There are no profitable layers available for Basket Offset or Hostage harvesting, and close_all is not due. Existing TPs match the weekly plan and remain valid. New deployment is rejected by the plan and hostage policy: BTC mark 80974 is below its planned long entry 81661 and has negative 24h/7d momentum; ETH mark 2384.9 is below its planned long entry 2396.2 and has negative 24h/7d momentum. Therefore hold the current underwater layers and keep empty slots unused.",
       "t": "2026-10-24T03:24:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 582.573,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1172.2,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both active layers are underwater: slot0 XMR long at entry 612.58 with mark 582.57, and slot1 ZEC long at entry 1257.5 with mark 1172.2. Their liquidation prices (62.19 and 63.52) are extremely far from current marks under 1x RP sizing, so downside is already capped by collateral and there is no forced action. There are no profitable layers to harvest as Hostage for basket offset, and close_all is not due. Existing TPs (630.63 for XMR and 1315 for ZEC) remain on the profit side of their entries and match the weekly plan, so no set_tp or cancel_tp is needed. New deployment is rejected: BTC 80847 is below its planned long entry 81661 and has negative 24h/7d momentum; ETH 2379.9 is below its planned long entry 2396.2 and has negative 24h/7d momentum. XMR is above today's VWAP but still below planned key support/entry and has negative 24h momentum, while ZEC is below planned entry and slightly below VWAP with negative 24h momentum; neither is a stronger action-based continuation setup under the hostage policy. Holding also preserves the already limited exposure (2 of 4 slots occupied) with 5000 free equity available.",
+      "t": "2026-10-24T04:23:43Z"
     }
   ],
   "eliminated": null,
@@ -993,23 +1014,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.18462403733099,
-      "mark": 579.61,
+      "liq": 62.19185716233085,
+      "mark": 582.573,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -134.5538541904732
+      "unrealized": -122.46155604166012
     },
     {
       "entry": 1257.5,
-      "liq": 63.5013654332804,
-      "mark": 1167.0,
+      "liq": 63.516009183280175,
+      "mark": 1172.2,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -179.92047713717693
+      "unrealized": -169.58250497017883
     },
     null,
     null
