@@ -433,6 +433,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "All three active positions\u2014Slot 0 (NEAR long, entry: 4.8652, TP: 5.35), Slot 1 (WLD long, entry: 0.5142, TP: 0.565), and Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0)\u2014are structurally secure under our 1x notional RP with wide liquidation buffers, resting TP orders, and portfolio equity ($9,668.13) well above the $9,000 macro cut-off. Although SOL and ZEC trade within their technical support ranges, all existing layers currently sit in Negative NAV (-) following the recent market flush. Under TSM Principle 4 Soft Rule 1 ('Wait & See and Know When to Pause') and Scenario A, we prudently preserve our final layer (Slot 3) as dry powder rather than maxing out all 4 slots into active downside momentum. We hold all current layers and let market flow develop toward our harvest targets.",
       "t": "2026-10-24T01:29:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Portfolio equity sits safely at $9,723.69, far above our $9,000 emergency drawdown boundary, while all three active layers maintain massive liquidation safety cushions under our conservative 1x notional RP. Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0) has stabilized and turned marginally positive (+$2.29), while Slot 0 (NEAR long, entry: 4.8652, TP: 5.35) and Slot 1 (WLD long, entry: 0.5142, TP: 0.565) are basing comfortably above their extreme liquidation thresholds (0.2466 and 0.0258 respectively) under Scenario A/B. In strict adherence to TSM Principle 4 Soft Rule 1 ('Wait & See and Know When to Pause') and our weekly Limit Resources doctrine, we deliberately hold Slot 3 in reserve as defensive dry powder rather than over-allocating into 100% layer exposure. We maintain our resting limit Take Profit orders and hold current positioning to let the market flow evolve toward our hostage harvest targets.",
+      "t": "2026-10-24T02:29:34Z"
     }
   ],
   "eliminated": null,
@@ -440,33 +454,33 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24670378669345983,
-      "mark": 4.6145,
+      "liq": 0.24661061050515976,
+      "mark": 4.6469,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -128.82306996629129
+      "unrealized": -112.17421688728119
     },
     {
       "entry": 0.5142,
-      "liq": 0.025881900947992864,
-      "mark": 0.47368,
+      "liq": 0.025874861082976874,
+      "mark": 0.48074,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": -197.00505639828862
+      "unrealized": -162.6798910929599
     },
     {
       "entry": 80871.0,
-      "liq": 1049.3017874999932,
-      "mark": 80798.4,
+      "liq": 1050.313287500001,
+      "mark": 80945.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -2.2443150202175635
+      "unrealized": 2.287593822260143
     },
     null
   ],
