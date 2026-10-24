@@ -460,6 +460,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Tick 2026-10-24T00:50Z. Two layers are open: ETH long (slot 0, entry 2393.1, TP 2470, mark 2371.5, unrealized about -22.6) and BTC long (slot 1, entry 81291, TP 83500, mark 80680, unrealized about -18.8). Total NAV(-) is about -41 USD, far below the 250 USD close_all threshold. The 4h ATR is about 1%, below the 4% trigger, and BTC's 4h range (about 80.5k to 84.8k) has not broken the 79,000 / 87,500 1d-close levels. Both liquidation prices are far away and both TPs sit on the profit side of entry, so no surrender or basket action is needed. No new entry is confirmed. BTC is inside its 80,300-81,500 buy zone, but a second BTC long would add to a losing layer, which is prohibited. ETH already holds its one layer and shows no fresh rejection wick or 4h reclaim, with the 4h EMA20 still below EMA50. SOL (102.09) is in its 100.5-103 zone, but the 1h and 4h lows keep breaking lower (101.64) without the required higher 4h low. XRP (1.2844) has just broken below its 1.26-1.30 zone with heavy 1h volume and no reclaim, so no falling-knife entry. HYPE is avoid. Slots 2 and 3 stay free and no 5th layer is allowed. Hold.",
       "t": "2026-10-24T00:50:58Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Two layers are open: ETH long in slot 0 (entry 2393.1, mark about 2374.4, unrealized about -19.5, TP 2470, liq about 49) and BTC long in slot 1 (entry 81291, mark about 80798, unrealized about -15.1, TP 83500, liq about 1059). Total NAV(-) is about -35 USD, far below the 250 USD close_all threshold. BTC's 1d closes have not broken 79,000 or 87,500, and 4h ATR is about 1%, below the 4% event trigger. Both liquidation prices are far away and both TPs sit on the profit side of entry, so no surrender or basket action is needed. No new entry is confirmed. BTC is inside its 80,300-81,500 buy zone, but a second BTC long would add to a losing layer, which is prohibited, and the latest 4h bar closed at 80500-81180 with no close back above the dip low. ETH already holds its one layer and shows no fresh rejection wick or 4h reclaim, with the 4h EMA20 still below EMA50. SOL (about 102.4) is in its 100.5-103 zone, but the 4h low of 101.64 is not a higher 4h low and there is no confirmed reclaim. XRP (about 1.288) is inside its buy zone but is falling on heavy volume with no reclaim, so no falling-knife entry. HYPE is avoid. Slots 2 and 3 stay free and no 5th layer is allowed. Hold.",
+      "t": "2026-10-24T01:29:39Z"
     }
   ],
   "eliminated": null,
@@ -467,23 +481,23 @@
   "layers": [
     {
       "entry": 2393.1,
-      "liq": 48.99535607500957,
-      "mark": 2371.5,
+      "liq": 48.97780609684969,
+      "mark": 2374.4,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2470.0,
-      "unrealized": -22.564874012786667
+      "unrealized": -19.535330742551313
     },
     {
       "entry": 81291.0,
-      "liq": 1057.794425,
-      "mark": 80680.0,
+      "liq": 1058.8020000000106,
+      "mark": 80798.4,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -18.790518015524473
+      "unrealized": -15.149278517917292
     },
     null,
     null
