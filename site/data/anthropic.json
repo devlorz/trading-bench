@@ -670,6 +670,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Tick 2026-10-24T15:18Z. Three layers are open: ETH long slot 0 (entry 2393.1, mark 2295.3, about -102 USD, 4.1% adverse), BTC long slot 1 (entry 81291, mark 79457, about -56 USD), and SOL long slot 2 (entry 102.14, mark 99.03, about -76 USD). Total NAV(-) is about -235 USD, which is below the 250 USD close_all threshold but close to it. No 1d close has confirmed the BTC 79,000 or 87,500 range break, the ETH 2,300 surrender, or the SOL 99.5 surrender, and no layer has hit its 6-8% fixed adverse-move limit (ETH 7% is about 2,225, BTC 6% is about 76,400, SOL 8% is about 94.0). All three TPs (ETH 2470, BTC 83500, SOL 107) remain on the profit side of entry, and liquidation levels are far from mark, so no set_tp, cancel_tp, or close is needed. Slot 3 is free and free_equity covers one layer, but no fresh entry is confirmed: BTC is below its 80,300-81,500 buy zone with no reclaim, ETH is breaking down through 2,300 with no rejection wick, SOL is below its 100.5-103 zone and its first layer is not at least +2% in profit, and XRP has broken below its 1h swing low with no reclaim. Opening into a falling market would add risk and push NAV(-) toward the 250 USD close_all trigger. Hold, and re-check the 250 USD NAV(-) threshold and the 1d closes on the next tick.",
       "t": "2026-10-24T15:18:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Tick 2026-10-24T16:21Z. Three layers are open: ETH long slot 0 (entry 2393.1, mark 2302.8, unrealized about -94 USD), BTC long slot 1 (entry 81291, mark 79668, about -50 USD), and SOL long slot 2 (entry 102.14, mark 99.809, about -57 USD). Total NAV(-) is about -201 USD, below the 250 USD close_all threshold but only about 49 USD away, so a further roughly 1.2% adverse move across the book would trigger a full flatten and a week stop. No layer has reached its fixed adverse-move surrender (ETH 7% is about 2225, BTC 6% is about 76400, SOL 8% is about 94.0), and no 1d close is present in the data to confirm the BTC 79,000 or ETH 2,300 or SOL 99.5 surrenders. All three TPs (ETH 2470, BTC 83500, SOL 107) sit on the profit side of entry and liquidation levels are far from mark, so no set_tp, cancel_tp, or close is needed. Slot 3 is free and free_equity covers one layer, but no entry condition is met: BTC at 79668 is below its 80,300-81,500 buy zone and under the 79,732 swing low with no 4h reclaim, ETH is breaking down through 2,300 with no rejection wick, SOL is below its 100.5-103 zone and its first layer is not at least +2% in profit, XRP has broken below its 1h swing low with no reclaim, and HYPE is avoid. Adding risk into a falling market would only move NAV(-) closer to the 250 USD trigger and would stack on losing layers. Hold and re-check NAV(-) against 250 and the 1d closes on the next tick.",
+      "t": "2026-10-24T16:21:07Z"
     }
   ],
   "eliminated": null,
@@ -677,33 +691,33 @@
   "layers": [
     {
       "entry": 2393.1,
-      "liq": 49.09727067100994,
-      "mark": 2295.3,
+      "liq": 49.11385387429027,
+      "mark": 2302.8,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2470.0,
-      "unrealized": -102.16873511345088
+      "unrealized": -94.33370941456658
     },
     {
       "entry": 81291.0,
-      "liq": 1072.9289624999947,
-      "mark": 79457.0,
+      "liq": 1073.7397478319908,
+      "mark": 79668.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -56.402307758546456
+      "unrealized": -49.91327453223604
     },
     {
       "entry": 102.14,
-      "liq": 2.6016297366780066,
-      "mark": 99.034,
+      "liq": 2.6026685725947942,
+      "mark": 99.809,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 107.0,
-      "unrealized": -76.02310554141361
+      "unrealized": -57.054043469747484
     },
     null
   ],

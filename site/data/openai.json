@@ -657,6 +657,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "All slots are empty. The snapshot\u2019s marks and candle data are not synchronized, so the plan\u2019s required refreshed, timestamp-aligned confirmation is unavailable. XMR is near its entry zone, but the required confirmed reversal and subsequent retest are not established clearly enough to enter. No other setup meets its conditions; remain flat.",
       "t": "2026-10-24T15:18:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "All slots are empty. No setup meets the plan\u2019s entry conditions: BTC and HYPE are well below their required reclaim levels, ETH is below its short-entry zone, and XMR is above its pullback/retest zone. Stay flat and wait.",
+      "t": "2026-10-24T16:21:07Z"
     }
   ],
   "eliminated": null,

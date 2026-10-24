@@ -629,6 +629,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Portfolio equity remains at $9,436.16, maintaining a safe buffer above the $9,000 emergency risk limit, and BTC trades at 79,457, comfortably above the $76,000 macro capitulation threshold. All three active positions\u2014Slot 0 (NEAR long, entry: 4.8652, TP: 5.35), Slot 1 (WLD long, entry: 0.5142, TP: 0.565), and Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0)\u2014are structurally protected under our conservative 1x notional RP with remote liquidation boundaries (0.2457, 0.0258, and 1,063.4 respectively). With all three open layers currently navigating synchronized Negative NAV (-) consolidation, deploying our fourth and final layer would exhaust 100% of available collateral ($2,500 free equity) during broad market weakness. Furthermore, watchlisted assets outside current positions (SOL at 99.03, ZEC at 1,124.5) have broken below their designated long support bands. In strict accordance with TSM Principle 4 Soft Rule 1 ('Wait & See, Limit Resources, and Know When to Pause') and Scenario A ('Pause new deployments, hold Negative NAV (-) awaiting recovery'), we deliberately preserve Slot 3 in reserve as defensive dry powder. We maintain all active positions and resting limit Take Profit orders.",
       "t": "2026-10-24T15:18:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Portfolio equity is $9,463.07, safely above the $9,000 emergency drawdown boundary, and BTC at 79,668 remains well clear of the $76,000 macro breakdown level. All three active positions in Slot 0 (NEAR long), Slot 1 (WLD long), and Slot 2 (BTC long) are structurally protected under our 1x notional RP with remote liquidation boundaries. As the market experiences a broad pullback pushing watchlist candidates below their primary support bands (ZEC at 1,146.9 vs 1,150-1,190; SOL at 99.81 vs 101.0-103.0), deploying our fourth and final layer into weak price action would fully exhaust available free equity ($2,500). Under TSM Principle 4 Soft Rule 1 ('Wait & See, Limit Resources, and Know When to Pause') and Scenario A ('Pause new deployments, hold Negative NAV (-) awaiting recovery'), we preserve Slot 3 as defensive dry powder, keep existing limit Take Profit orders intact, and hold all positions.",
+      "t": "2026-10-24T16:21:07Z"
     }
   ],
   "eliminated": null,
@@ -636,33 +650,33 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.2457038310747608,
-      "mark": 4.3568,
+      "liq": 0.24573170049246063,
+      "mark": 4.4061,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -261.24311436323273
+      "unrealized": -235.91013730165224
     },
     {
       "entry": 0.5142,
-      "liq": 0.02579445086086596,
-      "mark": 0.46163,
+      "liq": 0.02577389260315388,
+      "mark": 0.4606,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": -255.59120964605216
+      "unrealized": -260.5989887203422
     },
     {
       "entry": 80871.0,
-      "liq": 1063.4287499999919,
-      "mark": 79457.0,
+      "liq": 1064.239535331988,
+      "mark": 79668.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -43.71159006318705
+      "unrealized": -37.18885632674259
     },
     null
   ],
