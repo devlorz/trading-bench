@@ -1259,6 +1259,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Both active layers are underwater: slot0 XMR long mark 601.61 versus entry 612.58, and slot1 ZEC long mark 1146.90 versus entry 1257.50. Their liquidation prices are far below current marks under 1x RP sizing, so downside is capped by posted collateral and there is no forced-close or close_all condition. There are no profitable layers available for Basket Offset or Hostage harvesting, and closing underwater positions now would realize losses contrary to TSM Principle 4 Scenario A. The existing TP orders remain on the profit side of their entries and match the weekly plan exits. New deployment is not justified by the plan: BTC 79668.00 is below its planned long entry 81661 with negative 24h/7d momentum; ETH 2302.80 is below its planned entry 2396.20 with negative momentum; XMR is already occupied and below its stronger action-based entry; ZEC is already occupied and below its planned entry with negative momentum. Therefore hold both active layers and leave empty slots unused.",
       "t": "2026-10-24T16:21:07Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 606.25,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1158.0,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both active layers remain NAV(-): slot 0 XMR long mark 606.25 versus entry 612.58, and slot 1 ZEC long mark 1158.0 versus entry 1257.50. Under the 1x RP sizing, their liquidation prices are extremely far below current marks (62.24 and 63.58), so downside is capped by posted collateral and no forced-close condition exists. close_all on 2026-10-29 is not due, and there are no profitable layers available for Basket Offset or Hostage harvesting. Therefore TSM Principle 4 Scenario A applies: hold the underwater layers rather than realize losses. The weekly hostage policy also restricts new deployment to symbols holding above key support with positive momentum and, if positions are underwater, to reduce exposure to free resources until stronger action-based levels appear. BTC 80197 is below its planned long entry 81661 with negative 24h/7d momentum; ETH 2320.5 is below its planned entry 2396.2 with negative momentum; XMR and ZEC are already occupied. Existing TP orders remain on the profit side of entries and match the plan, so no set_tp or cancel_tp is needed.",
+      "t": "2026-10-24T17:17:51Z"
     }
   ],
   "eliminated": null,
@@ -1266,23 +1287,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.228548935788126,
-      "mark": 601.61,
+      "liq": 62.23615343578808,
+      "mark": 606.248,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -44.76966273792822
+      "unrealized": -25.841522739887008
     },
     {
       "entry": 1257.5,
-      "liq": 63.562338473300315,
-      "mark": 1146.9,
+      "liq": 63.57680722330042,
+      "mark": 1158.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -219.88071570576523
+      "unrealized": -197.8131212723658
     },
     null,
     null
