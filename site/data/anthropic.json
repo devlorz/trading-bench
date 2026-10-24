@@ -558,6 +558,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Tick 2026-10-24T07:22Z. Open layers: ETH long slot 0 (entry 2393.1, TP 2470, mark 2379.7, about -14 USD), BTC long slot 1 (entry 81291, TP 83500, mark 80821, about -14 USD), SOL long slot 2 (entry 102.14, mark 102.16, about +0.5 USD, no TP yet). Total NAV(-) is about -28 USD, far below the 250 USD close_all threshold. BTC 1d closes remain inside 79,000 to 87,500 and 4h ATR14% is about 1%, below the 4% event trigger. Liquidation levels are far from mark. The SOL layer is the plan's hunt leg with exit band 107-109.5 and no TP set, so I place a limit TP at 107.0, the bottom of that band, which is above entry and passes the tp_wrong_side check. No second SOL layer is allowed because the first is not yet +2%. No new BTC or ETH entry is allowed because both would add to losing layers on the same symbol. XRP is inside its buy zone but trending down on heavy volume with no reclaim, and HYPE is avoid. Slot 3 stays free, and no 5th layer is allowed.",
       "t": "2026-10-24T07:22:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Tick 2026-10-24T08:25Z. Three layers are open: ETH long slot 0 (entry 2393.1, TP 2470), BTC long slot 1 (entry 81291, TP 83500), and SOL long slot 2 (entry 102.14, TP 107 already set). Slot 3 is free. Total NAV(-) is about -43 USD, far below the 250 USD close_all threshold. BTC 1d closes are inside 79,000 to 87,500 and 4h ATR14% is about 0.9-1%, below the 4% trigger. All liquidation levels are far from mark, and all TPs sit on the profit side of entry. No new entry is confirmed. BTC sits in its buy zone, but the latest 4h bar closed red at 80960 with no reclaim, and a second BTC long would add to a losing layer. ETH holds its one layer with no fresh rejection wick or 4h reclaim, and the 4h EMA20 is still below EMA50. SOL already has its hunt layer, and a second layer requires the first to be at least +2%, which it is not. XRP is inside its buy zone but is still falling on heavy volume with no reclaim. HYPE is avoid. The fourth slot stays empty with no confirmed setup, so hold.",
+      "t": "2026-10-24T08:25:41Z"
     }
   ],
   "eliminated": null,
@@ -565,33 +579,33 @@
   "layers": [
     {
       "entry": 2393.1,
-      "liq": 48.9836524253401,
-      "mark": 2379.7,
+      "liq": 48.99304096244987,
+      "mark": 2372.9,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2470.0,
-      "unrealized": -13.998579248673364
+      "unrealized": -21.10233588232817
     },
     {
       "entry": 81291.0,
-      "liq": 1064.8678749999963,
-      "mark": 80821.0,
+      "liq": 1065.8768624999939,
+      "mark": 80785.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -14.454244627326519
+      "unrealized": -15.561378258355784
     },
     {
       "entry": 102.14,
-      "liq": 2.5999863541760107,
-      "mark": 102.16,
+      "liq": 2.6003328138559993,
+      "mark": 102.0897,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 107.0,
-      "unrealized": 0.48952418249451785
+      "unrealized": -1.2311533189741315
     },
     null
   ],
