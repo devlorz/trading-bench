@@ -1217,6 +1217,27 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19 Layer \u0e17\u0e35\u0e48 active \u0e17\u0e31\u0e49\u0e07\u0e2a\u0e2d\u0e07\u0e15\u0e31\u0e27\u0e40\u0e1b\u0e47\u0e19 NAV(-): slot0 XMR long mark 593.81 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 entry 612.58 \u0e41\u0e25\u0e30 slot1 ZEC long mark 1134.4 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 entry 1257.50 \u0e17\u0e35\u0e48 1x notional \u0e23\u0e32\u0e04\u0e32 liquidation \u0e22\u0e31\u0e07\u0e2d\u0e22\u0e39\u0e48\u0e44\u0e01\u0e25\u0e21\u0e32\u0e01 (62.2467 \u0e41\u0e25\u0e30 63.5338) \u0e14\u0e31\u0e07\u0e19\u0e31\u0e49\u0e19\u0e04\u0e27\u0e32\u0e21\u0e40\u0e2a\u0e35\u0e48\u0e22\u0e07\u0e14\u0e49\u0e32\u0e19\u0e25\u0e1a\u0e16\u0e39\u0e01\u0e08\u0e33\u0e01\u0e31\u0e14\u0e14\u0e49\u0e27\u0e22 collateral \u0e41\u0e25\u0e49\u0e27 \u0e44\u0e21\u0e48\u0e21\u0e35\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02\u0e1a\u0e31\u0e07\u0e04\u0e31\u0e1a\u0e1b\u0e34\u0e14\u0e08\u0e32\u0e01 liquidation \u0e2b\u0e23\u0e37\u0e2d close_all (2026-10-29T16:00:00Z) \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e16\u0e36\u0e07 \u0e41\u0e25\u0e30\u0e44\u0e21\u0e48\u0e21\u0e35 Layer \u0e01\u0e33\u0e44\u0e23\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a Basket Offset/Hostage harvesting \u0e15\u0e32\u0e21 TSM Principle 4 Scenario A \u0e08\u0e36\u0e07 hold NAV(-) \u0e41\u0e17\u0e19\u0e01\u0e32\u0e23\u0e15\u0e31\u0e14\u0e02\u0e32\u0e14\u0e17\u0e38\u0e19 \u0e2a\u0e48\u0e27\u0e19\u0e01\u0e32\u0e23\u0e40\u0e1b\u0e34\u0e14 Layer \u0e43\u0e2b\u0e21\u0e48\u0e16\u0e39\u0e01\u0e02\u0e31\u0e14\u0e42\u0e14\u0e22 hostage_policy \u0e17\u0e35\u0e48\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e27\u0e48\u0e32\u0e40\u0e21\u0e37\u0e48\u0e2d\u0e21\u0e35 position underwater \u0e43\u0e2b\u0e49\u0e25\u0e14 exposure \u0e40\u0e1b\u0e47\u0e19 free resources \u0e41\u0e25\u0e30\u0e01\u0e25\u0e31\u0e1a\u0e40\u0e02\u0e49\u0e32\u0e40\u0e21\u0e37\u0e48\u0e2d\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e41\u0e02\u0e47\u0e07\u0e02\u0e36\u0e49\u0e19; BTC mark 80136 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 planned entry 81661 \u0e1e\u0e23\u0e49\u0e2d\u0e21 momentum 24h/7d \u0e15\u0e34\u0e14\u0e25\u0e1a\u0e41\u0e25\u0e30\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 VWAP, ETH mark 2340.3 \u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 planned entry 2396.2 \u0e1e\u0e23\u0e49\u0e2d\u0e21 momentum \u0e15\u0e34\u0e14\u0e25\u0e1a\u0e41\u0e25\u0e30\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 VWAP, XMR/ZEC \u0e22\u0e31\u0e07\u0e04\u0e07\u0e2d\u0e22\u0e39\u0e48\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32 planned entry \u0e41\u0e25\u0e30 momentum \u0e44\u0e21\u0e48\u0e40\u0e2d\u0e37\u0e49\u0e2d\u0e15\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e40\u0e1b\u0e47\u0e19 stronger action-based entry TP \u0e40\u0e14\u0e34\u0e21\u0e17\u0e31\u0e49\u0e07\u0e2a\u0e2d\u0e07\u0e22\u0e31\u0e07\u0e2d\u0e22\u0e39\u0e48\u0e1d\u0e31\u0e48\u0e07\u0e01\u0e33\u0e44\u0e23\u0e15\u0e32\u0e21\u0e41\u0e1c\u0e19 \u0e08\u0e36\u0e07\u0e44\u0e21\u0e48\u0e15\u0e49\u0e2d\u0e07 set_tp/cancel_tp.",
       "t": "2026-10-24T14:19:26Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 591.17,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 1124.5,
+          "side": "long",
+          "slot": 1,
+          "symbol": "ZEC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Both active layers are underwater: slot0 XMR long mark 591.17 vs entry 612.58, and slot1 ZEC long mark 1124.5 vs entry 1257.5. At 1x RP sizing their liquidation prices remain extremely far below mark, so downside is already capped by posted collateral and there is no forced-close condition. close_all on 2026-10-29 is not due, and there are no profitable layers available for Basket Offset or Hostage harvesting. Under TSM Principle 4 Scenario A, hold the NAV(-) layers rather than stop them out. The weekly hostage_policy also restricts new deployment: only deploy into symbols holding above key support with positive momentum, and if any position is underwater, preserve free resources until stronger action-based levels appear. BTC 79457 is below its planned long entry 81661 with negative 24h/7d momentum; ETH 2295.3 is below its planned entry 2396.2 with negative momentum; XMR and ZEC are already occupied and remain below their planned stronger long entries despite some VWAP structure in XMR. Existing TP orders remain on the profit side of entries and match the plan, so no set_tp or cancel_tp is needed. Therefore hold both active layers and leave free slots unused.",
+      "t": "2026-10-24T15:18:37Z"
     }
   ],
   "eliminated": null,
@@ -1224,23 +1245,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 62.246697083318054,
-      "mark": 593.81,
+      "liq": 62.24021984973808,
+      "mark": 591.17,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -76.60223970746716
+      "unrealized": -87.37634268177251
     },
     {
       "entry": 1257.5,
-      "liq": 63.533815973300534,
-      "mark": 1134.4,
+      "liq": 63.54802097330048,
+      "mark": 1124.5,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -244.731610337972
+      "unrealized": -264.4135188866799
     },
     null,
     null

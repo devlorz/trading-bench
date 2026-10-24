@@ -643,6 +643,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "\u0e17\u0e38\u0e01 Slot \u0e27\u0e48\u0e32\u0e07\u0e41\u0e25\u0e30 equity \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e16\u0e36\u0e07\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02\u0e2b\u0e22\u0e38\u0e14\u0e40\u0e17\u0e23\u0e14 \u0e41\u0e1c\u0e19\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e43\u0e2b\u0e49\u0e40\u0e02\u0e49\u0e32 \u0e13 \u0e23\u0e32\u0e04\u0e32\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19: BTC \u0e41\u0e25\u0e30 HYPE \u0e2b\u0e25\u0e38\u0e14\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32\u0e42\u0e0b\u0e19\u0e40\u0e02\u0e49\u0e32 short, ETH \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48 rally \u0e40\u0e02\u0e49\u0e32\u0e42\u0e0b\u0e19 rejection \u0e2a\u0e48\u0e27\u0e19 XMR \u0e41\u0e21\u0e49\u0e41\u0e17\u0e48\u0e07\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14\u0e41\u0e2a\u0e14\u0e07\u0e41\u0e23\u0e07\u0e1f\u0e37\u0e49\u0e19 \u0e41\u0e15\u0e48\u0e23\u0e32\u0e04\u0e32\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19 593.81 \u0e2d\u0e22\u0e39\u0e48\u0e19\u0e2d\u0e01\u0e42\u0e0b\u0e19\u0e40\u0e02\u0e49\u0e32 585\u2013592 \u0e08\u0e36\u0e07\u0e44\u0e21\u0e48\u0e44\u0e25\u0e48\u0e23\u0e32\u0e04\u0e32 \u0e23\u0e2d setup \u0e17\u0e35\u0e48\u0e15\u0e23\u0e07\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02",
       "t": "2026-10-24T14:19:26Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "All slots are empty. The snapshot\u2019s marks and candle data are not synchronized, so the plan\u2019s required refreshed, timestamp-aligned confirmation is unavailable. XMR is near its entry zone, but the required confirmed reversal and subsequent retest are not established clearly enough to enter. No other setup meets its conditions; remain flat.",
+      "t": "2026-10-24T15:18:37Z"
     }
   ],
   "eliminated": null,
