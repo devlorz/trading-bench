@@ -559,6 +559,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Portfolio equity is stable at $9,554.90, well clear of the $9,000 emergency risk limit. All three active positions\u2014Slot 0 (NEAR long, entry: 4.8652, TP: 5.35), Slot 1 (WLD long, entry: 0.5142, TP: 0.565), and Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0)\u2014are safely cushioned with remote liquidation prices under our conservative 1x notional RP. With all three active positions currently navigating Negative NAV (-) drawdown amid broad market weakness, deploying our fourth and final layer would exhaust 100% of portfolio collateral and eliminate defensive flexibility. In strict accordance with TSM Principle 4 Soft Rule 1 ('Wait & See, Limit Resources, and Know When to Pause') and Scenario A, we deliberately maintain Slot 3 in reserve as defensive dry powder. We hold all current positions and allow existing limit Take Profit orders to execute on market mean reversion.",
       "t": "2026-10-24T10:20:10Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Portfolio equity sits safely at $9,601.53, well above the $9,000 emergency threshold, and BTC trades at 80,643, comfortably clear of the macro breakdown trigger ($76,000). All three active positions\u2014Slot 0 (NEAR long, entry: 4.8652, TP: 5.35), Slot 1 (WLD long, entry: 0.5142, TP: 0.565), and Slot 2 (BTC long, entry: 80,871.0, TP: 83,500.0)\u2014are structurally fortified under our 1x notional RP with remote liquidation thresholds. As all three active positions remain in synchronized Negative NAV (-) consolidation during ongoing market consolidation, deploying our fourth and final layer would exhaust 100% of available free collateral. In strict adherence to TSM Principle 4 Soft Rule 1 ('Wait & See, Limit Resources, and Know When to Pause') and Scenario A ('Pause new deployments, hold Negative NAV (-) awaiting recovery'), we deliberately preserve Slot 3 in reserve as defensive dry powder. We maintain our resting limit Take Profit orders and hold existing positions to capture hostage harvesting upon market mean reversion.",
+      "t": "2026-10-24T11:17:55Z"
     }
   ],
   "eliminated": null,
@@ -566,33 +580,33 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24644805142056114,
-      "mark": 4.4829,
+      "liq": 0.24633543023226068,
+      "mark": 4.5263,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -196.4461892625174
+      "unrealized": -174.14494779248528
     },
     {
       "entry": 0.5142,
-      "liq": 0.02587535413912595,
-      "mark": 0.46596,
+      "liq": 0.025856893967550976,
+      "mark": 0.47029,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": -234.5390898483081
+      "unrealized": -213.48697005056403
     },
     {
       "entry": 80871.0,
-      "liq": 1058.3929625000019,
-      "mark": 80541.0,
+      "liq": 1059.401087499995,
+      "mark": 80643.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -10.201431910079014
+      "unrealized": -7.048262046963683
     },
     null
   ],

@@ -600,6 +600,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Tick 2026-10-24T10:20Z. Three layers are open: ETH long slot 0 (entry 2393.1, TP 2470, mark 2363.8, about -31 USD), BTC long slot 1 (entry 81291, TP 83500, mark 80541, about -23 USD), and SOL long slot 2 (entry 102.14, TP 107, mark 101.42, about -18 USD). Total NAV(-) is about -71 USD, far below the 250 USD close_all threshold. BTC's last 1d closes remain inside 79,000 to 87,500 and 4h ATR14% is about 0.9-0.95%, below the 4% event trigger. Liquidation levels are far from mark and all TPs sit on the profit side of entry, so no set_tp, cancel_tp, or close is needed. Slot 3 is free and free_equity covers one layer, but no fresh entry is confirmed. BTC is inside its 80,300-81,500 buy zone, but the latest 4h bar closed red at 80960 with no reclaim of a dip low, and a second BTC long would add to a losing layer. ETH is near its 2,330-2,400 band, but the latest 4h bar closed at 2374 with no rejection wick or reclaim, the 4h EMA20 is below EMA50, and a second ETH long would stack on a losing layer. SOL already holds its hunt layer; a second layer needs the first at least +2%, and it is currently negative. XRP (1.2773) is inside its 1.26-1.30 buy zone, but the 1h and 4h trend is down with heavy-volume breakdowns and no reclaim. HYPE is avoid. No 5th layer is allowed. No entry condition is met, so hold.",
       "t": "2026-10-24T10:20:10Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Tick 2026-10-24T11:17Z. Three layers are open: ETH long slot 0 (entry 2393.1, TP 2470, mark 2368, about -26 USD), BTC long slot 1 (entry 81291, TP 83500, mark 80643, about -20 USD), and SOL long slot 2 (entry 102.14, TP 107, mark 101.56, about -14 USD). Total NAV(-) is about -60 USD, far below the 250 USD close_all threshold. BTC's 1d closes remain inside 79,000 to 87,500, and 4h ATR14% is about 0.94%, below the 4% event trigger. Liquidation levels are far from mark, and all three TPs sit on the profit side of entry, so no set_tp, cancel_tp, or close is needed. Slot 3 is free and free_equity covers one layer, but no fresh entry is confirmed. BTC is near its 80,300-81,500 buy zone at 80,643, but the latest 4h bar closed red at 80,718 with no close back above the dip low, and a second BTC long would stack on a losing layer; a BTC short is blocked by opposite_side_open. ETH is inside its 2,330-2,400 band, but the latest 4h bar closed red at 2374 with no rejection wick or reclaim, the 4h EMA20 remains below EMA50, and a second ETH long would stack on a losing layer. SOL already holds its hunt layer, and a second layer requires the first to be at least +2%, which it is not. XRP (1.2819) sits in its 1.26-1.30 zone, but the 1h and 4h trend is down with heavy-volume breakdowns and no reclaim. HYPE is avoid. No 5th layer is allowed. No entry condition is met, so hold.",
+      "t": "2026-10-24T11:17:55Z"
     }
   ],
   "eliminated": null,
@@ -607,33 +621,33 @@
   "layers": [
     {
       "entry": 2393.1,
-      "liq": 49.009718200140014,
-      "mark": 2363.8,
+      "liq": 49.00755349932024,
+      "mark": 2368.0,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2470.0,
-      "unrealized": -30.608833730307683
+      "unrealized": -26.22121933893267
     },
     {
       "entry": 81291.0,
-      "liq": 1067.8931750000047,
-      "mark": 80541.0,
+      "liq": 1068.9013000000123,
+      "mark": 80643.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 83500.0,
-      "unrealized": -23.06528397977636
+      "unrealized": -19.928405358526774
     },
     {
       "entry": 102.14,
-      "liq": 2.5995882556389915,
-      "mark": 101.42,
+      "liq": 2.5998084131749977,
+      "mark": 101.56,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 107.0,
-      "unrealized": -17.62287056980612
+      "unrealized": -14.1962012923438
     },
     null
   ],
