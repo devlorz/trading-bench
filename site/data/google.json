@@ -405,6 +405,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Current market conditions show a rapid flush across crypto assets, bringing BTC directly into its weekly Action-Based long support zone of 80,500-81,200 (current mark: 80,883). Our existing positions in Slot 0 (NEAR long) and Slot 1 (WLD long) are experiencing negative NAV drawdowns (-$112.33 and -$172.89 respectively), but both remain structurally sound with massive liquidation buffers (0.2469 on NEAR and 0.0259 on WLD) under our 1x notional risk profile. In accordance with TSM Principle 4 Scenario B and our weekly Hostage Hunt policy, we hold both negative NAV positions while deploying a subsequent layer on BTC support to harvest hostages. We execute open long on BTC in Slot 2 ($2,500 notional / $2,500 collateral), while prudently reserving Slot 3 to maintain resource discipline under Soft Rule 1 (Wait & See, Limit Resources).",
       "t": "2026-10-23T23:19:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 83500.0,
+          "side": null,
+          "slot": 2,
+          "symbol": "BTC",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Slot 2 BTC long position (entry: 80,871.0, mark: 80,680.0, unrealized PnL: -$5.90) requires a resting limit Take Profit order to automate hostage harvesting. In accordance with the weekly plan exit zone ('Take profit on longs near 83,500-84,200'), we set TP for Slot 2 at 83,500.0. Existing positions in Slot 0 (NEAR long, entry: 4.8652, TP: 5.35) and Slot 1 (WLD long, entry: 0.5142, TP: 0.565) remain safely held within our wide 1x structural buffers (liquidation prices at 0.247 and 0.0259 respectively). While other watchlist candidates have entered their support bands during this market-wide pullback, we strictly adhere to TSM Principle 1 and Soft Rule 1 (Wait & See, Limit Resources) by keeping Slot 3 in reserve rather than fully exhausting all account collateral, preserving defensive dry powder.",
+      "t": "2026-10-24T00:50:58Z"
     }
   ],
   "eliminated": null,
@@ -412,33 +426,33 @@
   "layers": [
     {
       "entry": 4.8652,
-      "liq": 0.24693559936525933,
-      "mark": 4.6466,
+      "liq": 0.24685540925005967,
+      "mark": 4.5957,
       "notional": 2500.0,
       "side": "long",
       "symbol": "NEAR",
       "tp": 5.35,
-      "unrealized": -112.3283729343087
+      "unrealized": -138.48351558003776
     },
     {
       "entry": 0.5142,
-      "liq": 0.025917494978234923,
-      "mark": 0.47864,
+      "liq": 0.02589304422578692,
+      "mark": 0.47134,
       "notional": 2500.0,
       "side": "long",
       "symbol": "WLD",
       "tp": 0.565,
-      "unrealized": -172.88992609879415
+      "unrealized": -208.38195254764688
     },
     {
       "entry": 80871.0,
-      "liq": 1047.2794500000018,
-      "mark": 80883.0,
+      "liq": 1048.2942124999972,
+      "mark": 80680.0,
       "notional": 2500.0,
       "side": "long",
       "symbol": "BTC",
-      "tp": null,
-      "unrealized": 0.3709611603665096
+      "tp": 83500.0,
+      "unrealized": -5.904465135833612
     },
     null
   ],

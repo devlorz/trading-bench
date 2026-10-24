@@ -454,6 +454,20 @@
       "plan": "2026-10-19T00:00:00Z",
       "reasoning": "Layer 0 holds an ETH long from entry 2395 with TP 2450; the fresh market dump has pushed mark to 2374 giving unrealized PnL of about -0.88, which is nowhere near the close_all breach trigger (50% of RP collateral = 0.5 * 2500 = 1250 loss) and nowhere near the 35%-of-notional (0.35 * 100 = 35) total NAV(-) flatten trigger, so no close or basket offset is due. TP 2450 remains a valid profit-side limit for a long (2450 > 2395), so no set_tp/cancel_tp is required. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark is 80883, BELOW the bottom of its 81650-81660 demand band, and the last candles show a sharp breakdown (15m low 80500/80542, RSI ~24, ATR expanding), so the planned BTC retest is not available at market and buying here would be chasing a falling price: the BTC Action-Based entry condition is NOT met. ETH mark 2374 is also BELOW its 2391-2396 entry zone (the 15m just printed a high-volume break to 2349-2356), so the ETH retest entry is likewise unavailable, and stacking a second ETH long in the same symbol/direction against a falling knife would violate the hostage policy's 'do not add to losers'. The max-2-layer hostage policy is satisfied with one layer and is not triggered for volatility harvesting because there is no valid fresh watchlist setup at a planned price and the NAV(-) is trivial. Per Scenario A (hold NAV(-) waiting for recovery while far from liq price), Wait & See, Zero Alpha (trade the actual printed price/flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into a planned entry band.",
       "t": "2026-10-23T23:19:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-19T00:00:00Z",
+      "reasoning": "Layer 0 holds an ETH long from entry 2395 with TP 2450; mark is now 2371.5 giving unrealized PnL of about -0.98, which is nowhere near the close_all breach trigger (50% of RP collateral = 0.5 * 2500 = 1250 loss) and nowhere near the 35%-of-notional (0.35 * 100 = 35) total NAV(-) flatten trigger, so no close or basket offset is due. TP 2450 remains a valid profit-side limit for a long (2450 > 2395), so no set_tp/cancel_tp is required. The weekly plan is long-only with Action-Based retest entries: BTC at 81650-81660 (exit 82750) and ETH at 2391-2396 (exit 2450). BTC mark is 80680, BELOW the bottom of its 81650-81660 demand band, and the 4h/1h/15m series show a fresh high-volume breakdown (15m low 80500/80542, 1h RSI ~32-41, MACD hist still negative) with no confirmed bull defense at the band, so the planned BTC retest is not available at market and buying here would be chasing a falling price: the BTC Action-Based entry condition is NOT met. ETH mark 2371.5 is also BELOW its 2391-2396 entry zone (the 15m printed a high-volume break to 2349.4 and is still drifting down, 15m RSI ~35), so the ETH retest entry is likewise unavailable, and stacking a second ETH long in the same symbol/direction against a falling knife would violate the hostage policy's 'do not add to losers'. The max-2-layer hostage policy is satisfied with one layer and is not triggered for volatility harvesting because there is no valid fresh watchlist setup at a planned price and the NAV(-) is trivial (~0.98, far from the 35 flatten trigger). Per Scenario A (hold NAV(-) waiting for recovery while far from liq price), Wait & See, Zero Alpha (trade the actual printed price/flow, not expectation) and 'trade the plan 100%', the correct action is to hold and let the ETH layer work while waiting for price to trade back into a planned entry band.",
+      "t": "2026-10-24T00:50:58Z"
     }
   ],
   "eliminated": null,
@@ -461,13 +475,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57430.454062342185,
-      "mark": 2374.0,
+      "liq": -57430.45870885768,
+      "mark": 2371.5,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": -0.8768267223382046
+      "unrealized": -0.9812108559498955
     },
     null,
     null,
