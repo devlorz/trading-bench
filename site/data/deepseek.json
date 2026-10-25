@@ -727,13 +727,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57429.877117353535,
-      "mark": 2340.1,
+      "liq": -57429.84794110354,
+      "mark": 2323.8,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": -2.2922755741127387
+      "unrealized": -2.9728601252609526
     },
     null,
     null,
