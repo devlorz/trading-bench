@@ -27,6 +27,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "BTC has dropped into our planned long entry zone (79,500-79,800 swing low support), currently printing a mark price of 79,584.0 with a recent 15m low of 79,430. All other watchlist assets (ETH, SOL, ZEC, ENA) remain outside their entry triggers. In strict adherence to TSM Principle 4 (Action-Based Strategy and Disciplined Execution), we deploy Army Slot 0 to open a Long position on BTC according to our conservative 2x RP parameters ($2,500 collateral, $5,000 notional).",
       "t": "2026-10-26T13:55:36Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81180.0,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 BTC Long is performing well in positive NAV (+55.9 unrealized PnL, mark 80,475 vs entry 79,585). In accordance with the weekly plan exit criteria (take profit on 1.5% to 2.5% volatility swings / ~1,200-2,000 points), we set a limit Take Profit at 81,180.0 (+1,595 points / ~2.00% gain) to lock in hostage gains on any spike. Other watchlist assets (ETH, SOL, ZEC, ENA) remain outside their designated entry boundaries, so we adhere strictly to TSM Principle 4 (Wait & See / Zero Alpha) and deploy no additional armies.",
+      "t": "2026-10-26T15:08:11Z"
     }
   ],
   "eliminated": null,
@@ -34,13 +48,13 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40823.12575,
-      "mark": 79584.0,
+      "liq": 40825.126612500004,
+      "mark": 80475.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
-      "tp": null,
-      "unrealized": -0.06282590940503864
+      "tp": 81180.0,
+      "unrealized": 55.91505937048439
     },
     null,
     null,
