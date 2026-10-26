@@ -69,6 +69,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 16:25:40Z. State: slot 0 ENA long (2,500 @ 0.20643, TP 0.226) at mark 0.2079 \u2192 +17.8 unrealized, TP untouched and still valid (harvest at 0.226 per plan); slot 1 BTC long (2,500 @ 80473) at mark 80,177 \u2192 NAV(-) \u2248 -9.2, liq 1,043 is ~98% away \u2014 deep inside the Risk Parameter, so per Scenario A hold and wait for recovery; the sweep-and-reclaim thesis is intact (1h closed above the 79,700-80,100 zone, hard invalidation only below the swept extreme 79,430). Slots 2-3 free, free equity 5,000, RP fixed 2,500/2,500. Scanning each watchlist symbol against its action point (Zero Alpha \u2014 act only at plan levels): BTC 80,177 is above the long zone (already filled at slot 1) and far below the 82,000-82,500 short/displacement zone \u2014 mid-range, hold. ETH 2,320.7 is below the 2,380-2,440 short supply confluence \u2014 no short, and bottom-fishing is forbidden by the short-only bias. XMR 591.88 sits between the 570-585 pullback zone (above it) and the 600-610 displacement-reclaim trigger (below it) \u2014 between levels, no chase. GRASS 0.68441 has rotated down from the 0.731 rejection but is still above the 0.63-0.66 pullback zone and far below the 0.728 break-and-hold trigger \u2014 no entry on extended candles, wait for the rotation to reach the zone. ENA 0.2079 is above its 0.195-0.206 primary zone and already held in slot 0 \u2014 no add. Buffer above base capital is negligible (~6), so no high-conviction buffer shot. No violations outstanding. Action: hold all layers, keep slots 2-3 reserved for the defined action points (ETH short zone, XMR/GRASS triggers).",
       "t": "2026-10-26T16:25:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 17:20:53Z. State: slot 0 ENA long (2,500 @ 0.20643, TP 0.226) at mark 0.21243 \u2192 +72.7 unrealized, the largest hostage in progress; TP 0.226 is valid (long, above entry) and remains set \u2014 do not touch it, let it harvest at the plan's swing-high target. Slot 1 BTC long (2,500 @ 80,473) at mark 80,480 \u2192 roughly flat (+0.2); the sweep-and-reclaim thesis is intact (price reclaimed 79,700-80,100, now holding above today's VWAP 80,020 and the 1h EMA20 80,250, hard invalidation only below the swept extreme 79,430), so per Scenario A/C hold. Free equity 5,000, slots 2-3 free, RP fixed 2,500/2,500. Zero Alpha scan of every watchlist symbol against its action point: BTC 80,480 is mid-range \u2014 above the long zone (already filled at slot 1) and far below the 82,000-82,500 short/displacement zone (daily EMA20 82,099 / last-week VWAP 81,905); no chase. ETH 2,334.1 is below the 2,380-2,440 short supply confluence (1h swing high 2,337 just rejected, but the plan's trigger is a rally INTO the zone, not shorting here) \u2014 no short, and bottom-fishing is forbidden by the short-only bias. XMR 594.93 sits between the 570-585 pullback zone (above it) and the 600-610 displacement-reclaim trigger (below it) \u2014 between levels, no chase; 15m momentum is mild but that is not an action point. GRASS 0.698 has rotated down from the 0.731 rejection but is still above the 0.63-0.66 pullback zone and far below the 0.728 break-and-hold trigger \u2014 extended candle, wait for the rotation. ENA 0.21243 is above its 0.195-0.206 primary zone and already held in slot 0 \u2014 no add, no chase toward the 0.226 TP. Buffer above base capital (~70) is still negligible for the one-shot high-conviction rule. No violations outstanding. Action: hold all layers; keep slots 2-3 reserved for the defined action points (ETH short zone 2,380-2,440, XMR 570-585 pullback or 600-610 reclaim, GRASS 0.63-0.66 pullback or 0.728 break-and-hold).",
+      "t": "2026-10-26T17:20:53Z"
     }
   ],
   "eliminated": null,
@@ -76,23 +90,23 @@
   "layers": [
     {
       "entry": 0.20643,
-      "liq": 0.010426924484439964,
-      "mark": 0.2079,
+      "liq": 0.010429532609439962,
+      "mark": 0.21243,
       "notional": 2500,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.226,
-      "unrealized": 17.8026449643947
+      "unrealized": 72.66385699752949
     },
     {
       "entry": 80473.0,
-      "liq": 1043.1304500000115,
-      "mark": 80177.0,
+      "liq": 1044.133087500013,
+      "mark": 80480.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": -9.195630832701651
+      "unrealized": 0.21746424266524175
     },
     null,
     null

@@ -55,6 +55,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Week 2026-10-26 plan is valid; RP = collateral 2500, notional 2500 (equity/4 = 10000/4), all 4 Layers empty, free_equity 10000 \u2265 collateral. The watchlist defines only limit-buy Action Based Strategy entries, and 'open' is a market fill at RP, so entering now would deviate from the plan unless price is actually at/below the planned entry. Current marks vs entries: BTC 80177 vs 79500 (above), ETH 2320.7 vs 2280 (above), SOL 101.66 vs 99.50 (above), XRP 1.2929 vs 1.2500 (above). Recent lows also have not reached plan levels: BTC ~79430 (10x15m bars ago, now recovered), ETH ~2295.1, SOL ~100.51, XRP ~1.2803. None of the four entry points is currently reachable at plan levels, and chasing now would be a fresh entry above the planned limit, violating soft rule 2 (follow plan 100%). No Layer holds NAV(-), so no Scenario A\u2013E offset applies. Per Wait & See (soft rule 1) and the plan's limit-entry discipline, hold all Layers and wait for price to trade to the specified entry levels.",
       "t": "2026-10-26T16:25:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Week 2026-10-26 plan is valid; RP = collateral 2500, notional 2500, all 4 Layers empty, free_equity 10000 \u2265 collateral. The watchlist defines only limit-buy Action Based Strategy entries well below current marks: BTC 79500 vs 80480, ETH 2280 vs 2334.1, SOL 99.50 vs 101.88, XRP 1.2500 vs 1.3020. Since `open` is a market fill at RP, entering now would be a fresh entry above the planned limits, deviating from the plan (soft rule 2: follow plan 100%). The mark has moved up from prior ticks (BTC 80480, ETH 2334.1, SOL 101.88, XRP 1.3020 \u2014 all back above prior lows), and recent lows still did not reach plan entries except BTC which spiked to ~79430 earlier and has fully recovered; chasing it now is not the plan's limit fill. No Layer holds NAV(-), so no Scenario A\u2013E offset applies. Per Wait & See (soft rule 1) and the plan's limit-entry discipline, hold all Layers and wait for price to trade to the specified entry levels.",
+      "t": "2026-10-26T17:20:53Z"
     }
   ],
   "eliminated": null,
