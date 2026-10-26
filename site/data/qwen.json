@@ -1308,23 +1308,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 63.30934776700701,
-      "mark": 592.82,
+      "liq": 63.31673414200702,
+      "mark": 592.14,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -80.64252832283127
+      "unrealized": -83.41767605863747
     },
     {
       "entry": 1257.5,
-      "liq": 64.05919347329996,
-      "mark": 1207.9,
+      "liq": 64.07429972329987,
+      "mark": 1197.7,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -98.60834990059624
+      "unrealized": -118.88667992047705
     },
     null,
     null
