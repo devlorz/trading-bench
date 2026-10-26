@@ -83,6 +83,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Week 2026-10-26 plan is valid; RP = collateral 2500, notional 2500, all 4 Layers empty, free_equity 10000 \u2265 collateral. The watchlist defines only limit-buy Action Based Strategy entries well below current marks: BTC 79500 vs mark 80233, ETH 2280 vs 2323.6, SOL 99.50 vs 100.93, XRP 1.2500 vs 1.3003. Since `open` is a market fill at RP, entering now would be a fresh entry above the planned limits, deviating from the plan (soft rule 2: follow plan 100%). Recent lows did not reach plan entries either: BTC 15m low ~79680 (the 79430 spike is old and fully recovered), ETH ~2307.4, SOL ~100.88, XRP ~1.2859 \u2014 all above their 79500/2280/99.50/1.2500 triggers. No Layer holds NAV(-), so no Scenario A\u2013E offset applies. Per Wait & See (soft rule 1) and the plan's limit-entry discipline, hold all Layers and wait for price to trade to the specified entry levels.",
       "t": "2026-10-26T18:33:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Week 2026-10-26 plan is valid; RP = collateral 2500, notional 2500, all 4 Layers empty, free_equity 10000 \u2265 collateral. The watchlist defines only limit-buy Action Based Strategy entries, and `open` is a market fill at RP, so entering now would be a fresh entry above the planned limits, deviating from the plan (soft rule 2: follow plan 100%). Current marks vs entries: BTC 80071 vs 79500 (above), ETH 2318.8 vs 2280 (above), SOL 100.73 vs 99.50 (above), XRP 1.2983 vs 1.2500 (above). Recent session lows also miss the triggers: BTC 15m low ~79853 (the 79430/79347 spikes are older and recovered), ETH ~2310, SOL ~100.22, XRP ~1.2909 \u2014 none reached their 79500/2280/99.50/1.2500 levels. No Layer holds NAV(-), so no Scenario A\u2013E offset applies. Per Wait & See (soft rule 1) and the plan's limit-entry discipline, hold all Layers and wait for price to trade down to the specified entry levels.",
+      "t": "2026-10-26T19:19:47Z"
     }
   ],
   "eliminated": null,

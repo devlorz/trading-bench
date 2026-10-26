@@ -83,6 +83,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry is actionable at the current prices. BTC and ETH are below their planned entry zones; XMR is above its execution range, so the prior pullback does not justify a market entry now. All slots are empty and the equity close-all threshold and flatten deadline have not been reached. Wait for a valid setup.",
       "t": "2026-10-26T18:33:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No planned entry setup is confirmed. BTC and ETH remain below their specified rebound zones, while XMR is above its required pullback entry range. All slots are empty; hold and wait for the plan conditions.",
+      "t": "2026-10-26T19:19:47Z"
     }
   ],
   "eliminated": null,

@@ -139,6 +139,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slots 0 and 1 hold the only positions allowed by the hostage policy (Layer 1-2 only). Both shorts are profitable, far from liquidation, and have not touched their planned TP levels (BTC 78750, ETH 2278). NAV is positive, so no basket-offset or recovery mode is required. Opening additional layers is prohibited by the plan, and closing or moving TP without an exit trigger would break the wait-and-see / zero-alpha rule. Therefore keep the current state.",
       "t": "2026-10-26T18:33:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80071.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current week plan restricts deployment to Layer 1-2 only. Slots 0 and 1 already hold BTC and ETH shorts, which are exactly the allowed layers, so additional SOL/HYPE/DOGE positions cannot be opened despite free equity. Both shorts remain profitable with marks below entry, no NAV-negative situation, no liquidation threat, and no TP touch. TPs 78750 and 2278 are valid short-side exits and should remain unchanged per the plan's wait-and-see policy. Closing or chasing other armies would add discretionary risk and violate the hostage policy. Therefore hold the current state.",
+      "t": "2026-10-26T19:19:47Z"
     }
   ],
   "eliminated": null,
@@ -146,23 +160,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481671.18071250006,
-      "mark": 80233.0,
+      "liq": 481672.1801250001,
+      "mark": 80071.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 1.3548619656685437
+      "unrealized": 2.3616859952020484
     },
     {
       "entry": 2335.5,
-      "liq": 13965.439802416879,
-      "mark": 2323.6,
+      "liq": 13965.462480687978,
+      "mark": 2318.8,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 2.5476343395418737
+      "unrealized": 3.575251552130126
     },
     null,
     null
