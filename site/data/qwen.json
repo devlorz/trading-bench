@@ -1308,23 +1308,23 @@
   "layers": [
     {
       "entry": 612.58,
-      "liq": 63.29447264200701,
-      "mark": 593.66,
+      "liq": 63.301901267007,
+      "mark": 595.54,
       "notional": 2500.0,
       "side": "long",
       "symbol": "XMR",
       "tp": 630.63,
-      "unrealized": -77.21440464918898
+      "unrealized": -69.54193737960787
     },
     {
       "entry": 1257.5,
-      "liq": 64.0288597233,
-      "mark": 1214.724,
+      "liq": 64.04402472330003,
+      "mark": 1211.6,
       "notional": 2500.0,
       "side": "long",
       "symbol": "ZEC",
       "tp": 1315.0,
-      "unrealized": -85.04174950298224
+      "unrealized": -91.2524850894634
     },
     null,
     null
@@ -1367,6 +1367,43 @@
         }
       ],
       "week": "2026-10-19T00:00:00Z"
+    },
+    {
+      "close_all": "2026-10-29T16:00:00Z",
+      "fallback": true,
+      "hostage_policy": "Only deploy into symbols holding above key support and positive momentum; if any position is underwater, reduce exposure to free resources and re-enter at stronger levels.",
+      "in_force": "2026-10-19T00:00:00Z",
+      "notional": 2500.0,
+      "notional_used": true,
+      "rationale": "BTC, ETH, ZEC, and XMR show the strongest momentum and technical structure this week, with price holding above key moving averages and above last week's VWAP. The plan uses reallocated collateral of 2,500 at 1x notional, keeping leverage below the maximum allowed for all selected symbols. Focus is on continuation longs toward recent swing highs while preserving capital and limiting risk.",
+      "reallocated": false,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "81661",
+          "exit": "84315",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "2396.2",
+          "exit": "2525",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "1233.4",
+          "exit": "1315",
+          "symbol": "ZEC"
+        },
+        {
+          "bias": "long",
+          "entry": "611.49",
+          "exit": "630.63",
+          "symbol": "XMR"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
     }
   ],
   "positions": [],

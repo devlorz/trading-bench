@@ -727,13 +727,13 @@
   "layers": [
     {
       "entry": 2395.0,
-      "liq": -57429.46449308024,
-      "mark": 2336.48,
+      "liq": -57429.46231448784,
+      "mark": 2326.0,
       "notional": 100,
       "side": "long",
       "symbol": "ETH",
       "tp": 2450,
-      "unrealized": -2.4434237995824626
+      "unrealized": -2.8810020876826723
     },
     null,
     null,
@@ -765,6 +765,31 @@
         }
       ],
       "week": "2026-10-19T00:00:00Z"
+    },
+    {
+      "close_all": "Close any layer that breaches 50% of its RP; flatten all if total NAV(-) reaches 35% of notional.",
+      "fallback": true,
+      "hostage_policy": "Run max 2 simultaneous layers. If one is NAV(-), use the second to harvest volatility until the first is released. Do not add to losers.",
+      "in_force": "2026-10-19T00:00:00Z",
+      "notional": 100,
+      "notional_used": true,
+      "rationale": "Week starts with clean state and 2500 collateral. Using tiny size to preserve edge. BTC and ETH are the most liquid. Both currently near weekly VWAP and near recent daily lows, so I want to lean long only if price returns to demand on bulls' defense. Waiting for retest entries avoids chasing after a mildly negative close. LIT is excluded because its funding is very negative and it recently pumped too fast for clean risk.",
+      "reallocated": false,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "81650-81660",
+          "exit": "82750",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "2391-2396",
+          "exit": "2450",
+          "symbol": "ETH"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
     }
   ],
   "positions": [],

@@ -1028,23 +1028,23 @@
   "layers": [
     {
       "entry": 4054.4,
-      "liq": 206.88031040679743,
-      "mark": 4008.745,
+      "liq": 206.93043165679728,
+      "mark": 3998.1,
       "notional": 2500,
       "side": "long",
       "symbol": "PAXG",
       "tp": 4155,
-      "unrealized": -28.151514404104304
+      "unrealized": -34.71537095501195
     },
     {
       "entry": 4033.4,
-      "liq": 205.68532400597041,
-      "mark": 4008.745,
+      "liq": 205.73544525597026,
+      "mark": 3998.1,
       "notional": 2500,
       "side": "long",
       "symbol": "PAXG",
       "tp": 4210,
-      "unrealized": -15.281772202112485
+      "unrealized": -21.879803639609374
     },
     null,
     null
@@ -1093,6 +1093,49 @@
         }
       ],
       "week": "2026-10-19T00:00:00Z"
+    },
+    {
+      "close_all": "false - the book is already flat (rp null, all four layers null, nothing settled), so there is nothing to flatten; start the week with clean resources and deploy Layer 1 only.",
+      "fallback": true,
+      "hostage_policy": "Four armies, fixed Risk Parameter: each layer risks at most 625 (25% of the 2,500 reallocated collateral) at fixed position size with a hard stop that is never widened and never averaged beyond plan; maximum two armies deployed concurrently until flow returns. NAV(-) inside the fixed SL distance is tolerated without panic - instead of cutting, keep hunting new hostages with the free armies and use accumulated buffer to release the stuck layer (path D: bank a winner, pay off the loser). Hard invalidation, or two full layers lost (-1,250), means stop trading for the week and preserve the army. First +625 hostage banked parks 50% into the PAXG anchor; everything beyond is compounding ammo, never a bigger position.",
+      "in_force": "2026-10-19T00:00:00Z",
+      "notional": 2500,
+      "notional_used": true,
+      "rationale": "The tape reset hard on the open of this cycle: every symbol's mark sits 2-10% below yesterday's daily close (ALT -38% post-parabola, WLD/CRV/ZRO near -9%), so TSM Principle 1 and 3 lead the plan - Control Risk and Wait & See, no predicting direction, only reacting to where price actually lands. Reallocation hands us 2,500 collateral, so notional is capped at 2,500: 1.0x effective leverage, comfortably under the 3x max leverage of ALT, the tightest name on the watchlist, with the risk budget split into four armies of 625 each. The watchlist is built as a portfolio structure: two flow majors for two-sided hostage hunting (BTC fading the 79.7k-84.3k field, ETH weak-side fade because it is the worst major at -11% on 30d below its VWAP), one relative-strength leader that held up on the red day (XMR, +13% on 7d, above all EMAs), one low-volatility defensive anchor to park hostages (PAXG, -1.6% on the day vs market -3 to -9%), and one explicit avoid to enforce discipline (ALT). Priority this week is preserving the army so the next reallocation starts intact; profits are hunted small and often, banked at fixed increments, and hostage policy handles the inevitable stuck layer without ever betting the remaining resources.",
+      "reallocated": false,
+      "watchlist": [
+        {
+          "bias": "both",
+          "entry": "Two-sided range fade inside the 79,700-84,300 field: Army-1 LONG 80,200-81,200 on a flush or retest of the weekly swing-low shelf at 79,732; Army-2 SHORT 83,300-84,300 into the EMA20 / last-week VWAP / swing-high wall (82,721 / 82,109 / 84,315). One side at a time unless both armies are pre-planned; no chasing mid-range with mark at 81,661.",
+          "exit": "Longs bank hostages at 82,800 then 84,000, hard stop on any daily close below 79,700. Shorts bank at 81,000 then 79,900, hard stop on any daily close above 84,900. Trail the runner by 1x ATR14 (~2,100) once a layer is +1R.",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "short",
+          "entry": "Fade strength only, never the dump: short relief bounces into 2,440-2,520 (EMA20 2,496, last-week VWAP 2,437, and the 2,530-2,580 breakdown shelf). Optional breakout-short only after a daily close below 2,315 (weekly swing low). No fresh short straight into a -3% red candle at 2,396.",
+          "exit": "Bank hostages at 2,330 and 2,250; hard stop on daily close above 2,580. If the weekly close lands under 2,250, stand aside and wait for 2,150 rather than pressing the position.",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "Buy pullbacks 580-598 toward the rising structure / EMA20 catch-up zone (EMA20 567 and climbing); mark 611 after losing only -1.8% on a market-wide red day is the clear relative-strength leader. Add a breakout army only on a 4h close above 630.6 (prior weekly high).",
+          "exit": "Bank at 630, 660 and 700; hard stop on daily close below 555 (loses EMA20 567 and the weekly structure). Trail the final third once above 660.",
+          "symbol": "XMR"
+        },
+        {
+          "bias": "long",
+          "entry": "Small defensive-anchor army, not a swing bet: scale 4,010-4,060 at the range floor (ATR14 ~50, mark 4,060); add only into a 4,010-4,035 flush. This is where banked hostages get parked while crypto risk-off plays out.",
+          "exit": "Bank at 4,155 and 4,210; hard stop on daily close below 3,980. Slow mover: accept small 0.5-1.2% rounds with zero expectation of big alpha.",
+          "symbol": "PAXG"
+        },
+        {
+          "bias": "avoid",
+          "entry": "No entry all week. Mark is roughly -38% below yesterday's close after a +71% 30-day parabolic run, funding is deeply negative (-0.18% per 8h) and ATR is 20%+ price: an unstable two-way liquidation cascade where risk per unit of edge is unacceptable.",
+          "exit": "N/A - stay flat. Reassess only after 3+ days of stabilization above 0.0100 with funding normalizing toward neutral; until then ALT is not a battlefield.",
+          "symbol": "ALT"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
     }
   ],
   "positions": [],
