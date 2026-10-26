@@ -139,6 +139,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No planned entry is actionable: BTC and ETH remain below their rebound-entry zones, and XMR is above its 580\u2013585 execution range. All slots are empty; hold and wait for a valid setup.",
       "t": "2026-10-26T22:21:58Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry is actionable at the current marks. BTC and ETH are below their planned rebound zones. XMR is above its 580\u2013585 execution range, so it cannot be entered now even though earlier candles show a pullback and reclaim. All slots are empty; wait for a setup that meets the plan.",
+      "t": "2026-10-26T23:18:18Z"
     }
   ],
   "eliminated": null,
