@@ -1,0 +1,70 @@
+{
+  "decisions": [
+    {
+      "actions": [
+        {
+          "price": 0,
+          "side": "long",
+          "slot": 0,
+          "symbol": "hold",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "This is the first Tick of the new week 2026-10-26 with a valid plan. RP is set (collateral 2500, notional 2500 = equity/4), all 4 Layers are empty, and free_equity 10000 \u2265 collateral. The plan's watchlist specifies only limit-buy entries well below current marks: BTC 79500 vs mark 80451, ETH 2280 vs 2335.6, SOL 99.50 vs 101.82, XRP 1.2500 vs 1.2957. None of the Action Based Strategy entry points has been reached, and since 'open' is a market fill at RP, entering now would deviate from the plan (Violating soft rule 2: follow plan 100%). Per Wait & See and the plan's limit-entry discipline, I hold all Layers and wait for price to trade down to the specified entry levels. No NAV(-) exists, so no Scenario A\u2013E offset is needed.",
+      "t": "2026-10-26T11:46:02Z"
+    }
+  ],
+  "eliminated": null,
+  "executor": "deepseek/deepseek-v4.1-flash",
+  "layers": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "name": "deepseek",
+  "plans": [
+    {
+      "close_all": "No open positions to close from prior week.",
+      "fallback": false,
+      "hostage_policy": "Split $2500 notional into up to 4 layers of $625 each. Risk per layer $25 (1% of layer). Use fixed position size equivalent to 0.01 lot adjusted for distance to stop. If aggregate NAV becomes lower than -$100, pause new entries and assess; do not exceed 4 concurrent layers.",
+      "in_force": "2026-10-26T00:00:00Z",
+      "notional": 2500,
+      "notional_used": true,
+      "rationale": "Selected liquid majors near weekly swing lows with positive funding and prior support. Fading short-term weakness with limit entries and tight stops aligns with hostage hunt: collect small premium while keeping risk controlled at 1x leverage.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "limit buy 79500 if filled, stop 77500",
+          "exit": "take profit 84500 or trail 1.5 ATR",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "limit buy 2280 if filled, stop 2210",
+          "exit": "take profit 2500 or trail 1.5 ATR",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "limit buy 99.50 if filled, stop 95.00",
+          "exit": "take profit 109.00 or trail 1.5 ATR",
+          "symbol": "SOL"
+        },
+        {
+          "bias": "long",
+          "entry": "limit buy 1.2500 if filled, stop 1.2000",
+          "exit": "take profit 1.3800 or trail 1.5 ATR",
+          "symbol": "XRP"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-26T00:00:00Z",
+  "strategist": "deepseek/deepseek-v4-pro-0813",
+  "violations": []
+}

@@ -1,0 +1,64 @@
+{
+  "decisions": [
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry setup is confirmed. BTC and ETH are below their specified rebound zones. XMR is above its 580\u2013585 execution range, and the supplied candles do not establish the required pullback-and-reclaim setup. All slots are empty, so wait for confirmation.",
+      "t": "2026-10-26T11:46:02Z"
+    }
+  ],
+  "eliminated": null,
+  "executor": "openai/gpt-6-luna",
+  "layers": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "name": "openai",
+  "plans": [
+    {
+      "close_all": "For October 26\u2013November 1, close every position and cancel entry orders if account equity reaches 9,600 USD, including realized and unrealized P&L, fees and funding; stop trading until the next weekly review. Also flatten and cancel orders by 2026-11-01T23:45:00Z. Individual stops take priority; losses can exceed thresholds through gaps or slippage.",
+      "fallback": false,
+      "hostage_policy": "Allocate four 2,500 USD collateral slots. Each new layer has fixed 2,500 USD entry notional, giving 1x leverage, and a fixed 4% initial stop: 100 USD planned price risk before costs. Maximum three simultaneous layers, with the fourth slot held in reserve; maximum two correlated crypto shorts. Freeze new entries if combined remaining stop risk plus estimated costs exceeds 330 USD. Never average down, widen stops, increase size after losses, or open trades solely to rescue a loser. Hold a losing layer only while its setup and original stop remain valid. Bank profits net of fees and funding as buffer. A profitable layer may be closed alongside a losing layer when their combined net result is positive, but this never overrides a stop. No buffer-funded leverage increases this week. After two stopped-out trades, pause new entries for 24 hours.",
+      "in_force": "2026-10-26T00:00:00Z",
+      "notional": 2500,
+      "notional_used": true,
+      "rationale": "Prioritize capital preservation, limited layers and patient confirmation. BTC and ETH trade below last week's VWAP with weak daily momentum; rebound failures offer preferable short entries to chasing recent lows. XMR retains relative strength above its supplied daily moving averages, but requires a confirmed pullback entry. The selected 1x leverage is below BTC's 40x, ETH's 25x and XMR's 5x limits. Use raw candle levels and VWAP values rather than inconsistent supplied distance percentages or stale swing labels. The required 4h confirmations are future conditions, not signals established by this daily/weekly dataset. Collateral allocation is not a loss budget, and profits do not guarantee recovery of losing positions.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "short",
+          "entry": "Wait for a rebound into 81,500\u201382,300, around last week's VWAP of 81,905. Enter only after a completed 4h candle tests this zone and closes below 81,905; execution must remain inside the entry zone. No chasing near 79,184 support. One layer maximum.",
+          "exit": "Place a hard stop 4% above actual entry immediately. Take half off at 79,800 and the remainder at 77,500. After the first target, move the remaining stop to entry adjusted for costs. Exit earlier if a completed daily candle closes above 83,425.",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "short",
+          "entry": "Wait for a rebound into 2,390\u20132,420. Enter only after a completed 4h candle tests this zone and closes below last week's VWAP of 2,402.3; execution must remain inside the entry zone. Do not initiate a short directly into 2,281.5 support. One layer maximum.",
+          "exit": "Place a hard stop 4% above actual entry immediately. Take half off at 2,315 and the remainder at 2,200. After the first target, move the remaining stop to entry adjusted for costs. Exit earlier on a completed daily close above 2,478.",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "Conditional relative-strength trade: wait for a pullback into 575\u2013585, then a completed 4h candle reclaiming 580. Enter only within 580\u2013585, provided the latest completed daily candle remains above 575. No purchase at the current mark without this setup. One layer maximum.",
+          "exit": "Place a hard stop 4% below actual entry immediately. Take half off at 606 and the remainder at 630. After the first target, move the remaining stop to entry adjusted for costs. Exit earlier on a completed daily close below 570.",
+          "symbol": "XMR"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-26T00:00:00Z",
+  "strategist": "openai/gpt-6-astra",
+  "violations": []
+}

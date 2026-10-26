@@ -1,0 +1,115 @@
+{
+  "decisions": [
+    {
+      "actions": [
+        {
+          "price": 80366,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "open"
+        },
+        {
+          "price": 78750,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "set_tp"
+        },
+        {
+          "price": 2330.5,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "open"
+        },
+        {
+          "price": 2278,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Plan is valid with RP collateral 2500 and notional 500, effective leverage 0.20x far below all max leverage. No positions or NAV-negative constraints exist. Hostage policy allows deploying only the first two layers, so open at most two shorts. Bias across watchlist is short; BTC and ETH are the most liquid and currently trading below higher-timeframe EMA clusters while slightly above VWAP, fitting the plan\u2019s short-on-bounce logic. Use slots 0 and 1 with short BTC and short ETH, then attach plan TPs 78750 and 2278, both on the profitable side for shorts. Avoid additional layers and longs.",
+      "t": "2026-10-26T11:46:02Z"
+    }
+  ],
+  "eliminated": null,
+  "executor": "qwen/qwen3.8-flash",
+  "layers": [
+    {
+      "entry": 80451.0,
+      "liq": 481664.15955000004,
+      "mark": 80451.0,
+      "notional": 500,
+      "side": "short",
+      "symbol": "BTC",
+      "tp": 78750,
+      "unrealized": -0.0
+    },
+    {
+      "entry": 2335.5,
+      "liq": 13965.239025,
+      "mark": 2335.6,
+      "notional": 500,
+      "side": "short",
+      "symbol": "ETH",
+      "tp": 2278,
+      "unrealized": -0.021408691928903673
+    },
+    null,
+    null
+  ],
+  "name": "qwen",
+  "plans": [
+    {
+      "close_all": "2026-11-02T11:00:00Z",
+      "fallback": false,
+      "hostage_policy": "Layer 1-2 only: deploy at most 50% of weekly risk budget; if NAV goes negative, do not add leverage - recover via small scalps on other armies.",
+      "in_force": "2026-10-26T00:00:00Z",
+      "notional": 500,
+      "notional_used": true,
+      "rationale": "Previous plan rejected because notional 10000 / collateral 2500 = 4.00x exceeded GRASS max leverage 3x. Fix: reduce notional to 500 so effective leverage is 0.20x, far below every symbol's max leverage. Watchlist stays on the five most liquid names, none repeated. Bias is short across the board: BTC, ETH, SOL, HYPE and DOGE are all below their 1d EMA20/EMA50, MACD histograms remain negative or weak, and each is trading several percent below last week's VWAP. The market is in a corrective phase after the recent swing highs; rather than chasing longs into resistance, the plan collects small volatility rents on pullbacks. Exits are set roughly one ATR below current marks to keep hostage cycles short and flow-based, preserving capital for re-entry.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "short",
+          "entry": "80366",
+          "exit": "78750",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "short",
+          "entry": "2330.5",
+          "exit": "2278",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "short",
+          "entry": "101.50",
+          "exit": "99.40",
+          "symbol": "SOL"
+        },
+        {
+          "bias": "short",
+          "entry": "77.017",
+          "exit": "75.30",
+          "symbol": "HYPE"
+        },
+        {
+          "bias": "short",
+          "entry": "0.077186",
+          "exit": "0.075600",
+          "symbol": "DOGE"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-26T00:00:00Z",
+  "strategist": "qwen/qwen3.8-max-prime",
+  "violations": []
+}

@@ -1,0 +1,25 @@
+{
+  "free_equity": 7500.0,
+  "last_tick": "2026-10-26T11:46:02Z",
+  "last_week": "2026-10-26T00:00:00Z",
+  "layers": [
+    {
+      "collateral": 2498.875,
+      "entry": 0.20643,
+      "notional": 2500,
+      "opened_at": "2026-10-26T11:46:02Z",
+      "side": "long",
+      "size": 12110.64283292157,
+      "symbol": "ENA",
+      "tp": 0.226
+    },
+    null,
+    null,
+    null
+  ],
+  "rp": {
+    "collateral": 2500.0,
+    "notional": 2500
+  },
+  "settled": "2026-10-26T11:46:02Z"
+}

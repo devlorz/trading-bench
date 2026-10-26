@@ -1,0 +1,39 @@
+{
+  "close_all": "Flatten every layer immediately if account equity drops to 8,500 (collateral 2,500 fully consumed plus 1,000 cushion, i.e. the 'royal army' is threatened), or if BTC prints a daily close below 76,000 or above 88,000 (range regime dead, Dynamic flow has changed and the range tactic no longer has an edge). Also flatten all at week end if total realized+unrealized is positive by more than 4% of collateral (+100 USD): bank the hostages, redesign RP next week. Otherwise no forced liquidation; hostages are held into next week under the same RP.",
+  "hostage_policy": "Four armies, each 2,500 notional (4x of 2,500 collateral, 25% of collateral at risk per layer at the 25% hard stop). Fixed RP: never add size to a losing layer, never martingale, never tighten the stop to free margin. A layer that goes against us is a hostage, not a loss: keep it, stop entering that symbol in the same direction, and hunt with the remaining armies (prefer the uncorrelated side: if BTC long is hostage, look for ETH/SOL short rallies). Realized wins are first used to release a hostage when win + hostage loss >= 0 (path D in the article); if the hostage recovers to flat or better, release it at breakeven+ and re-enter only at a fresh zone. Max 2 hostages at once; if 2 layers are underwater, stop all new entries and wait & see until one is released. Profits above 2,500 collateral stay in the main port as buffer this week; no Step 2 Big-Win bets until buffer exceeds 10% of collateral.",
+  "notional": 10000,
+  "rationale": "Market is a corrective, low-conviction regime: BTC -2.4% 7d, -4.7% 30d, below EMA20 but above rising EMA50, MACD hist contracting toward zero, RSI 41, with a 30-day box 79.7k-87k and a 10-day box 79.7k-84.9k. Alts are weaker (ETH/SOL/XRP RSI 34-39) but near prior lows, so directional prediction has low edge while two-sided volatility (ATR 2.6% BTC, 4-4.5% ETH/SOL/XRP) is enough to harvest small hostages. Following the Hostage Hunt design: Control Risk (4x total, 25%-of-collateral hard stop per layer, close-all at 8,500 equity), Limit Resources (4 fixed 2,500 layers, one per symbol, max 2 hostages), Wait & See (entries only at range edges with 4h confirmation, no mid-range trades). Watchlist limited to liquid majors with max leverage >=10 so the 4x plan is always valid, and BNB included as the lowest-volatility mean-reversion option. Goal this week is Step 1 only: survive and accumulate +1.5% to +4% hostages per layer rather than predict the breakout.",
+  "watchlist": [
+    {
+      "bias": "both",
+      "entry": "Army 1 anchor. Layer size 2500 notional (~0.031 BTC), fixed RP per layer, never size up. Long only on a wick into 79,700-80,400 (10-day swing low / weekly low 79,732) on 4h close back above the level; short only on a wick into 84,800-85,600 (swing high 84,850, EMA20 82.3k already lost) with 4h rejection. No entries in the middle of the 80.5k-84k range: wait & see.",
+      "exit": "Take the small hostage: +1.5% to +2.5% (1,200-2,000 pts) per layer, i.e. back to VWAP 81.9k from the low or back to 82k from the high. Hard RP stop only at 25% adverse move (structural failure), otherwise hold NAV(-) and let other armies free it.",
+      "symbol": "BTC"
+    },
+    {
+      "bias": "both",
+      "entry": "Army 2. Weakest major (RSI 34, -3% below weekly VWAP 2402, below EMA20/50). Lean short on relief rallies into 2,440-2,500 (EMA20 2452 / swing high 2525) with 4h rejection; long only on a flush into 2,280-2,315 (swing low 2314) with reclaim on 4h. Max one layer open on ETH at a time.",
+      "exit": "Collect +3% to +4% (one daily ATR ~95) per layer: shorts cover near 2,330-2,350, longs release near 2,400-2,420. Hard RP stop 25% adverse only; no cut-loss on noise.",
+      "symbol": "ETH"
+    },
+    {
+      "bias": "both",
+      "entry": "Army 3. Range 100.3-109.2, sitting on the floor (101.5, RSI 36). Long on a dip into 98.6-100.5 (10/15 low 98.6, swing low 100.3) with 4h hold; short only on a squeeze into 107-109 (EMA20/50 cluster 106.1-106.6 and swing high 109.19) with rejection. Skip if BTC breaks 79,700 on a daily close.",
+      "exit": "Take +3% to +4.5% (one ATR 4.5) per layer: longs out 104-105.5, shorts out 102-103. Hard RP stop 25% adverse; otherwise hold and offset with another army.",
+      "symbol": "SOL"
+    },
+    {
+      "bias": "both",
+      "entry": "Army 4 (reserve, deploy only when another army is a hostage or all others are flat). Range 1.255-1.40. Long on wick into 1.255-1.275 with 4h reclaim; short on wick into 1.365-1.40 (EMA20 1.348, swing high 1.399) with rejection.",
+      "exit": "Release at +3% (one ATR 0.06): longs ~1.31-1.33, shorts ~1.30-1.31. Hard RP stop 25% adverse only.",
+      "symbol": "XRP"
+    },
+    {
+      "bias": "both",
+      "entry": "Mean-reversion substitute for Army 4 if XRP gives no edge: tightest major (ATR 2.7%, flat EMA20/50 at 741/734, mark at weekly VWAP). Long 715-722 (swing low 705-710 area, 10/15 low 708); short 751-760 (swing high 751.9, 10/13 high 758). Only one of XRP/BNB may hold a layer at any time.",
+      "exit": "Take +1.5% to +2% per layer back toward 740. Hard RP stop 25% adverse only.",
+      "symbol": "BNB"
+    }
+  ],
+  "week": "2026-10-26T00:00:00Z"
+}

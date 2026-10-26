@@ -1,0 +1,92 @@
+{
+  "decisions": [
+    {
+      "actions": [
+        {
+          "price": 0.2064,
+          "side": "long",
+          "slot": 0,
+          "symbol": "ENA",
+          "type": "open"
+        },
+        {
+          "price": 0.226,
+          "side": "long",
+          "slot": 0,
+          "symbol": "ENA",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Clean start: equity 10,000, RP 2,500/2,500 per layer, all slots empty. Checking each watchlist symbol against its action point at current marks: BTC 80,451 is mid-range \u2014 above the 79,700\u201380,100 sweep/reclaim zone (the reclaim happened hours ago; buying here is chasing) and below the 82,000\u201382,500 displacement short zone, so wait. ETH 2,335.6 has not rallied into the 2,380\u20132,440 supply confluence, so no short. XMR 591.7 bounced off the 583\u2013584 test but sits above the 570\u2013585 pullback zone and below the 600\u2013610 displacement-reclaim trigger \u2014 between levels, no chase. GRASS 0.715 is above the 0.63\u20130.66 pullback zone and below the 0.728 break-and-hold trigger \u2014 extended candle, wait for rotation. ENA 0.2064 is AT its primary long action point: the pullback into the 0.195\u20130.206 zone held a higher low (0.2041 vs the 0.2035 base, itself far above the 0.184 swing low) right at the daily EMA20 0.2058 confluence, and price is reclaiming it, with flow up (+9% 24h, +10.4% 7d, holding above the rising EMA50 0.1966). This is an action-based entry, not a directional bet. Open slot 0 long with the fixed RP (collateral 2,500, notional 2,500 = 1x effective vs 10x max leverage) and set TP at the plan's long hostage-harvest level 0.226 (maker limit, above entry). Invalidation remains the plan's zone (thesis break below the 0.2035 base / deeper 0.195 zone, hard invalidation 0.174) managed manually since TSM carries no stop orders. The other three layers stay in reserve per Wait & See; hostage hunt continues at the next action points.",
+      "t": "2026-10-26T11:46:02Z"
+    }
+  ],
+  "eliminated": null,
+  "executor": "z-ai/glm-5.3-flash",
+  "layers": [
+    {
+      "entry": 0.20643,
+      "liq": 0.01041439349999998,
+      "mark": 0.2064,
+      "notional": 2500,
+      "side": "long",
+      "symbol": "ENA",
+      "tp": 0.226,
+      "unrealized": -0.36331928498767435
+    },
+    null,
+    null,
+    null
+  ],
+  "name": "zai",
+  "plans": [
+    {
+      "close_all": "no \u2014 the book is flat (rp null, all four layers empty, nothing settled). Start this week's hunt fresh; do not force a trade just to be in the market.",
+      "fallback": false,
+      "hostage_policy": "Run the Hostage Hunt exactly as designed: 4 fixed-resource layers with a constant Risk Parameter per layer (fixed small position size with a wide, pre-computed invalidation stop). Total notional capped at 2,500 (1.0x on the 2,500 reallocation collateral), safely inside the lowest max leverage on the list (GRASS, 3x). Trade to flow with current market conditions, not predictions: majors are corrective (BTC/ETH below last-week VWAP and daily EMA20) while XMR/GRASS/ENA carry the strongest relative flows \u2014 so hunt longs where flow is up, shorts where flow is down. Goal is not one big win but repeated small hostages from volatility rotations; if a layer goes NAV(-), hold it within its Risk Parameter and hunt new hostages elsewhere to release it \u2014 cut only when the layer's invalidation zone is actually hit or the flow thesis breaks. Any accumulated buffer above the base capital may be risked once per week on the single highest-conviction Zero Alpha setup (tighter stop, larger size); if that shot fails, return immediately to hostage accumulation with the original fixed layers. Mindset discipline: Control Risk, Limit Resources, Wait & See.",
+      "in_force": "2026-10-26T00:00:00Z",
+      "notional": 2500,
+      "notional_used": true,
+      "rationale": "State is a clean start: 10,000 free equity, reallocation to 2,500 collateral, no RP and no open layers, so this plan defines the first four hunting grounds. The universe splits cleanly into two flows: corrective majors (BTC -2.4% 7d below VWAP 81,905; ETH -3.3% 7d / -13.5% 30d below EMA20 2,452 with RSI 34) versus persistent relative strength (XMR 30d +6.6% above rising EMA20/EMA50; GRASS 7d +22% / 30d +37.6% in a clean uptrend; ENA +9.9% 7d holding above EMA50 0.1966). Per TSM Principle #4, Technical is only the tactic that creates the edge \u2014 the strategy is the fixed-resource layering, small hostage collection, and NAV(-) release logic. Notional 2,500 keeps effective leverage at 1x versus the 2,500 collateral, below every watchlist symbol's max leverage (min 3x on GRASS), satisfying Control Risk while leaving three unused layers of headroom to compound slowly. Win small, win often, survive first \u2014 the Week-1 The5%ers lesson (ego-driven -8.5% drawdown recovered only by strict process) is the standing reminder to obey the plan 100%.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "both",
+          "entry": "Trade both sides of the range with fixed-size layers: longs only on a sweep and reclaim of 79,700-80,100 (swing low 79,732 / current mark 80,366), shorts only on displacement into 82,000-82,500 (daily EMA20 82,099, last-week VWAP 81,905). Wait & see between levels; never chase mid-range.",
+          "exit": "Harvest hostages in ~2,000-2,500 point rotations toward 78,000 or 84,000; each layer keeps a hard invalidation stop beyond the swept extreme. Accumulated hostages are used to release any NAV(-) layer instead of panic cutting.",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "short",
+          "entry": "Short only into supply on rallies: 2,380-2,440 confluence (daily EMA20 2,452, last-week VWAP 2,402, swing high 2,525 above). Price is below all short-term averages (mark 2,330) with RSI 34 and 30d -13.5%; flow is down, so no bottom-fishing.",
+          "exit": "Collect hostages in 90-100 point rotations toward 2,315 then 2,250; cover fully into 2,250-2,280 swing-low region. Per-layer stop above 2,530; if stopped, re-short only at the next supply retest.",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "Buy pullbacks into 570-585 (daily EMA20 577.6, current mark 589.7) after a higher-low holds; add one layer only on displacement reclaim of 600-610. Trend is up (30d +6.6%, price above EMA20 and EMA50) so trade with the flow, not against it.",
+          "exit": "Scale hostages out at 620, then 645-660 (swing high 661.8); trail the final runner behind the EMA20. Per-layer stop below 545 (EMA50 zone) \u2014 never risk more than the fixed Risk Parameter per layer.",
+          "symbol": "XMR"
+        },
+        {
+          "bias": "long",
+          "entry": "Long pullbacks to 0.63-0.66 (daily EMA20 0.652, mark 0.712) while the uptrend holds (7d +22.1%, 30d +37.6%, price above EMA50 0.577); one continuation layer only on a clean break and hold above 0.728. No entries on extended candles \u2014 wait for rotation.",
+          "exit": "Bank hostages in 0.06-0.08 rotations (ATR ~0.082); final targets 0.83 then 0.89 prior highs. Per-layer stop below 0.577 (EMA50); if a layer goes NAV(-), keep hunting elsewhere and release it with new hostages.",
+          "symbol": "GRASS"
+        },
+        {
+          "bias": "both",
+          "entry": "Primary long 0.195-0.206 on a higher-low hold at the EMA20/EMA50 confluence (0.2058/0.1966, mark 0.206); secondary short only on a failed breakout, i.e., rejection back below 0.194 with displacement. Zero expectation of direction \u2014 only act at these action-based points.",
+          "exit": "Long hostages taken at 0.226 (swing high) and 0.185 (swing low); short hostages at 0.194/0.185. Per-layer stops beyond 0.174 for longs and 0.232 for shorts; rotate small wins repeatedly instead of forcing one big win.",
+          "symbol": "ENA"
+        }
+      ],
+      "week": "2026-10-26T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-26T00:00:00Z",
+  "strategist": "z-ai/glm-5.3-prime",
+  "violations": []
+}

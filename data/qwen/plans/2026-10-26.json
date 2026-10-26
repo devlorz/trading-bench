@@ -1,0 +1,42 @@
+{
+  "notional_used": true,
+  "plan": {
+    "close_all": "2026-11-02T11:00:00Z",
+    "hostage_policy": "Layer 1-2 only: deploy at most 50% of weekly risk budget; if NAV goes negative, do not add leverage - recover via small scalps on other armies.",
+    "notional": 500,
+    "rationale": "Previous plan rejected because notional 10000 / collateral 2500 = 4.00x exceeded GRASS max leverage 3x. Fix: reduce notional to 500 so effective leverage is 0.20x, far below every symbol's max leverage. Watchlist stays on the five most liquid names, none repeated. Bias is short across the board: BTC, ETH, SOL, HYPE and DOGE are all below their 1d EMA20/EMA50, MACD histograms remain negative or weak, and each is trading several percent below last week's VWAP. The market is in a corrective phase after the recent swing highs; rather than chasing longs into resistance, the plan collects small volatility rents on pullbacks. Exits are set roughly one ATR below current marks to keep hostage cycles short and flow-based, preserving capital for re-entry.",
+    "watchlist": [
+      {
+        "bias": "short",
+        "entry": "80366",
+        "exit": "78750",
+        "symbol": "BTC"
+      },
+      {
+        "bias": "short",
+        "entry": "2330.5",
+        "exit": "2278",
+        "symbol": "ETH"
+      },
+      {
+        "bias": "short",
+        "entry": "101.50",
+        "exit": "99.40",
+        "symbol": "SOL"
+      },
+      {
+        "bias": "short",
+        "entry": "77.017",
+        "exit": "75.30",
+        "symbol": "HYPE"
+      },
+      {
+        "bias": "short",
+        "entry": "0.077186",
+        "exit": "0.075600",
+        "symbol": "DOGE"
+      }
+    ],
+    "week": "2026-10-26T00:00:00Z"
+  }
+}
