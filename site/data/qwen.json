@@ -1,0 +1,30 @@
+{
+  "decisions": [],
+  "eliminated": null,
+  "executor": "qwen/qwen3.8-flash",
+  "layers": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "name": "qwen",
+  "plans": [
+    {
+      "fallback": true,
+      "in_force": null,
+      "notional_used": false,
+      "reallocated": false,
+      "week": "2026-10-26T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-26T00:00:00Z",
+  "strategist": "qwen/qwen3.8-max-prime",
+  "violations": [
+    {
+      "rule": "no_weekly_plan",
+      "t": "2026-10-26T11:39:54Z"
+    }
+  ]
+}

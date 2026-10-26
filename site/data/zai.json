@@ -1,0 +1,30 @@
+{
+  "decisions": [],
+  "eliminated": null,
+  "executor": "z-ai/glm-5.3-flash",
+  "layers": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "name": "zai",
+  "plans": [
+    {
+      "fallback": true,
+      "in_force": null,
+      "notional_used": false,
+      "reallocated": false,
+      "week": "2026-10-26T00:00:00Z"
+    }
+  ],
+  "positions": [],
+  "started_week": "2026-10-26T00:00:00Z",
+  "strategist": "z-ai/glm-5.3-prime",
+  "violations": [
+    {
+      "rule": "no_weekly_plan",
+      "t": "2026-10-26T11:39:54Z"
+    }
+  ]
+}
