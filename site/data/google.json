@@ -97,6 +97,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 0 BTC Long remains in positive NAV (+30.53 USD unrealized PnL, mark 80,071.0 vs entry 79,585.0) with an active Take Profit order set at 81,180.0. Although SOL wicked down to 100.22 on the latest 15m candle, mark price has rebounded to 100.73, currently sitting above the 98.60-100.30 entry boundary. ETH (2,318.8), ZEC (1,239.9), and ENA (0.21071) also remain well outside their respective planned entry zones (ETH short at 2,400-2,450; ZEC long at 1,175-1,195; ENA long at 0.196-0.200). Strictly following TSM Principle 4 (Wait & See / Zero Alpha and Disciplined Execution), we avoid chasing mid-range prices and hold our position.",
       "t": "2026-10-26T19:19:47Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 1,
+          "symbol": "SOL",
+          "type": "open"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "SOL has swept into the planned support demand zone (98.60-100.30), currently printing a mark price of 100.26 with recent 15m lows reaching 100.22-100.25. Slot 0 BTC Long continues to run safely in positive NAV with an active limit Take Profit set at 81,180.0. All other watchlist assets (ETH, ZEC, ENA) remain outside their entry triggers. In accordance with TSM Principle 4 (Action-Based Strategy and Disciplined Execution), we deploy Army Slot 1 to open a Long position on SOL under our conservative 2x RP parameters ($2,500 collateral, $5,000 notional).",
+      "t": "2026-10-26T20:22:18Z"
     }
   ],
   "eliminated": null,
@@ -104,15 +118,24 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40829.1376,
-      "mark": 80071.0,
+      "liq": 40830.13740000001,
+      "mark": 79883.6,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 30.53339197084878
+      "unrealized": 18.759816548344904
     },
-    null,
+    {
+      "entry": 100.27,
+      "liq": 52.6868715,
+      "mark": 100.26,
+      "notional": 5000,
+      "side": "long",
+      "symbol": "SOL",
+      "tp": null,
+      "unrealized": -0.49865363518454703
+    },
     null,
     null
   ],

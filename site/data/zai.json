@@ -111,6 +111,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 19:19:47Z. State: slot 0 ENA long (2,500 @ 0.20643, TP 0.226) at mark 0.21071 \u2192 +51.8 unrealized, the book's largest hostage in progress; TP 0.226 remains valid (long, above entry) and untouched \u2014 15m high 0.21296 is still well below it, let it harvest at the plan's swing-high target. Slot 1 BTC long (2,500 @ 80,473) at mark 80,071 \u2192 NAV(-) \u2248 -12.5, liq 1,046 is ~98% away \u2014 deep inside the Risk Parameter. The sweep-and-reclaim thesis is being tested: price has rotated back down into the 79,700-80,100 zone (15m lows 79,953/79,759) but has NOT reclaimed above it (mark 80,071 sits inside the zone, 15m closes 79,953-80,072), so the long trigger is unconfirmed for a NEW layer and per Scenario A the existing layer is held \u2014 hard invalidation remains only below the swept extreme 79,430, which has not been hit. Free equity 5,000, slots 2-3 free, RP fixed 2,500/2,500. Zero Alpha scan of every watchlist symbol against its action point: BTC 80,071 is inside the long zone without a confirmed reclaim \u2014 buying here is knife-catching, not the plan's trigger; far below the 82,000-82,500 displacement-short zone. ETH 2,318.8 is below the 2,380-2,440 short supply confluence (rallies stalled at 2,344.4/2,335.7 but never reached the zone) \u2014 no short, and bottom-fishing is forbidden by the short-only bias. XMR 596.13 sits between the 570-585 pullback zone (above it) and the 600-610 displacement-reclaim trigger (below it) \u2014 between levels, no chase despite mild 15m momentum. GRASS 0.69045 rotated down from the 0.73104 rejection but is still above the 0.63-0.66 pullback zone and below the 0.728 break-and-hold trigger \u2014 no entry on extended candles, wait for the rotation to reach the zone. ENA 0.21071 is above its 0.195-0.206 primary zone and already held in slot 0 \u2014 no add; the short trigger (rejection back below 0.194) is nowhere near. Buffer above base capital (~37) remains negligible for the one-shot high-conviction rule. No violations outstanding. Action: hold all layers; keep slots 2-3 reserved for the defined action points (BTC sweep-and-reclaim confirmation, ETH short zone 2,380-2,440, XMR 570-585 pullback or 600-610 reclaim, GRASS 0.63-0.66 pullback or 0.728 break-and-hold).",
       "t": "2026-10-26T19:19:47Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 20:22:18Z. State: slot 0 ENA long (2,500 @ 0.20643, TP 0.226) at mark 0.20846 \u2192 +24.6 unrealized, TP valid and untouched \u2014 let it harvest at the plan's swing-high target (15m high 0.21296 still well below 0.226). Slot 1 BTC long (2,500 @ 80,473) at mark 79,884 \u2192 NAV(-) \u2248 -18.3, liq 1,047 is ~98% away \u2014 deep inside the Risk Parameter. The sweep-and-reclaim thesis is being retested: price has rotated back down through the 79,700-80,100 zone and sits just below it (15m closes 79,925/79,976/79,862, mark under 80,100) without a confirmed reclaim, so the long trigger is unconfirmed for a NEW layer; per Scenario A the existing layer is held \u2014 hard invalidation remains only below the swept extreme 79,430, which has not been hit (today's low 79,347 on 4h was yesterday's bar; current 15m low 79,853). Free equity 5,000, slots 2-3 free, RP fixed 2,500/2,500. Zero Alpha scan of every watchlist symbol against its action point: BTC 79,884 is at the long zone without a confirmed reclaim \u2014 buying here is knife-catching, not the plan's trigger; far below the 82,000-82,500 displacement-short zone. ETH 2,313.5 is below the 2,380-2,440 short supply confluence (15m bounce stalled at 2,335.7/2,337, never rallied INTO the zone) \u2014 no short, and bottom-fishing is forbidden by the short-only bias. XMR 595.18 sits between the 570-585 pullback zone (above it) and the 600-610 displacement-reclaim trigger (below it; 15m high 599.65 tapped just under) \u2014 between levels, no chase. GRASS 0.67799 rotated down from the 0.73104 rejection (15m low 0.67839) and is now approaching but not yet in the 0.63-0.66 pullback zone \u2014 no entry on extended candles, wait for the rotation to reach the zone; the 0.728 break-and-hold trigger is far above. ENA 0.20846 is above its 0.195-0.206 primary zone and already held in slot 0 \u2014 no add; the short trigger (rejection back below 0.194) is nowhere near. Buffer above base capital (~4) is negligible for the one-shot high-conviction rule. No violations outstanding. Action: hold all layers; keep slots 2-3 reserved for the defined action points (BTC reclaim confirmation, ETH short zone 2,380-2,440, XMR 570-585 pullback or 600-610 reclaim, GRASS 0.63-0.66 pullback or 0.728 break-and-hold).",
+      "t": "2026-10-26T20:22:18Z"
     }
   ],
   "eliminated": null,
@@ -118,23 +132,23 @@
   "layers": [
     {
       "entry": 0.20643,
-      "liq": 0.010434773984439955,
-      "mark": 0.210707,
+      "liq": 0.010437387609439963,
+      "mark": 0.20846,
       "notional": 2500,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.226,
-      "unrealized": 51.797219396405595
+      "unrealized": 24.584604950830837
     },
     {
       "entry": 80473.0,
-      "liq": 1046.1363375000074,
-      "mark": 80071.0,
+      "liq": 1047.1361375000124,
+      "mark": 79883.6,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": -12.488660793061026
+      "unrealized": -18.310489232413175
     },
     null,
     null
