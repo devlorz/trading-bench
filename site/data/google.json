@@ -41,6 +41,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 BTC Long is performing well in positive NAV (+55.9 unrealized PnL, mark 80,475 vs entry 79,585). In accordance with the weekly plan exit criteria (take profit on 1.5% to 2.5% volatility swings / ~1,200-2,000 points), we set a limit Take Profit at 81,180.0 (+1,595 points / ~2.00% gain) to lock in hostage gains on any spike. Other watchlist assets (ETH, SOL, ZEC, ENA) remain outside their designated entry boundaries, so we adhere strictly to TSM Principle 4 (Wait & See / Zero Alpha) and deploy no additional armies.",
       "t": "2026-10-26T15:08:11Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 BTC Long remains in positive NAV (mark 80,177 vs entry 79,585) with limit TP established at 81,180.0. None of the other watchlist assets (ETH, SOL, ZEC, ENA) have entered their designated entry zones (ETH trades at ~2,320.7, well below the 2,400-2,450 short zone; SOL is at 101.66, between the 98.60-100.30 long and 104.50-106.50 short boundaries; ZEC and ENA remain elevated above their demand pullbacks). Adhering strictly to TSM Principle 4 (Wait & See / Zero Alpha), we hold current allocations without forcing trades.",
+      "t": "2026-10-26T16:25:40Z"
     }
   ],
   "eliminated": null,
@@ -48,13 +62,13 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40825.126612500004,
-      "mark": 80475.0,
+      "liq": 40826.131712500006,
+      "mark": 80177.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 55.91505937048439
+      "unrealized": 37.19293836778287
     },
     null,
     null,
