@@ -1028,23 +1028,23 @@
   "layers": [
     {
       "entry": 4054.4,
-      "liq": 207.10173745715747,
-      "mark": 4019.092,
+      "liq": 207.1490605578574,
+      "mark": 4022.9,
       "notional": 2500,
       "side": "long",
       "symbol": "PAXG",
       "tp": 4155,
-      "unrealized": -21.771408839779
+      "unrealized": -19.42334254143646
     },
     {
       "entry": 4033.4,
-      "liq": 205.9067510563309,
-      "mark": 4019.092,
+      "liq": 205.9540741570304,
+      "mark": 4022.9,
       "notional": 2500,
       "side": "long",
       "symbol": "PAXG",
       "tp": 4210,
-      "unrealized": -8.868448455397427
+      "unrealized": -6.5081568899687605
     },
     null,
     null
