@@ -279,6 +279,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slots 0 and 1 already occupy the only allowed Layers 1-2 under the weekly hostage policy. Both active shorts remain profitable but have not reached plan TPs: BTC short is above 78750 and ETH short is above 2278. Liquidation prices are far away, no NAV-negative recovery condition exists, and close_all is not active. Therefore no SOL, HYPE, DOGE, closes, TP changes, or additional opens are permitted or needed; hold the existing BTC and ETH shorts with their current TP orders.",
       "t": "2026-10-27T01:34:42Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 79928.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2316.1,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slots 0 and 1 are occupied by the only weekly-plan-allowed BTC and ETH shorts, matching the short bias. Both layers have small positive unrealized PnL, liquidation prices are extremely far away, and their plan TPs (BTC 78750, ETH 2278) have not been reached. The hostage policy limits this week to Layer 1-2 / 50% deployment, so slots 2 and 3 must remain empty. There is no NAV-negative recovery condition, no close_all deadline, and no plan exit trigger. Therefore hold the existing positions and keep their TPs unchanged.",
+      "t": "2026-10-27T02:29:58Z"
     }
   ],
   "eliminated": null,
@@ -286,23 +307,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481678.07688961766,
-      "mark": 80089.0,
+      "liq": 481679.0772771177,
+      "mark": 79928.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 2.2498166585872146
+      "unrealized": 3.2504257249754507
     },
     {
       "entry": 2335.5,
-      "liq": 13965.547277305057,
-      "mark": 2320.8,
+      "liq": 13965.551069457657,
+      "mark": 2316.1,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 3.147077713551663
+      "unrealized": 4.15328623421111
     },
     null,
     null

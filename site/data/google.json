@@ -181,6 +181,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Existing armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00) continue to hold safely in positive NAV with active limit Take Profit orders in place. Across the remaining watchlist opportunities, none have touched their defined entry criteria: ETH (2,320.8) trades well below the 2,400-2,450 short zone; ZEC (1,230.9) remains significantly above the 1,175-1,195 demand pullback zone; and ENA (0.20814) sits comfortably above its 0.196-0.200 support cluster. In strict alignment with TSM Principle 4 (Wait & See, Zero Alpha, and disciplined execution), we avoid forcing low-conviction mid-range trades and maintain a hold on all armies.",
       "t": "2026-10-27T01:34:42Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Existing armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00) continue to operate safely in positive NAV with limit Take Profit orders actively placed. Current market prices across the remaining watchlist candidates show no triggers: ETH (2,316.1) remains well below the 2,400-2,450 short entry band; ZEC (1,224.2) sits comfortably above its 1,175-1,195 demand pullback zone; and ENA (0.20553) has not pulled back to its 0.196-0.200 support cluster. In strict accordance with TSM Principle 4 (Wait & See, Zero Alpha, and disciplined execution), we avoid forcing low-conviction entries and hold all current allocations.",
+      "t": "2026-10-27T02:29:58Z"
     }
   ],
   "eliminated": null,
@@ -188,23 +202,23 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40835.034364617604,
-      "mark": 80089.0,
+      "liq": 40836.03475211761,
+      "mark": 79928.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 31.664258340139476
+      "unrealized": 21.549286925928254
     },
     {
       "entry": 100.27,
-      "liq": 52.69315700000001,
-      "mark": 100.58,
+      "liq": 52.69441412500001,
+      "mark": 100.4116,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 15.45826269073513
+      "unrealized": 7.060935474220159
     },
     null,
     null
