@@ -16,3 +16,4 @@
 {"equity": 9962.388617805218, "layers": [{"entry": 100.42, "liq": 77.8731935, "mark": 100.09, "notional": 10000, "side": "long", "symbol": "SOL", "tp": 104.0, "unrealized": -32.86197968532148}, null, null, null], "t": "2026-10-27T04:25:00Z"}
 {"equity": 9959.27655098586, "layers": [{"entry": 100.42, "liq": 77.874444875, "mark": 100.06, "notional": 10000, "side": "long", "symbol": "SOL", "tp": 104.0, "unrealized": -35.8494323839872}, null, null, null], "t": "2026-10-27T05:22:41Z"}
 {"equity": 9938.73763941446, "layers": [{"entry": 100.42, "liq": 77.875696625, "mark": 99.855, "notional": 10000, "side": "long", "symbol": "SOL", "tp": 104.0, "unrealized": -56.26369249153532}, null, null, null], "t": "2026-10-27T06:36:16Z"}
+{"equity": 9922.381909729138, "layers": [{"entry": 100.42, "liq": 77.87694086249999, "mark": 99.692, "notional": 10000, "side": "long", "symbol": "SOL", "tp": 104.0, "unrealized": -72.49551882095287}, null, null, null], "t": "2026-10-27T07:28:37Z"}
