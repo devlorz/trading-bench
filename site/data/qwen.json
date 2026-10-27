@@ -573,6 +573,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "RP remains collateral 2500 and notional 500, giving effective leverage 0.20x, well within every symbol's max leverage. Slots 0 and 1 are occupied by the two allowed plan-compliant shorts, BTC and ETH, so per the weekly hostage policy only Layer 1-2 may be deployed and no additional layers should be opened while the current NAV is negative. BTC short entry 80451, mark 80645, unrealized -1.2057, TP 78750 not triggered and liq price 481691.7 is extremely far away. ETH short entry 2335.5, mark 2351.6, unrealized -3.4468, TP 2278 not triggered and liq price 13965.78 is extremely far away. Funding is tiny and close_all is not active. Under TSM Principle 4 soft rule Scenario A, with negative unrealized positions but large liquidation buffers, do not cut immediately; hold the hostage cycle and keep the existing TP orders unchanged.",
       "t": "2026-10-27T15:24:14Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80569.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2347.9,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "RP remains collateral 2500 and notional 500, effective leverage 0.20x, well below all max leverage. Only Layers 1-2 are permitted by the weekly hostage policy, and slots 0/1 are already occupied by the two plan-compliant shorts. Current NAV on both layers is slightly negative (BTC short unrealized -0.73, ETH short unrealized -2.65), but liquidation prices are extremely far away, funding is tiny, and neither TP (BTC 78750, ETH 2278) has been reached. Under Scenario A, with NAV-negative positions but ample liquidation buffer, do not cut immediately and do not add leverage. Slots 2/3 must stay empty due to the Layer 1-2 constraint. Hold both existing hostage cycles and keep TP orders unchanged.",
+      "t": "2026-10-27T16:19:33Z"
     }
   ],
   "eliminated": null,
@@ -580,23 +601,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481691.70456917456,
-      "mark": 80645.0,
+      "liq": 481692.7114316746,
+      "mark": 80569.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -1.2057028501820983
+      "unrealized": -0.7333656511416887
     },
     {
       "entry": 2335.5,
-      "liq": 13965.779080073382,
-      "mark": 2351.6,
+      "liq": 13965.808410073381,
+      "mark": 2347.9,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -3.4467994005566065
+      "unrealized": -2.6546777991864894
     },
     null,
     null

@@ -1,10 +1,10 @@
 {
   "free_equity": 5000.0,
-  "last_tick": "2026-10-27T15:24:14Z",
+  "last_tick": "2026-10-27T16:19:33Z",
   "last_week": "2026-10-26T00:00:00Z",
   "layers": [
     {
-      "collateral": 2498.6325913650176,
+      "collateral": 2498.6009529773996,
       "entry": 99.691,
       "notional": 2500,
       "opened_at": "2026-10-27T07:28:37Z",
@@ -14,7 +14,7 @@
       "tp": 109.0
     },
     {
-      "collateral": 2498.749641847255,
+      "collateral": 2498.718147474476,
       "entry": 79924.0,
       "notional": 2500,
       "opened_at": "2026-10-27T11:21:20Z",
@@ -30,5 +30,5 @@
     "collateral": 2500.0,
     "notional": 2500
   },
-  "settled": "2026-10-27T15:24:14Z"
+  "settled": "2026-10-27T16:19:33Z"
 }
