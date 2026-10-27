@@ -391,6 +391,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 2 ENA Long successfully reached its Take Profit target at 0.21600, banking +457.00 USD in hostage profit and boosting free equity to $5,457.00. Both active armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00) are running comfortably in Positive NAV with active limit Take Profit orders intact. Reviewing the unallocated watchlist candidates against weekly plan parameters: ETH (2,347.9) remains below the 2,400-2,450 short zone; ZEC (1,295.9) is testing upper range resistance well above the 1,175-1,195 demand pullback zone; ENA (0.21544) just finished its profit cycle and is far above its 0.196-0.200 retest zone; and BTC/SOL are mid-flight. In strict adherence to TSM Principle 4 (Mindset #3 Wait & See, Zero Alpha, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' after capturing hostages), we hold our positions and wait for valid setups.",
       "t": "2026-10-27T16:19:33Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00) continue to operate securely in positive NAV with active limit Take Profit orders in place. Free equity stands at $5,457.00, preserving full capital capacity for Slots 2 and 3. Reviewing unallocated watchlist candidates against weekly plan parameters reveals no active entry triggers: ETH (2,350.3) is rebounding but remains below our designated 2,400-2,450 short zone; ZEC (1,307.5) is pushing upper resistance far above the 1,175-1,195 demand pullback zone; ENA (0.21049) is cooling off after hitting our TP target and remains well above the 0.196-0.200 support cluster; and BTC and SOL remain mid-flight. In strict alignment with TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' after banking hostage profits), we maintain our disciplined stance and hold all positions.",
+      "t": "2026-10-27T17:15:25Z"
     }
   ],
   "eliminated": null,
@@ -398,23 +412,23 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40849.668906674524,
-      "mark": 80569.0,
+      "liq": 40850.67678167452,
+      "mark": 80604.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 61.82069485455802
+      "unrealized": 64.01960168373438
     },
     {
       "entry": 100.27,
-      "liq": 52.71159399619201,
-      "mark": 100.95,
+      "liq": 52.71285699619201,
+      "mark": 100.98,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 33.908447192580375
+      "unrealized": 35.404408098135434
     },
     null,
     null
