@@ -265,6 +265,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Week 2026-10-26 plan valid: RP collateral 2500, notional 2500 (equity/4 = 10000/4), all 4 Layers empty, free_equity 10000 >= collateral, no Reallocation (mid-week, Slots not all-occupied, Week 1 has no carried plan). Watchlist defines only limit-buy Action Based Strategy entries (BTC 79500, ETH 2280, SOL 99.50, XRP 1.2500). Checking triggers via recent traded lows: BTC lowest recent print ~79552 (15m/1h lows 79552-79571) > 79500 \u2014 not triggered; ETH lows 2300.0-2301.5 > 2280 \u2014 not triggered; XRP lows ~1.2935-1.2955 > 1.2500 \u2014 not triggered; SOL has now traded THROUGH its planned entry: the latest 1h bar printed low 99.388 and the last two 15m bars printed lows 99.388/99.457, both below the 99.50 limit trigger. So the SOL Action Based Strategy entry condition is met and, per plan discipline (soft rule 2: follow plan 100%, Zero Alpha), open SOL long in slot 0. Symbol is in watchlist, bias long matches, side long has no opposite open, notional/collateral = 2500/2500 = 1 <= max_leverage 20, and free_equity 10000 >= collateral, so the open is legal. No other symbol triggered; no Layer holds NAV(-) so no Scenario A-E offset applies. Hold remaining slots.",
       "t": "2026-10-27T07:28:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 109.0,
+          "side": null,
+          "slot": 0,
+          "symbol": "SOL",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Week 2026-10-26 plan valid: RP collateral 2500, notional 2500, Week 1 no carried plan so no Reallocation mid-week. Slot 0 now holds SOL long (entry 99.691, notional 2500, mark 99.924, unrealized +5.84, liq 2.538), filled last tick when SOL traded through its 99.50 trigger; free_equity 7500 >= collateral 2500. Remaining watchlist limit-buy triggers checked against current marks and recent traded lows: BTC 79811 vs 79500 (recent 4h/1h/15m lows 79552-79700, never through 79500) \u2014 not triggered; ETH 2313.6 vs 2280 (recent lows 2300-2301.5) \u2014 not triggered; XRP 1.3023 vs 1.2500 (recent lows ~1.2935-1.2955) \u2014 not triggered. So no new Layer opens this tick; per Wait & See and plan discipline (soft rule 2) hold the empty slots. The plan's SOL exit is 'take profit 109.00 or trail 1.5 ATR'; the only TP mechanism available is a fixed limit, so implement the plan's listed target: set_tp slot 0 at 109.00. This is a valid limit TP (109.00 > entry 99.691, profit side for long), lets the position close as maker and become Hostage, and is well clear of the current mark so it does not conflict with the position's development. No Layer holds NAV(-) (SOL is +5.84), so no Scenario A-E basket offset applies.",
+      "t": "2026-10-27T08:30:16Z"
     }
   ],
   "eliminated": null,
@@ -272,13 +286,13 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.5371359499999926,
-      "mark": 99.692,
+      "liq": 2.538031858691994,
+      "mark": 99.924,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
-      "tp": null,
-      "unrealized": 0.025077489442140312
+      "tp": 109.0,
+      "unrealized": 5.8430550400739305
     },
     null,
     null,
