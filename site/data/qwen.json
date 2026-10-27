@@ -342,6 +342,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slots 0 and 1 are occupied by the only two layers allowed by the weekly hostage policy (Layer 1-2 only, maximum 50% deployment). Both are plan-compliant shorts in BTC and ETH. Current marks remain far above their short TPs (BTC TP 78750, ETH TP 2278), and both layers are unrealized positive, so no TP exit is triggered. Liquidation prices are extremely far and funding costs are tiny, so there is no NAV-negative recovery condition or basket-offset reason to close. Opening SOL, HYPE, or DOGE would use slots 2-3 and violate the Layer 1-2 restriction. Close_all is not active. Therefore hold both positions and keep their existing TP orders.",
       "t": "2026-10-27T04:25:00Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 79818.9,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2312.3,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "RP remains collateral 2500 and notional 500. Slots 0 and 1 occupy the only two Layers allowed by the weekly hostage policy (Layer 1-2 only, 50% deployment); therefore slots 2 and 3 must remain empty even though SOL, HYPE and DOGE are in the short-biased watchlist. Both existing shorts are NAV positive (BTC unrealized +3.93, ETH unrealized +4.97), have liquidation prices far away, and have not reached their plan TPs: BTC short exits at 78750 or lower but mark is 79818.9, ETH short exits at 2278 or lower but mark is 2312.3. There is no Hostage negative condition, no basket-offset need, no liquidated slot to recover, and close_all is not active. The plan is to keep the short hostage cycles intact and wait for TP or flow, so hold the existing positions and keep TP orders unchanged.",
+      "t": "2026-10-27T05:22:41Z"
     }
   ],
   "eliminated": null,
@@ -349,17 +370,17 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481680.7132316745,
-      "mark": 79737.5,
+      "liq": 481681.7099191745,
+      "mark": 79818.9,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 4.4343762041491095
+      "unrealized": 3.9284782041242856
     },
     {
       "entry": 2335.5,
-      "liq": 13965.559397654157,
+      "liq": 13965.572881369148,
       "mark": 2312.3,
       "notional": 500,
       "side": "short",

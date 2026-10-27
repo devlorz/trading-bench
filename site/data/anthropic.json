@@ -207,6 +207,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 holds the SOL long hostage from entry 100.42 at mark 100.09 (unrealized about -33), with TP 104.0 already set on the profit side. Equity 9962 is well above the 8,500 close-all line, the 25% hard stop at liq 77.87 is far away, and only one hostage is open, below the max of 2. No new entry trigger is met. BTC mark 79738 is near the 79.7k long zone, but there is no 4h close back above 80.4k, and the 80.5k-84k middle is no-trade. ETH mark 2312 is in the 2280-2315 flush zone, but the last 4h close 2313.8 is not a confirmed reclaim, and SOL already occupies its one-per-symbol slot. XRP and BNB are mid-range with no trigger. The daily close-all levels (below 76k or above 88k) are not hit. Wait & See: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-27T04:25:00Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 holds the SOL long hostage from entry 100.42 at mark 100.06 (unrealized about -36) with TP 104.0 already set on the profit side. Equity 9959 is far above the 8,500 close-all line, the 25% hard stop at liq 77.87 is distant, and only one hostage is open against a max of two. No new entry trigger is met. BTC mark 79819 is inside the 79.7k-80.4k long zone, but there is no confirmed 4h close back above 80.4k, and the 80.5k-84k middle is no-trade. ETH 2312 sits in the 2280-2315 flush zone, but the last 4h close of 2313.8 is not a reclaim. SOL already occupies its one-per-symbol slot. XRP 1.297 and BNB 737.5 are mid-range with no trigger. The daily close-all levels (below 76k or above 88k) are not hit. Wait and see: hold all slots and keep the existing SOL TP.",
+      "t": "2026-10-27T05:22:41Z"
     }
   ],
   "eliminated": null,
@@ -214,13 +228,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.8731935,
-      "mark": 100.09,
+      "liq": 77.874444875,
+      "mark": 100.06,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -32.86197968532148
+      "unrealized": -35.8494323839872
     },
     null,
     null,
