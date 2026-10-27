@@ -307,50 +307,53 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 08:30:16Z. State: all four slots occupied, free_equity 0, RP fixed 2,500/2,500 \u2014 no opens possible; the only meaningful choices are hold vs close/TP management. Funding settled trivially on all slots at 08:00 (~-0.031 each). Layer state (all four now NAV(-)): slot 0 ENA long (2,500 @ 0.20643, TP 0.226) at mark 0.20565 \u2192 -9.4; slot 2 ENA long (2,500 @ 0.20694, TP 0.226) \u2192 -15.6; slot 1 BTC long (2,500 @ 80,473, TP 82,400) at mark 79,811 \u2192 -20.6; slot 3 BTC long (2,500 @ 80,206) \u2192 -12.3. Net unrealized \u2248 -57.9, equity 9,935.9 < 10,000 base. Liq prices (0.0105 ENA, ~1,046-1,059 BTC) are ~95-99% away \u2014 all deep inside the Risk Parameter. Per-layer thesis/invalidation check: BTC \u2014 the 06:45 15m sweep took the low to 79,552 (the fresh week-low referenced last tick), bars since hold 79,571-79,621 lows and price has rotated back to 79,811 inside the 79,700-80,100 zone, but the reclaim of the zone top 80,100 is still not established (15m closes 79,785/79,829/79,781, below 15m EMA20/50). HOWEVER the plan's hard invalidation is beyond the swept extreme \u2014 79,430 intraday flush / 79,347 4h swing low \u2014 and the current low 79,552 is still ~120 points above 79,430. Cutting here would be a discretionary exit inside the defined Risk Parameter; per Scenario A hold both BTC layers and wait for recovery or actual invalidation \u2014 the cut trigger to watch remains a break below 79,430/79,347. ENA \u2014 the pullback continued: the current 15m bar swept down to 0.2051, slicing below the minor 0.20626 swing low, but that low still holds ABOVE the 0.20472/0.20477 base, so the higher-low structure is intact and mark 0.20565 sits inside the plan's primary long zone 0.195-0.206 with flow still up (+10.4% 7d, above the rising EMA50 on 1h/4h); hard invalidation 0.174 is far away and the plan's cut condition is not met, so hold both ENA layers with TP 0.226 untouched (recent 15m high 0.20727 / swing high 0.21067 still well below it \u2014 let the hostage harvest come). Basket offset (Scenario D/E) has nothing to execute \u2014 there is no positive layer to harvest Hostage from, and realizing the combined BTC loss to keep only ENA would lock in the drawdown, not reduce it. Remaining action points all require a free slot/free equity anyway: ETH 2,313.6 never rallied into the 2,380-2,440 short supply confluence (15m lower low 2,300, below 15m EMA20/50, bottom-fishing forbidden by the short-only bias); XMR 596.72 has faded back below the 600-610 zone (15m low 594.45) \u2014 the earlier reclaim add is stale and the primary 570-585 pullback is untouched \u2014 log and wait; GRASS 0.68778 pushed to 0.69781 but rejected (15m high 0.69749) and remains above the 0.63-0.66 pullback zone and far below the 0.728 break-and-hold trigger \u2014 wait. Buffer above base capital is negative (equity 9,935.9 < 10,000) \u2014 no one-shot high-conviction shot available. No violations outstanding. Action: hold all four layers \u2014 every invalidation is intact; cut only when a layer's invalidation zone is actually hit (BTC below 79,430/79,347, ENA below 0.174 / base 0.20472 lost with structure break) or its flow thesis breaks. Next candidates: BTC invalidation check (~120 points of room left), ENA TP 0.226 harvest, ETH 2,380-2,440 short only if a slot frees, XMR/GRASS triggers reserved for freed slots.",
       "t": "2026-10-27T08:30:16Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "ENA",
+          "type": "close"
+        },
+        {
+          "price": null,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ENA",
+          "type": "close"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 09:25:07Z. State: all four slots occupied, free_equity 0, RP fixed 2,500/2,500. Funding settled trivially at 09:00 (~-0.031 each). Layer state (all four NAV(-)): slot 0 ENA long (2,500 @ 0.20643, TP 0.226) at mark 0.20256 \u2192 -46.9; slot 2 ENA long (2,500 @ 0.20694, TP 0.226) \u2192 -52.9; slot 1 BTC long (2,500 @ 80,473, TP 82,400) at mark 79,705 \u2192 -23.9; slot 3 BTC long (2,500 @ 80,206) \u2192 -15.6. Net unrealized \u2248 -139.3, equity 9,854.4. Liq prices (0.0104-0.0105 ENA, ~1,047-1,060 BTC) are ~95-99% away \u2014 all deep inside the Risk Parameter.\n\nENA \u2014 the cut condition I set last tick has now FIRED: 'base 0.20472 lost with structure break'. Reality: the 09:00-09:15 15m bar swept down to 0.2027 and CLOSED 0.20273 below the 0.20472/0.20477 base on the highest volume of the window (2.9M vs the 0.2-1.2M norm \u2014 absorption failed, sellers won); the prior 15m bar had already closed 0.20425 with low 0.20382 below the base; the 08:00-09:00 1h bar closed 0.20425 BELOW the 1h EMA50 (0.20477) \u2014 the first 1h close under it; mark 0.20256 sits below both 15m EMAs (0.20769/0.20781), -2.56% under today's VWAP (0.20806), with 15m MACD hist negative. The higher-low sequence 0.20472 \u2192 0.20477 \u2192 0.20626 is broken with close confirmation on two timeframes \u2014 the entry basis itself has failed, not a wick. The hard invalidation 0.174 is ~14% away; riding two full layers toward it on a broken structure would be prediction/hope, not Zero Alpha. Per the plan's cut clause ('cut only when the invalidation zone is actually hit or the flow thesis breaks') and my own explicitly stated trigger, close BOTH ENA layers at market (taker fee), realizing \u2248 -102 combined \u2014 inside the Risk Parameter design (the alternative was \u2248 -393 per layer at 0.174). Slots 0 and 2 free.\n\nBTC \u2014 hold both layers per Scenario A: the plan's hard invalidation is beyond the swept extreme (79,430 intraday flush / 79,347 4h swing low) and the post-entry low 79,552 is still ~120 points above 79,430; the deeper sweep of the 79,700-80,100 zone is consistent with the sweep-and-reclaim thesis (sweep happened again, reclaim pending), and cutting before the stated invalidation would be a discretionary exit inside the defined Risk Parameter. Cut trigger remains a break below 79,430/79,347.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no positive layer exists to harvest Hostage from, and after the ENA cuts the book is BTC-only NAV(-) held within its Risk Parameter.\n\nFreed capital (~4,898 free equity, slots 0/2) \u2014 no fresh action points, so Wait & See per '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19': ETH 2,311.3 never rallied into the 2,380-2,440 short supply (15m lower low 2,300, bottom-fishing forbidden by the short-only bias); XMR 599.21 is below the 15m EMAs after the 600-610 displacement reclaim failed/staled \u2014 it needs a fresh displacement reclaim, and the primary 570-585 pullback is untouched; GRASS 0.68494 sits between the 0.63-0.66 pullback zone and the 0.728 break-and-hold trigger; ENA re-entry would require a NEW higher-low hold inside 0.195-0.206 \u2014 the old one just failed, no knife-catching. Buffer above base capital is negative \u2014 no one-shot high-conviction shot. No violations outstanding. Action: close slot 0 (ENA), close slot 2 (ENA); hold slots 1 and 3 (BTC). Next candidates: BTC invalidation check below 79,430/79,347, ENA new higher-low hold, ETH 2,380-2,440 short, XMR fresh 600-610 displacement reclaim or 570-585 pullback, GRASS 0.63-0.66 pullback or 0.728 break-and-hold.",
+      "t": "2026-10-27T09:25:07Z"
     }
   ],
   "eliminated": null,
   "executor": "z-ai/glm-5.3-flash",
   "layers": [
-    {
-      "entry": 0.20643,
-      "liq": 0.010468356775319931,
-      "mark": 0.20565,
-      "notional": 2500,
-      "side": "long",
-      "symbol": "ENA",
-      "tp": 0.226,
-      "unrealized": -9.44630140967886
-    },
+    null,
     {
       "entry": 80473.0,
-      "liq": 1058.6584941745095,
-      "mark": 79811.0,
+      "liq": 1059.6566191745078,
+      "mark": 79705.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": -20.56590409205572
+      "unrealized": -23.858934052415094
     },
-    {
-      "entry": 0.20694,
-      "liq": 0.010463529374999975,
-      "mark": 0.20565,
-      "notional": 2500,
-      "side": "long",
-      "symbol": "ENA",
-      "tp": 0.226,
-      "unrealized": -15.584227312264584
-    },
+    null,
     {
       "entry": 80206.0,
-      "liq": 1046.2954920569027,
-      "mark": 79811.0,
+      "liq": 1047.293617056901,
+      "mark": 79705.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": -12.312046480313194
+      "unrealized": -15.616038700346607
     }
   ],
   "name": "zai",
@@ -399,7 +402,32 @@
       "week": "2026-10-26T00:00:00Z"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "closed_at": "2026-10-27T09:25:07Z",
+      "entry": 0.20643,
+      "exit": 0.20257,
+      "fees": 2.228963813399215,
+      "funding": -0.6844590214600591,
+      "opened_at": "2026-10-26T11:46:02Z",
+      "pnl": -49.66050416993585,
+      "reason": "close",
+      "side": "long",
+      "symbol": "ENA"
+    },
+    {
+      "closed_at": "2026-10-27T09:25:07Z",
+      "entry": 0.20694,
+      "exit": 0.20257,
+      "fees": 2.2262431139460714,
+      "funding": -0.31362049386295543,
+      "opened_at": "2026-10-26T23:18:18Z",
+      "pnl": -55.33294372765067,
+      "reason": "close",
+      "side": "long",
+      "symbol": "ENA"
+    }
+  ],
   "started_week": "2026-10-26T00:00:00Z",
   "strategist": "z-ai/glm-5.3-prime",
   "violations": []
