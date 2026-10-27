@@ -1,10 +1,10 @@
 {
   "free_equity": 2500.0,
-  "last_tick": "2026-10-27T10:23:00Z",
+  "last_tick": "2026-10-27T11:21:20Z",
   "last_week": "2026-10-26T00:00:00Z",
   "layers": [
     {
-      "collateral": 2496.4602378479294,
+      "collateral": 2496.397443351479,
       "entry": 79585.0,
       "notional": 5000,
       "opened_at": "2026-10-26T13:55:36Z",
@@ -14,7 +14,7 @@
       "tp": 81180.0
     },
     {
-      "collateral": 2496.8929205549016,
+      "collateral": 2496.8305202856286,
       "entry": 100.27,
       "notional": 5000,
       "opened_at": "2026-10-26T20:22:18Z",
@@ -24,14 +24,14 @@
       "tp": 104.0
     },
     {
-      "collateral": 2497.75,
+      "collateral": 2497.769313206785,
       "entry": 0.19779,
       "notional": 5000,
       "opened_at": "2026-10-27T10:23:00Z",
       "side": "long",
       "size": 25279.336670205776,
       "symbol": "ENA",
-      "tp": null
+      "tp": 0.216
     },
     null
   ],
@@ -39,5 +39,5 @@
     "collateral": 2500.0,
     "notional": 5000
   },
-  "settled": "2026-10-27T10:23:00Z"
+  "settled": "2026-10-27T11:21:20Z"
 }

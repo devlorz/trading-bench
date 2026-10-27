@@ -307,6 +307,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry is actionable under the weekly plan. BTC and ETH are below their specified rebound-entry zones and lack the required 4h confirmation. XMR is above its permitted 580\u2013585 entry range, so its pullback-and-reclaim condition is not currently met. All slots are empty; wait for a valid setup.",
       "t": "2026-10-27T10:23:00Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry is actionable at current prices. BTC and ETH are below their specified rebound zones. XMR has reclaimed 580, but is now above its permitted 580\u2013585 execution range. All slots are empty, and neither the equity threshold nor the weekly flatten deadline has been reached. Wait for a valid setup.",
+      "t": "2026-10-27T11:21:20Z"
     }
   ],
   "eliminated": null,
