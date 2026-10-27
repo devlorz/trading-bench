@@ -552,6 +552,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "RP is collateral 2500 and notional 500. The weekly hostage policy restricts deployment to Layer 1-2 only and at most 50% of risk budget; slots 0 and 1 are already occupied by BTC and ETH shorts, so slots 2 and 3 must remain empty despite SOL/HYPE/DOGE short bias. Both positions are plan-compliant shorts and unrealized positive: BTC short entry 80451, mark 80069, unrealized about +2.37, TP 78750 not reached; ETH short entry 2335.5, mark 2321.3, unrealized about +3.04, TP 2278 not reached. Funding impact is tiny, liquidation prices are extremely far, no NAV-negative basket-offset or recovery condition applies, and close_all is not active. Therefore hold both existing short hostage cycles and keep current TP orders unchanged.",
       "t": "2026-10-27T14:25:55Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80645.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2351.6,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "RP remains collateral 2500 and notional 500, giving effective leverage 0.20x, well within every symbol's max leverage. Slots 0 and 1 are occupied by the two allowed plan-compliant shorts, BTC and ETH, so per the weekly hostage policy only Layer 1-2 may be deployed and no additional layers should be opened while the current NAV is negative. BTC short entry 80451, mark 80645, unrealized -1.2057, TP 78750 not triggered and liq price 481691.7 is extremely far away. ETH short entry 2335.5, mark 2351.6, unrealized -3.4468, TP 2278 not triggered and liq price 13965.78 is extremely far away. Funding is tiny and close_all is not active. Under TSM Principle 4 soft rule Scenario A, with negative unrealized positions but large liquidation buffers, do not cut immediately; hold the hostage cycle and keep the existing TP orders unchanged.",
+      "t": "2026-10-27T15:24:14Z"
     }
   ],
   "eliminated": null,
@@ -559,23 +580,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481690.7003066745,
-      "mark": 80069.4,
+      "liq": 481691.70456917456,
+      "mark": 80645.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 2.3716299362345143
+      "unrealized": -1.2057028501820983
     },
     {
       "entry": 2335.5,
-      "liq": 13965.74990507338,
-      "mark": 2321.3,
+      "liq": 13965.779080073382,
+      "mark": 2351.6,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 3.0400342539070473
+      "unrealized": -3.4467994005566065
     },
     null,
     null
