@@ -489,6 +489,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 20:16:59Z. State: slot 0 ENA long (2,500 @ 0.2026, TP 0.226) at mark 0.21089 \u2192 +102.3, the book's best layer; slots 1/3 BTC longs (2,500 @ 80,473 / 80,206, TP 82,400) at mark 80,761 \u2192 +8.9 / +17.3 \u2014 all three layers NAV(+). Slot 2 free but free_equity 2,395.01 < RP collateral 2,500 \u2192 no open is possible this tick regardless of triggers (insufficient_free_equity); the only meaningful choices are hold vs close/TP management. Funding settled trivially at 20:00 on all three slots (~-0.03 each). Equity 10,018.40 \u2014 buffer above base capital +18.40, negligible for the one-shot rule. Liq prices (0.0102 ENA, ~1,058-1,071 BTC) are ~95-99% away \u2014 deep inside the Risk Parameter.\n\nLayer-by-layer check:\n\nENA slot 0: the pullback from the 0.21641 swing high is orderly and buyers are defending higher lows \u2014 15m closes 0.21005 \u2192 0.20891 \u2192 0.20934 \u2192 0.20936 \u2192 0.21 with the 0.20683 swing low holding well above the 0.20335 higher low and the 0.19725 base; the last two bars reclaimed 0.21038/0.21151 above the 15m EMA20 (0.21002) and EMA50 (0.20859), above the 1h EMA20/EMA50 (0.20807/0.20613), +1.77% over today's VWAP 0.20721; 15m MACD hist still slightly negative (-0.0004) but the 1h bar closed 0.21134 with the 4h at 0.21134 \u2014 a higher-low rotation within an intact uptrend, not a structure break. TP 0.226 is the plan's explicit harvest level ('Long hostages taken at 0.226 (swing high)'); the swing high 0.21641 is still ~6.6% below it \u2014 closing now at 0.2109 would bank a partial hostage mid-rotation against the plan. Manual invalidation (15m close below the 0.19725 base on expansion; hard 0.174) is nowhere near. Hold \u2014 let the hostage harvest come.\n\nBTC slots 1/3: the sweep-and-reclaim holds \u2014 15m closes 80,596 / 80,646 / 80,592 / 80,644 / 80,633 / 80,786 / 80,787 / 80,750 all hold above the zone top 80,100, the 19:00-20:00 1h bar closed 80,787 at its high, the forming 4h bar sits at 80,787 with mark 80,761 +0.73% over today's VWAP 80,162, above the 15m/1h EMAs; 15m MACD hist slightly negative (-15) with RSI 58 after the push to 80,798 \u2014 a normal consolidation under the local high, not a rejection. Both layers recovered from NAV(-) to positive on their own \u2014 the Scenario A/C hold paying off. Post-entry low 79,489 remains ~60 points above the plan's hard invalidation (79,430 intraday flush / 79,347 4h swing low); the window low is 80,431. The tripwire commitment is unchanged and mechanical: any tick with low/mark below 79,430 \u2192 close both BTC layers; below 79,347 \u2192 unconditional close, no deliberation. TPs 82,400 (supply confluence: daily EMA20 82,099 / last-week VWAP 81,905) untouched \u2014 the window high 80,798 is ~1,600 points below.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 there is no NAV(-) layer left to release; closing ENA at +102.3 now would bank a partial hostage mid-rotation against the plan's 0.226 harvest.\n\nFree-slot scan (slot 2 \u2014 logged for when capital frees; unfillable now at free_equity 2,395.01 < 2,500): GRASS 0.74465 is the board's standout \u2014 the 19:00-20:00 15m bar exploded 0.7163 \u2192 high 0.76847, closing 0.74499 on 3.03M (the window's largest by ~14x), with the follow-through bar holding 0.73876-0.74961 and mark 0.74465 above the broken 0.728 continuation trigger, above all 15m/1h/4h EMAs, +3.3% over today's VWAP 0.71625, 7d +21.2%. This is the plan's 'clean break and hold above 0.728' continuation trigger \u2014 the highest-quality new action point on the board. Caveats: the entry candle is extended (RSI 74 on 15m, one huge displacement bar) and GRASS funding (2.02e-05/h) is a mild drag; more decisively, free_equity 2,395.01 < 2,500 makes the open impossible this tick. It is logged as the FIRST priority for slot 2 the moment capital frees (e.g., after the ENA TP 0.226 fills, returning ~+290 to free_equity, or after any BTC TP/managed release). ETH 2,348.2 pushed to 2,357.2 (15m high) with a 4h bar closing 2,346.4 on 121,992, but remains below the 2,380-2,440 short supply confluence \u2014 a rally INTO the zone remains the trigger; no short, bottom-fishing forbidden by the short-only bias. XMR 603.38 reclaimed above 600 (1h closed 602.17, 15m MACD hist positive), but this remains the marginal add-trigger, not the primary 570-585 pullback entry, with the heavy XMR funding drag (~9/day on a layer) previously noted \u2014 below GRASS in priority. BTC short zone 82,000-82,500 untouched.\n\nBuffer above base capital (+18.40) is negligible \u2014 no one-shot high-conviction shot available. No violations outstanding. Action: hold all three layers \u2014 every invalidation is intact; cut only when a layer's invalidation zone is actually hit (BTC below 79,430/79,347, ENA below the 0.19725 base/0.174) or its flow thesis breaks. Next-tick priorities: (1) GRASS 0.728 break-and-hold continuation open in slot 2 the moment free_equity \u2265 2,500 (top priority \u2014 trigger already fired), (2) ENA TP 0.226 harvest, (3) BTC TP 82,400 and tripwire 79,430/79,347 (mechanical close), (4) ETH 2,380-2,440 short only on a rally into the zone, (5) XMR 570-585 pullback or confirmed 600-610 hold despite funding drag.",
       "t": "2026-10-27T20:16:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 21:13:44Z. State: slot 0 ENA long (2,500 @ 0.2026, TP 0.226) at mark 0.20888 \u2192 +77.5; slots 1/3 BTC longs (2,500 @ 80,473 / 80,206, TP 82,400) at mark 80,714 \u2192 +7.5 / +15.8 \u2014 all three layers NAV(+). Slot 2 free but free_equity 2,395.01 < RP collateral 2,500 \u2192 no open is possible this tick regardless of triggers (insufficient_free_equity); the only meaningful choices are hold vs close/TP management. Funding settled trivially at 21:00 on all three slots (~-0.03 each). Equity 9,990.59 \u2014 buffer above base capital is negative, no one-shot high-conviction shot. Liq prices (0.0102 ENA, ~1,059-1,072 BTC) are ~95-99% away \u2014 deep inside the Risk Parameter.\n\nLayer-by-layer check:\n\nENA slot 0: the pullback from the 0.21641 swing high continues in orderly rotation \u2014 15m closes 0.21046 \u2192 0.20972 \u2192 0.21151 \u2192 0.21134 \u2192 0.21038 \u2192 0.20956 \u2192 0.20904 \u2192 0.20901, with the 0.20683 swing low (4h bar low) holding well above the 0.20335 higher low and the 0.19725 base; mark 0.20888 sits just under the 15m EMA20 (0.2098) but above the 15m EMA50 (0.2084) and the 1h EMA20/EMA50 (0.20807/0.20613), +0.79% over today's VWAP 0.20724; 15m MACD hist negative but contracting (-0.00025), RSI 57 \u2014 a higher-low pullback within an intact uptrend, not a structure break. TP 0.226 is the plan's explicit harvest level ('Long hostages taken at 0.226 (swing high)'); the swing high 0.21641 is still ~7.5% below it \u2014 closing now at +77.5 would bank a partial hostage mid-rotation against the plan's ~+290 harvest. Manual invalidation (15m close below the 0.19725 base on expansion; hard 0.174) is nowhere near. Hold \u2014 let the hostage harvest come.\n\nBTC slots 1/3: the sweep-and-reclaim holds \u2014 15m closes 80,786 / 80,787 / 80,750 / 80,670 / 80,656 / 80,771 all hold above the zone top 80,100, the 20:00-21:00 1h bar closed 80,771 above it, the 4h bar closed 80,787, and mark 80,714 is +0.67% over today's VWAP 80,174, above the 15m/1h EMAs; 15m MACD hist slightly negative (-8.8) with RSI 60-65 \u2014 consolidation under the 80,798-80,800 local high, not a rejection. Both layers rotated from NAV(-) to positive on their own \u2014 the Scenario A/C hold paying off. Post-entry low 79,489 remains ~60 points above the plan's hard invalidation (79,430 intraday flush / 79,347 4h swing low); the recent 15m window low is 80,431. The tripwire commitment is unchanged and mechanical: any tick with low/mark below 79,430 \u2192 close both BTC layers; below 79,347 \u2192 unconditional close, no deliberation. TPs 82,400 (supply confluence: daily EMA20 82,099 / last-week VWAP 81,905) untouched \u2014 the window high 80,800 is ~1,600 points below.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 there is no NAV(-) layer left to release; closing any layer now would forfeit its planned harvest.\n\nFree-slot scan (slot 2 \u2014 GRASS is the standing top priority, but unfillable now at free_equity 2,395.01 < 2,500): GRASS 0.74054 \u2014 the break-and-hold trigger is now CONFIRMED: the 19:00-20:00 displacement bar (0.7163 \u2192 high 0.76847, close 0.74499 on 3.03M, ~14x volume) has been followed by four 15m closes (0.74 / 0.73745 / 0.73627 / 0.73396) and the 20:00-21:00 1h bar (close 0.73396) all holding above 0.728, mark 0.74054 above all 15m/1h/4h EMAs and +2.35% over today's VWAP 0.71708, 7d +17.9%, 24h +8.7%. This is the plan's 'clean break and hold above 0.728' continuation trigger, still valid \u2014 but free_equity 2,395.01 < 2,500 makes the open impossible; attempting it would be a violation, not an edge. It remains logged as the FIRST priority for slot 2 the moment capital frees (e.g., ENA TP 0.226 fill returning ~+290, or any BTC TP fill at 82,400). ETH 2,343.8 drifted down from the 2,357.2 high (15m closes 2,350 \u2192 2,341 \u2192 2,343.8) \u2014 still below the 2,380-2,440 short supply confluence; a rally INTO the zone remains the trigger, no short, bottom-fishing forbidden by the short-only bias. XMR 602.98: the 600-610 reclaim has strengthened (1h closes 602.17 and 605.10, two consecutive hours above 600, 15m closes 602-605, RSI 66) \u2014 the displacement-reclaim add-trigger is arguably firing, but (a) no open is possible this tick anyway, (b) it ranks below the already-confirmed GRASS trigger in priority, and (c) XMR funding 9.45e-05/h (~0.23%/day \u2248 ~5.7/day on a 2,500 layer) remains a material drag on a small-rotation long. Logged for when capital frees, behind GRASS. The primary 570-585 XMR pullback remains untouched. BTC short zone 82,000-82,500 untouched.\n\nNo violations outstanding. Action: hold all three layers \u2014 every invalidation is intact; cut only when a layer's invalidation zone is actually hit (BTC below 79,430/79,347, ENA below the 0.19725 base/0.174) or its flow thesis breaks. Next-tick priorities: (1) GRASS 0.728 break-and-hold continuation open in slot 2 the moment free_equity \u2265 2,500 (top priority \u2014 trigger confirmed and holding), (2) ENA TP 0.226 harvest, (3) BTC TP 82,400 and tripwire 79,430/79,347 (mechanical close), (4) ETH 2,380-2,440 short only on a rally into the zone, (5) XMR 600-610 displacement-hold add or 570-585 pullback despite the funding drag.",
+      "t": "2026-10-27T21:13:44Z"
     }
   ],
   "eliminated": null,
@@ -496,34 +510,34 @@
   "layers": [
     {
       "entry": 0.2026,
-      "liq": 0.01024286251595502,
-      "mark": 0.21089,
+      "liq": 0.010245475015955019,
+      "mark": 0.20888,
       "notional": 2500,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.226,
-      "unrealized": 102.29516288252705
+      "unrealized": 77.49259624876613
     },
     {
       "entry": 80473.0,
-      "liq": 1070.6988066744962,
-      "mark": 80761.0,
+      "liq": 1071.7084441744955,
+      "mark": 80714.1,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": 8.94710026965566
+      "unrealized": 7.490089843798722
     },
     null,
     {
       "entry": 80206.0,
-      "liq": 1058.3358045568893,
-      "mark": 80761.0,
+      "liq": 1059.3454420568887,
+      "mark": 80714.1,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": 17.29920454828816
+      "unrealized": 15.837343839613178
     }
   ],
   "name": "zai",
