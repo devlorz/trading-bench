@@ -389,6 +389,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 holds the SOL long from 100.42 with a limit TP at 104.0 on the profit side. Mark is about 100.98, so the position is in profit, not a hostage. Equity is about 10,049, well above the 8,500 close-all line, liq 77.89 is far away, and the daily BTC close is inside the 76k-88k band. No new entry trigger is confirmed: BTC is at 80,604 in the no-trade 80.5k-84k middle with no confirmed 4h reclaim of 80.4k, ETH at 2,350 is above the 2280-2315 flush zone with no reclaim, XRP at 1.3209 is mid-range, and BNB at 751.98 is in the 751-760 short zone but has no confirmed 4h rejection. Army 4 deploys only when another army is a hostage, which is not the case. Wait and see: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-27T17:15:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 holds the SOL long from 100.42 with a limit TP at 104.0 on the profit side. Mark is about 100.84, so it is in profit, not a hostage, and liq at 77.89 is far away. Equity is about 10,035, well above the 8,500 close-all line. Daily BTC closes remain inside the 76k-88k band, so no regime-kill close. The week has not ended, so no week-end banking. No entry trigger is confirmed. BTC at 80,583 is in the no-trade 80.5k-84k middle. ETH at 2,346 is above the 2280-2315 flush zone with no fresh reclaim setup and far from the 2,440-2,500 short zone. XRP at 1.3207 is mid-range and Army 4 is reserve, deployable only if another army is a hostage, which is not the case. BNB at 749.5 is just below the 751-760 short zone with no 4h rejection. SOL already occupies its one-per-symbol slot, and no scale-in is allowed. Wait and see: hold all slots and keep the existing SOL TP.",
+      "t": "2026-10-27T18:18:40Z"
     }
   ],
   "eliminated": null,
@@ -396,13 +410,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.88913187119199,
-      "mark": 100.98,
+      "liq": 77.890391246192,
+      "mark": 100.84,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 55.76578370842484
+      "unrealized": 41.82433778131863
     },
     null,
     null,

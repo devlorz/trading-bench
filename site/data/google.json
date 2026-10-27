@@ -405,6 +405,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00) continue to operate securely in positive NAV with active limit Take Profit orders in place. Free equity stands at $5,457.00, preserving full capital capacity for Slots 2 and 3. Reviewing unallocated watchlist candidates against weekly plan parameters reveals no active entry triggers: ETH (2,350.3) is rebounding but remains below our designated 2,400-2,450 short zone; ZEC (1,307.5) is pushing upper resistance far above the 1,175-1,195 demand pullback zone; ENA (0.21049) is cooling off after hitting our TP target and remains well above the 0.196-0.200 support cluster; and BTC and SOL remain mid-flight. In strict alignment with TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' after banking hostage profits), we maintain our disciplined stance and hold all positions.",
       "t": "2026-10-27T17:15:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Both active armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0, mark 80,583.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 100.84) are performing stably in Positive NAV with active limit Take Profit orders in place and distant liquidation thresholds. Free equity remains abundant at $5,457.00, providing full capital capacity to deploy Armies 2 and 3 when high-probability setups trigger. Reviewing unallocated watchlist candidates against weekly plan parameters reveals no active triggers: ETH (2,346.6) remains well below the planned 2,400-2,450 short entry band; ZEC (1,298.0) is consolidating near upper resistance after a strong push, far above its 1,175-1,195 demand pullback zone; ENA (0.20890) trades well above its 0.196-0.200 retest cluster; and BTC/SOL remain mid-range between entry and exit targets. In strict alignment with TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' after banking hostage profits), we maintain patience and hold all existing positions.",
+      "t": "2026-10-27T18:18:40Z"
     }
   ],
   "eliminated": null,
@@ -412,23 +426,23 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40850.67678167452,
-      "mark": 80604.0,
+      "liq": 40851.682819174515,
+      "mark": 80583.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 64.01960168373438
+      "unrealized": 62.70025758622857
     },
     {
       "entry": 100.27,
-      "liq": 52.71285699619201,
-      "mark": 100.98,
+      "liq": 52.714116371192006,
+      "mark": 100.84,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 35.404408098135434
+      "unrealized": 28.4232572055454
     },
     null,
     null

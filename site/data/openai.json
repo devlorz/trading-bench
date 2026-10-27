@@ -405,6 +405,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry setup meets the weekly plan. BTC and ETH are below their rebound-entry zones and have not produced the required 4h confirmation in-zone. XMR has not pulled back into 575\u2013585 and reclaimed 580 within its permitted entry range. All slots are empty; equity is above the close-all threshold and the weekly flatten deadline has not arrived.",
       "t": "2026-10-27T17:15:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry setup is actionable under the weekly plan. BTC and ETH are below their specified rebound zones, and XMR is above its permitted entry range. All slots are empty; the equity close-all threshold and weekly flatten deadline have not been reached. Wait for a valid setup.",
+      "t": "2026-10-27T18:18:40Z"
     }
   ],
   "eliminated": null,
