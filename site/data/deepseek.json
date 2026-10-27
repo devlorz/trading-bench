@@ -153,6 +153,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Week 2026-10-26 plan is valid; RP = collateral 2500, notional 2500 (equity/4 = 10000/4), all 4 Layers empty, free_equity 10000 >= collateral. The watchlist defines only limit-buy Action Based Strategy entries, and `open` is a market fill at RP, so entering now would require price at/below the planned entry. Current marks vs entries: BTC 79929 vs 79500 (above), ETH 2311.2 vs 2280 (above), SOL 100.42 vs 99.50 (above), XRP 1.2914 vs 1.2500 (above). Recent lows also miss the triggers: BTC 15m low ~79789 / 1h swing low 79430 (9 bars ago, recovered) / 4h swing low 79347, ETH 15m low ~2301.7 / 1h low 2295.1 / 4h low 2292.6, SOL 15m low 99.906 (latest bar, still above 99.50) / 4h swing low 99.845, XRP 15m low 1.2847 / 1h low 1.2803 / 4h low 1.2728 \u2014 none reached their 79500/2280/99.50/1.2500 levels. No Layer holds NAV(-), so no Scenario A\u2013E offset applies. Per Wait & See (soft rule 1) and the plan's limit-entry discipline (soft rule 2: follow plan 100%), hold all Layers and wait for price to trade down to the specified entry levels.",
       "t": "2026-10-26T23:18:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Week 2026-10-26 plan is valid; RP = collateral 2500, notional 2500 (equity/4 = 10000/4), all 4 Layers empty, free_equity 10000 >= collateral. The watchlist defines only limit-buy Action Based Strategy entries, and `open` is a market fill at RP, so entering now would require price at/below the planned entry. Current marks vs entries: BTC 80208 vs 79500 (above), ETH 2327.2 vs 2280 (above), SOL 100.91 vs 99.50 (above), XRP 1.3106 vs 1.2500 (above). Recent session lows also miss the triggers: BTC 15m low 79700 / 1h low 79430 (older, recovered) vs 79500; ETH 15m low 2301.7 / 1h low 2295.1 / 4h low 2292.6 vs 2280; SOL 15m low 99.906 / 1h low 99.906 / 4h swing low 99.845 vs 99.50; XRP 15m low 1.2847 / 1h low 1.2803 / 4h low 1.2728 vs 1.2500 \u2014 none reached their 79500/2280/99.50/1.2500 levels. No Layer holds NAV(-), so no Scenario A\u2013E offset applies. Per Wait & See (soft rule 1) and the plan's limit-entry discipline (soft rule 2: follow plan 100%), hold all Layers and wait for price to trade down to the specified entry levels.",
+      "t": "2026-10-27T00:52:58Z"
     }
   ],
   "eliminated": null,
