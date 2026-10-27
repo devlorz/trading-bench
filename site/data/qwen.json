@@ -657,6 +657,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "RP remains collateral 2500 and notional 500, effective leverage 0.20x, well below all max leverage. The weekly hostage policy allows Layer 1-2 only and says if NAV goes negative do not add leverage. Slots 0 and 1 are already occupied by the only allowed plan-compliant shorts. Both are still NAV-negative but liquidation prices are extremely far: BTC short entry 80451, mark 80645, unrealized about -1.21, TP 78750 not triggered; ETH short entry 2335.5, mark 2343.6, unrealized about -1.73, TP 2278 not triggered. There is no positive layer for basket offset, no TP close, and close_all is not active. Therefore hold both hostage cycles and keep existing TP orders unchanged.",
       "t": "2026-10-27T19:14:22Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80761.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2348.2,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "RP remains collateral 2500 and notional 500, giving effective leverage 0.20x. The weekly hostage policy limits deployment to Layer 1-2 and forbids adding leverage while NAV is negative. Slots 0 and 1 already hold the only allowed plan-compliant shorts, BTC and ETH; slots 2 and 3 must stay empty. Both layers are slightly NAV-negative: BTC short entry 80451, mark 80761, unrealized about -1.93; ETH short entry 2335.5, mark 2348.2, unrealized about -2.72. Liquidation prices are extremely far, TP levels 78750 and 2278 are not reached, funding impact is tiny, and close_all is not active. Under Scenario A, hold the existing hostage cycles and leave TP orders unchanged.",
+      "t": "2026-10-27T20:16:59Z"
     }
   ],
   "eliminated": null,
@@ -664,23 +685,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481695.73275667464,
-      "mark": 80645.0,
+      "liq": 481696.74259417463,
+      "mark": 80761.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -1.2057028501820983
+      "unrealized": -1.92663857503325
     },
     {
       "entry": 2335.5,
-      "liq": 13965.89640257338,
-      "mark": 2343.6,
+      "liq": 13965.92574257338,
+      "mark": 2348.2,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -1.734104046242755
+      "unrealized": -2.7189038749732
     },
     null,
     null
