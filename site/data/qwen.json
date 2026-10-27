@@ -447,6 +447,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "RP collateral 2500, notional 500. Weekly hostage policy restricts deployment to Layers 1-2 only and at most 50% of risk budget. Slots 0 and 1 are already occupied by BTC and ETH shorts, so Slots 2 and 3 must remain empty even though SOL/HYPE/DOGE are short-biased. Both positions are plan-compliant shorts and unrealized positive (BTC entry 80451 mark 79705 unrealized +4.64; ETH entry 2335.5 mark 2311.3 unrealized +5.18). Their plan TPs 78750 and 2278 are still far below current marks, so no TP exit has triggered. Liquidation prices are extremely far away and funding impact is tiny; there is no NAV-negative recovery, basket-offset, or close_all condition requiring action. Follow the plan and keep the existing short hostage cycles unchanged.",
       "t": "2026-10-27T09:25:07Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 79600.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2301.2,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current tick: RP collateral 2500, notional 500; slots 0 and 1 are occupied by plan-compliant BTC and ETH shorts, which are exactly the two Layers allowed by the weekly hostage policy (Layer 1-2 only, at most 50% deployment). Slots 2 and 3 must therefore remain empty even though SOL, HYPE and DOGE are in the short-biased watchlist. Both open layers remain unrealized positive: BTC short entry 80451, mark 79600, unrealized +5.29; ETH short entry 2335.5, mark 2301.2, unrealized +7.34. Their plan TP exits have not been reached: BTC short TP 78750 is still below the current mark/low, and ETH short TP 2278 is still below the current mark/low. Liquidation prices are far away, funding costs are tiny, and there is no NAV-negative condition, basket-offset recovery, or close_all trigger requiring a close. Therefore the TSM Principle 4 plan is to hold the existing short hostage cycles and keep the current TP orders unchanged.",
+      "t": "2026-10-27T10:23:00Z"
     }
   ],
   "eliminated": null,
@@ -454,23 +475,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481685.70040667447,
-      "mark": 79705.0,
+      "liq": 481686.6974191745,
+      "mark": 79600.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 4.636362506370337
+      "unrealized": 5.288933636623534
     },
     {
       "entry": 2335.5,
-      "liq": 13965.635183640517,
-      "mark": 2311.3,
+      "liq": 13965.664083640517,
+      "mark": 2301.2,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 5.180903446799362
+      "unrealized": 7.343181331620677
     },
     null,
     null

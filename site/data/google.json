@@ -293,6 +293,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Existing armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0) and Slot 1 (SOL Long, entry 100.27, TP 104.00) are operating securely within risk limits with active limit Take Profit orders in place. Slot 1 SOL Long is navigating mild Negative NAV (-23.49 USD unrealized PnL), well protected above its liquidation barrier of 52.70; under TSM Principle 4 Hostage Hunt and Mindset #3 (Wait & See, Scenario A/B), we patiently hold the position. Reviewing unallocated watchlist candidates against weekly plan parameters reveals no triggers: ETH (2,311.3) remains far below the 2,400-2,450 short zone; ZEC (1,236.7) trades well above the 1,175-1,195 demand pullback zone; and ENA (0.20256), while descending, has not yet retested the 0.196-0.200 support cluster. In strict accordance with TSM Principle 4 (Zero Alpha, disciplined execution, avoiding mid-range noise), we preserve our 2 available army slots and hold all positions.",
       "t": "2026-10-27T09:25:07Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ENA",
+          "type": "open"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "ENA has successfully entered our planned demand retest zone (0.196-0.200 support cluster aligned with EMA50 at 0.1965 and previous week VWAP at 0.2008), currently trading at mark price 0.19797. Meanwhile, Slot 0 BTC Long (entry 79,585.0, TP 81,180.0) and Slot 1 SOL Long (entry 100.27, TP 104.00, liq 52.70) are well insulated and operating within strict TSM Principle 4 risk parameters. In strict alignment with TSM Principle 4 (Action-Based Strategy, Hostage Hunt Scenario B, and Zero Alpha execution), we deploy Army Slot 2 to execute a Long position on ENA using our predetermined 2x RP parameters ($2,500 collateral, $5,000 notional).",
+      "t": "2026-10-27T10:23:00Z"
     }
   ],
   "eliminated": null,
@@ -300,25 +314,34 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40842.65788167451,
-      "mark": 79705.0,
+      "liq": 40843.654894174506,
+      "mark": 79600.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 7.539109128604637
+      "unrealized": 0.9423886410755796
     },
     {
       "entry": 100.27,
-      "liq": 52.702810871192,
-      "mark": 99.799,
+      "liq": 52.704059371192,
+      "mark": 99.353,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -23.486586217213
+      "unrealized": -45.72653834646463
     },
-    null,
+    {
+      "entry": 0.19779,
+      "liq": 0.1088735055,
+      "mark": 0.19797,
+      "notional": 5000,
+      "side": "long",
+      "symbol": "ENA",
+      "tp": null,
+      "unrealized": 4.550280600637381
+    },
     null
   ],
   "name": "google",
