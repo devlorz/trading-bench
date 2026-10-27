@@ -321,6 +321,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 2 ENA Long filled successfully at 0.19779 and is currently running profitably in Positive NAV (+119.50 unrealized PnL, mark 0.20252). In accordance with the weekly plan exit criteria ('Take profit into 0.215-0.225 swing high resistance (~8% to 10% move)'), we set a limit Take Profit order for Slot 2 at 0.21600 (+9.21% gain) to automatically harvest hostage profits on an extension into resistance. Slot 0 BTC Long (entry 79,585.0, TP 81,180.0) and Slot 1 SOL Long (entry 100.27, TP 104.00, liq 52.70) remain well-secured and operating within risk limits. The remaining watchlist candidates (ETH at 2,314.5 vs short zone 2,400-2,450; ZEC at 1,253.5 vs long demand zone 1,175-1,195) have not reached valid entry parameters. Adhering strictly to TSM Principle 4 (Zero Alpha, disciplined execution, Wait & See), we preserve our remaining army in Slot 3.",
       "t": "2026-10-27T11:21:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All active armies in Slot 0 (BTC Long, entry 79,585.0, TP 81,180.0), Slot 1 (SOL Long, entry 100.27, TP 104.00), and Slot 2 (ENA Long, entry 0.19779, TP 0.21600) are operating safely in positive NAV with active limit Take Profit orders in place. Free equity stands at $2,500.00, ready to deploy into Slot 3 when a valid setup triggers. Evaluating the remaining unallocated watchlist candidates shows no entry parameters met: ETH (2,325.9) remains far below the 2,400-2,450 short zone; ZEC (1,266.4) is trading well above its 1,175-1,195 demand zone; BTC (80,250.0), SOL (100.53), and ENA (0.20643) are all mid-range between entry and exit targets. In strict alignment with TSM Principle 4 (Zero Alpha, Wait & See, and Disciplined Execution), we avoid chasing price action and hold all current allocations.",
+      "t": "2026-10-27T12:32:45Z"
     }
   ],
   "eliminated": null,
@@ -328,33 +342,33 @@
   "layers": [
     {
       "entry": 79585.0,
-      "liq": 40844.65439417451,
-      "mark": 79922.0,
+      "liq": 40845.65308167451,
+      "mark": 80250.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 81180.0,
-      "unrealized": 21.172331469498022
+      "unrealized": 41.779229754350695
     },
     {
       "entry": 100.27,
-      "liq": 52.705310746192005,
-      "mark": 100.05,
+      "liq": 52.706561621192,
+      "mark": 100.53,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -10.970379974069955
+      "unrealized": 12.96499451481027
     },
     {
       "entry": 0.19779,
-      "liq": 0.108872741508166,
-      "mark": 0.202517,
+      "liq": 0.108873484024121,
+      "mark": 0.20643,
       "notional": 5000,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.216,
-      "unrealized": 119.49542444006293
+      "unrealized": 218.41346883057813
     },
     null
   ],
