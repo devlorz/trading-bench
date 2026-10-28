@@ -909,6 +909,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Current week 2026-10-26 is active and close_all is not reached. RP remains collateral 2500 and notional 500, giving 0.20x effective leverage, within all max leverage limits. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts under the hostage policy: BTC entry 80451.0, mark 80894.0, unrealized about -2.75, TP 78750 not reached, liquidation extremely far; ETH entry 2335.5, mark 2353.3, unrealized about -3.81, TP 2278 not reached, liquidation extremely far. Both held layers are NAV-negative but close_all is inactive, funding impact is negligible, and there is no positive layer or realized Hostage surplus for basket offset. The weekly policy forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty despite SOL/HYPE/DOGE being short-biased in the plan. There is no valid trigger to market close at a loss or change TP orders. Under Scenario A, hold the existing hostage cycles and wait for recovery with unchanged TP orders.",
       "t": "2026-10-28T07:17:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81180.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2365.1,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current RP is fixed for the week: collateral 2500 and notional 500 per layer, giving 0.20x effective leverage, far below all max leverage limits. Only slots 0 and 1 are occupied, both by permitted Layer 1-2 shorts: BTC entry 80451.0, mark 81180.0, unrealized about -4.53, TP 78750 not reached, liquidation extremely far; ETH entry 2335.5, mark 2365.1, unrealized about -6.34, TP 2278 not reached, liquidation extremely far. free_equity equals the remaining collateral and there is no realized Hostage surplus for basket offset. close_all is not active. The weekly hostage policy explicitly limits deployment to Layer 1-2 and forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty despite SOL, HYPE, and DOGE being in the watchlist. No TP is triggered, no liquidation occurred, and no positive layer exists to close for basket offset. Under Scenario A, hold the existing hostage cycles and leave TP orders unchanged.",
+      "t": "2026-10-28T08:21:52Z"
     }
   ],
   "eliminated": null,
@@ -916,23 +937,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481707.8649191746,
-      "mark": 80894.0,
+      "liq": 481708.8609028802,
+      "mark": 81180.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -2.753228673353967
+      "unrealized": -4.530708132900772
     },
     {
       "entry": 2335.5,
-      "liq": 13966.24072207354,
-      "mark": 2353.3,
+      "liq": 13966.270224573542,
+      "mark": 2365.1,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -3.8107471633483585
+      "unrealized": -6.336972810961231
     },
     null,
     null
