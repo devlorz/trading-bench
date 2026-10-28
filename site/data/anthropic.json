@@ -571,6 +571,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 holds the SOL long (entry 100.42, mark 102.09) with TP 104.0 already set on the profit side. It is not a hostage and not a NAV(-) position. Equity of about 10,158 is well above the 8,500 close-all line, liquidation (about 77.9) is far away, and the BTC daily close is inside the 76k-88k regime band. The week has not ended, so no week-end banking applies. No new entry trigger is confirmed: BTC (about 80.9k) is in the 80.5k-84k no-trade middle with no wick into the 79.7-80.4k long zone or the 84.8-85.6k short zone. ETH (about 2,354) is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP (1.328) is mid-range. BNB (745.2) had a rejection in the 751-760 short zone, but Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, and SOL is in profit, so that condition is not met. Wait and see: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-28T06:26:22Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 holds the SOL long from 100.42 at mark 101.96, in profit and not a hostage, with TP 104.0 already set on the profit side. Equity of about 10,145 is well above the 8,500 close-all line, liquidation (about 77.9) is far away, and the BTC daily close is inside the 76k-88k regime band. The week has not ended, so no week-end banking applies. No new entry is confirmed: BTC is in the 80.5k-84k no-trade middle, ETH is outside the 2,280-2,315 flush and the 2,440-2,500 short zone, XRP is mid-range, and BNB's 751-760 wick rejection does not qualify because Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, and SOL is in profit. SOL already holds its one-per-symbol slot and scale-in is forbidden. Wait and see: hold all slots and keep the existing SOL TP.",
+      "t": "2026-10-28T07:17:32Z"
     }
   ],
   "eliminated": null,
@@ -578,13 +592,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.90560724619199,
-      "mark": 102.09,
+      "liq": 77.90688124619199,
+      "mark": 101.96,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 166.30153355905216
+      "unrealized": 153.3559051981669
     },
     null,
     null,
