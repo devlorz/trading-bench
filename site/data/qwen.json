@@ -1203,6 +1203,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "The weekly plan is still active and close_all has not been reached. RP is fixed at collateral 2500 and notional 500 per layer, giving effective leverage 0.20x, far below every symbol's max leverage. Slots 0 and 1 contain the only permitted Layer 1-2 shorts: BTC short entry 80451, mark 81251, unrealized negative, plan TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2357.7, unrealized negative, plan TP 2278 not reached, liquidation extremely far. The combined open NAV is negative, so the hostage policy forbids adding leverage or opening additional armies. There is no realized Hostage surplus for basket offset and no profitable layer to close for recovery. Under Scenario A and wait-and-see, hold both hostage cycles and keep plan TP orders unchanged.",
       "t": "2026-10-28T22:15:28Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81314.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2360.8,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "The weekly plan is active and close_all has not been reached. RP remains fixed at collateral 2500 and notional 500, giving effective leverage 0.20x, far below every symbol's max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts: BTC short entry 80451, mark 81314, unrealized negative, TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2360.8, unrealized negative, TP 2278 not reached, liquidation extremely far. Combined open NAV is negative, so the hostage policy forbids adding leverage or opening additional armies. There is no realized Hostage surplus in free_equity beyond reserve collateral for basket offset, and both open layers are losing, so closing one would realize loss without plan trigger. Under Scenario A and wait-and-see, hold both hostage cycles and keep plan TP orders unchanged.",
+      "t": "2026-10-28T23:14:23Z"
     }
   ],
   "eliminated": null,
@@ -1210,23 +1231,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481723.0487153801,
-      "mark": 81251.0,
+      "liq": 481724.0643903801,
+      "mark": 81314.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -4.971970516214839
+      "unrealized": -5.3635131943667576
     },
     {
       "entry": 2335.5,
-      "liq": 13966.65771508595,
-      "mark": 2357.7,
+      "liq": 13966.66470398003,
+      "mark": 2360.8,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -4.752729608220899
+      "unrealized": -5.4163990580175945
     },
     null,
     null
