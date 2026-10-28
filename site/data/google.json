@@ -545,6 +545,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 101.67) continues to advance smoothly in Positive NAV (+69.81 unrealized PnL) with an active limit Take Profit order in place and a distant liquidation floor at 52.73. Free equity remains ample at $8,052.21, preserving full capacity across Slots 0, 2, and 3 when qualified setups emerge. Evaluating all unallocated watchlist symbols against the Weekly Plan entry criteria: BTC (80,927.0) remains mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (2,357.0) trades below its designated 2,400-2,450 short zone; ZEC (1,311.8) continues to hover near resistance far above its 1,175-1,195 demand zone; and ENA (0.20731) remains elevated above its 0.196-0.200 support cluster. In strict adherence to TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' after banking hostage profits), we maintain tactical patience and hold our current stance.",
       "t": "2026-10-28T03:19:26Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 101.83) is progressing comfortably in Positive NAV (+77.79 unrealized PnL) with an active limit Take Profit target in place and an insulated liquidation floor at 52.73. Free equity stands strong at $8,052.21, maintaining readiness across Slots 0, 2, and 3. Evaluating unallocated watchlist candidates against the Weekly Plan entry parameters: BTC (80,953.0) remains mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (2,354.8) trades below the designated 2,400-2,450 short zone; ZEC (1,322.0) is pressing local highs far above the 1,175-1,195 demand pullback zone; and ENA (0.20592) is holding above the 0.196-0.200 support cluster. Following TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' after harvesting hostage profits), we remain patient and hold all current positions without chasing.",
+      "t": "2026-10-28T04:18:54Z"
     }
   ],
   "eliminated": null,
@@ -553,13 +567,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.725510371192,
-      "mark": 101.67,
+      "liq": 52.72678524619201,
+      "mark": 101.83,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 69.81150892590036
+      "unrealized": 77.7899670888602
     },
     null,
     null

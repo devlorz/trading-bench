@@ -825,6 +825,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Current RP is collateral 2500 and notional 10000, effective leverage 4.00x, below max leverage for BTC and ETH. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts: BTC entry 95550.0, mark 95591.5, unrealized about -0.54, TP 94150 not touched and liquidation extremely far; ETH entry 2725.5, mark 2737.8, unrealized about -5.58, TP 2702 not touched and liquidation extremely far. Both held shorts are NAV-negative, but close_all is not active and there is no positive layer for basket offset. The weekly hostage policy limits deployment to Layer 1-2 only and says if NAV goes negative, do not add leverage; therefore slots 2 and 3 must remain empty and SOL/HYPE/DOGE re-entry armies are not opened. Under Scenario A, hold the existing hostage cycles and keep TP orders unchanged.",
       "t": "2026-10-28T03:19:26Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80953.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2354.84,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current state: two occupied layers are permitted Layer 1-2 shorts, both NAV-negative. BTC slot0: entry 80451, mark 80953, unrealized -3.12, TP 78750 far, liq 481704 extremely far. ETH slot1: entry 2335.5, mark 2354.84, unrealized -4.14, TP 2278 far, liq 13966 extremely far. RP is collateral 2500 and notional 500, effective leverage 0.20x. close_all is not active. The weekly hostage policy restricts deployment to Layer 1-2 only and says that while NAV is negative, do not add leverage. Slots 2 and 3 must remain empty, and opening new positions would add exposure rather than reduce the negative NAV constraint. No TP or liquidation has occurred, funding impact is negligible, and there is no positive layer available for basket offset. Therefore Scenario A applies: hold the existing hostage cycles, keep current TP orders unchanged, and wait for recovery without adding leverage.",
+      "t": "2026-10-28T04:18:54Z"
     }
   ],
   "eliminated": null,
@@ -832,23 +853,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481703.8176066746,
-      "mark": 80927.0,
+      "liq": 481704.8314316746,
+      "mark": 80953.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -2.9583224571478293
+      "unrealized": -3.1199114989248113
     },
     {
       "entry": 2335.5,
-      "liq": 13966.13136882338,
-      "mark": 2357.0,
+      "liq": 13966.16086757338,
+      "mark": 2354.84,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -4.602868764718476
+      "unrealized": -4.140441019053767
     },
     null,
     null
