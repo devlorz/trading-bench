@@ -566,6 +566,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 2026-10-28T04:18:54Z. Week 2026-10-26 plan valid; RP stays collateral 2500 / notional 2500 (mid-week, Slots not all-occupied, no carried plan, so no Reallocation). Layers: Slot 0 = SOL long (entry 99.691, mark 101.83, unrealized +53.64, liq ~2.56, TP 109.0 set per plan), Slot 1 = BTC long (entry 79924, mark 80953, unrealized +32.19, liq ~1052, TP 84500 set per plan). Slots 2 and 3 empty; free_equity 5000 >= collateral 2500. Both open Layers are positive (no NAV(-)), so no Scenario A-E basket offset/closing applies; per Wait & See (soft rule 1) and plan discipline (soft rule 2: follow plan 100%, Zero Alpha) hold both toward their targets. Funding settled at 04:00 UTC with small debits (SOL -0.0320, BTC -0.0317), only marginally reducing collateral and pulling liq price closer; nothing actionable. Remaining watchlist limit-buy triggers vs current marks and recently traded lows: ETH 2280 - mark 2354.8, recent lows 15m 2340.0 / 1h 2339.2 / 4h swing 2296.2, never through 2280, not triggered; XRP 1.2500 - mark 1.3312, recent lows 15m 1.3258 / 1h 1.2906 / 4h swing 1.2728, never through 1.2500, not triggered. BTC and SOL are already open with their plan TPs in place (neither target reached: SOL high ~102.39 vs 109.0, BTC high ~81281 vs 84500). No new entry condition is met, no TP change is required, and no stop orders exist per the Rules (liquidation-only risk model). Action: hold.",
       "t": "2026-10-28T04:18:54Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 2026-10-28T05:16:31Z. Week 2026-10-26 plan valid; RP stays collateral 2500 / notional 2500 (mid-week, Slots not all-occupied, Week 1 has no carried plan, so no Reallocation). Layers: Slot 0 = SOL long (entry 99.691, mark 101.89, unrealized +55.15, liq ~2.56, TP 109.0 set per plan), Slot 1 = BTC long (entry 79924, mark 80908, unrealized +30.78, liq ~1053, TP 84500 set per plan). Slots 2 and 3 empty; free_equity 5000 >= collateral 2500. Both open Layers are positive (no NAV(-)), so no Scenario A-E basket offset/closing applies; per Wait & See (soft rule 1) and plan discipline (soft rule 2: follow plan 100%, Zero Alpha) hold both toward their targets. Funding settled at 05:00 UTC with small debits (SOL -0.0320, BTC -0.0317), only marginally reducing collateral and pulling liq price closer; nothing actionable. Remaining watchlist limit-buy triggers vs current marks and recently traded lows: ETH 2280 - mark 2352.7, recent lows 15m 2351.4 / 1h 2340.0 / 4h swing 2281.5, never through 2280, not triggered; XRP 1.2500 - mark 1.3279, recent lows 15m 1.3258 / 1h 1.2906 / 4h swing 1.2728, never through 1.2500, not triggered. BTC and SOL are already open with their plan TPs in place (neither target reached: SOL high ~102.39 vs 109.0, BTC high ~81281 vs 84500). No new entry condition is met, no TP change is required, and no stop orders exist per the Rules (liquidation-only risk model). Action: hold.",
+      "t": "2026-10-28T05:16:31Z"
     }
   ],
   "eliminated": null,
@@ -573,23 +587,23 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.5632552086919986,
-      "mark": 101.83,
+      "liq": 2.5645300836919915,
+      "mark": 101.89,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": 53.64074991724418
+      "unrealized": 55.14539928378685
     },
     {
       "entry": 79924.0,
-      "liq": 1052.1503124999872,
-      "mark": 80953.0,
+      "liq": 1053.1623874999932,
+      "mark": 80908.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": 32.1868274861118
+      "unrealized": 30.77924027826435
     },
     null,
     null
