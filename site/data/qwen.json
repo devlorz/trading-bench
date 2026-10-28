@@ -930,6 +930,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Current RP is fixed for the week: collateral 2500 and notional 500 per layer, giving 0.20x effective leverage, far below all max leverage limits. Only slots 0 and 1 are occupied, both by permitted Layer 1-2 shorts: BTC entry 80451.0, mark 81180.0, unrealized about -4.53, TP 78750 not reached, liquidation extremely far; ETH entry 2335.5, mark 2365.1, unrealized about -6.34, TP 2278 not reached, liquidation extremely far. free_equity equals the remaining collateral and there is no realized Hostage surplus for basket offset. close_all is not active. The weekly hostage policy explicitly limits deployment to Layer 1-2 and forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty despite SOL, HYPE, and DOGE being in the watchlist. No TP is triggered, no liquidation occurred, and no positive layer exists to close for basket offset. Under Scenario A, hold the existing hostage cycles and leave TP orders unchanged.",
       "t": "2026-10-28T08:21:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81467.7,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2369.7,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "RP remains fixed at collateral 2500 and notional 500 per Layer, giving 0.20x effective leverage, far below every max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts: BTC entry 80451.0, mark 81467.7, unrealized about -6.32, TP 78750 not reached, liquidation extremely far; ETH entry 2335.5, mark 2369.7, unrealized about -7.32, TP 2278 not reached, liquidation extremely far. Funding is negligible. The hostage policy restricts deployment to Layer 1-2 and forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty. There is no positive layer for basket offset, no TP or liquidation trigger, and close_all is not active. Under Scenario A, hold the existing hostage cycles and leave TP orders unchanged.",
+      "t": "2026-10-28T09:18:05Z"
     }
   ],
   "eliminated": null,
@@ -937,23 +958,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481708.8609028802,
-      "mark": 81180.0,
+      "liq": 481709.87927788025,
+      "mark": 81467.7,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -4.530708132900772
+      "unrealized": -6.318753029794515
     },
     {
       "entry": 2335.5,
-      "liq": 13966.270224573542,
-      "mark": 2365.1,
+      "liq": 13966.299824151201,
+      "mark": 2369.7,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -6.336972810961231
+      "unrealized": -7.321772639691676
     },
     null,
     null
