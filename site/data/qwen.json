@@ -958,23 +958,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481709.87927788025,
-      "mark": 81467.7,
+      "liq": 481710.8983403802,
+      "mark": 81521.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -6.318753029794515
+      "unrealized": -6.650010565437347
     },
     {
       "entry": 2335.5,
-      "liq": 13966.299824151201,
-      "mark": 2369.7,
+      "liq": 13966.3294804012,
+      "mark": 2371.3,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -7.321772639691676
+      "unrealized": -7.664311710554524
     },
     null,
     null
