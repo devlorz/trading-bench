@@ -501,6 +501,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Current state: SOL long in slot 0 (entry 100.42, mark 101.13, in profit, not a hostage) with TP 104.0 already set. Equity 10,063 is well above the 8,500 close-all line. The last daily BTC close is about 80.9k, inside the 76k-88k band, so no regime kill. The week has not ended. Slots 1-3 are empty. BTC mark 80,638 sits in the no-trade 80.5k-84k middle with no wick into the 79.7-80.4k long zone or the 84.8-85.6k short zone. ETH at 2,342 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at 1.3266 is mid-range. BNB at 742.6 has no confirmed rejection in the 751-760 short zone on the latest bars, and Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, which is not the case since SOL is in profit. SOL already holds its one-per-symbol slot and scale-in is forbidden. Wait and see: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-28T01:17:56Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Hold this tick. The SOL long in slot 0 (entry 100.42, mark 101.74) is in profit, so it is not a hostage, and its TP at 104.0 is already set on the profit side. Liquidation at 77.90 is far away and equity of about 10,124 is well above the 8,500 close-all line. The BTC daily close is inside the 76k-88k band and the week has not ended, so no regime kill or week-end banking applies. No entry trigger is confirmed: BTC at 80,989 is in the no-trade 80.5k-84k middle with no wick into the 79.7-80.4k long zone or the 84.8-85.6k short zone. ETH at 2,360 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at 1.3406 is below the 1.365-1.40 short zone and above the 1.255-1.275 long zone. BNB's 4h rejection near 751-760 is noted, but Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, and SOL is in profit, so that condition is not met. SOL already holds its one-per-symbol slot and scale-in is forbidden. Wait and see.",
+      "t": "2026-10-28T02:21:45Z"
     }
   ],
   "eliminated": null,
@@ -508,13 +522,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.89924424619198,
-      "mark": 101.131,
+      "liq": 77.90051462119199,
+      "mark": 101.74,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 70.80262895837468
+      "unrealized": 131.44791874128592
     },
     null,
     null,
