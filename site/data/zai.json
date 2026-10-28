@@ -888,6 +888,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 21:14:12Z. State: slot 0 XMR long (2,500 @ 604.71, TP 620) at mark 600.02 \u2192 NAV(-) \u2248 -18.6; slot 1 BTC long (2,500 @ 80,473, TP 82,400) at 81,353 \u2192 +27.3; slot 3 BTC long (2,500 @ 80,206) \u2192 +35.8; slot 2 empty, free_equity 2,339.07 < 2,500. Funding settled trivially at 21:00. Liq prices (\u224860.8 XMR, ~1,084-1,096 BTC) are 96-99% away \u2014 deep inside the Risk Parameter.\n\nXMR slot 0 \u2014 the mechanical cut trigger FIRED. The committed standard, restated verbatim at 17:15, 18:19, 19:14 and 20:17, is 'ANY completed 1h close below 600 = cut slot 0, no deliberation.' Since the 20:17 decision, the 20:00-21:00 1h bar has completed: it opened 602.13, pushed to 605.42, swept down to 595.70 and CLOSED 599.61 \u2014 BELOW the 600 tripwire. This is the completed 1h close the standard requires, not an intrabar probe: the prior probes (597.67, 597.79 lows) were wicks that closed at/above 600, but this bar closed under the line. Additional confirmation of thesis decay: 15m closes have slid 602.13 \u2192 601.34 \u2192 598.01 \u2192 596.75 \u2192 599.61, all below the 15m EMA20 (600.96)/EMA50 (602.68), 15m MACD hist negative, mark 600.02 is -0.76% under today's VWAP 604.6, and the flow that justified the entry has deteriorated (7d -2.79%, 24h -0.91%). The reclaim thesis that anchored the 16:18 entry (displacement 1h close 604.03 above 600) is now broken on the exact standard I pre-committed to. Per the plan's cut clause ('cut only when the layer's invalidation zone is actually hit or the flow thesis breaks') and TSM Principle 4 rule 2 (obey the pre-committed trigger 100%, no ego-driven second-guessing), close slot 0 at market (taker fee), realizing \u2248 -19.7 \u2014 inside the Risk Parameter design, versus the 545 hard invalidation (~-247 per layer). Slot 0 frees; the returned capital (~2,480) plus existing free equity lifts free_equity to ~4,819 \u2265 2,500 for the next qualifying trigger.\n\nBTC slots 1/3 \u2014 thesis intact, riding the planned rotation: 1h closes 81,003 \u2192 81,579 \u2192 81,316 with mark 81,353, well above the zone top 80,100 and the mechanical tripwires 79,430/79,347 (~1,900+ points below). The 81,780/81,804 probe rejected only at the lower edge of the 82,000-82,500 supply confluence (daily EMA20 82,099 / last-week VWAP 81,905) \u2014 rotation toward the plan's harvest level, not a thesis break. TPs 82,400 not hit (recent 1h high 81,780) \u2014 hold both layers and let the maker TPs harvest the planned ~2,000-point hostage. No NEW BTC layer: 81,353 is mid-range; the plan forbids chasing; two layers already carry the thesis.\n\nSlot 2 scan (one open possible after the XMR close frees capital, but no qualifying action point): (1) ENA 0.21214 \u2014 the strongest mover (24h +1.38%, 15m closes stair-stepping 0.19865 \u2192 0.20386 \u2192 0.20932 \u2192 0.2119, RSI 75.9), but price is now ABOVE the plan's 0.195-0.206 primary long zone; the committed re-entry standard is a higher-low hold AT the EMA20/EMA50 confluence INSIDE the zone \u2014 buying 0.212 is chasing an extended candle mid-move, exactly what the plan forbids ('No entries on extended candles \u2014 wait for rotation'). (2) ETH 2,360.8 \u2014 the 23:00-window 1h bar wicked to 2,391, tagging only the lower edge of the 2,380-2,440 short supply, and closed 2,360 back below the zone; the pre-committed standard is a genuine rally INTO the confluence (~2,400+ / last-week VWAP 2,402), and shorting the post-rejection mark is chasing the decline mid-range \u2014 no short. (3) GRASS 0.69456 \u2014 both triggers stale: the 0.728 break-and-hold failed long ago (1h closes all below, 15m sliced to 0.6852 before bouncing) and the 0.63-0.66 pullback is untouched; knife-catching forbidden; 7d -1.91%. (4) XMR \u2014 just cut; re-entry requires a FRESH displacement reclaim (a new 1h close back above 600) or the 570-585 pullback \u2014 the cut bar closing 599.61 means no fresh reclaim exists; no immediate re-entry.\n\nBasket offset (Scenario D/E): superseded \u2014 the cut itself is the release; no positive layer needs harvesting.\n\nBuffer above base capital is negative (9,876 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding. Action: close slot 0 (XMR) on the mechanical trigger; hold slots 1/3 (BTC) with TPs untouched; slot 2 stays reserved. Next-tick priorities: (1) BTC TP 82,400 harvest or mechanical close below 79,430/79,347; (2) XMR only on a FRESH 1h close back above 600 or the 570-585 pullback; (3) ENA only on a rotation back into 0.195-0.206 with a higher-low hold at the EMA confluence and flow stabilization; (4) GRASS 0.63-0.66 pullback or fresh 0.728 break-and-hold; (5) ETH short only on a genuine rally into 2,400+ supply.",
       "t": "2026-10-28T21:14:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": "long",
+          "slot": 3,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 22:15:28Z. State: slot 1 BTC long (2,500 @ 80,473, TP 82,400) at mark 81,251 \u2192 +24.2; slot 3 BTC long (2,500 @ 80,206, TP 82,400) \u2192 +32.6; both NAV(+), net \u2248 +56.7, equity 9,868.84. Slots 0/2 free, free_equity 4,817.49 \u2265 2,500 \u2192 ONE open is possible; the XMR cut at 21:14 returned ~2,478 as designed. Funding settled trivially at 22:00 (~-0.03 each). Liq prices (~1,084\u20131,097 BTC) are ~96\u201399% away \u2014 deep inside the Risk Parameter.\n\nBTC slots 1/3 \u2014 hold: thesis intact and riding the planned rotation toward the 82,000\u201382,500 supply confluence (daily EMA20 82,099 / last-week VWAP 81,905). 1h closes 81,579 \u2192 81,316 \u2192 81,341 and 15m closes 81,316 \u2192 81,358 \u2192 81,180 \u2192 81,226 \u2192 81,341 with mark 81,251 \u2014 consolidation below supply, not a break of structure. TP 82,400 not hit (recent 1h high 81,440 / earlier 81,780). Mechanical tripwires unchanged and ~1,800+ points below: any tick with low/mark below 79,430 \u2192 close both; below 79,347 \u2192 unconditional close. No discretionary early exit inside the defined Risk Parameter \u2014 the plan harvests at the TP, not at +0.3% marks. No NEW BTC layer: 81,251 is mid-range (above the zone top 80,100, below the 15m EMAs ~81,040\u201381,132 it is reclaiming but the plan forbids mid-range chasing); two layers already carry the thesis; a fresh sweep-and-reclaim of 79,700\u201380,100 would be the next trigger only if a slot frees.\n\nFree-slot scan (one open possible; candidates checked, none qualifies):\n(1) XMR 599.47 \u2014 NO fresh reclaim: the committed re-entry standard is a NEW 1h close back above 600 or the 570\u2013585 pullback. Since the 21:14 cut, the completed 1h closes are 599.61 (the cut bar) and 599.43 \u2014 both BELOW 600; 15m closes 599.61 \u2192 600.33 \u2192 598.5 \u2192 598.17 \u2192 599.47 straddle the line under the 15m EMA50 (602.11), MACD hist negative, -0.84% under today's VWAP 604.53, 7d -4.21%. The 570\u2013585 pullback is untouched (15m low 595.7). Buying 599.5 front-runs an unconfirmed reclaim \u2014 prediction, not action.\n(2) ENA 0.21025 \u2014 ABOVE its 0.195\u20130.206 primary long zone with 15m RSI 75.5 after the stair-step 0.20932 \u2192 0.2119 \u2192 0.21087 \u2192 0.2111; the committed re-entry is a higher-low hold AT the EMA20/EMA50 confluence INSIDE the zone with flow stabilization \u2014 the flow thesis remains inverted (7d -2.89%, 24h -2.84%). Buying 0.210 is chasing an extended candle mid-move, exactly what the plan forbids; the 0.194 failed-breakout short is nowhere near.\n(3) ETH 2,357.7 \u2014 the 20:00\u201320:15 15m wick to 2,391 tagged only the lower edge of the 2,380\u20132,440 short supply and the 20:00\u201321:00 1h bar closed 2,360.1 back below it; price has since faded to 2,357 (1h close 2,363.7, straddling today's VWAP 2,355.3). The pre-committed standard is a genuine rally INTO the confluence (~2,400+ / last-week VWAP 2,402) \u2014 shorting the post-rejection mark now is chasing the decline mid-range, not shorting into supply; bottom-fishing the bounce is forbidden by the short-only bias.\n(4) GRASS 0.68036 \u2014 both triggers stale and deteriorating: the 0.728 break-and-hold failed long ago (1h closes 0.69554 \u2192 0.69286, 4h MACD hist just turned negative), and the 0.63\u20130.66 pullback is still untouched (the latest 15m bar broke down to 0.67967 on the window's heaviest volume, 231,951 vs the ~10\u201335k norm \u2014 distribution, not absorption). Knife-catching the breakdown is forbidden; -7.0% 24h, -5.98% under today's VWAP.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no NAV(-) layer exists; both held layers are in profit with TPs resting at the plan's harvest level.\n\nBuffer above base capital is negative (9,868.84 < 10,000) \u2014 no one-shot high-conviction buffer shot. No violations outstanding. Action: hold slots 1/3 (BTC) with TPs untouched; slots 0/2 stay in reserve per Wait & See. Next-tick priorities: (1) BTC TP 82,400 harvest or mechanical close below 79,430/79,347; (2) XMR only on a FRESH completed 1h close back above 600 or the 570\u2013585 pullback; (3) ENA only on a rotation back into 0.195\u20130.206 with a higher-low hold AT the EMA confluence and flow stabilization; (4) GRASS 0.63\u20130.66 pullback or a fresh 0.728 break-and-hold; (5) ETH short only on a genuine rally into 2,400+ supply.",
+      "t": "2026-10-28T22:15:28Z"
     }
   ],
   "eliminated": null,
@@ -896,24 +917,24 @@
     null,
     {
       "entry": 80473.0,
-      "liq": 1095.9881528801052,
-      "mark": 81353.3,
+      "liq": 1097.0049278801016,
+      "mark": 81251.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": 27.34768183117328
+      "unrealized": 24.169597256222584
     },
     null,
     {
       "entry": 80206.0,
-      "liq": 1083.6251507624693,
-      "mark": 81353.3,
+      "liq": 1084.6419257624802,
+      "mark": 81251.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": 35.76104032117307
+      "unrealized": 32.57237613146149
     }
   ],
   "name": "zai",
