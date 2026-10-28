@@ -1077,6 +1077,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Weekly plan remains active and close_all is not reached. RP is fixed at collateral 2500 and notional 500 per layer, giving 0.20x effective leverage, far below every symbol's max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts under the hostage policy. BTC short entry 80451.0, mark 80545.0, unrealized slightly negative, liquidation extremely far, TP 78750 not reached. ETH short entry 2335.5, mark 2333.16/2333.2, unrealized slightly positive, liquidation extremely far, TP 2278 not reached. Net NAV is approximately flat, and funding impact is negligible. There is no meaningful realized Hostage surplus beyond the reserve collateral to justify basket offset, and closing ETH for tiny profit would pay taker fees while opening a replacement scalp lacks a clear action-based trigger and does not improve recovery. Slots 2 and 3 remain unused because the policy limits deployment to Layer 1-2 while both active layers are occupied. Under Scenario A, hold the existing hostage cycles and keep TPs unchanged.",
       "t": "2026-10-28T16:18:27Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80463.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2331.8,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Weekly plan is still active and close_all is not reached. RP remains fixed at collateral 2500 and notional 500 per layer, effective leverage 0.20x, far below all symbol max leverage. Slots 0 and 1 are occupied by BTC and ETH shorts. Under the hostage policy, only Layers 1-2 may be deployed, so slots 2 and 3 must remain empty despite SOL/HYPE/DOGE being available in the watchlist. BTC short is only minimally NAV-negative (mark 80463.0 vs entry 80451.0, unrealized -0.0746) with liquidation extremely far and plan TP 78750 not reached. ETH short is slightly NAV-positive (mark 2331.8 vs entry 2335.5, unrealized +0.7921), also with liquidation extremely far and plan TP 2278 not reached. There is no meaningful realized Hostage surplus beyond reserve collateral to justify basket offset, and closing ETH for tiny profit would pay fees without a plan trigger. Under Scenario A and the hostage policy, hold the existing hostage cycles and keep TP orders unchanged.",
+      "t": "2026-10-28T17:15:04Z"
     }
   ],
   "eliminated": null,
@@ -1084,23 +1105,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481716.96519038023,
-      "mark": 80545.0,
+      "liq": 481717.97279038024,
+      "mark": 80463.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -0.5842065356552436
+      "unrealized": -0.07457955774322259
     },
     {
       "entry": 2335.5,
-      "liq": 13966.504992946531,
-      "mark": 2333.16,
+      "liq": 13966.524742729032,
+      "mark": 2331.8,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 0.5009633911368327
+      "unrealized": 0.7921216013701173
     },
     null,
     null
