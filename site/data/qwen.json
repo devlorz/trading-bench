@@ -1161,6 +1161,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Weekly plan remains active and close_all has not been reached. RP is fixed at collateral 2500 and notional 500 per layer, giving 0.20x effective leverage, far below every symbol max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts under the hostage policy: BTC short entry 80451.0, mark 81256.0, unrealized negative, TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2364.2, unrealized negative, TP 2278 not reached, liquidation extremely far. Both layers are NAV-negative, no realized Hostage surplus exists for basket offset, and the policy forbids adding leverage while NAV is negative. Funding is negligible and no plan trigger forces a close or TP change. Under Scenario A and wait-and-see, hold both hostage cycles and keep plan TP orders unchanged.",
       "t": "2026-10-28T20:17:09Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81353.3,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2360.8,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Weekly plan remains active and close_all has not been reached. RP is fixed at collateral 2500 and notional 500 per layer, giving 0.20x effective leverage, far below every symbol's max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts under the hostage policy: BTC short entry 80451.0, mark 81353.3, unrealized negative, TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2360.8, unrealized negative, TP 2278 not reached, liquidation extremely far. The combined open NAV is negative, so the hostage policy forbids adding leverage or opening additional layers, and slots 2 and 3 must remain empty. There is no realized Hostage surplus beyond reserve collateral to support basket offset, and no profitable layer to close for recovery. Funding is negligible and no plan trigger forces a close or TP change. Under Scenario A and wait-and-see, hold both hostage cycles and keep plan TP orders unchanged.",
+      "t": "2026-10-28T21:14:12Z"
     }
   ],
   "eliminated": null,
@@ -1168,23 +1189,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481721.0154903802,
-      "mark": 81256.0,
+      "liq": 481722.0319403801,
+      "mark": 81353.3,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -5.003045331941181
+      "unrealized": -5.607761245975829
     },
     {
       "entry": 2335.5,
-      "liq": 13966.613102729032,
-      "mark": 2364.2,
+      "liq": 13966.642603979031,
+      "mark": 2360.8,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -6.144294583600903
+      "unrealized": -5.4163990580175945
     },
     null,
     null
