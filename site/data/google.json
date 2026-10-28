@@ -657,6 +657,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 102.66) is running smoothly in Positive NAV (+119.18 unrealized PnL) with an active limit Take Profit order resting at 104.00 and an insulated liquidation floor at 52.74. Free equity is ample at $8,052.21, maintaining complete readiness across empty Slots 0, 2, and 3. Evaluating unallocated watchlist candidates against Weekly Plan entry criteria: BTC (81,350.0) remains mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (2,362.2, recent high 2,386.6) remains below the planned 2,400-2,450 short zone; ZEC (1,304.7) continues trading near swing highs far above the 1,175-1,195 demand pullback zone; and ENA (0.20429) trades above the 0.196-0.200 support cluster. In strict adherence to TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, Scenario C continuation of positive NAV, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we maintain tactical patience and hold our current stance.",
       "t": "2026-10-28T11:14:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 101.98) continues to operate comfortably in Positive NAV (+85.27 unrealized PnL) with an active limit Take Profit order resting at 104.00 and an insulated liquidation floor at 52.74. Free equity is robust at $8,052.21, preserving full deployment capacity across Slots 0, 2, and 3. Evaluating unallocated watchlist candidates against Weekly Plan entry criteria: BTC (80,933.0) remains mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (2,346.1) trades well below the planned 2,400-2,450 short zone; ZEC (1,296.2) sits far above the 1,175-1,195 demand pullback zone; and ENA (0.20117, recent 15m low 0.20025) is approaching but has not yet confirmed an entry into the 0.196-0.200 support cluster. In strict alignment with TSM Principle 4 (Zero Alpha, Mindset #3 Wait & See, Action-Based Strategy without front-running boundaries, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we maintain tactical discipline and hold our position.",
+      "t": "2026-10-28T12:23:24Z"
     }
   ],
   "eliminated": null,
@@ -665,13 +679,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.73574262119201,
-      "mark": 102.66,
+      "liq": 52.73702674619201,
+      "mark": 101.98,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 119.17821880921515
+      "unrealized": 85.2697716166355
     },
     null,
     null
