@@ -951,6 +951,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "RP remains fixed at collateral 2500 and notional 500 per Layer, giving 0.20x effective leverage, far below every max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts: BTC entry 80451.0, mark 81467.7, unrealized about -6.32, TP 78750 not reached, liquidation extremely far; ETH entry 2335.5, mark 2369.7, unrealized about -7.32, TP 2278 not reached, liquidation extremely far. Funding is negligible. The hostage policy restricts deployment to Layer 1-2 and forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty. There is no positive layer for basket offset, no TP or liquidation trigger, and close_all is not active. Under Scenario A, hold the existing hostage cycles and leave TP orders unchanged.",
       "t": "2026-10-28T09:18:05Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81350.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2362.2,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current weekly plan remains active with RP collateral 2500 and notional 500, effective leverage 0.20x. Slots 0 and 1 are occupied by permitted Layer 1-2 shorts: BTC short entry 80451.0, mark 81350.0, unrealized negative but liquidation far away; ETH short entry 2335.5, mark 2362.2, unrealized negative with liquidation far away. Both TPs are already set on the profitable side at plan exits 78750 and 2278 and are not reached. Funding impact is negligible. free_equity does not provide a realized Hostage surplus for basket offset, and there is no positive layer to close against the negative NAV layers. The hostage policy explicitly limits deployment to Layer 1-2 only and forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty and SOL/HYPE/DOGE cannot be opened. close_all is not active. Under Scenario A, hold the existing hostage cycles and keep TPs unchanged.",
+      "t": "2026-10-28T11:14:52Z"
     }
   ],
   "eliminated": null,
@@ -958,23 +979,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481710.8983403802,
-      "mark": 81521.0,
+      "liq": 481711.9168153802,
+      "mark": 81350.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -6.650010565437347
+      "unrealized": -5.587251867596425
     },
     {
       "entry": 2335.5,
-      "liq": 13966.3294804012,
-      "mark": 2371.3,
+      "liq": 13966.359081651202,
+      "mark": 2362.2,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -7.664311710554524
+      "unrealized": -5.71612074502244
     },
     null,
     null
