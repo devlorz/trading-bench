@@ -762,32 +762,62 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 15:16:30Z. State: slot 1 BTC long (2,500 @ 80,473, TP 82,400) at mark 80,644 \u2192 +5.3; slot 3 BTC long (2,500 @ 80,206) \u2192 +13.7; both NAV(+), net \u2248 +19, equity 9,853.1. Slots 0/2 free, free_equity 4,839.07 \u2265 2,500 \u2014 one open is possible, but no watchlist action point qualifies. Funding settled trivially at 15:00 (~-0.03 each). Liq prices (~1,078\u20131,090 BTC) are ~97% away \u2014 deep inside the Risk Parameter.\n\nBTC (held slots 1/3): thesis intact and recovering \u2014 the 14:00\u201315:00 1h bar swept down to 80,394/80,404 (15m low 80,404) and closed 80,729, then 15m closes stepped 80,742 \u2192 80,548 \u2192 80,586 \u2192 80,683 with mark 80,644; all well above the 79,430 tripwire / 79,347 hard invalidation. Mechanical commitments unchanged: any tick with low/mark below 79,430 \u2192 close both; below 79,347 \u2192 unconditional close. TPs 82,400 untouched (~1,760 points away). No NEW BTC layer: 80,644 is mid-range (above the 80,100 zone top, below the reclaimed 15m EMAs ~80,850\u201381,011) \u2014 the plan forbids chasing mid-range, two layers already carry the thesis, and a fresh sweep-and-reclaim of 79,700\u201380,100 would be the next trigger.\n\nFree-slot scan (slots 0/2 \u2014 candidates logged, not acted on):\n(1) XMR 596.22 \u2014 still no FRESH reclaim: the 13:00\u201314:00 1h close below 600 (599.75) killed the candidate, and price has since slid to a 1h low of 592.81 with 15m closes 598.21 \u2192 597.55 \u2192 594.92, below the 1h EMA20 (605.2)/EMA50 (601.81), -1.5% under today's VWAP 605.49, 15m MACD hist negative. A new entry needs a NEW 1h close back above 600 or the primary 570\u2013585 pullback (untouched) \u2014 buying 596 now front-runs an unconfirmed reclaim.\n(2) GRASS 0.69999 \u2014 both triggers stale: the 0.728 break-and-hold failed (1h closes 0.72394 \u2192 0.71262 \u2192 0.71038 \u2192 0.70035, 15m RSI 18\u201333, -4.9% under today's VWAP 0.7375), and the 0.63\u20130.66 pullback is untouched (15m low 0.69658 far above). Knife-catching the breakdown is forbidden.\n(3) ENA 0.19475 \u2014 the cut at 13:16 completed at 0.19831 and price continued down through the primary zone bottom 0.195 (15m closes 0.19661 \u2192 0.19462 \u2192 0.19384, low 0.19284) \u2014 below the zone, below all short-term EMAs, -3.6% under VWAP, 7d -7.5%, 15m RSI 23\u201330. Re-entry requires a NEW higher-low hold inside 0.195\u20130.206; none exists, and shorting is forbidden by the long bias \u2014 no bottom-fishing.\n(4) ETH 2,334.2 \u2014 never rallied INTO the 2,380\u20132,440 supply confluence (the 2,386.6 wick tagged only the lower edge and closed back below; price has faded to 2,334 with 1h closes 2,339.3 \u2192 2,335.4 \u2192 2,332.1, -0.7% under today's VWAP 2,352.6). Shorting here is chasing the decline mid-range, not the action-based trigger; a genuine rally into 2,400+ remains the requirement.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no NAV(-) layer exists. Buffer above base capital is negative (9,853 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding. Action: hold slots 1/3 with TPs untouched; slots 0/2 stay in reserve per Wait & See \u2014 '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' when the hunt has nothing to fire on. Next-tick priorities: (1) BTC tripwire 79,430/79,347 (mechanical close) and TP 82,400 harvest; (2) XMR only on a FRESH 1h close above 600 or the 570\u2013585 pullback; (3) ENA only on a new higher-low hold inside 0.195\u20130.206; (4) GRASS fresh break-and-hold above 0.728 or the 0.63\u20130.66 pullback; (5) ETH short only on a genuine rally into 2,400+ supply.",
       "t": "2026-10-28T15:16:30Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "open"
+        },
+        {
+          "price": 620,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 16:18:27Z. State: slot 1 BTC long (2,500 @ 80,473, TP 82,400) at mark 80,545 \u2192 +2.2; slot 3 BTC long (2,500 @ 80,206, TP 82,400) \u2192 +10.6; both NAV(+), net \u2248 +12.8, equity 9,846.86. Slots 0/2 free and free_equity 4,839.07 \u2265 2,500 \u2014 one open is possible. Funding settled trivially at 16:00 (~-0.03 each). Liq prices (~1,078\u20131,091 BTC) are ~97% away \u2014 deep inside the Risk Parameter.\n\nBTC slots 1/3 \u2014 hold: thesis intact. The just-closed 12:00\u201316:00 4h bar swept to 80,404 and closed 80,535 back above the zone top 80,100; 15m closes 80,547 \u2192 80,586 \u2192 80,683 \u2192 80,535 with mark 80,545, all far above the 79,430 tripwire / 79,347 hard invalidation (~1,100+ points). Mechanical commitments unchanged: any tick with low/mark below 79,430 \u2192 close both; below 79,347 \u2192 unconditional close. TPs 82,400 untouched (~1,855 points away). No NEW BTC layer: 80,545 is mid-range \u2014 the plan forbids chasing, two layers already carry the thesis, and a fresh sweep-and-reclaim of 79,700\u201380,100 would be the next trigger.\n\nXMR \u2014 the top-priority logged candidate FIRED this tick on the exact pre-committed standard stated at 14:16 and 15:16 ('a FRESH 1h close above 600 or the 570\u2013585 pullback'): the 14:00\u201315:00 1h bar made the low 592.81 (below the prior 598.96 structure), and the 15:00\u201316:00 1h bar held a higher low 594.05 and DISPLACED to close 604.03 \u2014 back above 600, closing at its high on a ~10-point range (~1.6\u00d7 the 1h ATR 5.6\u20136.4). That is a genuine displacement reclaim of the plan's 600\u2013610 trigger, not the slow 594\u2192603 grind rejected at 00:52 (which had no 1h close above 600). Confirmation on the fast frame: 15m closes stair-stepped 595.91 \u2192 599.94 \u2192 602.24 \u2192 604.03, mark 604.5 holds above 600 and above the 15m EMA20 (602.09). Flow check: 24h +1.95%, 7d +1.22% \u2014 positive, one of only two watchlist symbols with positive 7d flow, matching the plan's directive to hunt longs where flow is up. This is the action-based trigger at a defined level, not a directional bet; the capital freed by the 13:16 ENA cut is being deployed exactly as designed. Open slot 0 XMR long with the fixed RP (collateral 2,500, notional 2,500 = 1x effective vs 5x max; liq \u2248 61 unreachable) and set TP 620 \u2014 the plan's first hostage-harvest level ('scale hostages out at 620, then 645\u2013660'). Manual invalidation: the reclaim thesis breaks on a 1h close back below 600 (the same standard that killed the prior candidate) \u2192 cut; hard invalidation below 545 (EMA50 zone) per plan; funding trivial (1.25e-05). ONE layer only \u2014 slot 2 stays reserved.\n\nRemaining scans: ENA 0.19636 is back inside the 0.195\u20130.206 zone with 15m closes 0.19526 \u2192 0.19581 \u2192 0.19638 reclaiming the zone bottom \u2014 but re-entry requires a higher-low hold AT the EMA20/EMA50 confluence, and price sits ~3\u20134% BELOW it (4h EMA20 0.20487 / EMA50 0.20237) and below all 15m EMAs (0.19951/0.20322), while the flow thesis that anchors ENA longs is inverted (7d -11.46%, 24h -7.87% \u2014 the board's weakest). No knife-catching; shorting is forbidden by the long bias. GRASS 0.69971: between the untouched 0.63\u20130.66 pullback and the failed 0.728 break-and-hold (1h closes 0.71038 \u2192 0.70035) \u2014 both triggers stale, 7d flow stalled (+0.49%) \u2014 wait. ETH 2,333.2: never rallied INTO the 2,380\u20132,440 short supply confluence (the 2,386.6 wick tagged only the lower edge and closed back below; price has faded since) \u2014 shorting here is chasing the decline mid-range; a genuine rally into 2,400+ remains the trigger.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no NAV(-) layer exists. Buffer above base capital is negative (9,846.86 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding. Action: open slot 0 XMR long, set TP 620; hold slots 1/3 (BTC) with TPs untouched; slot 2 reserved. Next-tick priorities: (1) XMR reclaim defense \u2014 a 1h close back below 600 = cut slot 0; TP 620 harvest; (2) BTC tripwire 79,430/79,347 (mechanical close of slots 1/3) and TP 82,400 harvest; (3) ENA only on a higher-low hold AT the EMA confluence with flow stabilization; (4) GRASS fresh break-and-hold above 0.728 or the 0.63\u20130.66 pullback; (5) ETH short only on a genuine rally into 2,400+ supply.",
+      "t": "2026-10-28T16:18:27Z"
     }
   ],
   "eliminated": null,
   "executor": "z-ai/glm-5.3-flash",
   "layers": [
-    null,
+    {
+      "entry": 604.71,
+      "liq": 60.743119500000034,
+      "mark": 604.5,
+      "notional": 2500,
+      "side": "long",
+      "symbol": "XMR",
+      "tp": 620,
+      "unrealized": -0.8681847497148897
+    },
     {
       "entry": 80473.0,
-      "liq": 1089.9147153801023,
-      "mark": 80644.0,
+      "liq": 1090.921402880107,
+      "mark": 80545.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": 5.312340785108049
+      "unrealized": 2.236775067413915
     },
     null,
     {
       "entry": 80206.0,
-      "liq": 1077.551713262481,
-      "mark": 80644.0,
+      "liq": 1078.5584007624857,
+      "mark": 80545.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": 13.652345211081466
+      "unrealized": 10.566541156521955
     }
   ],
   "name": "zai",
