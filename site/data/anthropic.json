@@ -683,6 +683,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 holds the SOL long from 100.42 at mark 100.63, a small unrealized gain, so it is not a hostage. Its TP at 104.0 is already set on the profit side and matches the plan's 104-105.5 exit zone. Equity is about 10,012, well above the 8,500 close-all line, and liquidation near 77.9 is far away. The BTC daily regime is intact at about 80.5k, inside the 76k-88k band, and the week has not ended. No new entry is confirmed: BTC is in the 80.5k-84k no-trade middle with no wick into the 79.7-80.4k long or 84.8-85.6k short zones. ETH at 2,327 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at 1.312 is mid-range, outside the 1.255-1.275 and 1.365-1.40 zones. BNB at 748.6 is below the 751-760 short area and outside the 715-722 long zone. Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, which is not the case. SOL already holds its one-per-symbol slot and scale-in is forbidden. Wait and see: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-28T14:16:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 holds the SOL long from 100.42 with mark 101.00 and a small unrealized gain of about +58, so it is not a hostage. Its limit TP at 104.0 is already on the profit side and sits inside the plan's 104-105.5 exit zone, so no change is needed. Equity of about 10,049 is well above the 8,500 close-all line, liquidation near 77.9 is far away, and the BTC daily close near 80.6k is inside the 76k-88k regime band. The week has not ended, so no week-end banking applies. No new entry is confirmed: BTC at 80,644 is in the 80.5k-84k no-trade middle with no wick into the 79.7-80.4k long or 84.8-85.6k short zones. ETH at 2,334 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at 1.313 is mid-range, outside the 1.255-1.275 and 1.365-1.40 zones. BNB at 749.35 is outside the 715-722 long and 751-760 short zones, and Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, which is not the case. SOL already holds its one-per-symbol slot and scale-in is forbidden. Wait and see: hold all slots and keep the existing SOL TP.",
+      "t": "2026-10-28T15:16:30Z"
     }
   ],
   "eliminated": null,
@@ -690,13 +704,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.91583487119199,
-      "mark": 100.63,
+      "liq": 77.91709612119199,
+      "mark": 101.0002,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 20.91216889065861
+      "unrealized": 57.777335192193284
     },
     null,
     null,
