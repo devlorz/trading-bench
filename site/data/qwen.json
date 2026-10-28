@@ -1014,6 +1014,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Weekly plan is still active and close_all has not been reached. RP remains collateral 2500 and notional 500, giving 0.20x effective leverage per layer. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts: BTC short entry 80451.0, mark 80717.0, unrealized about -1.65; ETH short entry 2335.5, mark 2338.3, unrealized about -0.60. Both liquidation prices are extremely far, and their plan TPs 78750 and 2278 are not reached. Funding settlement is negligible. free_equity contains reserve collateral but no realized Hostage surplus for basket offset, and there is no profitable layer to close. The hostage policy limits deployment to Layer 1-2 and forbids adding leverage while NAV is negative, so slots 2 and 3 must remain empty despite SOL/HYPE/DOGE being short-biased. No valid trigger exists to open, close, or change TP. Under Scenario A, hold the existing hostage cycles and leave TP orders unchanged.",
       "t": "2026-10-28T13:16:31Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80515.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2327.1,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current week remains active and close_all is not reached. RP is fixed at collateral 2500 and notional 500, effective leverage 0.20x, far below all symbol max leverage. Slots 0 and 1 are occupied by the only permitted Layer 1-2 shorts under the hostage policy. BTC short is barely NAV-negative with mark 80515 vs entry 80451, liquidation extremely far, and TP 78750 not reached. ETH short is slightly NAV-positive with mark 2327.1 vs entry 2335.5, liquidation far, and TP 2278 not reached. There is no funding or price move large enough to force a stop or basket offset, and closing early would realize small fees without a clear plan trigger. The policy restricts deployment to Layers 1-2, so slots 2 and 3 must remain empty despite SOL/HYPE/DOGE being in the watchlist. Under the existing short plan and flow, keep the hostage cycles active and wait for TP or a stronger action-based signal.",
+      "t": "2026-10-28T14:16:59Z"
     }
   ],
   "eliminated": null,
@@ -1021,23 +1042,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481713.94207788026,
-      "mark": 80717.0,
+      "liq": 481714.9511778803,
+      "mark": 80515.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -1.653180196641434
+      "unrealized": -0.3977576412971871
     },
     {
       "entry": 2335.5,
-      "liq": 13966.417834151202,
-      "mark": 2338.3,
+      "liq": 13966.447029151203,
+      "mark": 2327.1,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -0.5994433740098869
+      "unrealized": 1.7983301220295635
     },
     null,
     null
