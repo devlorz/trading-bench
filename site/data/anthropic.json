@@ -725,6 +725,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 holds the SOL long from 100.42 at mark 101.00 with unrealized PnL of about +58 and liquidation near 77.9, so it is in profit and not a hostage. Its limit TP at 104.0 is on the profit side and inside the plan's 104-105.5 exit zone, so it stays. Equity is about 10,048, well above the 8,500 close-all line. BTC is about 80.5k, inside the 76k-88k regime band, with no 4h trigger in the 79.7-80.4k long zone or the 84.8-85.6k short zone. ETH at about 2,332 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at about 1.312 is mid-range, outside both Army 4 zones. BNB at about 747.6 is outside the 715-722 long and 751-760 short zones. Army 4 and the BNB substitute deploy only when another army is a hostage or all others are flat, which is not the case. SOL already holds its one-per-symbol slot and scale-in is forbidden. The week has not ended, so no week-end banking applies. Wait and see: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-28T17:15:04Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Slot 0 holds the SOL long from 100.42 with mark 101.35 and unrealized PnL of about +93, so it is in profit and not a hostage. Its limit TP at 104.0 is already on the profit side and inside the plan's 104-105.5 exit zone, so it stays. Equity is about 10,083, well above the 8,500 close-all line, and liquidation near 77.9 is far away. BTC is about 80.76k, inside the 76k-88k regime band, and there is no 4h wick into the 79.7-80.4k long zone with reclaim or into the 84.8-85.6k short zone. The last 4h low of about 80.40k sits at the zone edge with no confirmed reclaim. ETH at about 2,341 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at 1.318 is mid-range, outside both Army 4 zones. BNB at 748 is outside the 715-722 long and 751-760 short zones, and the BNB substitute and Army 4 deploy only when another army is a hostage or all others are flat, which is not the case. The week has not ended, so no week-end banking applies. Wait and see: hold all slots and keep the existing SOL TP.",
+      "t": "2026-10-28T18:19:59Z"
     }
   ],
   "eliminated": null,
@@ -732,13 +746,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.91962312119199,
-      "mark": 101.0,
+      "liq": 77.92089349619198,
+      "mark": 101.35,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 57.75741884086818
+      "unrealized": 92.611033658633
     },
     null,
     null,
