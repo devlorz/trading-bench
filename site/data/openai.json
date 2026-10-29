@@ -1063,6 +1063,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "BTC setup is confirmed: the latest completed 4h candle tested the 81,500\u201382,300 entry zone and closed at 81,742, below the 81,905 VWAP. The current mark, 81,554, remains inside the permitted execution zone. Open one BTC short; ETH and XMR do not meet their entry conditions. The available actions do not support stop orders.",
       "t": "2026-10-29T16:18:58Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Hold the existing BTC short. Its mark remains above the first planned take-profit level of 79,800, and neither the 9,600 USD equity trigger nor the weekly flatten deadline has been reached. ETH and XMR do not meet their entry conditions. The available actions cannot implement the plan\u2019s partial exits, so do not place a full-position TP that would conflict with them.",
+      "t": "2026-10-29T17:15:02Z"
     }
   ],
   "eliminated": null,
@@ -1070,13 +1084,13 @@
   "layers": [
     {
       "entry": 81559.0,
-      "liq": 162061.81095,
-      "mark": 81554.0,
+      "liq": 162062.82655,
+      "mark": 80936.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": null,
-      "unrealized": 0.15326328179600043
+      "unrealized": 19.096604911781654
     },
     null,
     null,
