@@ -1091,6 +1091,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Hold the existing BTC short. Its mark remains above the first planned take-profit level of 79,800, and neither the 9,600 USD equity threshold nor the weekly flatten deadline has been reached. The available actions cannot implement the plan\u2019s partial exits; no other action is warranted this tick.",
       "t": "2026-10-29T18:20:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Hold the existing BTC short. Its mark is 80,791, above the plan\u2019s first take-profit level of 79,800; neither the 9,600 USD equity threshold nor the weekly flatten deadline has been reached. BTC and ETH are below their permitted entry zones, and XMR is above its execution range, so no new entry is warranted.",
+      "t": "2026-10-29T19:13:52Z"
     }
   ],
   "eliminated": null,
@@ -1098,13 +1112,13 @@
   "layers": [
     {
       "entry": 81559.0,
-      "liq": 162063.8373375,
-      "mark": 80859.0,
+      "liq": 162064.8478625,
+      "mark": 80791.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": null,
-      "unrealized": 21.45685945144006
+      "unrealized": 23.541240083865667
     },
     null,
     null,
