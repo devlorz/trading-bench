@@ -867,6 +867,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Both active armies experienced a minor dip into Negative NAV alongside broader market pullback: Slot 0 (ENA Long, entry 0.19832, TP 0.21600, mark 0.19783, unrealized -$12.35) and Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 99.815, unrealized -$22.69). Both positions maintain exceptionally wide liquidation cushions (ENA liq 0.10919, SOL liq 52.75) under our conservative 2x leverage RP parameters ($2,500 collateral / $5,000 notional) and have active limit Take Profit orders in place. Reviewing watchlist candidates for potential Zero Alpha deployments: BTC (mark 79,994.0) has dropped sharply but remains above our designated long entry support zone (79,500-79,800); ETH (2,309.3) is far below its short entry threshold (2,400-2,450); and ZEC (1,250.4) remains well above its demand entry zone (1,175-1,195). In accordance with TSM Principle 4 (Scenario A patience on NAV(-), Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we refrain from forcing premature entries and hold all positions.",
       "t": "2026-10-29T02:21:43Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Both active armies remain securely within conservative risk parameters despite temporary market pullback into minor Negative NAV: Army Slot 0 (ENA Long, entry 0.19832, TP 0.21600, mark 0.194951, unrealized -$84.94) and Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 99.788, unrealized -$24.04). Both positions are insulated with ~50% liquidation buffers (ENA liq 0.10919, SOL liq 52.754) under our 2x RP structure and have active limit Take Profit orders in place. Evaluating unallocated watchlist candidates against Weekly Plan entry criteria: BTC (mark 79,904.0) has bounced slightly above our designated long entry support zone (79,500-79,800); ETH (2,307.4) is far below its short entry zone (2,400-2,450); and ZEC (1,238.6) remains well above its demand entry zone (1,175-1,195). In strict adherence to TSM Principle 4 (Scenario A patience on NAV(-), Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we refrain from forcing entries and hold existing positions.",
+      "t": "2026-10-29T03:19:18Z"
     }
   ],
   "eliminated": null,
@@ -874,23 +888,23 @@
   "layers": [
     {
       "entry": 0.19832,
-      "liq": 0.10918908962964902,
-      "mark": 0.19783,
+      "liq": 0.10919097783939902,
+      "mark": 0.194951,
       "notional": 5000,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.216,
-      "unrealized": -12.35377168212965
+      "unrealized": -84.93848325937836
     },
     {
       "entry": 100.27,
-      "liq": 52.754545234935996,
-      "mark": 99.815,
+      "liq": 52.75466084961,
+      "mark": 99.788,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -22.68874040091744
+      "unrealized": -24.035105215916992
     },
     null,
     null

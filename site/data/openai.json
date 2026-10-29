@@ -867,6 +867,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry setup is executable under the weekly plan. BTC and ETH are below their permitted entry zones, so do not chase. XMR has not pulled back into 575\u2013585 and then reclaimed 580 on a completed 4h candle. All slots are empty; the equity threshold and weekly flatten deadline have not been reached. Hold.",
       "t": "2026-10-29T02:21:43Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry is executable under the weekly plan. BTC and ETH are below their permitted entry zones, so do not chase; XMR has not met its pullback-and-reclaim conditions. All slots are empty, and neither the equity threshold nor the weekly flatten deadline has been reached. Hold.",
+      "t": "2026-10-29T03:19:18Z"
     }
   ],
   "eliminated": null,
