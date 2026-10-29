@@ -1077,6 +1077,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 101.57) continues to perform safely in Positive NAV (+64.82 unrealized PnL) with a wide liquidation buffer (liq 52.77) and active limit Take Profit in place. Evaluating candidate markets across the Watchlist: BTC (mark 80,936.0) has retreated from its recent high of 81,955 and is now mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (mark 2,349.1) remains below its short entry threshold (2,400-2,450); ZEC (mark 1,350.5) is extended far above its planned demand pullback zone (1,175-1,195); and ENA (mark 0.21315) trades comfortably above its retest cluster (0.196-0.200) following our successful hostage harvest. In strict alignment with TSM Principle 4 Soft Rule 1 (Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19', and Zero Alpha discipline), we do not chase mid-range price action, preserve dry powder across Slots 0, 2, and 3, let our winning position run, and hold all positions.",
       "t": "2026-10-29T17:15:02Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 101.09) remains securely in positive NAV with an intact limit Take Profit order and a wide ~50% liquidation buffer (liq 52.77). Evaluating available watchlist candidates against Weekly Plan entry conditions: BTC (mark 80,859.0) sits mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (mark 2,340.0) remains below the planned short entry threshold (2,400-2,450); ZEC (mark 1,325.2) trades well above its demand retest zone (1,175-1,195); and ENA (mark 0.21138) trades comfortably above its 0.196-0.200 demand cluster following the recent hostage capture. In strict alignment with TSM Principle 4 Soft Rule 1 (Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19', and Zero Alpha discipline), no new setups qualify for deployment. We allow Army Slot 1 to work toward its target, preserve dry powder across Slots 0, 2, and 3, and hold all positions.",
+      "t": "2026-10-29T18:20:20Z"
     }
   ],
   "eliminated": null,
@@ -1085,13 +1099,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.770692207855,
-      "mark": 101.57,
+      "liq": 52.771955832855,
+      "mark": 101.09,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 64.82497257404992
+      "unrealized": 40.88959808517041
     },
     null,
     null
