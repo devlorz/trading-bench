@@ -1012,6 +1012,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity is 10,179.6, well above the 8,500 close-all line. BTC's last 4h close is 80,144, inside the 76k-88k regime band with no daily close outside it, so no forced flattening applies. The week has not ended. Slot 0 holds the SOL long from 100.42 at mark 100.89 (unrealized about +47), so it is not a hostage. Its TP at 104.0 is on the profit side and stays. Slots 1-3 are empty. No entry trigger has fired: BTC is in the 80.5k-84k no-trade middle with no 4h reclaim of 80.4k; ETH (mark 2,330, last 4h close 2,324) is above the 2,280-2,315 flush with no reclaim; XRP (1.295) is mid-range, outside both Army 4 zones, and Army 4 requires another army to be a hostage or all others flat; BNB (743) is in the middle between 715-722 and 751-760 with no trigger, and the BNB substitute is gated the same way. Wait and see: hold all slots and keep the SOL TP.",
       "t": "2026-10-29T13:17:05Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current state: equity about 10,177, free_equity 7,644, one open layer in slot 0 (SOL long, entry 100.42, TP 104.0, mark 100.87, unrealized about +45, so not a hostage). Slots 1-3 empty. Week is 2026-10-26 and has not ended. BTC last 4h close 80,144 sits in the 80.5k-84k no-trade middle with no reclaim of 80.4k; the 4h bars show no close above 80.4k after the 79.7k-80.4k zone. ETH last 4h close 2,324.4 is above the 2,280-2,315 flush with no reclaim trigger and not in the 2,440-2,500 short zone. SOL mark 100.87 is in the 98.6-100.5 zone's upper edge, but the existing long already occupies slot 0 and is one per symbol, so no new SOL entry. BNB mark 744.68 is between 715-722 and 751-760 zones with no trigger; XRP at 1.293 is mid-range, outside Army 4 zones, and Army 4 requires another army to be a hostage or all others flat, and SOL is not a hostage. No stop, no forced liquidation, no close-all condition met. Existing SOL TP at 104.0 is on profit side and stays. Wait and see: hold all.",
+      "t": "2026-10-29T14:17:44Z"
     }
   ],
   "eliminated": null,
@@ -1019,13 +1033,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.94187945785498,
-      "mark": 100.89,
+      "liq": 77.94313758285499,
+      "mark": 100.8686,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 46.80342561242769
+      "unrealized": 44.6723760207129
     },
     null,
     null,

@@ -1021,6 +1021,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Both active armies continue to trade profitably in Positive NAV under TSM Principle 4 Scenario C: Army Slot 0 (ENA Long, entry 0.19832, TP 0.21600, mark 0.20781) holds +$239.18 unrealized PnL as it advances toward its 0.21600 hostage target; Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 100.89) holds +$30.92 unrealized PnL, progressing toward its 104.00 target. Both layers remain heavily shielded by conservative 2x RP leverage ($2,500 collateral / $5,000 notional) and ~50% liquidation margins. Assessing watchlist candidates for potential Zero Alpha deployments into open Slots 2 and 3: BTC (mark 80,279.0) remains mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (mark 2,330.3) trades well below its short entry threshold (2,400-2,450); and ZEC (mark 1,285.4) is trading far above its demand zone (1,175-1,195). In strict accordance with TSM Principle 4 (Scenario C, Zero Alpha execution, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we let active winners ride toward their TP limits, preserve dry powder in Slots 2 and 3, and hold all positions.",
       "t": "2026-10-29T13:17:05Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Both active armies continue to trade profitably in Positive NAV under TSM Principle 4 Scenario C: Army Slot 0 (ENA Long, entry 0.19832, TP 0.21600, mark 0.20821) holds +$249.34 unrealized PnL, progressing steadily toward its 0.21600 hostage harvest target; Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 100.87) holds +$29.85 unrealized PnL, tracking toward its 104.00 target. Both positions maintain conservative 2x RP risk parameters with substantial ~50% liquidation margins and valid limit Take Profit orders in place. Evaluating candidate markets for open Slots 2 and 3: BTC (mark 80,476.0) is mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (mark 2,331.0) remains well below its planned short entry band (2,400-2,450); and ZEC (mark 1,280.4) is trading far above its demand pullback zone (1,175-1,195). In strict alignment with TSM Principle 4 (Scenario C, Zero Alpha flow, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we let our winning layers run toward their TP targets, preserve dry powder in Slots 2 and 3, and hold all positions.",
+      "t": "2026-10-29T14:17:44Z"
     }
   ],
   "eliminated": null,
@@ -1028,23 +1042,23 @@
   "layers": [
     {
       "entry": 0.19832,
-      "liq": 0.10921586558939902,
-      "mark": 0.207807,
+      "liq": 0.10921844421439902,
+      "mark": 0.20821,
       "notional": 5000,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.216,
-      "unrealized": 239.18414683340043
+      "unrealized": 249.34449374747908
     },
     {
       "entry": 100.27,
-      "liq": 52.765604582855,
-      "mark": 100.89,
+      "liq": 52.766862707855,
+      "mark": 100.8686,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 30.91652538147026
+      "unrealized": 29.849406602174366
     },
     null,
     null
