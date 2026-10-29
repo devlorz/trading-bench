@@ -909,6 +909,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry can be executed within the plan's permitted price ranges. BTC and ETH are below their entry zones; XMR is above its 580\u2013585 execution range, and the required daily-candle condition cannot be verified from the supplied data. All slots are empty, and neither the equity threshold nor weekly flatten deadline has been reached. Hold.",
       "t": "2026-10-29T05:16:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry is executable under the weekly plan. BTC and ETH have tested their zones and closed below their VWAPs on completed 4h candles, but current marks are below their permitted execution ranges, so do not chase. XMR has not completed the required pullback-and-reclaim setup; its latest 4h candle is still forming. All slots are empty, and neither the equity threshold nor weekly flatten deadline has been reached. Hold.",
+      "t": "2026-10-29T06:26:32Z"
     }
   ],
   "eliminated": null,
