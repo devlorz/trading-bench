@@ -1007,6 +1007,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 03:19:18Z. State: slots 1 and 3 hold BTC longs (2,500 each; entries 80,473 / 80,206, TP 82,400) at mark 79,904 \u2192 NAV(-) -17.7 / -9.4 (\u2248 -27 combined); slots 0 and 2 free, free_equity 4,817; equity 9,784.7. Liq prices ~1,047-1,060 \u2014 ~97% away, deep inside the Risk Parameter.\n\nBTC \u2014 the tripwire was NOT hit: the latest 15m sweep went to 79,668-79,671 (low 79,668), still ~240 points above the 79,430 flush invalidation / 79,347 4h swing low, and the sweep of the 79,700-80,100 zone followed by closes 79,934 \u2192 79,893 back inside the zone is consistent with the sweep-and-reclaim thesis. Per Scenario A hold both layers. However, NO NEW BTC long: the established trigger standard is a 15m/1h close back above the zone top 80,100 with mark holding the reclaim \u2014 current closes 79,934/79,893 and mark 79,904 are mid-zone, and the plan forbids chasing mid-range; two layers already carry this thesis. Cut trigger unchanged: any low/mark below 79,430 \u2192 close both; below 79,347 \u2192 unconditional close.\n\nETH 2,307.4 \u2014 never rallied into the 2,380-2,440 short supply confluence (15m lower lows 2,292.1, active decline, below all 15m EMAs, -0.23% under VWAP). Shorting the decline is chasing mid-range; bottom-fishing is forbidden by the short-only bias. Wait.\n\nXMR 589.28 \u2014 the 15m tape dipped marginally into the 570-585 pullback zone (low 584.37) and closed 586.39, but the low is a LOWER low vs the prior 586.74 base \u2014 no higher-low hold, no absorption, 1h MACD hist negative, mark below the 15m EMAs. Buying an active decline at the zone edge is knife-catching; also far below the 600-610 displacement-reclaim trigger. Wait for a defended higher-low inside the zone or a confirmed 1h hold above 600.\n\nGRASS 0.64679 \u2014 inside the 0.63-0.66 pullback zone BUT the gate is not met: flow is the board's weakest (24h -14.9%), stair-step of lower 15m lows (0.66678 \u2192 0.64985 \u2192 0.64791), RSI 20-29, below all 15m EMAs, MACD hist negative \u2014 no defended higher-low base, no stabilized flow. Buying here is knife-catching, not the plan's 'pullback with a higher-low hold while the uptrend holds'. Wait.\n\nENA 0.19495 \u2014 straddling the 0.194 level: the 15m tape swept to 0.19387 but closed back above 0.194 (closes 0.19602 \u2192 0.19677 \u2192 0.19536 \u2192 0.19536), so the short trigger ('rejection back below 0.194 with displacement' \u2014 requires a close below 0.194 confirming the failed 0.2147 breakout) has NOT confirmed, and shorting mid-move into a level that is holding is chasing. The primary long (0.195-0.206 higher-low hold at the EMA confluence) also has no higher-low: lower lows 0.19682 \u2192 0.19387, active breakdown, flow deteriorated (24h -5.6%, 7d -5.3%). Wait for either a confirmed 15m close below 0.194 with displacement (short) or a sweep absorbed with a 15m close back up / higher-low formation inside 0.195-0.206 (long).\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no positive layer exists to harvest; both held layers are BTC NAV(-) well inside the Risk Parameter with TP 82,400 resting. Buffer above base capital is negative (9,784.7 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding.\n\nAction: hold all \u2014 keep slots 1 and 3 (BTC) with TPs untouched; slots 0/2 stay reserved per Wait & See since no action point has genuinely fired. Next-tick priorities: (1) BTC \u2014 mechanical close below 79,430/79,347, or a 15m/1h reclaim above 80,100 (mark-holding) if a third-layer add is ever justified, or TP 82,400 harvest; (2) ENA \u2014 confirmed 15m close below 0.194 with displacement (short) or sweep-and-reclaim higher-low inside 0.195-0.206 (long); (3) GRASS \u2014 only a defended higher-low base inside 0.63-0.66 with stabilized flow; (4) ETH \u2014 rally into 2,380-2,440 supply; (5) XMR \u2014 higher-low hold inside 570-585 or confirmed 1h displacement reclaim above 600.",
       "t": "2026-10-29T03:19:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": "long",
+          "slot": 3,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 04:19:15Z. State: slots 1 and 3 hold BTC longs (2,500 each; entries 80,473 / 80,206, TP 82,400) at mark 79,912 \u2192 NAV(-) -17.4 / -9.2 (\u2248 -26.6 combined); slots 0 and 2 free, free_equity 4,817.49 \u2265 2,500 \u2192 one open possible; equity 9,785.13. Funding settled trivially at 04:00 (~-0.031 each). Liq prices (~1,091-1,103, drifting up on funding) are ~97% away \u2014 deep inside the Risk Parameter.\n\nBTC slots 1/3 \u2014 hold per Scenario A: the mechanical tripwire was NOT hit. Today's 15m lows since the flush: 79,671 (02:30) / 79,668 (02:45), then 79,725 (03:30) and 79,758 (04:00), latest closes 79,838 \u2192 79,853 with mark 79,912 \u2014 all ~240+ points above the 79,430 flush invalidation and 79,347 hard invalidation. The repeated sweeps of the 79,700-80,100 zone with closes back inside remain consistent with the sweep-and-reclaim thesis. Note the just-closed 00:00-04:00 4h bar closed 80,110 \u2014 marginally above the zone top 80,100 \u2014 but the mark has already faded back to 79,912: a marginal probe, not a decisive reclaim (same defect standard applied to XMR's 600.54 spike-and-fade), and no new BTC layer is warranted regardless (mid-range chase forbidden; two layers already carry the thesis). TP 82,400 not hit (today's 1h high 81,350). Commitments unchanged: any tick with low/mark below 79,430 \u2192 close both; below 79,347 \u2192 unconditional close, no deliberation.\n\nFree-slot scan (one open possible; candidates checked against their pre-committed standards, none qualifies):\n(1) ENA 0.19681 \u2014 inside the 0.195-0.206 primary zone but BOTH triggers fail. Short side: bar 12 (03:15-03:30) closed 0.19374 \u2014 the window's only 15m close below 0.194 \u2014 on moderate volume (2.84M vs the 4.8-7.1M flush bars) and was IMMEDIATELY reclaimed (closes 0.19491 \u2192 0.19559 \u2192 0.19563); a sweep that held the level is the opposite of the plan's 'rejection back below 0.194 with displacement' failed-breakout trigger \u2014 not confirmed. Long side: the sweep to 0.19362/0.19387 (double-bottom) has produced three higher closes, but the entry standard set repeatedly this week is a higher-low hold AT the EMA20/EMA50 confluence WITH flow stabilization \u2014 price sits ~3-4% BELOW the confluence (4h EMA20 0.20552 / EMA50 0.20294; below all 1h/15m EMAs too), and flow is still deteriorated (7d -5.06%, 24h -5.52%, second-weakest on the board). The bounce is 3 bars old on fading volume (last bar 0.46M, the window's lowest) \u2014 no defended base. Buying 0.1968 now front-runs the standard I pre-committed to; lowering it mid-week after two failed ENA longs would be ego, not Zero Alpha. Wait.\n(2) XMR 587.12 \u2014 NO trigger: the tape double-tagged the 570-585 zone edge (lows 584.37 / 584.0 / 584.4) but the low sequence is 586.74 \u2192 584.37 \u2192 584.0 \u2014 lower lows, no higher-low hold, no absorption; closes 586.39 \u2192 587.4 \u2192 585.82 \u2192 585.54 sit below the 15m EMAs (592-595), 1h MACD hist negative (-0.72), 7d -4.48%, -0.54% under today's VWAP 590.31. The 600-610 displacement reclaim is dead (1h closes 589.59 / 591.71 / 585.82). Buying an active decline at the zone edge is knife-catching. Wait.\n(3) GRASS 0.63969 \u2014 now INSIDE the 0.63-0.66 pullback zone, but the gate fails outright: flow is the board's steepest decline (24h -14.45%, 7d -5.12%), a continuous stair-step of lower 15m lows (0.64791 \u2192 0.64502 \u2192 0.64455 \u2192 0.64435 \u2192 0.63809), RSI 17-21, below the 4h EMA20 (0.70409) AND the 4h EMA50 (0.68051), -3.5% under today's VWAP 0.66181, MACD hist negative. The 'while the uptrend holds' condition is broken (7d flipped from +22% at plan-writing). No defended base, no absorption \u2014 knife-catching forbidden; any future zone entry needs a sweep absorbed with a 15m close back up and stabilized flow. Wait.\n(4) ETH 2,311.2 \u2014 moving AWAY from the 2,380-2,440 short supply: 15m ground to 2,292.1 low, closed 2,307.7, mark below the 15m EMA20 (2,334), RSI 29, MACD hist -5.87 \u2014 active decline. Shorting here is chasing mid-range; bottom-fishing is forbidden by the short-only bias. A genuine rally into ~2,400+ remains the trigger.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no positive layer exists to harvest; both held layers are BTC NAV(-) well inside the Risk Parameter with TP 82,400 resting. Buffer above base capital is negative (9,785.13 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding.\n\nAction: hold all \u2014 keep slots 1 and 3 (BTC) with TPs untouched; slots 0/2 stay reserved per Wait & See ('\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19') since no action point has genuinely fired. Next-tick priorities: (1) BTC \u2014 mechanical close below 79,430/79,347 or TP 82,400 harvest on a rally toward the 82,000-82,500 supply; (2) ENA \u2014 a 15m close below 0.194 that HOLDS/extends with displacement (short), or a defended higher-low AT the EMA confluence with stabilized flow (long); (3) GRASS \u2014 only a defended base inside 0.63-0.66 with stabilized flow (uptrend gate currently broken); (4) XMR \u2014 a defended higher-low inside 570-585 with absorption, or a fresh decisive 1h hold above 600; (5) ETH \u2014 short only on a genuine rally into 2,380-2,440 supply.",
+      "t": "2026-10-29T04:19:15Z"
     }
   ],
   "eliminated": null,
@@ -1015,24 +1036,24 @@
     null,
     {
       "entry": 80473.0,
-      "liq": 1102.0494653800997,
-      "mark": 79903.5,
+      "liq": 1103.0474278800975,
+      "mark": 79912.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": -17.692269456836456
+      "unrealized": -17.42820573360009
     },
     null,
     {
       "entry": 80206.0,
-      "liq": 1089.6864632624638,
-      "mark": 79903.5,
+      "liq": 1090.6844257624616,
+      "mark": 79912.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 82400,
-      "unrealized": -9.428845722265168
+      "unrealized": -9.163902949903997
     }
   ],
   "name": "zai",
