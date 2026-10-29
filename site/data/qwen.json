@@ -1455,6 +1455,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "The weekly plan is still active and close_all (2026-11-02T11:00:00Z) has not been reached. RP remains collateral 2500 and notional 500 per Layer, effective leverage 0.20x, far below BTC/ETH max leverage. Hostage policy restricts deployment to Layer 1-2 only; slots 0 and 1 already occupy the two permitted layers, while slots 2 and 3 must remain empty. BTC short: entry 80451, mark 80115, unrealized positive, TP 78750 not touched, liquidation far above. ETH short: entry 2335.5, mark 2317.2, unrealized positive, TP 2278 not touched, liquidation far above. Combined open NAV is positive, so the recovery/basket-offset branch is inactive and there is no requirement to close, reduce, or add exposure. Funding is negligible and no TP, liquidation, plan-exit, or adverse leverage condition has occurred. Under Wait & See, Zero Alpha, and Scenario C, the correct action is to hold both profitable Layer 1-2 hostage cycles and leave the plan TP orders unchanged.",
       "t": "2026-10-29T10:16:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80194.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2325.2,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "The weekly plan remains active until 2026-11-02T11:00:00Z and RP is fixed at collateral 2500 / notional 500 per Layer. The hostage policy limits deployment to Layer 1-2 only, so slots 0 and 1 are the only allowed slots and are already occupied by BTC and ETH shorts; slots 2 and 3 must remain empty. Both open positions are profitable: BTC short entry 80451, mark 80194, TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2325.2, TP 2278 not reached, liquidation extremely far. NAV is not negative, so no basket-offset or forced recovery branch is active. Funding impact is negligible and no plan-based early exit or TP trigger has occurred. Under Wait & See, Zero Alpha, Scenario C, and the Layer 1-2 hostage policy, the correct tick action is to hold the existing profitable hostage cycles and leave the plan TP orders unchanged.",
+      "t": "2026-10-29T11:14:52Z"
     }
   ],
   "eliminated": null,
@@ -1462,23 +1483,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481735.09660288,
-      "mark": 80115.0,
+      "liq": 481736.10002788,
+      "mark": 80194.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 2.0882276168102325
+      "unrealized": 1.597245528334017
     },
     {
       "entry": 2335.5,
-      "liq": 13966.68303537649,
-      "mark": 2317.2,
+      "liq": 13966.71213912649,
+      "mark": 2325.2,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 3.917790622992974
+      "unrealized": 2.2050952686791225
     },
     null,
     null
