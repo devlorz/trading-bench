@@ -1665,31 +1665,34 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Plan active until 2026-11-02T11:00:00Z. RP fixed collateral 2500 / notional 500, effective leverage 0.20x. Hostage policy permits Layer 1-2 only; slots 0 and 1 are occupied by BTC and ETH shorts. Both layers are now NAV-positive (BTC +0.31, ETH +4.10), with liquidations extremely far and funding negligible. TP orders 78750 and 2278 remain on the profitable side for shorts and have not triggered. Under Wait & See, Zero Alpha, and the Layer 1-2 policy, do not add leverage in slots 2/3 and do not cut or adjust TPs; hold both positions unchanged.",
       "t": "2026-10-29T20:16:23Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 79223.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2271.8,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Both BTC and ETH shorts hit their planned TP levels and all layers are now empty. The weekly plan remains active, but TSM Principle 4 says to stop and watch once a Hostage cycle has been completed rather than immediately re-entering. Current marks are not at action-based short entries: BTC at 79223 is well below its planned short entry 80366 and after a bounce from 78750; ETH at 2271.8 and SOL at 97.12 are below the original short entries and their planned exits are now on the wrong side for fresh shorts; HYPE at 93.562 is strongly counter-plan because it has broken above EMAs/VWAP, contradicting the bias rationale; DOGE at 0.076073 is below entry and oversold with no fresh pullback confirmation. Keeping slots empty respects the Layer 1-2 hostage policy, avoids chasing or adding unplanned leverage, and waits for a future plan entry. Therefore the correct action for this tick is hold.",
+      "t": "2026-10-29T21:14:30Z"
     }
   ],
   "eliminated": null,
   "executor": "qwen/qwen3.8-flash",
   "layers": [
-    {
-      "entry": 80451.0,
-      "liq": 481745.18932788004,
-      "mark": 80400.9,
-      "notional": 500,
-      "side": "short",
-      "symbol": "BTC",
-      "tp": 78750,
-      "unrealized": 0.31136965357799046
-    },
-    {
-      "entry": 2335.5,
-      "liq": 13966.944217784048,
-      "mark": 2316.35,
-      "notional": 500,
-      "side": "short",
-      "symbol": "ETH",
-      "tp": 2278,
-      "unrealized": 4.099764504388801
-    },
+    null,
+    null,
     null,
     null
   ],
@@ -1739,7 +1742,32 @@
       "week": "2026-10-26T00:00:00Z"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "closed_at": "2026-10-29T20:41:00Z",
+      "entry": 2335.5,
+      "exit": 2278,
+      "fees": 0.29815350032113036,
+      "funding": 0.36505946993149235,
+      "opened_at": "2026-10-26T11:46:02Z",
+      "pnl": 12.376903828740978,
+      "reason": "tp",
+      "side": "short",
+      "symbol": "ETH"
+    },
+    {
+      "closed_at": "2026-10-29T20:45:00Z",
+      "entry": 80451.0,
+      "exit": 78750,
+      "fees": 0.2984142521534847,
+      "funding": 0.5035970831941181,
+      "opened_at": "2026-10-26T11:46:02Z",
+      "pnl": 10.776835141142328,
+      "reason": "tp",
+      "side": "short",
+      "symbol": "BTC"
+    }
+  ],
   "started_week": "2026-10-26T00:00:00Z",
   "strategist": "qwen/qwen3.8-max-prime",
   "violations": []

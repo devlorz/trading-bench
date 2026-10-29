@@ -1119,6 +1119,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 99.141) has entered mild Negative NAV (-$56.30 unrealized PnL) following a brief market-wide flush down to 98.38. In accordance with the Weekly Plan Hostage Policy and TSM Principle 4 Scenario A, we patiently hold this army as it remains exceptionally well protected with a ~50% liquidation cushion (liq 52.77) and an active TP at 104.00. Reviewing other watchlist candidates for deployable armies in Slots 0, 2, and 3: BTC (mark 80,401.0, low 80,105) is approaching but has not reached the designated long support zone (79,500-79,800); ETH (mark 2,316.3) is far below its short entry threshold (2,400-2,450); ZEC (mark 1,309.7) trades far above its demand pullback band (1,175-1,195); and ENA (mark 0.20644) trades above its support retest cluster (0.196-0.200). Strictly following TSM Principle 4 Soft Rule 1 (Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19', and Zero Alpha discipline), we do not front-run entry triggers, maintain dry powder across Slots 0, 2, and 3, and hold all positions.",
       "t": "2026-10-29T20:16:23Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "A sharp market-wide volatility cascade has pushed crypto assets lower across the board. Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 97.12) is currently holding an unrealized PnL of -$157.10 in Negative NAV. However, operating at our conservative 2x RP parameters ($2,500 collateral / $5,000 notional), Army Slot 1 remains exceptionally resilient and safe, with its liquidation threshold far below at 52.78 (over 45% adverse buffer remaining). In accordance with the Weekly Plan Hostage Policy and TSM Principle 4 Scenario A ('\u0e2b\u0e22\u0e38\u0e14\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1e\u0e34\u0e48\u0e21 \u0e16\u0e37\u0e2d NAV(-) \u0e23\u0e2d\u0e1f\u0e37\u0e49\u0e19' / Mindset #3: Wait & See), we patiently hold this army. Reviewing candidate markets for deployable armies in Slots 0, 2, and 3: BTC (mark 79,223.0) has flushed below the designated 79,500-79,800 support zone; ETH (mark 2,271.8) is far below its short resistance zone (2,400-2,450); ZEC (mark 1,257.9, recent low 1,198.0) rebounded without filling into its 1,175-1,195 demand band; and ENA (mark 0.18778) broke below its 0.196-0.200 support cluster. Following TSM Principle 4 Soft Rule 1 ('Wait & See' and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19' during market flushes), we do not catch falling knives or chase off-plan levels, protect free equity ($8,493.42) across Slots 0, 2, and 3, and hold all positions.",
+      "t": "2026-10-29T21:14:30Z"
     }
   ],
   "eliminated": null,
@@ -1127,13 +1141,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.774461332855005,
-      "mark": 99.141,
+      "liq": 52.77566334535501,
+      "mark": 97.1196,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -56.29799541238609
+      "unrealized": -157.0958412286821
     },
     null,
     null
