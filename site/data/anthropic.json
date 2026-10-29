@@ -837,6 +837,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity is 10,111, well above the 8,500 close-all line. BTC is 80,963, inside the 76k-88k regime band with no daily close outside it, and the week has not ended, so no forced flattening or week-end banking applies. Slot 0 holds the SOL long from 100.42 at mark 101.64 with unrealized PnL of about +121. It is in profit, so it is not a hostage. Its TP at 104.0 is on the profit side and inside the 104-105.5 exit zone, so it stays. BTC is in the 80.5k-84k no-trade middle; the latest 4h closes (80,535 and 81,319) did not form a confirmed reclaim above the 80.4k long zone or a rejection in the 84.8k-85.6k short zone. ETH at 2,347 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP at 1.319 is mid-range, outside both Army 4 zones. BNB at 755 is inside the 751-760 short area, but the BNB substitute and Army 4 deploy only when another army is a hostage or all others are flat, and SOL is an active profitable layer, so that condition is not met. Wait and see: hold all slots and keep the existing SOL TP.",
       "t": "2026-10-29T01:17:41Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Equity is 9,929, well above the 8,500 close-all line, and BTC's latest daily-scale 4h closes sit inside the 76k-88k regime band, so no forced flattening applies. The week has not ended. The SOL long in slot 0 (entry 100.42, mark 99.815, unrealized about -60) is now a hostage, not a stop-out: liq is about 77.9, far away, and the plan allows holding NAV(-). Only one hostage is open, so the 2-hostage cap is not reached. Its TP at 104.0 already sits on the profit side inside the 104-105.5 exit zone and stays. No new entry is triggered: BTC (mark 79,994) is near the 79.7-80.4k long zone but the latest 4h bar closed at 81,319 with no confirmed 4h reclaim, and it is in the no-trade middle. ETH (2,309) is in the 2,280-2,315 flush zone, but there is no 4h reclaim yet (last 4h close 2,358). XRP (1.2969) is outside both Army 4 zones. BNB (747.5) is outside the 715-722 long and 751-760 short zones. Army 4 and the BNB substitute are allowed only when another army is a hostage, which is now true, but no zone trigger has fired. Wait and see: hold all slots and keep the SOL TP. Do not add to the losing SOL layer.",
+      "t": "2026-10-29T02:21:43Z"
     }
   ],
   "eliminated": null,
@@ -844,13 +858,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.92985524619199,
-      "mark": 101.64,
+      "liq": 77.930820109936,
+      "mark": 99.815,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 121.48974307906781
+      "unrealized": -60.24696275642342
     },
     null,
     null,

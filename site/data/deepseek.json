@@ -860,6 +860,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 2026-10-29T01:17:41Z. Week 2026-10-26 plan remains valid. No Reallocation applies: it is mid-week (Thursday), Slots are not all empty, and Reallocation only occurs at Monday 00:00 UTC with all Slots empty, so RP stays collateral 2500 / notional 2500. Layers: Slot 0 = SOL long, entry 99.691, mark 101.64, unrealized PnL +48.88, liq 2.590, TP 109.0 set per plan; Slot 1 = BTC long, entry 79924.0, mark 80963.0, unrealized PnL +32.50, liq 1073.41, TP 84500 set per plan. Slots 2 and 3 empty; free_equity 5000 >= collateral 2500. Both open Layers are positive, so there is no NAV(-) and no Scenario A-E basket offset/closing applies; per Wait & See (soft rule 1) and plan discipline (soft rule 2: follow plan 100%, Zero Alpha) hold both toward their targets. Funding settled at 01:00 UTC with tiny debits (SOL -0.03191, BTC -0.03170), only marginally reducing collateral and pulling liq prices slightly closer; nothing actionable. Remaining watchlist limit-buy triggers vs current marks and recently traded lows: ETH entry 2280.0 - mark 2347.4, recent lows 15m 2342.3 / 1h 2322.7 / 4h swing low 2296.2 and absolute 4h low 2281.5, never through 2280.0, not triggered. XRP entry 1.2500 - mark 1.3188, recent lows 15m 1.3140 / 1h 1.3079 / 4h swing low 1.2728 and absolute 4h low 1.2542, never through 1.2500, not triggered. BTC (79500) and SOL (99.50) are already open in their Slots. Plan TPs are not reached: SOL mark 101.64 with latest 1h high 103.85 is below 109.0, and BTC mark 80963.0 with latest 4h high 81804 is below 84500.0. No new entry condition is met, no TP change is required, and there are no stop orders per the Rules because risk is liquidation-only. Action: hold.",
       "t": "2026-10-29T01:17:41Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 2026-10-29T02:21:43Z. Week 2026-10-26 plan remains valid. No Reallocation applies: it is mid-week (Thursday), Slots are not all empty, and Reallocation only occurs at Monday 00:00 UTC with all Slots empty, so RP stays collateral 2500 / notional 2500. Layers: Slot 0 = SOL long, entry 99.691, mark 99.815, unrealized PnL +3.11, liq 2.591, TP 109.0 set per plan; Slot 1 = BTC long, entry 79924.0, mark 79994.0, unrealized PnL +2.19, liq 1074.41, TP 84500 set per plan. Slots 2 and 3 empty; free_equity 5000 >= collateral 2500. Both open Layers are still positive (no NAV(-)), so there is no Scenario A-E basket offset/closing and no hostage-policy pause (aggregate NAV not below -100); per Wait & See (soft rule 1) and plan discipline (soft rule 2: follow plan 100%, Zero Alpha) hold both toward their targets despite the recent sharp pullback. Funding settled at 02:00 UTC with tiny debits (SOL -0.02420, BTC -0.03127), only marginally reducing collateral and pulling liq prices slightly closer; nothing actionable. Remaining watchlist limit-buy triggers vs current marks and recently traded lows: ETH entry 2280.0 - mark 2309.3, lowest prints in view 2281.5 (4h) / 2296.2 (4h swing) / 2302.4 (latest 15m), never through 2280.0, not triggered. XRP entry 1.2500 - mark 1.2969, lowest prints in view 1.2542 (4h) / 1.2728 (4h swing) / 1.2952 (latest 15m), never through 1.2500, not triggered. BTC (79500) and SOL (99.50) are already open in their Slots. Plan TPs are not reached: SOL mark 99.815 with latest 1h high 103.85 is below 109.0, and BTC mark 79994.0 with latest 4h high 81804 is below 84500.0. No new entry condition is met, no TP change is required, and there are no stop orders per the Rules because risk is liquidation-only. Action: hold.",
+      "t": "2026-10-29T02:21:43Z"
     }
   ],
   "eliminated": null,
@@ -867,23 +881,23 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.590050333691991,
-      "mark": 101.64,
+      "liq": 2.591015197435979,
+      "mark": 99.815,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": 48.87602692319261
+      "unrealized": 3.109608690854621
     },
     {
       "entry": 79924.0,
-      "liq": 1073.4132212056138,
-      "mark": 80963.0,
+      "liq": 1074.4129087056062,
+      "mark": 79994.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": 32.49962464341124
+      "unrealized": 2.189580101096041
     },
     null,
     null
