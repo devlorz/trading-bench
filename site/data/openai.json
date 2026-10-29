@@ -993,6 +993,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry is executable under the weekly plan: BTC and ETH are below their entry zones, and XMR is above its permitted execution range; the required daily condition is not verified. All slots are empty, and neither the equity threshold nor flatten deadline has been reached. Hold.",
       "t": "2026-10-29T11:14:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry is executable within the weekly plan\u2019s price and confirmation conditions: BTC and ETH are below their entry zones, while XMR is above its 580\u2013585 execution range. All slots are empty, and neither the equity threshold nor weekly flatten deadline has been reached. Hold.",
+      "t": "2026-10-29T12:23:50Z"
     }
   ],
   "eliminated": null,

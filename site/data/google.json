@@ -993,6 +993,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Both active armies are performing solidly in Positive NAV under TSM Principle 4 Scenario C: Army Slot 0 (ENA Long, entry 0.19832, TP 0.21600, mark 0.20551) holds +$181.27 unrealized PnL, progressing toward its hostage target at 0.21600; Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 100.59) holds +$15.96 unrealized PnL, targeting 104.00. Both layers are well-defended by conservative 2x RP parameters and substantial ~50% liquidation margins. Evaluating available watchlist candidates against Weekly Plan entry triggers: BTC (mark 80,194.0) trades mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (mark 2,325.2) trades well below the 2,400-2,450 short entry band; and ZEC (mark 1,266.1) trades far above its 1,175-1,195 demand pullback zone. In strict adherence to TSM Principle 4 (Scenario C, Zero Alpha flow, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we let our winning layers run toward their TP targets, keep unallocated dry powder in Slots 2 and 3, and hold all positions.",
       "t": "2026-10-29T11:14:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Both active armies continue to trade profitably in Positive NAV under TSM Principle 4 Scenario C: Army Slot 0 (ENA Long, entry 0.19832, TP 0.21600, mark 0.20147) holds +$79.42 unrealized PnL, while Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 100.34) holds +$3.49 unrealized PnL. Both layers remain well-insulated by conservative 2x RP parameters ($2,500 collateral / $5,000 notional) and wide ~50% liquidation cushions with active limit Take Profit orders intact. Reviewing unallocated watchlist candidates against the Weekly Plan entry criteria: BTC (mark 80,078.0) trades mid-range between support (79,500-79,800) and short resistance (81,900-82,100); ETH (mark 2,323.9) remains well below its planned short entry band (2,400-2,450); and ZEC (mark 1,265.8) trades far above its demand pullback zone (1,175-1,195). In strict accordance with TSM Principle 4 (Scenario C, Zero Alpha flow, Mindset #3 Wait & See, and '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we let winning positions ride toward their TP targets, preserve dry powder in Slots 2 and 3, and hold all positions.",
+      "t": "2026-10-29T12:23:50Z"
     }
   ],
   "eliminated": null,
@@ -1000,23 +1014,23 @@
   "layers": [
     {
       "entry": 0.19832,
-      "liq": 0.10921076308939903,
-      "mark": 0.20551,
+      "liq": 0.10921329521439903,
+      "mark": 0.20147,
       "notional": 5000,
       "side": "long",
       "symbol": "ENA",
       "tp": 0.216,
-      "unrealized": 181.27269060104885
+      "unrealized": 79.41710367083536
     },
     {
       "entry": 100.27,
-      "liq": 52.76309358285499,
-      "mark": 100.59,
+      "liq": 52.764348082854994,
+      "mark": 100.34,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 15.956916325920385
+      "unrealized": 3.4905754462953724
     },
     null,
     null

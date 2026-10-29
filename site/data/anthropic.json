@@ -984,6 +984,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity is 10,149.9, well above the 8,500 close-all line. BTC mark 80,194 sits inside the 76k-88k regime band, with no daily close outside it, and the week has not ended, so no forced flattening or week-end banking applies. Slot 0 holds the SOL long from 100.42 at mark 100.59 with unrealized PnL of about +17, so it is not a hostage. Its TP at 104.0 is on the profit side and stays. Slot 1 holds the BNB short from 751.35 at mark 741.1, in profit, with its TP at 740.0 on the profit side; it stays. No new entry trigger has fired. BTC is in the 80.5k-84k no-trade middle, with no confirmed 4h reclaim of 80.4k and no rejection at 84.8k-85.6k. ETH at 2,325 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone. XRP is blocked because BNB already holds a layer (only one of XRP/BNB may hold at a time). Wait and see: hold all slots and keep both TPs.",
       "t": "2026-10-29T11:14:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Equity is about 10,125, well above the 8,500 close-all line. BTC's last 4h close (80,144) is inside the 76k-88k regime band with no daily close outside it, and the week has not ended, so no forced flattening or week-end banking applies. Slot 0 holds the SOL long from 100.42 at mark 100.34 (unrealized about -8). It is the only hostage, below the cap of 2, with liq about 77.9 far away. Its TP at 104.0 stays and the losing layer is not added to. Slot 1 is empty after the BNB short hit its 740 TP, and BNB (741) sits between the 715-722 long zone and the 751-760 short zone with no trigger. XRP is mid-range at 1.29, outside both Army 4 zones, and it is blocked anyway while BNB/XRP exclusivity applies. BTC is in the 80.5k-84k no-trade middle with no confirmed 4h reclaim of 80.4k. ETH (2,324) is above the 2,280-2,315 flush with no reclaim trigger. SOL already occupies its slot. No entry trigger has fired, so wait and see: hold all slots and keep the SOL TP.",
+      "t": "2026-10-29T12:23:50Z"
     }
   ],
   "eliminated": null,
@@ -991,13 +1005,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.93936845785498,
-      "mark": 100.59,
+      "liq": 77.940622957855,
+      "mark": 100.34,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 16.92889862577193
+      "unrealized": -7.966540529774775
     },
     null,
     null,
