@@ -324,6 +324,10 @@
       [
         "2026-10-29T21:14:30Z",
         9803.094734317354
+      ],
+      [
+        "2026-10-29T22:15:31Z",
+        9790.864196326915
       ]
     ],
     "deepseek": [
@@ -650,6 +654,10 @@
       [
         "2026-10-29T21:14:30Z",
         9904.608672012839
+      ],
+      [
+        "2026-10-29T22:15:31Z",
+        9871.473801486394
       ]
     ],
     "google": [
@@ -976,6 +984,10 @@
       [
         "2026-10-29T21:14:30Z",
         10829.64217896108
+      ],
+      [
+        "2026-10-29T22:15:31Z",
+        10823.517761762516
       ]
     ],
     "openai": [
@@ -1301,6 +1313,10 @@
       ],
       [
         "2026-10-29T21:14:30Z",
+        10069.35708965289
+      ],
+      [
+        "2026-10-29T22:15:31Z",
         10069.35708965289
       ]
     ],
@@ -1628,6 +1644,10 @@
       [
         "2026-10-29T21:14:30Z",
         10023.153738969882
+      ],
+      [
+        "2026-10-29T22:15:31Z",
+        10023.153738969882
       ]
     ],
     "zai": [
@@ -1954,13 +1974,17 @@
       [
         "2026-10-29T21:14:30Z",
         9699.552663098399
+      ],
+      [
+        "2026-10-29T22:15:31Z",
+        9695.484241746617
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-10-29T21:14:30Z",
+    "t": "2026-10-29T22:15:31Z",
     "type": "tick"
   },
   "leaderboard": [
@@ -1968,14 +1992,14 @@
       "avg_pnl": 331.1385526119555,
       "closed_positions": 3,
       "eliminated": null,
-      "equity": 10829.64217896108,
+      "equity": 10823.517761762516,
       "executor": "google/gemini-3.8-flash",
       "fees": 11.400943244696983,
-      "funding": -8.14933454542531,
+      "funding": -8.210123540139582,
       "liquidations": 0,
       "max_drawdown": 0.05230942187651085,
       "name": "google",
-      "net_return": 0.08296421789610794,
+      "net_return": 0.08235177617625158,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "google/gemini-4-argon",
@@ -2022,14 +2046,14 @@
       "avg_pnl": null,
       "closed_positions": 0,
       "eliminated": null,
-      "equity": 9904.608672012839,
+      "equity": 9871.473801486394,
       "executor": "deepseek/deepseek-v4.1-flash",
       "fees": 4.5,
-      "funding": -3.709913900643215,
+      "funding": -3.7628346546415488,
       "liquidations": 0,
-      "max_drawdown": 0.02223679057251706,
+      "max_drawdown": 0.025507798890235533,
       "name": "deepseek",
-      "net_return": -0.009539132798716127,
+      "net_return": -0.012852619851360578,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "deepseek/deepseek-v4-pro-0813",
@@ -2040,14 +2064,14 @@
       "avg_pnl": 144.34530396035188,
       "closed_positions": 1,
       "eliminated": null,
-      "equity": 9803.094734317354,
+      "equity": 9790.864196326915,
       "executor": "anthropic/claude-haiku-5.5",
       "fees": 10.477340786584149,
-      "funding": -8.829718112541638,
+      "funding": -8.951114497723871,
       "liquidations": 0,
-      "max_drawdown": 0.0516057779080536,
+      "max_drawdown": 0.052789013598167164,
       "name": "anthropic",
-      "net_return": -0.019690526568264612,
+      "net_return": -0.020913580367308532,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "anthropic/claude-fable-5.1",
@@ -2058,14 +2082,14 @@
       "avg_pnl": -42.921048128800194,
       "closed_positions": 7,
       "eliminated": null,
-      "equity": 9699.552663098399,
+      "equity": 9695.484241746617,
       "executor": "z-ai/glm-5.3-flash",
-      "fees": 15.624982373353902,
+      "fees": 16.7499823733539,
       "funding": -7.0054064258113655,
       "liquidations": 0,
-      "max_drawdown": 0.036824105388317374,
+      "max_drawdown": 0.0372281039551861,
       "name": "zai",
-      "net_return": -0.030044733690160138,
+      "net_return": -0.030451575825338296,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "z-ai/glm-5.3-prime",
