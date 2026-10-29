@@ -1112,6 +1112,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 2026-10-29T19:13:52Z. Week 2026-10-26 plan remains valid. No Reallocation applies: it is mid-week (Thursday), Slots are not all empty (2 of 4 occupied), and Reallocation only occurs Monday 00:00 UTC with all Slots empty, so RP stays collateral 2500 / notional 2500. Layers: Slot 0 = SOL long, entry 99.691, mark 100.37, unrealized PnL +17.03, liq 2.61, TP 109.0 already set per plan; Slot 1 = BTC long, entry 79924.0, mark 80791.0, unrealized PnL +27.12, liq 1091.50, TP 84500 set per plan. Slots 2 and 3 empty; free_equity 5000.0 >= collateral 2500.0. Both open Layers are positive (aggregate unrealized ~+44.2), so there is no NAV(-), no Scenario A-E basket offset/closing applies, and the hostage-policy pause (aggregate NAV below -100) is far from triggered; per Wait & See (soft rule 1) and plan discipline (soft rule 2: follow plan 100%, Zero Alpha) hold both toward their targets. Funding settled at 19:00 UTC with tiny debits (SOL -0.03154, BTC -0.03161), only marginally reducing collateral and pulling liq prices slightly closer; nothing actionable. Remaining watchlist limit-buy triggers vs current marks and recently traded lows: ETH entry 2280.0 - mark 2327.8, lowest prints in view 2292.1 (4h/1h/15m absolute low) and 2296.2 (4h swing low), never through 2280.0, not triggered. XRP entry 1.2500 - mark 1.2832, lowest prints in view 1.2788 (15m/1h low) and 1.2728 (4h swing low), never through 1.2500, not triggered. BTC (79500) and SOL (99.50) are already open in their Slots. Plan TPs are not reached: SOL mark 100.37 vs recent 4h high 103.85 is below 109.0; BTC mark 80791.0 vs recent 4h/1h highs 81804/81955 is below 84500.0. No new entry condition is met, no TP change is required, and there are no stop orders per the Rules because risk is liquidation-only. Action: hold.",
       "t": "2026-10-29T19:13:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 2026-10-29T20:16:23Z. Week 2026-10-26 plan remains valid; no Reallocation applies (mid-week Thursday, Slots not all empty \u2014 2 of 4 occupied \u2014 and Reallocation only occurs Monday 00:00 UTC with all Slots empty), so RP stays collateral 2500 / notional 2500. Layers: Slot 0 = SOL long, entry 99.691, mark 99.141, unrealized \u221213.79, liq 2.61, TP 109.0 already set per plan; Slot 1 = BTC long, entry 79924.0, mark 80400.9, unrealized +14.92, liq 1092.5, TP 84500 set per plan. Slots 2 and 3 empty; free_equity 5000.0 >= collateral 2500.0. Funding settled at 20:00 UTC with tiny debits (SOL \u22120.0313, BTC \u22120.0316), only marginally reducing collateral and nudging liq prices slightly closer; nothing actionable. SOL is now a small NAV(\u2212) after the latest 15m bar dipped to 98.384, but the loss (\u221213.79) is far from liquidation (liq 2.61) and the aggregate NAV is still positive (\u2248 +1.1), so no Scenario A\u2013E basket offset/closing is warranted \u2014 Scenario A applies: hold the NAV(\u2212) and let it work toward the plan TP 109.0 rather than cutting it (Rules: no stop orders, risk is liquidation-only; soft rule 3). BTC is positive and also held toward its 84500 TP; there is no reason to close it early for a trivial offset since that would violate plan discipline (soft rule 2, follow plan 100%). Hostage-policy pause (aggregate NAV below \u2212$100) is nowhere near triggered. Remaining watchlist limit-buy triggers vs current marks and recently traded lows: ETH entry 2280.0 \u2014 mark 2316.3, lowest prints in view 2292.1 (4h/1h low) / 2302.1 (15m low), never through 2280.0, not triggered. XRP entry 1.2500 \u2014 mark 1.2722, lowest print in view 1.2652 (latest 15m low) and 1.2728 (4h swing low), never through 1.2500, not triggered. BTC (79500) and SOL (99.50) are already open in their Slots. Plan TPs are not reached: SOL mark 99.141 vs recent 4h high 103.85 is below 109.0; BTC mark 80400.9 vs recent 4h/1h highs 81955 is below 84500.0. No new entry condition is met, no TP change is required. Action: hold.",
+      "t": "2026-10-29T20:16:23Z"
     }
   ],
   "eliminated": null,
@@ -1119,23 +1133,23 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.6096834203549975,
-      "mark": 100.37,
+      "liq": 2.610931295355016,
+      "mark": 99.141,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": 17.027615331373998
+      "unrealized": -13.792619193307248
     },
     {
       "entry": 79924.0,
-      "liq": 1091.4979462055926,
-      "mark": 80791.0,
+      "liq": 1092.5082087055926,
+      "mark": 80400.9,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": 27.119513537860968
+      "unrealized": 14.917296431609847
     },
     null,
     null

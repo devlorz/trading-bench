@@ -1644,6 +1644,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Weekly plan remains active until 2026-11-02T11:00:00Z. RP is fixed at collateral 2500 / notional 500 per Layer, effective leverage 0.20x, far below max leverage. Hostage policy allows Layer 1-2 only, and slots 0 and 1 are already occupied by the only permitted shorts BTC and ETH, so slots 2 and 3 must stay empty and no new leverage can be added. BTC short is currently NAV-negative: entry 80451, mark 80791, unrealized -2.113, but liquidation is extremely far at about 481744 and TP 78750 has not been touched. ETH short is NAV-positive: entry 2335.5, mark 2327.8, unrealized +1.648, liquidation is extremely far at about 13966, and TP 2278 has not been touched. Combined open NAV is slightly negative (-0.465), so per policy do not add leverage and do not force cuts or basket offsets with only a small positive ETH hostage; waiting for recovery/TP is consistent with Wait & See, Zero Alpha, Scenario A, and the Layer 1-2 restriction. Funding settlements are negligible and do not materially move liquidation or free equity. Hold both occupied layers and keep existing TP orders unchanged.",
       "t": "2026-10-29T19:13:52Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80400.9,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2316.3,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Plan active until 2026-11-02T11:00:00Z. RP fixed collateral 2500 / notional 500, effective leverage 0.20x. Hostage policy permits Layer 1-2 only; slots 0 and 1 are occupied by BTC and ETH shorts. Both layers are now NAV-positive (BTC +0.31, ETH +4.10), with liquidations extremely far and funding negligible. TP orders 78750 and 2278 remain on the profitable side for shorts and have not triggered. Under Wait & See, Zero Alpha, and the Layer 1-2 policy, do not add leverage in slots 2/3 and do not cut or adjust TPs; hold both positions unchanged.",
+      "t": "2026-10-29T20:16:23Z"
     }
   ],
   "eliminated": null,
@@ -1651,23 +1672,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481744.17906538007,
-      "mark": 80791.0,
+      "liq": 481745.18932788004,
+      "mark": 80400.9,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -2.1130874693913064
+      "unrealized": 0.31136965357799046
     },
     {
       "entry": 2335.5,
-      "liq": 13966.930133045907,
-      "mark": 2327.8,
+      "liq": 13966.944217784048,
+      "mark": 2316.35,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 1.6484692785270432
+      "unrealized": 4.099764504388801
     },
     null,
     null
