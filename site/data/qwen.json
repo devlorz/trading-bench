@@ -1707,6 +1707,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Plan remains active through 2026-11-02T11:00:00Z, but all layers are currently empty after both BTC and ETH shorts hit their planned TPs. Free equity is positive and above the RP collateral, so no forced closure or basket offset is needed. Hostage policy restricts deployment to Layers 1-2 only, and no NAV-negative position exists, so adding new leverage is unnecessary. Current marks are not at fresh action-based short entries: BTC/ETH/SOL/DOGE are far below their planned short entry levels after a large flush, with some already below or near prior TP zones, while HYPE is strongly above its planned short entry and contradicts the short bias rationale. Chasing these levels would violate Wait & See, Zero Alpha, and plan discipline. Therefore keep slots empty and hold.",
       "t": "2026-10-29T22:15:31Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 78829.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2267.0,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All layers are empty after BTC and ETH shorts completed their planned TP cycles, and free equity is above RP collateral. The weekly plan remains active, but TSM Principle 4 requires entry only at Action Based Strategy points rather than chasing after a flush. Current marks for BTC, ETH, SOL, and DOGE remain below their planned short-entry levels, and some planned exits would be on the wrong side for a fresh short if entered now. HYPE is also counter-plan after breaking well above EMAs/VWAP. Under Zero Alpha, Wait & See, and the Layer 1-2 hostage policy, preserve capital and avoid re-entering or adding unplanned leverage. Hold.",
+      "t": "2026-10-29T23:14:39Z"
     }
   ],
   "eliminated": null,

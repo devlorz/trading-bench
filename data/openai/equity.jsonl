@@ -80,3 +80,4 @@
 {"equity": 10034.49789799409, "layers": [{"entry": 81559.0, "liq": 162065.85812500003, "mark": 80400.9, "notional": 2500, "side": "short", "symbol": "BTC", "tp": null, "unrealized": 35.4988413295898}, null, null, null], "t": "2026-10-29T20:16:23Z"}
 {"equity": 10069.35708965289, "layers": [null, null, null, null], "t": "2026-10-29T21:14:30Z"}
 {"equity": 10069.35708965289, "layers": [null, null, null, null], "t": "2026-10-29T22:15:31Z"}
+{"equity": 10069.35708965289, "layers": [null, null, null, null], "t": "2026-10-29T23:14:39Z"}
