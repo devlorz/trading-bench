@@ -1560,6 +1560,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Current weekly plan is active until close_all 2026-11-02T11:00:00Z. RP is fixed at collateral 2500 and notional 500 per open layer, so effective leverage is 0.20x, far below BTC and ETH max leverage. Hostage policy permits only Layer 1-2; slots 0 and 1 already occupy the two allowed BTC and ETH shorts, so slots 2 and 3 must remain empty and no new army may be opened. Both open shorts are currently NAV-negative: BTC entry 80451.0 mark 81525.0 unrealized -6.674870418018421, ETH entry 2335.5 mark 2357.7 unrealized -4.752729608220899. However liquidation prices are extremely far above current marks: BTC 481740.12037788006 and ETH 13966.82861037649, so there is no immediate liquidation risk. TPs 78750 and 2278 remain on the profitable side for shorts. Funding is negligible and free_equity is 5000. With no positive Layer hostage, basket offset D/E is unavailable; opening another position would add leverage against the policy. Under Wait & See, Zero Alpha, Scenario A, and the Layer 1-2 hostage policy, the correct action is to hold the existing negative NAV cycles and keep TP orders unchanged.",
       "t": "2026-10-29T15:16:33Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81554,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2360.2,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "\u0e41\u0e1c\u0e19\u0e23\u0e32\u0e22\u0e2a\u0e31\u0e1b\u0e14\u0e32\u0e2b\u0e4c\u0e22\u0e31\u0e07\u0e43\u0e0a\u0e49\u0e07\u0e32\u0e19\u0e16\u0e36\u0e07 2026-11-02T11:00:00Z \u0e41\u0e25\u0e30 RP \u0e22\u0e31\u0e07\u0e2d\u0e22\u0e39\u0e48\u0e17\u0e35\u0e48 collateral 2500 / notional 500\u0e15\u0e48\u0e2dLayer. Hostage policy \u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15\u0e43\u0e2b\u0e49\u0e43\u0e0a\u0e49\u0e40\u0e1e\u0e35\u0e22\u0e07 Layer 1-2 \u0e0b\u0e36\u0e48\u0e07\u0e16\u0e39\u0e01\u0e22\u0e36\u0e14\u0e42\u0e14\u0e22 BTC short \u0e41\u0e25\u0e30 ETH short \u0e2d\u0e22\u0e39\u0e48\u0e41\u0e25\u0e49\u0e27 \u0e14\u0e31\u0e07\u0e19\u0e31\u0e49\u0e19 Slot 2 \u0e41\u0e25\u0e30 3 \u0e15\u0e49\u0e2d\u0e07\u0e27\u0e48\u0e32\u0e07 \u0e2b\u0e49\u0e32\u0e21\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1e\u0e34\u0e48\u0e21. \u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19\u0e17\u0e31\u0e49\u0e07\u0e2a\u0e2d\u0e07Layer\u0e21\u0e35 NAV\u0e15\u0e34\u0e14\u0e25\u0e1a \u0e23\u0e27\u0e21 unrealized -12.143 \u0e41\u0e15\u0e48\u0e23\u0e32\u0e04\u0e32 liquidation \u0e2d\u0e22\u0e39\u0e48\u0e44\u0e01\u0e25\u0e21\u0e32\u0e01\u0e08\u0e32\u0e01\u0e23\u0e32\u0e04\u0e32\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19\u0e1d\u0e31\u0e48\u0e07\u0e17\u0e35\u0e48\u0e40\u0e04\u0e25\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e2b\u0e27\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21 short \u0e41\u0e25\u0e30 funding \u0e44\u0e21\u0e48\u0e01\u0e23\u0e30\u0e17\u0e1a\u0e2a\u0e20\u0e32\u0e1e\u0e04\u0e25\u0e48\u0e2d\u0e07\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e21\u0e35\u0e19\u0e31\u0e22\u0e2a\u0e33\u0e04\u0e31\u0e0d; TP 78750 \u0e41\u0e25\u0e30 2278 \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e16\u0e39\u0e01\u0e41\u0e15\u0e30. \u0e44\u0e21\u0e48\u0e21\u0e35Layer\u0e1a\u0e27\u0e01\u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e19\u0e33Hostage\u0e21\u0e32 basket offset \u0e2b\u0e23\u0e37\u0e2d\u0e1b\u0e34\u0e14\u0e0a\u0e14\u0e40\u0e0a\u0e22 \u0e41\u0e25\u0e30 policy \u0e23\u0e30\u0e1a\u0e38\u0e27\u0e48\u0e32\u0e40\u0e21\u0e37\u0e48\u0e2d NAV\u0e15\u0e34\u0e14\u0e25\u0e1a\u0e43\u0e2b\u0e49\u0e44\u0e21\u0e48\u0e40\u0e1e\u0e34\u0e48\u0e21 leverage \u0e41\u0e15\u0e48\u0e23\u0e2d recovery/\u0e43\u0e0a\u0e49\u0e08\u0e31\u0e07\u0e2b\u0e27\u0e30\u0e40\u0e25\u0e47\u0e01\u0e15\u0e32\u0e21\u0e41\u0e1c\u0e19 \u0e44\u0e21\u0e48\u0e43\u0e0a\u0e48\u0e15\u0e31\u0e14\u0e02\u0e32\u0e14\u0e17\u0e38\u0e19\u0e17\u0e31\u0e19\u0e17\u0e35\u0e2b\u0e23\u0e37\u0e2d\u0e1d\u0e37\u0e19\u0e40\u0e1b\u0e34\u0e14Layer\u0e43\u0e2b\u0e21\u0e48 \u0e08\u0e36\u0e07\u0e04\u0e07\u0e2a\u0e16\u0e32\u0e19\u0e30\u0e40\u0e14\u0e34\u0e21\u0e41\u0e25\u0e30\u0e40\u0e01\u0e47\u0e1aTP\u0e44\u0e27\u0e49\u0e15\u0e32\u0e21\u0e41\u0e1c\u0e19",
+      "t": "2026-10-29T16:18:58Z"
     }
   ],
   "eliminated": null,
@@ -1567,23 +1588,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481740.12037788006,
-      "mark": 81525.0,
+      "liq": 481741.1421528801,
+      "mark": 81554.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -6.674870418018421
+      "unrealized": -6.855104349231209
     },
     {
       "entry": 2335.5,
-      "liq": 13966.82861037649,
-      "mark": 2357.7,
+      "liq": 13966.858220376489,
+      "mark": 2360.2,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": -4.752729608220899
+      "unrealized": -5.2879469064439775
     },
     null,
     null

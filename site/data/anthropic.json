@@ -1040,6 +1040,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity is about 10,310, well above the 8,500 close-all line. BTC's last 4h close (80,144) is inside the 76k-88k regime band with no daily close outside it, and the week has not ended, so no forced flattening or week-end banking applies. Slot 0 holds the SOL long from 100.42 at mark 102.2 with unrealized PnL of about +177, so it is not a hostage and the hostage-gated substitute armies stay locked. Its TP at 104.0 is on the profit side and stays. Slots 1-3 are empty. BTC mark 81,525 is in the 80.5k-84k no-trade middle with no 4h reclaim/rejection trigger. ETH at 2,358 is above the 2,280-2,315 flush and below the 2,440-2,500 short zone, with no trigger. SOL is already occupied by one layer (one per symbol), so no new SOL entry. BNB at 752.3 touches the 751-760 short zone, but BNB is the Army 4 substitute, which requires another army to be a hostage or all others flat. SOL is not a hostage and is not flat, so the gate is not met. XRP at 1.309 is mid-range and also gated the same way. Wait and see: hold all slots and keep the SOL TP.",
       "t": "2026-10-29T15:16:33Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Equity is about 10,336, well above the 8,500 close-all line. BTC mark is 81,554 and its last 4h close is 81,742, inside the 76k-88k regime band, so no forced flattening applies and the week has not ended. Slot 0 holds the SOL long from 100.42 at mark 102.47 with unrealized PnL of about +204, so it is not a hostage and the hostage-gated substitute armies (XRP and BNB) stay locked. Its TP at 104.0 is on the profit side and stays. BTC is above the 80.4k reclaim but has not wicked into the 79.7-80.4k long zone and is not at the 84.8-85.6k short zone, so there is no entry trigger. ETH (about 2,360) is above the 2,280-2,315 flush and below the 2,440-2,500 short zone with no trigger. SOL already occupies its one slot. Wait and see: hold all slots and keep the SOL TP.",
+      "t": "2026-10-29T16:18:58Z"
     }
   ],
   "eliminated": null,
@@ -1047,13 +1061,13 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.94440970785499,
-      "mark": 102.2,
+      "liq": 77.94569345785499,
+      "mark": 102.47,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": 177.25552678749264
+      "unrealized": 204.1426010754827
     },
     null,
     null,
