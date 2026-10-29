@@ -956,6 +956,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity is 9,970.8, well above the 8,500 close-all line. BTC mark 80,195 is inside the 76k-88k regime band with no daily close outside it, and the week has not ended, so no forced flattening or week-end banking applies. Slot 0 holds the SOL long from 100.42 at mark 100.26 (unrealized about -16). It is a hostage, not a stop-out: liq is about 77.9, far away, and only one hostage is open, below the cap of 2. Its TP at 104.0 is on the profit side and stays, with no add to the losing layer. Slot 1 holds the BNB short from 751.35 at mark 751.17 (unrealized about +2.4), with its TP at 740.0 already set on the profit side. The BNB short was opened last tick under the substitute/Army 4 condition, which is now satisfied by SOL being a hostage. No new trigger has fired: BTC is in the 80.5k-84k no-trade middle with no confirmed 4h reclaim of 80.4k, ETH at 2,320 is outside the 2,280-2,315 flush and the 2,440-2,500 short zone, and XRP at 1.29 is mid-range with no zone trigger. Only one of XRP/BNB may hold a layer, and BNB already holds one, so XRP is blocked. Free equity is 5,000, enough for two more layers, but the plan calls for wait and see. Hold all slots and keep both TPs.",
       "t": "2026-10-29T09:17:53Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Equity 10,072 is well above the 8,500 close-all line, and BTC at about 80.1k is inside the 76k-88k regime band with no daily close outside it, so no forced flattening applies. The week has not ended. Slot 0 holds the SOL long from 100.42 at mark 100.12 (unrealized about -30). It is a hostage, not a stop-out: liq is about 77.9, far away, and only one hostage is open, below the cap of 2. Its TP at 104.0 stays and the losing layer is not added to. Slot 1 holds the BNB short from 751.35 at mark 742.42 (unrealized about +119) with its TP at 740.0 on the profit side, so it stays. No new trigger has fired. BTC is in the 80.5k-84k no-trade middle with no confirmed 4h close back above 80.4k, and the last 4h bar closed at 79,826. ETH (about 2,317) is near the 2,280-2,315 flush zone, but the last 4h close (2,309.2) shows no reclaim. XRP is blocked because BNB already holds a layer (only one of XRP/BNB may hold at a time). Free equity is 5,000, but wait and see applies. Hold all slots and keep both TPs.",
+      "t": "2026-10-29T10:16:32Z"
     }
   ],
   "eliminated": null,
@@ -963,23 +977,23 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.936858082855,
-      "mark": 100.26,
+      "liq": 77.93811095785499,
+      "mark": 100.12,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -15.93308105954955
+      "unrealized": -29.874526986655763
     },
     {
       "entry": 751.35,
-      "liq": 901.278003057861,
-      "mark": 751.17,
+      "liq": 901.226384413061,
+      "mark": 742.42,
       "notional": 10000,
       "side": "short",
       "symbol": "BNB",
       "tp": 740.0,
-      "unrealized": 2.3956877620291963
+      "unrealized": 118.85273174951838
     },
     null,
     null
