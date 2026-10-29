@@ -923,6 +923,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No entry is executable under the weekly plan. BTC and ETH have tested their zones and closed below their VWAPs on completed 4h candles, but current marks are below their permitted execution ranges, so do not chase. XMR has not completed the required pullback-and-reclaim setup; its latest 4h candle is still forming. All slots are empty, and neither the equity threshold nor weekly flatten deadline has been reached. Hold.",
       "t": "2026-10-29T06:26:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "No entry setup is executable under the weekly plan. BTC and ETH are below their permitted entry zones. XMR has not pulled back into 575\u2013585 and reclaimed 580 on a completed 4h candle. All slots are empty, and neither the equity threshold nor weekly flatten deadline has been reached. Hold.",
+      "t": "2026-10-29T07:17:45Z"
     }
   ],
   "eliminated": null,

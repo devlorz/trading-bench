@@ -1371,6 +1371,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "The active weekly plan remains in force until close_all (2026-11-02T11:00:00Z). RP is fixed at collateral 2500 and notional 500 per Layer, giving 0.20x effective leverage, far below all watchlist symbol max leverage. The hostage policy allows deployment only on Layer 1-2, and slots 0 and 1 already occupy the two permitted shorts (BTC and ETH); slots 2 and 3 must remain empty. BTC short has entry 80451 and current mark 80019, so unrealized is positive at +2.685, with TP 78750 not reached and liquidation at 481731 extremely far. ETH short has entry 2335.5 and mark 2313.3, unrealized positive at +4.753, TP 2278 not reached, and liquidation at 13966 also extremely far. NAV is not negative, so the recovery/basket-offset branch does not apply, and there is no plan condition forcing an early market close or TP revision. Funding is negligible and no TP/liquidation trigger occurred. Under Wait & See, Zero Alpha, and Scenario C, the correct action is to hold both profitable Layer 1-2 hostage cycles and keep the plan TP orders unchanged.",
       "t": "2026-10-29T06:26:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 79871.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2306.78,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "The weekly plan remains active and close_all has not been reached. RP is fixed at collateral 2500 and notional 500, giving effective leverage 0.20x, far below every symbol's maximum leverage. The hostage policy explicitly limits deployment to Layer 1-2, and slots 0 and 1 already contain the two permitted shorts: BTC short entry 80451, mark 79871, unrealized positive, TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2306.78, unrealized positive, TP 2278 not reached, liquidation extremely far. Combined open NAV is positive, so no basket-offset recovery is required, but the policy does not allow adding new armies beyond Layer 1-2. Funding impact is negligible, no TP or liquidation trigger has occurred, and no plan condition forces an early close or TP revision. Under Wait & See, Zero Alpha, and Scenario C, hold both profitable hostage cycles and leave the plan TP orders unchanged.",
+      "t": "2026-10-29T07:17:45Z"
     }
   ],
   "eliminated": null,
@@ -1378,23 +1399,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481731.0966903801,
-      "mark": 80019.0,
+      "liq": 481732.09597788006,
+      "mark": 79871.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 2.684864078756013
+      "unrealized": 3.604678624255758
     },
     {
       "entry": 2335.5,
-      "liq": 13966.62813989276,
-      "mark": 2313.3,
+      "liq": 13966.6334068497,
+      "mark": 2306.78,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 4.752729608220899
+      "unrealized": 6.148576321986684
     },
     null,
     null
