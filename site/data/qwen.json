@@ -1539,6 +1539,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Weekly plan remains active through close_all, and RP is fixed at collateral 2500 with notional 500 per Layer, effective leverage 0.20x. The hostage policy permits Layer 1-2 only; slots 0 and 1 are already occupied by the only allowed BTC and ETH shorts, so no additional army can be opened. BTC short is slightly NAV-negative (-0.155), but liquidation is extremely far and funding is negligible, while ETH short is NAV-positive. Combined open NAV is positive, no TP or adverse liquidation condition is triggered, and the existing plan TP orders remain on the profitable side. Under Wait & See, Zero Alpha, Scenario A/C, and the Layer 1-2 restriction, the correct action is to hold both positions unchanged.",
       "t": "2026-10-29T14:17:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 81525.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2357.7,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current weekly plan is active until close_all 2026-11-02T11:00:00Z. RP is fixed at collateral 2500 and notional 500 per open layer, so effective leverage is 0.20x, far below BTC and ETH max leverage. Hostage policy permits only Layer 1-2; slots 0 and 1 already occupy the two allowed BTC and ETH shorts, so slots 2 and 3 must remain empty and no new army may be opened. Both open shorts are currently NAV-negative: BTC entry 80451.0 mark 81525.0 unrealized -6.674870418018421, ETH entry 2335.5 mark 2357.7 unrealized -4.752729608220899. However liquidation prices are extremely far above current marks: BTC 481740.12037788006 and ETH 13966.82861037649, so there is no immediate liquidation risk. TPs 78750 and 2278 remain on the profitable side for shorts. Funding is negligible and free_equity is 5000. With no positive Layer hostage, basket offset D/E is unavailable; opening another position would add leverage against the policy. Under Wait & See, Zero Alpha, Scenario A, and the Layer 1-2 hostage policy, the correct action is to hold the existing negative NAV cycles and keep TP orders unchanged.",
+      "t": "2026-10-29T15:16:33Z"
     }
   ],
   "eliminated": null,
@@ -1546,23 +1567,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481739.1059028801,
-      "mark": 80476.0,
+      "liq": 481740.12037788006,
+      "mark": 81525.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": -0.1553740786317137
+      "unrealized": -6.674870418018421
     },
     {
       "entry": 2335.5,
-      "liq": 13966.79930537649,
-      "mark": 2331.0,
+      "liq": 13966.82861037649,
+      "mark": 2357.7,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 0.9633911368015414
+      "unrealized": -4.752729608220899
     },
     null,
     null
