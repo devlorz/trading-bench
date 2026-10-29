@@ -1392,6 +1392,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "The weekly plan remains active and close_all has not been reached. RP is fixed at collateral 2500 and notional 500, giving effective leverage 0.20x, far below every symbol's maximum leverage. The hostage policy explicitly limits deployment to Layer 1-2, and slots 0 and 1 already contain the two permitted shorts: BTC short entry 80451, mark 79871, unrealized positive, TP 78750 not reached, liquidation extremely far; ETH short entry 2335.5, mark 2306.78, unrealized positive, TP 2278 not reached, liquidation extremely far. Combined open NAV is positive, so no basket-offset recovery is required, but the policy does not allow adding new armies beyond Layer 1-2. Funding impact is negligible, no TP or liquidation trigger has occurred, and no plan condition forces an early close or TP revision. Under Wait & See, Zero Alpha, and Scenario C, hold both profitable hostage cycles and leave the plan TP orders unchanged.",
       "t": "2026-10-29T07:17:45Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 80093.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2318.0,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "The weekly plan remains active through close_all 2026-11-02T11:00:00Z. RP is fixed at collateral 2500 and notional 500 per Layer, giving 0.20x effective leverage, far below BTC/ETH max leverage. The hostage policy limits deployment to Layer 1-2 only, so slots 0 and 1 are the only permitted layers and are already occupied; slots 2 and 3 must stay empty. Slot 0 BTC short: entry 80451, mark 80093, unrealized +2.225, TP 78750 not touched, liquidation extremely far. Slot 1 ETH short: entry 2335.5, mark 2318, unrealized +3.747, TP 2278 not touched, liquidation extremely far. Combined open NAV is positive, so basket-offset or forced recovery actions are not required. Current price action is still within short bias on higher timeframes (below 1h/4h EMA clusters and VWAP or slightly above for BTC/ETH), but no TP trigger, plan-based early exit, adverse liquidation pressure, or meaningful funding risk exists. Under Zero Alpha, Wait & See, Scenario C, and TSM Principle 4 soft rules, the correct action is to hold both profitable Layer 1-2 hostage cycles and leave the existing plan TP orders unchanged.",
+      "t": "2026-10-29T08:21:39Z"
     }
   ],
   "eliminated": null,
@@ -1399,23 +1420,23 @@
   "layers": [
     {
       "entry": 80451.0,
-      "liq": 481732.09597788006,
-      "mark": 79871.0,
+      "liq": 481733.09380288003,
+      "mark": 80093.0,
       "notional": 500,
       "side": "short",
       "symbol": "BTC",
       "tp": 78750,
-      "unrealized": 3.604678624255758
+      "unrealized": 2.22495680600614
     },
     {
       "entry": 2335.5,
-      "liq": 13966.6334068497,
-      "mark": 2306.78,
+      "liq": 13966.62504787649,
+      "mark": 2318.0,
       "notional": 500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2278,
-      "unrealized": 6.148576321986684
+      "unrealized": 3.74652108756155
     },
     null,
     null

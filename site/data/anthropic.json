@@ -921,6 +921,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity 9920 is well above the 8,500 close-all line and BTC's latest daily-scale 4h close (79,838) sits inside the 76k-88k regime band, so no forced flattening applies and the week has not ended. Slot 0 holds the SOL long from 100.42 at mark 99.73 (unrealized about -69). It is a hostage, not a stop-out: liq is about 77.9, far away, and only one hostage is open, below the cap of 2. Its TP at 104.0 is on the profit side and stays, and no add to the losing layer. No entry trigger has fired. BTC (mark 79,871) is near the 79.7-80.4k long zone, but the last 4h bar wicked to 79,668 and closed at 79,838, with no close back above 80.4k and no confirmed reclaim; the middle of the range is no-trade. ETH (2,306.8) is inside the 2,280-2,315 flush zone, but the last 4h close (2,307.9) shows no reclaim. XRP (1.2897) is outside both Army 4 zones. BNB (750.6) is inside the 751-760 short area's edge but shows no 4h rejection, and the Army 4 and BNB substitute deploy only on a zone trigger. Wait and see: hold all slots and keep the SOL TP.",
       "t": "2026-10-29T07:17:45Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "short",
+          "slot": 1,
+          "symbol": "BNB",
+          "type": "open"
+        },
+        {
+          "price": 740.0,
+          "side": "short",
+          "slot": 1,
+          "symbol": "BNB",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Equity 9,962 is well above the 8,500 close-all line, BTC (~80.1k) is inside the 76k-88k regime band, and the week has not ended, so no forced flattening applies. Slot 0 holds the SOL long from 100.42 at mark 100.15 (unrealized about -27). It is a hostage, not a stop-out: liq is about 77.9 and only one hostage is open, below the cap of 2. Its TP at 104.0 stays and the losing layer is not added to. Army 4 and the BNB substitute are now permitted because SOL is a hostage. BNB at 751.35 sits in the 751-760 short zone, and the latest 4h bar wicked to 759.01 and closed at 747.99, a rejection. Free equity 7,500 covers a 2,500 collateral layer, notional 10,000 is 4x against BNB max leverage 10, and no BNB layer or opposite-side position exists. I open one BNB short in slot 1 under fixed RP and set a limit TP at 740, which is the plan's +1.5-2% exit toward 740 and on the profit side of entry. BTC, ETH and XRP have no confirmed triggers.",
+      "t": "2026-10-29T08:21:39Z"
     }
   ],
   "eliminated": null,
@@ -928,15 +949,24 @@
   "layers": [
     {
       "entry": 100.42,
-      "liq": 77.934359195355,
-      "mark": 99.73,
+      "liq": 77.93560583285499,
+      "mark": 100.15,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -68.71141206930868
+      "unrealized": -26.887074287990043
     },
-    null,
+    {
+      "entry": 751.35,
+      "liq": 901.2818925,
+      "mark": 751.35,
+      "notional": 10000,
+      "side": "short",
+      "symbol": "BNB",
+      "tp": 740.0,
+      "unrealized": -0.0
+    },
     null,
     null
   ],
