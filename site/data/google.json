@@ -1161,6 +1161,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 96.629) continues to hold an unrealized PnL of -$181.56 in Negative NAV following the broader market flush. Under our conservative 2x RP parameters ($2,500 collateral / $5,000 notional), the layer remains exceptionally well protected with a wide liquidation buffer (liq 52.78, over 45% adverse price distance remaining) and an active TP at 104.00. In strict accordance with the Weekly Plan Hostage Policy and TSM Principle 4 Scenario A (Mindset #3: Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19'), we hold this army patiently. Assessing watchlist assets for potential army deployments across Slots 0, 2, and 3: BTC (mark 78,829.0) remains trading below its planned 79,500-79,800 support zone; ETH (mark 2,267.0) is far below its short resistance zone (2,400-2,450); ZEC (mark 1,241.1) sits above its 1,175-1,195 demand band; and ENA (mark 0.17710) trades below its 0.196-0.200 support cluster. Following TSM Principle 4 Soft Rule 1 (Zero Alpha flow, disciplined execution, and avoiding catching knives or entering off-plan), we preserve our dry powder ($8,493.42 free equity) in Slots 0, 2, and 3, and hold all positions.",
       "t": "2026-10-29T23:14:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "The portfolio currently holds Slot 1 SOL Long (entry 100.27, TP 104.00, mark 93.736, unrealized -$325.82). The position remains well within its 50% adverse excursion buffer, with liquidation at 52.78 (~44% lower) and an active TP order. In accordance with the Weekly Plan Hostage Policy and TSM Principle 4 Scenario A ('\u0e2b\u0e22\u0e38\u0e14\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1e\u0e34\u0e48\u0e21 \u0e16\u0e37\u0e2d NAV(-) \u0e23\u0e2d\u0e1f\u0e37\u0e49\u0e19' / Mindset #3: Wait & See), we patiently hold this layer. Reviewing remaining watchlist assets: BTC (mark 77,129) is trading below its 79,500-79,800 long support zone; ETH (mark 2,209.9) is well below the 2,400-2,450 short entry band; ZEC (mark 1,223.0) trades above the 1,175-1,195 demand zone after a quick sweep; and ENA (mark 0.16956) is well below its 0.196-0.200 support cluster. Following TSM Principle 4 Soft Rule 1 (Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19', and Zero Alpha flow), we avoid chasing off-plan prices, preserve our free equity ($8,493.42) across Slots 0, 2, and 3, and hold all positions.",
+      "t": "2026-10-30T00:41:20Z"
     }
   ],
   "eliminated": null,
@@ -1169,13 +1183,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.778095307855,
-      "mark": 96.629,
+      "liq": 52.779290345354994,
+      "mark": 93.736,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -181.55978857085825
+      "unrealized": -325.82028522987895
     },
     null,
     null

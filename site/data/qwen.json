@@ -1728,6 +1728,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All layers are empty after BTC and ETH shorts completed their planned TP cycles, and free equity is above RP collateral. The weekly plan remains active, but TSM Principle 4 requires entry only at Action Based Strategy points rather than chasing after a flush. Current marks for BTC, ETH, SOL, and DOGE remain below their planned short-entry levels, and some planned exits would be on the wrong side for a fresh short if entered now. HYPE is also counter-plan after breaking well above EMAs/VWAP. Under Zero Alpha, Wait & See, and the Layer 1-2 hostage policy, preserve capital and avoid re-entering or adding unplanned leverage. Hold.",
       "t": "2026-10-29T23:14:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 77129,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        },
+        {
+          "price": 2209.9,
+          "side": "short",
+          "slot": 1,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All slots are empty after BTC and ETH shorts completed their planned TP cycles, and free equity is above RP collateral. The weekly plan remains active, but TSM Principle 4 allows opening only at action-based planned entries. Current marks are already below the planned short entries for BTC, ETH, SOL, and DOGE; several planned shorts exits would be on the wrong side for a fresh short at current marks. HYPE is also far above its planned short entry and contradicts the short-bias context, so it is not an action-based entry. Hostage policy limits deployment to Layers 1-2, but there is no valid entry to deploy into. Therefore hold, preserve capital, and wait for a future plan-valid trigger.",
+      "t": "2026-10-30T00:41:20Z"
     }
   ],
   "eliminated": null,
