@@ -1833,6 +1833,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity (10023.15) is above RP collateral (2500), so there is no forced recovery or basket offset. The weekly plan remains active, but the hostage policy restricts deployment to Layer 1-2 and TSM Principle 4 requires opening only at plan-valid action-based entries, not chasing. Current marks are not at planned short entries: BTC 77334, ETH 2212.2, SOL 95.63, and DOGE 0.07506 are below their planned short entries (and many are already beyond the planned short exits, making fresh shorts on those exits invalid or unplanned). HYPE 90.83 is far above its planned short entry and has rallied strongly against the plan\u2019s short bias context, so it is not a plan-valid entry. Preserve the completed hostage and wait.",
       "t": "2026-10-30T03:18:56Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 78275.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four layers are empty and free_equity is above the RP collateral, so there is no forced basket offset, recovery opening, or close_all requirement. The weekly short-bias plan is still active, but current marks are not action-based plan entries: BTC, ETH, and SOL are far below their planned short entries and their planned exits would be on the wrong side for fresh shorts if opened at current marks; DOGE is below its planned entry and the planned TP is too small relative to current context; HYPE has strongly reversed above EMAs/VWAP and contradicts the plan's short rationale. Hostage policy limits deployment to Layers 1-2, and there is no valid plan entry to deploy into. Under Wait & See, Zero Alpha, and plan discipline, hold.",
+      "t": "2026-10-30T04:18:25Z"
     }
   ],
   "eliminated": null,
