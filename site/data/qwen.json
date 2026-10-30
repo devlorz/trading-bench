@@ -2008,6 +2008,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity exceeds RP collateral, so there is no NAV-negative basket offset, recovery, or forced close_all. Current marks are not action-based planned entries for the short week: BTC 76736, ETH 2216.7, SOL 94.408 and DOGE 0.074957 are below both their planned entries and planned exits, meaning a fresh market short would chase and the planned TPs would be on the wrong side of such an entry. HYPE 90.765 is far above its planned short entry 77.017 and its trend/context has reversed strongly against the original short rationale. Hostage policy gives Layer 1-2 capacity only when a valid plan trigger appears; it does not require opening. Therefore hold.",
       "t": "2026-10-30T14:16:58Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 77738.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Retry after transient HTTP 429. Account has all slots empty, no NAV-negative layer, and close_all is not active. Hostage policy allows only Layer 1-2 deployment, but an action-based weekly-plan entry is required. Current marks are not valid plan entries for the short-bias plan: BTC 77738, ETH 2250.5, and SOL 95.287 are below both their planned short entries and planned short exits, so opening fresh shorts there would chase price and place the plan exits on the wrong side for shorts. DOGE 0.076261 is still below its planned short entry 0.077186 and near its exit, not a valid trigger. HYPE 93.076 is far above its planned short entry and contradicts the original short rationale after reversing above EMAs/VWAP. Under Wait & See, Zero Alpha, and 100% plan discipline, hold and preserve completed hostage cycles.",
+      "t": "2026-10-30T15:15:13Z"
     }
   ],
   "eliminated": null,
