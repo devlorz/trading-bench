@@ -1882,13 +1882,13 @@
   "layers": [
     {
       "entry": 0.076375,
-      "liq": 0.45439688125,
-      "mark": 0.076369,
+      "liq": 0.454397832725,
+      "mark": 0.076375,
       "notional": 500,
       "side": "short",
       "symbol": "DOGE",
       "tp": 0.0756,
-      "unrealized": 0.03927986906705154
+      "unrealized": -0.0
     },
     null,
     null,
