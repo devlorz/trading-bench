@@ -1,18 +1,9 @@
 {
-  "free_equity": 7215.1828354001955,
-  "last_tick": "2026-10-30T04:18:25Z",
+  "free_equity": 9661.126182266426,
+  "last_tick": "2026-10-30T05:16:34Z",
   "last_week": "2026-10-26T00:00:00Z",
   "layers": [
-    {
-      "collateral": 2498.524463758328,
-      "entry": 607.91,
-      "notional": 2500,
-      "opened_at": "2026-10-30T03:18:56Z",
-      "side": "long",
-      "size": 4.112450856212268,
-      "symbol": "XMR",
-      "tp": 620
-    },
+    null,
     null,
     null,
     null
@@ -21,5 +12,5 @@
     "collateral": 2500.0,
     "notional": 2500
   },
-  "settled": "2026-10-30T04:18:25Z"
+  "settled": "2026-10-30T05:16:34Z"
 }

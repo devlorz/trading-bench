@@ -1847,12 +1847,49 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four layers are empty and free_equity is above the RP collateral, so there is no forced basket offset, recovery opening, or close_all requirement. The weekly short-bias plan is still active, but current marks are not action-based plan entries: BTC, ETH, and SOL are far below their planned short entries and their planned exits would be on the wrong side for fresh shorts if opened at current marks; DOGE is below its planned entry and the planned TP is too small relative to current context; HYPE has strongly reversed above EMAs/VWAP and contradicts the plan's short rationale. Hostage policy limits deployment to Layers 1-2, and there is no valid plan entry to deploy into. Under Wait & See, Zero Alpha, and plan discipline, hold.",
       "t": "2026-10-30T04:18:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 0.076369,
+          "side": "short",
+          "slot": 0,
+          "symbol": "DOGE",
+          "type": "hold"
+        },
+        {
+          "price": 0.076369,
+          "side": "short",
+          "slot": 0,
+          "symbol": "DOGE",
+          "type": "open"
+        },
+        {
+          "price": 0.0756,
+          "side": "short",
+          "slot": 0,
+          "symbol": "DOGE",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity 10023.15 exceeds RP collateral 2500, so no basket offset, recovery opening, or forced action is required. The active weekly plan remains a short-bias plan, and hostage policy restricts deployment to Layers 1-2 only, but there is currently no Action-Based plan entry. BTC 78559, ETH 2248, and SOL 97.763 are below their planned short entries and already beyond or on the wrong side of the planned short exits for fresh shorts; entering now would be chasing after a flush rather than taking a planned level. DOGE 0.076369 is above its planned short exit but still has not reached the planned short entry 0.077186, so it is not the planned action point. HYPE 93.12 has reversed strongly above EMAs/VWAP and contradicts the plan's short-bias context. Under Wait & See, Zero Alpha, and plan discipline, preserve the completed hostage and hold.",
+      "t": "2026-10-30T05:16:34Z"
     }
   ],
   "eliminated": null,
   "executor": "qwen/qwen3.8-flash",
   "layers": [
-    null,
+    {
+      "entry": 0.076375,
+      "liq": 0.45439688125,
+      "mark": 0.076369,
+      "notional": 500,
+      "side": "short",
+      "symbol": "DOGE",
+      "tp": 0.0756,
+      "unrealized": 0.03927986906705154
+    },
     null,
     null,
     null

@@ -1,9 +1,18 @@
 {
-  "free_equity": 10023.153738969882,
-  "last_tick": "2026-10-30T04:18:25Z",
+  "free_equity": 7523.153738969882,
+  "last_tick": "2026-10-30T05:16:34Z",
   "last_week": "2026-10-26T00:00:00Z",
   "layers": [
-    null,
+    {
+      "collateral": 2499.775,
+      "entry": 0.076375,
+      "notional": 500,
+      "opened_at": "2026-10-30T05:16:34Z",
+      "side": "short",
+      "size": 6546.644844517185,
+      "symbol": "DOGE",
+      "tp": 0.0756
+    },
     null,
     null,
     null
@@ -12,5 +21,5 @@
     "collateral": 2500.0,
     "notional": 500
   },
-  "settled": "2026-10-30T04:18:25Z"
+  "settled": "2026-10-30T05:16:34Z"
 }
