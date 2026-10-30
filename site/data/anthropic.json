@@ -1341,6 +1341,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Slot 0 holds one BNB long (entry 715.45, mark 700.32, unrealized about -211, TP 730 already set, liq about 572.5). That is one hostage, under the cap of 2, and far from the 25% hard stop (about -625). Equity 9286 is above the 8,500 close-all line. BTC mark 77,471 is inside the 76k-88k regime band with no daily close outside it, and the week 2026-10-26 has not ended, so no week-end banking applies. Adding to the losing BNB layer is forbidden, so the layer is held with its existing TP. No new entry trigger has fired: BTC is below the 79.7k-80.4k long zone and far from the 84.8k-85.6k short zone; ETH at about 2,235 is below the 2,280-2,315 flush-reclaim zone with no 4h reclaim; SOL at about 96.6 is below the 98.6-100.5 dip zone with no 4h hold; XRP at 1.247 is below the 1.255 reclaim zone and far from the 1.365-1.40 short zone; BNB already occupies the single XRP/BNB slot. Wait and see: hold all slots.",
       "t": "2026-10-30T12:24:00Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current state: slot 0 holds one BNB long (entry 715.45, mark 700.02, unrealized about -216, TP 730 set, liq about 572.5). That is one hostage, under the cap of 2, and far from the 25% hard stop (about -625 loss). Equity 9,282 is above the 8,500 close-all line. BTC mark 77,299 is inside the 76k-88k regime band with no daily close outside it, and the week 2026-10-26 has not ended, so no week-end banking applies. No entry trigger has fired: BTC is below the 79.7k-80.4k long zone and far from the 84.8k-85.6k short zone; ETH at about 2,229 is below the 2,280-2,315 flush-reclaim zone; SOL at 96.37 is below the 98.6-100.5 dip zone with no 4h hold; XRP at 1.2441 is below the 1.255 reclaim zone; BNB already occupies the single XRP/BNB slot. Adding to the losing BNB layer is forbidden, so the layer is held with its existing TP. Wait and see: hold all slots.",
+      "t": "2026-10-30T13:16:30Z"
     }
   ],
   "eliminated": null,
@@ -1348,13 +1362,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.511762158726,
-      "mark": 700.32,
+      "liq": 572.49913491985,
+      "mark": 700.02,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -211.47529526871193
+      "unrealized": -215.66846040953334
     },
     null,
     null,

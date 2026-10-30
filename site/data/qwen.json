@@ -1980,6 +1980,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four layers are empty and free_equity 10027.94 exceeds RP collateral 2500, so no basket offset, recovery opening, or forced close is required. close_all is not active. The weekly plan is short-bias, but current marks are not action-based entries: BTC, ETH, and SOL are below both their planned short entries and planned short exits, so applying plan TPs to fresh shorts would be on the wrong side and would be chasing. DOGE is still below its planned entry and very close to its planned exit, offering no worthwhile planned cycle. HYPE is far above its planned short entry and contradicts the original short rationale. Hostage policy permits only Layer 1-2 capacity, but there is no valid entry to deploy. Under Wait & See, Zero Alpha, and 100% plan discipline, hold.",
       "t": "2026-10-30T12:24:00Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 77299.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity exceeds RP collateral, so no NAV-negative recovery or basket-offset action is required. close_all is not active. The weekly plan is short-biased and hostage policy limits deployment to Layer 1-2, but current marks are not action-based planned entries: BTC, ETH, and SOL are below both their planned short entries and planned exits, so opening market shorts there would chase price and would require invalid TP placement relative to the plan. DOGE is still below its planned short entry and only marginally above its planned exit, giving no planned entry and an unusable tiny edge. HYPE is far above its planned short entry and has reversed against the original short rationale. Under Wait & See, Zero Alpha, and plan discipline, hold.",
+      "t": "2026-10-30T13:16:30Z"
     }
   ],
   "eliminated": null,
