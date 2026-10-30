@@ -89,3 +89,4 @@
 {"equity": 9499.655513748094, "layers": [null, null, null, null], "t": "2026-10-30T05:16:34Z"}
 {"equity": 9495.155513748094, "layers": [{"entry": 715.45, "liq": 572.6819525000001, "mark": 715.45, "notional": 10000, "side": "long", "symbol": "BNB", "tp": 730.0, "unrealized": 0.0}, null, null, null], "t": "2026-10-30T06:26:05Z"}
 {"equity": 9467.331846309697, "layers": [{"entry": 715.45, "liq": 572.65259678688, "mark": 713.43, "notional": 10000, "side": "long", "symbol": "BNB", "tp": 730.0, "unrealized": -28.233978614859115}, null, null, null], "t": "2026-10-30T07:17:08Z"}
+{"equity": 9370.84015271378, "layers": [{"entry": 715.45, "liq": 572.6160950052, "mark": 706.49, "notional": 10000, "side": "long", "symbol": "BNB", "tp": 730.0, "unrealized": -125.23586553917166}, null, null, null], "t": "2026-10-30T08:21:10Z"}
