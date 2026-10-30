@@ -1966,6 +1966,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four layers are empty and free_equity 10027.94 exceeds RP collateral 2500, so there is no NAV-negative recovery, basket offset, or forced close requirement. Hostage policy allows only Layer 1-2, but opening requires an Action-Based plan entry. Current marks: BTC 77714, ETH 2245, and SOL 96.905 are below both their planned short entries and planned short exits, so applying the plan TPs would be on the wrong side for fresh shorts and entering would chase price below planned exits. HYPE 92.819 is far above its planned short entry and contradicts the plan's short rationale. DOGE 0.075825 is still below its planned short entry and very close to its planned exit, making a new short a tiny-edge chase rather than a planned entry. Under Wait & See, Zero Alpha, and 100% plan discipline, hold and preserve the completed hostage cycles.",
       "t": "2026-10-30T11:13:27Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 77471.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four layers are empty and free_equity 10027.94 exceeds RP collateral 2500, so no basket offset, recovery opening, or forced close is required. close_all is not active. The weekly plan is short-bias, but current marks are not action-based entries: BTC, ETH, and SOL are below both their planned short entries and planned short exits, so applying plan TPs to fresh shorts would be on the wrong side and would be chasing. DOGE is still below its planned entry and very close to its planned exit, offering no worthwhile planned cycle. HYPE is far above its planned short entry and contradicts the original short rationale. Hostage policy permits only Layer 1-2 capacity, but there is no valid entry to deploy. Under Wait & See, Zero Alpha, and 100% plan discipline, hold.",
+      "t": "2026-10-30T12:24:00Z"
     }
   ],
   "eliminated": null,
