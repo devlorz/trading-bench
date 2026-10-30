@@ -1166,21 +1166,26 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Equity is 9,465.79, above the 8,500 close-all line. BTC mark is 77,129 and the latest 4h close is 77,947. Neither is a confirmed daily close below 76,000, so the regime is not dead, and the week (2026-10-26) has not ended, so no week-end banking applies. Slot 0 holds the SOL long from 100.42 with mark 93.736 and unrealized PnL of about -666. It is the only hostage (cap is 2), and its liq is about 77.96, far away. The loss already exceeds 25% of collateral (625), which the plan labels a hard-stop level. The system rules forbid stop orders and make liquidation the only forced exit, and the plan itself says to hold hostages rather than cut them, so I hold rather than realize the loss; this conflicts with the plan's wording and should be reviewed. Adding to the losing layer is forbidden. The SOL TP at 104 stays. No new entry triggers have fired: BTC 77.1k is below the 79.7k-80.4k long zone with no 4h reclaim and far from the 84.8k short zone; ETH 2,210 is below the 2,280-2,315 flush with no reclaim; XRP 1.214 is below the 1.255-1.275 long zone with no 4h reclaim; BNB 690 is below the 715-722 long zone with no reclaim. SOL is occupied (one per symbol). Wait and see: hold all slots.",
       "t": "2026-10-30T00:41:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "SOL",
+          "type": "close"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "SOL long in slot 0 (entry 100.42, mark 94.127) has an unrealized loss of about -627, which is 25% of the 2,500 collateral. That is the plan's explicit hard RP stop (25% adverse move, structural failure), and the loss is now at that level, so I close the layer at market. Equity after the close should be roughly 8,870, still above the 8,500 close-all line. BTC's last 4h close is 77,947 and the 1h close is 77,220, so the 76,000 daily-close regime-death line has not triggered. The week has not ended. No new entries: all other symbols lack confirmed 4h triggers (BTC 77.2k below the 79.7k long zone, ETH 2,221 below the flush zone, XRP 1.2206 below the 1.255 zone, BNB 697 below the 715 zone). This also resolves the earlier conflict where prior ticks held past the stop level, and the TP at 104 is removed with the closed layer.",
+      "t": "2026-10-30T01:18:17Z"
     }
   ],
   "eliminated": null,
   "executor": "anthropic/claude-haiku-5.5",
   "layers": [
-    {
-      "entry": 100.42,
-      "liq": 77.955565220355,
-      "mark": 93.736,
-      "notional": 10000,
-      "side": "long",
-      "symbol": "SOL",
-      "tp": 104.0,
-      "unrealized": -665.6044612626964
-    },
+    null,
     null,
     null,
     null
@@ -1243,6 +1248,18 @@
       "reason": "tp",
       "side": "short",
       "symbol": "BNB"
+    },
+    {
+      "closed_at": "2026-10-30T01:18:17Z",
+      "entry": 100.42,
+      "exit": 94.119,
+      "fees": 8.71764090818562,
+      "funding": -8.50750082767377,
+      "opened_at": "2026-10-27T02:29:58Z",
+      "pnl": -644.6897902122575,
+      "reason": "close",
+      "side": "long",
+      "symbol": "SOL"
     }
   ],
   "started_week": "2026-10-26T00:00:00Z",
