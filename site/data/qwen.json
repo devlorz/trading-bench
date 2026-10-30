@@ -1952,6 +1952,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "No layers are open and free_equity exceeds RP collateral. The active weekly short plan is not at action-based entries: BTC 77361, ETH 2222.3, SOL 96.365, and DOGE 0.075354 are below their planned short entries and below or through their planned short exits, so fresh shorts would require chasing or invalid TP levels. HYPE 91.545 is far above its planned short entry and contradicts the original short rationale. close_all is not active, and hostage policy limits deployment to Layer 1-2 but does not create a signal. Under Wait & See, Zero Alpha, and 100% plan discipline, hold.",
       "t": "2026-10-30T10:16:13Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 0.075825,
+          "side": "short",
+          "slot": 0,
+          "symbol": "DOGE",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four layers are empty and free_equity 10027.94 exceeds RP collateral 2500, so there is no NAV-negative recovery, basket offset, or forced close requirement. Hostage policy allows only Layer 1-2, but opening requires an Action-Based plan entry. Current marks: BTC 77714, ETH 2245, and SOL 96.905 are below both their planned short entries and planned short exits, so applying the plan TPs would be on the wrong side for fresh shorts and entering would chase price below planned exits. HYPE 92.819 is far above its planned short entry and contradicts the plan's short rationale. DOGE 0.075825 is still below its planned short entry and very close to its planned exit, making a new short a tiny-edge chase rather than a planned entry. Under Wait & See, Zero Alpha, and 100% plan discipline, hold and preserve the completed hostage cycles.",
+      "t": "2026-10-30T11:13:27Z"
     }
   ],
   "eliminated": null,
