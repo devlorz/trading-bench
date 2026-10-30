@@ -84,3 +84,4 @@
 {"equity": 9465.788719579254, "layers": [{"entry": 100.42, "liq": 77.955565220355, "mark": 93.736, "notional": 10000, "side": "long", "symbol": "SOL", "tp": 104.0, "unrealized": -665.6044612626964}, null, null, null], "t": "2026-10-30T00:41:20Z"}
 {"equity": 9499.655513748094, "layers": [null, null, null, null], "t": "2026-10-30T01:18:17Z"}
 {"equity": 9499.655513748094, "layers": [null, null, null, null], "t": "2026-10-30T02:21:53Z"}
+{"equity": 9499.655513748094, "layers": [null, null, null, null], "t": "2026-10-30T03:18:56Z"}
