@@ -1357,6 +1357,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 96.368) continues to hold securely in Negative NAV with an unrealized loss of -$194.57. Backed by $2,500 collateral against $5,000 notional (2x leverage), the position has a deep liquidation buffer at 52.78 (~45.2% adverse excursion cushion), well within our 50% adverse excursion allowance. Per the Weekly Plan Hostage Policy and TSM Principle 4 Scenario A ('Wait & See' / Mindset #3: hold NAV(-) awaiting recovery), we maintain this army with its limit Take Profit at 104.00 intact. Reviewing the Watchlist for open Slots (0, 2, 3) against the Weekly Plan entry parameters: BTC (mark 77,299.0) trades below its designated long support zone (79,500-79,800); ETH (mark 2,229.2) trades well below its short resistance threshold (2,400-2,450); ZEC (mark 1,243.9) sits above its 1,175-1,195 demand band; and ENA (mark 0.18972) trades below its 0.196-0.200 support cluster. Adhering strictly to TSM Principle 4 Soft Rule 1 (Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19', and Zero Alpha discipline against taking off-plan trades), we keep our dry powder ($8,493.42 free equity across Slots 0, 2, and 3) intact and hold all positions.",
       "t": "2026-10-30T13:16:30Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Army Slot 1 (SOL Long, entry 100.27, TP 104.00, mark 94.408) remains securely held in Negative NAV with an unrealized loss of -$292.31. Operating with $2,500 collateral against $5,000 notional (2x leverage), the position is heavily protected with its liquidation threshold at 52.78 (~44.1% adverse excursion cushion), comfortably inside our 50% adverse excursion buffer. Per the Weekly Plan Hostage Policy and TSM Principle 4 Scenario A ('Wait & See' / Mindset #3: hold NAV(-) awaiting recovery), we maintain this army with its limit Take Profit at 104.00 intact. Reviewing the Watchlist for open Slots (0, 2, 3) against the Weekly Plan entry parameters: BTC (mark 76,736.0) trades below its designated long support zone (79,500-79,800); ETH (mark 2,216.7) trades well below its short resistance threshold (2,400-2,450); ZEC (mark 1,223.4) has not yet reached its 1,175-1,195 demand band; and ENA (mark 0.18537) trades below its 0.196-0.200 support cluster. In strict adherence to TSM Principle 4 Soft Rule 1 (Wait & See, '\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19', and Zero Alpha discipline against taking off-plan trades), we keep our dry powder ($8,493.42 free equity across Slots 0, 2, and 3) intact and hold all positions.",
+      "t": "2026-10-30T14:16:58Z"
     }
   ],
   "eliminated": null,
@@ -1365,13 +1379,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.784978697626286,
-      "mark": 96.368,
+      "liq": 52.786169647626295,
+      "mark": 94.408,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -194.57464844918726
+      "unrealized": -292.31076094544704
     },
     null,
     null
