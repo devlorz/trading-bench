@@ -91,3 +91,4 @@
 {"equity": 9661.126182266426, "layers": [null, null, null, null], "t": "2026-10-30T07:17:08Z"}
 {"equity": 9661.126182266426, "layers": [null, null, null, null], "t": "2026-10-30T08:21:10Z"}
 {"equity": 9660.166981251736, "layers": [{"entry": 603.14, "liq": 60.58541300000002, "mark": 603.18, "notional": 2500, "side": "long", "symbol": "XMR", "tp": 620, "unrealized": 0.16579898531005913}, null, null, null], "t": "2026-10-30T09:17:43Z"}
+{"equity": 9600.989835032575, "layers": [null, null, null, null], "t": "2026-10-30T10:16:13Z"}
