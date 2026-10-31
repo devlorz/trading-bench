@@ -1649,6 +1649,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Current state at 2026-10-31T10:12Z: one BNB long hostage in slot 0 (entry 715.45, mark about 702.5, unrealized about -181, TP 730 set, liq about 572.6). Equity is about 9,316, well above the 8,500 close-all line. BTC mark is about 77.4k, inside the 76k-88k regime band, and its recent daily closes stay above 76,000, so no regime break. The week has not ended, so no week-end banking applies. One hostage is open, under the cap of 2, and far from the 25% hard stop, so the layer keeps its TP and is not added to. No entry trigger has fired: BTC is below the 79.7k-80.4k long zone and far from the 84.8k-85.6k short zone; ETH at about 2,243 is below the 2,280-2,315 flush-reclaim zone and far from the 2,440 short zone; SOL at about 95.5 is below the 98.6-100.5 dip zone with no 4h hold; XRP at about 1.247 is below the 1.255 reclaim zone, and XRP and BNB cannot hold layers at the same time while BNB occupies that slot. Wait and see: hold all slots.",
       "t": "2026-10-31T10:12:21Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Current state: one BNB long hostage in slot 0 (entry 715.45, mark 703.3, unrealized about -170, TP 730 set, liq about 572.6). Equity 9,327 is well above the 8,500 close-all line. BTC last 4h close 77,317 and the 1h closes are above 76,000, so no daily-close regime break; the week has not ended so no week-end banking. One hostage is open, under the cap of 2, and far from the 25% hard stop, so the layer keeps its TP and is not added to. No entry trigger has fired: BTC is far below the 79.7k-80.4k long zone and the 84.8k short zone; ETH at about 2,244 is below the 2,280-2,315 flush-reclaim zone; SOL at about 95.7 is below the 98.6-100.5 dip zone with no 4h hold; XRP at about 1.2469 is below the 1.255 reclaim zone and XRP/BNB cannot hold layers together while BNB occupies the shared slot. Wait and see: hold all slots.",
+      "t": "2026-10-31T11:11:34Z"
     }
   ],
   "eliminated": null,
@@ -1656,13 +1670,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.574807466141,
-      "mark": 702.49,
+      "liq": 572.562292335311,
+      "mark": 703.3,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -181.1447340834445
+      "unrealized": -169.82318820323002
     },
     null,
     null,
