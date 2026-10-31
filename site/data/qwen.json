@@ -2204,6 +2204,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four layers are empty, free_equity is above RP collateral, and there are no NAV-negative layers or liquidation recovery requirements. The weekly short-bias plan limits deployment to Layers 1-2 and uses action-based entry levels: BTC 80366, ETH 2330.5, SOL 101.50, HYPE 77.017, DOGE 0.077186. Current marks are BTC 77179, ETH 2237.6, SOL 95.993, HYPE 89.166, DOGE 0.075531. None is at its planned short entry; several are already beyond the planned exits, and opening now would chase flushed prices or a reversed HYPE context rather than follow the plan. Under Wait & See, Zero Alpha, and 100% plan discipline, hold.",
       "t": "2026-10-31T04:14:49Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 77226,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four layers are empty, no slot needs liquidation recovery, no NAV-negative layer exists, and close_all is not active yet. Free equity is sufficient, but hostage policy only limits deployment and does not create an entry. The weekly plan is action-based short bias with planned entries BTC 80366, ETH 2330.5, SOL 101.50, HYPE 77.017, DOGE 0.077186. Current marks are BTC 77226, ETH 2239.8, SOL 95.918, HYPE 88.665, DOGE 0.075305. None is at the planned short entry. BTC/ETH/SOL/DOGE are below planned entries, opening shorts would chase flushed prices and several planned exits are not valid profit-side TPs for fresh market entries. HYPE has diverged far above its planned short entry and against the original short context. Under Wait & See, Zero Alpha, and plan discipline, hold.",
+      "t": "2026-10-31T05:12:31Z"
     }
   ],
   "eliminated": null,
