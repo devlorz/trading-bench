@@ -1,6 +1,6 @@
 {
   "free_equity": 10027.940633568902,
-  "last_tick": "2026-10-31T16:13:30Z",
+  "last_tick": "2026-10-31T17:10:51Z",
   "last_week": "2026-10-26T00:00:00Z",
   "layers": [
     null,
@@ -12,5 +12,5 @@
     "collateral": 2500.0,
     "notional": 500
   },
-  "settled": "2026-10-31T16:13:30Z"
+  "settled": "2026-10-31T17:10:51Z"
 }
