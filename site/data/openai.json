@@ -1777,6 +1777,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Hold the XMR long in slot 0 with its existing TP at 606. The current mark of 595.85 is below the target, and the plan\u2019s early-exit condition, 9,600 USD equity threshold, and November 1 23:45 UTC flatten deadline have not been reached. BTC and ETH are outside their planned entry zones, so no new positions are warranted.",
       "t": "2026-10-31T19:10:19Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "\u0e04\u0e07 XMR long \u0e43\u0e19 slot 0 \u0e1e\u0e23\u0e49\u0e2d\u0e21 TP \u0e40\u0e14\u0e34\u0e21\u0e17\u0e35\u0e48 606; \u0e23\u0e32\u0e04\u0e32\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19 597.72 \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e16\u0e36\u0e07\u0e40\u0e1b\u0e49\u0e32\u0e2b\u0e21\u0e32\u0e22 \u0e41\u0e25\u0e30\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e21\u0e35\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02\u0e2d\u0e2d\u0e01\u0e01\u0e48\u0e2d\u0e19\u0e15\u0e32\u0e21\u0e41\u0e1c\u0e19 Equity \u0e22\u0e31\u0e07\u0e2a\u0e39\u0e07\u0e01\u0e27\u0e48\u0e32\u0e40\u0e01\u0e13\u0e11\u0e4c\u0e1b\u0e34\u0e14\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14 9,600 USD \u0e41\u0e25\u0e30\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e1b\u0e34\u0e14\u0e2a\u0e16\u0e32\u0e19\u0e30\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48 1 \u0e1e.\u0e22. 23:45 UTC \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e16\u0e36\u0e07 BTC \u0e41\u0e25\u0e30 ETH \u0e2d\u0e22\u0e39\u0e48\u0e19\u0e2d\u0e01\u0e42\u0e0b\u0e19\u0e40\u0e02\u0e49\u0e32 \u0e08\u0e36\u0e07\u0e44\u0e21\u0e48\u0e40\u0e1b\u0e34\u0e14\u0e2a\u0e16\u0e32\u0e19\u0e30\u0e43\u0e2b\u0e21\u0e48",
+      "t": "2026-10-31T20:12:33Z"
     }
   ],
   "eliminated": null,
@@ -1784,13 +1798,13 @@
   "layers": [
     {
       "entry": 584.01,
-      "liq": 60.16188072572493,
-      "mark": 595.85,
+      "liq": 60.19141904882997,
+      "mark": 597.72,
       "notional": 2500,
       "side": "long",
       "symbol": "XMR",
       "tp": 606,
-      "unrealized": 50.684063629047586
+      "unrealized": 58.68906354343263
     },
     null,
     null,
