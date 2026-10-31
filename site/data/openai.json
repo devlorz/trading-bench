@@ -1819,6 +1819,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Hold the XMR long in slot 0 with its existing TP at 606. The current mark is below the TP and the plan's early-exit condition is not established. Equity remains above the 9,600 USD close-all threshold, and the November 1 23:45 UTC flatten deadline has not arrived. BTC and ETH are outside their entry zones, so no new position is warranted.",
       "t": "2026-10-31T22:12:15Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Hold the XMR long in slot 0 with its existing TP at 606. The mark is below the TP, equity remains above the 9,600 USD close-all threshold, and the November 1 23:45 UTC flatten deadline has not arrived. No new entry setup is established.",
+      "t": "2026-10-31T23:12:00Z"
     }
   ],
   "eliminated": null,
@@ -1826,13 +1840,13 @@
   "layers": [
     {
       "entry": 584.01,
-      "liq": 60.3065906059029,
-      "mark": 597.85,
+      "liq": 60.32812009617703,
+      "mark": 598.63,
       "notional": 2500,
       "side": "long",
       "symbol": "XMR",
       "tp": 606,
-      "unrealized": 59.24556086368398
+      "unrealized": 62.58454478519205
     },
     null,
     null,
