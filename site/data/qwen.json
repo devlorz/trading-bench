@@ -2148,6 +2148,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "All four layers are empty, no slot has been liquidated, no NAV(-) condition exists, and free_equity 10027.94 is above RP collateral 2500, so there is no forced recovery, basket offset, or close_all requirement. The weekly plan is a short-bias plan restricted to Layers 1-2, but its planned entries are action-based bounce levels: BTC 80366, ETH 2330.5, SOL 101.50, HYPE 77.017, and DOGE 0.077186. Current marks are BTC 77246, ETH 2243.5, SOL 96.187, HYPE 89.772, and DOGE 0.07621. None has reached the planned short entry. Opening now would chase flushed prices or discretionary levels and violate plan discipline. Planned exits also remain invalid for a current market short on several names, and HYPE has diverged strongly above its short entry. Under Wait & See, Zero Alpha, and 100% plan adherence, preserve the completed hostage and hold.",
       "t": "2026-10-31T00:33:45Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 77517.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "BTC",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "All four layers are empty, free_equity 10027.94 is above RP collateral 2500, no slot needs liquidation recovery, no NAV-negative layer exists, and close_all is not active. The weekly plan is short-bias and limited to Layers 1-2, but it is action-based: planned short entries are BTC 80366, ETH 2330.5, SOL 101.50, HYPE 77.017, and DOGE 0.077186. Current marks are BTC 77517, ETH 2247.0, SOL 96.746, HYPE 89.354, and DOGE 0.076124. BTC, ETH, SOL, and DOGE are below their planned short entries, and several planned exits are not on the valid short-profit side for a current market entry, so opening there would chase flushed prices rather than take the planned action point. HYPE is far above its planned short entry and has diverged strongly against the original short context, so it is also not a planned trigger. Under Wait & See, Zero Alpha, and 100% plan discipline, hold and preserve completed hostage cycles.",
+      "t": "2026-10-31T01:13:52Z"
     }
   ],
   "eliminated": null,
