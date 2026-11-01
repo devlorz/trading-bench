@@ -1910,6 +1910,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 2026-11-01T03:18:24Z. Week 2026-10-26 plan remains active until Monday 2026-11-02 00:00 UTC, so no Reallocation applies and RP stays collateral 2500 / notional 2500. All four Slots are occupied, so the 4-layer cap is respected and no new entries are possible: Slot 0 SOL long entry 99.691 mark 95.473 unrealized -105.7769 liq 2.65696 TP 109.0; Slot 1 BTC long entry 79924 mark 77724.7 unrealized -68.7935 liq 1142.114 TP 84500; Slot 2 ETH long entry 2272.5 mark 2266.1 unrealized -7.0407 liq 46.196 TP 2500; Slot 3 XRP long entry 1.2514 mark 1.248 unrealized -6.7924 liq 0.03242 TP 1.38. free_equity 0.0. Every watchlist symbol BTC, ETH, SOL, XRP is already open, so there are no outstanding limit-buy triggers to evaluate. No TP was reached: latest highs are SOL about 95.873 vs TP 109.0, BTC about 77850 vs TP 84500, ETH about 2274 vs TP 2500, XRP about 1.2566 vs TP 1.38, all far short. No liquidation was approached: recent lows are SOL about 92.227 vs liq 2.65696, BTC about 76264 vs liq 1142.114, ETH about 2173.1 vs liq 46.196, XRP about 1.2 vs liq 0.03242, all far away. Aggregate unrealized NAV about -188.40, below the hostage-policy -100 pause threshold, but the plan is already at its full 4-layer footprint so the pause is automatically satisfied and no new entries are possible anyway. Per soft rule 3 Scenarios A/B, hold NAV(-) Layers while liquidation is far rather than realize losses; no Layer is positive for a meaningful basket offset under Scenarios D/E, so closing any would only realize losses and is not warranted. TSM Principle 4 has no stop orders, so no SL action is permitted; risk remains liquidation-only. Funding settled at 03:00 UTC with tiny effects only (SOL -0.0198, BTC -0.0304, ETH -0.0311, XRP -0.0312), moving collateral and liq prices only marginally. All TPs match the plan and none is reached. Action: hold.",
       "t": "2026-11-01T03:18:24Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 2026-11-01T04:16:10Z (Sunday). Week 2026-10-26 plan remains active until Monday 2026-11-02 00:00 UTC, and Reallocation requires Monday 00:00 UTC with all Slots empty; all four Slots are occupied, so RP stays collateral 2500 / notional 2500. Slot 0 SOL long (entry 99.691, mark 95.393, unrealized -107.78, liq 2.657, TP 109.0), Slot 1 BTC long (entry 79924, mark 77741, unrealized -68.28, liq 1143.09, TP 84500), Slot 2 ETH long (entry 2272.5, mark 2265.9, unrealized -7.26, liq 46.22, TP 2500), Slot 3 XRP long (entry 1.2514, mark 1.249, unrealized -4.79, liq 0.0324, TP 1.38). free_equity 0.0. All four Slots full, so the 4-layer cap is respected and no new entries are possible; every watchlist symbol BTC/ETH/SOL/XRP is already open, so there are no outstanding limit-buy triggers to evaluate. No TP reached: marks 95.393/77741/2265.9/1.249 are far below TPs 109.0/84500/2500/1.38. No liquidation approached: liq prices 2.657/1143.09/46.22/0.0324 are far below the marks. Aggregate unrealized NAV about -188, below the hostage-policy -100 pause threshold, but the pause is automatically satisfied since the plan is already at full 4-layer footprint and no entry is possible. Per soft rule 3 Scenarios A/B, hold NAV(-) Layers while liquidation is far rather than realize losses; no Layer is positive for a meaningful basket offset (Scenarios D/E), so closing any would only realize losses and is not warranted. TSM Principle 4 has no stop orders (risk is liquidation-only), so no SL actions. Funding settled at 04:00 UTC with tiny effects only (SOL -0.0118, BTC -0.0304, ETH -0.0312, XRP -0.0312), marginally shifting collateral/liq prices. All TPs match the plan and none is reached; no opens, closes, TP changes, or cancels. Action: hold.",
+      "t": "2026-11-01T04:16:10Z"
     }
   ],
   "eliminated": null,
@@ -1917,43 +1931,43 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.6569623481057363,
-      "mark": 95.473,
+      "liq": 2.65743237567213,
+      "mark": 95.393,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": -105.77685046794603
+      "unrealized": -107.78304962333615
     },
     {
       "entry": 79924.0,
-      "liq": 1142.1144168197934,
-      "mark": 77724.7,
+      "liq": 1143.086516819807,
+      "mark": 77741.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": -68.7934788048647
+      "unrealized": -68.28361943846654
     },
     {
       "entry": 2272.5,
-      "liq": 46.1964695152692,
-      "mark": 2266.1,
+      "liq": 46.22481076526947,
+      "mark": 2265.9,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2500,
-      "unrealized": -7.040704070407141
+      "unrealized": -7.260726072607161
     },
     {
       "entry": 1.2514,
-      "liq": 0.032423748136749975,
-      "mark": 1.248,
+      "liq": 0.03243936313674989,
+      "mark": 1.249,
       "notional": 2500,
       "side": "long",
       "symbol": "XRP",
       "tp": 1.38,
-      "unrealized": -6.792392520377317
+      "unrealized": -4.794630014383806
     }
   ],
   "name": "deepseek",

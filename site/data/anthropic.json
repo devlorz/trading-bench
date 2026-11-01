@@ -1887,6 +1887,20 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "At 2026-11-01T03:18Z, equity is 9,317.56, well above the 8,500 close-all line. BTC's latest 4h close is 77,535, inside the 76k-88k regime band, so no regime break. The week ends 2026-11-02 00:00 UTC and has not ended, and total PnL is negative, so no week-end banking. The only open layer is the BNB long hostage in slot 0 (entry 715.45, mark about 702.6, unrealized about -180, TP 730 already set, liq about 572.5). It is far from the 25% hard stop, so it is held and not added to. One hostage is open, under the cap of 2. No entry trigger has fired: BTC (77.7k) is below the 79.7k-80.4k long zone and far from the 84.8k-85.6k short zone; ETH (2,266) is below the 2,280-2,315 flush-reclaim zone; SOL (95.5) is below the 98.6-100.5 dip zone with no 4h hold; XRP (1.248) is below the 1.255 reclaim and cannot hold a layer while BNB occupies the shared XRP/BNB slot; a BNB short is blocked by the opposite-side rule while the BNB long is open. Wait and see: hold all slots.",
       "t": "2026-11-01T03:18:24Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "At 2026-11-01T04:16Z the only open layer is the BNB long hostage in slot 0 (entry 715.45, mark 704.39, unrealized about -155, TP 730 set, liq about 572.5). Equity 9,343 is well above the 8,500 close-all line. BTC mark 77,741 sits inside the 76k-88k regime band, so there is no regime break, and the week ends 2026-11-02 00:00 UTC, so no week-end banking applies. One hostage is open, under the cap of 2, and the loss is far from the 25% hard stop, so the layer is held, not added to, and its stop is not tightened. No entry trigger has fired: BTC (77.7k) is below the 79.7k-80.4k long zone and far from the 84.8k-85.6k short zone; ETH (2,266) is below the 2,280-2,315 flush-reclaim zone; SOL (95.4) is below the 98.6-100.5 dip zone with no 4h hold; XRP (1.249) is below the 1.255 reclaim and cannot hold a layer while BNB occupies the shared XRP/BNB slot; a BNB short is blocked by the opposite-side rule while the BNB long is open. Wait and see: hold all slots.",
+      "t": "2026-11-01T04:16:10Z"
     }
   ],
   "eliminated": null,
@@ -1894,13 +1908,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.537902080528,
-      "mark": 702.6,
+      "liq": 572.502854868404,
+      "mark": 704.39,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -179.6072401984768
+      "unrealized": -154.5880215249152
     },
     null,
     null,
