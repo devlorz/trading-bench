@@ -2942,6 +2942,27 @@
       "plan": "2026-10-26T00:00:00Z",
       "reasoning": "Tick 2026-11-01T22:12:00Z (Sunday, week 2026-10-26; reallocation only Monday 00:00 UTC and only with all slots empty \u2014 slots 0/1 occupied, so RP 2,500/2,500 carries). State: slot 0 XMR long (2,500 @ 600.07, TP 620) and slot 1 XMR long (2,500 @ 600.04, TP 620) at mark 596.33 \u2192 NAV(-) -15.58/-15.46 (\u2248 -31 combined, ~0.6% of collateral per layer), equity 9,550.34, free_equity 4,600.99, slots 2/3 free. Funding settled trivially at 22:00 (+0.037 each \u2014 rate printed negative, longs received). Liq prices ~62.4 are ~90% away \u2014 deep inside the Risk Parameter. Equity < 10,000 base \u2192 no one-shot high-conviction buffer shot.\n\n(1) XMR \u2014 mechanical tripwire check first: the standing triggers are TP 620 harvest, unconditional close of BOTH layers on ANY completed 15m close below 585 (no deliberation), reassess below mark 570, unconditional below 545. Reality: the flush has STABILIZED and the tape is recovering \u2014 completed 15m closes stair-step 593.72 \u2192 595.93 \u2192 596.17 \u2192 596.84 \u2192 598.0 \u2192 597.78, the lowest 15m LOW in the window is 591.5 and every close is well above 585; the just-completed 21:00-22:00 1h bar opened 592.54, swept 591.5, and closed 597.78 near its high \u2014 a stabilization bounce, not a breakdown; the higher-low sequence 574.31 \u2192 588.58 \u2192 591.5 remains ascending; mark 596.33 is back above the 15m EMA20 (596.12) and right at the 4h EMA20/EMA50 confluence (597.27/597.12). No tripwire fires on any line (585/570/545). Honest caveats: 15m momentum is still soft (RSI 32, MACD hist marginally negative, mark -0.87% under today's VWAP 603.04) and both layers entered on theses anchored near 600 that have faded \u2014 but the entry basis is the sweep-and-hold of the 570-585 zone with closes back above its top, and that leg has not failed (every completed close above 585, ascending lows intact). The plan forbids discretionary exits above the stated invalidation \u2014 per Scenario A, hold both marginal NAV(-) layers within the Risk Parameter and let the maker TPs harvest the planned ~20-point hostage each if the rotation resumes (TP 620 is ~24 points above the mark; the 1h swing high 611.05 shows the level is reachable). The add-cap stands: the plan's XMR allowance (pullback layer + ONE add on the displacement reclaim) is fully used in slots 0/1 \u2014 NO third XMR layer regardless of prints.\n\nScan of the free slots against action points \u2014 nothing fired:\n(2) BTC 77,788 \u2014 no trigger: ~1,912 below the broken 79,700-80,100 long zone (re-arm only on a fresh, fully confirmed sweep-and-reclaim with the 76,264 4h swing low as hard invalidation \u2014 untouched) and ~4,212 below the 82,000-82,500 displacement short trigger. The grind is mild (15m closes 77,856\u219277,866 straddling the 15m EMAs 77,883/77,911, mark -0.14% under today's VWAP 77,896) but no plan level is touched \u2014 the 1h swing high 78,238 is nowhere near 79,700. Acting here invents a trigger. Wait.\n(3) ETH 2,261 \u2014 short-only bias; the trigger remains a genuine rally INTO the 2,380-2,440 supply confluence (~5% above). Price ground to 2,276.9 highs then faded (last 15m close 2,263.5 below the 15m EMA50 2,264.5, mark -0.23% under today's VWAP 2,266.2, 1h MACD hist negative) \u2014 still mid-air relative to the confluence; shorting here is not the plan's entry and bottom-fishing longs are forbidden by the bias. Wait.\n(4) ENA 0.1822 \u2014 neither trigger prints: the short needs a displaced heavy-volume rejection close back below 0.194 AT a rally; price never approached 0.194 \u2014 it flushed to 0.17878 (15m low, bars_ago 11) and has only ground back to 0.1825 (15m closes 0.17965 \u2192 0.18253, above the 15m EMA20 0.18251 but below the EMA50 0.18458 and today's VWAP 0.18498; flow decaying 24h -3.76%, 7d -11.38%). Shorting mid-void at 0.182 leaves the 0.185 hostage ABOVE entry (tp_wrong_side geometry) \u2014 pure chasing. The long needs a fresh higher-low hold INSIDE 0.195-0.206 with flow stabilization \u2014 mark is ~6.6% below the zone, below the 1h EMA20/EMA50 (0.1875/0.18943) and the 4h EMA20/EMA50 (0.19375/0.19753). No bottom-fishing. Wait.\n(5) GRASS 0.60145 \u2014 long-only; entries are strictly the 0.63-0.66 pullback (~4.7% above) or the 0.728 break-and-hold (~21% above). The push is real but off-plan: heavy-volume recovery 0.57182 \u2192 0.60281 (15m prints 141K/171K vs the ~20-70K norm, 24h +3.38% the board's best while 7d remains weak -15.03%), above the 15m EMA20 0.58464 and today's VWAP 0.59344 (+1.33%) \u2014 but 0.6015 touches no plan level, and buying 4.7% below the 0.63-0.66 entry zone invents a trigger the plan does not contain; the 0.728 break-and-hold is nowhere near. A defended base only re-arms the watch. Wait.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 both XMR layers are marginally NAV(-) and no positive layer exists to harvest Hostage from; the combined drag (\u2248 -31, ~0.6% of the two layers' notional) is trivial and inside the RP. Buffer above base capital is negative (9,550.34 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding. Monday 00:00 UTC reallocation check: slots 0/1 occupied \u2192 RP 2,500/2,500 carries regardless.\n\nAction: hold slots 0/1 (XMR) with TPs untouched, no new opens; slots 2/3 reserved per Wait & See. Next-tick priorities: (1) XMR \u2014 TP 620 harvest (next scale 645-660), unconditional close of BOTH layers on ANY completed 15m close below 585 (no deliberation), reassess below mark 570, unconditional below 545; the add-cap stays: no third XMR layer; monitor funding drag; (2) ENA \u2014 displaced heavy-volume rejection close back below 0.194 only AT a rally (short, TP 0.185) or a fresh higher-low hold inside 0.195-0.206 (long, TP 0.226); (3) BTC \u2014 only a fresh, fully confirmed sweep-and-reclaim of 79,700-80,100 re-arms a long (hard invalidation 76,264), or displacement INTO 82,000-82,500 for the short; (4) ETH \u2014 short only on a genuine rally into 2,380-2,440 supply; (5) GRASS \u2014 entry strictly at 0.63-0.66 or 0.728 break-and-hold.",
       "t": "2026-11-01T22:12:00Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": "long",
+          "slot": 1,
+          "symbol": "XMR",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-10-26T00:00:00Z",
+      "reasoning": "Tick 2026-11-01T23:11:58Z (Sunday, ~48 min before Monday reallocation; slots 0/1 occupied so RP 2,500/2,500 carries regardless). State: slot 0 XMR long (2,500 @ 600.07, TP 620) mark 598.62 \u2192 NAV(-) \u2248 -6.0; slot 1 XMR long (2,500 @ 600.04, TP 620) \u2248 -5.9; combined drag \u2248 -11.9, ~0.5% of the two layers \u2014 trivial, deep inside the Risk Parameter (liq ~62.4, ~90% away). Free equity 4,601, slots 2/3 free.\n\nCommitment check on XMR: the standing rule is an unconditional close of BOTH layers on any completed 15m close below 585, reassess below mark 570, unconditional below 545. Reality: the last 16 15m bars show a defended floor \u2014 closes 592.54/592.75/592.54/593.76 with bar lows 591.5-592.5, all above 585; the latest 15m bars are recovering (596.68 close, MACD hist positive +0.65, RSI 54). No close below 585 \u2192 the tripwire is NOT hit \u2192 hold both layers per Scenario A, TP 620 untouched (15m high 598.39, far from 620).\n\nZero Alpha scan of the other watchlist symbols against their action points:\n(1) BTC 78,059 \u2014 below the 79,700-80,100 sweep-and-reclaim long zone and far below the 82,000-82,500 short zone; 4h swing low 76,264. No trigger; chasing a long here is mid-air, not the plan. Wait.\n(2) ETH 2,269.3 \u2014 short-only bias; the 2,380-2,440 supply confluence was never rallied into (15m high 2,266.6). No short. Wait.\n(3) GRASS 0.60473 \u2014 long-only; entries are strictly the 0.63-0.66 pullback or the 0.728 break-and-hold. Price is below the pullback zone with 15m RSI ~70 (extended, momentum push off 0.57182) \u2014 buying here invents a trigger the plan does not contain. Wait.\n(4) ENA 0.18249 \u2014 the long needs a fresh higher-low hold inside 0.195-0.206 (price ~6.6% below, below 1h EMA20/EMA50); the short needs a displaced heavy-volume rejection close back below 0.194 AT a rally (price never rallied near 0.194 \u2014 it flushed to 0.17878). Shorting mid-void at 0.182 would also break TP geometry (0.185 target above entry). Wait.\n\nBasket offset (Scenario D/E): nothing to execute \u2014 no positive layer exists to harvest Hostage from. Buffer above base capital is negative (9,569 < 10,000) \u2014 no one-shot high-conviction shot. No violations outstanding.\n\nAction: hold slots 0/1 (XMR) with TPs untouched; slots 2/3 reserved per Wait & See \u2014 four layers are capped by flow logic anyway (no third XMR layer; add-cap stands). Next-tick priorities: (1) XMR \u2014 unconditional close of BOTH layers on ANY completed 15m close below 585 (no deliberation), reassess below mark 570, unconditional below 545; TP 620 harvest, then scale 645-660; monitor funding drag; (2) ETH \u2014 short only on a genuine rally into 2,380-2,440 supply; (3) BTC \u2014 only a fresh fully-confirmed sweep-and-reclaim of 79,700-80,100 re-arms a long (hard invalidation 76,264), or displacement into 82,000-82,500 for the short; (4) GRASS \u2014 entry strictly at 0.63-0.66 or 0.728 break-and-hold; (5) ENA \u2014 displaced heavy-volume rejection close back below 0.194 only AT a rally (short, TP 0.185), or a fresh higher-low hold inside 0.195-0.206 (long, TP 0.226).",
+      "t": "2026-11-01T23:11:58Z"
     }
   ],
   "eliminated": null,
@@ -2949,23 +2970,23 @@
   "layers": [
     {
       "entry": 600.07,
-      "liq": 62.40613322129218,
-      "mark": 596.33,
+      "liq": 62.40726082715628,
+      "mark": 598.625,
       "notional": 2500,
       "side": "long",
       "symbol": "XMR",
       "tp": 620,
-      "unrealized": -15.581515489859552
+      "unrealized": -6.020130984718657
     },
     {
       "entry": 600.04,
-      "liq": 62.3120877488916,
-      "mark": 596.33,
+      "liq": 62.313215354755584,
+      "mark": 598.625,
       "notional": 2500,
       "side": "long",
       "symbol": "XMR",
       "tp": 620,
-      "unrealized": -15.45730284647658
+      "unrealized": -5.895440303979583
     },
     null,
     null
