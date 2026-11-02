@@ -2295,21 +2295,51 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Under TSM Principle #4 (Scenario B), Slot 1 SOL Long continues to be patiently held with TP maintained at 104.0 (mark 94.254, liquidation safely distant at 52.85, NAV(-) of -$299.99 well-protected by $2,500 collateral and our +$993.41 hostage reserve). Reviewing empty slots (0, 2, 3) against the Weekly Plan entry parameters: BTC is trading at 78,107 (between the 76,200-77,200 Long and 79,100-80,400 Short zones); ETH is at 2,288.1 (between the 2,175-2,225 Long and 2,350-2,375 Short zones); HYPE is trading at 86.01 (having bounced from 85.30 without testing the 82.60-85.00 pullback cluster or securing a confirmed reclaim above 86.20); and ZEC is at 1,256.6 (far above the 1,180-1,210 demand zone). With no actionable entry triggers met across the watchlist, we exercise strict Wait & See discipline and hold.",
       "t": "2026-11-02T08:20:56Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "HYPE",
+          "type": "open"
+        },
+        {
+          "price": 92.5,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Under TSM Principle #4 (Scenario B), Slot 1 SOL Long is patiently held with TP maintained at 104.0 (mark 94.677, liquidation safe at 52.85, NAV(-) of -$278.90 well protected by $2,500 collateral and our +$993.41 hostage reserve). Evaluating empty slots against the Weekly Plan entry parameters: BTC (78,216), ETH (2,297), and ZEC (1,260.3) remain between their designated entry zones. However, HYPE has completed a textbook setup: after a liquidity sweep flushing below the 86.236 swing low to 85.303, it has executed a high-conviction reclaim of 86.20, pushing to 86.938 and consolidating steadily above 86.50. We deploy Slot 0 into HYPE Long at 2x leverage (RP: $2,500 collateral, $5,000 notional) and set TP at 92.50 within the 91.50-94.00 target resistance band to harvest hostage gains.",
+      "t": "2026-11-02T09:19:32Z"
     }
   ],
   "eliminated": null,
   "executor": "google/gemini-3.8-flash",
   "layers": [
-    null,
+    {
+      "entry": 86.528,
+      "liq": 47.6293376,
+      "mark": 86.584,
+      "notional": 5000,
+      "side": "long",
+      "symbol": "HYPE",
+      "tp": 92.5,
+      "unrealized": 3.2359467455619786
+    },
     {
       "entry": 100.27,
-      "liq": 52.849488889614285,
-      "mark": 94.254,
+      "liq": 52.85067146461429,
+      "mark": 94.677,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -299.9900269272959
+      "unrealized": -278.8969781589703
     },
     null,
     null
