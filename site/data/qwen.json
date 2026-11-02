@@ -2925,6 +2925,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 holds the planned ETH short at 2293.4, currently NAV(+) with mark 2292.0, unrealized +1.53, TP 2240 active, and liquidation far away at 4546.58, so there is no valid reason to close, cancel TP, or modify the position. The latest action-based fade/entry triggers have not been reached: ETH 15m high 2293.9 is below 2295, BTC high 78037 is below 78600, SOL high 94.944 is below 95.5, DOGE high 0.0757 is below 0.0763, and LINK high 11.36 is below 11.55. Opening now would chase rather than respect the weekly plan. There is also no realized hostage buffer yet, and the policy discourages adding aggressive exposure before securing positive realized buffer. The correct action is to hold the existing ETH layer and maintain its planned TP.",
       "t": "2026-11-02T12:20:55Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2281.3,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 ETH short is active and currently NAV(+): mark 2281.3 vs entry 2293.4, unrealized +13.19, liquidation far away at 4546.61, and planned TP 2240 is still valid, so there is no reason to close, cancel TP, or modify the position. No new Action-Based short fade/bounce entry has triggered at this tick: ETH latest recent high reached 2296 but current mark 2281.3 is now below the planned entry 2295 and would be chasing a flush; BTC recent high 78268 is below 78600; SOL recent high 94.602 is below 95.5; DOGE recent high 0.075762 is below 0.0763; LINK recent high 11.374 is below 11.55. Also, no realized Hostage buffer has been secured yet, only unrealized ETH profit, while the policy reserves additional aggressive exposure until positive realized buffer is available. Therefore hold the current position and plan.",
+      "t": "2026-11-02T13:15:55Z"
     }
   ],
   "eliminated": null,
@@ -2932,13 +2946,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.582250349392,
-      "mark": 2292.0,
+      "liq": 4546.610810349392,
+      "mark": 2281.3,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": 1.526118426790018
+      "unrealized": 13.190023545827056
     },
     null,
     null,
