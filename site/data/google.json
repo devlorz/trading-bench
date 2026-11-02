@@ -2225,6 +2225,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Under TSM Principle #4 (Scenario B), Slot 1 SOL Long continues to be held patiently with its existing TP at 104.0 (mark 94.978, liquidation safely distant at 52.84, NAV(-) of -$263.89 is well protected by collateral and our +$993.41 hostage reserve). Reviewing the free slots (0, 2, 3) against the Weekly Plan entry parameters: BTC is trading at 78,499 (between the 76,200-77,200 Long and 79,100-80,400 Short zones); ETH is at 2,294.5 (between the 2,175-2,225 Long and 2,350-2,375 Short zones); HYPE is at 87.782 (above the 82.60-85.00 pullback cluster); and ZEC is at 1,258.1 (near resistance, above the 1,180-1,210 demand zone). With no actionable entry triggers met across the watchlist, we exercise strict Wait & See discipline and hold.",
       "t": "2026-11-02T03:18:14Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Under TSM Principle #4 (Scenario B), Slot 1 SOL Long continues to recover (mark 95.55, unrealized PnL improving to -$235.52, liquidation safe at 52.84, protected by $2,500 collateral and our +$993.41 hostage reserve) and is held with TP maintained at 104.0. Assessing empty slots (0, 2, 3) against the Weekly Plan entry parameters: BTC is trading at 78,673 (approaching but still below the 79,100-80,400 Short zone and well above the 76,200-77,200 Long zone); ETH is at 2,309.4 (below the 2,350-2,375 Short zone and above 2,175-2,225 Long zone); HYPE is at 88.656 (above the 82.60-85.00 Long pullback cluster); and ZEC is at 1,284.2 (trading into upper resistance, well away from the 1,180-1,210 demand entry zone). Since no symbol has fulfilled its Action Based entry conditions, we exercise disciplined Wait & See and hold.",
+      "t": "2026-11-02T04:16:46Z"
     }
   ],
   "eliminated": null,
@@ -2233,13 +2247,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.843563214614285,
-      "mark": 94.978,
+      "liq": 52.84475746461429,
+      "mark": 95.5469,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -263.88750373990234
+      "unrealized": -235.51909843422771
     },
     null,
     null
