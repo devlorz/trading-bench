@@ -2897,6 +2897,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 remains the planned ETH short (entry 2293.4, TP 2240) and is currently NAV(+) at mark 2286.6, far from liquidation, so there is no valid reason to close or alter the TP. The other watchlist shorts have not reached their Action-Based fade/bounce entry triggers at this tick: BTC high is still below 78600, SOL high below 95.5, DOGE high below 0.0763, and LINK high below 11.55. The policy does not permit opening further exposure before a realized Hostage buffer exists, and chasing below-trigger prices would violate the plan. Therefore hold all existing positions.",
       "t": "2026-11-02T10:14:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2288.0,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned ETH short at 2293.4 with current mark 2288.0, so it is NAV(+) and liquidation is far away at 4546.55; the planned TP 2240 remains active and should not be altered. No other watchlist short trigger has been reached at this tick: ETH's latest 15m high 2288.7 is below 2295, BTC high 78037 is below 78600, SOL high 94.269 is below 95.5, DOGE high 0.075371 is below 0.0763, and LINK high 11.279 is below 11.55. Opening now would chase flushed prices rather than take the Action-Based bounce/fade entries, and there is no realized Hostage buffer to justify adding aggressive exposure. The correct action is to hold the existing ETH layer.",
+      "t": "2026-11-02T11:13:32Z"
     }
   ],
   "eliminated": null,
@@ -2904,13 +2918,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.525095349392,
-      "mark": 2286.6,
+      "liq": 4546.553674099392,
+      "mark": 2288.0,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": 7.412575215836947
+      "unrealized": 5.886456789046929
     },
     null,
     null,
