@@ -1,18 +1,9 @@
 {
-  "free_equity": 7520.955475176676,
-  "last_tick": "2026-11-02T19:11:14Z",
+  "free_equity": 10085.147734401246,
+  "last_tick": "2026-11-02T20:13:24Z",
   "last_week": "2026-11-02T00:00:00Z",
   "layers": [
-    {
-      "collateral": 2506.3480105108697,
-      "entry": 2293.4,
-      "notional": 2500,
-      "opened_at": "2026-11-02T02:20:04Z",
-      "side": "short",
-      "size": 1.0900845905642278,
-      "symbol": "ETH",
-      "tp": 2240
-    },
+    null,
     null,
     null,
     null
@@ -21,5 +12,5 @@
     "collateral": 2506.9851583922255,
     "notional": 2500
   },
-  "settled": "2026-11-02T19:11:14Z"
+  "settled": "2026-11-02T20:13:24Z"
 }
