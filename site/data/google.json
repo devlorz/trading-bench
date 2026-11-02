@@ -2183,6 +2183,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "In accordance with TSM Principle #4 (Scenario B), Slot 1 SOL Long is held patiently with its existing TP at 104.0 (liquidation is at 52.84, well protected by 2x leverage and our +$993.41 hostage reserve). Evaluating free slots (0, 2, 3) against the Weekly Plan entry criteria: BTC is at 78,105 (outside 76,200-77,200 long and 79,100-80,400 short zones), ETH is at 2,270.1 (outside 2,175-2,225 long and 2,350-2,375 short zones), HYPE is at 87.97 (above the 82.60-85.00 pullback zone), and ZEC is at 1,227.0 (above the 1,180-1,210 structural demand zone). As no symbol has triggered an Action Based entry setup, we exercise disciplined Wait & See and hold.",
       "t": "2026-11-02T00:36:55Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "In accordance with TSM Principle #4 (Scenario B), Slot 1 SOL Long is patiently held with its current TP at 104.0 (mark 95.182, liquidation safely at 52.84, NAV(-) well cushioned by collateral and existing hostage profits). Reviewing open slots (0, 2, 3) against the Weekly Plan entry parameters: BTC is trading at 78,398 (between the 76,200-77,200 Long and 79,100-80,400 Short entry zones); ETH is at 2,288.3 (between the 2,175-2,225 Long and 2,350-2,375 Short zones); HYPE is at 88.242 (above the 82.60-85.00 pullback cluster); and ZEC is at 1,250.5 (above the 1,180-1,210 demand zone). With no actionable price triggers, we strictly follow TSM's Wait & See discipline and maintain current positions.",
+      "t": "2026-11-02T01:15:45Z"
     }
   ],
   "eliminated": null,
@@ -2191,13 +2205,13 @@
     null,
     {
       "entry": 100.27,
-      "liq": 52.84036457212228,
-      "mark": 94.005,
+      "liq": 52.84118915211428,
+      "mark": 95.182,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -312.40650244340287
+      "unrealized": -253.71496958212796
     },
     null,
     null
