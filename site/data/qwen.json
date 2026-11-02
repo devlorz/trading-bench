@@ -2785,6 +2785,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "ETH reached its short bounce/fade trigger: 15m/1h high was 2297.9 above plan entry 2295, while mark remains below the high, so opening ETH short near current price is within the planned entry zone and not chasing upward. BTC, SOL, DOGE, and LINK highs are still below their entry triggers, so no action there. Free equity covers one layer collateral, and leverage is below ETH max. Open slot 0 short ETH at market and set TP at the planned exit 2240 to begin a fast hostage cycle.",
       "t": "2026-11-02T02:20:04Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2293.4,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "The ETH short in slot 0 is only slightly negative and remains far from liquidation, so it should be held while the existing TP 2240 is maintained. BTC, SOL, DOGE, and LINK have not reached their plan short entry levels (BTC below 78600, SOL below 95.5, DOGE below 0.0763, LINK below 11.55), and the hostage policy prefers waiting for structure recovery or a positive buffer before adding more exposure. No valid entry, exit, TP management, or offset action exists at this tick.",
+      "t": "2026-11-02T03:18:14Z"
     }
   ],
   "eliminated": null,
@@ -2792,13 +2806,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.307874902692,
-      "mark": 2293.5,
+      "liq": 4546.330884148692,
+      "mark": 2294.5,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -0.10900845905632364
+      "unrealized": -1.1990930496205514
     },
     null,
     null,
