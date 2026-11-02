@@ -2855,6 +2855,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 ETH short is currently NAV(+): mark 2283.5 is below entry 2293.4, unrealized +10.79, TP 2240 is active, and liquidation is far away at 4546.44, so there is no valid reason to close, cancel TP, or average down. Other watchlist shorts had already probed their planned fade/bounce entry levels (BTC >= 78600, SOL >= 95.5, DOGE >= 0.0763) but are now below those triggers at 07:17; opening at current prices would chase flushes rather than take the planned Action-Based entries. LINK remains below its 11.55 trigger. There is also no realized hostage buffer to justify adding aggressive exposure, and no NAV(-) layer requiring basket offset. Therefore hold the existing ETH short and maintain the existing TP.",
       "t": "2026-11-02T07:17:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2288.1,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Only slot0 ETH short is open at 2293.4 with mark 2288.1, unrealized +5.78, TP 2240 active, and liquidation far away at 4546.47. All planned short entries are still above current tick highs/triggers: ETH last 15m high 2292.8 is below 2295, BTC high 78233 is below 78600, SOL high 94.508 is below 95.5, DOGE high 0.075392 is below 0.0763, and LINK high 11.366 is below 11.55. Opening would chase flushes rather than take Action-Based bounce/fade entries, and no realized Hostage buffer exists yet. No offset, close, cancel, or TP change is valid.",
+      "t": "2026-11-02T08:20:56Z"
     }
   ],
   "eliminated": null,
@@ -2862,13 +2876,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.439199099392,
-      "mark": 2283.5,
+      "liq": 4546.467751599392,
+      "mark": 2288.1,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": 10.791837446585955
+      "unrealized": 5.777448329990605
     },
     null,
     null,
