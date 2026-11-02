@@ -2827,6 +2827,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 ETH short is currently slightly profitable (entry 2293.4 vs mark 2290.4) and far from liquidation, so maintain it and keep TP 2240 unchanged. The other planned short fade entries are not actionable at the current tick: BTC/SOL/DOGE briefly probed their trigger highs but have since flushed well below those levels, and LINK has not reached its trigger. Opening now would chase a downward move rather than take the planned bounce/fade entries. There is no NAV(-) layer to offset and no realized hostage buffer yet, so per TSM Principle 4 the correct action is wait and hold.",
       "t": "2026-11-02T05:14:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2284.6,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned ETH short at 2293.4 and is currently NAV(+) with mark 2284.6, while TP 2240 remains active and liquidation is far away. Other watchlist shorts are not actionable now: BTC, SOL, and DOGE previously probed their fade/entry highs but are now below their planned entry levels, and LINK has not reached 11.55. Opening after the flush would violate the plan's action-based bounce/fade entry and risk chasing. There is also no realized hostage buffer yet, so the policy discourages adding exposure before securing positive realized buffer. The correct action is to hold the ETH short and maintain its TP.",
+      "t": "2026-11-02T06:30:31Z"
     }
   ],
   "eliminated": null,
@@ -2834,13 +2848,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.381995349391,
-      "mark": 2290.4,
+      "liq": 4546.4106378493925,
+      "mark": 2284.6,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": 3.2702537716926834
+      "unrealized": 9.592744396965402
     },
     null,
     null,
