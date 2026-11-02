@@ -2428,6 +2428,27 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Under TSM Principle #4 (Scenario B), active positions remain safely insulated within their 2x leverage envelopes: Slot 0 HYPE Long (entry 86.528, mark 84.238, TP 92.50, liq 47.64) is absorbing pullback volatility toward support, while Slot 1 SOL Long (entry 100.27, mark 93.138, TP 104.0, liq 52.86) is held patiently with its NAV(-) well-cushioned by its $2,500 collateral and our +$993.41 hostage reserve. Evaluating empty slots (2 and 3) against the Weekly Plan entry parameters: BTC is trading at 77,351 (recent 1h low 77,231 remains just above the 76,200-77,200 Long sweep trigger); ETH is at 2,263.6 (above the 2,175-2,225 Long zone and below the 2,350-2,375 Short zone); and ZEC is at 1,223.3 (pulling back toward, but not yet reaching, the 1,180-1,210 structural demand cluster). As no candidate symbol has fulfilled its Action Based entry conditions, we exercise strict Wait & See discipline and hold.",
       "t": "2026-11-02T17:13:09Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 2,
+          "symbol": "ZEC",
+          "type": "open"
+        },
+        {
+          "price": 1268.0,
+          "side": null,
+          "slot": 2,
+          "symbol": null,
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Under TSM Principle #4 (Scenario B), our active positions in Slot 0 (HYPE Long, mark 84.309, TP 92.50, liq 47.64) and Slot 1 (SOL Long, mark 92.33, TP 104.0, liq 52.86) remain safely insulated by their $2,500 collateral envelopes and our +$993.41 hostage reserve. Evaluating watchlist opportunities: ZEC has executed a sharp pullback directly into our designated 1,180-1,210 structural demand cluster (sweeping to 1,168.0 and currently trading at 1,188.3). This satisfies our Action Based Strategy criteria for a high-probability mean-reversion rotation. We deploy Slot 2 into ZEC Long at 2x leverage (RP: $2,500 collateral, $5,000 notional) and establish TP at 1,268.0 within the 1,265-1,310 resistance zone (~6.7% gain) to harvest fresh hostage profits. Slot 3 is held in reserve to maintain tactical flexibility should BTC re-test 76,200-77,200 or SOL test 89.50-91.00.",
+      "t": "2026-11-02T18:17:23Z"
     }
   ],
   "eliminated": null,
@@ -2435,25 +2456,34 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.637912825000015,
-      "mark": 84.238,
+      "liq": 47.63896667500001,
+      "mark": 84.309,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -132.32710798816603
+      "unrealized": -128.22438979289987
     },
     {
       "entry": 100.27,
-      "liq": 52.86007337711428,
-      "mark": 93.138,
+      "liq": 52.86122515211428,
+      "mark": 92.33,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -355.63977261394194
+      "unrealized": -395.9309863368903
     },
-    null,
+    {
+      "entry": 1189.2,
+      "liq": 654.59514,
+      "mark": 1188.3,
+      "notional": 5000,
+      "side": "long",
+      "symbol": "ZEC",
+      "tp": 1268.0,
+      "unrealized": -3.7840565085775766
+    },
     null
   ],
   "name": "google",
