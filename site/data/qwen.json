@@ -2813,6 +2813,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "ETH slot 0 is a planned short but currently NAV(-) at mark 2309.4 versus entry 2293.4. It is far from liquidation (liq 4546.35) and the planned TP 2240 remains active, so there is no need to close or alter it. The account has no realized hostage buffer yet, while the policy says not to force aggressive exposure until positive buffer is secured or structure recovers. Although BTC/SOL/DOGE have briefly probed near their fade-entry zones, entering additional shorts now would add exposure around a negative layer without a clear pullback to the planned trigger, conflicting with the Hostage Hunt risk control. Therefore hold and wait for either ETH TP/recovery or a cleaner action-based entry with a secured buffer.",
       "t": "2026-11-02T04:16:46Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2290.4,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 ETH short is currently slightly profitable (entry 2293.4 vs mark 2290.4) and far from liquidation, so maintain it and keep TP 2240 unchanged. The other planned short fade entries are not actionable at the current tick: BTC/SOL/DOGE briefly probed their trigger highs but have since flushed well below those levels, and LINK has not reached its trigger. Opening now would chase a downward move rather than take the planned bounce/fade entries. There is no NAV(-) layer to offset and no realized hostage buffer yet, so per TSM Principle 4 the correct action is wait and hold.",
+      "t": "2026-11-02T05:14:59Z"
     }
   ],
   "eliminated": null,
@@ -2820,13 +2834,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.353341599392,
-      "mark": 2309.4,
+      "liq": 4546.381995349391,
+      "mark": 2290.4,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -17.441353449027645
+      "unrealized": 3.2702537716926834
     },
     null,
     null,
