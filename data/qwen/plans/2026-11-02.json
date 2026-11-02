@@ -1,0 +1,42 @@
+{
+  "notional_used": true,
+  "plan": {
+    "close_all": "2026-11-09T00:00:00Z",
+    "hostage_policy": "Max 4 layers, each army fixed RP: 0.25x notional only. If a layer becomes NAV(-), do not add leverage beyond assigned layer; use winning scalps from other armies to unlock it or wait for structure to recover. No averaging down. Step-2 aggressive trades only after positive buffer is secured.",
+    "notional": 2500,
+    "rationale": "Reallocation happens, so use reallocation.collateral 2506.985. Notional 2500 gives leverage 0.997x, below the max leverage of every watchlist symbol (BTC 40x, ETH 25x, SOL 20x, DOGE 10x, LINK 10x). Majors remain below weekly VWAP and below daily EMA clusters; BTC, ETH, SOL, DOGE and LINK are still in corrective structure with negative or weak MACD histograms. Bias stays short, but entries are set as bounce/fade levels near current marks instead of chasing after flushes. Exits are roughly one short-term ATR lower to keep hostage cycles fast and preserve capital. This follows TSM Hostage Hunt: control risk, limit resources, wait for Action-Based entries, and collect small volatility rents rather than forcing one big directional win.",
+    "watchlist": [
+      {
+        "bias": "short",
+        "entry": "78600",
+        "exit": "76900",
+        "symbol": "BTC"
+      },
+      {
+        "bias": "short",
+        "entry": "2295",
+        "exit": "2240",
+        "symbol": "ETH"
+      },
+      {
+        "bias": "short",
+        "entry": "95.5",
+        "exit": "93.0",
+        "symbol": "SOL"
+      },
+      {
+        "bias": "short",
+        "entry": "0.0763",
+        "exit": "0.0745",
+        "symbol": "DOGE"
+      },
+      {
+        "bias": "short",
+        "entry": "11.55",
+        "exit": "11.25",
+        "symbol": "LINK"
+      }
+    ],
+    "week": "2026-11-02T00:00:00Z"
+  }
+}

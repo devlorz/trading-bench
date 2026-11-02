@@ -1,0 +1,42 @@
+{
+  "notional_used": false,
+  "plan": {
+    "close_all": "Only trigger a full close if an extreme systemic market event threatens overall portfolio structure; otherwise rely on individual layer limits and our 2x leverage buffer.",
+    "hostage_policy": "Apply TSM's Hostage Hunt Strategy (Scenario B & D). Slot 1 (SOL Long at 100.27, mark ~93.90) is currently in Negative NAV of roughly -$317, which is minor relative to its $2,500 collateral (liquidation is ~50% away) and is already more than 3x covered by the +$993.41 in net hostage profits harvested last week across BTC and ENA. Hold Slot 1 patiently while deploying Slots 0, 2, and 3 into Zero Alpha setups on BTC, ETH, HYPE, and ZEC. We can either wait for SOL to mean-revert toward 98.00-104.00 or use newly captured hostage gains (Scenario D) to release Slot 1 on a moderate bounce into 97.50-98.50 if we want to free the army.",
+    "notional": 5000,
+    "rationale": "Last week was a textbook execution of TSM Principle #4: we captured 3 winning rotations (2 on ENA, 1 on BTC) for +$993.41 in realized hostage buffers while keeping 3 armies free ($8,493.42 free equity). Because reallocation does not happen while Slot 1 remains open, our fixed Risk Parameter (RP) stays at $2,500 collateral and $5,000 notional (2x leverage, well within the 10x-40x max leverage limits of our watchlist). Market structure saw a sharp flush across majors (BTC testing 76.2k, ETH 2,173, SOL 92.2) followed by initial stabilization. We select BTC and ETH for two-way post-flush volatility harvesting, pair them with relative-strength leaders HYPE (+15.2% 7d, holding above EMA20/50) and ZEC (holding above EMA50 at 1,209) for bullish pullback entries, and keep SOL on the watchlist to actively manage and resolve our trapped Slot 1 army.",
+    "watchlist": [
+      {
+        "bias": "both",
+        "entry": "Slot 1 is currently holding Long from 100.27 (in NAV(-) near 93.90). Do not add a duplicate SOL Long unless a deep capitulation flush tests 89.50-91.00; alternatively Short on overextended rallies into 98.50-100.50 (last week VWAP 97.83 and broken support).",
+        "exit": "For existing Slot 1 Long, hold patiently for recovery toward 100.50-104.00 or use accumulated hostage buffers (+993.41 USD from last week) to offset and release if momentum stalls near 97.50-98.50. For new trades, harvest 3.5% to 5% volatility swings.",
+        "symbol": "SOL"
+      },
+      {
+        "bias": "both",
+        "entry": "Long on liquidity sweeps into the 76,200-77,200 demand zone (recent daily spike low 76,264) or Short on mean-reversion rallies into 79,100-80,400 (last week VWAP 79,138 and daily EMA20/50 cluster at 80,359-80,459).",
+        "exit": "Take profit on 2% to 3% range rotations (~1,500-2,300 points) to steadily accumulate hostage buffers.",
+        "symbol": "BTC"
+      },
+      {
+        "bias": "both",
+        "entry": "Long on sweeps of the 2,175-2,225 support zone (recent capitulation low 2,173.1) or Short on rallies into 2,350-2,375 resistance (daily EMA20 at 2,369.3 and breakdown structure).",
+        "exit": "Harvest profits on 3% to 4.5% volatility swings (~70-100 USD per ETH).",
+        "symbol": "ETH"
+      },
+      {
+        "bias": "long",
+        "entry": "Long on pullbacks into the 82.60-85.00 support cluster (aligned with daily EMA50 at 82.60 and EMA20 at 83.31) or on a high-conviction reclaim of 86.20 after a liquidity sweep.",
+        "exit": "Scale out into 91.50-94.00 swing high resistance (~6% to 9% range rotation).",
+        "symbol": "HYPE"
+      },
+      {
+        "bias": "long",
+        "entry": "Long on pullbacks into the 1,180-1,210 structural demand zone (aligned with daily EMA50 at 1,209.4 and recent daily lows at 1,181-1,198).",
+        "exit": "Take profit into 1,265-1,310 resistance (last week VWAP at 1,264.5 and upper range supply, ~5% to 7.5% gain).",
+        "symbol": "ZEC"
+      }
+    ],
+    "week": "2026-11-02T00:00:00Z"
+  }
+}
