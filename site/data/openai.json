@@ -2491,6 +2491,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "\u0e44\u0e21\u0e48\u0e21\u0e35 setup \u0e40\u0e02\u0e49\u0e32\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48\u0e22\u0e37\u0e19\u0e22\u0e31\u0e19\u0e41\u0e25\u0e49\u0e27: BTC \u0e41\u0e25\u0e30 ETH \u0e22\u0e31\u0e07\u0e15\u0e48\u0e33\u0e01\u0e27\u0e48\u0e32\u0e42\u0e0b\u0e19\u0e23\u0e2d\u0e40\u0e14\u0e49\u0e07\u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e40\u0e1b\u0e34\u0e14 short \u0e2a\u0e48\u0e27\u0e19 XMR \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e40\u0e01\u0e34\u0e14 pullback \u0e40\u0e02\u0e49\u0e32 580\u2013590 \u0e15\u0e32\u0e21\u0e14\u0e49\u0e27\u0e22\u0e41\u0e17\u0e48\u0e07 4h \u0e1b\u0e34\u0e14\u0e22\u0e37\u0e19\u0e22\u0e31\u0e19\u0e17\u0e35\u0e48 590\u2013594 \u0e41\u0e25\u0e30\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e21\u0e35 daily close \u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14\u0e17\u0e35\u0e48\u0e22\u0e37\u0e19\u0e22\u0e31\u0e19\u0e40\u0e2b\u0e19\u0e37\u0e2d 588 \u0e2d\u0e22\u0e39\u0e48 flat \u0e41\u0e25\u0e30\u0e23\u0e2d\u0e40\u0e07\u0e37\u0e48\u0e2d\u0e19\u0e44\u0e02\u0e04\u0e23\u0e1a",
       "t": "2026-11-02T22:13:43Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "No planned entry is confirmed. BTC and ETH have not reached their rebound-entry zones. XMR has not pulled back into 580\u2013590 and then completed the required 4h reclaim; the required daily close above 588 is not established. All slots are empty, so remain flat.",
+      "t": "2026-11-02T23:13:08Z"
     }
   ],
   "eliminated": null,
