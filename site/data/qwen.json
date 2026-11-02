@@ -2883,6 +2883,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "ETH slot 0 short is active, currently small NAV(-) versus entry 2293.4 at mark 2297.0, with liquidation far away and planned TP 2240 still valid. BTC, SOL, DOGE, and LINK have not reached their planned short fade-entry triggers at this tick, and the policy does not allow adding new aggressive exposure before a realized Hostage buffer while an existing layer is NAV(-). Therefore the correct Action-Based decision is to hold the current ETH position and maintain the existing TP.",
       "t": "2026-11-02T09:19:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2286.6,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 remains the planned ETH short (entry 2293.4, TP 2240) and is currently NAV(+) at mark 2286.6, far from liquidation, so there is no valid reason to close or alter the TP. The other watchlist shorts have not reached their Action-Based fade/bounce entry triggers at this tick: BTC high is still below 78600, SOL high below 95.5, DOGE high below 0.0763, and LINK high below 11.55. The policy does not permit opening further exposure before a realized Hostage buffer exists, and chasing below-trigger prices would violate the plan. Therefore hold all existing positions.",
+      "t": "2026-11-02T10:14:59Z"
     }
   ],
   "eliminated": null,
@@ -2890,13 +2904,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.496465349392,
-      "mark": 2297.0,
+      "liq": 4546.525095349392,
+      "mark": 2286.6,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -3.924304526031121
+      "unrealized": 7.412575215836947
     },
     null,
     null,
