@@ -2953,6 +2953,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 ETH short is still open at entry 2293.4 with mark 2291.2, so it is NAV(+) and liquidation is far away at 4546.64. The planned TP 2240 remains valid and should not be changed or cancelled. No new Action-Based short fade/bounce entry is currently active at this tick: ETH recent 15m high is 2293.8 below the plan trigger 2295; BTC recent high 78064 is below 78600; SOL recent high 94.91/94.602 is below 95.5; DOGE recent high 0.075762 is below 0.0763; LINK recent high 11.409 is below 11.55. Opening additional layers would chase prices below entry and would also violate the hostage policy because no realized Hostage buffer has been secured yet. Therefore the correct action is hold the existing position and plan.",
       "t": "2026-11-02T14:17:15Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 2293.4,
+          "side": "short",
+          "slot": 0,
+          "symbol": "ETH",
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 ETH short remains valid: mark 2293.4 is at entry, unrealized PnL is about zero, liquidation is far away, and the planned TP 2240 is unchanged. BTC, SOL, DOGE, and LINK have not reached fresh bounce/fade short triggers near their plan entry levels; opening now would chase below-trigger prices. The hostage policy requires a realized positive buffer before adding step-2 exposure, and no Hostage has been realized yet. Therefore hold the existing position and take no new action.",
+      "t": "2026-11-02T15:16:15Z"
     }
   ],
   "eliminated": null,
@@ -2960,13 +2974,13 @@
   "layers": [
     {
       "entry": 2293.4,
-      "liq": 4546.639395349392,
-      "mark": 2291.2,
+      "liq": 4546.668021599391,
+      "mark": 2293.4,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": 2.3981860992415984
+      "unrealized": -0.0
     },
     null,
     null,
