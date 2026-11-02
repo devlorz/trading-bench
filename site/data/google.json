@@ -2414,6 +2414,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Under TSM Principle #4 (Scenario B), active positions remain well-protected within their dedicated 2x leverage buffers: Slot 0 HYPE Long (entry 86.528, mark 85.486, TP 92.50, liq 47.64) is consolidating within normal volatility, and Slot 1 SOL Long (entry 100.27, mark 93.278, TP 104.0, liq 52.86) continues to be held patiently with its NAV(-) thoroughly cushioned by our collateral and hostage reserves. Evaluating empty slots (2 and 3) against the Weekly Plan entry parameters: BTC is trading at 77,392 (approaching the 76,200-77,200 demand sweep zone, with recent low 77,231 just above the boundary); ETH is at 2,269.0 (above the 2,175-2,225 Long zone and below the 2,350-2,375 Short zone); and ZEC is at 1,247.8 (above the 1,180-1,210 structural demand cluster). As no symbol has officially breached its designated Action Based entry trigger, we maintain strict Wait & See discipline and hold.",
       "t": "2026-11-02T16:16:14Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Under TSM Principle #4 (Scenario B), active positions remain safely insulated within their 2x leverage envelopes: Slot 0 HYPE Long (entry 86.528, mark 84.238, TP 92.50, liq 47.64) is absorbing pullback volatility toward support, while Slot 1 SOL Long (entry 100.27, mark 93.138, TP 104.0, liq 52.86) is held patiently with its NAV(-) well-cushioned by its $2,500 collateral and our +$993.41 hostage reserve. Evaluating empty slots (2 and 3) against the Weekly Plan entry parameters: BTC is trading at 77,351 (recent 1h low 77,231 remains just above the 76,200-77,200 Long sweep trigger); ETH is at 2,263.6 (above the 2,175-2,225 Long zone and below the 2,350-2,375 Short zone); and ZEC is at 1,223.3 (pulling back toward, but not yet reaching, the 1,180-1,210 structural demand cluster). As no candidate symbol has fulfilled its Action Based entry conditions, we exercise strict Wait & See discipline and hold.",
+      "t": "2026-11-02T17:13:09Z"
     }
   ],
   "eliminated": null,
@@ -2421,23 +2435,23 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.63684670000001,
-      "mark": 85.4862,
+      "liq": 47.637912825000015,
+      "mark": 84.238,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -60.20016642011886
+      "unrealized": -132.32710798816603
     },
     {
       "entry": 100.27,
-      "liq": 52.85890607711428,
-      "mark": 93.278,
+      "liq": 52.86007337711428,
+      "mark": 93.138,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -348.6586217213519
+      "unrealized": -355.63977261394194
     },
     null,
     null
