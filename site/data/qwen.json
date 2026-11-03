@@ -3352,6 +3352,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 holds an ETH short at entry 2280.7 with current mark 2293.43, so it is NAV(-) but liquidation at 4521.36 is extremely far and the planned TP 2240 remains valid. No forced close or TP change is justified. Other watchlist symbols do not have active short bounce/fade triggers: BTC recent highs are below 78600, SOL below 95.5, DOGE below 0.0763, and LINK below 11.55 with mark also below its planned exit zone. Free equity can fund another layer, but opening would be chasing structure rather than an action-based entry, and adding risk while the existing ETH layer is NAV(-) conflicts with the hostage policy and positive-buffer rule. Hold.",
       "t": "2026-11-03T22:12:01Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned ETH short from 2280.7 with TP 2240. It is currently slightly NAV(-) at mark 2290.4, but liquidation is extremely far at 4521.39, so there is no forced close and the planned TP remains valid. Other watchlist short fade triggers are not currently active: BTC 77830 and recent highs remain below 78600; SOL 93.375 remains below 95.5; DOGE 0.075565 remains below 0.0763; LINK 11.107 remains below 11.55 and is already below its planned exit zone. Opening any new layer would either chase structure or add risk while the existing ETH layer is negative and no positive buffer exists, which conflicts with the hostage policy. No close, TP change, or cancel is warranted.",
+      "t": "2026-11-03T23:12:17Z"
     }
   ],
   "eliminated": null,
@@ -3359,13 +3373,13 @@
   "layers": [
     {
       "entry": 2280.7,
-      "liq": 4521.361400298059,
-      "mark": 2293.43,
+      "liq": 4521.3900577980585,
+      "mark": 2290.4,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240.0,
-      "unrealized": -13.95404919542248
+      "unrealized": -10.632700486692983
     },
     null,
     null,
