@@ -3282,6 +3282,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity 10085.1477 is sufficient for RP collateral 2506.9852. The fresh ETH 15m set crossed its short fade trigger: the recent high 2309.4 is above plan entry 2295, and the current mark 2281.0 is still well above planned exit 2240, so this is a new action-based fade rather than chasing after a completed flush. ETH bias is short, leverage is 2500/2506.9852 \u2248 0.997x, well below ETH max leverage. Other watchlist entries are not active: BTC recent high 77864 below 78600; SOL recent high 93.635 below 95.5; DOGE recent high 0.075613 below 0.0763; LINK recent high 11.312 below 11.55. Therefore open one RP layer short ETH in slot 0 and set TP at the planned exit 2240 to start a controlled hostage cycle. No other opens are justified.",
       "t": "2026-11-03T14:15:08Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Only slot 0 is occupied with ETH short, and it is slightly NAV(-) with unrealized -13.92 while liquidation is very far at 4521.16. The planned exit TP is 2240 and remains valid. Other watchlist short fade triggers are not currently active: BTC mark 77441 with recent highs below 78600; SOL mark 93.429 with recent highs below 95.5; DOGE mark 0.07531 with recent highs below 0.0763; LINK mark 11.188 with recent highs below 11.55. Opening another layer would either chase or add risk against a losing layer, contrary to the hostage policy. There are no profitable positive layers to basket-offset, and no rule forces a close while far from liquidation. Hold.",
+      "t": "2026-11-03T15:12:57Z"
     }
   ],
   "eliminated": null,
@@ -3289,13 +3303,13 @@
   "layers": [
     {
       "entry": 2280.7,
-      "liq": 4521.132105298059,
-      "mark": 2281.0,
+      "liq": 4521.160695298058,
+      "mark": 2293.4,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240.0,
-      "unrealized": -0.3288464068051277
+      "unrealized": -13.921164554742266
     },
     null,
     null,
