@@ -2601,6 +2601,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "At 06:22 UTC no entry trigger is confirmed. Equity is about 9,193, above the 8,500 royal-army floor. BTC is 76,541, inside the 74.5k-84k daily band, so no forced close applies. The BTC long needs a 4h close above 77,000 after a wick into 76.2-77.0k, and the latest 4h bar is still below 77,000, so it is not met. The BTC short zone 80.4-81.3k is far away. ETH 2,246 is mid-range, outside 2,170-2,210 and 2,360-2,400. SOL 91.5 is in the 90.5-92.5 zone but has no 4h close above 93.0 and no BTC daily confirmation above 76,000. XRP 1.248 is mid-box, away from 1.19-1.215 and 1.30-1.33. The BNB hostage (slot 0, long 715.45, mark 693.94, unrealized about -301, resting TP 730, hard stop near 670.7, liq about 572.8) stays as is, with no new BNB layer. One hostage is open, so one more is allowed, but no trigger is met. Hold all slots and wait and see.",
       "t": "2026-11-03T06:22:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,158, above the 8,500 floor, and BTC is at 76,567 with no daily close outside 74.5k-84k, so no forced close applies. The BNB long hostage in slot 0 (entry 715.45, mark 691.44, unrealized about -336) stays open with its TP at 730 and its hard stop near 670.7, and no new BNB layer is added. No entry trigger is confirmed: BTC's last 4h close (76,916) is below the 77,000 reclaim needed for a long and far from the 80.4k-81.3k short zone; ETH (2,246) is mid-range outside both zones; SOL (91.72) is in the 90.5-92.5 zone but has no 4h close above 93.0 and no BTC daily above 76,000; XRP (1.2511) is mid-box away from its zones. One hostage is open, so one more is allowed, but no trigger is met. Hold all slots and wait and see.",
+      "t": "2026-11-03T07:15:13Z"
     }
   ],
   "eliminated": null,
@@ -2608,13 +2622,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.771158771264,
-      "mark": 693.94,
+      "liq": 572.776803039284,
+      "mark": 691.44,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -300.64994059682704
+      "unrealized": -335.59298343699754
     },
     null,
     null,

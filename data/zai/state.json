@@ -1,43 +1,16 @@
 {
-  "free_equity": 2158.2995278647722,
-  "last_tick": "2026-11-03T06:22:59Z",
+  "free_equity": 9829.15681442305,
+  "last_tick": "2026-11-03T07:15:13Z",
   "last_week": "2026-11-02T00:00:00Z",
   "layers": [
-    {
-      "collateral": 2489.1793004350275,
-      "entry": 600.07,
-      "notional": 2500,
-      "opened_at": "2026-10-30T15:15:13Z",
-      "side": "long",
-      "size": 4.166180612261902,
-      "symbol": "XMR",
-      "tp": 620
-    },
-    {
-      "collateral": 2489.558090282395,
-      "entry": 600.04,
-      "notional": 2500,
-      "opened_at": "2026-10-30T16:17:10Z",
-      "side": "long",
-      "size": 4.166388907406173,
-      "symbol": "XMR",
-      "tp": 620
-    },
-    {
-      "collateral": 2498.9528074504037,
-      "entry": 613.05,
-      "notional": 2500,
-      "opened_at": "2026-11-02T21:12:52Z",
-      "side": "long",
-      "size": 4.07797080172906,
-      "symbol": "XMR",
-      "tp": 620
-    },
+    null,
+    null,
+    null,
     null
   ],
   "rp": {
     "collateral": 2500.0,
     "notional": 2500
   },
-  "settled": "2026-11-03T06:22:59Z"
+  "settled": "2026-11-03T07:15:13Z"
 }
