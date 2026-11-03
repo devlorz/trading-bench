@@ -2545,6 +2545,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Current state: BNB long hostage (slot 0, entry 715.45, mark ~696.2, unrealized about -269) with TP resting at 730. Equity 9,225 is above the 8,500 floor. BTC last 4h close 76,805 and 15m mark ~76,907 remain inside the 74.5k-84k daily band, so no forced liquidation. Triggers: BTC long needs a 4h close above 77,000 after a wick into 76.2-77.0k; the last closed 4h bar (76,805) did not reclaim it, so no entry. BTC short zone 80.4-81.3k is far away. ETH is mid-range (~2,253), outside both zones. SOL (~91.95) is inside 90.5-92.5 but lacks a 4h close above 93.0 and the BTC daily above 76,000 confirmation. XRP (~1.248) is mid-box, away from its zones. Max-two-hostage rule: one hostage open, so one more is allowed, but no trigger is met. Keep the BNB TP at 730 and do not add to BNB. Hold all slots this tick.",
       "t": "2026-11-03T02:19:34Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 03:16 UTC no entry trigger is confirmed. BTC is about 76,955, below the 77,000 4h reclaim needed for the long, and the last closed 4h bar (close 76,805) did not reclaim it. BTC is far from the 80.4k-81.3k short zone. ETH is 2,254.8, mid-range, outside both its 2,170-2,210 long zone and its 2,360-2,400 short zone. SOL is 92.19, inside the 90.5-92.5 zone, but there is no 4h close above 93.0 and no BTC daily confirmation above 76,000, so the SOL long is not met. XRP is 1.2503, mid-box, away from 1.19-1.215 and 1.30-1.33. The BNB hostage (slot 0, long 715.45, mark 696.88, unrealized about -260, resting TP 730, hard stop near 670.7, liq about 572.8) stays as is, with no new BNB layer and the TP resting. Equity of about 9,234 is above the 8,500 royal-army floor, and BTC has no daily close outside 74.5k-84k, so no forced action applies. One hostage is open, so the two-hostage cap still allows one more later, but no trigger is met. Hold all slots this tick.",
+      "t": "2026-11-03T03:16:10Z"
     }
   ],
   "eliminated": null,
@@ -2552,13 +2566,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.760777687709,
-      "mark": 696.2,
+      "liq": 572.769405571247,
+      "mark": 696.88,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -269.06142986931303
+      "unrealized": -259.5569222167873
     },
     null,
     null,
