@@ -3296,6 +3296,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Only slot 0 is occupied with ETH short, and it is slightly NAV(-) with unrealized -13.92 while liquidation is very far at 4521.16. The planned exit TP is 2240 and remains valid. Other watchlist short fade triggers are not currently active: BTC mark 77441 with recent highs below 78600; SOL mark 93.429 with recent highs below 95.5; DOGE mark 0.07531 with recent highs below 0.0763; LINK mark 11.188 with recent highs below 11.55. Opening another layer would either chase or add risk against a losing layer, contrary to the hostage policy. There are no profitable positive layers to basket-offset, and no rule forces a close while far from liquidation. Hold.",
       "t": "2026-11-03T15:12:57Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 is holding an ETH short with mark 2297.8, entry 2280.7, TP 2240, and NAV(-) about -18.74, while liquidation 4521.25 is very far, so there is no forced close and the planned TP remains valid. Other watchlist short fade entries are not active: BTC 77678 vs trigger 78600, SOL 93.585 vs 95.5, DOGE 0.07532 vs 0.0763, LINK 11.163 vs 11.55. Recent highs do not reach those triggers, so opening new layers would chase rather than follow Action-Based strategy. Because the active ETH layer is NAV(-), policy forbids adding leverage/averaging into losing structure; no winning layer exists for basket offset. Hold.",
+      "t": "2026-11-03T18:16:18Z"
     }
   ],
   "eliminated": null,
@@ -3303,13 +3317,13 @@
   "layers": [
     {
       "entry": 2280.7,
-      "liq": 4521.218160298059,
-      "mark": 2298.6,
+      "liq": 4521.2468590480585,
+      "mark": 2297.8,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240.0,
-      "unrealized": -19.621168939360825
+      "unrealized": -18.744245187881315
     },
     null,
     null,
