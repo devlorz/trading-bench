@@ -3310,6 +3310,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 is holding an ETH short with mark 2297.8, entry 2280.7, TP 2240, and NAV(-) about -18.74, while liquidation 4521.25 is very far, so there is no forced close and the planned TP remains valid. Other watchlist short fade entries are not active: BTC 77678 vs trigger 78600, SOL 93.585 vs 95.5, DOGE 0.07532 vs 0.0763, LINK 11.163 vs 11.55. Recent highs do not reach those triggers, so opening new layers would chase rather than follow Action-Based strategy. Because the active ETH layer is NAV(-), policy forbids adding leverage/averaging into losing structure; no winning layer exists for basket offset. Hold.",
       "t": "2026-11-03T18:16:18Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned ETH short at 2280.7 with TP 2240. It is only slightly NAV(-) at 2282.3 and liquidation is extremely far at 4521.3, so the plan favors holding and waiting for recovery or target rather than cutting. All other slots are empty and free_equity can fund more layers, but no fresh short fade trigger is active: BTC 77622 and highs remain below 78600, SOL 93.13 and highs remain below 95.5, DOGE 0.075017 and highs remain below 0.0763, and LINK 11.04 and highs remain below 11.55 while also being below its planned exit zone. Opening now would chase structure and would violate the action-based Wait & See rule and hostage policy, especially while the existing ETH layer is already NAV(-) with no positive buffer. No close, TP change, or cancel is warranted.",
+      "t": "2026-11-03T20:14:30Z"
     }
   ],
   "eliminated": null,
@@ -3317,13 +3331,13 @@
   "layers": [
     {
       "entry": 2280.7,
-      "liq": 4521.275516548059,
-      "mark": 2288.57,
+      "liq": 4521.3040965480595,
+      "mark": 2282.3,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240.0,
-      "unrealized": -8.626737405182999
+      "unrealized": -1.7538475029600167
     },
     null,
     null,
