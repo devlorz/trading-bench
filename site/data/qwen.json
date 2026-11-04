@@ -3527,6 +3527,27 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 holds the planned ETH short at 2293.1 with TP 2240 and is currently NAV(-), but liquidation is extremely far at 4545.8, so there is no forced close and the hostage policy prohibits averaging down or adding leverage beyond the assigned layer. ETH is already occupied, and opening another ETH short away from the planned fade zone would increase exposure. No other watchlist symbol gives a fresh action-based short entry: BTC recent highs are below 78600; SOL and DOGE have not retested their higher entry triggers and are closer to their exits; LINK is below its exit zone and far from 11.55. The correct action is to hold the ETH hostage cycle and wait for price recovery to the planned TP or a legitimate new fade level.",
       "t": "2026-11-04T10:15:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 78606.0,
+          "side": "short",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "open"
+        },
+        {
+          "price": 76900.0,
+          "side": "short",
+          "slot": 1,
+          "symbol": "BTC",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 holds the planned ETH short with TP 2240. It is currently NAV(-), but liquidation is extremely far at 4545.86, so per the hostage policy we neither close nor add leverage to that layer. A fresh action-based short trigger is now present in BTC: the recent 1h high crossed the planned short fade level 78600, and the current mark is near that trigger rather than chasing a completed flush. BTC bias is short, free_equity funds the RP collateral, leverage is well below max, and no opposite-side BTC position exists. Other watchlist symbols have not retested their higher short entry levels. Therefore open one BTC short in the first free slot and set its planned exit TP.",
+      "t": "2026-11-04T11:14:44Z"
     }
   ],
   "eliminated": null,
@@ -3534,15 +3555,24 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4545.828765433685,
-      "mark": 2328.7,
+      "liq": 4545.857870433684,
+      "mark": 2331.4,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -38.812088439230635
+      "unrealized": -41.75570188827371
     },
-    null,
+    {
+      "entry": 78590.0,
+      "liq": 156381.84493921802,
+      "mark": 78606.0,
+      "notional": 2500,
+      "side": "short",
+      "symbol": "BTC",
+      "tp": 76900.0,
+      "unrealized": -0.5089706069474488
+    },
     null,
     null
   ],
