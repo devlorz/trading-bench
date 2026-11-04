@@ -3604,6 +3604,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Both occupied layers are NAV(-): ETH short at 2293.1 is 2433.9, and BTC short at 78590 is 80768.8, but liquidation prices are extremely far (ETH 4545.97, BTC 156385.77). Under TSM Principle 4, there is no forced close or stop order, and the hostage policy prohibits averaging down or adding same-symbol short layers into underwater positions. No winning open layer exists for basket offset, so we hold and wait. Opening SOL, DOGE, LINK, or another major would chase completed upward flushes because all marks are far above their planned short fade entries and exits, and current price structure has moved against the short plan. The correct action is to hold all existing planned layers and preserve the positive hostage buffer while waiting for a legitimate action-based fade or recovery toward existing TP levels.",
       "t": "2026-11-04T15:14:40Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "ETH and BTC are both NAV(-), but their liquidation prices are extremely far (ETH 4546, BTC 156387), so there is no forced close. Under the hostage policy, no averaging down or stop cut is allowed; wait for recovery. No open layer is positive for basket offset. New watchlist shorts do not present fresh action-based fade entries: SOL, DOGE, and LINK are trading above their planned short entries after a flush and not near a controlled entry mark, while BTC and ETH are already occupied and far above their planned fades. Preserve the existing hostage buffer and hold.",
+      "t": "2026-11-04T16:22:39Z"
     }
   ],
   "eliminated": null,
@@ -3611,23 +3625,23 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4545.974615433684,
-      "mark": 2433.9,
+      "liq": 4546.004939183684,
+      "mark": 2435.3,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -153.50399023156447
+      "unrealized": -155.0303083162534
     },
     {
       "entry": 78590.0,
-      "liq": 156385.77475171798,
-      "mark": 80768.8,
+      "liq": 156386.778001718,
+      "mark": 80521.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": -69.30907240106893
+      "unrealized": -61.42639012597022
     },
     null,
     null
