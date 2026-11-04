@@ -3161,6 +3161,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,703, above the 8,500 royal-army floor, and BTC's last daily-band check is inside 74.5k-84k, so no forced close. Slot 0 holds the BNB long (entry 715.45, mark 717.64, unrealized about +31, TP 730 resting), which is in profit, so no hostage there and the BNB slot stays frozen. Slot 1 holds the BTC short opened at 80,063 with TP 79,200 already resting; it is about -25 unrealized, a single hostage, well inside its 25% RP stop (about 4,900 pts adverse, liq far above at 99,042), so it is held and not averaged. This is one hostage, within the max-2 rule. Slots 2 and 3 are empty. No new trigger on ETH, SOL, XRP or a second BTC layer, since no rejection candle is confirmed and the max-2 hostage cap leaves room for only one more. Hold all and wait and see.",
       "t": "2026-11-04T21:11:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,705, above the 8,500 floor, and BTC mark 80,415 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long in profit (entry 715.45, mark 719.14, TP 730 resting), so it is not a hostage and the BNB slot stays frozen. Slot 1 holds the BTC short from 80,063 with TP 79,200 resting; it is about -44 unrealized, a single hostage well inside its 25% RP stop (liq far at 99,042). That leaves one more hostage allowed under the max-2 rule, but no new trigger is met. BTC is inside the 80.4k-81.3k short zone, yet the current 4h bar is still expanding upward with no confirmed rejection candle, and a second BTC layer would duplicate the same symbol and direction. ETH 2,424 is above its 2,360-2,400 short zone with no rejection candle and far from its long zone. SOL 95.16 sits between its long zone (90.5-92.5) and short zone (98-100.5) with no trigger. XRP is blocked by the single XRP/BNB slot rule. No entry trigger is met, so hold all and wait and see.",
+      "t": "2026-11-04T22:12:57Z"
     }
   ],
   "eliminated": null,
@@ -3168,23 +3182,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.01197058658,
-      "mark": 717.64,
+      "liq": 573.013893622214,
+      "mark": 719.144,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": 30.61010552798855
+      "unrealized": 51.6318401006354
     },
     {
       "entry": 80063.0,
-      "liq": 99041.7342113478,
-      "mark": 80261.0,
+      "liq": 99041.6101678414,
+      "mark": 80415.0,
       "notional": 10000,
       "side": "short",
       "symbol": "BTC",
       "tp": 79200.0,
-      "unrealized": -24.730524711789464
+      "unrealized": -43.96537726540349
     },
     null,
     null
