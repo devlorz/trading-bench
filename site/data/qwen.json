@@ -3394,6 +3394,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 holds the planned ETH short at 2280.7 with TP 2240 and mark 2262.71, so the layer is NAV(+). Liquidation is extremely far, the TP is valid, and there is no forced close. No other watchlist short fade/entry trigger is active: BTC 76882 is below 78600 and already below the exit zone 76900; SOL 91.814 and DOGE 0.074055 are below their exits; LINK 10.815 is far below 11.25. Opening new layers now would chase completed downside moves and violate Wait & See / positive-buffer policy. The correct action is hold.",
       "t": "2026-11-04T01:14:24Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 ETH short is profitable at mark 2261.1 with planned TP 2240 and liquidation far away, so the planned hostage cycle should be left running; no early close, TP change, or cancel is justified. All other watchlist short fade/bounce triggers are inactive: BTC has not retested 78600 and is already below its 76900 exit, ETH is already held, SOL/DOGE/LINK recent highs remain below their entry levels and marks are below planned exits. Opening now would chase completed downside moves or add risk without an Action-Based setup, violating Wait & See and the hostage policy. Therefore hold.",
+      "t": "2026-11-04T02:17:55Z"
     }
   ],
   "eliminated": null,
@@ -3401,13 +3415,13 @@
   "layers": [
     {
       "entry": 2280.7,
-      "liq": 4521.446915298059,
-      "mark": 2262.71,
+      "liq": 4521.475207798059,
+      "mark": 2261.1,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240.0,
-      "unrealized": 19.719822861401962
+      "unrealized": 21.484631911255217
     },
     null,
     null,

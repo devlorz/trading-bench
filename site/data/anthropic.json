@@ -2867,6 +2867,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,181, above the 8,500 royal-army floor, and BTC at 76,882 is inside the 74.5k-84k daily band, so no forced close applies. The BNB long hostage in slot 0 (entry 715.45, mark 693.19, unrealized about -311, TP 730 resting, hard stop near 670.7, liq about 572.9) stays open. No new BNB layer and no BNB short. BTC has dropped into the 76.2-77.0k long zone, but there is no 4h close back above 77,000 yet and the daily close is not above 76,000, so no long is confirmed. ETH 2,263 is mid-range, outside its 2,170-2,210 long and 2,360-2,400 short zones. SOL 91.81 is below the 93.0 reclaim level, and it is a re-entry after last week's stop, so no long. XRP 1.254 is mid-box, away from 1.19-1.215 and 1.30-1.33. One hostage is open and one more is allowed, but no clean trigger is met. Hold all slots and wait and see.",
       "t": "2026-11-04T01:14:24Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,174, above the 8,500 royal-army floor, and BTC mark 76,819 is inside the 74.5k-84k daily band, so no forced close applies. The BNB long hostage in slot 0 (entry 715.45, mark 692.68, unrealized about -318, TP 730 resting, hard stop near 670.7, liq about 572.9) stays open. No new BNB layer and no BNB short. One hostage is open and one more is allowed. BTC has dropped into the 76.2-77.0k long zone, but the 4h close back above 77,000 is not confirmed (mark 76,819, last 4h close 77,435 came before the drop), so no long yet. BTC is also not in the 80.4-81.3k short zone. ETH 2,261 is mid-range, outside its 2,170-2,210 long and 2,360-2,400 short zones. SOL 91.71 is below the 93.0 reclaim level and is a re-entry after last week's stop, so no long. XRP 1.254 is mid-box, away from 1.19-1.215 and 1.30-1.33. No clean trigger is met, so hold all slots and wait and see.",
+      "t": "2026-11-04T02:17:55Z"
     }
   ],
   "eliminated": null,
@@ -2874,13 +2888,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.885112578379,
-      "mark": 693.188,
+      "liq": 572.8937724533789,
+      "mark": 692.679,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -311.1608078831513
+      "unrealized": -318.2752114054102
     },
     null,
     null,
