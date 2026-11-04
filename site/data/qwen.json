@@ -3562,6 +3562,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "No close-all deadline is active and all liquidation distances are far. Slot 0 ETH short is NAV(-) at mark 2319.6 versus entry 2293.1, but liq 4545.9 is extremely distant; the hostage policy says not to average down and to use completed winning scalp hostage or structure recovery, not forced market cut. Slot 1 BTC short is slightly positive at mark 78245.6 versus entry 78590 with TP 76900 not reached, so keep letting the planned exit run. There are empty slots and sufficient free_equity, but no fresh Action-Based short entries: SOL mark 92.953 is already below/barely below its 93.0 exit and far under 95.5 entry; DOGE mark 0.074716 is near/below 0.0745 exit and below 0.0763 entry; LINK mark 11.092 is below 11.25 exit and far below 11.55 entry; BTC is already occupied and current mark is below the 78600 fade level, not a fresh chase; ETH is occupied and above the failed fade level. Opening anything now would chase completed moves or enter away from planned fade levels, violating Wait & See and the Step-2 buffer rule. Correct action is hold.",
       "t": "2026-11-04T12:19:56Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Current slots 0-1 hold ETH and BTC shorts per the weekly plan. ETH is NAV(-) at mark 2319.4 versus entry 2293.1, but liquidation is extremely far (4545.9), so under TSM Principle 4 and the hostage policy we do not force-close and do not add another ETH layer or average down. BTC is slightly positive and TP 76900 has not been reached, so keep the planned scalp running. No free-slot entry trigger is active: SOL 92.764 is already below its 93.0 exit and far below 95.5 entry; DOGE 0.07479 has not retested 0.0763 and is near 0.0745 exit; LINK 11.114 is below 11.25 exit and far below 11.55 entry; BTC is occupied and currently below its 78600 fade level after the prior trigger; ETH is occupied. Opening anything now would chase completed downside or enter away from planned bounce/fade levels, violating Wait & See and the positive-buffer rule. Correct action is hold.",
+      "t": "2026-11-04T13:13:55Z"
     }
   ],
   "eliminated": null,
@@ -3569,23 +3583,23 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4545.886966683684,
-      "mark": 2319.6,
+      "liq": 4545.915891683684,
+      "mark": 2319.4,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -28.891020888753218
+      "unrealized": -28.67297544808358
     },
     {
       "entry": 78590.0,
-      "liq": 156382.825639218,
-      "mark": 78245.6,
+      "liq": 156383.804039218,
+      "mark": 78391.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": 10.95559231454365
+      "unrealized": 6.330321923908894
     },
     null,
     null
