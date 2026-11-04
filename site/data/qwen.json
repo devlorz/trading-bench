@@ -3688,6 +3688,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four Layer slots are already occupied by the planned shorts: ETH and BTC are NAV(-), but their marks remain extremely far from liquidation, so the hostage policy says to hold without averaging down or forced stop-cutting. LINK and SOL are NAV(+), but neither has reached its planned TP (LINK mark 11.386 > 11.25; SOL mark 94.571 > 93.0), and the short structure has not invalidated the intended exit levels. No fresh slot is available, and the only remaining watchlist symbol, DOGE, has no open slot anyway. With no close-all deadline, no TP hit, no liquidation risk, and no valid action-based entry possible, the correct action is to hold all existing layers and wait for either planned TP fills or structure recovery.",
       "t": "2026-11-04T20:14:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four layer slots are occupied and free_equity is below RP collateral, so no new open is possible. ETH and BTC shorts are NAV(-), but liquidation prices are extremely far, so under TSM Principle 4 and the plan's hostage policy they are held without forced close or averaging down. LINK and SOL are NAV(+) but have not reached their planned TPs, so let the hostage cycles run. No action-based close or new entry is justified before TP fills or a legitimate fade/recap opportunity, so hold all existing layers.",
+      "t": "2026-11-04T21:11:37Z"
     }
   ],
   "eliminated": null,
@@ -3695,43 +3709,43 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4546.126011683684,
-      "mark": 2407.4,
+      "liq": 4546.156267933684,
+      "mark": 2426.0,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -124.61296934281124
+      "unrealized": -144.89119532510585
     },
     {
       "entry": 78590.0,
-      "liq": 156383.7594880676,
-      "mark": 80048.9,
+      "liq": 156383.5595494154,
+      "mark": 80261.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": -46.40857615472688
+      "unrealized": -53.15561776307418
     },
     {
       "entry": 11.511,
-      "liq": 22.473862125801162,
-      "mark": 11.386,
+      "liq": 22.47400497580116,
+      "mark": 11.455,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 11.25,
-      "unrealized": 27.14794544348884
+      "unrealized": 12.162279558682819
     },
     {
       "entry": 95.304,
-      "liq": 188.44997976416505,
-      "mark": 94.571,
+      "liq": 188.45116501416507,
+      "mark": 94.94,
       "notional": 2500,
       "side": "short",
       "symbol": "SOL",
       "tp": 93.0,
-      "unrealized": 19.227944262570407
+      "unrealized": 9.548392512381545
     }
   ],
   "name": "qwen",

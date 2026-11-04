@@ -3142,6 +3142,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "BTC\u2019s latest completed 4h candle traded into the planned rebound zone and closed at 79,948, below 80,300. The current mark, 80,049, is within the permitted 80,000\u201380,300 entry range. No observed BTC candle high exceeds the 81,955 invalidation level. The planned $100 price-risk exposure plus estimated costs fits both the $330 risk cap and the $399.82 equity headroom above the floor. Open one BTC short and place the planned full-layer take-profit.",
       "t": "2026-11-04T20:14:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Hold the BTC short. The current mark is below the 4% adverse-price exit level, and the supplied BTC candles show no breach of the 81,955 invalidation level. Account equity remains above the 9,755 floor; the take-profit remains in place. No new setup is confirmed, so do not open another layer.",
+      "t": "2026-11-04T21:11:37Z"
     }
   ],
   "eliminated": null,
@@ -3149,13 +3163,13 @@
   "layers": [
     {
       "entry": 80063.0,
-      "liq": 160328.71984827967,
-      "mark": 80048.9,
+      "liq": 160328.51990962744,
+      "mark": 80261.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76600,
-      "unrealized": 0.44027828085400933
+      "unrealized": -6.182631177947366
     },
     null,
     null,
