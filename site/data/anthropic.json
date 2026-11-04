@@ -3084,6 +3084,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,763, above the 8,500 floor, and BTC at 80,521 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long hostage (entry 715.45, mark 718.59, unrealized about +44, TP 730 resting), so no layer is underwater and the BNB slot stays frozen. Slot 1 is empty after the SOL TP at 95.5, and slots 2 and 3 are empty. Entry triggers are not met: BTC is at 80.5k, inside the 80.4k-81.3k short zone, but the in-progress 4h bar is bullish, not a confirmed rejection candle. ETH 2,435 is above its 2,360-2,400 short zone with no rejection and far from its long zone. XRP is blocked because BNB already holds the single XRP/BNB slot, and Army 4 is reserve only. SOL 96.86 is below the 98.0-100.5 short zone; its only touch is an open 4h bar that has not closed as a rejection, and the long zone is far below. No entry is justified, so hold all and wait and see.",
       "t": "2026-11-04T16:22:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,711, above the 8,500 floor, and BTC at 80,374 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long (entry 715.45, mark 716.12, unrealized about +9, TP 730 resting), which is now at breakeven, but no other army holds a hostage, so the path D release is not triggered and the BNB slot stays frozen with its TP unchanged. Slots 1-3 are empty. BTC is just under the 80.4k-81.3k short zone; the latest 4h bar is still in progress and bullish, with no confirmed 4h rejection candle, so no short. BTC is above 76,000 on the daily, but it is not in a long zone (76.2k-77k) and sits above the 77.5k-80k no-entry band. ETH 2,425 is above its 2,360-2,400 short zone with no rejection and far from its long zone. SOL 96.05 is between the long zone (90.5-92.5) and the short zone (98-100.5) with no trigger. XRP 1.309 is inside its box but not at either edge, and the XRP/BNB single-slot rule blocks it anyway. No entry trigger is met, so hold all and wait and see.",
+      "t": "2026-11-04T17:12:32Z"
     }
   ],
   "eliminated": null,
@@ -3091,13 +3105,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.9838740055229,
-      "mark": 718.59,
+      "liq": 572.9928565055229,
+      "mark": 716.12,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": 43.88846180725398
+      "unrealized": 9.364735481165129
     },
     null,
     null,

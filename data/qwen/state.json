@@ -1,10 +1,10 @@
 {
-  "free_equity": 5114.70444331066,
-  "last_tick": "2026-11-04T16:22:39Z",
+  "free_equity": 2607.719284918435,
+  "last_tick": "2026-11-04T17:12:32Z",
   "last_week": "2026-11-02T00:00:00Z",
   "layers": [
     {
-      "collateral": 2506.178251257778,
+      "collateral": 2506.21142142044,
       "entry": 2293.1,
       "notional": 2500,
       "opened_at": "2026-11-04T06:23:25Z",
@@ -14,7 +14,7 @@
       "tp": 2240
     },
     {
-      "collateral": 2506.017082380646,
+      "collateral": 2505.991918455369,
       "entry": 78590.0,
       "notional": 2500,
       "opened_at": "2026-11-04T11:14:44Z",
@@ -23,12 +23,21 @@
       "symbol": "BTC",
       "tp": 76900.0
     },
-    null,
+    {
+      "collateral": 2505.8601583922255,
+      "entry": 11.511,
+      "notional": 2500,
+      "opened_at": "2026-11-04T17:12:32Z",
+      "side": "short",
+      "size": 217.18356354791072,
+      "symbol": "LINK",
+      "tp": 11.25
+    },
     null
   ],
   "rp": {
     "collateral": 2506.9851583922255,
     "notional": 2500
   },
-  "settled": "2026-11-04T16:22:39Z"
+  "settled": "2026-11-04T17:12:32Z"
 }

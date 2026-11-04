@@ -3618,6 +3618,27 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "ETH and BTC are both NAV(-), but their liquidation prices are extremely far (ETH 4546, BTC 156387), so there is no forced close. Under the hostage policy, no averaging down or stop cut is allowed; wait for recovery. No open layer is positive for basket offset. New watchlist shorts do not present fresh action-based fade entries: SOL, DOGE, and LINK are trading above their planned short entries after a flush and not near a controlled entry mark, while BTC and ETH are already occupied and far above their planned fades. Preserve the existing hostage buffer and hold.",
       "t": "2026-11-04T16:22:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 11.518,
+          "side": "short",
+          "slot": 2,
+          "symbol": "LINK",
+          "type": "open"
+        },
+        {
+          "price": 11.25,
+          "side": "short",
+          "slot": 2,
+          "symbol": "LINK",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "ETH and BTC shorts are NAV(-), but both are extremely far from liquidation, so under the hostage policy they are held without forced close or averaging down. Slot 2 is empty and free_equity is sufficient to fund one RP layer. LINK provides a fresh Action-Based short fade: its recent high crossed the planned short entry at 11.55 to 11.792, and the current mark 11.518 has pulled back below the entry level while remaining above the planned exit 11.25, so opening is a controlled fade rather than chasing a completed flush. SOL and DOGE are still above their planned short entries after the flush and have not retraced to a controlled trigger, while ETH and BTC are already occupied. Therefore open one LINK short layer in slot 2 and set the planned TP at 11.25; hold all existing layers.",
+      "t": "2026-11-04T17:12:32Z"
     }
   ],
   "eliminated": null,
@@ -3625,25 +3646,34 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4546.004939183684,
-      "mark": 2435.3,
+      "liq": 4546.035364183685,
+      "mark": 2425.2,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -155.0303083162534
+      "unrealized": -144.01901356242632
     },
     {
       "entry": 78590.0,
-      "liq": 156386.778001718,
-      "mark": 80521.0,
+      "liq": 156385.986948563,
+      "mark": 80374.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": -61.42639012597022
+      "unrealized": -56.75022267464054
     },
-    null,
+    {
+      "entry": 11.511,
+      "liq": 22.473432513301162,
+      "mark": 11.518,
+      "notional": 2500,
+      "side": "short",
+      "symbol": "LINK",
+      "tp": 11.25,
+      "unrealized": -1.5202849448356899
+    },
     null
   ],
   "name": "qwen",
