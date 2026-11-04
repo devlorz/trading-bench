@@ -2909,6 +2909,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,133, above the 8,500 royal-army floor, and BTC mark 76,786 has not produced a daily close below 74,500 or above 84,000, so no forced close applies. The BNB long hostage in slot 0 (entry 715.45, mark 689.74, unrealized about -359, TP 730 resting, hard stop near 670.7, liq about 572.9) stays open with no new BNB layer and no BNB short. BTC is in the 76.2-77.0k area but the last 4h bar closed at 76,464, so the required 4h close back above 77,000 is absent; the 80.4-81.3k short zone is far away. ETH 2,264 is mid-range, outside its 2,170-2,210 long and 2,360-2,400 short zones. SOL 91.88 is below the 93.0 reclaim level, the 90.5-92.5 wick-and-reclaim sequence is incomplete, and the BTC-above-76,000 daily condition is not cleanly confirmed, so no long; no squeeze into 98-100.5. XRP 1.268 is mid-box, away from 1.19-1.215 and 1.30-1.33. One hostage is open and one more is allowed, but no clean trigger is met. Hold all slots and wait and see.",
       "t": "2026-11-04T04:16:20Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,186, above the 8,500 royal-army floor, and BTC at 77,311 sits inside the 74.5k-84k daily band, so no forced close applies. The BNB long hostage in slot 0 (entry 715.45, mark 693.6, unrealized about -305, TP 730 resting, hard stop near 670.7, liq about 572.9) stays open. No new BNB layer and no BNB short, since one position per symbol. BTC printed a wick to 75,687 but the last 4h bar closed at 76,464, not above 77,000, and the mark is still below the 77.5k mid-box no-entry boundary, so no long trigger is confirmed. The short zone 80.4k-81.3k is far away. ETH 2,279.5 is mid-range, outside its 2,170-2,210 long and 2,360-2,400 short zones. SOL 92.13 is inside the 90.5-92.5 area but has no wick-then-4h-close above 93.0 and the BTC-above-76,000 daily condition is not confirmed for this re-entry after last week's stop, so no long. XRP 1.270 is mid-box, away from 1.19-1.215 and 1.30-1.33. One hostage is open and one more is allowed, but no clean trigger is met. Hold all slots and wait and see.",
+      "t": "2026-11-04T05:14:33Z"
     }
   ],
   "eliminated": null,
@@ -2916,13 +2930,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.908568046757,
-      "mark": 689.74,
+      "liq": 572.917243171757,
+      "mark": 693.6,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -359.35425256831417
+      "unrealized": -305.4021944230907
     },
     null,
     null,
