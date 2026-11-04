@@ -3548,6 +3548,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Slot 0 holds the planned ETH short with TP 2240. It is currently NAV(-), but liquidation is extremely far at 4545.86, so per the hostage policy we neither close nor add leverage to that layer. A fresh action-based short trigger is now present in BTC: the recent 1h high crossed the planned short fade level 78600, and the current mark is near that trigger rather than chasing a completed flush. BTC bias is short, free_equity funds the RP collateral, leverage is well below max, and no opposite-side BTC position exists. Other watchlist symbols have not retested their higher short entry levels. Therefore open one BTC short in the first free slot and set its planned exit TP.",
       "t": "2026-11-04T11:14:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "No close-all deadline is active and all liquidation distances are far. Slot 0 ETH short is NAV(-) at mark 2319.6 versus entry 2293.1, but liq 4545.9 is extremely distant; the hostage policy says not to average down and to use completed winning scalp hostage or structure recovery, not forced market cut. Slot 1 BTC short is slightly positive at mark 78245.6 versus entry 78590 with TP 76900 not reached, so keep letting the planned exit run. There are empty slots and sufficient free_equity, but no fresh Action-Based short entries: SOL mark 92.953 is already below/barely below its 93.0 exit and far under 95.5 entry; DOGE mark 0.074716 is near/below 0.0745 exit and below 0.0763 entry; LINK mark 11.092 is below 11.25 exit and far below 11.55 entry; BTC is already occupied and current mark is below the 78600 fade level, not a fresh chase; ETH is occupied and above the failed fade level. Opening anything now would chase completed moves or enter away from planned fade levels, violating Wait & See and the Step-2 buffer rule. Correct action is hold.",
+      "t": "2026-11-04T12:19:56Z"
     }
   ],
   "eliminated": null,
@@ -3555,23 +3569,23 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4545.857870433684,
-      "mark": 2331.4,
+      "liq": 4545.886966683684,
+      "mark": 2319.6,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -41.75570188827371
+      "unrealized": -28.891020888753218
     },
     {
       "entry": 78590.0,
-      "liq": 156381.84493921802,
-      "mark": 78606.0,
+      "liq": 156382.825639218,
+      "mark": 78245.6,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": -0.5089706069474488
+      "unrealized": 10.95559231454365
     },
     null,
     null

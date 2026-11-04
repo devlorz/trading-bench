@@ -3014,6 +3014,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,323, above the 8,500 royal-army floor, and BTC mark 78,606 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long hostage (entry 715.45, mark 701.58, unrealized about -194, TP 730 resting, far from the 670.7 hard stop and 572.9 liq). Slot 1 holds the SOL long (entry 93.46, mark 93.75, unrealized about +30, TP 95.5 resting). Only BNB is underwater, so one more hostage is still allowed, but no entry trigger is met. BTC is mid-box at 78.6k, inside the 77.5k-80k no-entry zone, with no 80.4k-81.3k short setup. ETH 2,331 is below its 2,360-2,400 short zone and above its 2,170-2,210 long zone. XRP 1.293 is below the 1.30-1.33 short zone and far from the 1.19-1.215 long zone. SOL already holds its one allowed layer and the BNB slot is frozen. No path D release is triggered because no hunting army has closed a win. Hold all slots and wait and see.",
       "t": "2026-11-04T11:14:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,213, above the 8,500 royal-army floor, and BTC mark 78,246 is inside the 74.5k-84k daily band, so no forced close applies. Two layers are underwater: BNB long hostage in slot 0 (entry 715.45, mark 699.83, unrealized about -218, TP 730 resting, far from the 670.7 hard stop and 572.9 liq) and SOL long in slot 1 (entry 93.462, mark 92.953, unrealized about -54, TP 95.5 resting, well within its 25% RP stop). The plan says that with 2 underwater layers all new entries stop and we wait and see until one is released. No path D release applies because no hunting army has closed a win. Slots 2 and 3 stay empty, the BNB slot stays frozen, and the existing TPs stay in place. Hold all slots.",
+      "t": "2026-11-04T12:19:56Z"
     }
   ],
   "eliminated": null,
@@ -3021,23 +3035,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.969866296757,
-      "mark": 701.58,
+      "liq": 572.975919074697,
+      "mark": 699.83,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -193.86400167726612
+      "unrealized": -218.3241316653855
     },
     {
       "entry": 93.462,
-      "liq": 72.47860785,
-      "mark": 93.747,
+      "liq": 72.47977785,
+      "mark": 92.953,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 95.5,
-      "unrealized": 30.4936765744363
+      "unrealized": -54.460636408379905
     },
     null,
     null
