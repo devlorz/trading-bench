@@ -3042,6 +3042,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,190, above the 8,500 royal-army floor, and BTC at about 78.4k is inside the 74.5k-84k daily band, so no forced close applies. Two layers are now underwater: the BNB long hostage in slot 0 (entry 715.45, mark 699.6, unrealized about -222, TP 730 resting, far from the 670.7 hard stop and 572.9 liq) and the SOL long in slot 1 (entry 93.46, mark 92.76, unrealized about -75, TP 95.5 resting, well inside its 25% RP stop). The max-2-hostage rule is reached, so all new entries stop and we wait and see until one layer is released. No win has been closed, so path D does not trigger. Slots 2 and 3 stay empty, the BNB slot stays frozen, and both existing TPs stay in place. Hold all.",
       "t": "2026-11-04T13:13:55Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,226, above the 8,500 royal-army floor. BTC mark is about 78,354, inside the 74.5k-84k daily band, so no forced close applies. Two layers are underwater: BNB long hostage in slot 0 (entry 715.45, mark 700.64, unrealized about -207, TP 730 resting, far from the 670.7 hard stop and 572.9 liq) and SOL long in slot 1 (entry 93.462, mark 92.967, unrealized about -53, TP 95.5 resting, well inside its 25% RP stop). The max-2-hostage rule is reached, so all new entries stop and we wait and see until one layer is released. No win has been closed this week, so path D does not trigger and the BNB slot stays frozen. Slots 2 and 3 stay empty, and the existing TPs stay in place. Hold all.",
+      "t": "2026-11-04T14:15:44Z"
     }
   ],
   "eliminated": null,
@@ -3049,23 +3063,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 572.971226984833,
-      "mark": 699.6,
+      "liq": 572.969079825403,
+      "mark": 700.64,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -221.53889160668143
+      "unrealized": -207.002585785171
     },
     {
       "entry": 93.462,
-      "liq": 72.48093525,
-      "mark": 92.764,
+      "liq": 72.4820968875,
+      "mark": 92.967,
       "notional": 10000,
       "side": "long",
       "symbol": "SOL",
       "tp": 95.5,
-      "unrealized": -74.68275876827025
+      "unrealized": -52.962701418758904
     },
     null,
     null
