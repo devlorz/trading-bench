@@ -3590,6 +3590,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "No forced close-all is active and both open layers are far from liquidation. Slot 0 ETH short is NAV(-) by 27.58 at mark 2318.4, but liq 4545.9 is extremely distant, so under TSM Principle 4 and the hostage policy I do not force-close, do not average down, and do not add another ETH layer. Slot 1 BTC short is positive but mark 78354 has not reached planned TP 76900, so let the planned scalp run. No fresh Action-Based short entries are present: BTC is occupied and the current mark is below its 78600 fade level rather than a new trigger; SOL 92.967, DOGE 0.074819, and LINK 11.124 are far below their higher short entries and near or below exits. Free equity has positive hostage buffer, but opening elsewhere now would chase completed moves or act outside planned fade levels. Correct action is hold.",
       "t": "2026-11-04T14:15:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Both occupied layers are NAV(-): ETH short at 2293.1 is 2433.9, and BTC short at 78590 is 80768.8, but liquidation prices are extremely far (ETH 4545.97, BTC 156385.77). Under TSM Principle 4, there is no forced close or stop order, and the hostage policy prohibits averaging down or adding same-symbol short layers into underwater positions. No winning open layer exists for basket offset, so we hold and wait. Opening SOL, DOGE, LINK, or another major would chase completed upward flushes because all marks are far above their planned short fade entries and exits, and current price structure has moved against the short plan. The correct action is to hold all existing planned layers and preserve the positive hostage buffer while waiting for a legitimate action-based fade or recovery toward existing TP levels.",
+      "t": "2026-11-04T15:14:40Z"
     }
   ],
   "eliminated": null,
@@ -3597,23 +3611,23 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4545.9448779336835,
-      "mark": 2318.4,
+      "liq": 4545.974615433684,
+      "mark": 2433.9,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -27.5827482447344
+      "unrealized": -153.50399023156447
     },
     {
       "entry": 78590.0,
-      "liq": 156384.78326421801,
-      "mark": 78354.0,
+      "liq": 156385.77475171798,
+      "mark": 80768.8,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": 7.5073164524748695
+      "unrealized": -69.30907240106893
     },
     null,
     null
