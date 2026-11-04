@@ -3653,6 +3653,27 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All three occupied layers (ETH, BTC, LINK shorts) are NAV(-) but their liquidation prices are extremely far, so under the Hostage policy there is no forced close, no averaging down, and no reason to add same-symbol exposure. None of the planned TPs has been reached. The empty slot does not present a fresh action-based short fade: SOL at 96.056 remains above its planned entry 95.5 after a flush and has not pulled back into the controlled entry zone, while DOGE at 0.077108 is above its 0.0763 entry. BTC/ETH/LINK are occupied or already away from fresh triggers. Therefore hold and wait for either structure recovery to the existing TP levels or a legitimate new fade entry.",
       "t": "2026-11-04T18:15:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 95.287,
+          "side": "short",
+          "slot": 3,
+          "symbol": "SOL",
+          "type": "open"
+        },
+        {
+          "price": 93.0,
+          "side": "short",
+          "slot": 3,
+          "symbol": "SOL",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 19:11:30Z, slot 3 is empty and free_equity 2607.719284918435 is sufficient for one RP collateral 2506.9851583922255, giving planned leverage 2500/2506.9851583922255 \u2248 0.997x, well below SOL max 20x. ETH and BTC shorts are NAV(-), but liquidation distances are extremely far, so under TSM Principle 4 they are held without forced close and without averaging down. LINK is slightly positive with planned TP 11.25 not reached, so let that hostage cycle run. SOL provides a fresh Action-Based short fade: the recent 15m/1h swing highs crossed the planned short entry 95.5 to 96.108/98.16, while current mark 95.287 has pulled back below the entry trigger and remains above the planned exit 93.0, so this is a controlled fade rather than chasing a completed move. DOGE is still above its 0.0763 fade entry after the flush and not in the controlled pullback condition; BTC/ETH/LINK are occupied or already managed. Therefore open one SOL short in slot 3 at market and set the planned TP at 93.0.",
+      "t": "2026-11-04T19:11:30Z"
     }
   ],
   "eliminated": null,
@@ -3660,35 +3681,44 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4546.065664183684,
-      "mark": 2434.1,
+      "liq": 4546.095941683684,
+      "mark": 2425.98,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -153.72203567223409
+      "unrealized": -144.8693907810389
     },
     {
       "entry": 78590.0,
-      "liq": 156384.5479240587,
-      "mark": 80600.7,
+      "liq": 156384.30087871087,
+      "mark": 80325.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": -63.96169996182711
+      "unrealized": -55.19150019086398
     },
     {
       "entry": 11.511,
-      "liq": 22.473576800801162,
-      "mark": 11.578,
+      "liq": 22.47372031330116,
+      "mark": 11.506,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 11.25,
-      "unrealized": -14.551298757710056
+      "unrealized": 1.0859178177393376
     },
-    null
+    {
+      "entry": 95.304,
+      "liq": 188.44879861416507,
+      "mark": 95.2865,
+      "notional": 2500,
+      "side": "short",
+      "symbol": "SOL",
+      "tp": 93.0,
+      "unrealized": 0.4590573323259856
+    }
   ],
   "name": "qwen",
   "plans": [

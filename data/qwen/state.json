@@ -1,10 +1,10 @@
 {
-  "free_equity": 2607.719284918435,
-  "last_tick": "2026-11-04T18:15:51Z",
+  "free_equity": 100.73412652620937,
+  "last_tick": "2026-11-04T19:11:30Z",
   "last_week": "2026-11-02T00:00:00Z",
   "layers": [
     {
-      "collateral": 2506.244455304701,
+      "collateral": 2506.2774646588505,
       "entry": 2293.1,
       "notional": 2500,
       "opened_at": "2026-11-04T06:23:25Z",
@@ -14,7 +14,7 @@
       "tp": 2240
     },
     {
-      "collateral": 2505.946142131909,
+      "collateral": 2505.9382834556204,
       "entry": 78590.0,
       "notional": 2500,
       "opened_at": "2026-11-04T11:14:44Z",
@@ -24,7 +24,7 @@
       "tp": 76900.0
     },
     {
-      "collateral": 2505.891495265651,
+      "collateral": 2505.9226638218147,
       "entry": 11.511,
       "notional": 2500,
       "opened_at": "2026-11-04T17:12:32Z",
@@ -33,11 +33,20 @@
       "symbol": "LINK",
       "tp": 11.25
     },
-    null
+    {
+      "collateral": 2505.8601583922255,
+      "entry": 95.304,
+      "notional": 2500,
+      "opened_at": "2026-11-04T19:11:30Z",
+      "side": "short",
+      "size": 26.23184756148745,
+      "symbol": "SOL",
+      "tp": 93.0
+    }
   ],
   "rp": {
     "collateral": 2506.9851583922255,
     "notional": 2500
   },
-  "settled": "2026-11-04T18:15:51Z"
+  "settled": "2026-11-04T19:11:30Z"
 }
