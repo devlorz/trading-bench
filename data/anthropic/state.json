@@ -1,10 +1,10 @@
 {
-  "free_equity": 7210.931552405515,
-  "last_tick": "2026-11-04T19:11:30Z",
+  "free_equity": 4710.931552405515,
+  "last_tick": "2026-11-04T20:14:44Z",
   "last_week": "2026-11-02T00:00:00Z",
   "layers": [
     {
-      "collateral": 2490.978794254806,
+      "collateral": 2490.932489552311,
       "entry": 715.45,
       "notional": 10000,
       "opened_at": "2026-10-30T06:26:05Z",
@@ -13,7 +13,16 @@
       "symbol": "BNB",
       "tp": 730.0
     },
-    null,
+    {
+      "collateral": 2495.5,
+      "entry": 80063.0,
+      "notional": 10000,
+      "opened_at": "2026-11-04T20:14:44Z",
+      "side": "short",
+      "size": 0.12490163995853265,
+      "symbol": "BTC",
+      "tp": 79200.0
+    },
     null,
     null
   ],
@@ -21,5 +30,5 @@
     "collateral": 2500.0,
     "notional": 10000
   },
-  "settled": "2026-11-04T19:11:30Z"
+  "settled": "2026-11-04T20:14:44Z"
 }

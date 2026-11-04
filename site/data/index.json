@@ -892,6 +892,10 @@
       [
         "2026-11-04T19:11:30Z",
         9723.854577563947
+      ],
+      [
+        "2026-11-04T20:14:44Z",
+        9685.707026630616
       ]
     ],
     "deepseek": [
@@ -1786,6 +1790,10 @@
       [
         "2026-11-04T19:11:30Z",
         10159.812282874134
+      ],
+      [
+        "2026-11-04T20:14:44Z",
+        10098.93018717535
       ]
     ],
     "google": [
@@ -2680,6 +2688,10 @@
       [
         "2026-11-04T19:11:30Z",
         11066.087498517854
+      ],
+      [
+        "2026-11-04T20:14:44Z",
+        10948.697613977081
       ]
     ],
     "openai": [
@@ -3574,6 +3586,10 @@
       [
         "2026-11-04T19:11:30Z",
         10154.820041502273
+      ],
+      [
+        "2026-11-04T20:14:44Z",
+        10154.135319783127
       ]
     ],
     "qwen": [
@@ -4468,6 +4484,10 @@
       [
         "2026-11-04T19:11:30Z",
         9926.216781032883
+      ],
+      [
+        "2026-11-04T20:14:44Z",
+        10000.16438529083
       ]
     ],
     "zai": [
@@ -5362,13 +5382,17 @@
       [
         "2026-11-04T19:11:30Z",
         9851.472297400107
+      ],
+      [
+        "2026-11-04T20:14:44Z",
+        9851.472297400107
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-11-04T19:11:30Z",
+    "t": "2026-11-04T20:14:44Z",
     "type": "tick"
   },
   "leaderboard": [
@@ -5376,14 +5400,14 @@
       "avg_pnl": 287.1331704120348,
       "closed_positions": 5,
       "eliminated": null,
-      "equity": 11066.087498517854,
+      "equity": 10948.697613977081,
       "executor": "google/gemini-3.8-flash",
       "fees": 19.71892940069284,
-      "funding": -23.51768750732573,
+      "funding": -23.63681865179509,
       "liquidations": 0,
       "max_drawdown": 0.09413886874935265,
       "name": "google",
-      "net_return": 0.10660874985178544,
+      "net_return": 0.09486976139770814,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "google/gemini-4-argon",
@@ -5391,35 +5415,17 @@
       "win_rate": 1.0
     },
     {
-      "avg_pnl": null,
-      "closed_positions": 0,
-      "eliminated": null,
-      "equity": 10159.812282874134,
-      "executor": "deepseek/deepseek-v4.1-flash",
-      "fees": 4.5,
-      "funding": -17.298008205102093,
-      "liquidations": 0,
-      "max_drawdown": 0.05464206727903,
-      "name": "deepseek",
-      "net_return": 0.015981228287413433,
-      "reallocation_weeks": 1,
-      "started_week": "2026-10-26T00:00:00Z",
-      "strategist": "deepseek/deepseek-v4-pro-0813",
-      "violations": 2,
-      "win_rate": null
-    },
-    {
       "avg_pnl": 77.41002075113579,
       "closed_positions": 2,
       "eliminated": null,
-      "equity": 10154.820041502273,
+      "equity": 10154.135319783127,
       "executor": "openai/gpt-6-luna",
-      "fees": 3.7319807391216027,
+      "fees": 4.856980739121603,
       "funding": -7.002329170370567,
       "liquidations": 0,
       "max_drawdown": 0.004526715437135101,
       "name": "openai",
-      "net_return": 0.015482004150227295,
+      "net_return": 0.015413531978312677,
       "reallocation_weeks": 2,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "openai/gpt-6-astra",
@@ -5427,17 +5433,35 @@
       "win_rate": 1.0
     },
     {
+      "avg_pnl": null,
+      "closed_positions": 0,
+      "eliminated": null,
+      "equity": 10098.93018717535,
+      "executor": "deepseek/deepseek-v4.1-flash",
+      "fees": 4.5,
+      "funding": -17.376225399073213,
+      "liquidations": 0,
+      "max_drawdown": 0.05464206727903,
+      "name": "deepseek",
+      "net_return": 0.00989301871753505,
+      "reallocation_weeks": 1,
+      "started_week": "2026-10-26T00:00:00Z",
+      "strategist": "deepseek/deepseek-v4-pro-0813",
+      "violations": 2,
+      "win_rate": null
+    },
+    {
       "avg_pnl": 25.73495201902233,
       "closed_positions": 5,
       "eliminated": null,
-      "equity": 9926.216781032883,
+      "equity": 10000.16438529083,
       "executor": "qwen/qwen3.8-flash",
       "fees": 8.38038310306254,
-      "funding": 2.3337670413871145,
+      "funding": 2.411111268974959,
       "liquidations": 0,
       "max_drawdown": 0.023212159777551963,
       "name": "qwen",
-      "net_return": -0.007378321896711714,
+      "net_return": 1.643852908291592e-05,
       "reallocation_weeks": 2,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "qwen/qwen3.8-max-prime",
@@ -5466,14 +5490,14 @@
       "avg_pnl": -96.35614919816142,
       "closed_positions": 3,
       "eliminated": null,
-      "equity": 9723.854577563947,
+      "equity": 9685.707026630616,
       "executor": "anthropic/claude-haiku-5.5",
-      "fees": 25.227690175221717,
-      "funding": -14.515273806725055,
+      "fees": 29.727690175221717,
+      "funding": -14.56157850921999,
       "liquidations": 0,
       "max_drawdown": 0.12370856311747182,
       "name": "anthropic",
-      "net_return": -0.02761454224360532,
+      "net_return": -0.03142929733693836,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "anthropic/claude-fable-5.1",
