@@ -207,3 +207,4 @@
 {"equity": 10128.674760095111, "layers": [null, null, null, null], "t": "2026-11-04T03:14:47Z"}
 {"equity": 10128.674760095111, "layers": [null, null, null, null], "t": "2026-11-04T04:16:20Z"}
 {"equity": 10128.674760095111, "layers": [null, null, null, null], "t": "2026-11-04T05:14:33Z"}
+{"equity": 10127.440737374776, "layers": [{"entry": 2293.1, "liq": 4545.713171683685, "mark": 2293.2, "notional": 2500, "side": "short", "symbol": "ETH", "tp": 2240, "unrealized": -0.10902272033481865}, null, null, null], "t": "2026-11-04T06:23:25Z"}
