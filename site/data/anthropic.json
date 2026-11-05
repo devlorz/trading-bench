@@ -3343,6 +3343,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,665, well above the 8,500 royal-army floor, and BTC mark 80,390 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long (entry 715.45, mark 716.07, about +9 unrealized, TP 730 resting), which is no longer underwater. Slot 1 holds the BTC short (entry 80,063, mark 80,390, about -41 unrealized, TP 79,200 resting), which is far inside its 25% RP stop with liq near 99,000. That is one hostage, so the max-2 rule still allows one more hostage, but no new entry trigger is met. BTC already has a short open, so no duplicate. ETH (2,417.8) is above the 2,360-2,400 rally zone, but the last 4h bar closed near its high with no rejection candle. XRP (1.3176) is above the 1.30-1.33 short zone, but the last 4h bar closed at 1.3138 near its high with no rejection wick. SOL already completed its trade this week and sits mid-range, so there is no trigger. Hold all and wait and see; the existing TPs stay in place.",
       "t": "2026-11-05T10:14:46Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,690, well above the 8,500 floor, and BTC at 80,298 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long (entry 715.45, mark 717.02, about +22 unrealized, TP 730 resting), which is no longer underwater. Slot 1 holds the BTC short (entry 80,063, mark 80,298, about -29 unrealized, TP 79,200 resting), which is one hostage far inside its 25% RP stop with liq near 99,000. One more hostage is allowed, but no new entry trigger is met. BTC already has a short open, so no duplicate. The last 4h BTC bar closed 80,355 inside the range with no clear rejection candle at the 80.4k-81.3k zone. ETH (2,419.7) is above the 2,360-2,400 rally zone with no 4h rejection. SOL (96.5) is mid-range, far from both the 90.5-92.5 long zone and the 98-100.5 short zone. XRP (1.3191) is in the reserve zone, but the last 4h bar closed near its high with no rejection wick, and reserve deployment is not needed. Slots 2 and 3 stay empty. Hold all and wait and see; existing TPs stay in place.",
+      "t": "2026-11-05T11:12:53Z"
     }
   ],
   "eliminated": null,
@@ -3350,23 +3364,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.1213163722139,
-      "mark": 716.07,
+      "liq": 573.1302706222139,
+      "mark": 717.025,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": 8.665874624362353
+      "unrealized": 22.014116989306476
     },
     {
       "entry": 80063.0,
-      "liq": 99053.032880887,
-      "mark": 80390.0,
+      "liq": 99054.03631838699,
+      "mark": 80298.0,
       "notional": 10000,
       "side": "short",
       "symbol": "BTC",
       "tp": 79200.0,
-      "unrealized": -40.84283626644018
+      "unrealized": -29.351885390255173
     },
     null,
     null
