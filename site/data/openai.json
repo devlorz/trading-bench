@@ -3380,6 +3380,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Hold the BTC short and retain its existing 76,600 take-profit. The mark at 79,655 remains below the 83,265.52 monitored 4% adverse-price threshold; the supplied BTC candles show no trade above the 81,955 invalidation level. No completed daily candle is provided to assess the daily-close condition. Equity is 10,166.88 USD, above the 9,755 USD floor. ETH and XMR do not meet their planned entry conditions, so do not open another layer.",
       "t": "2026-11-05T13:14:33Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Hold the BTC short and retain its existing take-profit at 76,600. The current mark of 79,469 is below the 4% adverse-price threshold of 83,265.52, and the supplied BTC candles show no trade above the 81,955 invalidation level. No completed daily candle is supplied to assess the daily-close condition. Account equity is 10,172.71 USD, above the 9,755 USD floor. ETH and XMR do not meet their planned entry conditions; do not open another position.",
+      "t": "2026-11-05T14:15:27Z"
     }
   ],
   "eliminated": null,
@@ -3387,13 +3401,13 @@
   "layers": [
     {
       "entry": 80063.0,
-      "liq": 160342.82276666665,
-      "mark": 79655.0,
+      "liq": 160343.81839166666,
+      "mark": 79469.0,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76600,
-      "unrealized": 12.739967275770331
+      "unrealized": 18.5478935338421
     },
     null,
     null,

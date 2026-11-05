@@ -3385,6 +3385,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity 9,658 is well above the 8,500 floor and BTC mark 80,151 sits inside the 74.5k-84k daily band, so no forced close. Current state: slot 0 BNB long (entry 715.45, mark ~710.72 per market, TP 730 resting) and slot 1 BTC short (entry 80,063, TP 79,200 resting). Two layers are open, both underwater or near flat, which hits the max-2 hostage limit, so no new entries. BNB slot stays frozen, BTC short is not duplicated, and no TP trigger is met. Hold all and wait for one hostage to release.",
       "t": "2026-11-05T13:14:33Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,694, well above the 8,500 royal-army floor, and BTC mark 79,469 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long hostage (entry 715.45, mark 709.91, about -77 unrealized, TP 730 resting, liq far away). Slot 1 holds the BTC short (entry 80,063, mark 79,469, about +74 unrealized, TP 79,200 resting), which is in profit and is not a hostage. That leaves one hostage, so the max-2 rule still allows one more. BTC is mid-box at 79.5k, inside the 77.5k-80k no-entry band, and the short is already open, so no duplicate. ETH (2,382) sits in the 2,360-2,400 rally zone, but the last 4h bar closed near its high at 2,421 with no rejection candle, so no short. XRP (1.3037) is not at the 1.30-1.33 rejection setup, and the last 4h bar closed at 1.3192 near its high. SOL (95.18) is mid-range, far from both the 90.5-92.5 long zone and the 98-100.5 short zone. The BNB hostage is not in its release zone and win + hostage loss is not yet positive, so the BNB slot stays frozen. Hold all and wait and see; existing TPs stay in place.",
+      "t": "2026-11-05T14:15:27Z"
     }
   ],
   "eliminated": null,
@@ -3392,23 +3406,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.148111622214,
-      "mark": 710.72,
+      "liq": 573.1570047472139,
+      "mark": 709.91,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -66.11223705360288
+      "unrealized": -77.43378293381896
     },
     {
       "entry": 80063.0,
-      "liq": 99056.037068387,
-      "mark": 79655.0,
+      "liq": 99057.032693387,
+      "mark": 79469.0,
       "notional": 10000,
       "side": "short",
       "symbol": "BTC",
       "tp": 79200.0,
-      "unrealized": 50.959869103081324
+      "unrealized": 74.1915741353684
     },
     null,
     null
