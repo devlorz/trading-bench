@@ -1,16 +1,25 @@
 {
-  "free_equity": 9851.472297400107,
-  "last_tick": "2026-11-05T00:34:48Z",
+  "free_equity": 7351.472297400107,
+  "last_tick": "2026-11-05T01:15:24Z",
   "last_week": "2026-11-02T00:00:00Z",
   "layers": [
     null,
     null,
-    null,
+    {
+      "collateral": 2498.875,
+      "entry": 83.959,
+      "notional": 2500,
+      "opened_at": "2026-11-05T01:15:24Z",
+      "side": "long",
+      "size": 29.77643849974392,
+      "symbol": "HYPE",
+      "tp": 90.2
+    },
     null
   ],
   "rp": {
     "collateral": 2500.0,
     "notional": 2500
   },
-  "settled": "2026-11-05T00:34:48Z"
+  "settled": "2026-11-05T01:15:24Z"
 }

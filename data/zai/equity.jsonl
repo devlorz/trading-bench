@@ -226,3 +226,4 @@
 {"equity": 9851.472297400107, "layers": [null, null, null, null], "t": "2026-11-04T22:12:57Z"}
 {"equity": 9851.472297400107, "layers": [null, null, null, null], "t": "2026-11-04T23:12:49Z"}
 {"equity": 9851.472297400107, "layers": [null, null, null, null], "t": "2026-11-05T00:34:48Z"}
+{"equity": 9850.853496854603, "layers": [null, null, {"entry": 83.959, "liq": 4.235731549999997, "mark": 83.976, "notional": 2500, "side": "long", "symbol": "HYPE", "tp": 90.2, "unrealized": 0.5061994544955248}, null], "t": "2026-11-05T01:15:24Z"}
