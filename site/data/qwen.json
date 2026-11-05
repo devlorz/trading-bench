@@ -3940,6 +3940,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four layer slots are already occupied by planned short layers: ETH slot 0, BTC slot 1, LINK slot 2, and SOL slot 3. free_equity is only 100.734, far below the RP collateral 2506.985, so no new layer can be opened even if a slot became free. None of the planned short TPs has been reached: ETH mark 2382.0 is above TP 2240, BTC mark 79469.0 is above TP 76900, LINK mark 11.416 is above TP 11.25, and SOL mark 95.183 is above TP 93.0. ETH and BTC are NAV(-), but their liquidation prices remain extremely far from current marks, so under TSM Principle 4 and the hostage policy they should be held without forced close, stop-cutting, averaging down, or basket offset. LINK and SOL are small positives but have not reached planned exits, and closing them early is not needed because there is no actionable new entry or free capacity; DOGE is also not actionable at current marks and has no empty slot. Existing TP levels remain valid profit-side planned exits, so no set_tp or cancel_tp change is justified. Therefore hold all existing layers.",
       "t": "2026-11-05T14:15:27Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Slot 0 holds an ETH short that is currently positive and has a valid planned TP at 2240; liquidation is extremely far, so under the hostage policy it should be held rather than closed early. The other slots are free and free_equity can fund layers, but no watchlist symbol presents a controlled action-based short entry: BTC at 77050 is far below the 78600 fade entry and only slightly above the 76900 exit, so re-entering would chase the flush tail; SOL 90.733, LINK 10.88, and DOGE 0.072606 are already below their planned short exits, and ETH is already occupied with the planned layer. Therefore, the correct action is to wait and hold all existing state.",
+      "t": "2026-11-05T15:13:56Z"
     }
   ],
   "eliminated": null,
@@ -3947,44 +3961,17 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4546.670355433685,
-      "mark": 2382.0,
+      "liq": 4546.699647933685,
+      "mark": 2282.3,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -96.92119837774203
+      "unrealized": 11.774453796170825
     },
-    {
-      "entry": 78590.0,
-      "liq": 156398.85803145458,
-      "mark": 79469.0,
-      "notional": 2500,
-      "side": "short",
-      "symbol": "BTC",
-      "tp": 76900.0,
-      "unrealized": -27.961572719175468
-    },
-    {
-      "entry": 11.511,
-      "liq": 22.476504609709163,
-      "mark": 11.416,
-      "notional": 2500,
-      "side": "short",
-      "symbol": "LINK",
-      "tp": 11.25,
-      "unrealized": 20.63243853705127
-    },
-    {
-      "entry": 95.304,
-      "liq": 188.47096646862565,
-      "mark": 95.183,
-      "notional": 2500,
-      "side": "short",
-      "symbol": "SOL",
-      "tp": 93.0,
-      "unrealized": 3.174053554939853
-    }
+    null,
+    null,
+    null
   ],
   "name": "qwen",
   "plans": [
@@ -4135,6 +4122,42 @@
       "reason": "tp",
       "side": "short",
       "symbol": "ETH"
+    },
+    {
+      "closed_at": "2026-11-05T14:41:00Z",
+      "entry": 11.511,
+      "exit": 11.25,
+      "fees": 1.4914972634870993,
+      "funding": 0.6672088454521763,
+      "opened_at": "2026-11-04T17:12:32Z",
+      "pnl": 55.86062166797046,
+      "reason": "tp",
+      "side": "short",
+      "symbol": "LINK"
+    },
+    {
+      "closed_at": "2026-11-05T14:55:00Z",
+      "entry": 95.304,
+      "exit": 93.0,
+      "fees": 1.49093427348275,
+      "funding": 0.5815037789756988,
+      "opened_at": "2026-11-04T19:11:30Z",
+      "pnl": 59.52874628715972,
+      "reason": "tp",
+      "side": "short",
+      "symbol": "SOL"
+    },
+    {
+      "closed_at": "2026-11-05T15:11:00Z",
+      "entry": 78590.0,
+      "exit": 76900.0,
+      "fees": 1.4919359969461763,
+      "funding": 0.5723264644547651,
+      "opened_at": "2026-11-04T11:14:44Z",
+      "pnl": 52.84041082633212,
+      "reason": "tp",
+      "side": "short",
+      "symbol": "BTC"
     }
   ],
   "started_week": "2026-10-26T00:00:00Z",

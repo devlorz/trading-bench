@@ -3408,6 +3408,27 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Under TSM Principle #4 and our Weekly Plan, we maintain strict pause discipline ('\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19') with Slots 2 and 3 kept vacant in reserve ($6,435.67 free equity). Current portfolio and market evaluation: 1. Active Positions: Slot 0 (HYPE Long, entry 86.528, TP 92.50, liq 47.72) is marking at 81.51, safely cushioned with ~41.7% liquidation clearance at 2x leverage. Slot 1 (SOL Long, entry 100.27, TP 104.0, liq 52.93) is marking at 95.18, with NAV(-) contained at -$253.67, well protected by $2,500 collateral and over 5x covered by cumulative hostage profits. Under Hostage Policy (Scenario B), both layers are held patiently toward planned targets. 2. Watchlist Assessment for Vacant Slots: BTC (mark 79,469.0) continues to pull back from the 81.1k peak; entering a short after an impulsive drop violates Zero Alpha risk-reward discipline, while price remains well above our designated 76,200-77,200 long demand zone. ETH (mark 2,382.0) is in mid-range well above the 2,175-2,225 demand zone. ZEC (mark 1,305.1) remains above the 1,180-1,210 structural entry zone. SOL and HYPE already hold active positions. Per Soft Rule 1 ('Wait & See'), no setup triggers an Action Based Strategy entry. We hold.",
       "t": "2026-11-05T14:15:27Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 2,
+          "symbol": "BTC",
+          "type": "open"
+        },
+        {
+          "price": 78900.0,
+          "side": null,
+          "slot": 2,
+          "symbol": null,
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Under TSM Principle #4 (Scenario B), existing layers in Slot 0 (HYPE Long, liq 47.72) and Slot 1 (SOL Long, liq 52.93) remain safely cushioned by their $2,500 collateral envelopes and our cumulative realized hostage buffers. Reviewing watchlist conditions for vacant slots against the Weekly Plan: BTC has completed an impulsive liquidity sweep directly into our designated 76,200-77,200 structural demand zone (mark 77,050.0), matching the exact setup successfully harvested earlier this week. With $6,435.67 in free equity available, we deploy Slot 2 into BTC Long at 2x leverage (RP: $2,500 collateral, $5,000 notional) and set TP at 78,900.0 (~2.4% range rotation / +1,850 points, just below the 79,100 resistance cluster) to capture fresh hostage buffers. Slot 3 is held in reserve for ongoing tactical flexibility.",
+      "t": "2026-11-05T15:13:56Z"
     }
   ],
   "eliminated": null,
@@ -3415,25 +3436,34 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.715063151334036,
-      "mark": 81.513,
+      "liq": 47.71606877633403,
+      "mark": 78.792,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -289.7905880177515
+      "unrealized": -447.02292899408303
     },
     {
       "entry": 100.27,
-      "liq": 52.93090253834241,
-      "mark": 95.183,
+      "liq": 52.93184051602021,
+      "mark": 90.733,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -253.66510421860923
+      "unrealized": -475.5659718759346
     },
-    null,
+    {
+      "entry": 76936.0,
+      "liq": 39464.321200000006,
+      "mark": 77050.0,
+      "notional": 5000,
+      "side": "long",
+      "symbol": "BTC",
+      "tp": 78900.0,
+      "unrealized": 7.408755329104711
+    },
     null
   ],
   "name": "google",
