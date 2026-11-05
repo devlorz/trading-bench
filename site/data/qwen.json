@@ -3786,6 +3786,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four layer slots are already occupied by planned watchlist shorts (ETH, BTC, LINK, SOL), and free_equity is 100.734, far below RP collateral 2506.985, so no new open is possible. ETH, BTC, SOL are NAV(-), while LINK is only slightly NAV(-). Their liquidation prices are extremely far from current marks, so under TSM Principle 4 and the hostage policy they should be held without forced close, stop-cutting, or averaging down. There is no positive hostage layer to use for basket offset, and no planned TP has been reached. Existing TPs remain valid profit-side exits from the plan. DOGE is not actionable because its current mark 0.077295 is still above its planned short entry 0.0763 and has not pulled back below the fade trigger, so it does not meet the controlled entry condition. Therefore the correct tick action is hold.",
       "t": "2026-11-05T03:16:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four layer slots are occupied by planned watchlist shorts, and free_equity is far below RP collateral, so no new open is valid. ETH, BTC, LINK, and SOL are NAV(-), but liquidation prices are very far from current marks, so under TSM Principle 4 and the hostage policy they are held without forced close or averaging down. No TP levels have been reached, and existing TPs are valid profit-side exits, so no set_tp or cancel_tp is warranted. DOGE cannot be added due to no empty slot and insufficient free equity. Therefore the action is hold.",
+      "t": "2026-11-05T04:16:48Z"
     }
   ],
   "eliminated": null,
@@ -3793,43 +3807,43 @@
   "layers": [
     {
       "entry": 2293.1,
-      "liq": 4546.338214183685,
-      "mark": 2432.6,
+      "liq": 4546.3685129336845,
+      "mark": 2419.7,
       "notional": 2500,
       "side": "short",
       "symbol": "ETH",
       "tp": 2240,
-      "unrealized": -152.08669486721033
+      "unrealized": -138.02276394400585
     },
     {
       "entry": 78590.0,
-      "liq": 156387.81698145458,
-      "mark": 80638.0,
+      "liq": 156388.82334395457,
+      "mark": 80409.9,
       "notional": 2500,
       "side": "short",
       "symbol": "BTC",
       "tp": 76900.0,
-      "unrealized": -65.14823768927344
+      "unrealized": -57.89222547397869
     },
     {
       "entry": 11.511,
-      "liq": 22.474864038301163,
-      "mark": 11.517,
+      "liq": 22.475008425801164,
+      "mark": 11.547,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 11.25,
-      "unrealized": -1.3031013812875136
+      "unrealized": -7.818608287725082
     },
     {
       "entry": 95.304,
-      "liq": 188.45834493916504,
-      "mark": 96.665,
+      "liq": 188.45954796416504,
+      "mark": 95.96,
       "notional": 2500,
       "side": "short",
       "symbol": "SOL",
       "tp": 93.0,
-      "unrealized": -35.70154453118453
+      "unrealized": -17.208092000335547
     }
   ],
   "name": "qwen",
