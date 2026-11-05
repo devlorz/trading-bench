@@ -3441,6 +3441,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,488, well above the 8,500 royal-army floor, and BTC at 76,178 is inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long hostage (entry 715.45, mark 692.92, about -315 unrealized, TP 730 resting). It is far from its 25% RP stop near 670.7, and the release condition is not met because no win offsets it and it is not at breakeven. Slots 1-3 are empty and one more hostage is allowed, but no entry trigger is met. BTC's last 4h bar closed at 76,044, below the 77,000 reclaim needed for the long setup, and there is no short zone nearby (80.4k-81.3k). SOL at 90.005 has not printed the required 4h close above 93.0 after the 90.5-92.5 wick, and the post-stop re-entry rule is unmet. ETH at 2,258 is mid-range, outside the 2,170-2,210 flush and 2,360-2,400 rally zones. XRP at 1.2402 is above the 1.19-1.215 long zone and below the 1.30-1.33 short zone, with no wick or reclaim. Hold all and wait and see; the BNB TP at 730 stays in place.",
       "t": "2026-11-05T17:13:42Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,473, above the 8,500 floor. BTC mark is 75,966, inside the 74.5k-84k daily band, so no forced close applies. Slot 0 holds the BNB long hostage (entry 715.45, mark 691.82, about -330 unrealized, TP 730 resting, 25% stop near 670.7, liq about 573), far from its stop. Slots 1-3 are empty and one more hostage is allowed, but no entry trigger is met. BTC is below 76,000, so the long setup is blocked by the daily gate, and the 80.4k-81.3k short zone is far above price. SOL (89.30) has not printed the 4h close above 93.0 after a 90.5-92.5 wick, and the post-stop re-entry rule requires BTC daily above 76,000, which is unmet. ETH (2,251) is mid-range, outside the 2,170-2,210 flush and 2,360-2,400 rally zones. XRP (1.2307) is above the 1.19-1.215 long zone and below the 1.30-1.33 short zone, with no wick or reclaim. BNB release is not triggered because no win offsets its loss and it is not at breakeven, so the slot stays frozen. Hold all and wait and see; the BNB TP at 730 stays in place.",
+      "t": "2026-11-05T18:17:37Z"
     }
   ],
   "eliminated": null,
@@ -3448,13 +3462,13 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.1830537472139,
-      "mark": 692.92,
+      "liq": 573.1916998722139,
+      "mark": 691.82,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -314.90670207561794
+      "unrealized": -330.2816409252917
     },
     null,
     null,

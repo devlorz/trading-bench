@@ -3982,6 +3982,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity is sufficient for RP collateral. However, no watchlist symbol currently satisfies the planned short Action-Based fade entry. ETH 2258 is below the 2295 entry and recent 15m/1h highs have not crossed it; BTC 76178, SOL 90.005, LINK 10.696, and DOGE 0.071762 are all below their planned exits or far below their bounce/fade entries after flushes, so opening would chase a completed move rather than wait for a controlled trigger. Existing TP logic remains relevant for future entries. Under TSM Principle 4 and the weekly plan, the correct action is wait-and-see hold.",
       "t": "2026-11-05T17:13:42Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity is sufficient for one RP layer, but there is no controlled Action-Based short re-entry under the weekly plan. BTC 75966, SOL 89.302, DOGE 0.071565, and LINK 10.694 are already below their planned short exits, so opening shorts now would chase completed flush tails. ETH 2251.3 is above its planned exit 2240 but far below its fade entry 2295 and has not set a fresh controlled bounce/cross of the entry trigger; opening here would be weak and forced. Per TSM Principle 4 and the hostage policy, wait and hold.",
+      "t": "2026-11-05T18:17:37Z"
     }
   ],
   "eliminated": null,
