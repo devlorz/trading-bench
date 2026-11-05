@@ -3287,6 +3287,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity about 9,610, above 8,500 floor. BTC mark 80,528 inside 74.5k-84k daily band, no forced close. Open layers: BNB long slot 0 (mark 713.41, underwater about -28, TP 730 resting) and BTC short slot 1 (entry 80,063, mark 80,528, about -58, TP 79,200 resting). Two hostages are already open, which is the max-2 limit, so no new entries are allowed. Slots 2 and 3 stay empty. The BNB slot is frozen and the BTC short is not duplicated. No TP or exit condition is met. Hold all and wait and see.",
       "t": "2026-11-05T06:23:27Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,610, above the 8,500 royal-army floor. BTC is at 80,631, inside the 74.5k-84k daily band, so no forced close applies. Two layers are open and both are underwater: BNB long in slot 0 (entry 715.45, mark 714.33, about -16 unrealized, TP 730 resting) and BTC short in slot 1 (entry 80,063, mark 80,631, about -71 unrealized, TP 79,200 resting). Both sit far inside their 25% RP stops, and their liquidation prices are far away. With two hostages already open, the max-2 rule blocks any new entry, so slots 2 and 3 stay empty. The BNB slot stays frozen, the BTC short is not duplicated or averaged, and no TP or exit condition is met. Hold all and wait for one hostage to release.",
+      "t": "2026-11-05T07:15:00Z"
     }
   ],
   "eliminated": null,
@@ -3294,23 +3308,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.0856018722139,
-      "mark": 713.41,
+      "liq": 573.0945268722139,
+      "mark": 714.325,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -28.513522957580225
+      "unrealized": -15.724369278076734
     },
     {
       "entry": 80063.0,
-      "liq": 99049.00890588699,
-      "mark": 80528.0,
+      "liq": 99050.016680887,
+      "mark": 80631.0,
       "notional": 10000,
       "side": "short",
       "symbol": "BTC",
       "tp": 79200.0,
-      "unrealized": -58.07926258071768
+      "unrealized": -70.94413149644654
     },
     null,
     null
