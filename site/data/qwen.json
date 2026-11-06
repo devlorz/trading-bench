@@ -4318,6 +4318,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity 10354.380 can fund the RP collateral 2506.985, but no watchlist symbol satisfies the weekly plan\u2019s Action-Based short bounce/fade entry. The planned short entries are higher fade levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks are already below or near planned exits and far below planned entries: BTC 76024 vs exit 76900 and entry 78600; ETH 2235 vs exit 2240 and entry 2295; SOL 90.636 vs exit 93 and entry 95.5; DOGE 0.073056 vs exit 0.0745 and entry 0.0763; LINK 10.939 vs exit 11.25 and entry 11.55. Recent 15m/1h/4h swing highs have not retested the planned fade entries: BTC highs are around 76377 vs 78600; ETH highs around 2250.1 vs 2295; SOL highs around 91.57 vs 95.5; DOGE highs around 0.073325 vs 0.0763; LINK highs around 11.034 vs 11.55. Opening shorts now would chase completed flush tails with poor planned reward/risk, violating TSM Principle 4 Wait & See and the hostage policy\u2019s controlled entry rule. There is no NAV(-), no open layer, and no TP to manage, so the correct tick action is hold.",
       "t": "2026-11-06T17:12:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity 10354.37977 can fund RP collateral 2506.98516, but no watchlist symbol satisfies the weekly plan's short Action-Based bounce/fade entry. Planned short entries are higher fade levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks are already below or near planned exits and far below planned entries: BTC 75730 vs exit 76900 and entry 78600; ETH 2224.3 below exit 2240 and far below entry 2295; SOL 90.085 below exit 93 and far below entry 95.5; DOGE 0.072801 below exit 0.0745 and far below entry 0.0763; LINK 10.861 below exit 11.25 and far below entry 11.55. Recent 15m/1h/4h swing highs have not retested the planned fade entries: BTC about 76377 vs 78600; ETH about 2250.1 vs 2295; SOL about 91.57 vs 95.5; DOGE about 0.073325 vs 0.0763; LINK about 11.034 vs 11.55. Opening shorts now would chase completed flush tails and, for several symbols, the planned exit would not even be on the profit side of market entry, violating TSM Principle 4 Wait & See and the hostage policy's controlled entry rule. There is no NAV(-), no open layer, and no TP to manage, so the correct tick action is hold.",
+      "t": "2026-11-06T18:17:37Z"
     }
   ],
   "eliminated": null,
