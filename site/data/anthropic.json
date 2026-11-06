@@ -3602,6 +3602,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,452, above the 8,500 floor. BTC mark is 75,699 and the latest 4h closes are inside the 74.5k-84k band, so no forced close applies. Two layers are underwater: BNB long hostage in slot 0 (entry 715.45, mark 693.21, about -311 unrealized, TP 730 resting) and the new ETH long in slot 1 (entry 2240.7, mark 2233, about -34, TP 2285 resting). Both are far from their 25% RP stops and liq levels. With two underwater layers the max-2-hostage rule blocks all new entries, and no BNB release condition is met (no win offsets the loss and price is not near breakeven). Hold all and wait and see; the BNB and ETH TPs stay in place.",
       "t": "2026-11-06T04:16:41Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 05:14 UTC on 2026-11-06, equity is about 9,393, above the 8,500 floor. BTC is at 75,588, inside the 74.5k-84k daily band, so no forced close applies. Two layers are underwater: the BNB long hostage in slot 0 (entry 715.45, mark 691.53, unrealized about -334, TP 730 resting, far from its 25% stop near 670.7 and liq near 573) and the ETH long in slot 1 (entry 2240.7, mark 2225.1, unrealized about -70, TP 2285 resting, liq near 1726). With two hostages open, the max-2-hostage rule blocks all new entries, and no BNB release condition is met (no realized win offsets the loss and price is not near breakeven). Hold all and wait and see; the BNB and ETH TPs stay in place.",
+      "t": "2026-11-06T05:14:21Z"
     }
   ],
   "eliminated": null,
@@ -3609,23 +3623,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.278217497214,
-      "mark": 693.21,
+      "liq": 573.2868837472139,
+      "mark": 691.53,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -310.8533091061571
+      "unrealized": -334.33503389475254
     },
     {
       "entry": 2240.7,
-      "liq": 1726.4032899999997,
-      "mark": 2233.0,
+      "liq": 1726.4312,
+      "mark": 2225.1,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": -34.36426116838407
+      "unrealized": -69.6211005489352
     },
     null,
     null
