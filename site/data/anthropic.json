@@ -3854,6 +3854,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "At 2026-11-06T22:12Z equity is about 9,503, above the 8,500 close-all floor. BTC is about 75,880, inside the 74.5k-84k daily band, so no forced close applies. Two layers are open and both are underwater hostages: BNB long in slot 0 (entry 715.45, mark 694.87, unrealized about -288, TP 730 resting, far from the 25% stop near 670.7 and liq near 573) and ETH long in slot 1 (entry 2240.7, mark 2240.3, unrealized about -2, TP 2285 resting, liq near 1727). With two hostages the max-2-hostage rule blocks all new entries in slots 2 and 3, so no BTC, SOL or XRP entry is allowed. No release condition is met: no realized win is large enough to offset the BNB loss, and BNB is not near breakeven. ETH is near entry but is not a release condition on its own while the slot is not needed. BTC is still below 76,000 with no 4h reclaim of 77,000, SOL is near 90 with no 4h close above 93, and XRP is blocked by the BNB slot rule. Hold all and keep both TPs in place.",
       "t": "2026-11-06T22:12:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 2026-11-06T23:11Z equity is about 9,465, above the 8,500 close-all floor. BTC mark is about 75,900, inside the 74.5k-84k daily band, so no forced close applies. Two layers are open and both are underwater hostages: BNB long in slot 0 (entry 715.45, mark 693.34, unrealized about -309, TP 730 resting, far from the 25% stop near 670.7 and liq near 573) and ETH long in slot 1 (entry 2240.7, mark 2236.7, unrealized about -18, TP 2285 resting, liq near 1727). With two hostages the max-2-hostage rule blocks all new entries in slots 2 and 3, so no BTC, SOL, XRP or ETH entry is allowed. No release condition is met: no realized win is large enough to offset the BNB loss, and BNB is not near breakeven. ETH is near entry but is not a release condition while the slot is not needed. No entry trigger is met: BTC is below 76,000 with no 4h reclaim of 77,000, SOL is near 90 with no 4h close above 93, and XRP is blocked by the BNB slot rule. Hold all and keep both TPs in place.",
+      "t": "2026-11-06T23:11:43Z"
     }
   ],
   "eliminated": null,
@@ -3861,23 +3875,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.4343812472139,
-      "mark": 694.869,
+      "liq": 573.4430504972139,
+      "mark": 693.34,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -287.66510587742005
+      "unrealized": -309.03627087846826
     },
     {
       "entry": 2240.7,
-      "liq": 1726.90359890921,
-      "mark": 2240.3,
+      "liq": 1726.9315626592102,
+      "mark": 2236.7,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": -1.7851564243300586
+      "unrealized": -17.851564243316822
     },
     null,
     null
