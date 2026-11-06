@@ -3569,6 +3569,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Under TSM Principle #4 (Scenario A & B) and our Weekly Plan, we maintain strict capital preservation and pause control ('\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19') by keeping Slot 3 vacant in reserve ($3,935.67 free equity). Current portfolio and layer status:\n\n1. Active Positions:\n   - Slot 0 (HYPE Long, entry 86.528, TP 92.50, liq 47.73): Marking at 77.50, comfortably insulated with ~38.4% clearance to liquidation under 2x leverage envelope.\n   - Slot 1 (SOL Long, entry 100.27, TP 104.0, liq 52.93): Marking at 90.405 with NAV(-) at -$491.92, safely cushioned by $2,500 collateral (~41.5% clearance) and backed by cumulative realized hostage profits (+1,435.66 USD total). Patiently held per Hostage Policy.\n   - Slot 2 (BTC Long, entry 76,936.0, TP 78,900.0, liq 39,473.83): Marking at 76,309.0, consolidating near entry within our structural demand zone with ~48.3% liquidation clearance.\n\n2. Reserve Layer & Watchlist Assessment:\n   - ETH (mark 2,244.9) has rebounded out of the 2,175-2,225 demand zone and sits below resistance at 2,350-2,375.\n   - ZEC (mark 1,322.4) has surged into upper resistance (1,265-1,310 band), far above its 1,180-1,210 pullback buy zone.\n   - To maintain tactical resilience and avoid committing 100% layer exposure, Slot 3 remains preserved in reserve.\n\nAll existing positions and limit TP orders remain active. We hold.",
       "t": "2026-11-06T01:14:33Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Under TSM Principle #4 (Scenario A & B) and our Weekly Plan, we maintain strict capital preservation and pause control ('\u0e2b\u0e22\u0e38\u0e14\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19') by keeping Slot 3 vacant in reserve ($3,935.67 free equity). Current portfolio and layer status:\n\n1. Active Positions:\n   - Slot 0 (HYPE Long, entry 86.528, TP 92.50, liq 47.73): Marking at 77.761, insulated with ~38.6% clearance to liquidation under conservative 2x leverage.\n   - Slot 1 (SOL Long, entry 100.27, TP 104.0, liq 52.93): Marking at 89.991 with NAV(-) at -$512.57, safely enveloped by $2,500 collateral (~41.1% clearance) and backed by cumulative realized hostage buffers (+1,435.66 USD total). Patiently held per Hostage Policy.\n   - Slot 2 (BTC Long, entry 76,936.0, TP 78,900.0, liq 39,474.79): Marking at 76,131.0, consolidating steadily within the macro flush demand zone with ~48.2% liquidation clearance.\n\n2. Reserve Layer & Watchlist Assessment:\n   - ETH (mark 2,240.2) remains outside the 2,175-2,225 capitulation entry band and below the 2,350-2,375 resistance zone.\n   - ZEC (mark 1,313.1) is consolidating near upper range resistance, far above our designated 1,180-1,210 pullback zone.\n   - To preserve portfolio flexibility and avoid over-committing 100% layer exposure during post-flush stabilization, Slot 3 remains preserved in reserve.\n\nAll existing positions and limit TP orders remain active. We hold.",
+      "t": "2026-11-06T02:19:07Z"
     }
   ],
   "eliminated": null,
@@ -3576,33 +3590,33 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.72697419068203,
-      "mark": 77.5,
+      "liq": 47.72794444068202,
+      "mark": 77.761,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -521.6808431952666
+      "unrealized": -506.5990199704147
     },
     {
       "entry": 100.27,
-      "liq": 52.93045659459012,
-      "mark": 90.405,
+      "liq": 52.931584194590116,
+      "mark": 89.991,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -491.92181111000275
+      "unrealized": -512.5660716066619
     },
     {
       "entry": 76936.0,
-      "liq": 39473.834325,
-      "mark": 76309.0,
+      "liq": 39474.785725,
+      "mark": 76131.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 78900.0,
-      "unrealized": -40.74815431007591
+      "unrealized": -52.31621087657274
     },
     null
   ],
