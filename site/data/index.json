@@ -1036,6 +1036,10 @@
       [
         "2026-11-06T07:14:46Z",
         9316.157869736591
+      ],
+      [
+        "2026-11-06T08:19:10Z",
+        9393.241246824053
       ]
     ],
     "deepseek": [
@@ -2074,6 +2078,10 @@
       [
         "2026-11-06T07:14:46Z",
         9384.321514685329
+      ],
+      [
+        "2026-11-06T08:19:10Z",
+        9421.417231004967
       ]
     ],
     "google": [
@@ -3112,6 +3120,10 @@
       [
         "2026-11-06T07:14:46Z",
         10241.324868072521
+      ],
+      [
+        "2026-11-06T08:19:10Z",
+        10282.049347734337
       ]
     ],
     "openai": [
@@ -4149,6 +4161,10 @@
       ],
       [
         "2026-11-06T07:14:46Z",
+        10261.97187055836
+      ],
+      [
+        "2026-11-06T08:19:10Z",
         10261.97187055836
       ]
     ],
@@ -5188,6 +5204,10 @@
       [
         "2026-11-06T07:14:46Z",
         10354.379770277297
+      ],
+      [
+        "2026-11-06T08:19:10Z",
+        10354.379770277297
       ]
     ],
     "zai": [
@@ -6226,13 +6246,17 @@
       [
         "2026-11-06T07:14:46Z",
         9689.527905643417
+      ],
+      [
+        "2026-11-06T08:19:10Z",
+        9689.527905643417
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-11-06T07:14:46Z",
+    "t": "2026-11-06T08:19:10Z",
     "type": "tick"
   },
   "leaderboard": [
@@ -6255,6 +6279,24 @@
       "win_rate": 1.0
     },
     {
+      "avg_pnl": 287.1331704120348,
+      "closed_positions": 5,
+      "eliminated": null,
+      "equity": 10282.049347734337,
+      "executor": "google/gemini-3.8-flash",
+      "fees": 21.96892940069284,
+      "funding": -28.23538787264032,
+      "liquidations": 0,
+      "max_drawdown": 0.10601477180123088,
+      "name": "google",
+      "net_return": 0.028204934773433707,
+      "reallocation_weeks": 1,
+      "started_week": "2026-10-26T00:00:00Z",
+      "strategist": "google/gemini-4-argon",
+      "violations": 0,
+      "win_rate": 1.0
+    },
+    {
       "avg_pnl": 87.32395685278637,
       "closed_positions": 3,
       "eliminated": null,
@@ -6269,24 +6311,6 @@
       "reallocation_weeks": 2,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "openai/gpt-6-astra",
-      "violations": 0,
-      "win_rate": 1.0
-    },
-    {
-      "avg_pnl": 287.1331704120348,
-      "closed_positions": 5,
-      "eliminated": null,
-      "equity": 10241.324868072521,
-      "executor": "google/gemini-3.8-flash",
-      "fees": 21.96892940069284,
-      "funding": -28.06217393735264,
-      "liquidations": 0,
-      "max_drawdown": 0.10601477180123088,
-      "name": "google",
-      "net_return": 0.0241324868072521,
-      "reallocation_weeks": 1,
-      "started_week": "2026-10-26T00:00:00Z",
-      "strategist": "google/gemini-4-argon",
       "violations": 0,
       "win_rate": 1.0
     },
@@ -6312,14 +6336,14 @@
       "avg_pnl": null,
       "closed_positions": 0,
       "eliminated": null,
-      "equity": 9384.321514685329,
+      "equity": 9421.417231004967,
       "executor": "deepseek/deepseek-v4.1-flash",
       "fees": 4.5,
-      "funding": -21.17051515231467,
+      "funding": -21.28842109128385,
       "liquidations": 0,
       "max_drawdown": 0.08897772961148233,
       "name": "deepseek",
-      "net_return": -0.0615678485314671,
+      "net_return": -0.05785827689950329,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "deepseek/deepseek-v4-pro-0813",
@@ -6330,14 +6354,14 @@
       "avg_pnl": -46.344082740739225,
       "closed_positions": 4,
       "eliminated": null,
-      "equity": 9316.157869736591,
+      "equity": 9393.241246824053,
       "executor": "anthropic/claude-haiku-5.5",
       "fees": 35.71152165792908,
-      "funding": -17.427395203549377,
+      "funding": -17.672281076206126,
       "liquidations": 0,
       "max_drawdown": 0.12370856311747182,
       "name": "anthropic",
-      "net_return": -0.06838421302634087,
+      "net_return": -0.060675875317594725,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "anthropic/claude-fable-5.1",
