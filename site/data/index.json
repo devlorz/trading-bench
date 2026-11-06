@@ -1068,6 +1068,10 @@
       [
         "2026-11-06T15:13:58Z",
         9468.480501748512
+      ],
+      [
+        "2026-11-06T16:15:20Z",
+        9411.430593540705
       ]
     ],
     "deepseek": [
@@ -2138,6 +2142,10 @@
       [
         "2026-11-06T15:13:58Z",
         9432.345546034081
+      ],
+      [
+        "2026-11-06T16:15:20Z",
+        9408.530276796137
       ]
     ],
     "google": [
@@ -3208,6 +3216,10 @@
       [
         "2026-11-06T15:13:58Z",
         10396.002997369253
+      ],
+      [
+        "2026-11-06T16:15:20Z",
+        10284.564083575133
       ]
     ],
     "openai": [
@@ -4277,6 +4289,10 @@
       ],
       [
         "2026-11-06T15:13:58Z",
+        10261.97187055836
+      ],
+      [
+        "2026-11-06T16:15:20Z",
         10261.97187055836
       ]
     ],
@@ -5348,6 +5364,10 @@
       [
         "2026-11-06T15:13:58Z",
         10354.379770277297
+      ],
+      [
+        "2026-11-06T16:15:20Z",
+        10354.379770277297
       ]
     ],
     "zai": [
@@ -6418,34 +6438,20 @@
       [
         "2026-11-06T15:13:58Z",
         9689.527905643417
+      ],
+      [
+        "2026-11-06T16:15:20Z",
+        9689.527905643417
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-11-06T15:13:58Z",
+    "t": "2026-11-06T16:15:20Z",
     "type": "tick"
   },
   "leaderboard": [
-    {
-      "avg_pnl": 287.1331704120348,
-      "closed_positions": 5,
-      "eliminated": null,
-      "equity": 10396.002997369253,
-      "executor": "google/gemini-3.8-flash",
-      "fees": 21.96892940069284,
-      "funding": -29.380751306327316,
-      "liquidations": 0,
-      "max_drawdown": 0.10601477180123088,
-      "name": "google",
-      "net_return": 0.03960029973692526,
-      "reallocation_weeks": 1,
-      "started_week": "2026-10-26T00:00:00Z",
-      "strategist": "google/gemini-4-argon",
-      "violations": 0,
-      "win_rate": 1.0
-    },
     {
       "avg_pnl": 39.37553003081085,
       "closed_positions": 9,
@@ -6461,6 +6467,24 @@
       "reallocation_weeks": 2,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "qwen/qwen3.8-max-prime",
+      "violations": 0,
+      "win_rate": 1.0
+    },
+    {
+      "avg_pnl": 287.1331704120348,
+      "closed_positions": 5,
+      "eliminated": null,
+      "equity": 10284.564083575133,
+      "executor": "google/gemini-3.8-flash",
+      "fees": 24.21892940069284,
+      "funding": -29.55545261192555,
+      "liquidations": 0,
+      "max_drawdown": 0.10601477180123088,
+      "name": "google",
+      "net_return": 0.028456408357513282,
+      "reallocation_weeks": 1,
+      "started_week": "2026-10-26T00:00:00Z",
+      "strategist": "google/gemini-4-argon",
       "violations": 0,
       "win_rate": 1.0
     },
@@ -6504,14 +6528,14 @@
       "avg_pnl": -46.344082740739225,
       "closed_positions": 4,
       "eliminated": null,
-      "equity": 9468.480501748512,
+      "equity": 9411.430593540705,
       "executor": "anthropic/claude-haiku-5.5",
       "fees": 35.71152165792908,
-      "funding": -19.38621164090578,
+      "funding": -19.632246557054003,
       "liquidations": 0,
       "max_drawdown": 0.12370856311747182,
       "name": "anthropic",
-      "net_return": -0.053151949825148766,
+      "net_return": -0.058856940645929536,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "anthropic/claude-fable-5.1",
@@ -6522,14 +6546,14 @@
       "avg_pnl": null,
       "closed_positions": 0,
       "eliminated": null,
-      "equity": 9432.345546034081,
+      "equity": 9408.530276796137,
       "executor": "deepseek/deepseek-v4.1-flash",
       "fees": 4.5,
-      "funding": -22.077459295720303,
+      "funding": -22.195858702633956,
       "liquidations": 0,
       "max_drawdown": 0.08897772961148233,
       "name": "deepseek",
-      "net_return": -0.056765445396591896,
+      "net_return": -0.05914697232038634,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "deepseek/deepseek-v4-pro-0813",
