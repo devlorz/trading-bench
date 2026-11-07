@@ -4682,6 +4682,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "\u0e17\u0e38\u0e01 Slot \u0e27\u0e48\u0e32\u0e07 \u0e41\u0e25\u0e30 free_equity \u0e40\u0e1e\u0e35\u0e22\u0e07\u0e1e\u0e2d\u0e15\u0e48\u0e2d collateral \u0e02\u0e2d\u0e07 RP \u0e41\u0e15\u0e48\u0e44\u0e21\u0e48\u0e21\u0e35 Action-Based entry \u0e15\u0e32\u0e21 Weekly Plan \u0e17\u0e35\u0e48 valid: watchlist \u0e40\u0e1b\u0e47\u0e19 short bias \u0e41\u0e1a\u0e1a fade/retest \u0e17\u0e35\u0e48 entry \u0e2d\u0e22\u0e39\u0e48\u0e40\u0e2b\u0e19\u0e37\u0e2d mark \u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19 (BTC 75782 < 78600, ETH 2233.3 < 2295, SOL 89.609 < 95.5, DOGE 0.071788 < 0.0763, LINK 10.87 < 11.55) \u0e41\u0e25\u0e30 swing high \u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19/\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e41\u0e15\u0e30 trigger. \u0e19\u0e2d\u0e01\u0e08\u0e32\u0e01\u0e19\u0e31\u0e49\u0e19 \u0e2b\u0e32\u0e01\u0e40\u0e1b\u0e34\u0e14 short \u0e13 \u0e15\u0e25\u0e32\u0e14\u0e15\u0e2d\u0e19\u0e19\u0e35\u0e49 \u0e41\u0e25\u0e30\u0e43\u0e0a\u0e49 exit \u0e15\u0e32\u0e21\u0e41\u0e1c\u0e19 \u0e08\u0e30\u0e17\u0e33\u0e43\u0e2b\u0e49 TP \u0e2d\u0e22\u0e39\u0e48\u0e1d\u0e31\u0e48\u0e07\u0e02\u0e32\u0e14\u0e17\u0e38\u0e19 (\u0e2a\u0e39\u0e07\u0e40\u0e01\u0e34\u0e19 entry fill) \u0e40\u0e0a\u0e48\u0e19 BTC exit 76900 > mark, ETH exit 2240 > mark, SOL exit 93.0 > mark, DOGE exit 0.0745 > mark, LINK exit 11.25 > mark \u0e0b\u0e36\u0e48\u0e07\u0e1c\u0e34\u0e14\u0e17\u0e31\u0e49\u0e07\u0e27\u0e34\u0e19\u0e31\u0e22\u0e41\u0e1c\u0e19\u0e41\u0e25\u0e30\u0e08\u0e30\u0e01\u0e25\u0e32\u0e22\u0e40\u0e1b\u0e47\u0e19 tp_wrong_side \u0e40\u0e21\u0e37\u0e48\u0e2d set_tp. \u0e08\u0e36\u0e07\u0e43\u0e0a\u0e49 TSM Principle 4 Wait & See \u0e41\u0e25\u0e30 hold.",
       "t": "2026-11-07T19:10:29Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All slots are empty and free_equity 10354.37977 is sufficient for one RP collateral 2506.98516, but there is no valid weekly-plan action-based short entry this tick. The short bias entries are controlled fade/retest triggers: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks and recent 15m/1h/4h swing highs remain far below those triggers (BTC 75781 vs 78600, ETH 2234.6 vs 2295, SOL 89.645 vs 95.5, DOGE 0.071735 vs 0.0763, LINK 10.83 vs 11.55). Additionally, all planned exits are above current marks (BTC 76900, ETH 2240, SOL 93.0, DOGE 0.0745, LINK 11.25), so opening at market would force a short TP on the loss side and violate tp_wrong_side plus the plan\u2019s controlled entry discipline. No open layer, no NAV(-), no TP obligation, and no liquidation concern. Per TSM Principle 4 Wait & See and Zero Alpha, hold.",
+      "t": "2026-11-07T20:12:00Z"
     }
   ],
   "eliminated": null,
