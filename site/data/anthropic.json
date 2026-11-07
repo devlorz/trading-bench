@@ -3994,6 +3994,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "At 2026-11-07T08:16Z equity is about 9,534, above the 8,500 close-all floor. BTC mark is about 76,100 and the daily closes stay inside the 74.5k-84k band, so no forced close applies. Open layers are the BNB long hostage in slot 0 (entry 715.45, mark 695.0, unrealized about -286, TP 730 resting, far from the 25% stop near 670.7 and liq near 573) and the ETH long in slot 1 (entry 2240.7, mark 2247.3, unrealized about +29, TP 2285 resting, not a hostage). Slots 2 and 3 are empty and one more hostage is allowed, but no entry trigger is met. BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone, and the mid-box no-entry band applies. ETH is at 2247, outside the 2,360-2,400 short zone and the 2,170-2,210 flush zone, and already has its one allowed layer. SOL is near 90.2, below the 93 4h close required for re-entry. XRP at about 1.178 is below its 1.19-1.215 long zone and is blocked by the BNB slot rule anyway. No BNB release condition is met: no realized win offsets its loss and it is not near breakeven. Hold all and keep both TPs in place.",
       "t": "2026-11-07T08:16:19Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 2026-11-07T09:13Z equity is about 9,552, above the 8,500 floor, and the BTC mark of 76,160 is inside the 74.5k-84k daily band, so no forced close applies. Open layers: BNB long hostage in slot 0 (entry 715.45, mark 696.04, unrealized about -271, TP 730 resting, far from the 25% stop near 670.7) and ETH long in slot 1 (entry 2240.7, mark 2248.2, unrealized about +33, TP 2285 resting, not a hostage). Slots 2 and 3 are empty and one more hostage is allowed, but no entry trigger is met. BTC has no 4h close above 77,000 (last 4h close 76,100) and is far from the 80.4k-81.3k short zone, so the mid-box no-entry rule applies. ETH is at 2248, outside the 2,360-2,400 short zone and the 2,170-2,210 flush zone, and already has its one allowed layer. SOL is near 90.2, below the 93 4h close required, and BTC is not above 76,000 on the daily, so re-entry is blocked. XRP at about 1.175 is below its 1.19-1.215 long zone and is blocked by the BNB slot rule anyway. No BNB release condition is met: no realized win offsets its loss and it is not near breakeven. Hold all and keep both TPs in place.",
+      "t": "2026-11-07T09:13:27Z"
     }
   ],
   "eliminated": null,
@@ -4001,23 +4015,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.5211991222139,
-      "mark": 695.0,
+      "liq": 573.5299004972139,
+      "mark": 696.04,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -285.83409043259553
+      "unrealized": -271.2977846110851
     },
     {
       "entry": 2240.7,
-      "liq": 1727.18403515921,
-      "mark": 2247.3,
+      "liq": 1727.2121576592099,
+      "mark": 2248.2,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": 29.45508100147438
+      "unrealized": 33.47168295621904
     },
     null,
     null
