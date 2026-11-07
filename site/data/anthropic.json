@@ -4190,6 +4190,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "At 2026-11-07T22:11Z equity is about 9,468, above the 8,500 close-all floor. BTC mark is about 75,723, and the recent daily-equivalent closes sit inside the 74,500-84,000 band, so no forced close applies. Two layers are open and both are underwater: BNB long hostage in slot 0 (entry 715.45, mark 695.6, TP 730 resting, far from the 25% stop near 670.7 and liq near 573) and ETH long hostage in slot 1 (entry 2240.7, mark 2231.4, TP 2285 resting, far from its stop near 2100 and liq near 1727). With two hostages the max-2 rule blocks all new entries, so this is wait and see. Entry conditions are also unmet: BTC is below the 77,000 4h reclaim and below 76,000 on the daily, far from the 80.4k-81.3k short zone; ETH is outside its 2,360-2,400 short zone and 2,170-2,210 flush zone; SOL is near 89.1, well below the 93 reclaim with BTC not above 76,000 on the daily; XRP is below its 1.19 long zone and blocked by the BNB slot rule. No BNB release condition is met: there is no realized win to offset its loss and it is far from breakeven. Week end (Nov 9) is not reached, so no week-end banking applies. Hold all and keep both TPs in place.",
       "t": "2026-11-07T22:11:50Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Current account at 22:11Z: equity about 9,468, above 8,500 floor. BTC mark about 75,723 sits inside the 74,500-84,000 daily band, so no forced close. Two layers open: BNB long hostage (slot 0, entry 715.45, mark ~695.6, TP 730, far from 25% stop near 670.7) and ETH long hostage (slot 1, entry 2240.7, mark ~2231, TP 2285, far from stop). Max-2-hostage rule blocks all new entries, and no entry triggers are met (BTC below 77k reclaim and 76k daily, SOL below 93 reclaim, ETH outside zones, XRP blocked by BNB slot rule). No BNB release condition is met. Week end not reached. Hold all and keep TPs in place.",
+      "t": "2026-11-07T23:11:28Z"
     }
   ],
   "eliminated": null,
@@ -4197,23 +4211,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.6235623845539,
-      "mark": 695.6,
+      "liq": 573.6227559412449,
+      "mark": 694.43,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -277.44776015095425
+      "unrealized": -293.80110420015507
     },
     {
       "entry": 2240.7,
-      "liq": 1727.5759526592099,
-      "mark": 2231.4,
+      "liq": 1727.60388015921,
+      "mark": 2232.2,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": -41.5048868657104
+      "unrealized": -37.93457401704825
     },
     null,
     null
