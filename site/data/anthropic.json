@@ -3910,6 +3910,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,562, well above the 8,500 close-all floor, and BTC mark 76,058 sits inside the 74.5k-84k daily band, so no forced close applies. Open layers are the BNB long hostage in slot 0 (mark 696.57, about -264 unrealized, TP 730 resting, far from the 25% stop near 670.7) and the ETH long in slot 1 (mark 2248.37, about +34, TP 2285 resting, not a hostage). Slots 2 and 3 are empty, and one more hostage is allowed under the max-2 rule, but no entry trigger is met. BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone. ETH is at 2248, outside the 2,360-2,400 short zone and the 2,170-2,210 flush zone. SOL is at about 90.6, below the 93 4h close required, and BTC is not above 76,000 on the daily. XRP is at 1.1776, below its 1.19-1.215 long zone, and is blocked by the BNB slot rule anyway. No BNB release condition is met: no realized win offsets its loss and it is not near breakeven. Hold all and keep both TPs in place.",
       "t": "2026-11-07T02:17:48Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 2026-11-07T03:15Z equity is about 9,542, above the 8,500 floor, and BTC mark 76,061 is inside the 74.5k-84k daily band, so no forced close. Open layers: BNB long in slot 0 (entry 715.45, mark 695.17, unrealized about -283, TP 730 resting, far from the 25% stop near 670.7) is the one hostage. ETH long in slot 1 (entry 2240.7, mark 2248.4, unrealized about +34, TP 2285 resting) is in profit and is not a hostage. Slots 2 and 3 are empty and one more hostage is allowed, but no entry trigger is met. BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone. ETH is outside the 2,360-2,400 short zone and the 2,170-2,210 flush zone. SOL is near 90.4, below the 93 4h close required, and BTC is not above 76,000 on the daily. XRP at about 1.166 is below its 1.19-1.215 long zone and is blocked by the BNB slot rule anyway. No BNB release condition is met: no realized win offsets the loss and BNB is not near breakeven. Hold all and keep both TPs in place.",
+      "t": "2026-11-07T03:15:20Z"
     }
   ],
   "eliminated": null,
@@ -3917,23 +3931,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.4690898722139,
-      "mark": 696.57,
+      "liq": 573.4777897472139,
+      "mark": 695.17,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -263.8898595289677
+      "unrealized": -283.4579635194645
     },
     {
       "entry": 2240.7,
-      "liq": 1727.01560640921,
-      "mark": 2248.37,
+      "liq": 1727.04368890921,
+      "mark": 2248.4,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": 34.23037443656033
+      "unrealized": 34.3642611683861
     },
     null,
     null
