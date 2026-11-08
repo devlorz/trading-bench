@@ -5018,6 +5018,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity 10354.3798 covers RP collateral 2506.9852, but there is no active short fade/retest trigger in any watchlist symbol under the Weekly Plan. The plan requires short entries at higher bounce/fade levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks and recent 15m/1h/4h swing highs remain well below those triggers: BTC 75822 with swing highs 76081/76173/76235 < 78600; ETH 2231.1 with swing highs 2242.6/2245.2/2253.2 < 2295; SOL 89.248 with swing highs 89.886/91.57 < 95.5; DOGE 0.071194 with swing highs 0.071471/0.073325 < 0.0763; LINK 10.682 with swing highs 10.75/10.955 < 11.55. Opening shorts at current marks would also be incompatible with the planned exits under Hard Rule validation because for shorts the TP must be below the entry, yet each planned exit is above the current mark for BTC/ETH/SOL/DOGE/LINK. There are no NAV(-) positions, no TP management, and no liquidation exposure. Per TSM Principle 4 Wait & See, Zero Alpha, strict plan adherence, and hostage-policy risk control, the correct action is hold until the Weekly Plan close_all time or a valid plan entry/retest appears.",
       "t": "2026-11-08T19:10:26Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty; there are no open layers, no NAV(-), no active TP, and no liquidation exposure. Free equity is sufficient for one RP collateral layer, but the Weekly Plan is short-only with bounce/fade entry triggers above current price: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Recent swing highs remain well below those triggers: BTC 76235 max, ETH 2253.2 max, SOL 91.57 max, DOGE 0.073325 max, LINK 10.955 max. No Action-Based short entry is active. Additionally, all planned exits are above current mark for every watchlist symbol (BTC 76900 > 75865, ETH 2240 > 2227.8, SOL 93 > 89.443, DOGE 0.0745 > 0.071189, LINK 11.25 > 10.674), so opening a short at current market would make the planned TP invalid under tp_wrong_side and would force a non-plan trade. Per TSM Principle 4 Wait & See, Zero Alpha, and strict plan adherence, hold until a valid plan trigger appears or the weekly close_all time.",
+      "t": "2026-11-08T20:12:28Z"
     }
   ],
   "eliminated": null,
