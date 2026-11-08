@@ -4906,6 +4906,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty, there is no NAV(-), TP, or liquidation risk, and free equity is sufficient for one RP collateral. However, the weekly plan requires action-based short fade/retest entries only after swing highs reach the planned trigger levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. At this tick, marks and recent 15m/1h/4h swing highs remain far below those triggers: BTC 75918 with recent swing highs 75949/75984/76235 < 78600; ETH 2236.2 with swing highs 2241.1/2253.2 < 2295; SOL 89.255 with swing highs 89.34/89.398/91.57 < 95.5; DOGE 0.07091 with swing highs 0.071307/0.071997/0.073325 < 0.0763; LINK 10.747 with swing highs 10.769/10.837/10.955 < 11.55. No planned entry condition is met. Additionally, every planned short exit is above the current mark (BTC 76900 > 75918, ETH 2240 > 2236.2, SOL 93 > 89.255, DOGE 0.0745 > 0.07091, LINK 11.25 > 10.747), so opening short at market and setting the planned TP would place TP on the loss side and violate tp_wrong_side. Per TSM Principle 4 Wait & See, Zero Alpha, and the hostage policy, the correct action is hold while all slots remain empty.",
       "t": "2026-11-08T11:11:23Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty, there are no NAV(-) layers or liquidation risks, and free_equity is sufficient for one RP layer. However, the weekly plan requires controlled short fade/retest entries only after swing highs reach the planned short entry levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks and recent 15m/1h/4h swing highs remain far below those triggers: BTC 75926 with swing highs 76018/76235 < 78600; ETH 2239.3 with swing highs 2242.2/2241.1/2253.2 < 2295; SOL 89.591 with swing highs 89.816/89.791/91.57 < 95.5; DOGE 0.07126 with swing highs 0.071302/0.071307/0.073325 < 0.0763; LINK 10.756 with swing highs 10.809/10.837/10.955 < 11.55. No Action-Based short entry condition is satisfied. Also, every planned short exit is above the current mark for shorts, so opening short at market and setting the planned TPs would place the TP on the loss side and violate tp_wrong_side. Per TSM Principle 4 Wait & See and Zero Alpha, the correct action is hold.",
+      "t": "2026-11-08T12:17:45Z"
     }
   ],
   "eliminated": null,
