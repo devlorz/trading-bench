@@ -4351,6 +4351,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,523, above the 8,500 floor, and BTC is at about 75,886, inside the 74.5k-84k daily band, so no forced close applies. This week's realized wins are SOL +218 (11-04) and BTC +108 (11-05), about +326 combined. BNB unrealized is about -240, so win + hostage loss is about +86, which meets the Path D release condition in the plan. Closing the BNB hostage at market crystallizes about -240 less the taker fee, leaving the week net positive. It also frees slot 0 and drops hostages to one. The ETH hostage stays open with its TP at 2285 resting. No new entries this tick: after the BNB close there is one hostage, and no entry trigger is met (BTC is below the 77,000 reclaim and far from the 80.4k-81.3k short zone, ETH is between zones, SOL is below the 93 reclaim with BTC not above 76,000 on the daily, and XRP is outside its zone).",
       "t": "2026-11-08T09:13:31Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 2026-11-08 10:12Z the account shows only the ETH long hostage in slot 1 (entry 2240.7, mark 2235.5, unrealized about -23, TP 2285 resting). BNB was closed by the prior tick, so slot 0 is free. Equity is about 9,518, well above the 8,500 floor. BTC is about 75,877, inside the 74.5k-84k daily band, so no forced close. One hostage is open, so one more is allowed under the max-2 rule, but no entry trigger is met. BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone, and a daily close below 76,000 blocks longs. ETH at 2235 is between its 2,170-2,210 flush zone and its 2,360-2,400 short zone. SOL is at 89.2, below the 93 reclaim, and BTC is not above 76,000 on the daily. XRP at 1.162 is below its 1.19-1.215 long zone and the 1.30-1.33 short zone, and the BNB slot block is gone but there is no trigger. Week end is not reached. Hold all and keep the ETH TP at 2285.",
+      "t": "2026-11-08T10:12:03Z"
     }
   ],
   "eliminated": null,
@@ -4359,13 +4373,13 @@
     null,
     {
       "entry": 2240.7,
-      "liq": 1727.844877879,
-      "mark": 2235.8,
+      "liq": 1727.8728303789999,
+      "mark": 2235.5,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": -21.868166198061484
+      "unrealized": -23.207033516311057
     },
     null,
     null
