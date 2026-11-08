@@ -4976,6 +4976,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty, there are no NAV(-) layers, no active TP orders, and no liquidation exposure. free_equity 10354.3798 is above RP collateral 2506.9852, so capital availability is not the blocker. However, the weekly plan is a short fade/retest plan with explicit higher entry triggers: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks and recent swing highs remain below all planned short entries: BTC 76019 with 15m high 76173 and 4h swing high 76235 < 78600; ETH 2239.8 with 15m high 2245.2 and 4h swing high 2253.2 < 2295; SOL 89.609 with 15m high 89.886 and 4h swing high 91.57 < 95.5; DOGE 0.071361 with 15m high 0.07147 and 4h swing high 0.073325 < 0.0763; LINK 10.718 with 15m high 10.748 and 4h swing high 10.955 < 11.55. No Action-Based short trigger is active. Opening shorts at current marks would also be incompatible with the planned exits under Hard Rule validation: for shorts, set_tp price must be below entry, but planned exits are above current marks for BTC 76900 > 76019, SOL 93 > 89.609, DOGE 0.0745 > 0.071361, LINK 11.25 > 10.718, and ETH planned TP 2240 > current mark 2239.8, so the planned TP would sit on the loss side. Per TSM Principle 4 Wait & See, Zero Alpha, and strict plan adherence, the correct action is hold.",
       "t": "2026-11-08T16:13:34Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty, no NAV(-), no TP, and free_equity is sufficient for one RP layer. However, the weekly plan is short fade/retest with higher entry triggers: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks and recent 15m/1h/4h swing highs remain far below those triggers: BTC 75708 with highs 76173/76235 < 78600; ETH 2225.9 with highs 2245.2/2253.2 < 2295; SOL 88.945 with highs 89.886/91.57 < 95.5; DOGE 0.070873 with highs 0.071626/0.073325 < 0.0763; LINK 10.626 with highs 10.809/10.955 < 11.55. No Action-Based entry condition is active. Opening shorts at current marks and using planned exits would also place TPs above entry for shorts, violating tp_wrong_side or forcing non-plan exits. Per TSM Principle 4 Wait & See and strict plan adherence, the correct action is hold.",
+      "t": "2026-11-08T17:11:04Z"
     }
   ],
   "eliminated": null,
