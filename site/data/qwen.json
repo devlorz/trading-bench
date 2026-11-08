@@ -4920,6 +4920,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty, there are no NAV(-) layers or liquidation risks, and free_equity is sufficient for one RP layer. However, the weekly plan requires controlled short fade/retest entries only after swing highs reach the planned short entry levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks and recent 15m/1h/4h swing highs remain far below those triggers: BTC 75926 with swing highs 76018/76235 < 78600; ETH 2239.3 with swing highs 2242.2/2241.1/2253.2 < 2295; SOL 89.591 with swing highs 89.816/89.791/91.57 < 95.5; DOGE 0.07126 with swing highs 0.071302/0.071307/0.073325 < 0.0763; LINK 10.756 with swing highs 10.809/10.837/10.955 < 11.55. No Action-Based short entry condition is satisfied. Also, every planned short exit is above the current mark for shorts, so opening short at market and setting the planned TPs would place the TP on the loss side and violate tp_wrong_side. Per TSM Principle 4 Wait & See and Zero Alpha, the correct action is hold.",
       "t": "2026-11-08T12:17:45Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty, there is no NAV(-), TP, or liquidation exposure, and free_equity 10354.3798 exceeds one RP collateral 2506.9852. However, the weekly plan is short-bias Action Based with explicit fade/retest entry triggers: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks are far below those triggers: BTC 76061 < 78600; ETH 2241.7 < 2295; SOL 89.693 < 95.5; DOGE 0.071408 < 0.0763; LINK 10.77 < 11.55. Recent 15m/1h/4h swing highs also remain below the planned short entries for all symbols, so no planned entry condition is active. For BTC, SOL, DOGE, and LINK, opening a short at the current mark would place the planned exit above entry and violate tp_wrong_side if set to plan. For ETH, the planned exit 2240 is below the current mark, but the planned entry 2295 is still far away and current price is only a small distance above the planned exit, so opening now would deviate from the planned bounce/fade trigger and take a sub-ATR scalp rather than follow the plan. Per TSM Principle 4 Wait & See, Zero Alpha, and follow-plan policy, the correct action is hold while all slots remain empty.",
+      "t": "2026-11-08T13:11:42Z"
     }
   ],
   "eliminated": null,
