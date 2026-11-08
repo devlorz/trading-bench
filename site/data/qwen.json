@@ -4822,6 +4822,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty and there are no NAV(-) layers, TP obligations, or liquidation risks. Free equity 10354.37977 is sufficient for RP collateral 2506.98516, and planned leverage 2500 / 2506.98516 \u2248 0.997x is below all watchlist max leverage. However, no weekly-plan short fade/retest entry is valid at this tick: current marks are BTC 75894 < entry 78600, ETH 2236.9 < 2295, SOL 89.309 < 95.5, DOGE 0.071275 < 0.0763, LINK 10.767 < 11.55, and recent 4h/1h/15m swing highs remain below the planned fade levels. More importantly, every planned short exit is currently above the mark (BTC 76900 > 75894, ETH 2240 > 2236.9, SOL 93.0 > 89.309, DOGE 0.0745 > 0.071275, LINK 11.25 > 10.767), so opening short at market and setting the planned TP would violate the tp_wrong_side rule. Per TSM Principle 4 Wait & See, Zero Alpha, and the hostage policy, the correct action is hold.",
       "t": "2026-11-08T05:13:27Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "All four slots are empty, free equity is sufficient, and no liquidation risk exists. However, the weekly plan defines controlled short fade/retest entries only after swing highs reach the specified trigger levels: BTC 78600, ETH 2295, SOL 95.5, DOGE 0.0763, LINK 11.55. Current marks are all far below these triggers (BTC 75809, ETH 2234.6, SOL 89.194, DOGE 0.071205, LINK 10.752), and recent 15m/1h/4h swing highs remain below them as well. Opening short now would also be invalid because every planned exit is above the current mark, so setting the planned TP would violate tp_wrong_side for shorts. Under TSM Principle 4 Wait & See and Zero Alpha, no action-based entry is valid this tick.",
+      "t": "2026-11-08T06:20:27Z"
     }
   ],
   "eliminated": null,
