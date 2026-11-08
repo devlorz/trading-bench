@@ -4274,6 +4274,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "Equity is about 9,510, above the 8,500 royal-army floor. BTC mark is about 75,914, inside the 74.5k-84k daily band, so no forced close. Two layers are open and both are hostages: BNB long in slot 0 (entry 715.45, mark 696.79, TP 730) and ETH long in slot 1 (entry 2240.7, mark 2237.2, TP 2285). Both are far from their 25% RP stops and from liquidation. The max-2-hostage rule is reached, so no new entries are allowed. No entry trigger is met: BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone, ETH is between its zones, SOL is well below the 93 reclaim, and XRP is blocked by the BNB slot rule. No BNB release condition is met, since there is no realized win to offset its loss. Week end is not reached. Hold all and keep both TPs in place.",
       "t": "2026-11-08T04:15:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "At 2026-11-08T05:13Z equity is about 9,496, above the 8,500 close-all floor. BTC mark is about 75,894, inside the 74,500-84,000 daily band, so no forced close applies. Two layers are open and both are hostages: BNB long in slot 0 (entry 715.45, mark 696.2, TP 730 resting, far from its 25% RP stop near 670.7 and liq near 573.7) and ETH long in slot 1 (entry 2240.7, mark 2236.9, TP 2285 resting, far from its stop and liq near 1727.7). With two hostages the max-2 rule is reached, so no new entries are allowed. No entry trigger is met: BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone, ETH sits between its zones, SOL is well below the 93 reclaim, and XRP is blocked by the BNB slot rule. No BNB release condition is met, since there is no realized win to offset its loss and price is far from breakeven. Week end has not been reached, so no banking applies. Hold all and keep both TPs in place.",
+      "t": "2026-11-08T05:13:27Z"
     }
   ],
   "eliminated": null,
@@ -4281,23 +4295,23 @@
   "layers": [
     {
       "entry": 715.45,
-      "liq": 573.6467231417729,
-      "mark": 696.79,
+      "liq": 573.6549628808818,
+      "mark": 696.199,
       "notional": 10000,
       "side": "long",
       "symbol": "BNB",
       "tp": 730.0,
-      "unrealized": -260.8148717590339
+      "unrealized": -269.07540708645035
     },
     {
       "entry": 2240.7,
-      "liq": 1727.7242457468299,
-      "mark": 2237.2,
+      "liq": 1727.74780391979,
+      "mark": 2236.89,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": -15.620118712902219
+      "unrealized": -17.00361494175903
     },
     null,
     null
