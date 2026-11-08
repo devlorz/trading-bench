@@ -4330,30 +4330,42 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "At 08:16Z equity is about 9,556, above the 8,500 close-all floor. BTC is at about 75,883, inside the 74.5k-84k daily band, so no forced close applies. Two layers are open and both are hostages: BNB long in slot 0 (entry 715.45, mark 699.75, TP 730 resting, far from its 25% stop near 670.7 and liq near 573.7) and ETH long in slot 1 (entry 2240.7, mark 2238.5, TP 2285 resting, far from its stop and liq near 1727.8). The max-2-hostage rule is reached, so no new entries are allowed. No entry trigger is met: BTC is below the 77,000 4h reclaim and far from the 80.4k-81.3k short zone, ETH sits between its zones, SOL is well below the 93 reclaim with BTC not above 76,000 on the daily, and XRP is blocked by the BNB slot rule. No BNB release condition is met, since there is no realized win to offset its loss and price is far from breakeven. Week end has not been reached, so no banking applies. Hold all and keep both TPs in place.",
       "t": "2026-11-08T08:16:29Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 0,
+          "symbol": "BNB",
+          "type": "close"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-02T00:00:00Z",
+      "reasoning": "Equity is about 9,523, above the 8,500 floor, and BTC is at about 75,886, inside the 74.5k-84k daily band, so no forced close applies. This week's realized wins are SOL +218 (11-04) and BTC +108 (11-05), about +326 combined. BNB unrealized is about -240, so win + hostage loss is about +86, which meets the Path D release condition in the plan. Closing the BNB hostage at market crystallizes about -240 less the taker fee, leaving the week net positive. It also frees slot 0 and drops hostages to one. The ETH hostage stays open with its TP at 2285 resting. No new entries this tick: after the BNB close there is one hostage, and no entry trigger is met (BTC is below the 77,000 reclaim and far from the 80.4k-81.3k short zone, ETH is between zones, SOL is below the 93 reclaim with BTC not above 76,000 on the daily, and XRP is outside its zone).",
+      "t": "2026-11-08T09:13:31Z"
     }
   ],
   "eliminated": null,
   "executor": "anthropic/claude-haiku-5.5",
   "layers": [
-    {
-      "entry": 715.45,
-      "liq": 573.6711912478659,
-      "mark": 699.748,
-      "notional": 10000,
-      "side": "long",
-      "symbol": "BNB",
-      "tp": 730.0,
-      "unrealized": -219.470263470543
-    },
+    null,
     {
       "entry": 2240.7,
-      "liq": 1727.816900379,
-      "mark": 2238.5,
+      "liq": 1727.844877879,
+      "mark": 2235.8,
       "notional": 10000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2285.0,
-      "unrealized": -9.81836033382344
+      "unrealized": -21.868166198061484
     },
     null,
     null
@@ -4495,6 +4507,18 @@
       "reason": "tp",
       "side": "short",
       "symbol": "BTC"
+    },
+    {
+      "closed_at": "2026-11-08T09:13:31Z",
+      "entry": 715.45,
+      "exit": 698.31,
+      "fees": 8.892193724229505,
+      "funding": -13.948883539953885,
+      "opened_at": "2026-10-30T06:26:05Z",
+      "pnl": -262.4105789763921,
+      "reason": "close",
+      "side": "long",
+      "symbol": "BNB"
     }
   ],
   "started_week": "2026-10-26T00:00:00Z",
