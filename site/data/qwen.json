@@ -5305,6 +5305,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four slots are empty. The weekly plan is short-only and requires planned bounce/fade triggers above completed flushes, with step-2 aggression only after a positive hostage buffer. Current marks and recent highs for BTC, ETH, SOL, and DOGE have not reached their planned short entries. LINK, however, printed a recent bounce high of 10.764, above its planned short entry 10.72, so its fade trigger has been reached while the broader structure remains weak. With free equity sufficient for one RP layer, open slot 0 as LINK short and immediately set the planned TP at 10.35, while leaving other layers on hold.",
       "t": "2026-11-09T15:14:53Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 is open LINK short with small NAV(-) unrealized loss (-9.58). The layer is far from liquidation (mark 10.742 vs liq 21.241), so no immediate close is needed. Other planned short triggers are not confirmed, and the hostage policy forbids adding leverage while a layer is NAV(-) without a positive hostage buffer. The existing TP at 10.35 remains valid; therefore the correct action is hold.",
+      "t": "2026-11-09T16:15:39Z"
     }
   ],
   "eliminated": null,
@@ -5312,13 +5326,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.241356342173738,
-      "mark": 10.70255,
+      "liq": 21.24149121717374,
+      "mark": 10.742,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": -0.36211569012240447
+      "unrealized": -9.578544061302768
     },
     null,
     null,
