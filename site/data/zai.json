@@ -6814,6 +6814,34 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "State at 09:19:23Z: ONE layer held - XMR long slot 1 (entry 615.04, TP 620, mark 599.32, NAV ~-63.9, liq 63.74 infinitely far); free equity 7,033.16 affords exactly TWO deployments held in reserve. Surrender audit on completed closes only: XMR - the 08:00-09:00 1h bar completed at 599.47 (recovering from the 588.33 flush wick) and every completed close (600.65/596.15/599.47/601.98/600.74/599.85/601.67/599.68/600.81/592.70/591.17/599.47) held above the 585 mechanical line; the Nov 8 daily close 599.47 is far above the 574.31 base; NO invalidation printed, so the pre-committed Scenario A hold stands and the 620 maker TP stays armed; funding settled -0.5039 at 09:00 (print 1.85e-04) - monitored carry, not a trigger; no funding-based surrender exists; no second XMR layer while slot 1 prints NAV(-). BTC slot 0 was mechanically surrendered at 08:21 on the completed 73,834 close below 73,900 (-32.93, bounded inside its RP exactly as designed); the long re-arm geometry is one-layer-max and consumed, and the supply-rejection short needs a genuine rally into 76,200-76,700 with displacement (mark 74,394 offers none; fresh lows below 74,500 forbidden). Fresh deployment audit - ALL triggers unmet on completed closes: kPEPE trigger (b) needs a displacement 1h close above 0.00532 (last completed close 0.005, the in-progress high 0.005236 is an intraday wick, never preempted); trigger (a) requires a pullback into 0.00475-0.00485 that defends and reclaims 0.00485 on a completed 1h close - the mark 0.00512 sits inside the forbidden 0.00485-0.00530 mid-flag chase zone - stand down. INJ identical: trigger (b) needs a 1h close above 8.59 (last completed close 7.9994); trigger (a) requires a pullback into 7.75-7.85 - the 15m low 7.9027 did not reach the zone and the mark 7.8586 is a falling observation; a fresh entry needs the completed-close reclaim of 7.90 after a zone touch - stand down. ETH short needs a rally into 2,240-2,285 with displacement rejection (mark 2,115.8 offers none; shorting fresh lows below 2,150 forbidden; the gated long re-arm lacks the 2,180 reclaim and ETH bias is short). No reallocation (slot 1 occupied past the Monday boundary; RP carries at 2,500/2,500, 1x effective, under every cap). Buffer vs the 10,000 base ~-540 (negative): pure hostage accumulation, the Big-Win one-shot stays unauthorized; intraday marks are observations, never authorizations - the reserve deploys only at fresh, distinct, completed-close action points (kPEPE 0.00475-0.00485 pullback-reclaim, INJ 7.75-7.85 pullback-reclaim are the closest live watches). Control Risk, Limit Resources, Wait & See: hold everything this tick.",
       "t": "2026-11-09T09:19:23Z"
+    },
+    {
+      "actions": [
+        {
+          "price": 594.34,
+          "side": "long",
+          "slot": 1,
+          "symbol": "XMR",
+          "type": "hold"
+        },
+        {
+          "price": 7.9755,
+          "side": "long",
+          "slot": 2,
+          "symbol": "INJ",
+          "type": "open"
+        },
+        {
+          "price": 8.29,
+          "side": "long",
+          "slot": 2,
+          "symbol": "INJ",
+          "type": "set_tp"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "State at 10:14:13Z: ONE layer held - XMR long slot 1 (entry 615.04, TP 620, mark 594.34, NAV -84.14, liq 63.84 infinitely far); free equity 7,033.16 affords exactly TWO deployments, one held in reserve after this tick's use (after fill ~4,533 < 2,500 locks the third slot). Surrender audit on completed closes only: XMR - the 09:00-10:00 1h bar completed at 597.69 and every completed close (600.65/596.15/599.47/601.98/600.74/599.85/601.67/599.68/600.81/592.70/591.17/599.47/597.69) held above the 585 mechanical line; the Nov 8 daily close 599.47 is far above the 574.31 base; NO invalidation printed, so the pre-committed Scenario A hold stands (NAV drift is held, never panic-cut) and the 620 maker TP stays armed; funding settled -0.4102 at 10:00 (print 1.36e-04) - monitored carry, not a trigger; no funding-based surrender exists; no second XMR layer while slot 1 prints NAV(-) - averaging a loser is forbidden. FRESH DEPLOYMENT AUDIT - INJ TRIGGER (a) HAS COMPLETED: the 09:00-10:00 1h bar (closed 10:00, fourteen minutes old) pulled back into the pre-committed 7.75-7.85 EMA20/Nov-8-low zone (low 7.8186), DEFENDED a higher low above the Nov 8 cascade low 7.7449, and printed its completed 1h close back above the 7.90 reclaim line at 7.9226 - the exact written action point, and the mark 7.9755 sits only ~0.7% above the confirming close on a fresh, distinct, never-consumed trigger (the 09:19 audit correctly stood down because the zone touch and reclaim had not yet completed). Deploy ONE layer per the one-new-layer-per-tick rule: open INJ long slot 2 at the RP (2,500/2,500, 1x effective, far under the 5x cap; bias long, no opposite-side layer), with the first hostage harvest TP at 8.29 (the written first target; 8.53-8.59 only via a fresh re-arm after collection), mechanical cut armed on a completed 1h close below 7.70 (hard daily 7.51 = the EMA50). Remaining triggers unmet on completed closes: kPEPE trigger (b) needs a displacement 1h close above 0.00532 (latest completed close 0.00511; mark 0.005103 inside the forbidden 0.00485-0.00530 mid-flag chase zone; trigger (a) consumed, no fresh pullback into 0.00475-0.00485) - stand down. INJ trigger (b) needs a 1h close above 8.59 - the pullback trigger just fired instead and is the higher-probability written entry. BTC: the long re-arm is one-layer-max and consumed (slot 0 was mechanically surrendered at 08:21 on the completed 73,834 close below 73,900, -32.93, bounded exactly as designed); the supply-rejection short needs a genuine rally into 76,200-76,700 with displacement (mark 74,143 offers none; fresh lows below 74,500 forbidden). ETH short needs a rally into 2,240-2,285 with displacement rejection (mark 2,100.5 below the 2,150 fresh-lows prohibition line - doubly forbidden; the gated long re-arm lacks the 2,180 reclaim and ETH bias is short). No reallocation (slots occupied past the Monday boundary; RP carries at 2,500/2,500). Buffer vs the 10,000 base still negative (~-546): pure hostage accumulation, the Big-Win one-shot stays unauthorized; one deployment remains in reserve for the next fresh, distinct, completed-close action point (kPEPE pullback-reclaim or a BTC/ETH supply rejection). Control Risk, Limit Resources, Wait & See: hold XMR slot 1, deploy INJ slot 2 on its fresh confirmed trigger, nothing else this tick.",
+      "t": "2026-11-09T10:14:13Z"
     }
   ],
   "eliminated": null,
@@ -6822,15 +6850,24 @@
     null,
     {
       "entry": 615.04,
-      "liq": 63.743915511349655,
-      "mark": 599.321,
+      "liq": 63.844835288542754,
+      "mark": 594.34,
       "notional": 2500,
       "side": "long",
       "symbol": "XMR",
       "tp": 620,
-      "unrealized": -63.8942182622266
+      "unrealized": -84.14086888657621
     },
-    null,
+    {
+      "entry": 7.9751,
+      "liq": 0.8010987950000006,
+      "mark": 7.9755,
+      "notional": 2500,
+      "side": "long",
+      "symbol": "INJ",
+      "tp": 8.29,
+      "unrealized": 0.12539027723788918
+    },
     null
   ],
   "name": "zai",
