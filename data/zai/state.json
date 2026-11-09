@@ -1,20 +1,11 @@
 {
-  "free_equity": 4568.549087278636,
-  "last_tick": "2026-11-09T07:16:36Z",
+  "free_equity": 7033.164400815043,
+  "last_tick": "2026-11-09T08:21:27Z",
   "last_week": "2026-11-09T00:00:00Z",
   "layers": [
+    null,
     {
-      "collateral": 2498.6882050906374,
-      "entry": 75079.0,
-      "notional": 2500,
-      "opened_at": "2026-11-09T01:15:32Z",
-      "side": "long",
-      "size": 0.03329825916701075,
-      "symbol": "BTC",
-      "tp": 76200
-    },
-    {
-      "collateral": 2491.429162222885,
+      "collateral": 2491.3991184452448,
       "entry": 615.04,
       "notional": 2500,
       "opened_at": "2026-11-07T15:11:29Z",
@@ -30,5 +21,5 @@
     "collateral": 2500.0,
     "notional": 2500
   },
-  "settled": "2026-11-09T07:16:36Z"
+  "settled": "2026-11-09T08:21:27Z"
 }
