@@ -4794,6 +4794,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All 4 army layers remain fully deployed in 2x leveraged Long positions across HYPE ($75.61), SOL ($87.25), BTC ($75,155), and ETH ($2,136.6). Every position is protected by substantial liquidation buffers (37% to 48% distance to liquidation thresholds), presenting zero forced-liquidation risk under our disciplined 2x leverage framework. Market prices are continuing their mean-reversion recovery off recent liquidity lows but remain below our tactical early-release targets (BTC $77,000-$77,500; ETH $2,225-$2,250) and our Scenario D hostage offset zones (HYPE $81.50-$83.50; SOL $92.00-$96.00). Backed by our +$1,435.67 realized hostage reserve safely preserved in free equity, we maintain strict adherence to TSM Principle #4 Soft Rule #1 ('Wait & See') and Soft Rule #3 (Scenario A), patiently holding all positions without intervention.",
       "t": "2026-11-09T16:15:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All 4 army layers remain fully deployed in 2x leveraged Long positions across HYPE ($75.26), SOL ($86.84), BTC ($74,895), and ETH ($2,126.3). All layers maintain deep liquidation buffers (36% to 47% distance from liquidation thresholds), ensuring zero forced-liquidation risk under our disciplined 2x leverage framework. Market prices continue their consolidation and gradual mean-reversion recovery off recent liquidity lows, but remain below our tactical early-release zones (BTC $77,000-$77,500; ETH $2,225-$2,250) and our Scenario D hostage offset resistance levels (HYPE $81.50-$83.50; SOL $92.00-$96.00). Backed by our cumulative realized hostage reserve of +$1,435.67 safely preserved in free equity, we maintain strict adherence to TSM Principle #4 Soft Rule #1 ('Wait & See') and Soft Rule #3 (Scenario A), holding all positions patiently without intervention.",
+      "t": "2026-11-09T17:13:32Z"
     }
   ],
   "eliminated": null,
@@ -4801,43 +4815,43 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.789114225441615,
-      "mark": 75.613,
+      "liq": 47.78789945992162,
+      "mark": 75.261,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -630.7206915680476
+      "unrealized": -651.0609282544384
     },
     {
       "entry": 100.27,
-      "liq": 52.948424939127314,
-      "mark": 87.253,
+      "liq": 52.94729155937131,
+      "mark": 86.837,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -649.097436920315
+      "unrealized": -669.8414281440108
     },
     {
       "entry": 76936.0,
-      "liq": 39555.708815698395,
-      "mark": 75155.0,
+      "liq": 39556.64700319839,
+      "mark": 74895.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 78900.0,
-      "unrealized": -115.74555474680255
+      "unrealized": -132.64271602370803
     },
     {
       "entry": 2223.6,
-      "liq": 1158.4705525986597,
-      "mark": 2136.6,
+      "liq": 1158.4972088486595,
+      "mark": 2126.3,
       "notional": 5000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2305.0,
-      "unrealized": -195.62871019967622
+      "unrealized": -218.78935060262577
     }
   ],
   "name": "google",

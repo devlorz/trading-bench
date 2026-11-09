@@ -338,3 +338,4 @@
 {"equity": 10354.379770277297, "layers": [null, null, null, null], "t": "2026-11-09T14:15:06Z"}
 {"equity": 10352.892654587175, "layers": [{"entry": 10.701, "liq": 21.241356342173738, "mark": 10.70255, "notional": 2500, "side": "short", "symbol": "LINK", "tp": 10.35, "unrealized": -0.36211569012240447}, null, null, null], "t": "2026-11-09T15:14:53Z"}
 {"equity": 10343.70773612161, "layers": [{"entry": 10.701, "liq": 21.24149121717374, "mark": 10.742, "notional": 2500, "side": "short", "symbol": "LINK", "tp": 10.35, "unrealized": -9.578544061302768}, null, null, null], "t": "2026-11-09T16:15:39Z"}
+{"equity": 10362.896021679035, "layers": [{"entry": 10.701, "liq": 21.241624754673737, "mark": 10.66, "notional": 2500, "side": "short", "symbol": "LINK", "tp": 10.35, "unrealized": 9.578544061302768}, null, null, null], "t": "2026-11-09T17:13:32Z"}
