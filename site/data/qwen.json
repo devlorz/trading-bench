@@ -5333,6 +5333,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 already holds LINK short (entry 10.701, TP 10.35) with mark 10.66 and small positive unrealized PnL; TP is not reached and liquidation price is far away. The plan is short-only and allows new entries only at planned bounce/fade triggers above completed flushes, not after price has already fallen below the fade level. Current marks remain below valid trigger conditions: BTC 74895 with recent high 75573 < 75800; ETH 2126.3 with recent high 2150.9 < 2190; SOL 86.837 with recent high 87.987 < 88.60. DOGE previously printed a fade high (0.070855) above its 0.0708 trigger, but current mark 0.069894 is well below the entry, so opening now would chase a completed flush and violate the planned bounce/fade rule. The existing LINK TP stays valid. No closes, cancels, or new opens are warranted; action is hold.",
       "t": "2026-11-09T17:13:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 remains open as the planned LINK short, with mark 10.667 below entry 10.701 and a small positive unrealized PnL. The existing TP at 10.35 is still valid and far from liquidation, so no close or TP change is warranted. For new positions, the weekly plan allows short entries only at confirmed bounce/fade triggers without chasing completed flushes. Current marks and recent highs remain below BTC 75800, ETH 2190, SOL 88.60, and LINK 10.72. DOGE recently touched above its 0.0708 trigger but now trades well below that fade level, so opening would chase a completed flush. Hostage policy also restricts aggressive step-2 expansion until a realized positive buffer is secured. Therefore the correct action is hold.",
+      "t": "2026-11-09T19:11:32Z"
     }
   ],
   "eliminated": null,
@@ -5340,13 +5354,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.241624754673737,
-      "mark": 10.66,
+      "liq": 21.241890767173736,
+      "mark": 10.667,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 9.578544061302768
+      "unrealized": 7.943182880104825
     },
     null,
     null,
