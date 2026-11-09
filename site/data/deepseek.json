@@ -7998,6 +7998,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layer slots are occupied (SOL, BTC, ETH, XRP \u2014 all long), free_equity is 0.0, and RP is fixed at 2500/2500 with no reallocation. No take-profit was traded through (marks: SOL 87.34 vs TP 109.0; BTC 75083 vs TP 84500; ETH 2133.5 vs TP 2500; XRP 1.1145 vs TP 1.38) and no liquidation occurred (marks remain far above liq prices: SOL ~2.80, BTC ~1315, ETH ~51.1, XRP ~0.035). With every slot occupied and no equity free, no opens are possible and the watchlist triggers (73500/2085/82.50/1.0750) are merely potential future entries if a slot frees up. Per the plan and TSM Principle 4 (Scenario A/C: hold NAV(-) rather than cut, since each layer's risk is collateral-isolated and exit is via TP or liquidation only), the correct action is to hold all four layers and wait. No closes, no TP changes, no opens this tick.",
       "t": "2026-11-09T01:15:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layer slots are occupied (SOL, BTC, ETH, XRP \u2014 all long) and free_equity is 0.0, so no new entries are possible and RP stays 2500/2500 (no reallocation). No take-profit was traded through (marks: SOL 88.079 vs TP 109.0; BTC 75359 vs TP 84500; ETH 2149.4 vs TP 2500; XRP 1.1184 vs TP 1.38) and no liquidation occurred (marks far above liq prices: SOL ~2.80, BTC ~1316, ETH ~51.1, XRP ~0.035). Per plan and TSM Principle 4 (Scenario A/C: hold NAV(-) positions rather than cut, since each layer is collateral-isolated and exits only via TP or liquidation), the correct action is to hold all four layers and wait. No opens (slots occupied, free_equity 0), no closes (no triggers), no TP changes (targets already on profit side).",
+      "t": "2026-11-09T02:20:01Z"
     }
   ],
   "eliminated": null,
@@ -8005,43 +8019,43 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.7956109206942017,
-      "mark": 87.34,
+      "liq": 2.796530011331498,
+      "mark": 88.079,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": -309.7320721027976
+      "unrealized": -291.1998074048813
     },
     {
       "entry": 79924.0,
-      "liq": 1314.9599003548065,
-      "mark": 75083.0,
+      "liq": 1315.8991378547944,
+      "mark": 75359.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": -151.42510384865622
+      "unrealized": -142.79190230719183
     },
     {
       "entry": 2272.5,
-      "liq": 51.11508431258153,
-      "mark": 2133.5,
+      "liq": 51.07972059079111,
+      "mark": 2149.4,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2500,
-      "unrealized": -152.91529152915294
+      "unrealized": -135.42354235423534
     },
     {
       "entry": 1.2514,
-      "liq": 0.03504708644677934,
-      "mark": 1.1145,
+      "liq": 0.03504794093139929,
+      "mark": 1.1184,
       "notional": 2500,
       "side": "long",
       "symbol": "XRP",
       "tp": 1.38,
-      "unrealized": -273.4936870704811
+      "unrealized": -265.7024132971072
     }
   ],
   "name": "deepseek",

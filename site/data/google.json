@@ -4584,6 +4584,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All 4 army layers remain fully deployed in 2x leveraged long positions with generous liquidation cushions (36% to 47% distance). Market prices across BTC ($75,083), ETH ($2,133.5), SOL ($87.34), and HYPE ($74.52) are stabilizing after the weekend flush but have not yet reached our tactical breakeven release bands (BTC $77,000-$77,500; ETH $2,225-$2,250) or Scenario D hostage offset zones (HYPE $81.50-$83.50; SOL $92.00-$96.00). In accordance with TSM Principle #4 Mindset #3 (Scenario A: Wait & See) and our fixed weekly risk parameters, all layers hold without intervention.",
       "t": "2026-11-09T01:15:32Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All 4 layers remain fully occupied in 2x leveraged long positions (HYPE, SOL, BTC, ETH) with comfortable liquidation buffers (~36% to 47% distance from liquidation). Markets are continuing their recovery from the weekend liquidity sweep (BTC $75,359, ETH $2,149.4, SOL $88.08, HYPE $75.07), but none of the positions have reached our planned early release/offset bands (BTC $77,000-$77,500; ETH $2,225-$2,250; SOL $92.00-$96.00; HYPE $81.50-$83.50). With $1,435.67 in realized hostage reserves safely buffered in free equity, we adhere strictly to TSM Principle #4 Mindset #3 (Scenario A: Wait & See) and maintain a disciplined hold across all layers.",
+      "t": "2026-11-09T02:20:01Z"
     }
   ],
   "eliminated": null,
@@ -4591,43 +4605,43 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.787333333397925,
-      "mark": 74.5216,
+      "liq": 47.788267833397924,
+      "mark": 75.0732,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -693.7869822485205
+      "unrealized": -661.912906804734
     },
     {
       "entry": 100.27,
-      "liq": 52.95914095819433,
-      "mark": 87.34,
+      "liq": 52.96006004883163,
+      "mark": 88.079,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -644.7591502942054
+      "unrealized": -607.9086466540343
     },
     {
       "entry": 76936.0,
-      "liq": 39542.067699999985,
-      "mark": 75083.0,
+      "liq": 39543.00693749999,
+      "mark": 75359.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 78900.0,
-      "unrealized": -120.42476863886868
+      "unrealized": -102.48778205261517
     },
     {
       "entry": 2223.6,
-      "liq": 1158.57062315587,
-      "mark": 2133.5,
+      "liq": 1158.5352594340798,
+      "mark": 2149.4,
       "notional": 5000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2305.0,
-      "unrealized": -202.5993883792047
+      "unrealized": -166.8465551358154
     }
   ],
   "name": "google",
