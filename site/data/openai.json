@@ -4528,6 +4528,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots are empty and no pending orders are reported. The account is above the 9,755 USD equity floor. With nothing to flatten or cancel before the 23:45 UTC deadline, remain flat.",
       "t": "2026-11-08T23:11:46Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "No entry setup is confirmed: BTC and ETH have not rebounded into their specified short-entry zones, and XMR has not completed the required pullback-and-reclaim confirmation. All slots are empty, so remain flat.",
+      "t": "2026-11-09T00:37:14Z"
     }
   ],
   "eliminated": null,
@@ -4601,6 +4615,37 @@
         }
       ],
       "week": "2026-11-02T00:00:00Z"
+    },
+    {
+      "close_all": "For November 9\u201315, close all positions and cancel pending orders if total account equity, including unrealized P&L, fees and funding, reaches or falls below 9,850 USD. Stop trading for the remainder of the week after this trigger. Allow no new entries after 2026-11-15T18:00:00Z; flatten and cancel all orders by 2026-11-15T23:45:00Z. Individual mandatory exits apply earlier when triggered. These are execution thresholds, not guaranteed maximum losses.",
+      "fallback": false,
+      "hostage_policy": "Reallocate into four collateral slots of 2,565.49296763959 USD each. Fix entry notional at 2,500 USD per layer throughout the week: approximately 0.9745x leverage. Use at most three simultaneous layers, one per symbol, with the fourth slot reserved. BTC and ETH constitute correlated short exposure, not independent diversification; XMR is not a guaranteed hedge. A 4% adverse-price threshold represents 100 USD planned price risk per layer before costs. Before each entry, require combined remaining loss-to-exit exposure plus estimated fees, funding and slippage to fit both a 330 USD cap and current equity minus the 9,850 USD floor. Do not net opposing positions or anticipated profits against this exposure. Use full-layer take-profit orders where supported. Do not assume protective stop orders or partial closes are available; without a confirmed protective stop, loss exits require market closing at the first monitored breach. Open only with reliable monitoring and prompt execution, and flatten before that coverage ends. Never average down, widen loss thresholds, increase notional after losses, or open a trade solely to rescue another position. Retain a losing layer only while its setup, price threshold, holding-time limit and portfolio budget remain valid. Bank realized profits net of costs as buffer without increasing this week's notional or risk cap. A winner and loser may be closed together for a positive combined net result, but never postpone a mandatory exit to achieve this. After two loss-threshold exits, pause new entries for 24 hours and require fresh confirmations.",
+      "in_force": "2026-11-09T00:00:00Z",
+      "notional": 2500,
+      "notional_used": true,
+      "rationale": "Prioritize capital preservation, fixed resources and patience. BTC and ETH remain below their supplied daily moving averages and weekly VWAPs; conditional rebound shorts avoid selling directly into recent lows after broad market weakness. XMR retains relative strength and remains above its daily EMA50, but is below weekly VWAP with weakening momentum, so only a confirmed pullback-and-reclaim long qualifies. Its elevated positive funding requires particular attention to holding costs. All 4h confirmations are future requirements, not signals established by the supplied daily and weekly bars. Use timestamped raw bars and absolute levels rather than inconsistent distance percentages or stale swing labels. Planned leverage is below BTC's 40x, ETH's 25x and XMR's 5x limits. Last week's profitable BTC exit does not establish a reliable edge or justify increasing risk. Remaining flat is appropriate if confirmation or execution safeguards are unavailable.",
+      "reallocated": true,
+      "watchlist": [
+        {
+          "bias": "short",
+          "entry": "Wait for a rebound into 78,400\u201378,900 near the supplied daily EMA20. Require a newly completed 4h candle to test this zone and close below 78,600. Enter only at 78,400\u201378,600 after confirmation, provided the latest completed daily close remains below 79,500. One layer maximum; do not chase weakness around the current mark.",
+          "exit": "Take profit on the entire layer at 74,100. Exit at the first monitored price at or above 1.04 times actual entry, or earlier following a completed daily close above 79,500. Close after 72 hours if neither exit has occurred. Mandatory portfolio exits take precedence.",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "short",
+          "entry": "Wait for a rebound into 2,260\u20132,300 around last week's 2,279.1 VWAP. Require a newly completed 4h candle to test this zone and close below 2,280. Enter only at 2,260\u20132,280 after confirmation, provided the latest completed daily close remains below 2,330. One layer maximum; no short entry at the current depressed price.",
+          "exit": "Take profit on the entire layer at 2,080. Exit at the first monitored price at or above 1.04 times actual entry, or earlier following a completed daily close above 2,330. Close after 72 hours if neither exit has occurred. Mandatory portfolio exits take precedence.",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "Wait for a pullback into 580\u2013590 followed by a newly completed 4h candle closing at 590\u2013594. Enter only at 590\u2013594 after that confirmation, provided the latest completed daily close is above 588. One layer maximum. Skip if funding and execution costs leave less than 1.2 times planned loss as expected net reward to the target.",
+          "exit": "Take profit on the entire layer at 625. Exit at the first monitored price at or below 0.96 times actual entry, or earlier following a completed daily close below 575. Close after 72 hours if neither exit has occurred. Mandatory portfolio exits take precedence.",
+          "symbol": "XMR"
+        }
+      ],
+      "week": "2026-11-09T00:00:00Z"
     }
   ],
   "positions": [

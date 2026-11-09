@@ -1,33 +1,33 @@
 {
-  "close_all": "No pre-market close. All positions are held in accordance with hostage policy: collateral is already segregated per layer and rollover does not consume free equity.",
-  "hostage_policy": "Use RP notional 2500, collateral 2500. Split into up to 4 layers of 625 notional each. Risk per layer is $25 (1% of total collateral). No manual stop orders are allowed; each layer is isolated by its $625 collateral, liquidation is the only stop. Open only when a watchlist limit-buy trigger is traded through. If aggregate unrealized NAV of open layers is below -$100, pause new entries and wait. Do not exceed 4 concurrent layers. When all four slots are occupied, hold NAV(-) positions rather than cutting, because each layer's risk is already collateral-isolated; wait for take-profit or liquidation.",
+  "close_all": "No pre-market close. Hold all four open layers; they remain segregated with fixed collateral and will only close via take-profit or liquidation.",
+  "hostage_policy": "RP remains 2500 notional with 2500 collateral. Use up to 4 layers of 625 notional each; risk per layer is $25 collateral. No manual stop orders; each layer is isolated by its $625 collateral, so liquidation is the only stop. Open only when a limit-buy trigger is traded through and a layer slot is free. If aggregate unrealized NAV of open layers is below -$100, pause new entries; otherwise wait. Do not exceed 4 concurrent layers. If all four slots are occupied, hold NAV(-) positions rather than cutting, because each layer's risk is already collateral-isolated; wait for TP or liquidation.",
   "notional": 2500,
-  "rationale": "RP remains the same because the new week does not trigger reallocation (the only reallocation happens on Monday 00:00 UTC when all slots are empty). Last week's layers are all long and remain within their predefined take-profit target levels. The new watchlist keeps the same liquid majors near recent weekly lows, using limit entries lower than current prices to fade a possible pullback. With 4 slots occupied and free_equity 0.0, no new entries can be executed anyway, so this weekly plan is realistic: it only becomes actionable if an open layer closes via TP or liquidation before the week ends.",
+  "rationale": "Reallocation does not occur this week because all four layer slots remain occupied, so RP stays at 2500/2500. Free equity is 0.0 and no new entries can be executed until an open layer closes via TP or liquidation. All current layers are long and deeply below their take-profit targets, but risk is already isolated per layer. The watchlist keeps BTC, ETH, SOL, and XRP with lower limit triggers than current marks, so the plan becomes actionable only if a slot opens.",
   "watchlist": [
     {
       "bias": "long",
-      "entry": "If price trades down to 77250, then open long with notional 625. Stop-loss distance set by layer collateral ($25) so no manual stop order.",
+      "entry": "If price trades down to 73500, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
       "exit": "Take profit limit at 84500; if stop runs, layer is liquidated at collateral exhaustion.",
       "symbol": "BTC"
     },
     {
       "bias": "long",
-      "entry": "If price trades down to 2230, then open long with notional 625. Stop-loss distance set by layer collateral ($25) so no manual stop order.",
+      "entry": "If price trades down to 2085, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
       "exit": "Take profit limit at 2500; if stop runs, layer is liquidated at collateral exhaustion.",
       "symbol": "ETH"
     },
     {
       "bias": "long",
-      "entry": "If price trades down to 92.50, then open long with notional 625. Stop-loss distance set by layer collateral ($25) so no manual stop order.",
+      "entry": "If price trades down to 82.50, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
       "exit": "Take profit limit at 109.00; if stop runs, layer is liquidated at collateral exhaustion.",
       "symbol": "SOL"
     },
     {
       "bias": "long",
-      "entry": "If price trades down to 1.2200, then open long with notional 625. Stop-loss distance set by layer collateral ($25) so no manual stop order.",
+      "entry": "If price trades down to 1.0750, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
       "exit": "Take profit limit at 1.3800; if stop runs, layer is liquidated at collateral exhaustion.",
       "symbol": "XRP"
     }
   ],
-  "week": "2026-11-02T00:00:00Z"
+  "week": "2026-11-09T00:00:00Z"
 }

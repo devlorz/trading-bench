@@ -7970,6 +7970,20 @@
       "plan": "2026-11-02T00:00:00Z",
       "reasoning": "All four slots remain occupied by the weekly-plan longs (slot0 SOL entry 99.691 tp 109.0, slot1 BTC entry 79924 tp 84500, slot2 ETH entry 2272.5 tp 2500, slot3 XRP entry 1.2514 tp 1.38) and free_equity is 0.0, so no open is possible: no empty slot exists and any open would require free_equity >= collateral 2500. No close/set_tp/cancel_tp is warranted \u2014 each layer already carries its resting plan TP on the profit side of entry (long TP > entry) and every layer is collateral-isolated so no manual stop order is allowed.\n\nNo take-profit was reached this tick: current marks (SOL 87.499, BTC 75120, ETH 2154.4, XRP 1.1235) with recent highs across 4h/1h/15m (SOL ~90.002/90.002/90.002, BTC ~76235/76173/76081, ETH ~2253.2/2245.2/2236.8, XRP ~1.1693/1.1693/1.1618) all sit far below their TP levels (109.0 / 84500 / 2500 / 1.38), so no hostage is triggered.\n\nNo liquidation is near despite the sharp 1h/15m flush (SOL low 85.144, BTC low 73457, ETH low 2058.5, XRP low 1.0926): liq prices (SOL 2.7952, BTC 1313.08, ETH 51.21, XRP 0.03507) sit far beneath current marks and these recent lows, so each layer remains collateral-isolated.\n\nAggregate unrealized NAV is about -$841.4 (SOL -305.74, BTC -150.27, ETH -129.92, XRP -255.51), well below the -$100 pause threshold, so per the plan's hostage policy new entries are paused; regardless all slots are full and free_equity is zero so no entry is possible anyway.\n\nWatchlist limit-buy triggers (BTC 77250, ETH 2230, SOL 92.50, XRP 1.2200) are not actionable without a slot freeing via TP fill or liquidation, and all four watchlist symbols are already held long. Note ETH and XRP marks have traded below their limit-buy triggers, but with no free slot and free_equity 0.0 no entry can be placed.\n\nLatest funding settled at 23:00 UTC: SOL -0.0133, BTC -0.0291, ETH +0.0807, XRP +0.0280, net ~+$0.066, marginally loosening/neutral for collateral.\n\nNo reallocation: it is not Monday 00:00 UTC and slots are not all empty. Per Principle 4 (all slots occupied, hold NAV(-) rather than cut since each layer's risk is already collateral-isolated), the plan's hostage policy, and the close_all directive (hold all positions), hold all four layers and let the resting take-profits work. Zero Alpha: no entry trigger traded through with a free slot, and no TP or liquidation event occurred. Action this tick: hold all four layers.",
       "t": "2026-11-08T23:11:46Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Weekly plan: RP is fixed at 2500/2500 (no reallocation because all four layer slots are occupied). Free equity is 0.0, so no new entries are possible regardless of watchlist triggers. All four layers (SOL long 99.691\u2192TP 109.0, BTC long 79924\u2192TP 84500, ETH long 2272.5\u2192TP 2500, XRP long 1.2514\u2192TP 1.38) are deeply below their take-profit targets and remain far above their liquidation prices (SOL liq ~2.80, BTC liq ~1314, ETH liq ~51.15, XRP liq ~0.035). No TP was traded through (marks 87.025, 75015, 2136.6, 1.1213) and no liquidation occurred, so nothing closes this tick. Per plan and TSM Principle 4 (Scenario A/C: hold NAV(-) rather than cut, since each layer is collateral-isolated), the correct action is to hold all four layers and wait for TP or liquidation. No opens (slots occupied), no closes (no triggers), no TP changes needed (targets already set correctly on the profit side).",
+      "t": "2026-11-09T00:37:14Z"
     }
   ],
   "eliminated": null,
@@ -7977,43 +7991,43 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.7951823579775947,
-      "mark": 87.499,
+      "liq": 2.7955261255758046,
+      "mark": 87.025,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": -305.74475128145986
+      "unrealized": -317.6314812771463
     },
     {
       "entry": 79924.0,
-      "liq": 1313.0844003547973,
-      "mark": 75120.0,
+      "liq": 1314.0196503547922,
+      "mark": 75015.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": -150.26775436664832
+      "unrealized": -153.55212451829237
     },
     {
       "entry": 2272.5,
-      "liq": 51.21431098334142,
-      "mark": 2154.4,
+      "liq": 51.1480774327415,
+      "mark": 2136.6,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2500,
-      "unrealized": -129.92299229922983
+      "unrealized": -149.50495049504963
     },
     {
       "entry": 1.2514,
-      "liq": 0.03506734192061933,
-      "mark": 1.1235,
+      "liq": 0.03504906407621933,
+      "mark": 1.1213,
       "notional": 2500,
       "side": "long",
       "symbol": "XRP",
       "tp": 1.38,
-      "unrealized": -255.51382451654172
+      "unrealized": -259.9089020297269
     }
   ],
   "name": "deepseek",
@@ -8091,6 +8105,43 @@
         }
       ],
       "week": "2026-11-02T00:00:00Z"
+    },
+    {
+      "close_all": "No pre-market close. Hold all four open layers; they remain segregated with fixed collateral and will only close via take-profit or liquidation.",
+      "fallback": false,
+      "hostage_policy": "RP remains 2500 notional with 2500 collateral. Use up to 4 layers of 625 notional each; risk per layer is $25 collateral. No manual stop orders; each layer is isolated by its $625 collateral, so liquidation is the only stop. Open only when a limit-buy trigger is traded through and a layer slot is free. If aggregate unrealized NAV of open layers is below -$100, pause new entries; otherwise wait. Do not exceed 4 concurrent layers. If all four slots are occupied, hold NAV(-) positions rather than cutting, because each layer's risk is already collateral-isolated; wait for TP or liquidation.",
+      "in_force": "2026-11-09T00:00:00Z",
+      "notional": 2500,
+      "notional_used": false,
+      "rationale": "Reallocation does not occur this week because all four layer slots remain occupied, so RP stays at 2500/2500. Free equity is 0.0 and no new entries can be executed until an open layer closes via TP or liquidation. All current layers are long and deeply below their take-profit targets, but risk is already isolated per layer. The watchlist keeps BTC, ETH, SOL, and XRP with lower limit triggers than current marks, so the plan becomes actionable only if a slot opens.",
+      "reallocated": false,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "If price trades down to 73500, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 84500; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "If price trades down to 2085, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 2500; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "If price trades down to 82.50, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 109.00; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "SOL"
+        },
+        {
+          "bias": "long",
+          "entry": "If price trades down to 1.0750, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 1.3800; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "XRP"
+        }
+      ],
+      "week": "2026-11-09T00:00:00Z"
     }
   ],
   "positions": [],

@@ -1292,6 +1292,10 @@
       [
         "2026-11-08T23:11:46Z",
         8981.765220515417
+      ],
+      [
+        "2026-11-09T00:37:14Z",
+        8981.765220515417
       ]
     ],
     "deepseek": [
@@ -2586,6 +2590,10 @@
       [
         "2026-11-08T23:11:46Z",
         9127.234017598741
+      ],
+      [
+        "2026-11-09T00:37:14Z",
+        9088.157385544266
       ]
     ],
     "google": [
@@ -3880,6 +3888,10 @@
       [
         "2026-11-08T23:11:46Z",
         9825.388031471028
+      ],
+      [
+        "2026-11-09T00:37:14Z",
+        9737.971784287336
       ]
     ],
     "openai": [
@@ -5173,6 +5185,10 @@
       ],
       [
         "2026-11-08T23:11:46Z",
+        10261.97187055836
+      ],
+      [
+        "2026-11-09T00:37:14Z",
         10261.97187055836
       ]
     ],
@@ -6468,6 +6484,10 @@
       [
         "2026-11-08T23:11:46Z",
         10354.379770277297
+      ],
+      [
+        "2026-11-09T00:37:14Z",
+        10354.379770277297
       ]
     ],
     "zai": [
@@ -7762,13 +7782,17 @@
       [
         "2026-11-08T23:11:46Z",
         9502.120339489371
+      ],
+      [
+        "2026-11-09T00:37:14Z",
+        9505.136358386435
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-11-08T23:11:46Z",
+    "t": "2026-11-09T00:37:14Z",
     "type": "tick"
   },
   "leaderboard": [
@@ -7784,7 +7808,7 @@
       "max_drawdown": 0.025403801599035058,
       "name": "qwen",
       "net_return": 0.035437977027729724,
-      "reallocation_weeks": 2,
+      "reallocation_weeks": 3,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "qwen/qwen3.8-max-prime",
       "violations": 0,
@@ -7802,7 +7826,7 @@
       "max_drawdown": 0.004526715437135101,
       "name": "openai",
       "net_return": 0.026197187055836003,
-      "reallocation_weeks": 2,
+      "reallocation_weeks": 3,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "openai/gpt-6-astra",
       "violations": 0,
@@ -7812,14 +7836,14 @@
       "avg_pnl": 287.1331704120348,
       "closed_positions": 5,
       "eliminated": null,
-      "equity": 9825.388031471028,
+      "equity": 9737.971784287336,
       "executor": "google/gemini-3.8-flash",
       "fees": 24.21892940069284,
-      "funding": -39.294535731796316,
+      "funding": -39.27729154956025,
       "liquidations": 0,
       "max_drawdown": 0.1564407226956486,
       "name": "google",
-      "net_return": -0.017461196852897227,
+      "net_return": -0.026202821571266396,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "google/gemini-4-argon",
@@ -7830,14 +7854,14 @@
       "avg_pnl": -20.54528155816024,
       "closed_positions": 21,
       "eliminated": null,
-      "equity": 9502.120339489371,
+      "equity": 9505.136358386435,
       "executor": "z-ai/glm-5.3-flash",
       "fees": 42.06974255616111,
-      "funding": -35.89421924918294,
+      "funding": -36.37390794837324,
       "liquidations": 0,
       "max_drawdown": 0.0569890575226204,
       "name": "zai",
-      "net_return": -0.04978796605106291,
+      "net_return": -0.0494863641613565,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "z-ai/glm-5.3-prime",
@@ -7848,14 +7872,14 @@
       "avg_pnl": null,
       "closed_positions": 0,
       "eliminated": null,
-      "equity": 9127.234017598741,
+      "equity": 9088.157385544266,
       "executor": "deepseek/deepseek-v4.1-flash",
       "fees": 4.5,
-      "funding": -26.816659937382667,
+      "funding": -26.745156135521682,
       "liquidations": 0,
       "max_drawdown": 0.1256476430929461,
       "name": "deepseek",
-      "net_return": -0.0872765982401259,
+      "net_return": -0.09118426144557343,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "deepseek/deepseek-v4-pro-0813",
@@ -7874,7 +7898,7 @@
       "max_drawdown": 0.13106478411315753,
       "name": "anthropic",
       "net_return": -0.10182347794845828,
-      "reallocation_weeks": 1,
+      "reallocation_weeks": 2,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "anthropic/claude-fable-5.1",
       "violations": 0,
