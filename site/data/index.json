@@ -1316,6 +1316,10 @@
       [
         "2026-11-09T05:15:55Z",
         8981.765220515417
+      ],
+      [
+        "2026-11-09T06:30:12Z",
+        8981.765220515417
       ]
     ],
     "deepseek": [
@@ -2634,6 +2638,10 @@
       [
         "2026-11-09T05:15:55Z",
         9038.425227302814
+      ],
+      [
+        "2026-11-09T06:30:12Z",
+        8973.247729124156
       ]
     ],
     "google": [
@@ -3952,6 +3960,10 @@
       [
         "2026-11-09T05:15:55Z",
         9677.556626174282
+      ],
+      [
+        "2026-11-09T06:30:12Z",
+        9587.284887919817
       ]
     ],
     "openai": [
@@ -5269,6 +5281,10 @@
       ],
       [
         "2026-11-09T05:15:55Z",
+        10261.97187055836
+      ],
+      [
+        "2026-11-09T06:30:12Z",
         10261.97187055836
       ]
     ],
@@ -6588,6 +6604,10 @@
       [
         "2026-11-09T05:15:55Z",
         10354.379770277297
+      ],
+      [
+        "2026-11-09T06:30:12Z",
+        10354.379770277297
       ]
     ],
     "zai": [
@@ -7906,13 +7926,17 @@
       [
         "2026-11-09T05:15:55Z",
         9476.43973771915
+      ],
+      [
+        "2026-11-09T06:30:12Z",
+        9454.289879750751
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-11-09T05:15:55Z",
+    "t": "2026-11-09T06:30:12Z",
     "type": "tick"
   },
   "leaderboard": [
@@ -7956,14 +7980,14 @@
       "avg_pnl": 287.1331704120348,
       "closed_positions": 5,
       "eliminated": null,
-      "equity": 9677.556626174282,
+      "equity": 9587.284887919817,
       "executor": "google/gemini-3.8-flash",
       "fees": 24.21892940069284,
-      "funding": -39.37967682125325,
+      "funding": -39.33172978835153,
       "liquidations": 0,
       "max_drawdown": 0.1564407226956486,
       "name": "google",
-      "net_return": -0.03224433738257176,
+      "net_return": -0.04127151120801827,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "google/gemini-4-argon",
@@ -7974,37 +7998,19 @@
       "avg_pnl": -20.54528155816024,
       "closed_positions": 21,
       "eliminated": null,
-      "equity": 9476.43973771915,
+      "equity": 9454.289879750751,
       "executor": "z-ai/glm-5.3-flash",
       "fees": 43.19474255616111,
-      "funding": -37.521434748606886,
+      "funding": -37.83397341342181,
       "liquidations": 0,
-      "max_drawdown": 0.05897945615198244,
+      "max_drawdown": 0.061178960603914534,
       "name": "zai",
-      "net_return": -0.05235602622808492,
+      "net_return": -0.054571012024924856,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "z-ai/glm-5.3-prime",
       "violations": 0,
       "win_rate": 0.38095238095238093
-    },
-    {
-      "avg_pnl": null,
-      "closed_positions": 0,
-      "eliminated": null,
-      "equity": 9038.425227302814,
-      "executor": "deepseek/deepseek-v4.1-flash",
-      "fees": 4.5,
-      "funding": -26.72703341317202,
-      "liquidations": 0,
-      "max_drawdown": 0.1256476430929461,
-      "name": "deepseek",
-      "net_return": -0.09615747726971859,
-      "reallocation_weeks": 1,
-      "started_week": "2026-10-26T00:00:00Z",
-      "strategist": "deepseek/deepseek-v4-pro-0813",
-      "violations": 2,
-      "win_rate": null
     },
     {
       "avg_pnl": -169.7057965807635,
@@ -8023,6 +8029,24 @@
       "strategist": "anthropic/claude-fable-5.1",
       "violations": 0,
       "win_rate": 0.5
+    },
+    {
+      "avg_pnl": null,
+      "closed_positions": 0,
+      "eliminated": null,
+      "equity": 8973.247729124156,
+      "executor": "deepseek/deepseek-v4.1-flash",
+      "fees": 4.5,
+      "funding": -26.725452473640818,
+      "liquidations": 0,
+      "max_drawdown": 0.12888443707382785,
+      "name": "deepseek",
+      "net_return": -0.10267522708758442,
+      "reallocation_weeks": 1,
+      "started_week": "2026-10-26T00:00:00Z",
+      "strategist": "deepseek/deepseek-v4-pro-0813",
+      "violations": 2,
+      "win_rate": null
     }
   ]
 }
