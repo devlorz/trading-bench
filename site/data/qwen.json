@@ -5445,6 +5445,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 already holds the planned LINK short at entry 10.701 with TP 10.35; mark 10.606 is profitable and liquidation is far away, so no close or TP change is justified. For new entries the weekly plan is short-only and requires active bounce/fade triggers without chasing completed flushes. BTC high remains below 75800, ETH below 2190, SOL below 88.60, and LINK is below 10.72. DOGE briefly touched above 0.0708 but now trades well below that trigger, so opening would chase the completed flush. Therefore hold.",
       "t": "2026-11-10T02:18:10Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 still holds the planned LINK short (entry 10.701, TP 10.35) at mark 10.575 with positive unrealized PnL and liquidation far away, so no close, set_tp, or cancel_tp is justified. New entries require active planned bounce/fade triggers without chasing completed flushes: BTC high remains below 75800, ETH below 2190, SOL below 88.60, and LINK is below 10.72. DOGE touched its 0.0708 fade trigger earlier but now trades well below it at 0.069717, so opening would chase the completed flush. Therefore hold.",
+      "t": "2026-11-10T03:15:57Z"
     }
   ],
   "eliminated": null,
@@ -5452,13 +5466,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.24222648173354,
-      "mark": 10.606,
+      "liq": 21.242169519013537,
+      "mark": 10.575,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 22.19418745911612
+      "unrealized": 29.436501261564622
     },
     null,
     null,
