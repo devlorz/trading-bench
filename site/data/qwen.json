@@ -5515,6 +5515,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 still holds the planned LINK short (entry 10.701, TP 10.35) with positive unrealized PnL and liquidation far away; the TP has not been touched and no close/change is justified. For new entries, the weekly plan is short-only and requires active bounce/fade triggers above current marks without chasing completed flushes. Current marks remain below their planned fade entries: BTC 74663 vs 75800, ETH 2116 vs 2190, SOL 86.081 vs 88.60, DOGE 0.070045 vs 0.0708, and LINK 10.628 vs 10.72. DOGE briefly crossed its trigger earlier but is now well below it, so opening would chase the completed flush. No realized hostage use or liquidation-recovery action is needed. Therefore, hold.",
       "t": "2026-11-10T07:14:34Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 still holds the planned LINK short at entry 10.701 with TP 10.35. The mark is 10.628, so unrealized PnL is positive, liquidation is far away, and the planned exit has not been reached; closing, changing TP, or canceling TP is not justified. For new entries, the weekly plan allows short-only exposure only on active planned bounce/fade triggers and explicitly avoids chasing completed flushes. Current marks are below their fade entries: BTC 74742 vs 75800, ETH 2113.5 vs 2190, SOL 85.825 vs 88.60, DOGE 0.069927 vs 0.0708, and LINK is already occupied and trading below 10.72. Recent LINK funding does not materially alter the layer or create a new trigger. Therefore the correct action is hold.",
+      "t": "2026-11-10T08:19:02Z"
     }
   ],
   "eliminated": null,
@@ -5522,13 +5536,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.242150199510036,
-      "mark": 10.6278,
+      "liq": 21.242196938557036,
+      "mark": 10.628,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 17.101205494813552
+      "unrealized": 17.054480889636572
     },
     null,
     null,
