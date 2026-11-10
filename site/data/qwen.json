@@ -5571,6 +5571,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 holds the planned LINK short at 10.701 with TP 10.35. The mark is 10.473, so the layer is unrealized positive and liquidation is very far away; the planned exit has not been reached, so close or TP adjustment is not justified. The weekly plan allows only short entries on fresh planned bounce/fade triggers and forbids chasing completed flushes. Current marks remain well below their planned short entries: BTC 74318 vs 75800, ETH 2096.9 vs 2190, SOL 84.726 vs 88.60, DOGE 0.069477 vs 0.0708, and LINK is already occupied. Recent highs for DOGE and others are still below their planned fade triggers, and no symbol offers a valid fresh entry without chasing. Free equity is sufficient for additional layers, but that capacity should remain unused until triggers appear and a positive buffer is realized. Therefore hold.",
       "t": "2026-11-10T11:12:39Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 LINK short remains positive, far from liquidation, and its planned TP 10.35 has not been reached. All other watchlist symbols are currently below their planned short fade entries, so opening new layers would chase completed flushes instead of using fresh bounce/fade triggers. Hostage policy also does not justify new exposure before a valid trigger or realized buffer. Hold existing position and keep other slots unused.",
+      "t": "2026-11-10T12:18:48Z"
     }
   ],
   "eliminated": null,
@@ -5578,13 +5592,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.242171371564737,
-      "mark": 10.473,
+      "liq": 21.24230208406474,
+      "mark": 10.466,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 53.26604990187827
+      "unrealized": 54.901411083076624
     },
     null,
     null,
