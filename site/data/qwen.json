@@ -5473,6 +5473,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 holds the planned LINK short at 10.701 with TP 10.35; mark 10.581 keeps unrealized PnL positive and liquidation is far away, so no close, TP change, or cancel is justified. No new entry is active under the weekly plan: BTC, ETH, SOL, LINK and DOGE marks are below their fade entries, and DOGE's earlier touch of 0.0708 is now followed by a lower mark, so opening would chase a completed flush. Hostage policy also favors waiting for realized buffer or a fresh trigger rather than adding exposure while structure is weak. Hold.",
       "t": "2026-11-10T04:16:07Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 still holds the planned LINK short at entry 10.701 with TP 10.35. The mark is 10.627, so unrealized PnL is positive and liquidation is very far away; closing, changing TP, or canceling TP is not justified because the planned exit has not been reached. For new entries, the plan requires active fade/bounce triggers without chasing completed flushes. BTC remains below its 75800 fade trigger, ETH below 2190, SOL below 88.60, and LINK is already represented by the open layer and trades below its 10.72 re-entry level. DOGE previously touched above 0.0708 but now trades below it, so opening would chase a completed flush. Hostage policy also discourages step-2 expansion before a realized positive buffer is secured. Therefore the correct action is hold.",
+      "t": "2026-11-10T05:14:43Z"
     }
   ],
   "eliminated": null,
@@ -5480,13 +5494,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.24215176534774,
-      "mark": 10.581,
+      "liq": 21.24206715764894,
+      "mark": 10.62665,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 28.034763106251983
+      "unrealized": 17.369871974582
     },
     null,
     null,
