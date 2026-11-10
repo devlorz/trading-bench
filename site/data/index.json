@@ -1384,6 +1384,10 @@
       [
         "2026-11-09T23:11:54Z",
         8981.765220515417
+      ],
+      [
+        "2026-11-10T00:32:53Z",
+        8981.765220515417
       ]
     ],
     "deepseek": [
@@ -2770,6 +2774,10 @@
       [
         "2026-11-09T23:11:54Z",
         9037.621237946807
+      ],
+      [
+        "2026-11-10T00:32:53Z",
+        9013.462441032125
       ]
     ],
     "google": [
@@ -4156,6 +4164,10 @@
       [
         "2026-11-09T23:11:54Z",
         9739.096282271437
+      ],
+      [
+        "2026-11-10T00:32:53Z",
+        9672.317429593833
       ]
     ],
     "openai": [
@@ -5541,6 +5553,10 @@
       ],
       [
         "2026-11-09T23:11:54Z",
+        10261.97187055836
+      ],
+      [
+        "2026-11-10T00:32:53Z",
         10261.97187055836
       ]
     ],
@@ -6928,6 +6944,10 @@
       [
         "2026-11-09T23:11:54Z",
         10364.180961322152
+      ],
+      [
+        "2026-11-10T00:32:53Z",
+        10370.51890802057
       ]
     ],
     "zai": [
@@ -8314,13 +8334,17 @@
       [
         "2026-11-09T23:11:54Z",
         9433.962133853038
+      ],
+      [
+        "2026-11-10T00:32:53Z",
+        9402.64108019427
       ]
     ]
   },
   "initial_capital": 10000,
   "last_run": {
     "status": "ok",
-    "t": "2026-11-09T23:11:54Z",
+    "t": "2026-11-10T00:32:53Z",
     "type": "tick"
   },
   "leaderboard": [
@@ -8328,14 +8352,14 @@
       "avg_pnl": 39.37553003081085,
       "closed_positions": 9,
       "eliminated": null,
-      "equity": 10364.180961322152,
+      "equity": 10370.51890802057,
       "executor": "qwen/qwen3.8-flash",
       "fees": 10.97106697730389,
-      "funding": 4.851884467992899,
+      "funding": 4.875000776725727,
       "liquidations": 0,
       "max_drawdown": 0.025403801599035058,
       "name": "qwen",
-      "net_return": 0.036418096132215215,
+      "net_return": 0.03705189080205691,
       "reallocation_weeks": 3,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "qwen/qwen3.8-max-prime",
@@ -8364,14 +8388,14 @@
       "avg_pnl": 287.1331704120348,
       "closed_positions": 5,
       "eliminated": null,
-      "equity": 9739.096282271437,
+      "equity": 9672.317429593833,
       "executor": "google/gemini-3.8-flash",
       "fees": 24.21892940069284,
-      "funding": -39.61660037376914,
+      "funding": -39.71507719841804,
       "liquidations": 0,
       "max_drawdown": 0.17524270049685564,
       "name": "google",
-      "net_return": -0.02609037177285627,
+      "net_return": -0.032768257040616665,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "google/gemini-4-argon",
@@ -8379,35 +8403,35 @@
       "win_rate": 1.0
     },
     {
-      "avg_pnl": -16.082234485051885,
-      "closed_positions": 23,
+      "avg_pnl": -20.94436582374622,
+      "closed_positions": 24,
       "eliminated": null,
-      "equity": 9433.962133853038,
+      "equity": 9402.64108019427,
       "executor": "z-ai/glm-5.3-flash",
-      "fees": 46.944730190282165,
-      "funding": -41.745837698184054,
+      "fees": 48.015788576728575,
+      "funding": -41.805764767606405,
       "liquidations": 0,
-      "max_drawdown": 0.06419581589712592,
+      "max_drawdown": 0.06630774132673017,
       "name": "zai",
-      "net_return": -0.05660378661469622,
+      "net_return": -0.059735891980573066,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "z-ai/glm-5.3-prime",
       "violations": 0,
-      "win_rate": 0.391304347826087
+      "win_rate": 0.375
     },
     {
       "avg_pnl": null,
       "closed_positions": 0,
       "eliminated": null,
-      "equity": 9037.621237946807,
+      "equity": 9013.462441032125,
       "executor": "deepseek/deepseek-v4.1-flash",
       "fees": 4.5,
-      "funding": -26.332904473604646,
+      "funding": -26.339213584336076,
       "liquidations": 0,
       "max_drawdown": 0.13790368600786468,
       "name": "deepseek",
-      "net_return": -0.0962378762053193,
+      "net_return": -0.09865375589678752,
       "reallocation_weeks": 1,
       "started_week": "2026-10-26T00:00:00Z",
       "strategist": "deepseek/deepseek-v4-pro-0813",
