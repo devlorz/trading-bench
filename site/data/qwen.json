@@ -5501,6 +5501,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 still holds the planned LINK short at 10.701 with TP 10.35. Mark 10.594 keeps unrealized PnL positive and liquidation is far away, so closing, changing TP, or canceling TP is not justified. No new entry is active under the weekly plan: BTC, ETH, SOL, and LINK marks remain below their short fade triggers, while DOGE previously crossed its 0.0708 fade level but now trades below it, so opening now would chase a completed flush rather than use a fresh planned trigger. Hostage policy also favors waiting for realized profit or a new active trigger before expanding exposure. Hold.",
       "t": "2026-11-10T06:22:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 still holds the planned LINK short (entry 10.701, TP 10.35) with positive unrealized PnL and liquidation far away; the TP has not been touched and no close/change is justified. For new entries, the weekly plan is short-only and requires active bounce/fade triggers above current marks without chasing completed flushes. Current marks remain below their planned fade entries: BTC 74663 vs 75800, ETH 2116 vs 2190, SOL 86.081 vs 88.60, DOGE 0.070045 vs 0.0708, and LINK 10.628 vs 10.72. DOGE briefly crossed its trigger earlier but is now well below it, so opening would chase the completed flush. No realized hostage use or liquidation-recovery action is needed. Therefore, hold.",
+      "t": "2026-11-10T07:14:34Z"
     }
   ],
   "eliminated": null,
@@ -5508,13 +5522,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.24207390125644,
-      "mark": 10.594,
+      "liq": 21.242150199510036,
+      "mark": 10.6278,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 24.9976637697414
+      "unrealized": 17.101205494813552
     },
     null,
     null,
