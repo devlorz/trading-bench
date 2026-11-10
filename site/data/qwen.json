@@ -5487,6 +5487,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 0 still holds the planned LINK short at entry 10.701 with TP 10.35. The mark is 10.627, so unrealized PnL is positive and liquidation is very far away; closing, changing TP, or canceling TP is not justified because the planned exit has not been reached. For new entries, the plan requires active fade/bounce triggers without chasing completed flushes. BTC remains below its 75800 fade trigger, ETH below 2190, SOL below 88.60, and LINK is already represented by the open layer and trades below its 10.72 re-entry level. DOGE previously touched above 0.0708 but now trades below it, so opening would chase a completed flush. Hostage policy also discourages step-2 expansion before a realized positive buffer is secured. Therefore the correct action is hold.",
       "t": "2026-11-10T05:14:43Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 0 still holds the planned LINK short at 10.701 with TP 10.35. Mark 10.594 keeps unrealized PnL positive and liquidation is far away, so closing, changing TP, or canceling TP is not justified. No new entry is active under the weekly plan: BTC, ETH, SOL, and LINK marks remain below their short fade triggers, while DOGE previously crossed its 0.0708 fade level but now trades below it, so opening now would chase a completed flush rather than use a fresh planned trigger. Hostage policy also favors waiting for realized profit or a new active trigger before expanding exposure. Hold.",
+      "t": "2026-11-10T06:22:12Z"
     }
   ],
   "eliminated": null,
@@ -5494,13 +5508,13 @@
   "layers": [
     {
       "entry": 10.701,
-      "liq": 21.24206715764894,
-      "mark": 10.62665,
+      "liq": 21.24207390125644,
+      "mark": 10.594,
       "notional": 2500,
       "side": "short",
       "symbol": "LINK",
       "tp": 10.35,
-      "unrealized": 17.369871974582
+      "unrealized": 24.9976637697414
     },
     null,
     null,

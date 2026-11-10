@@ -4934,6 +4934,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Hold. All slots are empty, and none of the planned entries is confirmed: BTC and ETH remain below their rebound-short zones, while XMR is below its required 590\u2013594 pullback-and-reclaim confirmation range. Do not chase the decline; the account is also above the weekly close-all threshold.",
       "t": "2026-11-10T05:14:43Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Hold. All slots are empty, and none of the planned entries is confirmed. BTC and ETH remain below their rebound-short zones. XMR is below its required pullback-and-reclaim entry range; do not chase the decline.",
+      "t": "2026-11-10T06:22:12Z"
     }
   ],
   "eliminated": null,
