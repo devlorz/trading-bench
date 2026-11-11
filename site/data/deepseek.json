@@ -8942,6 +8942,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four Layer slots are occupied (SOL long entry 99.691/TP 109.0/mark 84.65/liq ~2.779; BTC long entry 79924/TP 84500/mark 74475/liq ~1374.0; ETH long entry 2272.5/TP 2500/mark 2072.1/liq ~51.88; XRP long entry 1.2514/TP 1.38/mark 1.0632/liq ~0.0351) and free_equity is 0.0, so RP stays fixed at 2500/2500 and no mid-week Reallocation occurs. No new opens are possible even though watchlist limit-buy triggers were traded through (BTC 73500, ETH 2085, SOL 82.50, XRP 1.0750): there is no free slot and no free equity to fund a layer, and aggregate unrealized NAV ~= -1144 is far below the -$100 pause threshold, so entries are paused in any case. No long take-profit was traded through: recent highs across 4h/1h/15m (BTC 74750, ETH 2103, SOL 85.785, XRP 1.0799) all stay far below TPs (84500 / 2500 / 109.0 / 1.38). No liquidation occurred: recent lows (BTC 72668, ETH 2003.7, SOL 81.278, XRP 1.0306) remain far above liquidation prices. Per the weekly plan (hold all four open layers; close only via take-profit or liquidation) and TSM Principle 4 Scenario A/C (hold collateral-isolated NAV(-) rather than cut), the correct action is hold: no opens, no closes, no TP changes.",
       "t": "2026-11-11T22:12:54Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four Layer slots remain occupied (SOL long entry 99.691/TP 109.0/mark 82.723/liq ~2.7796; BTC long entry 79924/TP 84500/mark 73623.3/liq ~1373.71; ETH long entry 2272.5/TP 2500/mark 2046.1/liq ~51.87; XRP long entry 1.2514/TP 1.38/mark 1.0463/liq ~0.03512) and free_equity is 0.0, so RP stays fixed at 2500/2500 and no mid-week Reallocation occurs. No new opens are possible even though watchlist limit-buy triggers were traded through (BTC 73500, ETH 2085, SOL 82.50, XRP 1.0750): there is no free slot and no free equity to fund a layer, and aggregate unrealized NAV ~= -1281 is far below the -$100 pause threshold, so entries are paused in any case. No long take-profit was traded through: recent highs across 4h/1h/15m (BTC 74750, ETH 2103, SOL 85.785, XRP 1.0799) all stay far below TPs (84500 / 2500 / 109.0 / 1.38). No liquidation occurred: recent lows (BTC 72668, ETH 2003.7, SOL 81.278, XRP 1.0306) remain far above liquidation prices. Per the weekly plan (hold all four open layers; close only via take-profit or liquidation) and TSM Principle 4 Scenario A/C (hold collateral-isolated NAV(-) rather than cut), the correct action is hold: no opens, no closes, no TP changes.",
+      "t": "2026-11-11T23:12:14Z"
     }
   ],
   "eliminated": null,
@@ -8949,43 +8963,43 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.779306763815157,
-      "mark": 84.65,
+      "liq": 2.779587433773557,
+      "mark": 82.723,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": -377.1905187027915
+      "unrealized": -425.51484085825206
     },
     {
       "entry": 79924.0,
-      "liq": 1374.0114171124296,
-      "mark": 74475.0,
+      "liq": 1373.705891464022,
+      "mark": 73623.3,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": -170.44317101246185
+      "unrealized": -197.08410489965456
     },
     {
       "entry": 2272.5,
-      "liq": 51.87922717657102,
-      "mark": 2072.1,
+      "liq": 51.87440803189111,
+      "mark": 2046.1,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2500,
-      "unrealized": -220.46204620462058
+      "unrealized": -249.06490649064918
     },
     {
       "entry": 1.2514,
-      "liq": 0.03510961044398009,
-      "mark": 1.0632,
+      "liq": 0.035118445727080116,
+      "mark": 1.0463,
       "notional": 2500,
       "side": "long",
       "symbol": "XRP",
       "tp": 1.38,
-      "unrealized": -375.978903627937
+      "unrealized": -409.7410899792234
     }
   ],
   "name": "deepseek",
