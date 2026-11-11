@@ -5378,6 +5378,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Account holds one BNB long on slot 3 (entry 680.63, mark 681.69, unrealized about +8) with the limit TP at 690 already set, matching the plan's 690-695 release zone. It is far from the 12% RP stop (about 270 USD) and from liquidation at 409, so it is not a hostage. Equity is about 8,987, above the 8,500 floor, and the weekly loss cap is not hit. No BTC daily structure stop has triggered. BTC is at 74,061, inside the 74.0k-76.0k no-entry box, with no 4h rejection at 76.3k-77.3k and no long wick into 72.8k-73.6k followed by a 4h reclaim. ETH is at 2,058, mid-range and below the 2,090 reclaim. SOL is at 83.9, below the 85.5 reclaim. XRP is at 1.056, far below the 1.100 reclaim, and the XRP/BNB shared slot is already used by BNB. No new watchlist trigger is met, so keep the existing TP and hold everything.",
       "t": "2026-11-11T12:19:49Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Account holds one BNB long on slot 3 (entry 680.63, mark 681.67, unrealized about +8) with the limit TP at 690 already set, matching the plan's 690-695 release zone. It is far from the 12% RP stop (about 270 USD) and from liquidation at 409, so it is not a hostage. Equity is about 8,986, above the 8,500 floor, and the weekly loss cap is not hit. No BTC daily structure stop has triggered (last daily-type reading about 73,917, between 72,500 and 79,500). BTC is inside the 74.0k-76.0k no-entry box with no 4h rejection at 76.3k-77.3k and no 4h reclaim above 73.8k after a long wick. ETH is mid-range at about 2,054, below the 2,090 reclaim and far from the 2,200-2,250 short zone. SOL is about 84.05, not at the 83.5-85.0 wick zone with a 4h close above 85.5, so no long trigger. XRP is about 1.057, far below the 1.100 reclaim, and the XRP/BNB shared slot is already used by BNB. Max layers, one-layer-per-symbol, and the one-hostage rule all hold. No new watchlist trigger is met, so keep the existing TP and hold everything.",
+      "t": "2026-11-11T13:14:36Z"
     }
   ],
   "eliminated": null,
@@ -5388,13 +5402,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.4070006480297,
-      "mark": 681.69,
+      "liq": 409.4155168980297,
+      "mark": 681.67,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": 7.786903310168955
+      "unrealized": 7.639980606202809
     }
   ],
   "name": "anthropic",
