@@ -5406,6 +5406,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Current state: one BNB long open in slot 3 (entry 680.63, mark 681.38, unrealized about +5.5), TP set at 690, well inside the 12% stop (about 270 USD) and far from liquidation at 409. Equity about 8,984, above the 8,500 floor; weekly loss cap not hit; no BTC daily structure close beyond 72,500 or 79,500 (last 4h/daily reads near 73,963). No hostage exists. The plan's triggers for BTC, ETH, SOL and XRP are not met: BTC is inside the 74.0k-76.0k no-entry box, ETH is mid-range near 2,049 below the 2,090 reclaim, SOL is near 84.0 below the 85.5 reclaim with no 4h close above it, and XRP is near 1.059 far below the 1.100 reclaim. The BNB TP at 690 is already in place. Keep the existing TP and hold everything.",
       "t": "2026-11-11T14:14:49Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current state: one BNB long open on slot 3 (entry 680.63, mark 680.94, unrealized about +2.3) with a limit TP at 690 already set, matching the plan's 690-695 release zone. Equity about 8,981, above the 8,500 royal-army floor; weekly loss cap not hit; no BTC daily structure close beyond 72,500 or 79,500 (BTC 4h last close 73,963). The BNB layer is well within its 12% RP stop and far from liquidation at 409, so it is not a hostage. BNB 4h last closed bar is 680.55 with the 668-678 wick already used. No new trigger is met: BTC is inside the 74.0k-76.0k no-entry box with no 4h rejection at 76.3k-77.3k and no fresh 72.8k-73.6k wick with 4h reclaim above 73.8k; ETH at 2,054 is mid-range below the 2,090 reclaim; SOL at 84.0 is below the 85.5 reclaim; XRP at 1.058 is far below the 1.100 reclaim and the XRP/BNB shared slot is already used by BNB. Keep the existing TP and hold everything.",
+      "t": "2026-11-11T15:15:43Z"
     }
   ],
   "eliminated": null,
@@ -5416,13 +5430,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.42404477302966,
-      "mark": 681.38,
+      "liq": 409.4325492730297,
+      "mark": 680.94,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": 5.509601398704142
+      "unrealized": 2.277301911464813
     }
   ],
   "name": "anthropic",
