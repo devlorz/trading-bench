@@ -5336,6 +5336,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Account holds one BNB long on slot 3 (entry 680.63, mark 679.45, unrealized about -9) with the limit TP at 690 already set, matching the plan's 690-695 release zone. It is far from the 12% RP stop (about 270 USD) and from liquidation at 409, and it is not a hostage. Equity is about 8,970, above the 8,500 floor, and the weekly loss cap is not hit. No other watchlist trigger is met: BTC 73,636 is inside the 74.0k-76.0k no-entry box with no 4h rejection at 76.3k-77.3k and no 4h close back above 73.8k after the 72.8k-73.6k wick. ETH 2,054 is mid-range and below the 2,090 reclaim, far from the 2,200-2,250 short zone. SOL 82.9 is below the 85.5 reclaim. XRP 1.0565 is far below the 1.100 reclaim, and the XRP/BNB slot is already used by BNB. Max layers, one-layer-per-symbol, and the one-hostage rule all hold. Keep the existing TP and hold everything.",
       "t": "2026-11-11T09:15:31Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Account holds one BNB long on slot 3 (entry 680.63, mark 679.26, unrealized about -10) with the limit TP at 690 already set, matching the plan's 690-695 release zone. It is far inside the 12% RP stop (about 270 USD) and far from liquidation at 409, and it is not a hostage. Equity is about 8,969, above the 8,500 floor, and the weekly loss cap is not hit. No other watchlist trigger is met: BTC is near 73.7k inside the 74.0k-76.0k no-entry box with no 4h rejection at 76.3k-77.3k and no 4h close back above 73.8k after the wick into 72.8k-73.6k. ETH is near 2,055, mid-range and below the 2,090 reclaim. SOL is near 83.4, below the 85.5 reclaim. XRP is near 1.058, far below the 1.100 reclaim, and the XRP/BNB shared slot is already used by BNB. The BTC daily structure stops are not triggered. Keep the existing TP and hold everything.",
+      "t": "2026-11-11T10:14:12Z"
     }
   ],
   "eliminated": null,
@@ -5346,13 +5360,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.38145002302963,
-      "mark": 679.45,
+      "liq": 409.38995502302964,
+      "mark": 679.264,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": -8.668439533960816
+      "unrealized": -10.034820680839703
     }
   ],
   "name": "anthropic",
