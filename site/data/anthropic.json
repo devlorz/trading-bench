@@ -5462,6 +5462,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Current state: one BNB long in slot 3 (entry 680.63, mark 687.43, unrealized about +50), TP resting at 690, far from the 12% RP stop (about 270 USD) and from liquidation at 409, so it is not a hostage. Equity about 9,028, above the 8,500 floor; weekly realized plus unrealized is positive, so the -300 cap is not in play. BTC 4h last close 73,951 and 1h close 74,488 both sit between 72,500 and 79,500, so no daily structure stop triggered. BTC is inside the 74.0k-76.0k no-entry box with no 76.3k-77.3k 4h rejection and no fresh 72.8k-73.6k wick with a 4h reclaim above 73.8k. ETH at about 2,090 is mid-range below the 2,200-2,250 short zone and not at the 2,040-2,080 wick zone. SOL at about 85.3 is below the 85.5 reclaim and BTC is not confirmed above 73,400 on 4h with a valid SOL long trigger. XRP at about 1.07 is far below the 1.100 reclaim. No new entry trigger is met and the XRP/BNB shared slot is already used. Keep the existing TP at 690 and hold everything.",
       "t": "2026-11-11T18:14:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current state: one BNB long in slot 3 (entry 680.63, mark 685.48, unrealized about +36), TP resting at 690, far from the 12% RP stop (about 270 USD) and from liquidation at 409, so it is not a hostage. Equity about 9,014, above the 8,500 royal-army floor; weekly loss cap not hit; no BTC daily close beyond 72,500 or 79,500 (BTC last 4h close 73,951, 1h close 74,457). Only one layer is open, so there is room for at most one more layer, but no watchlist trigger is met: BTC sits inside the 74.0k-76.0k no-entry box with no 4h rejection at 76.3k-77.3k and no fresh 72.8k-73.6k wick with 4h reclaim above 73.8k; ETH is mid-range near 2,074, below the 2,090 reclaim and far from the 2,200-2,250 short zone; SOL is near 84.5, below the 85.5 reclaim; XRP is near 1.058, far below the 1.100 reclaim and the XRP/BNB slot is already used by BNB. The existing TP at 690 matches the plan, so keep it and hold everything.",
+      "t": "2026-11-11T19:12:04Z"
     }
   ],
   "eliminated": null,
@@ -5472,13 +5486,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.45827639802974,
-      "mark": 687.43,
+      "liq": 409.46686414802974,
+      "mark": 685.48,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": 49.95371934825055
+      "unrealized": 35.628755711620286
     }
   ],
   "name": "anthropic",
