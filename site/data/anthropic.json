@@ -5203,6 +5203,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Account is flat with all four slots empty, equity about 8,982, above the 8,500 floor, and the weekly loss cap is not hit. The BNB watchlist long trigger is met on the last closed 4h bar (Nov 10 20:00-24:00 UTC): O 674.47, H 681.43, L 673.10, C 680.55. The low wicked into the 668-678 zone and the bar closed back above 680, so the 4h confirmation is satisfied. BNB is the army-4 alternate and no XRP layer is open. Opening one long on slot 3 with the fixed RP (collateral 2,245.44, notional 5,000, about 2.2x, inside BNB max leverage 10). Hard stop is 12% of collateral adverse. Exit plan: release longs at 690-695. BTC, ETH, SOL and XRP triggers are not met (no valid 4h reclaim or rejection at their edges), so they stay on hold.",
       "t": "2026-11-11T00:33:59Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current state: one BNB long open on slot 3 at 680.63, mark 679.37, unrealized about -9, well inside the 12% hard stop (about 270 USD) and far from liq 409. Free equity 6,736, equity 8,970, above the 8,500 floor; weekly loss cap not hit. Max 2 layers open and at most 1 hostage: the BNB layer is only slightly underwater (about -9, below the 5% hostage threshold of about 112), so it is not a hostage. Exit plan for the BNB long is release at 690-695, not yet reached (mark 679.37). Last closed 4h bar is 680.55 after wicking to 673.10, and the 4h close is still above the 680 reclaim trigger, but there is no new entry trigger for other symbols: BTC is mid-box near 73.4k with no rejection at 76.3-77.3k and no long wick into 72.8-73.6k with a 4h close back above 73.8k; ETH mid-range near 2,044 without a 4h close above 2,090; SOL 83 below the 85.5 reclaim; XRP 1.049 below the 1.100 reclaim. Since one layer is already open and the plan forbids a second layer on the same symbol, hold everything and keep the existing BNB position within its plan.",
+      "t": "2026-11-11T01:13:55Z"
     }
   ],
   "eliminated": null,
@@ -5213,13 +5227,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.30484039802957,
-      "mark": 680.63,
+      "liq": 409.3133383980296,
+      "mark": 679.37,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": null,
-      "unrealized": 0.0
+      "unrealized": -9.256130349822891
     }
   ],
   "name": "anthropic",
