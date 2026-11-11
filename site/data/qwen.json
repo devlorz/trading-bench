@@ -5907,6 +5907,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty, free_equity fully covers the RP collateral, and there is no negative NAV or TP management required. The weekly plan is short-only with fixed bounce/fade entries at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and recent 15m/1h/4h highs remain below every planned fade level: BTC about 73983 with highs near 74170, ETH about 2060 with highs near 2070, SOL about 83.78 with highs near 84.094, DOGE about 0.068111 with highs near 0.068425, and LINK about 10.38 with highs near 10.426. No fresh plan-compliant trigger has been reached, and opening now would chase completed structure rather than wait for the planned fade levels. Therefore preserve the positive hostage buffer and hold.",
       "t": "2026-11-11T11:12:31Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty, free equity is sufficient for the fixed RP collateral, and there is no negative NAV to manage. The weekly plan is short-only and allows entries only on fresh planned bounce/fade triggers at fixed levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and recent 15m/1h/4h highs remain below every planned short entry: BTC 74061 with recent highs near 74170, ETH 2058 with highs near 2072.7, SOL 83.893 with highs near 84.115, DOGE 0.068186 with highs near 0.068829, and LINK 10.394 with highs near 10.446. Earlier moves above some levels, such as DOGE 0.0708, are completed flushes, not fresh actionable fade triggers. Opening now would chase structure and violate the plan\u2019s hostage policy, so the correct action is to preserve the positive hostage buffer and hold.",
+      "t": "2026-11-11T12:19:49Z"
     }
   ],
   "eliminated": null,
