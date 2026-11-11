@@ -5252,6 +5252,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 3 holds the BNB long from 680.63 (mark 684.19, unrealized about +26). It is far from the 12% RP stop (about 270 USD) and from liquidation (409), and it is not a hostage. The plan's release zone is 690-695, so I am placing a limit TP at 690 to capture the planned exit without adding size. BTC is at 73,828, below the 73.8k reclaim threshold on a 4h close and in the no-entry box, with no rally rejection at 76.3-77.3k. ETH is mid-range at about 2,066, below the 2,090 reclaim and far from the 2,200-2,250 short zone. SOL is at 83.6, below the 85.5 reclaim. XRP is at 1.064, below the 1.100 reclaim. No new entry trigger is met and max layers and one-layer-per-symbol limits apply, so the other slots stay on hold. Weekly loss cap and the 8,500 floor are not in play (equity about 9,005).",
       "t": "2026-11-11T03:16:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Slot 3 holds the BNB long from 680.63 (mark 681.7, unrealized about +7.9) with the limit TP at 690 already set from the prior tick. It is far from the 12% RP stop (about 270 USD) and from liquidation (409), and it is not a hostage. No other watchlist trigger is met: BTC is at about 73.6k in the 74.0k-76.0k no-entry box with no rally rejection at 76.3k-77.3k and no 4h close above 73.8k after a wick into the 72.8k-73.6k zone; ETH is mid-range near 2,060, below the 2,090 reclaim and far from the 2,200-2,250 short zone; SOL is at about 83.3, below the 85.5 reclaim; XRP is near 1.054, far below the 1.100 reclaim and not at the 1.165-1.195 short zone. Max layers, one-layer-per-symbol, and the XRP/BNB shared slot limits all apply. Keep the existing TP and hold everything.",
+      "t": "2026-11-11T04:16:08Z"
     }
   ],
   "eliminated": null,
@@ -5262,13 +5276,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.3303700230296,
-      "mark": 684.19,
+      "liq": 409.3389085230296,
+      "mark": 681.7,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": 26.15224130584943
+      "unrealized": 7.86036466215161
     }
   ],
   "name": "anthropic",
