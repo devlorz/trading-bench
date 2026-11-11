@@ -1,18 +1,9 @@
 {
-  "free_equity": 7215.886962479799,
-  "last_tick": "2026-11-11T01:13:55Z",
+  "free_equity": 9736.29799223388,
+  "last_tick": "2026-11-11T02:16:55Z",
   "last_week": "2026-11-09T00:00:00Z",
   "layers": [
-    {
-      "collateral": 2498.7790598347856,
-      "entry": 0.005452,
-      "notional": 2500,
-      "opened_at": "2026-11-11T00:33:59Z",
-      "side": "long",
-      "size": 458547.32208363904,
-      "symbol": "kPEPE",
-      "tp": 0.0055
-    },
+    null,
     null,
     null,
     null
@@ -21,5 +12,5 @@
     "collateral": 2500.0,
     "notional": 2500
   },
-  "settled": "2026-11-11T01:13:55Z"
+  "settled": "2026-11-11T02:16:55Z"
 }
