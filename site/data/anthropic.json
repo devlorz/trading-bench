@@ -5812,6 +5812,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 3 holds the BNB long from 680.63 with a resting TP at 690. Mark is 653.86 and unrealized is about -197, so it is the single hostage. The hard RP stop at 12% of collateral (about -270 USD, price near 643.9) has not been hit, and liquidation (about 409.6) is far away. Equity is about 8,781, above the 8,500 floor, and weekly P&L is about -200 against the -300 cap. With one hostage, a second army may only hunt on another symbol at the opposite edge. BTC at 71,594 is below the 72,500 daily level and far from the 76,300-77,300 short zone with no rejection. ETH (2,012), SOL (81.45) and XRP (1.027) have no 4h reclaim or rejection at their edges. BNB cannot add a layer or take a short while its long is open. No trigger is met, so hold everything and keep the TP. Stop rule: close slot 3 at market if BNB reaches about 643.9 or the weekly loss reaches -300.",
       "t": "2026-11-12T19:11:37Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Single open layer: BNB long in slot 3, entry 680.63, mark 654.36, unrealized about -193. It is the single hostage (underwater more than 5% of collateral) and is well inside the 12% RP stop at about 643.9, which has not been touched (latest 1h low 649.37). Liquidation is far away near 409.6. Equity is about 8,784, above the 8,500 floor, and weekly P&L is roughly -200 against the -300 cap. The resting TP at 690 stays. No entry trigger is met: BTC last 4h close 71,666 is far below the 76,300-77,300 short zone with no rejection, and no 4h reclaim above 73,800 exists for longs. ETH (2,018), SOL (81.4) and XRP (1.031) have no 4h reclaim or rejection at their edges. BNB cannot add a second layer or take a short while its long is open, and the one-hostage rule blocks any new army except on another symbol at the opposite edge, which is not present. Hold everything. Stop rule: close slot 3 at market if BNB reaches about 643.9 or weekly loss reaches -300.",
+      "t": "2026-11-12T20:14:04Z"
     }
   ],
   "eliminated": null,
@@ -5822,13 +5836,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.59769487650266,
-      "mark": 653.86,
+      "liq": 409.59871584238266,
+      "mark": 654.36,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": -196.65603925774636
+      "unrealized": -192.98297165861027
     }
   ],
   "name": "anthropic",
