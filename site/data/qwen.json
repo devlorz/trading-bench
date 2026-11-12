@@ -6369,6 +6369,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty and free_equity 10435.145 covers the fixed RP collateral 2588.595, so there is no open position, NAV(-), TP, or liquidation exposure to manage. The weekly plan remains short-only and permits new entries only on fresh planned bounce/fade triggers at the fixed levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and latest 4h/1h/15m highs remain below every planned short entry: BTC about 71556 with recent highs below 74778, ETH about 2018.1 with recent highs below 2103, SOL about 81.449 with recent highs below 85.785, DOGE about 0.065838 with recent highs below 0.06954, and LINK about 10.023 with recent highs below 10.581. These are completed downside flushes/consolidations, not actionable fade entries. Opening now would chase the drop and violate the hostage policy, so hold all slots and preserve the positive buffer.",
       "t": "2026-11-12T20:14:04Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty and free_equity of 10435.145 fully covers the fixed RP collateral of 2588.595, so there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan remains short-only and permits new entries only on fresh planned bounce/fade triggers at the fixed levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and latest 4h/1h/15m highs remain below every planned short entry: BTC about 71531 with recent highs below 74778, ETH about 2017.2 with recent highs below 2103, SOL about 81.423 with recent highs below 85.785, DOGE about 0.065975 with recent highs below 0.06954, and LINK about 10.066 with recent highs below 10.581. These are completed flushes or consolidations below trigger, not actionable fade entries under the hostage policy. Opening now would chase downside extension and violate the plan, so hold all slots and preserve capital.",
+      "t": "2026-11-12T21:12:17Z"
     }
   ],
   "eliminated": null,
