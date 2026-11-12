@@ -5634,6 +5634,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers remain actively deployed in isolated 2x leveraged Long positions across HYPE ($71.70), SOL ($82.73), BTC ($73,529), and ETH ($2,042.8). Each position retains substantial liquidation safety buffers (HYPE ~33.3%, SOL ~36.0%, ETH ~43.2%, and BTC ~46.1% distance to liquidation thresholds), carrying zero forced-liquidation risk under our $2,500 collateral / $5,000 notional RP architecture. Market prices continue to consolidate above recent flush lows but have not yet reached our tactical breakeven/early release targets (BTC $77,000-$77,500; ETH $2,225-$2,250) or our Scenario D hostage offset zones (HYPE $81.50-$83.50; SOL $92.00-$96.00). Our cumulative realized hostage reserve of +$1,435.67 remains fully preserved in free equity. In accordance with TSM Principle #4 Soft Rule #1 ('Wait & See') and Soft Rule #3 (Scenario A), we maintain disciplined patience and hold all positions without intervention.",
       "t": "2026-11-12T05:14:21Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four army layers remain actively deployed in isolated 2x leveraged Long positions across HYPE ($71.52), SOL ($83.09), BTC ($73,671), and ETH ($2,050.9). Each layer retains an extensive collateral liquidation safety cushion (HYPE ~33.1%, SOL ~36.3%, ETH ~43.5%, and BTC ~46.2% distance to liquidation thresholds), carrying zero forced-liquidation risk under our $2,500 collateral / $5,000 notional RP architecture. Market prices continue consolidating above recent flush lows but have not reached our tactical breakeven/early release targets (BTC $77,000-$77,500; ETH $2,225-$2,250) or our Scenario D hostage offset zones (HYPE $81.50-$83.50; SOL $92.00-$96.00). Our cumulative realized hostage reserve of +$1,435.67 remains fully preserved in free equity. In accordance with TSM Principle #4 Soft Rule #1 ('Wait & See') and Soft Rule #3 (Scenario A), we maintain disciplined patience and hold all positions without intervention.",
+      "t": "2026-11-12T06:23:16Z"
     }
   ],
   "eliminated": null,
@@ -5641,43 +5655,43 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.833032877461186,
-      "mark": 71.696,
+      "liq": 47.83392507746119,
+      "mark": 71.521,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -857.063609467456
+      "unrealized": -867.1759430473375
     },
     {
       "entry": 100.27,
-      "liq": 52.94554227168203,
-      "mark": 82.727,
+      "liq": 52.94594213964352,
+      "mark": 83.091,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -874.7880722050461
+      "unrealized": -856.6370798843126
     },
     {
       "entry": 76936.0,
-      "liq": 39603.0418457362,
-      "mark": 73529.0,
+      "liq": 39603.419151914895,
+      "mark": 73671.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 78900.0,
-      "unrealized": -221.41780180929607
+      "unrealized": -212.1893521888323
     },
     {
       "entry": 2223.6,
-      "liq": 1159.4032363596698,
-      "mark": 2042.8,
+      "liq": 1159.4027525516196,
+      "mark": 2050.9,
       "notional": 5000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2305.0,
-      "unrealized": -406.5479402770282
+      "unrealized": -388.3342327756787
     }
   ],
   "name": "google",
