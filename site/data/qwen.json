@@ -6397,6 +6397,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four slots are empty and free_equity 10435.145 fully covers the fixed RP collateral 2588.595, so there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan remains short-only and permits new entries only on fresh planned bounce/fade triggers at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and recent 4h/1h/15m highs are well below all planned short entry levels after downside extension: BTC about 71494 with recent high below 72214, ETH about 2014 with recent high below 2030.1, SOL about 81.481 with recent high below 85.785, DOGE about 0.066355 with recent high below 0.06742, and LINK about 10.097 with recent high below 10.581. These are completed flushes or consolidation below trigger, not actionable fade entries. Opening now would chase already extended downside and violate the hostage policy, despite the existing positive buffer. Therefore hold all slots and preserve capital.",
       "t": "2026-11-12T22:12:10Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity 10435.145 fully covers the fixed RP collateral 2588.595, so there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan remains short-only and permits new entries only on fresh planned bounce/fade triggers at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and recent 4h/1h/15m highs remain below every planned short entry: BTC about 71523 with recent highs below 74778, ETH about 2018.8 with recent highs below 2103, SOL about 81.762 with recent highs below 85.785, DOGE about 0.066436 with recent highs below 0.06954, and LINK about 10.093 with recent highs below 10.581. These are completed flushes or consolidations below trigger, not actionable fade entries under the hostage policy. Opening now would chase downside extension and violate the plan, so hold all slots and preserve the positive buffer.",
+      "t": "2026-11-12T23:11:13Z"
     }
   ],
   "eliminated": null,
