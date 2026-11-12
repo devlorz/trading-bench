@@ -5658,6 +5658,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Current state: one BNB long in slot 3 (entry 680.63, mark 673.24, unrealized about -54), limit TP at 690 resting. Layer is well inside its 12% RP stop (about 270 USD) and far from liquidation (about 409.6), and under the 5% hostage threshold (about 112 USD), so not a hostage. Equity about 8,923, above the 8,500 floor; weekly realized+unrealized about -54, above the -300 cap. BTC last 4h close 73,771 sits between the 72,500 and 79,500 daily structure stops and inside the 74.0k-76.0k no-entry box; no 76.3k-77.3k short rejection and no 72.8k-73.6k long wick with a 4h close back above 73.8k. ETH (about 2,049) is below the 2,090 reclaim and far from the 2,200-2,250 short zone. SOL (about 82.9) is below the 84.0 shelf and 85.5 reclaim, with no short trigger at 90-92.5. XRP (about 1.044) is far below the 1.100 reclaim and shares the slot with BNB, which already holds it. BNB's last 4h close 673.95 is below the 680 reclaim required for a new long, and one-layer-per-symbol plus shared-slot rules block any new BNB entry. No watchlist trigger is met, so keep the existing TP and hold everything.",
       "t": "2026-11-12T08:18:38Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "One BNB long remains in slot 3 (entry 680.63, mark 670.04, unrealized about -78, roughly -3.5% of the 2,245 collateral). That is below the 5% hostage threshold (about -112), so it is not a hostage. Its limit TP at 690 is resting in the plan's release zone, and the 12% RP stop (about 270 USD, roughly 643) and liquidation (about 410) are far away. Equity is about 8,900, above the 8,500 floor, and the weekly loss cap of -300 is not reached. BTC (mark 73,333) is in the no-entry box below 74.0k with no 76.3k-77.3k short rejection and no 72.8k-73.6k long wick with a 4h reclaim above 73.8k. The BTC daily stops at 72,500 and 79,500 are not triggered. ETH (2,042) is below the 2,090 reclaim and far from the 2,200-2,250 short zone. SOL (82.7) is below the 84.0 shelf and the 85.5 reclaim, with no short trigger at 90-92.5. XRP (1.045) is far below the 1.100 reclaim and shares the slot with BNB. BNB's last 4h close is 673.95, below the 680 reclaim needed for a fresh long, and the one-layer-per-symbol and shared-slot rules block any new BNB entry. No watchlist trigger is met, so I keep the existing TP and hold everything.",
+      "t": "2026-11-12T09:15:51Z"
     }
   ],
   "eliminated": null,
@@ -5668,13 +5682,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.57462801768366,
-      "mark": 673.24,
+      "liq": 409.58303489268366,
+      "mark": 670.04,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": -54.287939115231374
+      "unrealized": -77.79557174970272
     }
   ],
   "name": "anthropic",
