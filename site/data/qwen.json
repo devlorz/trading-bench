@@ -6243,6 +6243,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty, free_equity (10435.145) covers RP collateral (2588.595), and there is no NAV(-), TP, or liquidation exposure to manage. The plan remains short-only and permits opens only on fresh planned bounce/fade triggers: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and latest 4h/1h/15m highs remain below every trigger: BTC around 73365 with recent high below 74778, ETH around 2042.6 with recent high below 2103, SOL around 82.957 with recent high below 85.785, DOGE around 0.067085 with recent high below 0.06954, and LINK around 10.067 with recent high below 10.581. These are completed flushes/consolidations below trigger, not actionable fade entries under the hostage policy. Hold all slots.",
       "t": "2026-11-12T11:13:21Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty, free_equity covers the fixed RP collateral, and there is no NAV(-), TP, or liquidation exposure. The weekly plan remains short-only and permits opens only on fresh planned bounce/fade triggers at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and recent highs remain far below every planned short entry after completed flushes; opening now would chase the drop and violate the hostage policy. Hold all slots and preserve capital.",
+      "t": "2026-11-12T12:20:18Z"
     }
   ],
   "eliminated": null,
