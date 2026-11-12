@@ -6089,6 +6089,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty and free_equity fully covers the fixed RP collateral, so there is no open position, TP, NAV(-), or liquidation risk to manage. The weekly plan remains short-only and allows new opens only on fresh planned bounce/fade triggers at fixed levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and the latest short-timeframe highs remain below every planned entry: BTC mark 74011 with recent high near 74778, ETH mark 2060 with recent high near 2084.1, SOL mark 83.504 with recent high near 85.785, DOGE mark 0.067586 with recent high near 0.06954, and LINK mark 10.175 with recent high near 10.5. Earlier touches above or near several levels are completed flushes, not fresh actionable fade entries under the hostage policy. Although a positive hostage buffer exists, step-2 aggression still requires a plan-compliant trigger. Therefore hold all slots and preserve capital.",
       "t": "2026-11-12T00:35:04Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty, free_equity fully covers the fixed RP collateral, and there is no NAV(-), open position, TP, or liquidation risk to manage. The weekly plan remains short-only and allows opens only on fresh planned bounce/fade triggers at the fixed levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and the latest short-timeframe highs remain below every planned entry: BTC mark 73807 with recent 15m high 74778, ETH mark 2054.9 with recent 15m high 2082.4 and 1h high 2084.1, SOL mark 83.22 with recent 15m high 85.098, DOGE mark 0.067349 with recent 15m high 0.068698, and LINK mark 10.156 with recent 15m high 10.5. These are completed flushes/structure below triggers, not actionable fade entries under the hostage policy. Although a positive hostage buffer exists, step-2 aggression still requires a plan-compliant trigger. Therefore hold all slots and preserve capital.",
+      "t": "2026-11-12T01:14:35Z"
     }
   ],
   "eliminated": null,
