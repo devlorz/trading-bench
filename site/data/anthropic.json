@@ -5756,6 +5756,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Slot 3 holds the BNB long from 680.63 (size about 7.34 units, notional 5,000) with a resting TP at 690. Mark is 651.16, unrealized is about -216, so it is a hostage (more than 5% of the 2,245 collateral). The hard RP stop at 12% of collateral (about -270 USD) sits near 643.9, about 1.1% below mark, and has not been hit. Liquidation is far away near 409.6. Equity is about 8,761, above the 8,500 floor. Weekly P&L is about -221 against the -300 cap, so the cap is not hit yet. With one hostage, no new army may open except on another symbol at the opposite edge. No watchlist trigger is met: BTC is in the no-entry box with no 76.3k-77.3k rejection and no 72.8k-73.6k reclaim, ETH and SOL are far from their short zones, XRP is far from 1.165-1.195, and BNB cannot take a second layer or a short while the long is open. Daily BTC stops at 72,500 and 79,500 are not triggered. Hold everything. Close slot 3 at market if mark reaches about 643.9 (the 12% stop) or if the weekly cap of -300 is reached.",
       "t": "2026-11-12T15:14:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Only one layer is open: BNB long in slot 3, entry 680.63, mark about 657.9, unrealized about -167. That makes it the single hostage (more than 5% of collateral underwater). It is well inside the 12% RP stop (about 643.9, roughly 270 USD adverse) and far from liquidation (about 409.6). The resting TP at 690 stays. Equity is about 8,810, above the 8,500 floor. Weekly P&L is roughly -170 including fees, so the -300 cap is not hit. With one hostage, a second army may only hunt on another symbol at the opposite edge (a short at a ceiling). No such trigger exists: BTC 71,921 is far below the 76,300-77,300 short zone, ETH 2,012 is far below 2,200-2,250, SOL 81.8 is far below 90-92.5, and XRP 1.029 is far below 1.165-1.195. BNB cannot add a layer or take a short while its long is open. BTC daily stops (below 72,500 closes longs, above 79,500 closes shorts) are not a new trigger for the BNB long, which is the only open layer and is not a BTC position. Hold everything and keep the TP. Stop rule: close slot 3 at market if BNB reaches about 643.9 or the weekly loss reaches -300.",
+      "t": "2026-11-12T16:16:03Z"
     }
   ],
   "eliminated": null,
@@ -5766,13 +5780,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.59307009067874,
-      "mark": 651.16,
+      "liq": 409.5902121535267,
+      "mark": 657.9,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": -216.49060429308162
+      "unrealized": -166.977653056727
     }
   ],
   "name": "anthropic",
