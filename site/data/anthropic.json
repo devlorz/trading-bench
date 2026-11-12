@@ -5840,6 +5840,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Only one layer is open: BNB long in slot 3, entry 680.63, mark 655.70, unrealized about -183. It is the single hostage (underwater more than 5% of collateral) but still well inside the 12% RP stop near 643.9 and far from liquidation near 409.6. Equity is about 8,794, above the 8,500 royal-army floor, and the week's P&L is roughly -190 against the -300 cap. The resting limit TP at 690 stays in place. No new entry trigger is met: BTC last 4h close 71,666 is far below the 76,300-77,300 short zone with no rejection and no 73,800 reclaim for longs. The BTC daily stop at 72,500 is not confirmed on a daily close. ETH, SOL and XRP have no 4h reclaim or rejection at their edges. BNB cannot add a second layer or take a short while its long is open, and the one-hostage rule blocks any new army except on another symbol at the opposite edge, which is absent. Hold everything and keep the TP. Stop rule: close slot 3 at market if BNB reaches about 643.9 or the weekly loss reaches -300.",
       "t": "2026-11-12T21:12:17Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current state: one open layer, BNB long in slot 3 (entry 680.63, mark 653.50, unrealized about -199, underwater more than 5% of collateral, so it is the single hostage). Equity 8,778 is above the 8,500 royal-army floor. Weekly P&L is roughly -200 against the -300 weekly loss cap, so hunting is not ended yet but the cushion is thin. The 12% RP stop is at about 643.9 and the mark 653.50 is still above it. Liquidation is far away near 409.6. The BNB 4h last close is 655.53 and the 1h low is 649.37, so the stop has not been touched. Stop rule from the prior decision: close slot 3 at market if BNB reaches about 643.9 or weekly loss reaches -300. Note the 12% stop price should be checked: mark 653.50 is about 1.4% above 643.9, so a single 1h bar could breach it. No new entry trigger is met. BTC is at 71,494, far below the 76,300-77,300 short zone with no rejection, and it is far below the 73.8k reclaim for longs. ETH (2,014), SOL (81.48) and XRP (1.037) have no 4h reclaim or rejection at their edges. Adding a second army is blocked by the one-hostage rule anyway, and the other symbols are not at their edges. The resting TP at 690 stays. Hold everything and keep the TP.",
+      "t": "2026-11-12T22:12:10Z"
     }
   ],
   "eliminated": null,
@@ -5850,13 +5864,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.59492427887966,
-      "mark": 655.7,
+      "liq": 409.59726652070566,
+      "mark": 653.502,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": -183.1391504929253
+      "unrealized": -199.28595565872826
     }
   ],
   "name": "anthropic",
