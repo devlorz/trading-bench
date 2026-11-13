@@ -5910,6 +5910,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Only slot 3 is open: BNB long from 680.63, mark 650.98, unrealized about -218, so it is the single hostage. The 12% RP hard stop is at about 643.9 and has not been touched; the lowest print in the data is 649.37 on the 1h. Liquidation is far away near 409.6. Equity is about 8,760, above the 8,500 floor, and the week is about -220 against the -300 cap, so no forced close applies. The 690 limit TP stays in place. No new entry trigger is met: BTC is at about 70,600, below the 72,500 long-stop and far from the 76,300-77,300 short zone with no rejection; ETH (about 2,001), SOL (about 80.8) and XRP (about 1.025) have no 4h reclaim or rejection at their edges. BNB cannot add a second layer while its long is open, and the one-hostage rule blocks any new army except on another symbol at the opposite edge, which is absent. Hold everything. Stop rule: close slot 3 at market if BNB reaches about 643.9 or the weekly loss reaches -300.",
       "t": "2026-11-13T02:16:58Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": "long",
+          "slot": 3,
+          "symbol": "BNB",
+          "type": "close"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current state: only slot 3 open, BNB long from 680.63, mark 641.55, unrealized about -287, which is a hostage. The 12% RP hard stop is at about 643.9 (collateral 2245 x 12% = ~270 adverse, so the stop level is roughly 680.63 minus 270/ (5000/680.63)\u2248 680.63-36.7\u2248643.9). Latest mark 641.55 is already below 643.9, and the 1h candle printed a low of 643.53 and the 15m last close 643.16, so the hard stop has been breached and must be executed. Equity is about 8,690, above the 8,500 floor, and the weekly loss is roughly -310 against the -300 cap, which also forces a flatten and ends hunting for the week. Close slot 3 at market. No other layers are open and no new entries are allowed.",
+      "t": "2026-11-13T03:15:49Z"
     }
   ],
   "eliminated": null,
@@ -5918,16 +5932,7 @@
     null,
     null,
     null,
-    {
-      "entry": 680.63,
-      "liq": 409.5999546152076,
-      "mark": 650.98,
-      "notional": 5000,
-      "side": "long",
-      "symbol": "BNB",
-      "tp": 690.0,
-      "unrealized": -217.81290862877023
-    }
+    null
   ],
   "name": "anthropic",
   "plans": [
@@ -6133,6 +6138,18 @@
       "reason": "close",
       "side": "long",
       "symbol": "ETH"
+    },
+    {
+      "closed_at": "2026-11-13T03:15:49Z",
+      "entry": 680.63,
+      "exit": 641.31,
+      "fees": 4.370017483801772,
+      "funding": -2.179323406020893,
+      "opened_at": "2026-11-11T00:33:59Z",
+      "pnl": -295.39937688588566,
+      "reason": "close",
+      "side": "long",
+      "symbol": "BNB"
     }
   ],
   "started_week": "2026-10-26T00:00:00Z",
