@@ -5868,6 +5868,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Only slot 3 is open: BNB long from 680.63, mark 655.15, unrealized about -187, which makes it the single hostage (more than 5% of collateral underwater). The 12% RP stop is at about 643.9 and has not been touched (latest 1h low 649.37, 4h low 649.37), and liquidation is far away near 409.6. Equity is about 8,790, above the 8,500 royal-army floor, and weekly P&L is roughly -190 against the -300 cap, so no forced close applies. BTC is at 71,523 on the 1h and 4h structure but below the 72,500 daily long-stop level, so no long-side entries are allowed. The short zone 76,300-77,300 has no 4h rejection, and BNB cannot add a second layer while its long is open. No watchlist trigger is met for BTC, ETH, SOL, or XRP (no 4h reclaim or rejection at their edges, and the one-hostage rule blocks a new army except at the opposite edge). The resting TP at 690 stays in place. Hold everything; close slot 3 only if BNB reaches about 643.9 or weekly loss reaches -300.",
       "t": "2026-11-12T23:11:13Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Only slot 3 is open: BNB long from 680.63, mark 655.33, unrealized about -186, with the resting TP at 690. It is the single hostage. The 12% RP stop is near 644 and has not been touched (latest 4h low 649.37 and 1h low 649.37). Liquidation is far away near 409.6. Equity is about 8,791, above the 8,500 floor. Weekly P&L is roughly -190 against the -300 cap, so no forced close applies. BTC is about 71,130, below the 72,500 long-stop level and far from the 76,300-77,300 short zone with no rejection, so no long or short entries are allowed. ETH (about 2,012), SOL (about 81.5) and XRP (about 1.038) have no 4h reclaim or rejection at their edges. BNB cannot add a second layer while its long is open, and the one-hostage rule blocks any new army except on another symbol at the opposite edge, which is absent. No trigger is met. Hold everything and keep the TP at 690.",
+      "t": "2026-11-13T00:34:41Z"
     }
   ],
   "eliminated": null,
@@ -5878,13 +5892,13 @@
     null,
     {
       "entry": 680.63,
-      "liq": 409.59268901465765,
-      "mark": 655.15,
+      "liq": 409.5957732992076,
+      "mark": 655.33,
       "notional": 5000,
       "side": "long",
       "symbol": "BNB",
       "tp": 690.0,
-      "unrealized": -187.17952485197551
+      "unrealized": -185.85722051628605
     }
   ],
   "name": "anthropic",
