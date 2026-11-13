@@ -6148,6 +6148,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Account is flat with all four slots empty. Free equity is about 8,686, above the 8,500 royal-army floor. Week P&L is about -296 against the -300 weekly loss cap, and the BNB hostage was already closed at -289, so the plan ends hunting for the week. Opening any new 5,000-notional layer with a 12% stop (about -270) could breach the cap. Market marks are far from every trigger: BTC about 69.0k is below the 72,500 long-stop and far from the 76,300-77,300 short zone; ETH about 1,948 has no 2,090 reclaim; SOL about 80.2 is below the 85.5 reclaim; XRP about 1.02 is below the 1.100 reclaim; BNB about 637 has no 4h close back above 680. No entry or exit condition is met, so hold with no actions.",
       "t": "2026-11-13T19:11:49Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Account is flat with all four slots empty, free equity about 8,686, above the 8,500 floor. Week P&L is about -296 against the -300 weekly loss cap, and the BNB hostage was already closed, so the plan says to stop hunting for the week. Opening any new 5,000-notional layer with a 12% stop (about -270) could breach the weekly cap. Marks are far from every trigger: BTC 69,037 is below the 72,500 long-stop and far from the 76,300-77,300 short zone; ETH 1,953 has no 2,090 reclaim and is far from 2,200-2,250; SOL 80.35 is below the 85.5 reclaim and far from 90-92.5; XRP 1.027 is below 1.100 and far from 1.165-1.195; BNB 638 has no 4h close back above 680 and no rally into 705-715. No entry or exit condition is met, so hold with no actions.",
+      "t": "2026-11-13T20:13:54Z"
     }
   ],
   "eliminated": null,
