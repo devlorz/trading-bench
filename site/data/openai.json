@@ -5956,6 +5956,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Hold. All four slots are empty, and none of the planned entry conditions is met: BTC and ETH are well below their rebound-short zones, while XMR is below its pullback-and-reclaim entry zone. Equity remains above the $9,850 close-all threshold; do not chase.",
       "t": "2026-11-13T06:22:36Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Hold. All slots are empty and none of the planned entry conditions is confirmed: BTC and ETH remain below their rebound-short zones, while XMR is far below its pullback-and-reclaim long-entry zone. Equity is above the $9,850 close-all threshold. Do not chase.",
+      "t": "2026-11-13T07:15:14Z"
     }
   ],
   "eliminated": null,
