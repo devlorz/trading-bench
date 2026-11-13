@@ -6719,6 +6719,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four slots are empty, free_equity 10435.145 fully covers the fixed RP collateral 2588.595, and there is no open position, TP, NAV(-), or liquidation exposure. The weekly plan is short-only and permits entries only on fresh planned bounce/fade triggers at or above the level entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and recent 15m/1h/4h highs remain far below every trigger: BTC about 68645 with recent high about 70214/69121 vs 75800, ETH about 1938.6 with recent high about 1987.9/1955.7 vs 2190, SOL about 79.573 with recent high about 82.353/80.498 vs 88.60, DOGE about 0.064938 with recent high about 0.066663/0.065779 vs 0.0708, and LINK about 9.9025 with recent high about 10.243/10.056 vs 10.72. These are completed downside extensions or consolidations below the planned fade levels, not actionable entries. Opening now would chase completed flushes and violate the Hostage Hunt policy, so hold all layers while preserving the positive hostage buffer.",
       "t": "2026-11-13T21:11:12Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty, free_equity 10435.145 fully covers fixed RP collateral 2588.595, and there is no open position, TP, NAV(-), or liquidation exposure. The weekly plan is short-only and permits entries only at planned bounce/fade triggers: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Latest marks and recent 15m/1h/4h highs remain below every planned entry: BTC 68285 vs recent high 70214, ETH 1924.4 vs 1987.9, SOL 78.323 vs 82.353, DOGE 0.06438 vs 0.066663, and LINK 9.829 vs 10.243. These are downside extensions or consolidations below the fade levels, not actionable entries; opening now would chase completed flushes and violate the Hostage Hunt plan. Hold all slots while preserving the positive hostage buffer.",
+      "t": "2026-11-13T22:12:20Z"
     }
   ],
   "eliminated": null,
