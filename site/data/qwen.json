@@ -7041,6 +7041,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty and free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243, with no NAV(-), TP, or liquidation exposure to manage. The weekly plan remains short-only and permits entries only on fresh planned bounce/fade triggers at or above the level entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks are BTC 65583.0, ETH 1829.4, SOL 72.028, DOGE 0.059515, and LINK 9.0364, all far below those fade levels. Recent 15m/1h/4h highs remain below actionable triggers: BTC near 66231/67486/74778 vs 75800, ETH near 1857/1918/2103 vs 2190, SOL near 73.6/76.165/82.353 vs 88.60, DOGE near 0.060954/0.063277/0.06954 vs 0.0708, and LINK near 9.235/9.6614/10.243 vs 10.72. These are downside extensions or completed flushes, not fresh planned entries. Opening now would chase weakness and violate the Hostage Hunt bounce/fade rule. Hold all layers.",
       "t": "2026-11-14T20:12:25Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty, free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243, and there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan remains short-only and permits entries only on fresh planned bounce/fade triggers at or above the level entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks are BTC 64524.0, ETH 1771.8, SOL 70.278, DOGE 0.05738, LINK 8.7896, all far below those fade levels. Recent 15m/1h/4h highs also remain below actionable triggers: BTC near 66009/67486/74778 vs 75800, ETH near 1857/1918/2103 vs 2190, SOL near 73.6/76.165/82.353 vs 88.60, DOGE near 0.060954/0.063277/0.06954 vs 0.0708, and LINK near 9.235/10.056/10.243 vs 10.72. These are downside extensions or completed flushes, not fresh planned entries. Opening now would chase weakness and violate the Hostage Hunt bounce/fade rule. Hold all layers.",
+      "t": "2026-11-14T21:11:22Z"
     }
   ],
   "eliminated": null,
