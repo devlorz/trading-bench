@@ -7069,6 +7069,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four slots are empty, free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243, and there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan remains short-only and permits entries only on fresh planned bounce/fade triggers at or above the specified entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks are BTC 63487, ETH 1740.1, SOL 68.848, DOGE 0.055727, LINK 8.609, all far below those fade levels. Recent 15m/1h/4h highs also remain below actionable triggers: BTC near 64944/66231/67486 vs 75800, ETH near 1788/1857/1918 vs 2190, SOL near 70.659/72.472/76.165 vs 88.60, DOGE near 0.057514/0.058939/0.063277 vs 0.0708, and LINK near 8.8581/9.235/9.6614 vs 10.72. These are downside extensions or completed flushes, not fresh planned bounce entries. Opening now would chase weakness and violate the Hostage Hunt bounce/fade rule. Hold all layers.",
       "t": "2026-11-14T22:11:31Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty and free_equity 10435.1453451981 covers the RP collateral 2588.5949425693243. The plan is short-only and allows entries only on fresh bounce/fade triggers at or above the planned level entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks are BTC 63661, ETH 1743.7, SOL 69.207, DOGE 0.056248, LINK 8.6854, and recent 15m/1h/4h highs remain far below those levels. These prices are downside extensions/completed flushes, not actionable fade entries, so opening now would chase weakness and violate the Hostage Hunt bounce/fade discipline. Hold all layers.",
+      "t": "2026-11-14T23:11:40Z"
     }
   ],
   "eliminated": null,
