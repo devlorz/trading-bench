@@ -6873,6 +6873,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four slots are empty, free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243, and there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan remains short-only and requires fresh planned bounce/fade triggers at or above the specified entry levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks are BTC 67238.0, ETH 1901.7, SOL 75.385, DOGE 0.06272, and LINK 9.5745, all far below those fade levels. Recent upside touches, especially DOGE near its planned entry earlier in the week, are already completed flushes and current structure has moved well below them. Opening now would chase completed downside extensions rather than acting on fresh bounce/fade triggers, violating the Hostage Hunt plan. A positive hostage buffer is already secured from the prior LINK cycle, so the correct action is to preserve capital and wait for a fresh actionable trigger. Hold all layers.",
       "t": "2026-11-14T08:15:45Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty, free_equity 10435.1453451981 fully covers RP collateral 2588.5949425693243, and there is no NAV(-), TP, or liquidation exposure to manage. The weekly plan remains short-only and requires fresh bounce/fade entries at or above planned levels: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks are BTC 67183, ETH 1903.9, SOL 75.584, DOGE 0.062777, LINK 9.6088, all well below those triggers. Recent 15m/1h/4h highs are also below actionable fade levels, and earlier touches are already completed flushes rather than fresh entries. Opening now would chase downside extensions and violate the Hostage Hunt plan. A positive hostage buffer exists from the earlier LINK cycle, but aggression is only allowed when fresh planned entry levels are reached. Hold all layers.",
+      "t": "2026-11-14T09:13:13Z"
     }
   ],
   "eliminated": null,
