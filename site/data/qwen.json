@@ -6999,6 +6999,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four slots are empty, free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243, and there is no open position, TP, NAV(-), or liquidation exposure to manage. The weekly plan is short-only and allows entries only on fresh planned bounce/fade triggers at or above the level entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks are BTC 65143, ETH 1815, SOL 72.12, DOGE 0.059697, LINK 9.0294, all far below those fade levels. Recent 15m/1h/4h swing highs also remain below actionable triggers: BTC near 67007/67486/75527 vs 75800, ETH near 1899.1/1918/2147.8 vs 2190, SOL near 75.759/76.165/87.881 vs 88.60, DOGE near 0.06274/0.065779/0.070827 vs 0.0708, and LINK near 9.5747/10.056/10.801 vs 10.72. The only historical touches near DOGE and LINK planned entries were older completed flushes, not fresh current triggers. Opening now would chase downside extensions and violate the Hostage Hunt bounce/fade rule. Hold all layers.",
       "t": "2026-11-14T17:11:06Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty and there is no position, TP, NAV(-), or liquidation exposure to manage. Free equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243. The weekly plan is short-only and allows entries only on fresh planned bounce/fade triggers at or above the specified entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks are BTC 65940, ETH 1838.8, SOL 72.745, DOGE 0.06029, and LINK 9.1626, all far below those fade levels. Recent 4h/1h/15m swing highs also remain below actionable triggers: BTC near 66009-67289 vs 75800, ETH near 1862.6-1918 vs 2190, SOL near 76.11-76.165 vs 88.60, DOGE near 0.060723-0.063277 vs 0.0708, and LINK near 9.235-9.6614 vs 10.72. Opening now would chase completed downside extensions, and planned TP levels above current prices would also be invalid as shorts from current marks. Hold all layers and wait for fresh planned triggers.",
+      "t": "2026-11-14T18:14:21Z"
     }
   ],
   "eliminated": null,
