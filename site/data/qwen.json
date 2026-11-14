@@ -6957,6 +6957,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty and there is no open position, TP, NAV(-), or liquidation exposure. Free equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243. The weekly plan remains short-only and requires fresh planned bounce/fade triggers at or above the specified entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks are BTC 66448, ETH 1873.3, SOL 75.005, DOGE 0.061942, and LINK 9.4647, all far below those fade levels. Recent 15m/1h/4h swing highs also remain below actionable triggers: BTC near 67486 versus 75800, ETH near 1918 versus 2190, SOL near 76.165 versus 88.60, DOGE near 0.063277 versus 0.0708, and LINK near 9.6614 versus 10.72. These are downside extensions or completed flushes, not fresh entries. Opening now would chase completed weakness and violate the Hostage Hunt bounce/fade plan. The existing positive hostage buffer only permits controlled entries when fresh planned levels are reached. Hold all layers and wait.",
       "t": "2026-11-14T14:11:55Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four slots are empty and free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243, with no NAV(-), TP, or liquidation exposure to manage. The weekly plan remains short-only and permits entries only on fresh planned bounce/fade triggers at or above the level entries: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks are BTC 65777, ETH 1850.3, SOL 74.113, DOGE 0.061189, and LINK 9.2913, all far below those fade levels. Recent 15m/1h/4h highs remain below actionable triggers: BTC near 67486 vs 75800, ETH near 1918 vs 2190, SOL near 76.165 vs 88.60, DOGE near 0.063277 vs 0.0708, and LINK near 9.6614 vs 10.72. These are downside extensions or completed flushes, not fresh bounce/fade entries. Opening now would chase completed weakness and violate the Hostage Hunt plan. The existing positive hostage buffer allows controlled future aggression only when fresh planned triggers are reached. Hold all layers and wait.",
+      "t": "2026-11-14T15:11:28Z"
     }
   ],
   "eliminated": null,
