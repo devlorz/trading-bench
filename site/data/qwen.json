@@ -7503,6 +7503,41 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty, and free_equity 10435.1453451981 fully covers the fixed RP collateral 2588.5949425693243. There is no NAV(-), open TP, or liquidation exposure. The weekly plan is short-only and permits entries only at planned bounce/fade triggers: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and recent actionable highs remain far below those levels: BTC about 64718 with recent 15m high 65199, ETH about 1816.4 with recent 15m high 1829.1, SOL about 71.21 with recent 15m high 71.923, DOGE about 0.058587 with recent 15m high 0.059061, and LINK about 9.1788 with recent 15m high 9.266. Opening now would chase completed downside rather than wait for defined fade entries, so hold all layers.",
       "t": "2026-11-15T20:13:16Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 1,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 2,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 3,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four layers are empty and free_equity 10435.1453451981 covers the fixed RP collateral 2588.5949425693243. There is no open position, NAV(-), TP, or liquidation risk to manage. The weekly plan is short-only and permits entries only on planned bounce/fade triggers at or above BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and recent actionable highs remain far below those levels: BTC 65027 with recent 15m high 65191, ETH 1821.2 with recent 15m high 1833, SOL 71.893 with recent 15m high 72.036, DOGE 0.059063 with recent 15m high 0.059061, and LINK 9.2505 with recent 15m high 9.27. These are minor local bounces inside much lower ranges, not plan-defined fade entries. Opening now would chase weakness or premature bounces and violate the Hostage Hunt entry discipline. Hold all layers.",
+      "t": "2026-11-15T21:11:37Z"
     }
   ],
   "eliminated": null,
