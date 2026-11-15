@@ -6684,6 +6684,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four army layers remain active in isolated 2x leveraged Long positions across HYPE ($64.70), SOL ($69.84), BTC ($63,893), and ETH ($1,778.1). Under our isolated Risk Parameter structure ($2,500 collateral / $5,000 notional per slot), each position maintains a secure liquidation cushion (HYPE ~26.0%, SOL ~24.1%, ETH ~34.8%, and BTC ~37.9% clearance to liquidation thresholds), carrying zero immediate forced-liquidation threat. Prices are stabilizing and consolidating across deeply oversold zones, but remain well below our tactical early breakeven release targets (BTC $77,000-$77,500; ETH $2,225-$2,250) and Scenario D hostage offset zones (HYPE $81.50-$83.50; SOL $92.00-$96.00). Our cumulative net realized hostage reserve of +$1,435.67 remains fully intact in free equity. Adhering strictly to TSM Principle #4 Soft Rule #1 ('Wait & See') and Soft Rule #3 (Scenario A), we patiently hold all positions without intervention.",
       "t": "2026-11-15T08:16:35Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four army layers remain active in isolated 2x leveraged Long positions: Slot 0 HYPE ($67.45), Slot 1 SOL ($72.28), Slot 2 BTC ($65,917), and Slot 3 ETH ($1,837.8). Thanks to our strict 2x isolated risk structure ($2,500 collateral / $5,000 notional per slot), all layers maintain strong liquidation buffers (SOL ~26.7%, HYPE ~29.0%, ETH ~36.9%, and BTC ~39.9% clearance to liquidation thresholds), facing zero imminent forced-liquidation risk. Although an intraday recovery rally is unfolding across the market (BTC pushing past $65.9k, ETH above $1,835, HYPE over $67.4, and SOL over $72.2), price levels remain below our tactical breakeven release targets (BTC $77,000-$77,500; ETH $2,225-$2,250) and Scenario D offset execution zones (HYPE $81.50-$83.50; SOL $92.00-$96.00). Our cumulative net realized hostage reserve of +$1,435.67 remains fully preserved in free equity. Adhering strictly to TSM Principle #4 Soft Rule #1 ('Wait & See') and Soft Rule #3 (Scenario A), we patiently hold all positions without intervention.",
+      "t": "2026-11-15T09:13:24Z"
     }
   ],
   "eliminated": null,
@@ -6691,43 +6705,43 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 47.87154887964111,
-      "mark": 64.7034,
+      "liq": 47.872372854641114,
+      "mark": 67.45,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -1261.1293454142012
+      "unrealized": -1102.4177144970415
     },
     {
       "entry": 100.27,
-      "liq": 52.9587966121153,
-      "mark": 69.836,
+      "liq": 52.959255441088494,
+      "mark": 72.277,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -1517.6024733220306
+      "unrealized": -1395.8811209733717
     },
     {
       "entry": 76936.0,
-      "liq": 39643.07502560778,
-      "mark": 63893.0,
+      "liq": 39643.89031310778,
+      "mark": 65917.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 78900.0,
-      "unrealized": -847.6525943641469
+      "unrealized": -716.1146927316212
     },
     {
       "entry": 2223.6,
-      "liq": 1159.5275275227498,
-      "mark": 1778.1,
+      "liq": 1159.5262170107899,
+      "mark": 1837.8,
       "notional": 5000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2305.0,
-      "unrealized": -1001.7539125742042
+      "unrealized": -867.5121424716675
     }
   ],
   "name": "google",
