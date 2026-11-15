@@ -6778,6 +6778,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Account is flat (all four layers empty, free equity about 8,686, above the 8,500 royal-army floor). Realized week P&L is about -296, effectively at the -300 weekly loss cap, so per plan hunting is ended for week 2026-11-09. Reallocation only happens at the next Monday boundary, and any new 5,000-notional layer with a 12% stop (about -270) would breach the weekly cap. Marks remain far from every entry trigger: BTC about 64.7k is well below the 76,300-77,300 short zone and the 72,800-73,600 long wick zone lacks a 4h reclaim above 73,800; ETH about 1,806 is below its 2,090 reclaim; SOL about 71.1 is below its 85.5 reclaim; XRP about 0.954 is below its 1.100 reclaim; BNB about 590 has no 4h close back above 680. No layers are open, so nothing to close or set TP on. Hold with no actions.",
       "t": "2026-11-15T16:13:30Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Account is flat with all four slots empty, equity about 8,686 above the 8,500 royal-army floor. Realized week P&L is about -296, effectively at the -300 weekly loss cap, so hunting is ended for week 2026-11-09 per plan. Reallocation only occurs at the next Monday boundary (2026-11-16 00:00 UTC), so no new 5,000-notional layer can be opened this week without breaching the weekly loss cap. Marks remain far from every entry trigger: BTC about 64.7k is well below the 76,300-77,300 short zone and the 72,800-73,600 long wick zone lacks a 4h reclaim above 73,800; ETH about 1,815 is below its 2,090 reclaim; SOL about 71.2 is below its 85.5 reclaim; XRP about 0.951 is below its 1.100 reclaim; BNB about 592 has no 4h close back above 680. No layers are open, so nothing to close or set TP on. Hold with no actions.",
+      "t": "2026-11-15T17:10:51Z"
     }
   ],
   "eliminated": null,
