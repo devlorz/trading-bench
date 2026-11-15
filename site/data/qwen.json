@@ -7398,6 +7398,41 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "All four layers are empty, and free_equity 10435.1453451981 fully covers fixed RP collateral 2588.5949425693243, so there is no NAV(-), open TP, or liquidation exposure to manage. The weekly plan remains short-only and permits entries only on fresh planned bounce/fade triggers at or above: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and recent actionable highs remain far below those levels: BTC 64736 with recent highs around 65792/66134, ETH 1815.3 with highs around 1828.9/1844, SOL 71.243 with highs around 71.876/73.24, DOGE 0.058457 with highs around 0.058804/0.059616, and LINK 9.1854 with highs around 9.268/9.3588. These are downside extensions or minor local bounces, not plan-defined Hostage Hunt fade entries. Opening now would chase weakness and violate the plan\u2019s entry discipline. Therefore hold all layers.",
       "t": "2026-11-15T17:10:51Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 1,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 2,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 3,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "All four slots are empty, free_equity 10435.145 covers RP collateral 2588.595, and there is no NAV(-), open TP, or liquidation exposure. The weekly plan is short-only and entries require fresh bounce/fade triggers at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and recent actionable highs remain far below those triggers: BTC 64524/66134, ETH 1813/1844, SOL 71.195/73.24, DOGE 0.058535/0.059616, LINK 9.1836/9.3588. Opening now would chase completed downside rather than execute planned fade entries, violating Hostage Hunt entry discipline. Hold all layers.",
+      "t": "2026-11-15T18:15:16Z"
     }
   ],
   "eliminated": null,
