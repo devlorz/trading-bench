@@ -6978,6 +6978,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "The November 9\u201315 plan has expired, and no active plan for the new week is provided. All slots are empty, so hold and do not open without an active weekly plan.",
       "t": "2026-11-16T08:31:21Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "The November 9\u201315 plan has expired and no active plan for the new week is provided. All slots are empty, so hold and do not open without an active weekly plan.",
+      "t": "2026-11-16T09:21:45Z"
     }
   ],
   "eliminated": null,
