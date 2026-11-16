@@ -6918,6 +6918,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Account is flat with all four slots empty, free equity about 8,686, above the 8,500 royal-army floor. Realized week 2026-11-09 P&L is about -296, effectively at the -300 weekly loss cap, so the plan ends hunting for this week. The plan provided is still week 2026-11-09 and the current time is 2026-11-16 03:18 UTC, past the Monday boundary, but the plan has not established a new week's RP or watchlist, and the weekly loss cap rule applies to the week in the plan. Opening any new layer would risk breaching the -300 cap. Marks remain far from every entry trigger: BTC 65.1k is well below the 76,300-77,300 short zone and lacks a 4h reclaim above 73,800; ETH 1,822 is below its 2,090 reclaim; SOL 72.1 is below its 85.5 reclaim; XRP 0.965 is below its 1.100 reclaim; BNB 594 has no 4h close back above 680. No layers are open, so nothing to close or set TP on. Hold with no actions.",
       "t": "2026-11-16T03:18:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Account is flat with all four slots empty, free equity about 8,686, above the 8,500 royal-army floor. Realized week 2026-11-09 P&L is about -296, effectively at the -300 weekly loss cap, so per plan hunting is ended for that week. The current time is 2026-11-16 04:17 UTC, past the Monday boundary, but the plan provided is still week 2026-11-09 and has not established a new week's RP or watchlist; the weekly-cap rule applies to the week in the plan, so opening any new 5,000-notional layer with a 12% stop (about -270) would breach it. Marks remain far from every entry trigger: BTC 64.9k is well below the 76,300-77,300 short zone and lacks a 4h reclaim above 73,800; ETH 1,820 is below its 2,090 reclaim; SOL 71.7 is below its 85.5 reclaim; XRP 0.961 is below its 1.100 reclaim; BNB 591 has no 4h close back above 680. No layers are open, so nothing to close or set TP on. Hold with no actions.",
+      "t": "2026-11-16T04:17:23Z"
     }
   ],
   "eliminated": null,

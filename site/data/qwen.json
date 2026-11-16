@@ -7713,6 +7713,41 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Current tick is 2026-11-16T03:18:44Z, after the weekly plan close_all at 2026-11-16T00:00:00Z. All four slots are empty, free_equity covers the RP collateral, and there is no NAV(-), open TP, or liquidation exposure to manage. The provided Weekly Plan is short-only and would allow entries only at planned bounce/fade triggers: BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, LINK 10.72. Current marks and recent actionable highs are far below those levels: BTC 65086 with recent high around 65498, ETH 1821.8 with recent high 1841.6, SOL 72.117 with recent high 72.9, DOGE 0.05923 with recent high 0.060082, and LINK 9.22 with recent high 9.3397. Even if the short-only framework were considered, none of the Hostage Hunt fade entries are present. Opening now would chase completed downside and would also be outside the valid weekly plan window. Therefore, hold all empty layers and preserve capital until a new valid plan/reallocation and defined trigger.",
       "t": "2026-11-16T03:18:44Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 1,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 2,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 3,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current tick is after the weekly plan close_all boundary (2026-11-16T00:00:00Z), and all four slots are empty with free_equity covering the fixed RP collateral. There is no NAV(-), open TP, liquidation exposure, or active layer to manage. The supplied plan is short-only and requires planned bounce/fade entries only at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, or LINK 10.72; current marks and recent highs remain far below all trigger levels. Opening would violate the expired plan and Hostage Hunt entry discipline, so hold all empty layers.",
+      "t": "2026-11-16T04:17:23Z"
     }
   ],
   "eliminated": null,
