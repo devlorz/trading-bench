@@ -6876,6 +6876,20 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Week 2026-11-09 realized P&L is about -296, effectively at the -300 weekly loss cap, so hunting is ended for the week per plan. Account is flat with all four slots empty and equity about 8,686, above the 8,500 floor. Reallocation only occurs at the Monday boundary (2026-11-16 00:00 UTC), and any new 5,000-notional layer with a 12% stop (about -270) would breach the weekly loss cap. Marks remain far from every entry trigger: BTC 65.1k is well below the 76,300-77,300 short zone and lacks a 4h reclaim above 73,800; ETH 1,827 is below its 2,090 reclaim; SOL 72.3 is below its 85.5 reclaim; XRP 0.972 is below its 1.100 reclaim; BNB 595 has no 4h close back above 680. No layers are open, so nothing to close or set TP on. Hold with no actions.",
       "t": "2026-11-15T23:13:19Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": null,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Account is flat with all four slots empty, free equity about 8,686, above the 8,500 royal-army floor. Realized week P&L is about -296 against the -300 weekly loss cap, so hunting is ended for week 2026-11-09 per plan. The current time is 2026-11-16 01:17 UTC, which is the new week boundary, but the plan's reallocation and RP for the week 2026-11-16 are not yet established in this plan's week (the plan is still week 2026-11-09 and its weekly loss cap was hit). Opening any new layer under this plan would breach the weekly loss rule, so no entries. Marks are far from every entry trigger: BTC 64.8k is well below the 76,300-77,300 short zone and lacks a 4h reclaim above 73,800; ETH 1,811 is below its 2,090 reclaim; SOL 71.5 is below its 85.5 reclaim; XRP 0.960 is below its 1.100 reclaim; BNB 593 has no 4h close back above 680. No layers are open, so nothing to close or set TP on. Hold with no actions.",
+      "t": "2026-11-16T01:17:45Z"
     }
   ],
   "eliminated": null,
