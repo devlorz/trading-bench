@@ -10307,43 +10307,43 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.794242229788665,
-      "mark": 72.281,
+      "liq": 2.794416221767662,
+      "mark": 71.526,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": -687.373985615552
+      "unrealized": -706.3074901445468
     },
     {
       "entry": 79924.0,
-      "liq": 1426.1223879657919,
-      "mark": 65088.0,
+      "liq": 1426.9390129657986,
+      "mark": 64751.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": -464.065862569441
+      "unrealized": -474.6071267704319
     },
     {
       "entry": 2272.5,
-      "liq": 52.08597728915083,
-      "mark": 1827.2,
+      "liq": 52.10264575668134,
+      "mark": 1809.1,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2500,
-      "unrealized": -489.87898789878983
+      "unrealized": -509.79097909790994
     },
     {
       "entry": 1.2514,
-      "liq": 0.03510308161594833,
-      "mark": 0.972093,
+      "liq": 0.03509371119609428,
+      "mark": 0.95643,
       "notional": 2500,
       "side": "long",
       "symbol": "XRP",
       "tp": 1.38,
-      "unrealized": -557.9890522614674
+      "unrealized": -589.2800063928402
     }
   ],
   "name": "deepseek",
@@ -10458,6 +10458,43 @@
         }
       ],
       "week": "2026-11-09T00:00:00Z"
+    },
+    {
+      "close_all": "No pre-market close. Hold all four open layers; they remain segregated with fixed collateral and will only close via take-profit or liquidation.",
+      "fallback": true,
+      "hostage_policy": "RP remains 2500 notional with 2500 collateral. Use up to 4 layers of 625 notional each; risk per layer is $25 collateral. No manual stop orders; each layer is isolated by its $625 collateral, so liquidation is the only stop. Open only when a limit-buy trigger is traded through and a layer slot is free. If aggregate unrealized NAV of open layers is below -$100, pause new entries; otherwise wait. Do not exceed 4 concurrent layers. If all four slots are occupied, hold NAV(-) positions rather than cutting, because each layer's risk is already collateral-isolated; wait for TP or liquidation.",
+      "in_force": "2026-11-09T00:00:00Z",
+      "notional": 2500,
+      "notional_used": true,
+      "rationale": "Reallocation does not occur this week because all four layer slots remain occupied, so RP stays at 2500/2500. Free equity is 0.0 and no new entries can be executed until an open layer closes via TP or liquidation. All current layers are long and deeply below their take-profit targets, but risk is already isolated per layer. The watchlist keeps BTC, ETH, SOL, and XRP with lower limit triggers than current marks, so the plan becomes actionable only if a slot opens.",
+      "reallocated": false,
+      "watchlist": [
+        {
+          "bias": "long",
+          "entry": "If price trades down to 73500, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 84500; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "BTC"
+        },
+        {
+          "bias": "long",
+          "entry": "If price trades down to 2085, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 2500; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "ETH"
+        },
+        {
+          "bias": "long",
+          "entry": "If price trades down to 82.50, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 109.00; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "SOL"
+        },
+        {
+          "bias": "long",
+          "entry": "If price trades down to 1.0750, open long with notional 625. Risk is isolated by the layer's $25 collateral; no manual stop order.",
+          "exit": "Take profit limit at 1.3800; if stop runs, layer is liquidated at collateral exhaustion.",
+          "symbol": "XRP"
+        }
+      ],
+      "week": "2026-11-16T00:00:00Z"
     }
   ],
   "positions": [],
