@@ -7748,6 +7748,41 @@
       "plan": "2026-11-09T00:00:00Z",
       "reasoning": "Current tick is after the weekly plan close_all boundary (2026-11-16T00:00:00Z), and all four slots are empty with free_equity covering the fixed RP collateral. There is no NAV(-), open TP, liquidation exposure, or active layer to manage. The supplied plan is short-only and requires planned bounce/fade entries only at BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, or LINK 10.72; current marks and recent highs remain far below all trigger levels. Opening would violate the expired plan and Hostage Hunt entry discipline, so hold all empty layers.",
       "t": "2026-11-16T04:17:23Z"
+    },
+    {
+      "actions": [
+        {
+          "price": null,
+          "side": null,
+          "slot": 0,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 1,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 2,
+          "symbol": null,
+          "type": "hold"
+        },
+        {
+          "price": null,
+          "side": null,
+          "slot": 3,
+          "symbol": null,
+          "type": "hold"
+        }
+      ],
+      "plan": "2026-11-09T00:00:00Z",
+      "reasoning": "Current tick is after the weekly plan close_all boundary at 2026-11-16T00:00:00Z. All four slots are empty, free_equity fully covers the RP collateral, and there is no NAV(-), open TP, liquidation exposure, or active position to close. The plan is short-only and permits entries only on planned bounce/fade triggers at or above BTC 75800, ETH 2190, SOL 88.60, DOGE 0.0708, and LINK 10.72. Current marks and recent highs are far below those levels, and the plan window has expired. Opening now would violate plan validity and Hostage Hunt entry discipline, so hold all empty slots and preserve capital.",
+      "t": "2026-11-16T05:15:54Z"
     }
   ],
   "eliminated": null,
