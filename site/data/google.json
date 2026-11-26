@@ -6957,43 +6957,43 @@
   "layers": [
     {
       "entry": 86.528,
-      "liq": 48.04974407606184,
-      "mark": 62.177,
+      "liq": 48.05051940106184,
+      "mark": 62.711,
       "notional": 5000,
       "side": "long",
       "symbol": "HYPE",
       "tp": 92.5,
-      "unrealized": -1407.1167714497044
+      "unrealized": -1376.2597078402368
     },
     {
       "entry": 100.27,
-      "liq": 52.92028207382094,
-      "mark": 71.385,
+      "liq": 52.92117279882094,
+      "mark": 71.363,
       "notional": 5000,
       "side": "long",
       "symbol": "SOL",
       "tp": 104.0,
-      "unrealized": -1440.3610252318736
+      "unrealized": -1441.458063229281
     },
     {
       "entry": 76936.0,
-      "liq": 39735.21629990965,
-      "mark": 60540.0,
+      "liq": 39735.23906735435,
+      "mark": 60722.0,
       "notional": 5000,
       "side": "long",
       "symbol": "BTC",
       "tp": 78900.0,
-      "unrealized": -1065.5609857543934
+      "unrealized": -1053.7329728605596
     },
     {
       "entry": 2223.6,
-      "liq": 1159.9904161353795,
-      "mark": 1702.3,
+      "liq": 1159.9972173642195,
+      "mark": 1703.5,
       "notional": 5000,
       "side": "long",
       "symbol": "ETH",
       "tp": 2305.0,
-      "unrealized": -1172.1982370930023
+      "unrealized": -1169.4999100557654
     }
   ],
   "name": "google",
