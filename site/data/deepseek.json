@@ -10419,43 +10419,43 @@
   "layers": [
     {
       "entry": 99.691,
-      "liq": 2.7759824640109656,
-      "mark": 70.589,
+      "liq": 2.776375133696561,
+      "mark": 70.586,
       "notional": 2500,
       "side": "long",
       "symbol": "SOL",
       "tp": 109.0,
-      "unrealized": -729.8050977520539
+      "unrealized": -729.8803302203811
     },
     {
       "entry": 79924.0,
-      "liq": 1520.5348672199616,
-      "mark": 59312.0,
+      "liq": 1520.7584146622685,
+      "mark": 59481.0,
       "notional": 2500,
       "side": "long",
       "symbol": "BTC",
       "tp": 84500,
-      "unrealized": -644.7375006255943
+      "unrealized": -639.4512286672339
     },
     {
       "entry": 2272.5,
-      "liq": 53.22042496094264,
-      "mark": 1647.7,
+      "liq": 53.24105371094265,
+      "mark": 1649.2,
       "notional": 2500,
       "side": "long",
       "symbol": "ETH",
       "tp": 2500,
-      "unrealized": -687.3487348734874
+      "unrealized": -685.6985698569857
     },
     {
       "entry": 1.2514,
-      "liq": 0.035129304636093206,
-      "mark": 0.93985,
+      "liq": 0.035127356987135316,
+      "mark": 0.94019,
       "notional": 2500,
       "side": "long",
       "symbol": "XRP",
       "tp": 1.38,
-      "unrealized": -622.402908742209
+      "unrealized": -621.7236694901712
     }
   ],
   "name": "deepseek",
